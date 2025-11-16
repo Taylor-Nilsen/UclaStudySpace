@@ -154,6 +154,19 @@
         "capacity": 80,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BOELTER+%7C++02444++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -362,6 +375,7 @@
         "capacity": 72,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BOELTER+%7C++02760++",
+        "characteristics": [],
         "schedule": {
             "Monday": [
                 {
@@ -585,6 +599,21 @@
         "capacity": 174,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BOELTER+%7C++03400++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -903,6 +932,20 @@
         "capacity": 30,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BOELTER+%7C++04283++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Video Monitor Vhs/Ld-Capable",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -1102,6 +1145,20 @@
         "capacity": 30,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BOELTER+%7C++04413++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Video Monitor Vhs/Ld-Capable",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -1341,6 +1398,19 @@
         "capacity": 92,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BOELTER+%7C++05249++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -1573,6 +1643,20 @@
         "capacity": 34,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BOELTER+%7C++05252++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Video Monitor Vhs/Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -1797,6 +1881,19 @@
         "capacity": 48,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BOELTER+%7C++05264++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -2061,6 +2158,20 @@
         "capacity": 39,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BOELTER+%7C++05272++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -2269,6 +2380,20 @@
         "capacity": 41,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BOELTER+%7C++05273++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -2493,6 +2618,20 @@
         "capacity": 40,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BOELTER+%7C++05280++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -2733,6 +2872,20 @@
         "capacity": 40,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BOELTER+%7C++05419++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -2981,6 +3134,19 @@
         "capacity": 40,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BOELTER+%7C++05420++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -3245,6 +3411,19 @@
         "capacity": 40,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BOELTER+%7C++05422++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -3469,6 +3648,19 @@
         "capacity": 49,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BOELTER+%7C++05436++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -3677,6 +3869,19 @@
         "capacity": 44,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BOELTER+%7C++05440++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -3916,6 +4121,20 @@
         "capacity": 14,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BOELTER+%7C++05514++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Video Monitor Vhs/Ld-Capable",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -4239,6 +4458,17 @@
         "capacity": 47,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BOELTER+%7C++09436++",
+        "characteristics": [
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -4609,6 +4839,22 @@
         "capacity": 83,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BROAD+++%7C++02100A+",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Chalkboard",
+            "Whiteboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Installed 35Mm Slide Projector",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -4877,6 +5123,22 @@
         "capacity": 406,
         "type": "Auditorium",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BROAD+++%7C++02160E+",
+        "characteristics": [
+            "16Mm Projector",
+            "Air Conditioning",
+            "Stereo Capabilities-Installed",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Installed 35Mm Slide Projector",
+            "Vhs Deck-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -5245,6 +5507,22 @@
         "capacity": 221,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++01209B+",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Installed 35Mm Slide Projector",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -5533,6 +5811,19 @@
         "capacity": 34,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++01221A+",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Video Monitor Vhs/Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -5786,6 +6077,18 @@
         "capacity": 16,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++01265++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Video Monitor Vhs/Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -5922,6 +6225,19 @@
         "capacity": 16,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++02121++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Video Monitor Vhs/Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -6017,6 +6333,19 @@
         "capacity": 16,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++02150++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Video Monitor Vhs/Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -6137,6 +6466,19 @@
         "capacity": 28,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++02156++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Movable Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Video Monitor Vhs/Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -6353,6 +6695,18 @@
         "capacity": 40,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++02160++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -6593,6 +6947,19 @@
         "capacity": 28,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++02168++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Movable Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Video Monitor Vhs/Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -6825,6 +7192,18 @@
         "capacity": 16,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++02173++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Video Monitor Vhs/Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -6937,6 +7316,20 @@
         "capacity": 16,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++02174++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Comp Projector(800X600)-Capable",
+            "Gacnet - Backbone Hookup",
+            "Video Monitor Vhs/Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -7025,6 +7418,21 @@
         "capacity": 38,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++02178++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Comp Projector(800X600)-Capable",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -7297,6 +7705,19 @@
         "capacity": 26,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++02181++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Movable Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Video Monitor Vhs/Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -7553,6 +7974,22 @@
         "capacity": 221,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++02209A+",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Installed 35Mm Slide Projector",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -7855,6 +8292,19 @@
         "capacity": 27,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++03117++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -8071,6 +8521,19 @@
         "capacity": 26,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++03123++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -8303,6 +8766,19 @@
         "capacity": 37,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++03143++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -8567,6 +9043,20 @@
         "capacity": 36,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++03150++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -8743,6 +9233,19 @@
         "capacity": 36,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++03153++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -8943,6 +9446,20 @@
         "capacity": 40,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++03156++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -9199,6 +9716,19 @@
         "capacity": 41,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++03157++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -9439,6 +9969,19 @@
         "capacity": 40,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++03164++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Wireless Microphone-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -9663,6 +10206,20 @@
         "capacity": 40,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++03170++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -9895,6 +10452,21 @@
         "capacity": 44,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++03178++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Comp Projector(800X600)-Capable",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -10159,6 +10731,20 @@
         "capacity": 45,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C++03211++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -10531,6 +11117,20 @@
         "capacity": 25,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=BUNCHE++%7C+A00152++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Video Monitor Vhs/Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -11098,6 +11698,19 @@
         "capacity": 50,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=DODD++++%7C++00078++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -11314,6 +11927,23 @@
         "capacity": 158,
         "type": "Auditorium",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=DODD++++%7C++00121++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Installed 35Mm Slide Projector",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -11570,6 +12200,23 @@
         "capacity": 89,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=DODD++++%7C++00146++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Installed 35Mm Slide Projector",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -11818,6 +12465,24 @@
         "capacity": 366,
         "type": "Auditorium",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=DODD++++%7C++00147++",
+        "characteristics": [
+            "16Mm Projector",
+            "Air Conditioning",
+            "Stereo Capabilities-Installed",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Installed 35Mm Slide Projector",
+            "Stage",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -12082,6 +12747,19 @@
         "capacity": 34,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=DODD++++%7C++00154++",
+        "characteristics": [
+            "Chalkboard",
+            "Movable Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -12314,6 +12992,23 @@
         "capacity": 106,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=DODD++++%7C++00161++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Installed 35Mm Slide Projector",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -12538,6 +13233,19 @@
         "capacity": 32,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=DODD++++%7C++00162++",
+        "characteristics": [
+            "Chalkboard",
+            "Movable Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -12834,6 +13542,19 @@
         "capacity": 58,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=DODD++++%7C++00167++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -13082,6 +13803,19 @@
         "capacity": 62,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=DODD++++%7C++00170++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -13346,6 +14080,23 @@
         "capacity": 98,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=DODD++++%7C++00175++",
+        "characteristics": [
+            "Air Conditioning",
+            "Stereo Capabilities-Installed",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Installed 35Mm Slide Projector",
+            "Fixed Tables-Cont Writ Surfaces",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -13586,6 +14337,20 @@
         "capacity": 32,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=DODD++++%7C++00178++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Movable Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -14320,6 +15085,23 @@
         "capacity": 320,
         "type": "Auditorium",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=FOWLER++%7C+A00103B+",
+        "characteristics": [
+            "16Mm Projector",
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Auditorium Setting",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Installed 35Mm Slide Projector",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -14568,6 +15350,21 @@
         "capacity": 104,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=FOWLER++%7C+A00139++",
+        "characteristics": [
+            "Air Conditioning",
+            "Whiteboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Installed 35Mm Slide Projector",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -14819,6 +15616,20 @@
         "capacity": 296,
         "type": "Auditorium",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=FRANZ+++%7C++01178++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -15106,6 +15917,19 @@
         "capacity": 147,
         "type": "Auditorium",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=FRANZ+++%7C++01260++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -15393,6 +16217,17 @@
         "capacity": 82,
         "type": "Auditorium",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=FRANZ+++%7C++02258A+",
+        "characteristics": [
+            "Air Conditioning",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Video Projector Vhs/Ld-Capable"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -15639,6 +16474,16 @@
         "capacity": 30,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=FRANZ+++%7C++02288++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Video Monitor Vhs/Ld-Capable",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Movable Tables And Chairs"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -16275,6 +17120,20 @@
         "capacity": 81,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=GEOLOGY+%7C++03656++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Chalkboard",
+            "Whiteboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -16583,6 +17442,18 @@
         "capacity": 48,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=GEOLOGY+%7C++04645++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -16886,6 +17757,16 @@
         "capacity": 70,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=GEOLOGY+%7C++04660++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -17191,6 +18072,17 @@
         "capacity": 47,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=GEOLOGY+%7C++06704++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -17658,6 +18550,22 @@
         "capacity": 419,
         "type": "Auditorium",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=HAINES++%7C++00039++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Installed 35Mm Slide Projector",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -17889,6 +18797,18 @@
         "capacity": 20,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=HAINES++%7C++00110++",
+        "characteristics": [
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -18209,6 +19129,21 @@
         "capacity": 122,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=HAINES++%7C++00118++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Chalkboard",
+            "Whiteboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -18449,6 +19384,18 @@
         "capacity": 20,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=HAINES++%7C++00122++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -18742,6 +19689,21 @@
         "capacity": 122,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=HAINES++%7C++00220++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Chalkboard",
+            "Whiteboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -19016,6 +19978,22 @@
         "capacity": 138,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=HAINES++%7C+A00002++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Chalkboard",
+            "Whiteboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -19232,6 +20210,19 @@
         "capacity": 20,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=HAINES++%7C+A00006++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -19424,6 +20415,20 @@
         "capacity": 140,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=HAINES++%7C+A00018++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Video Projector-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -19688,6 +20693,18 @@
         "capacity": 26,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=HAINES++%7C+A00020++",
+        "characteristics": [
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -19912,6 +20929,18 @@
         "capacity": 28,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=HAINES++%7C+A00024++",
+        "characteristics": [
+            "Chalkboard",
+            "Whiteboard",
+            "Movable Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -20176,6 +21205,17 @@
         "capacity": 73,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=HAINES++%7C+A00025++",
+        "characteristics": [
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -20408,6 +21448,17 @@
         "capacity": 24,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=HAINES++%7C+A00028++",
+        "characteristics": [
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Seminar Setting",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -20750,6 +21801,19 @@
         "capacity": 40,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=HAINES++%7C+A00044++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -20974,6 +22038,16 @@
         "capacity": 26,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=HAINES++%7C+A00074++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Movable Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Vhs Deck-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -21190,6 +22264,17 @@
         "capacity": 24,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=HAINES++%7C+A00076++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Whiteboard",
+            "Movable Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Vhs Deck-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -21406,6 +22491,18 @@
         "capacity": 20,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=HAINES++%7C+A00078++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "Vhs Deck-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -21630,6 +22727,17 @@
         "capacity": 24,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=HAINES++%7C+A00082++",
+        "characteristics": [
+            "Chalkboard",
+            "Movable Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -22391,6 +23499,7 @@
         "capacity": 115,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=KAPLAN++%7C++00135++",
+        "characteristics": [],
         "schedule": {
             "Monday": [
                 {
@@ -22591,6 +23700,7 @@
         "capacity": 115,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=KAPLAN++%7C++00169++",
+        "characteristics": [],
         "schedule": {
             "Monday": [
                 {
@@ -22866,6 +23976,7 @@
         "capacity": 32,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=KAPLAN++%7C+A00026++",
+        "characteristics": [],
         "schedule": {
             "Monday": [
                 {
@@ -23074,6 +24185,7 @@
         "capacity": 16,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=KAPLAN++%7C+A00030++",
+        "characteristics": [],
         "schedule": {
             "Monday": [
                 {
@@ -23162,6 +24274,7 @@
         "capacity": 24,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=KAPLAN++%7C+A00032++",
+        "characteristics": [],
         "schedule": {
             "Monday": [
                 {
@@ -23354,6 +24467,7 @@
         "capacity": 20,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=KAPLAN++%7C+A00040++",
+        "characteristics": [],
         "schedule": {
             "Monday": [
                 {
@@ -23530,6 +24644,7 @@
         "capacity": 24,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=KAPLAN++%7C+A00046++",
+        "characteristics": [],
         "schedule": {
             "Monday": [
                 {
@@ -23770,6 +24885,7 @@
         "capacity": 24,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=KAPLAN++%7C+A00048++",
+        "characteristics": [],
         "schedule": {
             "Monday": [
                 {
@@ -23962,6 +25078,7 @@
         "capacity": 290,
         "type": "Auditorium",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=KAPLAN++%7C+A00051++",
+        "characteristics": [],
         "schedule": {
             "Monday": [
                 {
@@ -24250,6 +25367,7 @@
         "capacity": 20,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=KAPLAN++%7C+A00056++",
+        "characteristics": [],
         "schedule": {
             "Monday": [
                 {
@@ -24450,6 +25568,7 @@
         "capacity": 20,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=KAPLAN++%7C+A00060++",
+        "characteristics": [],
         "schedule": {
             "Monday": [
                 {
@@ -24666,6 +25785,7 @@
         "capacity": 115,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=KAPLAN++%7C+A00065++",
+        "characteristics": [],
         "schedule": {
             "Monday": [
                 {
@@ -24858,6 +25978,7 @@
         "capacity": 24,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=KAPLAN++%7C+A00066++",
+        "characteristics": [],
         "schedule": {
             "Monday": [
                 {
@@ -25090,6 +26211,7 @@
         "capacity": 24,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=KAPLAN++%7C+A00068++",
+        "characteristics": [],
         "schedule": {
             "Monday": [
                 {
@@ -25242,6 +26364,17 @@
         "capacity": 52,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=KAUFMAN+%7C++00101++",
+        "characteristics": [
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Fixed Tables-Cont Writ Surfaces",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -25436,6 +26569,17 @@
         "capacity": 12,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=KAUFMAN+%7C++00136++",
+        "characteristics": [
+            "Chalkboard",
+            "Whiteboard",
+            "Video Monitor Vhs/Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -25589,6 +26733,17 @@
         "capacity": 26,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=KAUFMAN+%7C++00153++",
+        "characteristics": [
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -25878,6 +27033,19 @@
         "capacity": 122,
         "type": "Auditorium",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=KNSY+PV+%7C++01200B+",
+        "characteristics": [
+            "Air Conditioning",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Wireless Microphone-Installed",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -26094,6 +27262,19 @@
         "capacity": 178,
         "type": "Auditorium",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=KNSY+PV+%7C++01220B+",
+        "characteristics": [
+            "Air Conditioning",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Wireless Microphone-Installed",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -26334,6 +27515,18 @@
         "capacity": 122,
         "type": "Auditorium",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=KNSY+PV+%7C++01240B+",
+        "characteristics": [
+            "Air Conditioning",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Wireless Microphone-Installed",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -26701,6 +27894,17 @@
         "capacity": 22,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=LAKRETZ+%7C++00100++",
+        "characteristics": [
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Projection Screen",
+            "Seminar Setting",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -26885,6 +28089,17 @@
         "capacity": 22,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=LAKRETZ+%7C++00101++",
+        "characteristics": [
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Projection Screen",
+            "Seminar Setting",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -27101,6 +28316,18 @@
         "capacity": 352,
         "type": "Auditorium",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=LAKRETZ+%7C++00110++",
+        "characteristics": [
+            "Auditorium Setting",
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -27333,6 +28560,18 @@
         "capacity": 46,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=LAKRETZ+%7C++00120++",
+        "characteristics": [
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Fixed Tables-Cont Writ Surfaces",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -28419,6 +29658,25 @@
         "capacity": 442,
         "type": "Auditorium",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MOORE+++%7C++00100++",
+        "characteristics": [
+            "16Mm Projector",
+            "Air Conditioning",
+            "Stereo Capabilities-Installed",
+            "Auditorium Setting",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Installed 35Mm Slide Projector",
+            "Stage",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -28691,6 +29949,17 @@
         "capacity": 25,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MOORE+++%7C++01003++",
+        "characteristics": [
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Video Monitor Vhs/Installed",
+            "Overhead Projector",
+            "Projection Screen",
+            "Seminar Setting",
+            "Movable Tables And Chairs",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -29028,6 +30297,20 @@
         "capacity": 24,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MS++++++%7C++03915A+",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Comp Projector(800X600)-Capable",
+            "Gacnet - Backbone Hookup",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Movable Tables And Chairs",
+            "Video Projector Vhs/Ld-Capable"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -29268,6 +30551,20 @@
         "capacity": 24,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MS++++++%7C++03915D+",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Comp Projector(800X600)-Capable",
+            "Gacnet - Backbone Hookup",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Movable Tables And Chairs",
+            "Video Projector Vhs/Ld-Capable"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -29524,6 +30821,20 @@
         "capacity": 24,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MS++++++%7C++03915G+",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Comp Projector(800X600)-Capable",
+            "Gacnet - Backbone Hookup",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Movable Tables And Chairs",
+            "Video Projector Vhs/Ld-Capable"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -29796,6 +31107,20 @@
         "capacity": 24,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MS++++++%7C++03915H+",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Comp Projector(800X600)-Capable",
+            "Gacnet - Backbone Hookup",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Movable Tables And Chairs",
+            "Video Projector Vhs/Ld-Capable"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -30059,6 +31384,20 @@
         "capacity": 210,
         "type": "Auditorium",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MS++++++%7C++04000A+",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -30434,6 +31773,19 @@
         "capacity": 40,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MS++++++%7C++05117++",
+        "characteristics": [
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -30770,6 +32122,19 @@
         "capacity": 40,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MS++++++%7C++05118++",
+        "characteristics": [
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -31098,6 +32463,19 @@
         "capacity": 40,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MS++++++%7C++05127++",
+        "characteristics": [
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -31418,6 +32796,19 @@
         "capacity": 40,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MS++++++%7C++05128++",
+        "characteristics": [
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -31794,6 +33185,19 @@
         "capacity": 40,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MS++++++%7C++05137++",
+        "characteristics": [
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -32122,6 +33526,19 @@
         "capacity": 40,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MS++++++%7C++05138++",
+        "characteristics": [
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -32418,6 +33835,18 @@
         "capacity": 39,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MS++++++%7C++05147++",
+        "characteristics": [
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -32626,6 +34055,19 @@
         "capacity": 26,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MS++++++%7C++05148++",
+        "characteristics": [
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -32858,6 +34300,21 @@
         "capacity": 130,
         "type": "Auditorium",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MS++++++%7C++05200++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Installed 35Mm Slide Projector",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -33146,6 +34603,18 @@
         "capacity": 30,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MS++++++%7C++05203++",
+        "characteristics": [
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Comp Projector(800X600)-Capable",
+            "Gacnet - Backbone Hookup",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -33370,6 +34839,17 @@
         "capacity": 28,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MS++++++%7C++05217++",
+        "characteristics": [
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Video Monitor Vhs/Ld-Capable",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -33554,6 +35034,19 @@
         "capacity": 29,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MS++++++%7C++05225++",
+        "characteristics": [
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Video Monitor Vhs/Ld-Capable",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -33762,6 +35255,16 @@
         "capacity": 30,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MS++++++%7C++05233++",
+        "characteristics": [
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -33984,6 +35487,18 @@
         "capacity": 28,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MS++++++%7C++06201++",
+        "characteristics": [
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Video Monitor Vhs/Ld-Capable",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Movable Tables And Chairs",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -34231,6 +35746,18 @@
         "capacity": 51,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MS++++++%7C++06229++",
+        "characteristics": [
+            "Audio Equipment",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Video Projector-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -34685,6 +36212,17 @@
         "capacity": 22,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=MS++++++%7C++07608++",
+        "characteristics": [
+            "Chalkboard",
+            "Movable Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Video Monitor Vhs/Ld-Capable",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -35026,6 +36564,19 @@
         "capacity": 188,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PAB+++++%7C++01425++",
+        "characteristics": [
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Fixed Tables-Cont Writ Surfaces",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -35314,6 +36865,19 @@
         "capacity": 95,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PAB+++++%7C++01434A+",
+        "characteristics": [
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Fixed Tables-Cont Writ Surfaces",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -35698,6 +37262,15 @@
         "capacity": 40,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PAB+++++%7C++01749++",
+        "characteristics": [
+            "Chalkboard",
+            "Movable Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -36050,6 +37623,18 @@
         "capacity": 48,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PAB+++++%7C++02434++",
+        "characteristics": [
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Fixed Tables-Cont Writ Surfaces",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -36322,6 +37907,17 @@
         "capacity": 43,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PAB+++++%7C++02748++",
+        "characteristics": [
+            "Whiteboard",
+            "Movable Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -36652,6 +38248,22 @@
         "capacity": 146,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PERLOFF+%7C++01102++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Installed 35Mm Slide Projector",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -37241,6 +38853,18 @@
         "capacity": 93,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++01222++",
+        "characteristics": [
+            "Air Conditioning",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -37537,6 +39161,18 @@
         "capacity": 93,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++01234++",
+        "characteristics": [
+            "Air Conditioning",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -37745,6 +39381,18 @@
         "capacity": 93,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++01246++",
+        "characteristics": [
+            "Air Conditioning",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -37977,6 +39625,18 @@
         "capacity": 32,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++01256++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "Movable Tables And Chairs",
+            "Vhs Deck-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -38201,6 +39861,20 @@
         "capacity": 28,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++01264++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Movable Tables And Chairs",
+            "Vhs Deck-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -38481,6 +40155,19 @@
         "capacity": 28,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++01270++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Movable Tables And Chairs",
+            "Vhs Deck-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -38737,6 +40424,18 @@
         "capacity": 28,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++01278++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Movable Tables And Chairs",
+            "Vhs Deck-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -39001,6 +40700,19 @@
         "capacity": 32,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++01284++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Movable Tables And Chairs",
+            "Vhs Deck-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -39273,6 +40985,19 @@
         "capacity": 28,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++01323++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "Movable Tables And Chairs",
+            "Vhs Deck-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -39505,6 +41230,19 @@
         "capacity": 32,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++01329++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "Movable Tables And Chairs",
+            "Vhs Deck-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -39705,6 +41443,19 @@
         "capacity": 46,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++01337++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -39905,6 +41656,20 @@
         "capacity": 32,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++01343++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Movable Tables And Chairs",
+            "Vhs Deck-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -40166,6 +41931,22 @@
         "capacity": 85,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++02214++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Installed 35Mm Slide Projector",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -40350,6 +42131,22 @@
         "capacity": 57,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++02232++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Installed 35Mm Slide Projector",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -40558,6 +42355,19 @@
         "capacity": 46,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++02238++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -40782,6 +42592,20 @@
         "capacity": 50,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++02242++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -40958,6 +42782,18 @@
         "capacity": 60,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++02250++",
+        "characteristics": [
+            "Air Conditioning",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Fixed Tables-Cont Writ Surfaces",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -41222,6 +43058,20 @@
         "capacity": 73,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++02270++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Fixed Tables-Cont Writ Surfaces",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -41422,6 +43272,20 @@
         "capacity": 28,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++02278++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Movable Tables And Chairs",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -41638,6 +43502,20 @@
         "capacity": 28,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++02284++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Movable Tables And Chairs",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -41854,6 +43732,19 @@
         "capacity": 16,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++02292++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Video Monitor Vhs/Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -41925,6 +43816,22 @@
         "capacity": 28,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++02317++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Comp Projector(800X600)-Capable",
+            "Gacnet - Backbone Hookup",
+            "Video Monitor Vhs/Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Movable Tables And Chairs",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -42173,6 +44080,20 @@
         "capacity": 28,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++02319++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Comp Projector(800X600)-Capable",
+            "Gacnet - Backbone Hookup",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Movable Tables And Chairs",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -42405,6 +44326,19 @@
         "capacity": 28,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++02325++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "Movable Tables And Chairs",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -42653,6 +44587,19 @@
         "capacity": 28,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=PUB+AFF+%7C++02333++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "Movable Tables And Chairs",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -43200,6 +45147,23 @@
         "capacity": 292,
         "type": "Auditorium",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=ROLFE+++%7C++01200++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Installed 35Mm Slide Projector",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -43503,6 +45467,21 @@
         "capacity": 35,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=ROLFE+++%7C++03105++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Movable Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Comp Projector(800X600)-Capable",
+            "Gacnet - Backbone Hookup",
+            "Video Monitor Vhs/Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -43663,6 +45642,19 @@
         "capacity": 36,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=ROLFE+++%7C++03108++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -43847,6 +45839,20 @@
         "capacity": 16,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=ROLFE+++%7C++03115++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Video Monitor Vhs/Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [],
             "Tuesday": [
@@ -43917,6 +45923,19 @@
         "capacity": 36,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=ROLFE+++%7C++03116++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -44149,6 +46168,19 @@
         "capacity": 16,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=ROLFE+++%7C++03120++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Video Monitor Vhs/Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -44228,6 +46260,19 @@
         "capacity": 36,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=ROLFE+++%7C++03121++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -44404,6 +46449,20 @@
         "capacity": 52,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=ROLFE+++%7C++03126++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Movable Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -44620,6 +46679,20 @@
         "capacity": 36,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=ROLFE+++%7C++03129++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Whiteboard",
+            "Movable Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -44804,6 +46877,20 @@
         "capacity": 48,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=ROLFE+++%7C++03134++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Movable Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -45012,6 +47099,20 @@
         "capacity": 45,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=ROLFE+++%7C++03135++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Movable Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -45241,6 +47342,19 @@
         "capacity": 24,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=ROYCE+++%7C++00148++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -45433,6 +47547,19 @@
         "capacity": 37,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=ROYCE+++%7C++00150++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -45593,6 +47720,19 @@
         "capacity": 30,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=ROYCE+++%7C++00152++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Media Equipment",
+            "Wireless Microphone-Installed",
+            "Overhead Projector",
+            "Projection Screen",
+            "Seminar Setting",
+            "Movable Tables And Chairs",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -45833,6 +47973,20 @@
         "capacity": 50,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=ROYCE+++%7C++00154++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -46073,6 +48227,21 @@
         "capacity": 52,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=ROYCE+++%7C++00156++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -46249,6 +48418,21 @@
         "capacity": 43,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=ROYCE+++%7C++00160++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -46457,6 +48641,20 @@
         "capacity": 45,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=ROYCE+++%7C++00162++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -46649,6 +48847,20 @@
         "capacity": 50,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=ROYCE+++%7C++00164++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -46841,6 +49053,19 @@
         "capacity": 20,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=ROYCE+++%7C++00166++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Wireless Microphone-Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -46993,6 +49218,21 @@
         "capacity": 122,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=ROYCE+++%7C++00190++",
+        "characteristics": [
+            "Air Conditioning",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Installed 35Mm Slide Projector",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -47279,6 +49519,23 @@
         "capacity": 133,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=ROYCE+++%7C++00362++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Chalkboard",
+            "Whiteboard",
+            "Comp Projector(1024X768)-Installed",
+            "Comp Projector(800X600)-Capable",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable",
+            "Windows"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -47670,6 +49927,16 @@
         "capacity": 20,
         "type": "Seminar Room",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=SLICHTR+%7C++02834++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Video Monitor Vhs/Installed",
+            "Projection Screen",
+            "Seminar Setting",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -48110,6 +50377,14 @@
         "capacity": 47,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=WGYOUNG+%7C++01044++",
+        "characteristics": [
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Media Equipment",
+            "Projection Screen",
+            "Vhs Deck-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -48511,6 +50786,21 @@
         "capacity": 98,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=WGYOUNG+%7C++02200++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -48887,6 +51177,20 @@
         "capacity": 62,
         "type": "Classroom",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=WGYOUNG+%7C++04216++",
+        "characteristics": [
+            "Air Conditioning",
+            "Chalkboard",
+            "Fixed Tablet Arm Chairs",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "35Mm Slide Projector-Capable",
+            "Vhs Deck-Installed",
+            "Video Projector Vhs/Ld-Capable"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -49233,6 +51537,20 @@
         "capacity": 254,
         "type": "Auditorium",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=WGYOUNG+%7CCS00024++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -49569,6 +51887,21 @@
         "capacity": 351,
         "type": "Auditorium",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=WGYOUNG+%7CCS00050++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
@@ -49913,6 +52246,21 @@
         "capacity": 256,
         "type": "Auditorium",
         "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=25F&classroom=WGYOUNG+%7CCS00076++",
+        "characteristics": [
+            "Air Conditioning",
+            "Mono Capabilities-Installed",
+            "Auditorium Setting",
+            "Chalkboard",
+            "Comp Projector(1024X768)-Installed",
+            "Gacnet - Backbone Hookup",
+            "Media Equipment",
+            "Microphone-Installed",
+            "Wireless Microphone-Installed",
+            "Overhead Projector-Installed",
+            "Projection Screen",
+            "Vhs Deck-Installed",
+            "Video Projector-Installed"
+        ],
         "schedule": {
             "Monday": [
                 {
