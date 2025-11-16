@@ -228,8 +228,6 @@ def process_classroom_worker(args):
         room = classroom.get('room', 'Unknown')
         url = classroom.get('url', '')
         
-        print(f"[{index}/{total}] Processing: {building} {room}")
-        
         # Scrape the schedule
         result = scrape_classroom_schedule(url, driver)
         
@@ -243,23 +241,23 @@ def process_classroom_worker(args):
                 classroom['schedule'] = None
                 classroom['no_calendar'] = True
                 stats['no_calendar'] = 1
-                print(f"[{index}/{total}] ⚠️  {building} {room} - No calendar")
+                print(f"[{index}/{total}] {building} {room}: NO_CALENDAR")
             else:
                 classroom['schedule'] = schedule
                 classroom['no_calendar'] = False
                 total_events = sum(len(events) for events in schedule.values())
                 stats['success'] = 1
-                print(f"[{index}/{total}] ✓ {building} {room} - {total_events} events")
+                print(f"[{index}/{total}] {building} {room}: OK ({total_events} events)")
         else:
             classroom['schedule'] = None
             classroom['no_calendar'] = None
             stats['failed'] = 1
-            print(f"[{index}/{total}] ❌ {building} {room} - Failed")
+            print(f"[{index}/{total}] {building} {room}: FAILED")
         
         return (index, classroom, stats)
         
     except Exception as e:
-        print(f"[{index}/{total}] ❌ Error: {e}")
+        print(f"[{index}/{total}] ERROR: {e}")
         classroom['schedule'] = None
         classroom['no_calendar'] = None
         return (index, classroom, {'success': 0, 'no_calendar': 0, 'failed': 1})
@@ -268,125 +266,118 @@ def process_classroom_worker(args):
             driver.quit()
 
 
-def main(limit=None, workers=4):
+def main(limit=None, num_processes=4, batch_size=None):
     """Main function to scrape schedules from all classrooms using multiprocessing
     
     Args:
         limit: Optional integer to limit how many classrooms to scrape
-        workers: Number of parallel workers (default: 4)
+        num_processes: Number of parallel processes (default: 4)
+        batch_size: Number of items to process per batch (default: same as num_processes)
     """
     # Load the classrooms data
-    print("Loading classrooms.json...")
     with open('classrooms.json', 'r') as f:
         all_classrooms = json.load(f)
     
     # Check if data is a list (top-level array)
     if not isinstance(all_classrooms, list):
-        print("Error: classrooms.json should contain a top-level array")
+        print("ERROR: classrooms.json must contain a top-level array")
         return
     
     if not all_classrooms:
-        print("No classrooms found in classrooms.json")
+        print("ERROR: No classrooms found in classrooms.json")
         return
     
     # Determine which classrooms to scrape
     if limit and limit > 0:
         classrooms_to_scrape = all_classrooms[:limit]
-        print(f"\nLimiting to first {limit} classroom(s) out of {len(all_classrooms)} total")
     else:
         classrooms_to_scrape = all_classrooms
     
     total_classrooms = len(classrooms_to_scrape)
-    print(f"\nFound {total_classrooms} classroom(s) to scrape")
-    print(f"Using {workers} parallel workers")
+    
+    # Set batch size (defaults to num_processes if not specified)
+    if batch_size is None:
+        batch_size = num_processes
+    
+    print(f"Total: {total_classrooms} | Processes: {num_processes} | Batch size: {batch_size}")
     print("="*80)
     
     # Track statistics
-    successful_scrapes = 0
-    no_calendar_count = 0
-    failed_scrapes = 0
+    total_success = 0
+    total_no_calendar = 0
+    total_failed = 0
     
     # Prepare arguments for workers
     work_items = [(classroom, i+1, total_classrooms) for i, classroom in enumerate(classrooms_to_scrape)]
     
     # Process classrooms in parallel
-    print(f"\n🚀 Starting parallel scraping with {workers} workers...\n")
+    print(f"Starting parallel execution...\n")
     
-    # Store results with their original indices
-    results = []
-    
-    with Pool(processes=workers) as pool:
-        # Process in chunks and save periodically
-        chunk_size = 20  # Save every 20 completed items
-        completed = 0
-        
-        for result in pool.imap_unordered(process_classroom_worker, work_items):
-            index, classroom_data, stats = result
-            results.append((index, classroom_data))
+    # Process in batches
+    # batch_size controls how many items are processed in parallel per batch
+    with Pool(processes=num_processes) as pool:
+        for batch_start in range(0, total_classrooms, batch_size):
+            batch_end = min(batch_start + batch_size, total_classrooms)
+            batch_items = work_items[batch_start:batch_end]
             
-            # Update statistics
-            successful_scrapes += stats['success']
-            no_calendar_count += stats['no_calendar']
-            failed_scrapes += stats['failed']
+            print(f"Batch [{batch_start + 1}-{batch_end}/{total_classrooms}]")
             
-            completed += 1
+            # Process this batch in parallel
+            batch_results = pool.map(process_classroom_worker, batch_items)
             
-            # Save progress periodically
-            if completed % chunk_size == 0 or completed == total_classrooms:
-                # Sort results by index and update classrooms
-                results.sort(key=lambda x: x[0])
-                for idx, classroom_data in results:
-                    classrooms_to_scrape[idx - 1] = classroom_data
+            # Update the classrooms with results from this batch
+            for index, classroom_data, stats in batch_results:
+                classrooms_to_scrape[index - 1] = classroom_data
                 
-                print(f"\n{'='*80}")
-                print(f"💾 Saving progress... ({completed}/{total_classrooms} complete)")
-                with open('classrooms.json', 'w') as f:
-                    json.dump(all_classrooms, f, indent=4)
-                print("✓ Saved!")
-                print(f"{'='*80}\n")
-    
-    # Final save with all results
-    results.sort(key=lambda x: x[0])
-    for idx, classroom_data in results:
-        classrooms_to_scrape[idx - 1] = classroom_data
+                # Update statistics
+                total_success += stats['success']
+                total_no_calendar += stats['no_calendar']
+                total_failed += stats['failed']
+            
+            # Save after each batch completes
+            with open('classrooms.json', 'w') as f:
+                json.dump(all_classrooms, f, indent=4)
+            
+            print(f"Saved: {batch_end}/{total_classrooms} | Success: {total_success} | No calendar: {total_no_calendar} | Failed: {total_failed}\n")
     
     print("\n" + "="*80)
-    print("SCRAPING COMPLETE - Saving final data to classrooms.json...")
+    print("COMPLETE")
     print("="*80)
     with open('classrooms.json', 'w') as f:
         json.dump(all_classrooms, f, indent=4)
-    print("✓ Data saved successfully!")
     
     # Print final statistics
-    print("\n" + "="*80)
-    print("SCRAPING STATISTICS:")
-    print("="*80)
-    print(f"Total classrooms processed: {total_classrooms}")
-    print(f"Successfully scraped: {successful_scrapes}")
-    print(f"No calendar available: {no_calendar_count}")
-    print(f"Failed: {failed_scrapes}")
+    print(f"Total processed: {total_classrooms}")
+    print(f"Success: {total_success}")
+    print(f"No calendar: {total_no_calendar}")
+    print(f"Failed: {total_failed}")
     print("="*80)
 
 
 if __name__ == "__main__":
-    # Allow optional command line arguments to specify how many to scrape and number of workers
+    # Allow optional command line arguments
     import sys
     
     limit = None
-    workers = 4  # Default to 4 parallel workers
+    num_processes = 4  # Default to 4 parallel processes
+    batch_size = None  # Default to same as num_processes
     
     if len(sys.argv) > 1:
         try:
             limit = int(sys.argv[1])
-            print(f"Limiting scrape to first {limit} classrooms...")
         except ValueError:
-            print("Invalid limit argument, processing all classrooms")
+            print("ERROR: Invalid limit argument")
     
     if len(sys.argv) > 2:
         try:
-            workers = int(sys.argv[2])
-            print(f"Using {workers} parallel workers...")
+            num_processes = int(sys.argv[2])
         except ValueError:
-            print("Invalid workers argument, using default (4)")
+            print("ERROR: Invalid num_processes argument, using default (4)")
     
-    main(limit, workers)
+    if len(sys.argv) > 3:
+        try:
+            batch_size = int(sys.argv[3])
+        except ValueError:
+            print("ERROR: Invalid batch_size argument, using default (same as num_processes)")
+    
+    main(limit, num_processes, batch_size)
