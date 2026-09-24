@@ -76,6 +76,8 @@
         .cal-col{flex:1;position:relative;border-left:1px solid rgba(96,165,250,0.08);background-image:repeating-linear-gradient(180deg,rgba(96,165,250,0.12) 0 1px,transparent 1px calc(100%/16))}
         .cal-ev{position:absolute;left:1px;right:1px;background:var(--accent);border-radius:3px;overflow:hidden;font-size:0.55rem;line-height:1.1;color:#0f172a;padding:1px 2px;font-weight:600}
         .cal-ev.org{background:var(--event)}
+        .cal-ev.res{background:#a78bfa}
+        .cal-ev.closed{background:#0b1220;opacity:.85}
         .cal-ev.gap{background:repeating-linear-gradient(45deg,rgba(148,163,184,0.35) 0 3px,transparent 3px 6px);z-index:1}
         .cal-now{position:absolute;left:0;right:0;height:2px;background:var(--busy);z-index:3}
         .legend{display:flex;gap:12px;font-size:0.75rem;color:var(--muted);margin-top:6px}
@@ -115,6 +117,14 @@
                 <div class="filter-group">
                     <label for="roomSearch">🔍 Search Room</label>
                     <input type="search" id="roomSearch" placeholder="e.g., BH 3400, 3400 boelter, ms 5200">
+                </div>
+                <div class="filter-group">
+                    <label for="areaFilter">📍 Area</label>
+                    <select id="areaFilter">
+                        <option value="">Everywhere</option>
+                        <option value="classroom">Classrooms</option>
+                        <option value="hill">The Hill</option>
+                    </select>
                 </div>
                 <div class="filter-group">
                     <label for="sortBy">Sort</label>
@@ -191,7 +201,14 @@
         'WGYOUNG':'young wg wgyoung yh', 'PAB':'pab physics astronomy', 'FRANZ':'franz', 'GEOLOGY':'geology geo',
         'LAKRETZ':'la kretz lakretz', 'KAUFMAN':'kaufman', 'KNSY PV':'kinsey knsy pavilion', 'BROAD':'broad art',
         'FOWLER':'fowler', 'MOORE':'moore', 'PERLOFF':'perloff', 'SLICHTR':'slichter slichtr',
+        // the Hill
+        'COVEL':'covel commons hill', 'DE NEVE':'de neve deneve plaza hill', 'CARNESL':'carnesale commons hill',
+        'HEDRICK':'hedrick hill', 'RIEBER':'rieber hill', 'SPROUL':'sproul hill', 'HITCH':'hitch suites hill',
+        'OLYMPIC':'olympic hill', 'CNYN PT':'canyon point hill', 'GAYLEY HEIGHTS':'gayley heights hill',
+        'TIPUANA':'tipuana southwest sw apartments hill', 'LAUREL':'laurel southwest sw apartments hill',
+        'PALOS VERDE':'palos verde southwest sw apartments hill',
     };
+    const HILL_BUILDINGS = new Set(['COVEL','DE NEVE','CARNESL','HEDRICK','RIEBER','SPROUL','HITCH','OLYMPIC','CNYN PT']);
     const normRoom = s => String(s || '').toLowerCase().replace(/\s+/g, '').replace(/^([a-z]*)0+(?=\d)/, '$1');
     // Search terms in any order: each term must match the building (name or
     // abbreviation, by prefix) or the room number. "bh3400" splits into "bh" + "3400".
@@ -261,7 +278,27 @@
             const a = toMin(e.start_time), b = toMin(e.end_time);
             return a == null ? null : {date:e.date, s:a, e:b ?? a + 60, label:e.title, sub:e.org, url:e.url, org:true};
         }).filter(Boolean);
+        r._area = (r.reservable || HILL_BUILDINGS.has(r.building)) ? 'hill' : 'classroom';
+        if(r.reservable) r._ev = r._ev.concat(reservationBlocks(r.days || {}));
         return r;
+    }
+    // Hill study rooms: the reservation site lists open hourly slots. Anything
+    // inside open hours that isn't listed is reserved; outside is closed.
+    function reservationBlocks(days){
+        const out = [];
+        for(const [date, day] of Object.entries(days)){
+            if(!day.hours){ out.push({date, s:0, e:24*60, label:'Fully reserved or closed', res:true}); continue; }
+            const [open, close] = day.hours;
+            if(open > 0) out.push({date, s:0, e:open, label:'Closed', closed:true});
+            let cur = open;
+            for(const [a, b] of day.free){
+                if(a > cur) out.push({date, s:cur, e:a, label:'Reserved', res:true});
+                cur = Math.max(cur, b);
+            }
+            if(close > cur) out.push({date, s:cur, e:close, label:'Reserved', res:true});
+            if(close < 24*60) out.push({date, s:close, e:24*60, label:'Closed', closed:true});
+        }
+        return out;
     }
     // Bookings for `day`, plus filler blocks for gaps under MIN_GAP between
     // bookings: a 30 minute window between classes isn't a usable study slot.
@@ -366,7 +403,7 @@
     }
 
     function clearFilters(){
-        ['capacityFilter','maxCapacityFilter','roomSearch','startTime','endTime'].forEach(id => $(id).value = '');
+        ['capacityFilter','maxCapacityFilter','roomSearch','startTime','endTime','areaFilter'].forEach(id => $(id).value = '');
         $('sortBy').value = 'available';
         selectDay('');
         state.chars.clear(); state.buildings.clear();
@@ -383,7 +420,9 @@
         const s = $('startTime').value === '' ? null : +$('startTime').value;
         const e = $('endTime').value === '' ? null : +$('endTime').value;
         const timeOk = s != null && e != null && e > s;
+        const area = $('areaFilter').value;
         return state.rooms.filter(r => {
+            if(area && r._area !== area) return false;
             if(state.buildings.size && !state.buildings.has(r.building)) return false;
             if(minCap && (r.capacity || 0) < minCap) return false;
             if(maxCap !== Infinity && r.capacity && r.capacity > maxCap) return false;
@@ -413,12 +452,14 @@
         });
     }
 
-    function statusHtml(st){
+    function statusHtml(st, r){
         if(st.free){
             const until = st.until == null || st.until >= OPEN_END ? 'for the rest of the day' : `until ${fmtMin(st.until)}`;
             const next = st.next ? `<small>Next: ${esc(st.next.label)}${st.next.org ? ' (event)' : ''}</small>` : '';
-            return `<div class="status free">Free now ${until}${next}</div>`;
+            return `<div class="status free">${r.reservable ? 'Open to reserve' : 'Free now'} ${until}${next}</div>`;
         }
+        if(st.cur.closed) return `<div class="status busy">Closed until ${fmtMin(st.until)}</div>`;
+        if(st.cur.res) return `<div class="status busy">Reserved until ${fmtMin(st.until)}</div>`;
         if(st.cur.gap) return `<div class="status busy">Busy until ${fmtMin(st.until)}<small>Less than an hour between bookings</small></div>`;
         return `<div class="status busy">In use until ${fmtMin(st.until)}<small>${esc(st.cur.label)}${st.cur.org ? ' (event)' : ''}</small></div>`;
     }
@@ -436,14 +477,14 @@
         wrap.innerHTML = list.map(r => {
             const idx = state.rooms.indexOf(r);
             const pctDay = state.day || now.day;
-            const nUp = r._ev.filter(e => e.date >= today).length;
+            const nUp = r._ev.filter(e => e.org && e.date >= today).length;
             const img = r.image_url ? `<div class="room-image"><img src="${esc(r.image_url)}" alt="${esc(r.text)}" loading="lazy" decoding="async" onerror="this.parentElement.remove()"></div>` : '';
             const open = state.open.has(idx);
             return `<article class="room-card${open ? ' open' : ''}" data-idx="${idx}">
                 ${img}
                 <div class="room-head"><h3 class="room-title">${esc(r.text.replace(/\s+/g, ' '))}</h3><span class="pct" title="Share of 8am to 8pm that is open, not counting gaps under an hour">${freePct(r, pctDay)}% free ${pctDay.slice(0,3)}</span></div>
-                <div class="room-info"><span class="badge">${esc(r.building)}</span>${r.capacity ? `<span class="badge">Cap ${r.capacity}</span>` : ''}${r.type ? `<span class="badge">${esc(r.type)}</span>` : ''}${nUp ? `<span class="badge" style="color:var(--event)">${nUp} upcoming event${nUp > 1 ? 's' : ''}</span>` : ''}</div>
-                ${statusHtml(r._now)}
+                <div class="room-info"><span class="badge">${esc(r.building)}</span>${r.capacity ? `<span class="badge">Cap ${r.capacity}</span>` : ''}${r.type ? `<span class="badge">${esc(r.type)}</span>` : ''}${r._area === 'hill' ? `<span class="badge" style="color:var(--free)">The Hill</span>` : ''}${r.reservable ? `<span class="badge" title="${esc(r.description || '')}">Residents only</span>` : ''}${nUp ? `<span class="badge" style="color:var(--event)">${nUp} upcoming event${nUp > 1 ? 's' : ''}</span>` : ''}</div>
+                ${statusHtml(r._now, r)}
                 <div style="margin-top:8px"><button class="btn btn-details" type="button" data-toggle>Details ${open ? '▴' : '▾'}</button></div>
                 <div class="details">${open ? detailsHtml(r) : ''}</div>
             </article>`;
@@ -467,21 +508,22 @@
                 if(e <= s) return;
                 const tip = `${b.label}${b.sub ? ' · ' + b.sub : ''}\n${fmtMin(b.s)} to ${fmtMin(b.e)}`;
                 if(b.gap){ body += `<div class="cal-ev gap" style="top:${(s-CAL_START)/range*100}%;height:${(e-s)/range*100}%" title="Gap under an hour: not counted as free"></div>`; return; }
-                body += `<div class="cal-ev${b.org ? ' org' : ''}" style="top:${(s-CAL_START)/range*100}%;height:${(e-s)/range*100}%" title="${esc(tip)}">${esc(b.label)}</div>`;
+                if(b.closed){ body += `<div class="cal-ev closed" style="top:${(s-CAL_START)/range*100}%;height:${(e-s)/range*100}%" title="Closed"></div>`; return; }
+                body += `<div class="cal-ev${b.org ? ' org' : ''}${b.res ? ' res' : ''}" style="top:${(s-CAL_START)/range*100}%;height:${(e-s)/range*100}%" title="${esc(tip)}">${esc(b.label)}</div>`;
             });
             if(d === now.day && now.min > CAL_START && now.min < CAL_END) body += `<div class="cal-now" style="top:${(now.min-CAL_START)/range*100}%"></div>`;
             body += '</div>';
         });
         head += '</div>'; body += '</div>';
         const today = dateForDay(now.day);
-        const upcoming = r._ev.filter(e => e.date >= today);
+        const upcoming = r._ev.filter(e => e.org && e.date >= today);
         const events = upcoming.length ? `<ul class="event-list">${upcoming.map(e =>
             `<li><span class="when">${new Date(e.date + 'T12:00').toLocaleDateString('en-US', {weekday:'short', month:'numeric', day:'numeric'})} ${fmtMin(e.s)}</span>${e.url ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.label)}</a>` : esc(e.label)}${e.sub ? `<div class="org">${esc(e.sub)}</div>` : ''}</li>`).join('')}</ul>` : '';
         return `<div>${chars}</div>
             <div class="schedule-calendar">${head}${body}</div>
-            <div class="legend"><span><i style="background:var(--accent)"></i>Class (weekly)</span><span><i style="background:var(--event)"></i>Club / org event</span><span><i style="background:repeating-linear-gradient(45deg,rgba(148,163,184,0.6) 0 2px,transparent 2px 4px)"></i>Gap under 1 hr</span></div>
+            <div class="legend">${r.reservable ? `<span><i style="background:#a78bfa"></i>Reserved</span><span><i style="background:#0b1220"></i>Closed</span>` : `<span><i style="background:var(--accent)"></i>Class (weekly)</span><span><i style="background:var(--event)"></i>Club / org event</span>`}<span><i style="background:repeating-linear-gradient(45deg,rgba(148,163,184,0.6) 0 2px,transparent 2px 4px)"></i>Gap under 1 hr</span></div>
             ${events}
-            <div style="margin-top:12px;text-align:right"><a href="${esc(r.url || '#')}" target="_blank" rel="noopener">UCLA Schedule →</a></div>`;
+            <div style="margin-top:12px;text-align:right"><a href="${esc(r.url || '#')}" target="_blank" rel="noopener">${r.reservable ? 'Reserve (Residential Life) →' : 'UCLA Schedule →'}</a></div>`;
     }
 
     function toggleCard(card){
@@ -504,17 +546,31 @@
             const res = await fetch('classrooms.json', {cache:'no-cache'});
             if(!res.ok) throw new Error(res.status);
             const raw = await res.json();
-            state.rooms = raw.filter(r => r.offered).map(prepRoom);
+            const hasClasses = r => r.schedule && Object.values(r.schedule).some(d => d.length);
+            state.rooms = raw.filter(r => r.offered || (HILL_BUILDINGS.has(r.building) && hasClasses(r))).map(prepRoom);
         }catch(err){
             console.error(err);
             $('termInfo').textContent = 'Could not load classrooms.json. Serve this folder over HTTP.';
             $('results').innerHTML = '<div class="no-results"><h3>No data</h3></div>';
             return;
         }
+        const nClass = state.rooms.length;
+        state.hillUpdated = null;
+        try{
+            const res = await fetch('hill.json', {cache:'no-cache'});
+            if(res.ok){
+                const hill = await res.json();
+                state.hillUpdated = hill.updated;
+                state.rooms = state.rooms.concat(hill.rooms.map(r => prepRoom({...r, reservable:true})));
+            }
+        }catch(err){ console.warn('hill.json', err); }
         const term = termLabel(state.rooms[0] && state.rooms[0].url);
         if(term) document.title = `UCLA StudySpace · ${term}`;
-        const nEv = state.rooms.reduce((n, r) => n + r._ev.length, 0);
-        $('termInfo').textContent = `${term ? term + ' · ' : ''}${state.rooms.length} general assignment classrooms${nEv ? ` · ${nEv} club/org events` : ''} · times are campus time (PT)`;
+        const nHill = state.rooms.length - nClass;
+        const nEv = state.rooms.reduce((n, r) => n + r._ev.filter(e => e.org).length, 0);
+        const age = state.hillUpdated ? Math.round((Date.now() - new Date(state.hillUpdated)) / 60000) : null;
+        const hillNote = nHill ? ` · ${nHill} Hill study rooms (updated ${age == null ? '?' : age < 90 ? age + ' min ago' : Math.round(age / 60) + ' hr ago'})` : '';
+        $('termInfo').textContent = `${term ? term + ' · ' : ''}${nClass} classrooms${hillNote}${nEv ? ` · ${nEv} club/dept events` : ''} · campus time (PT)`;
         initFilters();
         render();
     }
@@ -528,7 +584,7 @@
 
         ['capacityFilter','maxCapacityFilter'].forEach(id => $(id).addEventListener('input', debounce(render, 150)));
         $('roomSearch').addEventListener('input', debounce(render, 150));
-        ['startTime','endTime','sortBy'].forEach(id => $(id).addEventListener('change', render));
+        ['startTime','endTime','sortBy','areaFilter'].forEach(id => $(id).addEventListener('change', render));
         $('dayFilter').addEventListener('click', e => {
             const b = e.target.closest('.day-btn'); if(!b) return;
             selectDay(state.day === b.dataset.day ? '' : b.dataset.day);

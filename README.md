@@ -7,6 +7,7 @@ Find empty UCLA classrooms to study in. The site shows every general assignment 
 - `index.html`: the whole frontend. It loads `classrooms.json` and does filtering, sorting and rendering in the browser.
 - `classrooms.json`: the data the site reads.
 - `scrape.py`: pulls class schedules and room characteristics from the UCLA Registrar.
+- `scrape_hill.py`: pulls Hill study room availability from Residential Life into `hill.json`.
 - `scrape_events.py`: pulls club / org / department events from [UCLA Community](https://community.ucla.edu/calendars) and attaches the ones held in our classrooms.
 - `generate_urls.py`: rebuilds the classroom list and registrar URLs from scratch. You only need this if the room list changes.
 - `add_images.py`, `download_images.py`: match room photos from UCLA DTS and cache them in `images/`.
@@ -23,6 +24,13 @@ Find empty UCLA classrooms to study in. The site shows every general assignment 
 It keeps events whose location names one of our rooms ("3400 Boelter Hall", "Math Sciences Building, Room 5200", "Kaufman Hall 101 & 136"). The site shows them in orange on the calendar and counts them when deciding whether a room is free. Anything booked without being posted to one of these calendars is still invisible, so a room shown as free can be taken.
 
 **Short gaps.** A gap under an hour between two bookings counts as busy. It shows as a hatched block on the calendar.
+
+**The Hill.** Two kinds of Hill rooms show up under Area → The Hill:
+
+- Registrar rooms in Hill buildings that have classes this term (Covel 210/218/225/319A, De Neve P350). `scrape.py` scrapes these along with the general assignment rooms. `--all` scrapes every registrar room.
+- Residential study rooms (Hedrick, The Study at Hedrick, Rieber, Sproul, Olympic, Southwest Apartments, Gayley Heights) from [Residential Life reservations](https://reserve.reslife.ucla.edu/reserve). That site publicly lists every open hourly slot for the next two weeks, so `scrape_hill.py` writes `hill.json` with each room's open hours and free slots. Anything inside open hours that isn't listed is reserved. Only on-campus residents can book these rooms. Covel and Carnesale study spaces are not on that site.
+
+Reservations change constantly, so the Pages workflow runs `scrape_hill.py` right before every deploy, every 30 minutes, instead of committing each change.
 
 ## Data contract
 

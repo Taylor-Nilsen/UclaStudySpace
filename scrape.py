@@ -4,19 +4,25 @@ Scrape UCLA classroom schedules into classrooms.json.
 The registrar's ClassroomDetail page embeds the whole term calendar as JSON in
 a <script> tag, so plain HTTP requests are enough. No browser needed.
 
+Scrapes the general assignment classrooms plus registrar rooms in Hill
+buildings (Covel, De Neve, Carnesale, ...). --all scrapes every registrar room.
+New rooms in the registrar list are added to classrooms.json automatically.
+
 Usage:
-    python scrape.py [--term 26F] [--limit N] [--workers 8]
+    python scrape.py [--term 26F] [--limit N] [--workers 8] [--all]
 
 If --term is omitted, the current/upcoming UCLA term is picked from today's date.
 """
 
 import argparse
+import html as htmllib
 import json
 import re
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date, datetime
+from urllib.parse import quote_plus
 
 import requests
 from bs4 import BeautifulSoup
@@ -27,6 +33,12 @@ DAY_CODES = {'M': 'Monday', 'T': 'Tuesday', 'W': 'Wednesday', 'R': 'Thursday',
 CALENDAR_RE = re.compile(r"createFullCalendar\(\$\.parseJSON\('(.*?)'\)\)", re.S)
 ENR_RE = re.compile(r'Enr:\s*(\d+)\s*of\s*(\d+)')
 TERM_RE = re.compile(r'term=\d{2}[WSUF]')
+# Residential buildings ("the Hill") whose registrar rooms we also show.
+HILL_BUILDINGS = {'COVEL', 'DE NEVE', 'CARNESL', 'HEDRICK', 'RIEBER', 'SPROUL', 'HITCH', 'OLYMPIC', 'CNYN PT'}
+HEADER_RE = re.compile(r'id="classroomHeader">(.*?)</h2>', re.S)
+GRID_SEARCH = 'https://sa.ucla.edu/RO/Public/SOC/Search/ClassroomGridSearch'
+DETAIL_URL = 'https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term={term}&classroom={value}'
+OPTION_RE = re.compile(r'&quot;text&quot;:&quot;([^&]*)&quot;,&quot;value&quot;:&quot;([^&]*\|[^&]*)&quot;')
 HEADERS = {'User-Agent': 'UclaStudySpace/2.0 (+https://github.com/Taylor-Nilsen/UclaStudySpace)'}
 
 
@@ -134,19 +146,69 @@ def fetch(session, url, retries=3):
             time.sleep(2 ** attempt)
 
 
+def parse_header(html):
+    """'Room Use ...: 84% | Capacity: 9 | Seminar Room' -> (9, 'Seminar Room')."""
+    m = HEADER_RE.search(html)
+    if not m:
+        return None, None
+    parts = [p.strip() for p in re.sub(r'<[^>]+>', '|', m.group(1)).split('|') if p.strip()]
+    capacity = kind = None
+    for part in parts:
+        cap = re.match(r'Capacity:\s*(\d+)', part)
+        if cap:
+            capacity = int(cap.group(1))
+        elif not part.startswith('Room Use'):
+            kind = part
+    return capacity, kind
+
+
 def scrape_room(session, room):
     html = fetch(session, room['url'])
     schedule, characteristics = parse_page(html)
     room['characteristics'] = characteristics
     room['schedule'] = schedule
     room['no_calendar'] = schedule is None
+    if not room.get('offered'):
+        # General assignment rooms keep the capacity/type from the DTS list.
+        capacity, kind = parse_header(html)
+        if capacity:
+            room['capacity'] = capacity
+        if kind:
+            room['type'] = kind.replace('General Assignment Classroom', 'Classroom')
     return room
+
+
+def sync_room_list(session, rooms, term):
+    """Add rooms that the registrar lists but classrooms.json doesn't have yet."""
+    try:
+        page = fetch(session, GRID_SEARCH)
+    except requests.RequestException as e:
+        print(f"Could not load registrar room list ({e}); using existing rooms")
+        return 0
+    known = {r['text'] for r in rooms}
+    added = 0
+    for text, value in OPTION_RE.findall(page):
+        text, value = htmllib.unescape(text), htmllib.unescape(value)
+        if text in known:
+            continue
+        building, _, room = value.partition('|')
+        rooms.append({
+            'text': text,
+            'building': building.strip(),
+            'room': room.strip(),
+            'offered': False,
+            'url': DETAIL_URL.format(term=term, value=quote_plus(value)),
+        })
+        known.add(text)
+        added += 1
+    return added
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--term', default=None, help='Term code like 26F (default: auto)')
-    ap.add_argument('--limit', type=int, default=0, help='Only scrape the first N offered rooms')
+    ap.add_argument('--limit', type=int, default=0, help='Only scrape the first N rooms')
+    ap.add_argument('--all', action='store_true', help='Scrape every registrar room, not just GA + Hill')
     ap.add_argument('--workers', type=int, default=8, help='Concurrent requests (default 8)')
     ap.add_argument('--file', default='classrooms.json')
     args = ap.parse_args()
@@ -158,21 +220,25 @@ def main():
     with open(args.file) as f:
         rooms = json.load(f)
 
-    for room in rooms:
-        if room.get('url'):
-            room['url'] = TERM_RE.sub(f'term={term}', room['url'])
-
-    todo = [r for r in rooms if r.get('offered')]
-    if args.limit > 0:
-        todo = todo[:args.limit]
-    print(f"Term {term} | {len(todo)} rooms | {args.workers} workers")
-
     stats = {'ok': 0, 'empty': 0, 'failed': 0}
     started = time.time()
     session = requests.Session()
     session.headers.update(HEADERS)
     adapter = requests.adapters.HTTPAdapter(pool_connections=args.workers, pool_maxsize=args.workers)
     session.mount('https://', adapter)
+
+    added = sync_room_list(session, rooms, term)
+    if added:
+        print(f"Added {added} new rooms from the registrar list")
+
+    for room in rooms:
+        if room.get('url'):
+            room['url'] = TERM_RE.sub(f'term={term}', room['url'])
+
+    todo = [r for r in rooms if r.get('url') and (args.all or r.get('offered') or r.get('building') in HILL_BUILDINGS)]
+    if args.limit > 0:
+        todo = todo[:args.limit]
+    print(f"Term {term} | {len(todo)} rooms | {args.workers} workers")
 
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
         futures = {pool.submit(scrape_room, session, room): room for room in todo}

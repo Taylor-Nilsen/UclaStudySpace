@@ -633,7 +633,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 81,
+     "enrolled": 82,
      "capacity": 120
     },
     {
@@ -691,7 +691,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 145,
+     "enrolled": 144,
      "capacity": 150
     },
     {
@@ -707,7 +707,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 139,
+     "enrolled": 138,
      "capacity": 140
     },
     {
@@ -725,7 +725,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 81,
+     "enrolled": 82,
      "capacity": 120
     },
     {
@@ -783,7 +783,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 145,
+     "enrolled": 144,
      "capacity": 150
     },
     {
@@ -799,7 +799,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 139,
+     "enrolled": 138,
      "capacity": 140
     },
     {
@@ -1567,7 +1567,7 @@
      "type": "LEC 1",
      "start_time": "06:00 PM",
      "end_time": "07:50 PM",
-     "enrolled": 48,
+     "enrolled": 47,
      "capacity": 60
     }
    ],
@@ -1667,7 +1667,7 @@
      "type": "LEC 1",
      "start_time": "06:00 PM",
      "end_time": "07:50 PM",
-     "enrolled": 48,
+     "enrolled": 47,
      "capacity": 60
     }
    ],
@@ -2102,7 +2102,7 @@
      "type": "DIS 4B",
      "start_time": "05:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 27,
+     "enrolled": 26,
      "capacity": 35
     },
     {
@@ -2218,7 +2218,7 @@
      "type": "DIS 4B",
      "start_time": "05:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 27,
+     "enrolled": 26,
      "capacity": 35
     }
    ],
@@ -2374,7 +2374,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 35,
+     "enrolled": 36,
      "capacity": 0
     }
    ],
@@ -2458,7 +2458,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 35,
+     "enrolled": 36,
      "capacity": 0
     }
    ],
@@ -3028,7 +3028,7 @@
      "type": "SEM 1",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 25,
+     "enrolled": 26,
      "capacity": 40
     },
     {
@@ -3134,7 +3134,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 16,
+     "enrolled": 17,
      "capacity": 30
     },
     {
@@ -3218,7 +3218,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 16,
+     "enrolled": 17,
      "capacity": 30
     },
     {
@@ -3931,7 +3931,7 @@
      "type": "DIS 1A",
      "start_time": "04:00 PM",
      "end_time": "04:50 PM",
-     "enrolled": 25,
+     "enrolled": 24,
      "capacity": 25
     },
     {
@@ -4031,7 +4031,7 @@
      "type": "DIS 1A",
      "start_time": "04:00 PM",
      "end_time": "04:50 PM",
-     "enrolled": 25,
+     "enrolled": 24,
      "capacity": 25
     },
     {
@@ -4178,7 +4178,7 @@
      "type": "DIS 1A",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 14,
+     "enrolled": 15,
      "capacity": 30
     },
     {
@@ -4302,7 +4302,7 @@
      "type": "DIS 1H",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 16,
+     "enrolled": 15,
      "capacity": 25
     },
     {
@@ -5449,7 +5449,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:15 AM",
-     "enrolled": 149,
+     "enrolled": 150,
      "capacity": 150
     },
     {
@@ -5489,7 +5489,7 @@
      "type": "LEC 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 295,
+     "enrolled": 294,
      "capacity": 320
     },
     {
@@ -5497,7 +5497,7 @@
      "type": "LEC 2",
      "start_time": "05:00 PM",
      "end_time": "06:15 PM",
-     "enrolled": 367,
+     "enrolled": 366,
      "capacity": 420
     }
    ],
@@ -5507,7 +5507,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 399,
+     "enrolled": 400,
      "capacity": 400
     },
     {
@@ -5523,7 +5523,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 360,
+     "enrolled": 361,
      "capacity": 360
     },
     {
@@ -5531,7 +5531,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 394,
+     "enrolled": 395,
      "capacity": 400
     }
    ],
@@ -5541,7 +5541,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:15 AM",
-     "enrolled": 149,
+     "enrolled": 150,
      "capacity": 150
     },
     {
@@ -5581,7 +5581,7 @@
      "type": "LEC 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 295,
+     "enrolled": 294,
      "capacity": 320
     },
     {
@@ -5589,7 +5589,7 @@
      "type": "LEC 2",
      "start_time": "05:00 PM",
      "end_time": "06:15 PM",
-     "enrolled": 367,
+     "enrolled": 366,
      "capacity": 420
     }
    ],
@@ -5599,7 +5599,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 399,
+     "enrolled": 400,
      "capacity": 400
     },
     {
@@ -5615,7 +5615,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 360,
+     "enrolled": 361,
      "capacity": 360
     },
     {
@@ -5623,7 +5623,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 394,
+     "enrolled": 395,
      "capacity": 400
     }
    ],
@@ -5649,7 +5649,7 @@
      "type": "DIS 1A",
      "start_time": "12:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 69,
+     "enrolled": 68,
      "capacity": 70
     }
    ],
@@ -5803,7 +5803,7 @@
      "type": "LEC 1",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 207,
+     "enrolled": 208,
      "capacity": 210
     },
     {
@@ -5927,7 +5927,7 @@
      "type": "LEC 1",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 207,
+     "enrolled": 208,
      "capacity": 210
     },
     {
@@ -6051,7 +6051,7 @@
      "type": "LEC 1",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 207,
+     "enrolled": 208,
      "capacity": 210
     },
     {
@@ -6164,7 +6164,7 @@
      "type": "LEC 3",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 21,
+     "enrolled": 20,
      "capacity": 33
     },
     {
@@ -6256,7 +6256,7 @@
      "type": "LEC 3",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 21,
+     "enrolled": 20,
      "capacity": 33
     },
     {
@@ -6797,7 +6797,7 @@
      "type": "DIS 1B",
      "start_time": "06:00 PM",
      "end_time": "06:50 PM",
-     "enrolled": 16,
+     "enrolled": 17,
      "capacity": 20
     },
     {
@@ -7159,7 +7159,7 @@
      "type": "DIS 1H",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 35,
+     "enrolled": 36,
      "capacity": 40
     }
    ],
@@ -8739,7 +8739,7 @@
      "type": "SEM 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 12,
+     "enrolled": 11,
      "capacity": 25
     },
     {
@@ -8807,7 +8807,7 @@
      "type": "SEM 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 12,
+     "enrolled": 11,
      "capacity": 25
     },
     {
@@ -8946,7 +8946,7 @@
      "type": "LEC 2",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 21,
+     "enrolled": 20,
      "capacity": 25
     },
     {
@@ -9038,7 +9038,7 @@
      "type": "LEC 2",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 21,
+     "enrolled": 20,
      "capacity": 25
     },
     {
@@ -9320,7 +9320,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 12,
+     "enrolled": 13,
      "capacity": 22
     },
     {
@@ -10173,7 +10173,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 5,
+     "enrolled": 7,
      "capacity": 40
     },
     {
@@ -10215,7 +10215,7 @@
      "type": "LEC 4",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 37,
+     "enrolled": 36,
      "capacity": 38
     },
     {
@@ -10257,7 +10257,7 @@
      "type": "DIS 2J",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 32,
+     "enrolled": 31,
      "capacity": 35
     },
     {
@@ -10281,7 +10281,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 5,
+     "enrolled": 7,
      "capacity": 40
     },
     {
@@ -10315,7 +10315,7 @@
      "type": "LEC 4",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 37,
+     "enrolled": 36,
      "capacity": 38
     },
     {
@@ -11056,7 +11056,7 @@
      "type": "DIS 1D",
      "start_time": "05:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 28,
+     "enrolled": 27,
      "capacity": 40
     }
    ],
@@ -11670,21 +11670,30 @@
   "building": "CARNESL",
   "room": "00212A",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=CARNESL+%7C++00212A+"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=CARNESL+%7C++00212A+",
+  "characteristics": [],
+  "schedule": null,
+  "no_calendar": true
  },
  {
   "text": "CARNESL  218",
   "building": "CARNESL",
   "room": "00218",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=CARNESL+%7C++00218++"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=CARNESL+%7C++00218++",
+  "characteristics": [],
+  "schedule": null,
+  "no_calendar": true
  },
  {
   "text": "CARNESL  SP206",
   "building": "CARNESL",
   "room": "SP00206",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=CARNESL+%7CSP00206++"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=CARNESL+%7CSP00206++",
+  "characteristics": [],
+  "schedule": null,
+  "no_calendar": true
  },
  {
   "text": "CLARK    B10",
@@ -11712,7 +11721,10 @@
   "building": "CNYN PT",
   "room": "F00401",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=CNYN+PT+%7C+F00401++"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=CNYN+PT+%7C+F00401++",
+  "characteristics": [],
+  "schedule": null,
+  "no_calendar": true
  },
  {
   "text": "COLLINS  A201",
@@ -11796,77 +11808,724 @@
   "building": "COVEL",
   "room": "00210",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=COVEL+++%7C++00210++"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=COVEL+++%7C++00210++",
+  "characteristics": [],
+  "schedule": {
+   "Monday": [
+    {
+     "course": "CLUSTER M72A",
+     "type": "DIS 1B",
+     "start_time": "12:00 PM",
+     "end_time": "01:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER M71A",
+     "type": "DIS 1A",
+     "start_time": "02:00 PM",
+     "end_time": "03:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER M71A",
+     "type": "DIS 1B",
+     "start_time": "04:00 PM",
+     "end_time": "05:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    }
+   ],
+   "Tuesday": [
+    {
+     "course": "CLUSTER 10A",
+     "type": "DIS 1D",
+     "start_time": "10:00 AM",
+     "end_time": "11:50 AM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 10A",
+     "type": "DIS 1E",
+     "start_time": "12:00 PM",
+     "end_time": "01:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER M1A",
+     "type": "DIS 1A",
+     "start_time": "02:00 PM",
+     "end_time": "03:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER M1A",
+     "type": "DIS 1B",
+     "start_time": "04:00 PM",
+     "end_time": "05:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    }
+   ],
+   "Wednesday": [
+    {
+     "course": "CLUSTER 20A",
+     "type": "DIS 1E",
+     "start_time": "10:00 AM",
+     "end_time": "11:50 AM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 20A",
+     "type": "DIS 1M",
+     "start_time": "02:00 PM",
+     "end_time": "03:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 20A",
+     "type": "DIS 1N",
+     "start_time": "04:00 PM",
+     "end_time": "05:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    }
+   ],
+   "Thursday": [
+    {
+     "course": "CLUSTER 60A",
+     "type": "DIS 1A",
+     "start_time": "10:00 AM",
+     "end_time": "11:50 AM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 60A",
+     "type": "DIS 1B",
+     "start_time": "12:00 PM",
+     "end_time": "01:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 10A",
+     "type": "DIS 1C",
+     "start_time": "02:00 PM",
+     "end_time": "03:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER M27A",
+     "type": "DIS 1A",
+     "start_time": "04:00 PM",
+     "end_time": "05:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER M27A",
+     "type": "DIS 1B",
+     "start_time": "06:00 PM",
+     "end_time": "07:50 PM",
+     "enrolled": 8,
+     "capacity": 23
+    }
+   ],
+   "Friday": [
+    {
+     "course": "CLUSTER 73A",
+     "type": "DIS 1A",
+     "start_time": "10:00 AM",
+     "end_time": "11:50 AM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 73A",
+     "type": "DIS 1B",
+     "start_time": "12:00 PM",
+     "end_time": "01:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 73A",
+     "type": "DIS 1C",
+     "start_time": "02:00 PM",
+     "end_time": "03:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 73A",
+     "type": "DIS 1D",
+     "start_time": "04:00 PM",
+     "end_time": "05:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    }
+   ],
+   "Saturday": [],
+   "Sunday": []
+  },
+  "no_calendar": false,
+  "capacity": 9
  },
  {
   "text": "COVEL    218",
   "building": "COVEL",
   "room": "00218",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=COVEL+++%7C++00218++"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=COVEL+++%7C++00218++",
+  "characteristics": [],
+  "schedule": {
+   "Monday": [
+    {
+     "course": "CLUSTER M72A",
+     "type": "DIS 1C",
+     "start_time": "10:00 AM",
+     "end_time": "11:50 AM",
+     "enrolled": 22,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER M72A",
+     "type": "DIS 1D",
+     "start_time": "12:00 PM",
+     "end_time": "01:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 55A",
+     "type": "DIS 1A",
+     "start_time": "02:00 PM",
+     "end_time": "03:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 55A",
+     "type": "DIS 1B",
+     "start_time": "04:00 PM",
+     "end_time": "05:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    }
+   ],
+   "Tuesday": [
+    {
+     "course": "CLUSTER 20A",
+     "type": "DIS 1A",
+     "start_time": "02:00 PM",
+     "end_time": "03:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 20A",
+     "type": "DIS 1B",
+     "start_time": "04:00 PM",
+     "end_time": "05:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    }
+   ],
+   "Wednesday": [
+    {
+     "course": "CLUSTER 80A",
+     "type": "DIS 1E",
+     "start_time": "10:00 AM",
+     "end_time": "11:50 AM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 80A",
+     "type": "DIS 1F",
+     "start_time": "12:00 PM",
+     "end_time": "01:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 20A",
+     "type": "DIS 1G",
+     "start_time": "02:00 PM",
+     "end_time": "03:50 PM",
+     "enrolled": 22,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 20A",
+     "type": "DIS 1H",
+     "start_time": "04:00 PM",
+     "end_time": "05:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    }
+   ],
+   "Thursday": [
+    {
+     "course": "CLUSTER 80A",
+     "type": "DIS 1C",
+     "start_time": "10:00 AM",
+     "end_time": "11:50 AM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 80A",
+     "type": "DIS 1D",
+     "start_time": "12:00 PM",
+     "end_time": "01:50 PM",
+     "enrolled": 22,
+     "capacity": 23
+    }
+   ],
+   "Friday": [
+    {
+     "course": "CLUSTER 80A",
+     "type": "DIS 1A",
+     "start_time": "12:00 PM",
+     "end_time": "01:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 80A",
+     "type": "DIS 1B",
+     "start_time": "02:00 PM",
+     "end_time": "03:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    }
+   ],
+   "Saturday": [],
+   "Sunday": []
+  },
+  "no_calendar": false,
+  "capacity": 9
  },
  {
   "text": "COVEL    225",
   "building": "COVEL",
   "room": "00225",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=COVEL+++%7C++00225++"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=COVEL+++%7C++00225++",
+  "characteristics": [],
+  "schedule": {
+   "Monday": [],
+   "Tuesday": [
+    {
+     "course": "CLUSTER M71A",
+     "type": "DIS 1C",
+     "start_time": "10:00 AM",
+     "end_time": "11:50 AM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER M71A",
+     "type": "DIS 1D",
+     "start_time": "12:00 PM",
+     "end_time": "01:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 20A",
+     "type": "DIS 1C",
+     "start_time": "02:00 PM",
+     "end_time": "03:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 20A",
+     "type": "DIS 1D",
+     "start_time": "04:00 PM",
+     "end_time": "05:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 20A",
+     "type": "DIS 1F",
+     "start_time": "06:00 PM",
+     "end_time": "07:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    }
+   ],
+   "Wednesday": [
+    {
+     "course": "CLUSTER 20A",
+     "type": "DIS 1I",
+     "start_time": "10:00 AM",
+     "end_time": "11:50 AM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 20A",
+     "type": "DIS 1J",
+     "start_time": "12:00 PM",
+     "end_time": "01:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER M71A",
+     "type": "DIS 1J",
+     "start_time": "02:00 PM",
+     "end_time": "03:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER M71A",
+     "type": "DIS 1K",
+     "start_time": "04:00 PM",
+     "end_time": "05:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 2A",
+     "type": "DIS 1D",
+     "start_time": "06:00 PM",
+     "end_time": "07:50 PM",
+     "enrolled": 22,
+     "capacity": 23
+    }
+   ],
+   "Thursday": [
+    {
+     "course": "CLUSTER 60A",
+     "type": "DIS 1C",
+     "start_time": "10:00 AM",
+     "end_time": "11:50 AM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 60A",
+     "type": "DIS 1D",
+     "start_time": "12:00 PM",
+     "end_time": "01:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 60A",
+     "type": "DIS 1E",
+     "start_time": "02:00 PM",
+     "end_time": "03:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 60A",
+     "type": "DIS 1F",
+     "start_time": "04:00 PM",
+     "end_time": "05:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 2A",
+     "type": "DIS 1K",
+     "start_time": "06:00 PM",
+     "end_time": "07:50 PM",
+     "enrolled": 5,
+     "capacity": 23
+    }
+   ],
+   "Friday": [
+    {
+     "course": "CLUSTER 2A",
+     "type": "DIS 1A",
+     "start_time": "02:00 PM",
+     "end_time": "03:50 PM",
+     "enrolled": 23,
+     "capacity": 23
+    },
+    {
+     "course": "CLUSTER 2A",
+     "type": "DIS 1B",
+     "start_time": "04:00 PM",
+     "end_time": "05:50 PM",
+     "enrolled": 19,
+     "capacity": 23
+    }
+   ],
+   "Saturday": [],
+   "Sunday": []
+  },
+  "no_calendar": false,
+  "capacity": 25
  },
  {
   "text": "COVEL    229",
   "building": "COVEL",
   "room": "00229",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=COVEL+++%7C++00229++"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=COVEL+++%7C++00229++",
+  "characteristics": [],
+  "schedule": null,
+  "no_calendar": true
  },
  {
   "text": "DE NEVE  P115",
   "building": "DE NEVE",
   "room": "P00115",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=DE+NEVE+%7C+P00115++"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=DE+NEVE+%7C+P00115++",
+  "characteristics": [],
+  "schedule": null,
+  "no_calendar": true
  },
  {
   "text": "DE NEVE  P154",
   "building": "DE NEVE",
   "room": "P00154",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=DE+NEVE+%7C+P00154++"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=DE+NEVE+%7C+P00154++",
+  "characteristics": [],
+  "schedule": null,
+  "no_calendar": true
  },
  {
   "text": "DE NEVE  P215K",
   "building": "DE NEVE",
   "room": "P00215K",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=DE+NEVE+%7C+P00215K+"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=DE+NEVE+%7C+P00215K+",
+  "characteristics": [],
+  "schedule": null,
+  "no_calendar": true
  },
  {
   "text": "DE NEVE  P345",
   "building": "DE NEVE",
   "room": "P00345",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=DE+NEVE+%7C+P00345++"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=DE+NEVE+%7C+P00345++",
+  "characteristics": [],
+  "schedule": null,
+  "no_calendar": true
  },
  {
   "text": "DE NEVE  P349",
   "building": "DE NEVE",
   "room": "P00349",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=DE+NEVE+%7C+P00349++"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=DE+NEVE+%7C+P00349++",
+  "characteristics": [],
+  "schedule": null,
+  "no_calendar": true
  },
  {
   "text": "DE NEVE  P350",
   "building": "DE NEVE",
   "room": "P00350",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=DE+NEVE+%7C+P00350++"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=DE+NEVE+%7C+P00350++",
+  "characteristics": [],
+  "schedule": {
+   "Monday": [
+    {
+     "course": "CLUSTER 10A",
+     "type": "LEC 1",
+     "start_time": "11:00 AM",
+     "end_time": "12:15 PM",
+     "enrolled": 219,
+     "capacity": 219
+    },
+    {
+     "course": "CLUSTER M71A",
+     "type": "LEC 1",
+     "start_time": "12:30 PM",
+     "end_time": "01:45 PM",
+     "enrolled": 263,
+     "capacity": 263
+    },
+    {
+     "course": "CLUSTER 2A",
+     "type": "LEC 1",
+     "start_time": "02:00 PM",
+     "end_time": "03:15 PM",
+     "enrolled": 189,
+     "capacity": 267
+    },
+    {
+     "course": "CLUSTER 60A",
+     "type": "LEC 1",
+     "start_time": "03:30 PM",
+     "end_time": "04:45 PM",
+     "enrolled": 288,
+     "capacity": 288
+    }
+   ],
+   "Tuesday": [
+    {
+     "course": "CLUSTER M1A",
+     "type": "LEC 1",
+     "start_time": "09:00 AM",
+     "end_time": "10:15 AM",
+     "enrolled": 221,
+     "capacity": 221
+    },
+    {
+     "course": "CLUSTER 70A",
+     "type": "LEC 1",
+     "start_time": "11:00 AM",
+     "end_time": "12:15 PM",
+     "enrolled": 274,
+     "capacity": 275
+    },
+    {
+     "course": "CLUSTER 20A",
+     "type": "LEC 1",
+     "start_time": "12:30 PM",
+     "end_time": "01:45 PM",
+     "enrolled": 326,
+     "capacity": 326
+    },
+    {
+     "course": "CLUSTER M72A",
+     "type": "LEC 1",
+     "start_time": "02:00 PM",
+     "end_time": "03:15 PM",
+     "enrolled": 194,
+     "capacity": 194
+    },
+    {
+     "course": "CLUSTER 80A",
+     "type": "LEC 1",
+     "start_time": "03:30 PM",
+     "end_time": "04:45 PM",
+     "enrolled": 137,
+     "capacity": 138
+    },
+    {
+     "course": "CLUSTER 73A",
+     "type": "LEC 1",
+     "start_time": "05:00 PM",
+     "end_time": "06:15 PM",
+     "enrolled": 266,
+     "capacity": 267
+    }
+   ],
+   "Wednesday": [
+    {
+     "course": "CLUSTER 10A",
+     "type": "LEC 1",
+     "start_time": "11:00 AM",
+     "end_time": "12:15 PM",
+     "enrolled": 219,
+     "capacity": 219
+    },
+    {
+     "course": "CLUSTER M71A",
+     "type": "LEC 1",
+     "start_time": "12:30 PM",
+     "end_time": "01:45 PM",
+     "enrolled": 263,
+     "capacity": 263
+    },
+    {
+     "course": "CLUSTER 2A",
+     "type": "LEC 1",
+     "start_time": "02:00 PM",
+     "end_time": "03:15 PM",
+     "enrolled": 189,
+     "capacity": 267
+    },
+    {
+     "course": "CLUSTER 60A",
+     "type": "LEC 1",
+     "start_time": "03:30 PM",
+     "end_time": "04:45 PM",
+     "enrolled": 288,
+     "capacity": 288
+    }
+   ],
+   "Thursday": [
+    {
+     "course": "CLUSTER M1A",
+     "type": "LEC 1",
+     "start_time": "09:00 AM",
+     "end_time": "10:15 AM",
+     "enrolled": 221,
+     "capacity": 221
+    },
+    {
+     "course": "CLUSTER 70A",
+     "type": "LEC 1",
+     "start_time": "11:00 AM",
+     "end_time": "12:15 PM",
+     "enrolled": 274,
+     "capacity": 275
+    },
+    {
+     "course": "CLUSTER 20A",
+     "type": "LEC 1",
+     "start_time": "12:30 PM",
+     "end_time": "01:45 PM",
+     "enrolled": 326,
+     "capacity": 326
+    },
+    {
+     "course": "CLUSTER M72A",
+     "type": "LEC 1",
+     "start_time": "02:00 PM",
+     "end_time": "03:15 PM",
+     "enrolled": 194,
+     "capacity": 194
+    },
+    {
+     "course": "CLUSTER 80A",
+     "type": "LEC 1",
+     "start_time": "03:30 PM",
+     "end_time": "04:45 PM",
+     "enrolled": 137,
+     "capacity": 138
+    },
+    {
+     "course": "CLUSTER 73A",
+     "type": "LEC 1",
+     "start_time": "05:00 PM",
+     "end_time": "06:15 PM",
+     "enrolled": 266,
+     "capacity": 267
+    }
+   ],
+   "Friday": [],
+   "Saturday": [],
+   "Sunday": []
+  },
+  "no_calendar": false,
+  "capacity": 477
  },
  {
   "text": "DE NEVE  P353B",
   "building": "DE NEVE",
   "room": "P00353B",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=DE+NEVE+%7C+P00353B+"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=DE+NEVE+%7C+P00353B+",
+  "characteristics": [],
+  "schedule": null,
+  "no_calendar": true
  },
  {
   "text": "DENT     13041",
@@ -12276,7 +12935,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 61,
+     "enrolled": 60,
      "capacity": 120
     },
     {
@@ -12384,7 +13043,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 61,
+     "enrolled": 60,
      "capacity": 120
     },
     {
@@ -12543,7 +13202,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 33,
+     "enrolled": 34,
      "capacity": 60
     },
     {
@@ -12635,7 +13294,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 33,
+     "enrolled": 34,
      "capacity": 60
     },
     {
@@ -13301,7 +13960,7 @@
      "type": "SEM 1",
      "start_time": "06:00 PM",
      "end_time": "07:50 PM",
-     "enrolled": 72,
+     "enrolled": 71,
      "capacity": 90
     }
    ],
@@ -13385,7 +14044,7 @@
      "type": "SEM 1",
      "start_time": "06:00 PM",
      "end_time": "07:50 PM",
-     "enrolled": 72,
+     "enrolled": 71,
      "capacity": 90
     }
    ],
@@ -14251,7 +14910,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 48,
+     "enrolled": 47,
      "capacity": 50
     },
     {
@@ -14267,7 +14926,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 24,
+     "enrolled": 25,
      "capacity": 65
     }
    ],
@@ -14277,7 +14936,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 75,
+     "enrolled": 74,
      "capacity": 96
     },
     {
@@ -14301,7 +14960,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 79,
+     "enrolled": 80,
      "capacity": 80
     },
     {
@@ -14351,7 +15010,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 48,
+     "enrolled": 47,
      "capacity": 50
     },
     {
@@ -14367,7 +15026,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 24,
+     "enrolled": 25,
      "capacity": 65
     }
    ],
@@ -14377,7 +15036,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 75,
+     "enrolled": 74,
      "capacity": 96
     },
     {
@@ -14401,7 +15060,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 79,
+     "enrolled": 80,
      "capacity": 80
     },
     {
@@ -15334,7 +15993,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 305,
+     "enrolled": 306,
      "capacity": 306
     },
     {
@@ -15434,7 +16093,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 305,
+     "enrolled": 306,
      "capacity": 306
     },
     {
@@ -15590,7 +16249,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 80,
+     "enrolled": 79,
      "capacity": 80
     },
     {
@@ -15616,7 +16275,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:15 AM",
-     "enrolled": 50,
+     "enrolled": 49,
      "capacity": 60
     },
     {
@@ -15706,7 +16365,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 80,
+     "enrolled": 79,
      "capacity": 80
     },
     {
@@ -15732,7 +16391,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:15 AM",
-     "enrolled": 50,
+     "enrolled": 49,
      "capacity": 60
     },
     {
@@ -16183,7 +16842,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 130,
+     "enrolled": 131,
      "capacity": 132
     },
     {
@@ -16267,7 +16926,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 130,
+     "enrolled": 131,
      "capacity": 132
     },
     {
@@ -16351,7 +17010,7 @@
      "type": "DIS 1A",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 86,
+     "enrolled": 87,
      "capacity": 92
     },
     {
@@ -16807,7 +17466,7 @@
      "type": "LEC 2",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 19,
+     "enrolled": 18,
      "capacity": 25
     },
     {
@@ -16849,7 +17508,7 @@
      "type": "DIS 1A",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 29,
+     "enrolled": 28,
      "capacity": 30
     },
     {
@@ -16857,7 +17516,7 @@
      "type": "DIS 1B",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 30,
+     "enrolled": 29,
      "capacity": 30
     },
     {
@@ -16891,7 +17550,7 @@
      "type": "LEC 2",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 19,
+     "enrolled": 18,
      "capacity": 25
     },
     {
@@ -18164,7 +18823,7 @@
      "type": "DIS 1E",
      "start_time": "04:00 PM",
      "end_time": "04:50 PM",
-     "enrolled": 57,
+     "enrolled": 58,
      "capacity": 58
     },
     {
@@ -19278,7 +19937,7 @@
      "type": "SEM 2",
      "start_time": "10:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 8,
+     "enrolled": 9,
      "capacity": 20
     },
     {
@@ -19351,7 +20010,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 67,
+     "enrolled": 68,
      "capacity": 120
     },
     {
@@ -19409,7 +20068,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 59,
+     "enrolled": 60,
      "capacity": 60
     },
     {
@@ -19451,7 +20110,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 67,
+     "enrolled": 68,
      "capacity": 120
     },
     {
@@ -19509,7 +20168,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 59,
+     "enrolled": 60,
      "capacity": 60
     },
     {
@@ -19535,7 +20194,7 @@
      "type": "LAB 1A",
      "start_time": "10:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 45,
+     "enrolled": 46,
      "capacity": 60
     },
     {
@@ -20143,7 +20802,7 @@
      "type": "LEC 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 118,
+     "enrolled": 119,
      "capacity": 120
     },
     {
@@ -20169,7 +20828,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 119,
+     "enrolled": 120,
      "capacity": 120
     },
     {
@@ -20185,7 +20844,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 127,
+     "enrolled": 128,
      "capacity": 130
     },
     {
@@ -20235,7 +20894,7 @@
      "type": "LEC 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 118,
+     "enrolled": 119,
      "capacity": 120
     },
     {
@@ -20261,7 +20920,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 119,
+     "enrolled": 120,
      "capacity": 120
     },
     {
@@ -20277,7 +20936,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 127,
+     "enrolled": 128,
      "capacity": 130
     },
     {
@@ -20303,7 +20962,7 @@
      "type": "DIS 2A",
      "start_time": "10:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 55,
+     "enrolled": 56,
      "capacity": 60
     },
     {
@@ -20867,7 +21526,7 @@
      "type": "LEC 4",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 15,
+     "enrolled": 16,
      "capacity": 25
     },
     {
@@ -20967,7 +21626,7 @@
      "type": "LEC 4",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 15,
+     "enrolled": 16,
      "capacity": 25
     },
     {
@@ -21062,7 +21721,7 @@
      "type": "LEC 3",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 25,
+     "enrolled": 24,
      "capacity": 25
     },
     {
@@ -21170,7 +21829,7 @@
      "type": "LEC 3",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 25,
+     "enrolled": 24,
      "capacity": 25
     },
     {
@@ -21302,7 +21961,7 @@
      "type": "LEC 3",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 25,
+     "enrolled": 24,
      "capacity": 25
     },
     {
@@ -21404,7 +22063,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:15 AM",
-     "enrolled": 57,
+     "enrolled": 56,
      "capacity": 60
     },
     {
@@ -21428,7 +22087,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 62,
+     "enrolled": 63,
      "capacity": 66
     },
     {
@@ -21512,7 +22171,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:15 AM",
-     "enrolled": 57,
+     "enrolled": 56,
      "capacity": 60
     },
     {
@@ -21536,7 +22195,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 62,
+     "enrolled": 63,
      "capacity": 66
     },
     {
@@ -21626,7 +22285,7 @@
      "type": "DIS 1E",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 35,
+     "enrolled": 36,
      "capacity": 60
     }
    ],
@@ -21712,7 +22371,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 13,
+     "enrolled": 12,
      "capacity": 22
     },
     {
@@ -21804,7 +22463,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 13,
+     "enrolled": 12,
      "capacity": 22
     },
     {
@@ -21988,7 +22647,7 @@
      "type": "DIS 1A",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 24,
+     "enrolled": 23,
      "capacity": 25
     },
     {
@@ -22098,7 +22757,7 @@
      "type": "DIS 1B",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 12,
+     "enrolled": 11,
      "capacity": 16
     },
     {
@@ -23023,14 +23682,20 @@
   "building": "HEDRICK",
   "room": "00115",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=HEDRICK+%7C++00115++"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=HEDRICK+%7C++00115++",
+  "characteristics": [],
+  "schedule": null,
+  "no_calendar": true
  },
  {
   "text": "HEDRICK  134",
   "building": "HEDRICK",
   "room": "00134",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=HEDRICK+%7C++00134++"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=HEDRICK+%7C++00134++",
+  "characteristics": [],
+  "schedule": null,
+  "no_calendar": true
  },
  {
   "text": "HERSHEY  148",
@@ -23072,14 +23737,20 @@
   "building": "HITCH",
   "room": "00100",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=HITCH+++%7C++00100++"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=HITCH+++%7C++00100++",
+  "characteristics": [],
+  "schedule": null,
+  "no_calendar": true
  },
  {
   "text": "HITCH    A11",
   "building": "HITCH",
   "room": "A00011",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=HITCH+++%7C+A00011++"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=HITCH+++%7C+A00011++",
+  "characteristics": [],
+  "schedule": null,
+  "no_calendar": true
  },
  {
   "text": "HLTHSCI  12077D",
@@ -23661,7 +24332,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 73,
+     "enrolled": 74,
      "capacity": 100
     },
     {
@@ -23753,7 +24424,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 73,
+     "enrolled": 74,
      "capacity": 100
     },
     {
@@ -24142,7 +24813,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 12,
+     "enrolled": 13,
      "capacity": 30
     },
     {
@@ -24174,7 +24845,7 @@
      "type": "LEC 3",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 21,
+     "enrolled": 20,
      "capacity": 30
     }
    ],
@@ -24218,7 +24889,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 12,
+     "enrolled": 13,
      "capacity": 30
     },
     {
@@ -24226,7 +24897,7 @@
      "type": "DIS 1C",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 12,
+     "enrolled": 11,
      "capacity": 30
     },
     {
@@ -24250,7 +24921,7 @@
      "type": "LEC 3",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 21,
+     "enrolled": 20,
      "capacity": 30
     },
     {
@@ -24284,7 +24955,7 @@
      "type": "DIS 1D",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 12,
+     "enrolled": 13,
      "capacity": 19
     },
     {
@@ -25176,7 +25847,7 @@
      "type": "LEC 2",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 7,
+     "enrolled": 8,
      "capacity": 22
     },
     {
@@ -25244,7 +25915,7 @@
      "type": "LEC 2",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 7,
+     "enrolled": 8,
      "capacity": 22
     },
     {
@@ -25386,7 +26057,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 204,
+     "enrolled": 203,
      "capacity": 240
     },
     {
@@ -25494,7 +26165,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 204,
+     "enrolled": 203,
      "capacity": 240
     },
     {
@@ -26056,7 +26727,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 99,
+     "enrolled": 100,
      "capacity": 100
     },
     {
@@ -26172,7 +26843,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 99,
+     "enrolled": 100,
      "capacity": 100
     },
     {
@@ -26768,7 +27439,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 23,
+     "enrolled": 24,
      "capacity": 25
     },
     {
@@ -26860,7 +27531,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 23,
+     "enrolled": 24,
      "capacity": 25
     },
     {
@@ -28703,7 +29374,7 @@
      "type": "SEM 2",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 10,
+     "enrolled": 11,
      "capacity": 20
     }
    ],
@@ -30279,7 +30950,7 @@
      "type": "LEC 2",
      "start_time": "08:00 AM",
      "end_time": "08:50 AM",
-     "enrolled": 142,
+     "enrolled": 141,
      "capacity": 140
     },
     {
@@ -30287,7 +30958,7 @@
      "type": "LEC 1",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 323,
+     "enrolled": 325,
      "capacity": 395
     },
     {
@@ -30379,7 +31050,7 @@
      "type": "LEC 2",
      "start_time": "08:00 AM",
      "end_time": "08:50 AM",
-     "enrolled": 142,
+     "enrolled": 141,
      "capacity": 140
     },
     {
@@ -30387,7 +31058,7 @@
      "type": "LEC 1",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 323,
+     "enrolled": 325,
      "capacity": 395
     },
     {
@@ -30479,7 +31150,7 @@
      "type": "LEC 2",
      "start_time": "08:00 AM",
      "end_time": "08:50 AM",
-     "enrolled": 142,
+     "enrolled": 141,
      "capacity": 140
     },
     {
@@ -30487,7 +31158,7 @@
      "type": "LEC 1",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 323,
+     "enrolled": 325,
      "capacity": 395
     },
     {
@@ -30574,7 +31245,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 12,
+     "enrolled": 13,
      "capacity": 22
     },
     {
@@ -30626,7 +31297,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 12,
+     "enrolled": 13,
      "capacity": 22
     },
     {
@@ -33170,7 +33841,7 @@
      "type": "DIS 3E",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 34,
+     "enrolled": 35,
      "capacity": 35
     },
     {
@@ -33463,7 +34134,7 @@
      "type": "DIS 5A",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 35,
+     "enrolled": 34,
      "capacity": 35
     },
     {
@@ -33471,7 +34142,7 @@
      "type": "DIS 5B",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 34,
+     "enrolled": 35,
      "capacity": 35
     },
     {
@@ -33513,7 +34184,7 @@
      "type": "DIS 5C",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 33,
+     "enrolled": 32,
      "capacity": 35
     },
     {
@@ -33595,7 +34266,7 @@
      "type": "DIS 5A",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 35,
+     "enrolled": 34,
      "capacity": 35
     },
     {
@@ -33603,7 +34274,7 @@
      "type": "DIS 5B",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 34,
+     "enrolled": 35,
      "capacity": 35
     },
     {
@@ -33645,7 +34316,7 @@
      "type": "DIS 5C",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 33,
+     "enrolled": 32,
      "capacity": 35
     },
     {
@@ -33880,7 +34551,7 @@
      "type": "DIS 4D",
      "start_time": "05:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 25,
+     "enrolled": 24,
      "capacity": 35
     }
    ],
@@ -33988,7 +34659,7 @@
      "type": "DIS 4D",
      "start_time": "05:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 25,
+     "enrolled": 24,
      "capacity": 35
     }
    ],
@@ -34143,7 +34814,7 @@
      "type": "DIS 3B",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 39,
+     "enrolled": 40,
      "capacity": 40
     },
     {
@@ -34259,7 +34930,7 @@
      "type": "DIS 3B",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 39,
+     "enrolled": 40,
      "capacity": 40
     },
     {
@@ -34453,7 +35124,7 @@
      "type": "DIS 3A",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 34,
+     "enrolled": 35,
      "capacity": 35
     },
     {
@@ -34461,7 +35132,7 @@
      "type": "DIS 3B",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 35,
+     "enrolled": 34,
      "capacity": 35
     },
     {
@@ -34585,7 +35256,7 @@
      "type": "DIS 3A",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 34,
+     "enrolled": 35,
      "capacity": 35
     },
     {
@@ -34593,7 +35264,7 @@
      "type": "DIS 3B",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 35,
+     "enrolled": 34,
      "capacity": 35
     },
     {
@@ -35897,7 +36568,7 @@
      "start_time": "10:00 AM",
      "end_time": "11:50 AM",
      "enrolled": 18,
-     "capacity": 5
+     "capacity": 14
     },
     {
      "course": "ENGR 182EW",
@@ -35965,7 +36636,7 @@
      "start_time": "10:00 AM",
      "end_time": "11:50 AM",
      "enrolled": 18,
-     "capacity": 5
+     "capacity": 14
     },
     {
      "course": "CHEM 153A",
@@ -36182,7 +36853,7 @@
      "type": "SEM 1",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 14,
+     "enrolled": 13,
      "capacity": 20
     },
     {
@@ -37332,14 +38003,20 @@
   "building": "OLYMPIC",
   "room": "00470",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=OLYMPIC+%7C++00470++"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=OLYMPIC+%7C++00470++",
+  "characteristics": [],
+  "schedule": null,
+  "no_calendar": true
  },
  {
   "text": "OLYMPIC  475",
   "building": "OLYMPIC",
   "room": "00475",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=OLYMPIC+%7C++00475++"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=OLYMPIC+%7C++00475++",
+  "characteristics": [],
+  "schedule": null,
+  "no_calendar": true
  },
  {
   "text": "ONLINE   0AS",
@@ -38490,7 +39167,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 26,
+     "enrolled": 25,
      "capacity": 45
     },
     {
@@ -38614,7 +39291,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 26,
+     "enrolled": 25,
      "capacity": 45
     },
     {
@@ -38754,7 +39431,7 @@
      "type": "DIS 1A",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 26,
+     "enrolled": 25,
      "capacity": 45
     },
     {
@@ -38997,7 +39674,7 @@
      "type": "DIS 1D",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 34,
+     "enrolled": 35,
      "capacity": 35
     },
     {
@@ -40140,7 +40817,7 @@
      "type": "LEC 2",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 86,
+     "enrolled": 87,
      "capacity": 90
     },
     {
@@ -40174,7 +40851,7 @@
      "type": "LEC 5",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 33,
+     "enrolled": 34,
      "capacity": 60
     },
     {
@@ -40232,7 +40909,7 @@
      "type": "LEC 2",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 86,
+     "enrolled": 87,
      "capacity": 90
     },
     {
@@ -40266,7 +40943,7 @@
      "type": "LEC 5",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 33,
+     "enrolled": 34,
      "capacity": 60
     },
     {
@@ -40634,7 +41311,7 @@
      "type": "LEC 4",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 27,
+     "enrolled": 26,
      "capacity": 32
     },
     {
@@ -40726,7 +41403,7 @@
      "type": "DIS 1A",
      "start_time": "08:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 33,
+     "enrolled": 32,
      "capacity": 35
     },
     {
@@ -40742,7 +41419,7 @@
      "type": "LEC 4",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 27,
+     "enrolled": 26,
      "capacity": 32
     },
     {
@@ -42013,7 +42690,7 @@
      "type": "LEC 2",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 17,
+     "enrolled": 16,
      "capacity": 30
     },
     {
@@ -42105,7 +42782,7 @@
      "type": "LEC 2",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 17,
+     "enrolled": 16,
      "capacity": 30
     },
     {
@@ -42557,7 +43234,7 @@
      "type": "DIS 1A",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 19,
+     "enrolled": 20,
      "capacity": 27
     },
     {
@@ -42589,7 +43266,7 @@
      "type": "DIS 1E",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 40,
+     "enrolled": 39,
      "capacity": 40
     },
     {
@@ -43016,7 +43693,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 43,
+     "enrolled": 44,
      "capacity": 60
     },
     {
@@ -43100,7 +43777,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 43,
+     "enrolled": 44,
      "capacity": 60
     },
     {
@@ -43292,7 +43969,7 @@
      "type": "DIS 1E",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 24,
+     "enrolled": 25,
      "capacity": 25
     },
     {
@@ -43360,7 +44037,7 @@
      "type": "DIS 1B",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 20,
+     "enrolled": 19,
      "capacity": 35
     },
     {
@@ -43489,7 +44166,7 @@
      "type": "DIS 1A",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 23,
+     "enrolled": 24,
      "capacity": 25
     },
     {
@@ -43607,7 +44284,7 @@
      "type": "SEM 1",
      "start_time": "02:00 PM",
      "end_time": "04:50 PM",
-     "enrolled": 11,
+     "enrolled": 12,
      "capacity": 30
     }
    ],
@@ -44065,7 +44742,7 @@
      "type": "LEC 1",
      "start_time": "05:00 PM",
      "end_time": "06:15 PM",
-     "enrolled": 56,
+     "enrolled": 55,
      "capacity": 60
     }
    ],
@@ -44197,7 +44874,7 @@
      "type": "LEC 1",
      "start_time": "05:00 PM",
      "end_time": "06:15 PM",
-     "enrolled": 56,
+     "enrolled": 55,
      "capacity": 60
     }
    ],
@@ -45018,7 +45695,7 @@
      "type": "SEM 1",
      "start_time": "03:00 PM",
      "end_time": "04:50 PM",
-     "enrolled": 5,
+     "enrolled": 6,
      "capacity": 20
     }
    ],
@@ -46266,7 +46943,10 @@
   "building": "RIEBER",
   "room": "00115A",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=RIEBER++%7C++00115A+"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=RIEBER++%7C++00115A+",
+  "characteristics": [],
+  "schedule": null,
+  "no_calendar": true
  },
  {
   "text": "ROLFE    1200",
@@ -47971,7 +48651,7 @@
      "type": "DIS 1C",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 19,
+     "enrolled": 20,
      "capacity": 20
     },
     {
@@ -48697,7 +49377,7 @@
      "type": "DIS 1B",
      "start_time": "05:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 20,
+     "enrolled": 21,
      "capacity": 22
     }
    ],
@@ -48986,7 +49666,7 @@
      "type": "LEC 4",
      "start_time": "03:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 15,
+     "enrolled": 16,
      "capacity": 25
     }
    ],
@@ -49877,7 +50557,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 37,
+     "enrolled": 36,
      "capacity": 40
     },
     {
@@ -49961,7 +50641,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 37,
+     "enrolled": 36,
      "capacity": 40
     },
     {
@@ -50893,7 +51573,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 107,
+     "enrolled": 108,
      "capacity": 120
     },
     {
@@ -50985,7 +51665,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 107,
+     "enrolled": 108,
      "capacity": 120
     },
     {
@@ -51340,7 +52020,7 @@
      "type": "DIS 1A",
      "start_time": "12:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 79,
+     "enrolled": 78,
      "capacity": 80
     },
     {
@@ -51940,7 +52620,10 @@
   "building": "SPROUL",
   "room": "00110A",
   "offered": false,
-  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=SPROUL++%7C++00110A+"
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=SPROUL++%7C++00110A+",
+  "characteristics": [],
+  "schedule": null,
+  "no_calendar": true
  },
  {
   "text": "STRTHMR  200",
@@ -52507,7 +53190,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 38,
+     "enrolled": 39,
      "capacity": 40
     },
     {
@@ -52639,7 +53322,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 38,
+     "enrolled": 39,
      "capacity": 40
     },
     {
@@ -53257,7 +53940,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 137,
+     "enrolled": 138,
      "capacity": 140
     },
     {
@@ -53281,7 +53964,7 @@
      "type": "LEC 1",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 70,
+     "enrolled": 69,
      "capacity": 120
     },
     {
@@ -53305,7 +53988,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 179,
+     "enrolled": 180,
      "capacity": 180
     }
    ],
@@ -53339,7 +54022,7 @@
      "type": "TUT G001",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 70,
+     "enrolled": 69,
      "capacity": 120
     },
     {
@@ -53355,8 +54038,8 @@
      "type": "LEC 2",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 179,
-     "capacity": 180
+     "enrolled": 178,
+     "capacity": 175
     },
     {
      "course": "COM SCI M151B",
@@ -53373,7 +54056,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 137,
+     "enrolled": 138,
      "capacity": 140
     },
     {
@@ -53397,7 +54080,7 @@
      "type": "LEC 1",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 70,
+     "enrolled": 69,
      "capacity": 120
     },
     {
@@ -53421,7 +54104,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 179,
+     "enrolled": 180,
      "capacity": 180
     }
    ],
@@ -53439,7 +54122,7 @@
      "type": "TUT G001",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 137,
+     "enrolled": 138,
      "capacity": 140
     },
     {
@@ -53479,8 +54162,8 @@
      "type": "LEC 2",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 179,
-     "capacity": 180
+     "enrolled": 178,
+     "capacity": 175
     },
     {
      "course": "COM SCI M151B",
@@ -53497,7 +54180,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 137,
+     "enrolled": 138,
      "capacity": 140
     },
     {
@@ -53521,7 +54204,7 @@
      "type": "LEC 1",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 70,
+     "enrolled": 69,
      "capacity": 120
     },
     {
@@ -54035,7 +54718,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 215,
+     "enrolled": 214,
      "capacity": 240
     }
    ],
@@ -54135,7 +54818,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 215,
+     "enrolled": 214,
      "capacity": 240
     }
    ],
@@ -54227,5 +54910,177 @@
   "room": "A01713A",
   "offered": false,
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=YRL+++++%7C+A01713A+"
+ },
+ {
+  "text": "CNSI     3141",
+  "building": "CNSI",
+  "room": "03141",
+  "offered": false,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=CNSI++++%7C++03141++"
+ },
+ {
+  "text": "COVEL    307",
+  "building": "COVEL",
+  "room": "00307",
+  "offered": false,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=COVEL+++%7C++00307++",
+  "characteristics": [],
+  "schedule": null,
+  "no_calendar": true
+ },
+ {
+  "text": "COVEL    319A",
+  "building": "COVEL",
+  "room": "00319A",
+  "offered": false,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=COVEL+++%7C++00319A+",
+  "characteristics": [],
+  "schedule": {
+   "Monday": [],
+   "Tuesday": [
+    {
+     "course": "CESC 98A",
+     "type": "SEM 2",
+     "start_time": "03:00 PM",
+     "end_time": "04:50 PM",
+     "enrolled": 13,
+     "capacity": 30
+    },
+    {
+     "course": "CESC 98A",
+     "type": "SEM 1",
+     "start_time": "06:00 PM",
+     "end_time": "07:50 PM",
+     "enrolled": 40,
+     "capacity": 60
+    }
+   ],
+   "Wednesday": [],
+   "Thursday": [],
+   "Friday": [],
+   "Saturday": [],
+   "Sunday": []
+  },
+  "no_calendar": false,
+  "capacity": 40
+ },
+ {
+  "text": "DODD     300C",
+  "building": "DODD",
+  "room": "00300C",
+  "offered": false,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=DODD++++%7C++00300C+"
+ },
+ {
+  "text": "DODD     321",
+  "building": "DODD",
+  "room": "00321",
+  "offered": false,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=DODD++++%7C++00321++"
+ },
+ {
+  "text": "E MLNTZ  303A",
+  "building": "E MLNTZ",
+  "room": "00303A",
+  "offered": false,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=E+MLNTZ+%7C++00303A+"
+ },
+ {
+  "text": "ENGR IV  44116",
+  "building": "ENGR IV",
+  "room": "44116",
+  "offered": false,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=ENGR+IV+%7C++44116++"
+ },
+ {
+  "text": "FOWLER   1459",
+  "building": "FOWLER",
+  "room": "01459",
+  "offered": false,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=FOWLER++%7C++01459++"
+ },
+ {
+  "text": "FRANZ    3205",
+  "building": "FRANZ",
+  "room": "03205",
+  "offered": false,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=FRANZ+++%7C++03205++"
+ },
+ {
+  "text": "FRANZ    C554",
+  "building": "FRANZ",
+  "room": "C00554",
+  "offered": false,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=FRANZ+++%7C+C00554++"
+ },
+ {
+  "text": "GEFFENHL 148",
+  "building": "GEFFENHL",
+  "room": "00148",
+  "offered": false,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=GEFFENHL%7C++00148++"
+ },
+ {
+  "text": "HLTHSCI  12077Q",
+  "building": "HLTHSCI",
+  "room": "12077Q",
+  "offered": false,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=HLTHSCI+%7C++12077Q+"
+ },
+ {
+  "text": "KAPLAN   380",
+  "building": "KAPLAN",
+  "room": "00380",
+  "offered": false,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=KAPLAN++%7C++00380++"
+ },
+ {
+  "text": "KAPLAN   396",
+  "building": "KAPLAN",
+  "room": "00396",
+  "offered": false,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=KAPLAN++%7C++00396++"
+ },
+ {
+  "text": "PRITZKER 4514",
+  "building": "PRITZKER",
+  "room": "04514",
+  "offered": false,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=PRITZKER%7C++04514++"
+ },
+ {
+  "text": "PUB HLT  A1265",
+  "building": "PUB HLT",
+  "room": "A01265",
+  "offered": false,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=PUB+HLT+%7C+A01265++"
+ },
+ {
+  "text": "PVUB     1420",
+  "building": "PVUB",
+  "room": "01420",
+  "offered": false,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=PVUB++++%7C++01420++"
+ },
+ {
+  "text": "SLICHTR  6850",
+  "building": "SLICHTR",
+  "room": "06850",
+  "offered": false,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=SLICHTR+%7C++06850++"
+ },
+ {
+  "text": "SMB      0",
+  "building": "SMB",
+  "room": "00000",
+  "offered": false,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=SMB+++++%7C++00000++"
+ },
+ {
+  "text": "SMB      B427",
+  "building": "SMB",
+  "room": "B00427",
+  "offered": false,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26F&classroom=SMB+++++%7C+B00427++"
  }
 ]
