@@ -25,7 +25,7 @@ It keeps events whose location names one of our rooms ("3400 Boelter Hall", "Mat
 
 **Short gaps.** A gap under an hour between two bookings counts as busy. It shows as a hatched block on the calendar.
 
-**The Hill.** Two kinds of Hill rooms show up under Area → The Hill:
+**The Hill.** A Campus / The Hill / Both switch at the top picks where to look. Two kinds of Hill rooms show up under The Hill:
 
 - Registrar rooms in Hill buildings that have classes this term (Covel 210/218/225/319A, De Neve P350). `scrape.py` scrapes these along with the general assignment rooms. `--all` scrapes every registrar room.
 - Residential study rooms (Hedrick, The Study at Hedrick, Rieber, Sproul, Olympic, Southwest Apartments, Gayley Heights) from [Residential Life reservations](https://reserve.reslife.ucla.edu/reserve). That site publicly lists every open hourly slot for the next two weeks, so `scrape_hill.py` writes `hill.json` with each room's open hours and free slots. Anything inside open hours that isn't listed is reserved. Only on-campus residents can book these rooms. Covel and Carnesale study spaces are not on that site.
