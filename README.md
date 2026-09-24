@@ -15,7 +15,14 @@ Find empty UCLA classrooms to study in. The site shows every general assignment 
 
 **Classes.** The registrar's ClassroomDetail page embeds the full term calendar as JSON in the HTML, so `scrape.py` uses plain HTTP requests (no browser). All 190 rooms take about 30 to 60 seconds.
 
-**Club bookings.** The registrar grids leave out non-academic events. Per the registrar page: "Non-academic events in General Assignment classrooms do not appear on these classroom grids." Reservations made through the UCLA Events Office are not published anywhere public (no public 25Live/EMS instance). The only open source is UCLA Community, so `scrape_events.py` reads every week of the term there and matches event locations like "Boelter 2444" or "Math Sciences Building, Room 5200" to our rooms. The site shows these in orange on the calendar and counts them when deciding whether a room is free. Coverage only includes orgs that post events there with a room number, so a room shown as free can still be booked.
+**Club and department events.** The registrar grids leave out non-academic events. Per the registrar page: "Non-academic events in General Assignment classrooms do not appear on these classroom grids." Clubs request rooms from the UCLA Events Office through a form, and those reservations are not published anywhere public (no public 25Live/EMS instance). `scrape_events.py` reads the public calendars that do list rooms:
+
+- [UCLA Community](https://community.ucla.edu/calendars): every term week, every program page, and club sports.
+- About 25 department iCal feeds (`/events/?ical=1`), including CS, CEE, MAE, Bioengineering, ChemE, MSE, Samueli, Chemistry, Economics, History, Luskin, Philosophy and Linguistics. The list is `ICAL_FEEDS` in the script.
+
+It keeps events whose location names one of our rooms ("3400 Boelter Hall", "Math Sciences Building, Room 5200", "Kaufman Hall 101 & 136"). The site shows them in orange on the calendar and counts them when deciding whether a room is free. Anything booked without being posted to one of these calendars is still invisible, so a room shown as free can be taken.
+
+**Short gaps.** A gap under an hour between two bookings counts as busy. It shows as a hatched block on the calendar.
 
 ## Data contract
 

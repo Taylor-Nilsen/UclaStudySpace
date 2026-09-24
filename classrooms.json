@@ -850,7 +850,16 @@
   },
   "no_calendar": false,
   "image_url": "images/Boelter-3400.jpeg",
-  "events": []
+  "events": [
+   {
+    "title": "CS 201 | Ruofei Du, Google",
+    "org": "Computer Science",
+    "url": "https://www.cs.ucla.edu/upcoming-events/cs-201-ruofei-du-google/",
+    "date": "2026-10-01",
+    "start_time": "12:00 PM",
+    "end_time": "01:45 PM"
+   }
+  ]
  },
  {
   "text": "BOELTER  3424",
