@@ -8,6 +8,7 @@ Find empty UCLA classrooms to study in. The site shows every general assignment 
 - `classrooms.json`: the data the site reads.
 - `scrape.py`: pulls class schedules and room characteristics from the UCLA Registrar.
 - `scrape_hill.py`: pulls Hill study room availability from Residential Life into `hill.json`.
+- `hill_api.py`: live relay for Hill availability, deployed on Render.
 - `scrape_events.py`: pulls club / org / department events from [UCLA Community](https://community.ucla.edu/calendars) and attaches the ones held in our classrooms.
 - `generate_urls.py`: rebuilds the classroom list and registrar URLs from scratch. You only need this if the room list changes.
 - `add_images.py`, `download_images.py`: match room photos from UCLA DTS and cache them in `images/`.
@@ -30,7 +31,11 @@ It keeps events whose location names one of our rooms ("3400 Boelter Hall", "Mat
 - Registrar rooms in Hill buildings that have classes this term (Covel 210/218/225/319A, De Neve P350). `scrape.py` scrapes these along with the general assignment rooms. `--all` scrapes every registrar room.
 - Residential study rooms (Hedrick, The Study at Hedrick, Rieber, Sproul, Olympic, Southwest Apartments, Gayley Heights) from [Residential Life reservations](https://reserve.reslife.ucla.edu/reserve). That site publicly lists every open hourly slot for the next two weeks, so `scrape_hill.py` writes `hill.json` with each room's open hours and free slots. Anything inside open hours that isn't listed is reserved. Only on-campus residents can book these rooms. Covel and Carnesale study spaces are not on that site.
 
-Reservations change constantly, so the Pages workflow runs `scrape_hill.py` right before every deploy, every 30 minutes, instead of committing each change.
+Reservations change constantly, so the page pulls them live every time it opens (and every 5 minutes while open). The booking site sends no CORS headers, so the browser can't read it directly. `hill_api.py` is a small relay on Render (`https://uclastudyspace-hill.onrender.com/hill`). It runs the same scraper, caches the result for 60 seconds, and returns JSON with CORS enabled. The page shows the bundled `hill.json` snapshot immediately, then swaps in the live data. The header says which one you're seeing ("live, updated just now" or "snapshot from 20 min ago"). The Pages workflow still refreshes the snapshot before every deploy, every 30 minutes.
+
+The relay runs on Render's free plan, which sleeps after 15 minutes idle, so the first visit after a quiet spell can take up to a minute to go live. The snapshot shows in the meantime.
+
+Render settings: runtime Python, build `pip install -r requirements.txt`, start `python hill_api.py`, branch `master`.
 
 ## Data contract
 

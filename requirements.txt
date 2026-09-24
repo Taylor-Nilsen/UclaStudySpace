@@ -1,3 +1,4 @@
 # Requirements for UclaStudySpace scrapers
 beautifulsoup4>=4.12
 requests>=2.31.0
+tzdata>=2024.1
