@@ -97,6 +97,14 @@ def term_pages(term):
     links = set(re.findall(r'href="(%s/[^"]+)"' % re.escape(slug), html))
     if not links:  # past terms drop off the index page; guess the week URLs
         links = {f"{slug}/week-{i}" for i in range(11)} | {f"{slug}/finals-week"}
+    # Each program / club sport page lists its upcoming events, including some
+    # that never make the term pages.
+    for index, kind in (('/programs', 'program'), ('/clubsports', 'clubsport')):
+        try:
+            html = requests.get(BASE + index, headers=HEADERS, timeout=30).text
+            links |= set(re.findall(r'href="(/%s/[^"]+)"' % kind, html))
+        except requests.RequestException:
+            pass
     return sorted(links)
 
 

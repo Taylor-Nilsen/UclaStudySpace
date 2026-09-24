@@ -76,6 +76,7 @@
         .cal-col{flex:1;position:relative;border-left:1px solid rgba(96,165,250,0.08);background-image:repeating-linear-gradient(180deg,rgba(96,165,250,0.12) 0 1px,transparent 1px calc(100%/16))}
         .cal-ev{position:absolute;left:1px;right:1px;background:var(--accent);border-radius:3px;overflow:hidden;font-size:0.55rem;line-height:1.1;color:#0f172a;padding:1px 2px;font-weight:600}
         .cal-ev.org{background:var(--event)}
+        .cal-ev.gap{background:repeating-linear-gradient(45deg,rgba(148,163,184,0.35) 0 3px,transparent 3px 6px);z-index:1}
         .cal-now{position:absolute;left:0;right:0;height:2px;background:var(--busy);z-index:3}
         .legend{display:flex;gap:12px;font-size:0.75rem;color:var(--muted);margin-top:6px}
         .legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
@@ -174,6 +175,7 @@
     const CAL_START = 7*60, CAL_END = 23*60;        // calendar grid window
     const OPEN_START = 8*60, OPEN_END = 22*60;       // "free time" window
     const PCT_START = 8*60, PCT_END = 20*60;         // same window the registrar uses for room-use %
+    const MIN_GAP = 60;                              // gaps shorter than this between bookings count as busy
     const DEFAULT_CHARS = ['Air Conditioning','Chalkboard','Projection Screen','Video Projector-Installed','Microphone-Installed'];
     const CHAR_CATEGORIES = [
         {name:'Room Features', rx:/air conditioning|window|chalkboard|white ?board/i},
@@ -230,9 +232,18 @@
         }).filter(Boolean);
         return r;
     }
+    // Bookings for `day`, plus filler blocks for gaps under MIN_GAP between
+    // bookings: a 30 minute window between classes isn't a usable study slot.
     function busy(r, day){
         const date = dateForDay(day);
-        return r._cls[day].concat(r._ev.filter(e => e.date === date)).sort((a, b) => a.s - b.s);
+        const list = r._cls[day].concat(r._ev.filter(e => e.date === date)).sort((a, b) => a.s - b.s);
+        const gaps = [];
+        let end = -1;
+        for(const b of list){
+            if(end >= 0 && b.s > end && b.s - end < MIN_GAP) gaps.push({s:end, e:b.s, label:'Short gap between bookings', gap:true});
+            end = Math.max(end, b.e);
+        }
+        return gaps.length ? list.concat(gaps).sort((a, b) => a.s - b.s) : list;
     }
     function isFree(r, day, s, e){
         return !busy(r, day).some(b => b.s < e && s < b.e);
@@ -378,6 +389,7 @@
             const next = st.next ? `<small>Next: ${esc(st.next.label)}${st.next.org ? ' (event)' : ''}</small>` : '';
             return `<div class="status free">Free now ${until}${next}</div>`;
         }
+        if(st.cur.gap) return `<div class="status busy">Busy until ${fmtMin(st.until)}<small>Less than an hour between bookings</small></div>`;
         return `<div class="status busy">In use until ${fmtMin(st.until)}<small>${esc(st.cur.label)}${st.cur.org ? ' (event)' : ''}</small></div>`;
     }
 
@@ -399,7 +411,7 @@
             const open = state.open.has(idx);
             return `<article class="room-card${open ? ' open' : ''}" data-idx="${idx}">
                 ${img}
-                <div class="room-head"><h3 class="room-title">${esc(r.text.replace(/\s+/g, ' '))}</h3><span class="pct" title="Share of 8am to 8pm with no class booked">${freePct(r, pctDay)}% free ${pctDay.slice(0,3)}</span></div>
+                <div class="room-head"><h3 class="room-title">${esc(r.text.replace(/\s+/g, ' '))}</h3><span class="pct" title="Share of 8am to 8pm that is open, not counting gaps under an hour">${freePct(r, pctDay)}% free ${pctDay.slice(0,3)}</span></div>
                 <div class="room-info"><span class="badge">${esc(r.building)}</span>${r.capacity ? `<span class="badge">Cap ${r.capacity}</span>` : ''}${r.type ? `<span class="badge">${esc(r.type)}</span>` : ''}${nUp ? `<span class="badge" style="color:var(--event)">${nUp} upcoming event${nUp > 1 ? 's' : ''}</span>` : ''}</div>
                 ${statusHtml(r._now)}
                 <div style="margin-top:8px"><button class="btn btn-details" type="button" data-toggle>Details ${open ? '▴' : '▾'}</button></div>
@@ -424,6 +436,7 @@
                 const s = Math.max(b.s, CAL_START), e = Math.min(b.e, CAL_END);
                 if(e <= s) return;
                 const tip = `${b.label}${b.sub ? ' · ' + b.sub : ''}\n${fmtMin(b.s)} to ${fmtMin(b.e)}`;
+                if(b.gap){ body += `<div class="cal-ev gap" style="top:${(s-CAL_START)/range*100}%;height:${(e-s)/range*100}%" title="Gap under an hour: not counted as free"></div>`; return; }
                 body += `<div class="cal-ev${b.org ? ' org' : ''}" style="top:${(s-CAL_START)/range*100}%;height:${(e-s)/range*100}%" title="${esc(tip)}">${esc(b.label)}</div>`;
             });
             if(d === now.day && now.min > CAL_START && now.min < CAL_END) body += `<div class="cal-now" style="top:${(now.min-CAL_START)/range*100}%"></div>`;
@@ -436,7 +449,7 @@
             `<li><span class="when">${new Date(e.date + 'T12:00').toLocaleDateString('en-US', {weekday:'short', month:'numeric', day:'numeric'})} ${fmtMin(e.s)}</span>${e.url ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.label)}</a>` : esc(e.label)}${e.sub ? `<div class="org">${esc(e.sub)}</div>` : ''}</li>`).join('')}</ul>` : '';
         return `<div>${chars}</div>
             <div class="schedule-calendar">${head}${body}</div>
-            <div class="legend"><span><i style="background:var(--accent)"></i>Class (weekly)</span><span><i style="background:var(--event)"></i>Club / org event</span></div>
+            <div class="legend"><span><i style="background:var(--accent)"></i>Class (weekly)</span><span><i style="background:var(--event)"></i>Club / org event</span><span><i style="background:repeating-linear-gradient(45deg,rgba(148,163,184,0.6) 0 2px,transparent 2px 4px)"></i>Gap under 1 hr</span></div>
             ${events}
             <div style="margin-top:12px;text-align:right"><a href="${esc(r.url || '#')}" target="_blank" rel="noopener">UCLA Schedule →</a></div>`;
     }
