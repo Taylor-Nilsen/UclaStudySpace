@@ -65,10 +65,10 @@ SEASONS = {'W': 'winter', 'S': 'spring', 'U': 'summer', 'F': 'fall'}
 
 # Building code in classrooms.json -> regex for how people write it.
 BUILDING_ALIASES = {
-    'BOELTER': r'boelter',
+    'BOELTER': r'boelter|\bBH\b',
     'BUNCHE': r'bunche',
     'PUB AFF': r'public\s+affairs|pub\.?\s*aff',
-    'MS': r'math(?:ematical|\.)?\s*sci(?:ences?|\.)?(?:\s+building)?|\bMS\b',
+    'MS': r'math(?:ematical|\.)?\s*sci(?:ences?|\.)?(?:\s+building)?|\bMSB?\b',
     'HAINES': r'haines',
     'KAPLAN': r'kaplan',
     'DODD': r'dodd',

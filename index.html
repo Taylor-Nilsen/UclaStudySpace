@@ -114,7 +114,7 @@
                 </div>
                 <div class="filter-group">
                     <label for="roomSearch">🔍 Search Room</label>
-                    <input type="search" id="roomSearch" placeholder="e.g., Boelter 2444">
+                    <input type="search" id="roomSearch" placeholder="e.g., BH 3400, 3400 boelter, ms 5200">
                 </div>
                 <div class="filter-group">
                     <label for="sortBy">Sort</label>
@@ -184,6 +184,36 @@
         {name:'Connectivity', rx:/gacnet|backbone|hookup|network|ethernet|wireless/i},
     ];
 
+    // Extra names people use for each building code, for search ("bh 3400").
+    const BUILDING_ALIASES = {
+        'BOELTER':'boelter bh', 'BUNCHE':'bunche', 'PUB AFF':'public affairs pubaff pa', 'MS':'math mathematical sciences msb',
+        'HAINES':'haines hh', 'KAPLAN':'kaplan humanities', 'DODD':'dodd', 'ROLFE':'rolfe', 'ROYCE':'royce',
+        'WGYOUNG':'young wg wgyoung yh', 'PAB':'pab physics astronomy', 'FRANZ':'franz', 'GEOLOGY':'geology geo',
+        'LAKRETZ':'la kretz lakretz', 'KAUFMAN':'kaufman', 'KNSY PV':'kinsey knsy pavilion', 'BROAD':'broad art',
+        'FOWLER':'fowler', 'MOORE':'moore', 'PERLOFF':'perloff', 'SLICHTR':'slichter slichtr',
+    };
+    const normRoom = s => String(s || '').toLowerCase().replace(/\s+/g, '').replace(/^([a-z]*)0+(?=\d)/, '$1');
+    // Search terms in any order: each term must match the building (name or
+    // abbreviation, by prefix) or the room number. "bh3400" splits into "bh" + "3400".
+    function searchTerms(q){
+        return norm(q).split(/[\s,]+/).filter(Boolean);
+    }
+    function termMatches(r, t){
+        const room = normRoom(t);
+        if(/\d/.test(t) && r._room.startsWith(room)) return true;
+        if(!/\d/.test(t)) return r._words.some(w => w.startsWith(t));
+        const parts = t.match(/[a-z]+|\d+[a-z]?/g) || [];
+        return parts.length > 1 && parts.every(p => termMatches(r, p));
+    }
+
+    // Every term must match; "cs 50" may also be read as the room "cs50".
+    function matchesAll(r, terms, i = 0){
+        if(i >= terms.length) return true;
+        const t = terms[i], next = terms[i + 1];
+        if(termMatches(r, t) && matchesAll(r, terms, i + 1)) return true;
+        return !!next && /^[a-z]+$/.test(t) && /^\d/.test(next) && termMatches(r, t + next) && matchesAll(r, terms, i + 2);
+    }
+
     const state = {rooms:[], day:'', chars:new Set(), buildings:new Set(), allChars:new Set(), open:new Set()};
     const $ = id => document.getElementById(id);
     const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -218,7 +248,8 @@
 
     // Precompute minute intervals once so filtering is cheap.
     function prepRoom(r){
-        r._search = norm(`${r.text} ${r.building} ${(r.room||'').replace(/^[0]+/, '')}`);
+        r._room = normRoom(r.room);
+        r._words = norm(`${r.building} ${BUILDING_ALIASES[r.building] || ''} ${r.type || ''}`).split(/[\s&/,-]+/).filter(Boolean);
         r._cls = {};
         DAYS.forEach(d => {
             r._cls[d] = ((r.schedule && r.schedule[d]) || []).map(s => {
@@ -348,8 +379,7 @@
     function filtered(){
         const minCap = parseInt($('capacityFilter').value) || 0;
         const maxCap = parseInt($('maxCapacityFilter').value) || Infinity;
-        const q = norm($('roomSearch').value);
-        const qNoSpace = q.replace(/ /g, '');
+        const terms = searchTerms($('roomSearch').value);
         const s = $('startTime').value === '' ? null : +$('startTime').value;
         const e = $('endTime').value === '' ? null : +$('endTime').value;
         const timeOk = s != null && e != null && e > s;
@@ -357,7 +387,7 @@
             if(state.buildings.size && !state.buildings.has(r.building)) return false;
             if(minCap && (r.capacity || 0) < minCap) return false;
             if(maxCap !== Infinity && r.capacity && r.capacity > maxCap) return false;
-            if(q && !r._search.includes(q) && !r._search.replace(/ /g, '').includes(qNoSpace)) return false;
+            if(terms.length && !matchesAll(r, terms)) return false;
             if(state.chars.size){ const rc = r.characteristics || []; for(const c of state.chars) if(!rc.includes(c)) return false; }
             if(timeOk){
                 if(state.day){ if(!isFree(r, state.day, s, e)) return false; }
