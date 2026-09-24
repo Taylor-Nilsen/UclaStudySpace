@@ -1,0 +1,170 @@
+{
+ "source": "OpenStreetMap contributors (ODbL), building centroids via Overpass API, Sept 2026",
+ "buildings": {
+  "BOELTER": {
+   "name": "Boelter Hall",
+   "lat": 34.0688672,
+   "lon": -118.4429887
+  },
+  "BROAD": {
+   "name": "Broad Art Center",
+   "lat": 34.0759023,
+   "lon": -118.4409878
+  },
+  "BUNCHE": {
+   "name": "Bunche Hall",
+   "lat": 34.0742872,
+   "lon": -118.4404263
+  },
+  "CNYN PT": {
+   "name": "Canyon Point",
+   "lat": 34.0736778,
+   "lon": -118.4508516
+  },
+  "COVEL": {
+   "name": "Covel Commons",
+   "lat": 34.073014,
+   "lon": -118.4499603
+  },
+  "DE NEVE": {
+   "name": "De Neve Commons",
+   "lat": 34.0703525,
+   "lon": -118.4501825
+  },
+  "DODD": {
+   "name": "Dodd Hall",
+   "lat": 34.0727884,
+   "lon": -118.4392619
+  },
+  "FOWLER": {
+   "name": "Fowler Museum",
+   "lat": 34.0729552,
+   "lon": -118.443232
+  },
+  "FRANZ": {
+   "name": "Franz Hall",
+   "lat": 34.0696199,
+   "lon": -118.4414617
+  },
+  "GAYLEY HEIGHTS": {
+   "name": "Gayley Heights",
+   "lat": 34.0639639,
+   "lon": -118.4488293
+  },
+  "GEOLOGY": {
+   "name": "Geology Building",
+   "lat": 34.0692437,
+   "lon": -118.441226
+  },
+  "HAINES": {
+   "name": "Haines Hall",
+   "lat": 34.0728984,
+   "lon": -118.4412787
+  },
+  "HEDRICK": {
+   "name": "Hedrick Hall",
+   "lat": 34.0732895,
+   "lon": -118.4524109
+  },
+  "HITCH": {
+   "name": "Hitch Residential Suites",
+   "lat": 34.0735903,
+   "lon": -118.4538208
+  },
+  "KAPLAN": {
+   "name": "Kaplan Hall",
+   "lat": 34.0714641,
+   "lon": -118.4412514
+  },
+  "KAUFMAN": {
+   "name": "Kaufman Hall",
+   "lat": 34.0727708,
+   "lon": -118.4440763
+  },
+  "KNSY PV": {
+   "name": "Kinsey Teaching Pavilion",
+   "lat": 34.0701537,
+   "lon": -118.4412986
+  },
+  "LAKRETZ": {
+   "name": "La Kretz Hall",
+   "lat": 34.0675577,
+   "lon": -118.4427086
+  },
+  "LAUREL": {
+   "name": "Laurel (Southwest Campus Apartments)",
+   "lat": 34.0627213,
+   "lon": -118.4501766
+  },
+  "MOORE": {
+   "name": "Moore Hall",
+   "lat": 34.0704228,
+   "lon": -118.4427289
+  },
+  "MS": {
+   "name": "Math Sciences",
+   "lat": 34.069544,
+   "lon": -118.4428178
+  },
+  "OLYMPIC": {
+   "name": "Olympic Hall",
+   "lat": 34.0723793,
+   "lon": -118.4536285
+  },
+  "PAB": {
+   "name": "Physics & Astronomy Building",
+   "lat": 34.0706856,
+   "lon": -118.4415788
+  },
+  "PALOS VERDE": {
+   "name": "Palos Verde (Southwest Campus Apartments)",
+   "lat": 34.0627213,
+   "lon": -118.4501766
+  },
+  "PERLOFF": {
+   "name": "Perloff Hall",
+   "lat": 34.0733539,
+   "lon": -118.4402192
+  },
+  "PUB AFF": {
+   "name": "Public Affairs Building",
+   "lat": 34.0744384,
+   "lon": -118.4391596
+  },
+  "RIEBER": {
+   "name": "Rieber Hall",
+   "lat": 34.071954,
+   "lon": -118.4515036
+  },
+  "ROLFE": {
+   "name": "Rolfe Hall",
+   "lat": 34.0738676,
+   "lon": -118.442121
+  },
+  "ROYCE": {
+   "name": "Royce Hall",
+   "lat": 34.0729044,
+   "lon": -118.4421895
+  },
+  "SLICHTR": {
+   "name": "Slichter Hall",
+   "lat": 34.0688944,
+   "lon": -118.4407938
+  },
+  "SPROUL": {
+   "name": "Sproul Hall",
+   "lat": 34.0723135,
+   "lon": -118.4500891
+  },
+  "TIPUANA": {
+   "name": "Tipuana (Southwest Campus Apartments)",
+   "lat": 34.0627213,
+   "lon": -118.4501766
+  },
+  "WGYOUNG": {
+   "name": "Young Hall",
+   "lat": 34.0685978,
+   "lon": -118.4412304
+  }
+ }
+}

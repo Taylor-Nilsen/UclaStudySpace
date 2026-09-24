@@ -57,6 +57,7 @@
         .room-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:6px}
         .room-title{font-weight:600;margin:0;color:#f8fafc;font-size:1.05rem}
         .pct{font-size:0.8rem;color:var(--muted);white-space:nowrap}
+        .near-msg{font-size:0.8rem;color:var(--muted)}
         .room-info{display:flex;gap:8px;flex-wrap:wrap;font-size:0.9rem}
         .badge{padding:4px 8px;border-radius:6px;font-size:0.8rem;background:#111827}
         .status{margin-top:8px;font-size:0.9rem;font-weight:600}
@@ -163,7 +164,11 @@
             </div>
 
             <div class="controls-actions">
-                <button class="btn" type="button" id="clearAll">Clear All Filters</button>
+                <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+                    <button class="btn" type="button" id="clearAll">Clear All Filters</button>
+                    <button class="btn btn-details" type="button" id="nearMe" title="Uses your location only when you press this">📍 Nearest to me</button>
+                    <span id="nearMsg" class="near-msg" aria-live="polite"></span>
+                </div>
                 <div><strong id="totalRooms">0</strong> rooms found • <strong id="availableRooms">0</strong> free right now</div>
             </div>
         </section>
@@ -404,7 +409,7 @@
 
     function clearFilters(){
         ['capacityFilter','maxCapacityFilter','roomSearch','startTime','endTime','areaFilter'].forEach(id => $(id).value = '');
-        $('sortBy').value = 'available';
+        $('sortBy').value = state.here ? 'nearest' : 'available';
         selectDay('');
         state.chars.clear(); state.buildings.clear();
         document.querySelectorAll('#buildingDropdown input, #characteristicsFilter input').forEach(cb => cb.checked = false);
@@ -442,6 +447,10 @@
         if(how === 'capacity_desc') return list.sort((a, b) => (b.capacity||0) - (a.capacity||0) || byName(a, b));
         if(how === 'capacity_asc') return list.sort((a, b) => (a.capacity||0) - (b.capacity||0) || byName(a, b));
         if(how === 'building') return list.sort(byName);
+        if(how === 'nearest' && state.here){
+            // Closest building first; inside a building, free rooms first.
+            return list.sort((a, b) => (distTo(a) ?? 1e9) - (distTo(b) ?? 1e9) || (b._now.free - a._now.free) || byName(a, b));
+        }
         if(how === 'free_pct'){ const d = state.day || now.day; return list.sort((a, b) => freePct(b, d) - freePct(a, d) || byName(a, b)); }
         // available: free now first, longest remaining free window first; busy rooms by soonest free
         return list.sort((a, b) => {
@@ -483,7 +492,7 @@
             return `<article class="room-card${open ? ' open' : ''}" data-idx="${idx}">
                 ${img}
                 <div class="room-head"><h3 class="room-title">${esc(r.text.replace(/\s+/g, ' '))}</h3><span class="pct" title="Share of 8am to 8pm that is open, not counting gaps under an hour">${freePct(r, pctDay)}% free ${pctDay.slice(0,3)}</span></div>
-                <div class="room-info"><span class="badge">${esc(r.building)}</span>${r.capacity ? `<span class="badge">Cap ${r.capacity}</span>` : ''}${r.type ? `<span class="badge">${esc(r.type)}</span>` : ''}${r._area === 'hill' ? `<span class="badge" style="color:var(--free)">The Hill</span>` : ''}${r.reservable ? `<span class="badge" title="${esc(r.description || '')}">Residents only</span>` : ''}${nUp ? `<span class="badge" style="color:var(--event)">${nUp} upcoming event${nUp > 1 ? 's' : ''}</span>` : ''}</div>
+                <div class="room-info"><span class="badge">${esc(r.building)}</span>${r.capacity ? `<span class="badge">Cap ${r.capacity}</span>` : ''}${r.type ? `<span class="badge">${esc(r.type)}</span>` : ''}${r._area === 'hill' ? `<span class="badge" style="color:var(--free)">The Hill</span>` : ''}${state.here && distTo(r) != null ? `<span class="badge" style="color:var(--accent)">${distLabel(distTo(r))}</span>` : ''}${r.reservable ? `<span class="badge" title="${esc(r.description || '')}">Residents only</span>` : ''}${nUp ? `<span class="badge" style="color:var(--event)">${nUp} upcoming event${nUp > 1 ? 's' : ''}</span>` : ''}</div>
                 ${statusHtml(r._now, r)}
                 <div style="margin-top:8px"><button class="btn btn-details" type="button" data-toggle>Details ${open ? '▴' : '▾'}</button></div>
                 <div class="details">${open ? detailsHtml(r) : ''}</div>
@@ -532,6 +541,47 @@
         const idx = +card.dataset.idx;
         card.classList.toggle('open') ? state.open.add(idx) : state.open.delete(idx);
         card.querySelector('[data-toggle]').textContent = card.classList.contains('open') ? 'Details ▴' : 'Details ▾';
+    }
+
+    // ---------- location ----------
+    // Nothing here runs until the "Nearest to me" button is pressed: no
+    // permission prompt, no buildings.json fetch, nothing stored.
+    function distTo(r){
+        const b = state.buildingsGeo && state.buildingsGeo[r.building];
+        if(!b || !state.here) return null;
+        const R = 6371000, rad = x => x * Math.PI / 180;
+        const dLat = rad(b.lat - state.here.lat), dLon = rad(b.lon - state.here.lon);
+        const h = Math.sin(dLat/2)**2 + Math.cos(rad(state.here.lat)) * Math.cos(rad(b.lat)) * Math.sin(dLon/2)**2;
+        return 2 * R * Math.asin(Math.sqrt(h));
+    }
+    function distLabel(m){
+        if(m == null) return '';
+        if(m < 40) return "You're here";
+        const mi = m / 1609.34;
+        const walk = Math.max(1, Math.round(m * 1.3 / 80));   // paths aren't straight; ~80 m/min walking
+        return `${mi < 0.1 ? Math.round(m * 3.281) + ' ft' : mi.toFixed(1) + ' mi'} · ~${walk} min walk`;
+    }
+    async function locateMe(){
+        const btn = $('nearMe'), msg = $('nearMsg');
+        if(!('geolocation' in navigator)){ msg.textContent = 'Location is not available in this browser.'; return; }
+        btn.disabled = true; btn.textContent = '📍 Locating…'; msg.textContent = '';
+        try{
+            if(!state.buildingsGeo){
+                const res = await fetch('buildings.json');
+                state.buildingsGeo = (await res.json()).buildings;
+            }
+            const pos = await new Promise((ok, fail) => navigator.geolocation.getCurrentPosition(ok, fail, {enableHighAccuracy:true, timeout:15000, maximumAge:60000}));
+            state.here = {lat:pos.coords.latitude, lon:pos.coords.longitude};
+            if(![...$('sortBy').options].some(o => o.value === 'nearest')) $('sortBy').insertAdjacentHTML('afterbegin', '<option value="nearest">Nearest to me</option>');
+            $('sortBy').value = 'nearest';
+            const fromCampus = distTo({building:'ROYCE'});
+            msg.textContent = fromCampus > 3000 ? `You're about ${(fromCampus/1609.34).toFixed(1)} mi from campus. Sorted by distance anyway.` : '';
+            render();
+        }catch(err){
+            msg.textContent = err && err.code === 1 ? 'Location permission was denied.' : 'Could not get your location. Try again.';
+        }finally{
+            btn.disabled = false; btn.textContent = '📍 Nearest to me';
+        }
     }
 
     // ---------- data ----------
@@ -614,6 +664,7 @@
         $('charSelectAll').addEventListener('click', () => setChars(cf.querySelectorAll('input'), true));
         $('charClear').addEventListener('click', () => setChars(cf.querySelectorAll('input'), false));
         $('clearAll').addEventListener('click', clearFilters);
+        $('nearMe').addEventListener('click', locateMe);
         let lastW = window.innerWidth;
         window.addEventListener('resize', debounce(() => { if(Math.abs(window.innerWidth - lastW) > 50){ lastW = window.innerWidth; renderCharacteristics(); } }, 200));
 
