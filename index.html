@@ -4,539 +4,532 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>UCLA StudySpace</title>
+    <meta name="description" content="Find empty UCLA classrooms to study in, right now.">
     <style>
-        :root{--accent:#60a5fa;--muted:#94a3b8;--bg:#0f172a}
+        :root{--accent:#60a5fa;--muted:#94a3b8;--bg:#0f172a;--card:#1f2937;--panel:#1e3a5f;--text:#e5e7eb;--free:#34d399;--busy:#f87171;--event:#f59e0b}
         *{box-sizing:border-box}
-        body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;background:var(--bg);margin:0;color:#e5e7eb}
-        label{color:#e5e7eb}
-        a{color:#93c5fd}
-        a:hover{color:#bfdbfe}
-        /* keep small equal side padding (matches header top padding) and constrain width */
-        .container{width:100%;margin:0;padding:0;background:transparent;overflow:hidden}
-        header{padding:20px 24px;border-bottom:none;background:#0f172a}
+        body{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg);margin:0;color:var(--text)}
+        a{color:#93c5fd} a:hover{color:#bfdbfe}
+        header{padding:20px 24px 4px}
         header h1{margin:0;font-size:1.2rem;color:#f8fafc}
-        header p{margin:6px 0 0;color:var(--muted);font-size:0.95rem}
-        /* Single-column layout: filters on top, results below */
-        main{display:block;gap:0;padding:8px 0}
-        .controls{border-right:none;padding-right:0;margin-bottom:12px}
-        .results-wrap{padding-left:0}
-        @media (max-width:1200px){ main{display:block} .controls{border-right:none;padding-right:0} .results-wrap{padding-left:0} }
-        /* make the top search row full width */
-        .search-row{margin:0;padding:0 20px;display:flex;gap:8px;align-items:center}
-        @media (max-width:880px){ .search-row{margin:0;padding:0 12px;flex-direction:column;align-items:stretch} .search-row select{width:100%} }
-        .search-row{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
-        .search-row input{flex:1 1 320px;min-width:120px}
-        .search-row select{flex:1 1 200px;min-width:120px}
-        input,select{padding:8px;border:1px solid #1f2937;border-radius:6px;background:#1f2937;color:#e5e7eb}
-        .custom-multiselect{position:relative;display:inline-block;width:100%}
-        .multiselect-display{padding:8px;border:1px solid #1f2937;border-radius:6px;background:#1f2937;color:#e5e7eb;cursor:pointer;user-select:none}
-        .multiselect-dropdown{display:none;position:absolute;top:100%;left:0;right:0;background:#1e3a5f;border:1px solid #1f2937;border-radius:6px;z-index:1000;margin-top:4px;max-height:300px;overflow-y:auto}
-        .multiselect-dropdown.open{display:block}
-        .multiselect-dropdown label{display:flex;align-items:center;padding:8px 12px;cursor:pointer;color:#e5e7eb}
-        .multiselect-dropdown label:hover{background:rgba(96,165,250,0.15)}
-        .multiselect-dropdown input[type="checkbox"]{margin-right:8px;cursor:pointer}
-        .filters-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-        .selectors-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;color:#e5e7eb}
-        .filter-group{display:flex;flex-direction:column;gap:6px;color:#e5e7eb}
-        .filter-group.wide{grid-column:1 / -1}
+        header p{margin:6px 0 0;color:var(--muted);font-size:0.9rem}
+        main{padding:8px 0}
+        input,select{padding:8px;border:1px solid var(--card);border-radius:6px;background:var(--card);color:var(--text);font:inherit;font-size:0.95rem}
+        .full-filters{padding:12px 20px}
+        .selectors-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+        .filter-group{display:flex;flex-direction:column;gap:6px}
         .day-time-row{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:12px}
-        .characteristics-row{margin-top:12px}
-        /* Characteristics: groups distributed into balanced vertical columns */
-        .checkbox-group{display:block;max-height:320px;overflow:auto;padding:12px;border:1px solid #1f2937;border-radius:10px;background:#1f2937}
-        .checkbox-group::-webkit-scrollbar{height:8px;width:8px}
-        .checkbox-group::-webkit-scrollbar-thumb{background:rgba(96,165,250,0.2);border-radius:8px}
-        .char-columns{display:flex;gap:16px;align-items:flex-start}
-        .char-column{flex:1 1 240px;min-width:200px;max-width:360px;display:flex;flex-direction:column;gap:8px}
-        .char-group{background:transparent;border:1px solid #1f2937;padding:6px;border-radius:6px;margin:0}
-        .char-group-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;font-weight:600;color:#e5e7eb;font-size:0.95rem}
-        .char-group-list{display:flex;flex-direction:column;gap:4px}
-        .checkbox-item{display:flex;align-items:center;gap:6px;padding:2px 4px;border-radius:4px;transition:background .12s ease}
-        .checkbox-item:hover{background:rgba(96,165,250,0.1)}
-        .checkbox-item input{width:auto;height:auto;margin:0;accent-color:var(--accent)}
-        .checkbox-item label{font-size:0.92rem;color:#e5e7eb;line-height:1.1}
-        @media (max-width:1000px){ .char-columns{gap:12px} }
-        @media (max-width:700px){ .char-columns{flex-direction:column} .char-column{max-width:none;min-width:0} }
-
-        .controls-actions{display:flex;align-items:center;justify-content:space-between;margin-top:12px}
-        /* Make the full-filters section span the full width above the columns */
-        .full-filters{flex-basis:100%;width:100%;padding:12px 20px;border-bottom:none;background:transparent}
-        /* Ensure on narrow screens selectors stack and characteristics remain full width */
-        @media (max-width:880px){ .selectors-grid{grid-template-columns:1fr} .day-time-row{flex-direction:column;align-items:stretch} .checkbox-group{max-height:160px} }
-        .day-filter{display:flex;gap:6px}
-        .day-btn{padding:6px 8px;border-radius:6px;border:1px solid #1f2937;background:#1f2937;cursor:pointer;color:#e5e7eb}
+        .day-filter{display:flex;gap:6px;flex-wrap:wrap}
+        .day-btn{padding:6px 8px;border-radius:6px;border:1px solid var(--card);background:var(--card);cursor:pointer;color:var(--text);font:inherit}
         .day-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
         .time-picker{display:flex;gap:6px;align-items:center}
-
-        .checkbox-item{display:flex;align-items:center;gap:6px}
-        .controls-actions{display:flex;align-items:center;justify-content:space-between;margin-top:12px}
-        /* Center column: slightly larger cards to better occupy center space */
-        .results{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;padding:0 20px}
-        .room-card{background:#1f2937;border:1px solid #1f2937;padding:12px;border-radius:12px;transition:transform .12s ease,box-shadow .12s ease}
-        .room-card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,0.3);border-color:rgba(96,165,250,0.2)}
-        /* Use a consistent 4:3 aspect ratio for room images */
-        .room-image{width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:8px;margin-bottom:10px;max-height:360px;min-height:120px;background:#1f2937}
-        .room-image img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;opacity:1;transition:opacity 0.3s}
-        .room-image img.loading{opacity:0.5}
-        .room-card.no-image .room-image{display:none}
-        /* Cards without images: vertically center main content */
-        .room-card{display:flex;flex-direction:column}
-        .room-card.no-image .room-body{display:flex;flex-direction:column;justify-content:center;min-height:180px}
-
-        /* Results grid: max 3 columns */
+        .custom-multiselect{position:relative}
+        .multiselect-display{padding:8px;border-radius:6px;background:var(--card);cursor:pointer;user-select:none}
+        .multiselect-dropdown{display:none;position:absolute;top:100%;left:0;right:0;background:var(--panel);border-radius:6px;z-index:1000;margin-top:4px;max-height:300px;overflow-y:auto}
+        .multiselect-dropdown.open{display:block}
+        .multiselect-dropdown label{display:flex;align-items:center;gap:8px;padding:8px 12px;cursor:pointer}
+        .multiselect-dropdown label:hover{background:rgba(96,165,250,0.15)}
+        .characteristics-row{margin-top:12px}
+        .checkbox-group{max-height:320px;overflow:auto;padding:12px;border-radius:10px;background:var(--card)}
+        .char-columns{display:flex;gap:16px;align-items:flex-start}
+        .char-column{flex:1 1 240px;min-width:200px;max-width:360px;display:flex;flex-direction:column;gap:8px}
+        .char-group{border:1px solid #334155;padding:6px;border-radius:6px}
+        .char-group-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;font-weight:600;font-size:0.95rem}
+        .char-group-list{display:flex;flex-direction:column;gap:4px}
+        .checkbox-item{display:flex;align-items:center;gap:6px;padding:2px 4px;border-radius:4px}
+        .checkbox-item:hover{background:rgba(96,165,250,0.1)}
+        .checkbox-item input{margin:0;accent-color:var(--accent)}
+        .checkbox-item label{font-size:0.92rem;line-height:1.1}
+        .controls-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:12px}
+        .btn{background:var(--card);border:1px solid var(--card);padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600;color:var(--text);font:inherit;font-size:0.9rem;transition:border-color .12s,transform .12s}
+        .btn:hover{transform:translateY(-1px);border-color:var(--accent)}
+        .btn-details{background:#3b82f6;color:#fff;border-color:#3b82f6}
+        .btn-sm{padding:3px 8px;font-size:0.8rem}
         .results{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0 20px}
-        @media (max-width:1000px){ .results{grid-template-columns:repeat(2,1fr)} }
-        @media (max-width:640px){ .results{grid-template-columns:repeat(1,1fr)} }
-        /* Button styles */
-        .btn{background:#1f2937;border:1px solid #1f2937;padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600;color:#e5e7eb;transition:all .12s ease;box-shadow:0 1px 0 rgba(0,0,0,0.1)}
-        .btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(96,165,250,0.1);border-color:#60a5fa}
-        .btn:focus{outline:3px solid rgba(96,165,250,0.2)}
-        .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
-        .btn-secondary{background:#1f2937;color:#e5e7eb;border-color:#1f2937}
-        .btn-details{background:#3b82f6;color:#fff;border-color:#3b82f6;font-weight:600}
-
-        /* Details panel styling */
-        .details{display:none;margin-top:8px;padding:12px;border-radius:6px;background:#1f2937;border:none}
-        .details.active{display:block}
-        .room-title{font-weight:600;margin:0 0 6px;color:#f8fafc}
-        .room-info{display:flex;gap:8px;align-items:center;font-size:0.9rem;color:var(--muted)}
-        .badge{padding:4px 8px;border-radius:6px;font-size:0.8rem;background:#1f2937;border:1px solid #1f2937;color:#e5e7eb}
-        .char-tag{display:inline-block;background:#1e3a5f;color:var(--accent);padding:4px 6px;border-radius:6px;margin:4px 6px 0 0;font-size:0.78rem;border:1px solid rgba(96,165,250,0.2)}
-        .details .day-name{font-weight:600;color:var(--accent);margin-bottom:6px}
-        .details .free-times{background:#1f2937;border-radius:6px;padding:6px;margin-top:6px;border:none;color:var(--muted)}
-        .time-slot{font-size:0.85rem;padding:6px;border-radius:6px;background:#1f2937;border:none;margin-top:6px;color:#e5e7eb}
-        .schedule-calendar{display:flex;flex-direction:column;gap:0;border:none;border-radius:8px;overflow:hidden;margin-top:12px;background:#1e3a5f;min-height:350px}
-        .calendar-header-row{display:flex;gap:0}
-        .calendar-header-time{width:45px;border-right:none;background:#1e3a5f}
-        .calendar-header-day{flex:1;border-right:none;background:#1e3a5f;padding:4px;font-weight:600;color:#e5e7eb;text-align:center;font-size:0.7rem;display:flex;align-items:center;justify-content:center}
-        .calendar-header-day:last-child{border-right:none}
-        .calendar-body{display:flex;gap:0;flex:1}
-        .calendar-time-col{width:45px;border-right:none;background:#1e3a5f;display:flex;flex-direction:column;position:relative;z-index:10}
-        .calendar-time-label{flex:1;font-size:0.65rem;font-weight:500;color:#cbd5e1;text-align:center;display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(96,165,250,0.15);line-height:1}
-        .calendar-time-label:last-child{border-bottom:none}
-        .calendar-column{flex:1;display:flex;flex-direction:column;border-right:none;position:relative}
-        .calendar-column:last-child{border-right:none}
-        .calendar-day-events{flex:1;position:relative;background:#1e3a5f}
-        .calendar-day-events::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none;background-image:linear-gradient(180deg, transparent calc(6.25% - 1px), rgba(30,41,58,0.3) calc(6.25% - 1px), rgba(30,41,58,0.3) calc(6.25%), transparent calc(6.25%)),linear-gradient(180deg, transparent calc(12.5% - 1px), rgba(30,41,58,0.3) calc(12.5% - 1px), rgba(30,41,58,0.3) calc(12.5%), transparent calc(12.5%)),linear-gradient(180deg, transparent calc(18.75% - 1px), rgba(30,41,58,0.3) calc(18.75% - 1px), rgba(30,41,58,0.3) calc(18.75%), transparent calc(18.75%)),linear-gradient(180deg, transparent calc(25% - 1px), rgba(30,41,58,0.3) calc(25% - 1px), rgba(30,41,58,0.3) calc(25%), transparent calc(25%)),linear-gradient(180deg, transparent calc(31.25% - 1px), rgba(30,41,58,0.3) calc(31.25% - 1px), rgba(30,41,58,0.3) calc(31.25%), transparent calc(31.25%)),linear-gradient(180deg, transparent calc(37.5% - 1px), rgba(30,41,58,0.3) calc(37.5% - 1px), rgba(30,41,58,0.3) calc(37.5%), transparent calc(37.5%)),linear-gradient(180deg, transparent calc(43.75% - 1px), rgba(30,41,58,0.3) calc(43.75% - 1px), rgba(30,41,58,0.3) calc(43.75%), transparent calc(43.75%)),linear-gradient(180deg, transparent calc(50% - 1px), rgba(30,41,58,0.3) calc(50% - 1px), rgba(30,41,58,0.3) calc(50%), transparent calc(50%)),linear-gradient(180deg, transparent calc(56.25% - 1px), rgba(30,41,58,0.3) calc(56.25% - 1px), rgba(30,41,58,0.3) calc(56.25%), transparent calc(56.25%)),linear-gradient(180deg, transparent calc(62.5% - 1px), rgba(30,41,58,0.3) calc(62.5% - 1px), rgba(30,41,58,0.3) calc(62.5%), transparent calc(62.5%)),linear-gradient(180deg, transparent calc(68.75% - 1px), rgba(30,41,58,0.3) calc(68.75% - 1px), rgba(30,41,58,0.3) calc(68.75%), transparent calc(68.75%)),linear-gradient(180deg, transparent calc(75% - 1px), rgba(30,41,58,0.3) calc(75% - 1px), rgba(30,41,58,0.3) calc(75%), transparent calc(75%)),linear-gradient(180deg, transparent calc(81.25% - 1px), rgba(30,41,58,0.3) calc(81.25% - 1px), rgba(30,41,58,0.3) calc(81.25%), transparent calc(81.25%)),linear-gradient(180deg, transparent calc(87.5% - 1px), rgba(30,41,58,0.3) calc(87.5% - 1px), rgba(30,41,58,0.3) calc(87.5%), transparent calc(87.5%)),linear-gradient(180deg, transparent calc(93.75% - 1px), rgba(30,41,58,0.3) calc(93.75% - 1px), rgba(30,41,58,0.3) calc(93.75%), transparent calc(93.75%))}
-        .calendar-event{position:absolute;left:1px;right:1px;background:#60a5fa;border-radius:4px;overflow:hidden;z-index:2}
-        .no-results{padding:28px;text-align:center;color:var(--muted)}
-        footer.site-footer{padding:10px;background:transparent;border-top:none;text-align:center;color:var(--muted);font-size:0.85rem}
-        @media (max-width:880px){main{flex-direction:column} .controls{flex:unset;border-right:none;padding-right:0}}
+        @media (max-width:1000px){.results{grid-template-columns:repeat(2,1fr)}}
+        @media (max-width:640px){.results{grid-template-columns:1fr}}
+        @media (max-width:880px){.selectors-grid{grid-template-columns:1fr}.day-time-row{flex-direction:column;align-items:stretch}.checkbox-group{max-height:180px}.full-filters{padding:12px}.results{padding:0 12px}}
+        @media (max-width:700px){.char-columns{flex-direction:column}.char-column{max-width:none;min-width:0}}
+        .room-card{background:var(--card);border:1px solid var(--card);padding:12px;border-radius:12px;display:flex;flex-direction:column;cursor:pointer;transition:transform .12s,box-shadow .12s}
+        .room-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.3);border-color:rgba(96,165,250,0.2)}
+        .room-image{width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:8px;margin-bottom:10px;background:#111827}
+        .room-image img{width:100%;height:100%;object-fit:cover;display:block}
+        .room-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:6px}
+        .room-title{font-weight:600;margin:0;color:#f8fafc;font-size:1.05rem}
+        .pct{font-size:0.8rem;color:var(--muted);white-space:nowrap}
+        .room-info{display:flex;gap:8px;flex-wrap:wrap;font-size:0.9rem}
+        .badge{padding:4px 8px;border-radius:6px;font-size:0.8rem;background:#111827}
+        .status{margin-top:8px;font-size:0.9rem;font-weight:600}
+        .status.free{color:var(--free)} .status.busy{color:var(--busy)}
+        .status small{display:block;font-weight:400;color:var(--muted);margin-top:2px}
+        .details{display:none;margin-top:10px;cursor:default}
+        .room-card.open .details{display:block}
+        .char-tag{display:inline-block;background:var(--panel);color:var(--accent);padding:4px 6px;border-radius:6px;margin:4px 6px 0 0;font-size:0.78rem}
+        .schedule-calendar{display:flex;flex-direction:column;border-radius:8px;overflow:hidden;margin-top:12px;background:var(--panel)}
+        .cal-head,.cal-body{display:flex}
+        .cal-time-col,.cal-head-time{width:40px;flex:none}
+        .cal-head-day{flex:1;padding:4px 0;font-weight:600;text-align:center;font-size:0.68rem;line-height:1.2}
+        .cal-head-day.today{color:var(--accent)}
+        .cal-body{height:400px}
+        .cal-time-col{display:flex;flex-direction:column}
+        .cal-time-label{flex:1;font-size:0.62rem;color:#cbd5e1;text-align:center;border-top:1px solid rgba(96,165,250,0.12);padding-top:1px}
+        .cal-col{flex:1;position:relative;border-left:1px solid rgba(96,165,250,0.08);background-image:repeating-linear-gradient(180deg,rgba(96,165,250,0.12) 0 1px,transparent 1px calc(100%/16))}
+        .cal-ev{position:absolute;left:1px;right:1px;background:var(--accent);border-radius:3px;overflow:hidden;font-size:0.55rem;line-height:1.1;color:#0f172a;padding:1px 2px;font-weight:600}
+        .cal-ev.org{background:var(--event)}
+        .cal-now{position:absolute;left:0;right:0;height:2px;background:var(--busy);z-index:3}
+        .legend{display:flex;gap:12px;font-size:0.75rem;color:var(--muted);margin-top:6px}
+        .legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+        .event-list{margin:10px 0 0;padding:0;list-style:none;font-size:0.85rem}
+        .event-list li{padding:6px 0;border-top:1px solid #334155}
+        .event-list .when{color:var(--event);font-weight:600;margin-right:6px}
+        .event-list .org{color:var(--muted);font-size:0.78rem}
+        .no-results{padding:28px;text-align:center;color:var(--muted);grid-column:1/-1}
+        footer{padding:22px 10px;text-align:center;color:var(--muted);font-size:0.85rem}
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🎓 UCLA StudySpace</h1>
-        </header>
+    <header>
+        <h1>🎓 UCLA StudySpace</h1>
+        <p id="termInfo">Loading classroom data…</p>
+    </header>
 
-
-
-        <main>
-            <!-- Full-width filters area: selectors on top, options (characteristics) underneath -->
-            <section class="full-filters" aria-label="Filters">
-                <div class="selectors-grid">
-                    <div class="filter-group">
-                        <label for="buildingFilter">🏢 Building</label>
-                        <div class="custom-multiselect" id="buildingFilterWrapper">
-                            <div class="multiselect-display" id="buildingDisplay">All Buildings</div>
-                            <div class="multiselect-dropdown" id="buildingDropdown"></div>
-                        </div>
-                    </div>
-                    <div class="filter-group">
-                        <label for="capacityFilter">👥 Minimum Capacity</label>
-                        <input type="number" id="capacityFilter" min="0" placeholder="e.g., 30">
-                    </div>
-                    <div class="filter-group">
-                        <label for="maxCapacityFilter">👥 Maximum Capacity</label>
-                        <input type="number" id="maxCapacityFilter" min="0" placeholder="e.g., 100">
-                    </div>
-                    <div class="filter-group">
-                        <label for="roomSearch">🔍 Search Room</label>
-                        <input type="text" id="roomSearch" placeholder="e.g., BOELTER 2444">
-                    </div>
-                    <div class="filter-group">
-                        <label for="sortBy">Sort</label>
-                        <select id="sortBy"><option value="available">Available Now</option><option value="capacity_desc">High Capacity</option><option value="capacity_asc">Low Capacity</option><option value="building">Building</option></select>
+    <main>
+        <section class="full-filters" aria-label="Filters">
+            <div class="selectors-grid">
+                <div class="filter-group">
+                    <label>🏢 Building</label>
+                    <div class="custom-multiselect">
+                        <div class="multiselect-display" id="buildingDisplay" tabindex="0" role="button">All Buildings</div>
+                        <div class="multiselect-dropdown" id="buildingDropdown"></div>
                     </div>
                 </div>
+                <div class="filter-group">
+                    <label for="capacityFilter">👥 Minimum Capacity</label>
+                    <input type="number" id="capacityFilter" min="0" placeholder="e.g., 30">
+                </div>
+                <div class="filter-group">
+                    <label for="maxCapacityFilter">👥 Maximum Capacity</label>
+                    <input type="number" id="maxCapacityFilter" min="0" placeholder="e.g., 100">
+                </div>
+                <div class="filter-group">
+                    <label for="roomSearch">🔍 Search Room</label>
+                    <input type="search" id="roomSearch" placeholder="e.g., Boelter 2444">
+                </div>
+                <div class="filter-group">
+                    <label for="sortBy">Sort</label>
+                    <select id="sortBy">
+                        <option value="available">Available Now</option>
+                        <option value="free_pct">Most Free Time</option>
+                        <option value="capacity_desc">High Capacity</option>
+                        <option value="capacity_asc">Low Capacity</option>
+                        <option value="building">Building</option>
+                    </select>
+                </div>
+            </div>
 
-                <div class="day-time-row">
-                    <div class="filter-group" style="flex:1">
-                        <label>📅 Day of Week</label>
-                        <div class="day-filter">
-                            <button class="day-btn" data-day="Sunday">Sun</button>
-                            <button class="day-btn" data-day="Monday">Mon</button>
-                            <button class="day-btn" data-day="Tuesday">Tue</button>
-                            <button class="day-btn" data-day="Wednesday">Wed</button>
-                            <button class="day-btn" data-day="Thursday">Thu</button>
-                            <button class="day-btn" data-day="Friday">Fri</button>
-                            <button class="day-btn" data-day="Saturday">Sat</button>
-                        </div>
-                    </div>
-
-                    <div class="filter-group" style="flex:1">
-                        <label>🕐 Show rooms free between:</label>
-                        <div class="time-picker">
-                            <select id="startTime"><option value="">Any time</option></select>
-                            <span>to</span>
-                            <select id="endTime"><option value="">Any time</option></select>
-                        </div>
+            <div class="day-time-row">
+                <div class="filter-group" style="flex:1">
+                    <label>📅 Day of Week</label>
+                    <div class="day-filter" id="dayFilter"></div>
+                </div>
+                <div class="filter-group" style="flex:1">
+                    <label>🕐 Show rooms free between:</label>
+                    <div class="time-picker">
+                        <select id="startTime"><option value="">Any time</option></select>
+                        <span>to</span>
+                        <select id="endTime"><option value="">Any time</option></select>
                     </div>
                 </div>
+            </div>
 
-                <div class="characteristics-row">
-                    <label>✨ Characteristics</label>
-                    <div style="margin:8px 0">
-                        <button class="btn btn-secondary" type="button" onclick="selectAllCharacteristics()">Select all</button>
-                        <button class="btn btn-secondary" type="button" onclick="clearCharacteristics()" style="margin-left:8px">Clear</button>
-                    </div>
-                    <div class="checkbox-group" id="characteristicsFilter"></div>
+            <div class="characteristics-row">
+                <label>✨ Characteristics</label>
+                <div style="margin:8px 0">
+                    <button class="btn" type="button" id="charSelectAll">Select all</button>
+                    <button class="btn" type="button" id="charClear" style="margin-left:8px">Clear</button>
                 </div>
+                <div class="checkbox-group" id="characteristicsFilter"></div>
+            </div>
 
-                <div class="controls-actions">
-                    <div style="display:flex;gap:8px;align-items:center">
-                        <button class="btn btn-secondary" onclick="clearFilters()">Clear All Filters</button>
-                    </div>
-                    <div class="stats"><strong id="totalRooms">0</strong> rooms found • <strong id="availableRooms">0</strong> currently available</div>
-                </div>
-            </section>
+            <div class="controls-actions">
+                <button class="btn" type="button" id="clearAll">Clear All Filters</button>
+                <div><strong id="totalRooms">0</strong> rooms found • <strong id="availableRooms">0</strong> free right now</div>
+            </div>
+        </section>
 
-            <section class="results-wrap">
-                <div id="results" class="results" aria-live="polite"></div>
-            </section>
-        </main>
+        <section>
+            <div id="results" class="results" aria-live="polite"></div>
+        </section>
+    </main>
 
-
-
-    </div>
-
-    <script id="embeddedSample" type="application/json">[
-        {"text":"BOELTER 2444","building":"BOELTER","room":"02444","offered":true,"capacity":80,"type":"Classroom","url":"https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26W&classroom=BOELTER+%7C++02444++","characteristics":["Air Conditioning","Projection Screen"],"schedule":{"Monday":[{"course":"EC ENGR 133A","type":"LEC","start_time":"02:00 PM","end_time":"03:50 PM","enrolled":80,"capacity":80}],"Tuesday":[],"Wednesday":[],"Thursday":[],"Friday":[]}}
-    ]</script>
+    <footer>
+        Class schedules from the UCLA Registrar. Club and org events from <a href="https://community.ucla.edu/calendars" target="_blank" rel="noopener">UCLA Community</a> where posted with a room number.
+        Events booked through the UCLA Events Office are not public, so a room shown as free can still be taken.<br>
+        © <span id="site-year"></span> Taylor Nilsen · <a href="https://github.com/Taylor-Nilsen/UclaStudySpace" target="_blank" rel="noopener">Repo</a>
+    </footer>
 
     <script>
-    // Compact, clear app logic
-    let classroomsData=[], allCharacteristics=new Set(), selectedDay='', selectedCharacteristics=new Set(), selectedBuildings=new Set(), dataLoaded=false;
-    const defaultCharacteristics = ['Air Conditioning','Chalkboard','Projection Screen','Video Projector-Installed','Microphone-Installed'];
-    const timeSlots=['07:00 AM','08:00 AM','09:00 AM','10:00 AM','11:00 AM','12:00 PM','01:00 PM','02:00 PM','03:00 PM','04:00 PM','05:00 PM','06:00 PM','07:00 PM','08:00 PM','09:00 PM','10:00 PM'];
-
-    // Categories used to group similar characteristics together (ordered)
-    const CHARACTERISTIC_CATEGORIES = [
-        {name:'Room Features', patterns:[/air conditioning/i,/window/i,/windows/i,/chalkboard/i,/whiteboard/i,/white board/i,/windows/i]},
-        {name:'Audio / AV', patterns:[/projector/i,/audio/i,/video/i,/microphone/i,/projection screen/i,/overhead projector/i,/comp projector/i,/media equipment/i,/vhs/i,/monitor/i,/wireless microphone/i]},
-        {name:'Seating & Layout', patterns:[/auditorium/i,/fixed tables/i,/fixed tablet/i,/tablet arm/i,/fixed tablet arm/i,/fixed arm/i,/seating/i]},
-        {name:'Connectivity', patterns:[/gacnet/i,/backbone/i,/hookup/i,/network/i,/ethernet/i,/wireless/i]},
-        {name:'Other', patterns:[]}
+    'use strict';
+    const DAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const CAL_START = 7*60, CAL_END = 23*60;        // calendar grid window
+    const OPEN_START = 8*60, OPEN_END = 22*60;       // "free time" window
+    const PCT_START = 8*60, PCT_END = 20*60;         // same window the registrar uses for room-use %
+    const DEFAULT_CHARS = ['Air Conditioning','Chalkboard','Projection Screen','Video Projector-Installed','Microphone-Installed'];
+    const CHAR_CATEGORIES = [
+        {name:'Room Features', rx:/air conditioning|window|chalkboard|white ?board/i},
+        {name:'Audio / AV', rx:/projector|audio|video|microphone|projection screen|media equipment|vhs|monitor/i},
+        {name:'Seating & Layout', rx:/auditorium|fixed tabl|tablet arm|fixed arm|seating/i},
+        {name:'Connectivity', rx:/gacnet|backbone|hookup|network|ethernet|wireless/i},
     ];
 
-    function categorizeCharacteristics(chars){
+    const state = {rooms:[], day:'', chars:new Set(), buildings:new Set(), allChars:new Set(), open:new Set()};
+    const $ = id => document.getElementById(id);
+    const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const norm = s => String(s || '').toLowerCase().replace(/\s+/g, ' ').trim();
+    const debounce = (fn, ms) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
+
+    function toMin(t){
+        if(!t) return null;
+        const m = /(\d{1,2}):(\d{2})\s*(AM|PM)/i.exec(t);
+        if(!m) return null;
+        let h = +m[1] % 12; if(m[3].toUpperCase() === 'PM') h += 12;
+        return h*60 + +m[2];
+    }
+    function fmtMin(min){
+        const h = Math.floor(min/60) % 24, m = min % 60;
+        return `${h%12 || 12}:${String(m).padStart(2,'0')} ${h < 12 ? 'AM' : 'PM'}`;
+    }
+    function fmtHour(h){ return `${h%12 || 12}${h < 12 ? 'a' : 'p'}`; }
+
+    // Campus clock: always America/Los_Angeles, whatever the visitor's timezone.
+    function campusNow(){
+        const p = Object.fromEntries(new Intl.DateTimeFormat('en-US', {timeZone:'America/Los_Angeles', year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit', hourCycle:'h23', weekday:'long'})
+            .formatToParts(new Date()).map(x => [x.type, x.value]));
+        return {day:p.weekday, min:(+p.hour % 24)*60 + +p.minute, y:+p.year, m:+p.month, d:+p.day};
+    }
+    // Date (YYYY-MM-DD) of the next occurrence of `day`, today included.
+    function dateForDay(day){
+        const now = campusNow();
+        const offset = (DAYS.indexOf(day) - DAYS.indexOf(now.day) + 7) % 7;
+        return new Date(Date.UTC(now.y, now.m - 1, now.d + offset)).toISOString().slice(0, 10);
+    }
+
+    // Precompute minute intervals once so filtering is cheap.
+    function prepRoom(r){
+        r._search = norm(`${r.text} ${r.building} ${(r.room||'').replace(/^[0]+/, '')}`);
+        r._cls = {};
+        DAYS.forEach(d => {
+            r._cls[d] = ((r.schedule && r.schedule[d]) || []).map(s => {
+                const a = toMin(s.start_time), b = toMin(s.end_time);
+                return a == null ? null : {s:a, e:b ?? a + 50, label:s.course, sub:s.type, org:false};
+            }).filter(Boolean);
+        });
+        r._ev = (r.events || []).map(e => {
+            const a = toMin(e.start_time), b = toMin(e.end_time);
+            return a == null ? null : {date:e.date, s:a, e:b ?? a + 60, label:e.title, sub:e.org, url:e.url, org:true};
+        }).filter(Boolean);
+        return r;
+    }
+    function busy(r, day){
+        const date = dateForDay(day);
+        return r._cls[day].concat(r._ev.filter(e => e.date === date)).sort((a, b) => a.s - b.s);
+    }
+    function isFree(r, day, s, e){
+        return !busy(r, day).some(b => (s === e) ? (b.s <= s && s < b.e) : (b.s < e && s < b.e));
+    }
+    // Status at a moment: {free, until}. `until` is when that state ends (null = rest of day).
+    function statusAt(r, day, min){
+        const list = busy(r, day);
+        const cur = list.find(b => b.s <= min && min < b.e);
+        if(!cur){
+            const next = list.find(b => b.s > min);
+            return {free:true, until:next ? next.s : null, next};
+        }
+        let end = cur.e;  // merge back-to-back bookings
+        for(const b of list) if(b.s <= end && b.e > end) end = b.e;
+        return {free:false, until:end, cur};
+    }
+    function freePct(r, day){
+        let covered = 0, cursor = PCT_START;
+        for(const b of busy(r, day)){
+            const s = Math.max(b.s, cursor), e = Math.min(b.e, PCT_END);
+            if(e > s){ covered += e - s; cursor = e; }
+        }
+        return Math.round(100 * (1 - covered / (PCT_END - PCT_START)));
+    }
+
+    // ---------- filters UI ----------
+    function buildStaticControls(){
+        $('dayFilter').innerHTML = DAYS.map(d => `<button class="day-btn" type="button" data-day="${d}">${d.slice(0,3)}</button>`).join('');
+        const opts = [];
+        for(let h = 7; h <= 22; h++) opts.push(`<option value="${h*60}">${fmtMin(h*60)}</option>`);
+        $('startTime').insertAdjacentHTML('beforeend', opts.join(''));
+        $('endTime').insertAdjacentHTML('beforeend', opts.join(''));
+    }
+
+    function renderCharacteristics(){
         const groups = new Map();
-        for(const c of [...chars].sort()){
-            let placed=false;
-            for(const cat of CHARACTERISTIC_CATEGORIES){
-                if(cat.patterns.some(p=>p.test(c))){
-                    if(!groups.has(cat.name)) groups.set(cat.name,[]);
-                    groups.get(cat.name).push(c);
-                    placed=true; break;
-                }
-            }
-            if(!placed){ if(!groups.has('Other')) groups.set('Other',[]); groups.get('Other').push(c); }
-        }
-        // keep defined order
-        const ordered=[];
-        for(const cat of CHARACTERISTIC_CATEGORIES) if(groups.has(cat.name)) ordered.push([cat.name, groups.get(cat.name)]);
-        // ensure 'Other' appears at end
-        if(groups.has('Other') && !ordered.some(([n])=>n==='Other')) ordered.push(['Other', groups.get('Other')]);
-        return ordered;
-    }
-
-    function renderCharacteristicCheckboxes(chars, preserveChecked=true){
-        const wrap = document.getElementById('characteristicsFilter');
-        const prevChecked = preserveChecked ? new Set([...wrap.querySelectorAll('input[type="checkbox"]:checked')].map(cb=>cb.value)) : new Set();
-        wrap.innerHTML = '';
-
-        const groups = categorizeCharacteristics(chars);
-
-        // Determine number of columns based on the container width (preferred column width ~260px)
-        const containerWidth = wrap.clientWidth || wrap.offsetWidth || window.innerWidth;
-        const preferredCol = 260;
-        let nCols = Math.max(1, Math.min(3, Math.floor(containerWidth / preferredCol)));
-        nCols = Math.min(nCols, groups.length || 1);
-
-        // Greedy distribution to balance item counts between columns (keep sections intact)
-        const columns = Array.from({length: nCols}, ()=>[]);
-        const sizes = new Array(nCols).fill(0);
-        groups.forEach(([name, list]) => {
-            const size = list.length + 1; // header + items
-            let minIdx = 0; for(let i=1;i<nCols;i++) if(sizes[i] < sizes[minIdx]) minIdx = i;
-            columns[minIdx].push([name, list]);
-            sizes[minIdx] += size;
+        [...state.allChars].sort().forEach(c => {
+            const cat = (CHAR_CATEGORIES.find(k => k.rx.test(c)) || {name:'Other'}).name;
+            if(!groups.has(cat)) groups.set(cat, []);
+            groups.get(cat).push(c);
         });
-
-        // Build column elements
-        const colsWrap = document.createElement('div'); colsWrap.className = 'char-columns';
-        columns.forEach(col => {
-            const colEl = document.createElement('div'); colEl.className = 'char-column';
-            col.forEach(([name, list])=>{
-                const group = document.createElement('div'); group.className='char-group'; group.setAttribute('data-group', name);
-                const header = document.createElement('div'); header.className='char-group-header';
-                const title = document.createElement('div'); title.textContent = name;
-                const ctrls = document.createElement('div'); ctrls.className='char-group-controls';
-                const sel = document.createElement('button'); sel.className='btn btn-secondary'; sel.type='button'; sel.textContent='Select'; sel.addEventListener('click', ()=>{ group.querySelectorAll('input[type="checkbox"]').forEach(cb=>{ cb.checked=true; selectedCharacteristics.add(cb.value); }); handleFilterChange(); });
-                const clr = document.createElement('button'); clr.className='btn btn-secondary'; clr.type='button'; clr.textContent='Clear'; clr.style.marginLeft='8px'; clr.addEventListener('click', ()=>{ group.querySelectorAll('input[type="checkbox"]').forEach(cb=>{ cb.checked=false; selectedCharacteristics.delete(cb.value); }); handleFilterChange(); });
-                ctrls.appendChild(sel); ctrls.appendChild(clr);
-                header.appendChild(title); header.appendChild(ctrls);
-                group.appendChild(header);
-
-                const listEl = document.createElement('div'); listEl.className='char-group-list';
-                list.forEach(c=>{
-                    const id='c-'+c.replace(/\s+/g,'-');
-                    const div=document.createElement('div'); div.className='checkbox-item';
-                    div.innerHTML = `<input type="checkbox" id="${id}" value="${c}" ${prevChecked.has(c)?'checked':''}><label for="${id}">${c}</label>`;
-                    listEl.appendChild(div);
-                });
-                group.appendChild(listEl);
-                colEl.appendChild(group);
-            });
-            colsWrap.appendChild(colEl);
+        const ordered = CHAR_CATEGORIES.map(c => c.name).concat('Other').filter(n => groups.has(n)).map(n => [n, groups.get(n)]);
+        const wrap = $('characteristicsFilter');
+        const nCols = Math.max(1, Math.min(3, Math.floor((wrap.clientWidth || window.innerWidth) / 260), ordered.length));
+        const cols = Array.from({length:nCols}, () => ({size:0, html:[]}));
+        ordered.forEach(([name, list]) => {
+            const col = cols.reduce((a, b) => b.size < a.size ? b : a);
+            col.size += list.length + 1;
+            col.html.push(`<div class="char-group" data-group="${esc(name)}">
+                <div class="char-group-header"><span>${esc(name)}</span><span>
+                    <button class="btn btn-sm" type="button" data-group-action="select">Select</button>
+                    <button class="btn btn-sm" type="button" data-group-action="clear">Clear</button></span></div>
+                <div class="char-group-list">${list.map(c => `<label class="checkbox-item"><input type="checkbox" value="${esc(c)}" ${state.chars.has(c) ? 'checked' : ''}> ${esc(c)}</label>`).join('')}</div>
+            </div>`);
         });
-
-        wrap.appendChild(colsWrap);
-
-        // update selectedCharacteristics and bind events
-        selectedCharacteristics.clear();
-        wrap.querySelectorAll('input[type="checkbox"]:checked').forEach(cb=>selectedCharacteristics.add(cb.value));
-        wrap.querySelectorAll('input[type="checkbox"]').forEach(cb=>cb.addEventListener('change', function(){ if(this.checked) selectedCharacteristics.add(this.value); else selectedCharacteristics.delete(this.value); handleFilterChange(); }));
-
-        // Stable resize handler that rebalances columns
-        if(!window._charResizeBound){
-            window._charResizeBound = () => { if(window._charResizeTimer) clearTimeout(window._charResizeTimer); window._charResizeTimer = setTimeout(()=>{ renderCharacteristicCheckboxes(allCharacteristics, true); }, 200); };
-            window.addEventListener('resize', window._charResizeBound);
-        }
+        wrap.innerHTML = `<div class="char-columns">${cols.map(c => `<div class="char-column">${c.html.join('')}</div>`).join('')}</div>`;
     }
 
-
-
-    document.addEventListener('DOMContentLoaded', ()=>{
-        const s=document.getElementById('startTime'), e=document.getElementById('endTime'); timeSlots.forEach(t=>{ s.innerHTML+=`<option value="${t}">${t}</option>`; e.innerHTML+=`<option value="${t}">${t}</option>`});
-        ['change','input'].forEach(ev=>{ document.getElementById('capacityFilter').addEventListener(ev,handleFilterChange); document.getElementById('maxCapacityFilter').addEventListener(ev,handleFilterChange); document.getElementById('startTime').addEventListener('change',handleFilterChange); document.getElementById('endTime').addEventListener('change',handleFilterChange); document.getElementById('sortBy').addEventListener('change',handleFilterChange); });
-        
-        // Building multi-select dropdown toggle
-        const buildingDisplay = document.getElementById('buildingDisplay');
-        const buildingDropdown = document.getElementById('buildingDropdown');
-        buildingDisplay.addEventListener('click', function(e){ e.stopPropagation(); buildingDropdown.classList.toggle('open'); });
-        buildingDropdown.addEventListener('click', function(e){ e.stopPropagation(); });
-        document.addEventListener('click', function(){ buildingDropdown.classList.remove('open'); });
-        
-        document.getElementById('roomSearch').addEventListener('input', debounce(handleFilterChange,200));
-        document.querySelectorAll('.day-btn').forEach(b=>b.addEventListener('click', ()=>{ document.querySelectorAll('.day-btn').forEach(x=>x.classList.remove('active')); b.classList.add('active'); selectedDay=b.dataset.day; handleFilterChange(); }));
-
-        // close any open details when clearing filters or loading data
-        window.toggleDetails = function(button){ const details = button.closest('.room-card').querySelector('.details'); if(!details) return; details.classList.toggle('active'); button.textContent = details.classList.contains('active') ? 'Details ▴' : 'Details ▾'; };
-
-        // Card click handler - toggle details on click anywhere except buttons and links
-        document.addEventListener('click', (e) => {
-            const card = e.target.closest('.room-card');
-            if (!card) return;
-            
-            // Don't toggle if clicking on button, link, or their children
-            if (e.target.closest('button') || e.target.closest('a')) return;
-            
-            const details = card.querySelector('.details');
-            const button = card.querySelector('button');
-            if (!details || !button) return;
-            
-            details.classList.toggle('active');
-            button.textContent = details.classList.contains('active') ? 'Details ▴' : 'Details ▾';
-        });
-
-        // render default characteristics immediately so checkboxes are visible even before data loads
-        renderCharacteristicCheckboxes(defaultCharacteristics, false);
-
-
-
-        setDefaultTimesAndDay(); loadData();
-    });
-
-    function getTermLabel(termCode){
-        if(!termCode) return '';
-        const match=termCode.match(/(\d{2})([WSUF])/);
-        if(!match) return '';
-        const [, year, quarter]=match;
-        const fullYear='20'+year;
-        const quarters={'W':'Winter','S':'Spring','U':'Summer','F':'Fall'};
-        return (quarters[quarter]||'')+' '+fullYear;
-    }
-    function extractTermCode(url){
-        if(!url) return '';
-        const match=url.match(/term=(\d{2}[WSUF])/);
-        return match?match[1]:'';
-    }
-    function loadData(){ const r=document.getElementById('results'); r.innerHTML='<div class="loading">Loading…</div>'; fetch('classrooms.json').then(res=>{ if(!res.ok) throw new Error('not found'); return res.json() }).then(d=>useData(d)).catch(err=>{ console.warn('fetch failed',err); const embedded=document.getElementById('embeddedSample'); if(embedded){ try{ return useData(JSON.parse(embedded.textContent)); }catch(e){console.error('embedded parse',e);} } fetch('data/sample.json').then(res=>res.json()).then(d=>useData(d)).catch(e=>{ console.error('no data',e); classroomsData=[]; dataLoaded=true; initializeFilters(); renderResults(); r.innerHTML='<div class="no-results"><h2>No data</h2><p>Add classrooms.json or run via server to use the full dataset.</p></div>';}); }); }
-    function useData(raw){ classroomsData=raw.filter(r=>r.offered!==false); if(classroomsData.length>0&&classroomsData[0].url){ const term=extractTermCode(classroomsData[0].url); const label=getTermLabel(term); if(label) document.title='UCLA StudySpace '+label; } dataLoaded=true; initializeFilters(); renderResults(); }
-
-    function initializeFilters(){
-        // Start from defaults and merge any characteristics found in data
-        allCharacteristics = new Set();
-        defaultCharacteristics.forEach(c => allCharacteristics.add(c));
-        classroomsData.forEach(r => r.characteristics && r.characteristics.forEach(c => allCharacteristics.add(c)));
-
-        // Populate building multi-select
-        const allBuildings = [...new Set(classroomsData.map(r => r.building).filter(Boolean))].sort();
-        const dropdown = document.getElementById('buildingDropdown');
-        dropdown.innerHTML = allBuildings.map(b => `<label><input type="checkbox" value="${b}"> ${b}</label>`).join('');
-        dropdown.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-            cb.addEventListener('change', function() {
-                if(this.checked) selectedBuildings.add(this.value);
-                else selectedBuildings.delete(this.value);
-                updateBuildingDisplay();
-                handleFilterChange();
-            });
-        });
-
-        // Render characteristics while preserving checked states
-        renderCharacteristicCheckboxes(allCharacteristics, true);
+    function setChars(inputs, on){
+        inputs.forEach(cb => { cb.checked = on; on ? state.chars.add(cb.value) : state.chars.delete(cb.value); });
+        render();
     }
 
-    function selectAllCharacteristics(){ document.querySelectorAll('#characteristicsFilter input[type="checkbox"]').forEach(cb=>{ cb.checked = true; selectedCharacteristics.add(cb.value); }); handleFilterChange(); }
-    function clearCharacteristics(){ document.querySelectorAll('#characteristicsFilter input[type="checkbox"]').forEach(cb=>{ cb.checked = false; }); selectedCharacteristics.clear(); handleFilterChange(); }
-
-    function clearFilters(){ document.getElementById('capacityFilter').value=''; document.getElementById('maxCapacityFilter').value=''; document.getElementById('roomSearch').value=''; document.getElementById('startTime').value=''; document.getElementById('endTime').value=''; document.getElementById('sortBy').value='available'; selectedDay=''; selectedCharacteristics.clear(); selectedBuildings.clear(); document.querySelectorAll('.day-btn').forEach(b=>b.classList.remove('active')); document.querySelectorAll('#buildingDropdown input[type="checkbox"]').forEach(cb=>cb.checked=false); document.querySelectorAll('#characteristicsFilter input[type="checkbox"]').forEach(cb=>cb.checked=false); updateBuildingDisplay(); handleFilterChange(); }
-
-    function timeToMinutes(timeStr){ const [time,period]=timeStr.split(' '); let [h,m]=time.split(':').map(Number); if(period==='PM'&&h!==12)h+=12; if(period==='AM'&&h===12)h=0; return h*60+m; }
-    function isRoomFreeAtTime(room,day,startTime,endTime){ if(!startTime||!endTime) return true; if(!room.schedule||!room.schedule[day]) return true; const rs=timeToMinutes(startTime), re=timeToMinutes(endTime); for(const s of room.schedule[day]){ const ss=timeToMinutes(s.start_time), se=timeToMinutes(s.end_time); if(!(re<=ss || rs>=se)) return false; } return true; }
-
-    function handleFilterChange(){ if(!dataLoaded) return; renderResults(); }
+    function initFilters(){
+        state.allChars = new Set(DEFAULT_CHARS);
+        state.rooms.forEach(r => (r.characteristics || []).forEach(c => state.allChars.add(c)));
+        renderCharacteristics();
+        const buildings = [...new Set(state.rooms.map(r => r.building).filter(Boolean))].sort();
+        $('buildingDropdown').innerHTML = buildings.map(b => `<label><input type="checkbox" value="${esc(b)}"> ${esc(b)}</label>`).join('');
+    }
 
     function updateBuildingDisplay(){
-        const display = document.getElementById('buildingDisplay');
-        if(selectedBuildings.size === 0){
-            display.textContent = 'All Buildings';
-        } else if(selectedBuildings.size === 1){
-            display.textContent = [...selectedBuildings][0];
-        } else {
-            display.textContent = selectedBuildings.size + ' selected';
-        }
+        const n = state.buildings.size;
+        $('buildingDisplay').textContent = n === 0 ? 'All Buildings' : n === 1 ? [...state.buildings][0] : `${n} selected`;
     }
 
-    function calculateDayAvailability(room, day){
-        const schedule=room.schedule&&room.schedule[day]?room.schedule[day]:[];
-        const occupiedHours=new Set();
-        schedule.forEach(s=>{
-            const startMin=timeToMinutes(s.start_time);
-            const endMin=timeToMinutes(s.end_time);
-            const durationMin=endMin-startMin;
-            const hoursNeeded=Math.ceil(durationMin/60);
-            const startHour=Math.floor(startMin/60);
-            for(let i=0;i<hoursNeeded;i++){
-                const hour=startHour+i;
-                if(hour>=8&&hour<18) occupiedHours.add(hour);
+    function selectDay(day){
+        state.day = day;
+        document.querySelectorAll('.day-btn').forEach(b => b.classList.toggle('active', b.dataset.day === day));
+    }
+
+    function setDefaults(){
+        const now = campusNow();
+        const h = Math.min(Math.max(Math.floor(now.min / 60), 8), 20);
+        $('startTime').value = h*60;
+        $('endTime').value = Math.min(h + 2, 22)*60;
+        selectDay(now.day);
+        $('sortBy').value = 'available';
+    }
+
+    function clearFilters(){
+        ['capacityFilter','maxCapacityFilter','roomSearch','startTime','endTime'].forEach(id => $(id).value = '');
+        $('sortBy').value = 'available';
+        selectDay('');
+        state.chars.clear(); state.buildings.clear();
+        document.querySelectorAll('#buildingDropdown input, #characteristicsFilter input').forEach(cb => cb.checked = false);
+        updateBuildingDisplay();
+        render();
+    }
+
+    // ---------- results ----------
+    function filtered(){
+        const minCap = parseInt($('capacityFilter').value) || 0;
+        const maxCap = parseInt($('maxCapacityFilter').value) || Infinity;
+        const q = norm($('roomSearch').value);
+        const qNoSpace = q.replace(/ /g, '');
+        const s = $('startTime').value === '' ? null : +$('startTime').value;
+        const e = $('endTime').value === '' ? null : +$('endTime').value;
+        const timeOk = s != null && e != null && e > s;
+        return state.rooms.filter(r => {
+            if(state.buildings.size && !state.buildings.has(r.building)) return false;
+            if(minCap && (r.capacity || 0) < minCap) return false;
+            if(maxCap !== Infinity && r.capacity && r.capacity > maxCap) return false;
+            if(q && !r._search.includes(q) && !r._search.replace(/ /g, '').includes(qNoSpace)) return false;
+            if(state.chars.size){ const rc = r.characteristics || []; for(const c of state.chars) if(!rc.includes(c)) return false; }
+            if(timeOk){
+                if(state.day){ if(!isFree(r, state.day, s, e)) return false; }
+                else if(!DAYS.some(d => isFree(r, d, s, e))) return false;
             }
+            return true;
         });
-        const totalHours=10; // 8am to 6pm
-        const percentOccupied=Math.round((occupiedHours.size/totalHours)*100);
-        const percentAvailable=100-percentOccupied;
-        return percentAvailable;
     }
 
-    function buildCalendarGrid(room){
-        const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-        let html=`<div class="schedule-calendar">`;
-        
-        // Header row
-        html+=`<div class="calendar-header-row">`;
-        html+=`<div class="calendar-header-time"></div>`;
-        days.forEach(d=>{ const pct=calculateDayAvailability(room,d); html+=`<div class="calendar-header-day">${d.slice(0,3)} ${pct}%</div>`; });
-        html+=`</div>`;
-        
-        // Body: time column + day columns
-        html+=`<div class="calendar-body">`;
-        
-        // Time column
-        html+=`<div class="calendar-time-col">`;
-        for(let h=7;h<=22;h++){
-            const period=h<12?'AM':'PM';
-            const h12=h===0?12:(h>12?h-12:h);
-            const timeStr=h12+' '+period;
-            html+=`<div class="calendar-time-label">${timeStr}</div>`;
+    function sortRooms(list, now){
+        const how = $('sortBy').value;
+        const byName = (a, b) => (a.text || '').localeCompare(b.text || '');
+        if(how === 'capacity_desc') return list.sort((a, b) => (b.capacity||0) - (a.capacity||0) || byName(a, b));
+        if(how === 'capacity_asc') return list.sort((a, b) => (a.capacity||0) - (b.capacity||0) || byName(a, b));
+        if(how === 'building') return list.sort(byName);
+        if(how === 'free_pct'){ const d = state.day || now.day; return list.sort((a, b) => freePct(b, d) - freePct(a, d) || byName(a, b)); }
+        // available: free now first, longest remaining free window first; busy rooms by soonest free
+        return list.sort((a, b) => {
+            const sa = a._now, sb = b._now;
+            if(sa.free !== sb.free) return sa.free ? -1 : 1;
+            const ua = sa.until ?? 1e4, ub = sb.until ?? 1e4;
+            return (sa.free ? ub - ua : ua - ub) || byName(a, b);
+        });
+    }
+
+    function statusHtml(st){
+        if(st.free){
+            const until = st.until == null || st.until >= OPEN_END ? 'for the rest of the day' : `until ${fmtMin(st.until)}`;
+            const next = st.next ? `<small>Next: ${esc(st.next.label)}${st.next.org ? ' (event)' : ''}</small>` : '';
+            return `<div class="status free">Free now ${until}${next}</div>`;
         }
-        html+=`</div>`;
-        
-        // Day columns
-        days.forEach(d=>{
-            const schedule=room.schedule&&room.schedule[d] ? room.schedule[d] : [];
-            html+=`<div class="calendar-column">`;
-            html+=`<div class="calendar-day-events">`;
-            
-            // Render each event as absolutely positioned block
-            schedule.forEach(event=>{
-                const startMin=timeToMinutes(event.start_time);
-                const endMin=timeToMinutes(event.end_time);
-                const dayStart=7*60; // 7am in minutes
-                const dayEnd=23*60; // 11pm in minutes
-                const dayRange=dayEnd-dayStart; // 16 hours = 960 minutes
-                
-                // Only show events that overlap with 7am-11pm window
-                if(endMin>dayStart && startMin<dayEnd){
-                    const clampedStart=Math.max(startMin, dayStart);
-                    const clampedEnd=Math.min(endMin, dayEnd);
-                    const topPct=((clampedStart-dayStart)/dayRange)*100;
-                    const heightPct=(((clampedEnd-clampedStart))/dayRange)*100;
-                    html+=`<div class="calendar-event" style="top:${topPct}%;height:${heightPct}%"></div>`;
-                }
+        return `<div class="status busy">In use until ${fmtMin(st.until)}<small>${esc(st.cur.label)}${st.cur.org ? ' (event)' : ''}</small></div>`;
+    }
+
+    function render(){
+        if(!state.rooms.length) return;
+        const now = campusNow();
+        state.rooms.forEach(r => r._now = statusAt(r, now.day, now.min));
+        const list = sortRooms(filtered(), now);
+        $('totalRooms').textContent = list.length;
+        $('availableRooms').textContent = list.filter(r => r._now.free).length;
+        const today = dateForDay(now.day);
+        const wrap = $('results');
+        if(!list.length){ wrap.innerHTML = `<div class="no-results"><h3>No rooms found</h3><p>Adjust filters to see results.</p></div>`; return; }
+        wrap.innerHTML = list.map(r => {
+            const idx = state.rooms.indexOf(r);
+            const pctDay = state.day || now.day;
+            const nUp = r._ev.filter(e => e.date >= today).length;
+            const img = r.image_url ? `<div class="room-image"><img src="${esc(r.image_url)}" alt="${esc(r.text)}" loading="lazy" decoding="async" onerror="this.parentElement.remove()"></div>` : '';
+            const open = state.open.has(idx);
+            return `<article class="room-card${open ? ' open' : ''}" data-idx="${idx}">
+                ${img}
+                <div class="room-head"><h3 class="room-title">${esc(r.text.replace(/\s+/g, ' '))}</h3><span class="pct" title="Share of 8am to 8pm with no class booked">${freePct(r, pctDay)}% free ${pctDay.slice(0,3)}</span></div>
+                <div class="room-info"><span class="badge">${esc(r.building)}</span>${r.capacity ? `<span class="badge">Cap ${r.capacity}</span>` : ''}${r.type ? `<span class="badge">${esc(r.type)}</span>` : ''}${nUp ? `<span class="badge" style="color:var(--event)">${nUp} upcoming event${nUp > 1 ? 's' : ''}</span>` : ''}</div>
+                ${statusHtml(r._now)}
+                <div style="margin-top:8px"><button class="btn btn-details" type="button" data-toggle>Details ${open ? '▴' : '▾'}</button></div>
+                <div class="details">${open ? detailsHtml(r) : ''}</div>
+            </article>`;
+        }).join('');
+    }
+
+    function detailsHtml(r){
+        const now = campusNow();
+        const chars = (r.characteristics || []).map(c => `<span class="char-tag">${esc(c)}</span>`).join('');
+        const range = CAL_END - CAL_START;
+        let head = '<div class="cal-head"><div class="cal-head-time"></div>', body = '<div class="cal-body"><div class="cal-time-col">';
+        for(let h = CAL_START/60; h < CAL_END/60; h++) body += `<div class="cal-time-label">${fmtHour(h)}</div>`;
+        body += '</div>';
+        const start = DAYS.indexOf(now.day);
+        DAYS.slice(start).concat(DAYS.slice(0, start)).forEach(d => {  // rolling week starting today
+            const date = dateForDay(d);
+            head += `<div class="cal-head-day${d === now.day ? ' today' : ''}">${d.slice(0,3)} ${date.slice(5).replace('-', '/')}<br>${freePct(r, d)}%</div>`;
+            body += '<div class="cal-col">';
+            busy(r, d).forEach(b => {
+                const s = Math.max(b.s, CAL_START), e = Math.min(b.e, CAL_END);
+                if(e <= s) return;
+                const tip = `${b.label}${b.sub ? ' · ' + b.sub : ''}\n${fmtMin(b.s)} to ${fmtMin(b.e)}`;
+                body += `<div class="cal-ev${b.org ? ' org' : ''}" style="top:${(s-CAL_START)/range*100}%;height:${(e-s)/range*100}%" title="${esc(tip)}">${esc(b.label)}</div>`;
             });
-            
-            html+=`</div></div>`;
+            if(d === now.day && now.min > CAL_START && now.min < CAL_END) body += `<div class="cal-now" style="top:${(now.min-CAL_START)/range*100}%"></div>`;
+            body += '</div>';
         });
-        
-        html+=`</div></div>`;
-        return html;
+        head += '</div>'; body += '</div>';
+        const today = dateForDay(now.day);
+        const upcoming = r._ev.filter(e => e.date >= today);
+        const events = upcoming.length ? `<ul class="event-list">${upcoming.map(e =>
+            `<li><span class="when">${new Date(e.date + 'T12:00').toLocaleDateString('en-US', {weekday:'short', month:'numeric', day:'numeric'})} ${fmtMin(e.s)}</span>${e.url ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.label)}</a>` : esc(e.label)}${e.sub ? `<div class="org">${esc(e.sub)}</div>` : ''}</li>`).join('')}</ul>` : '';
+        return `<div>${chars}</div>
+            <div class="schedule-calendar">${head}${body}</div>
+            <div class="legend"><span><i style="background:var(--accent)"></i>Class (weekly)</span><span><i style="background:var(--event)"></i>Club / org event</span></div>
+            ${events}
+            <div style="margin-top:12px;text-align:right"><a href="${esc(r.url || '#')}" target="_blank" rel="noopener">UCLA Schedule →</a></div>`;
     }
 
-    function getFreeTimes(room,day){ if(!room.schedule||!room.schedule[day]||room.schedule[day].length===0) return ['All day']; const schedule=room.schedule[day].slice().sort((a,b)=>timeToMinutes(a.start_time)-timeToMinutes(b.start_time)); const free=[]; let last=timeToMinutes('08:00 AM'); for(const s of schedule){ const ss=timeToMinutes(s.start_time); if(ss>last) free.push(`${formatTime(last)} - ${s.start_time}`); last=Math.max(last,timeToMinutes(s.end_time)); } if(last<timeToMinutes('10:00 PM')) free.push(`${formatTime(last)} - 10:00 PM`); return free; }
-    function formatTime(minutes){ let h=Math.floor(minutes/60), m=minutes%60, period=h>=12?'PM':'AM'; h=h%12; if(h===0)h=12; return (h<10?'0'+h:h)+':'+(m<10?'0'+m:m)+' '+period; }
+    function toggleCard(card){
+        const details = card.querySelector('.details');
+        if(!details.innerHTML) details.innerHTML = detailsHtml(state.rooms[+card.dataset.idx]);
+        const idx = +card.dataset.idx;
+        card.classList.toggle('open') ? state.open.add(idx) : state.open.delete(idx);
+        card.querySelector('[data-toggle]').textContent = card.classList.contains('open') ? 'Details ▴' : 'Details ▾';
+    }
 
-    function sortRooms(list){ const s=document.getElementById('sortBy').value; if(s==='capacity_desc') return list.sort((a,b)=>(b.capacity||0)-(a.capacity||0)); if(s==='capacity_asc') return list.sort((a,b)=>(a.capacity||0)-(b.capacity||0)); if(s==='building') return list.sort((a,b)=>(a.building||'').localeCompare(b.building||'')); if(s==='available'){ const now=new Date(); const day=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][now.getDay()]; const t=now.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',hour12:true}); return list.sort((a,b)=> (isRoomFreeAtTime(b,day,t,t)?1:0) - (isRoomFreeAtTime(a,day,t,t)?1:0)); } return list; }
+    // ---------- data ----------
+    function termLabel(url){
+        const m = /term=(\d{2})([WSUF])/.exec(url || '');
+        return m ? `${{W:'Winter',S:'Spring',U:'Summer',F:'Fall'}[m[2]]} 20${m[1]}` : '';
+    }
 
-    function renderResults(){ const minCap=parseInt(document.getElementById('capacityFilter').value)||0; const maxCap=parseInt(document.getElementById('maxCapacityFilter').value)||Infinity; const q=document.getElementById('roomSearch').value.toLowerCase(); const start=document.getElementById('startTime').value; const end=document.getElementById('endTime').value;
-        let filtered=classroomsData.filter(r=>{ if(selectedBuildings.size>0 && !selectedBuildings.has(r.building)) return false; if(minCap && (!r.capacity || r.capacity<minCap)) return false; if(maxCap!==Infinity && r.capacity && r.capacity>maxCap) return false; if(q && !((r.text||'').toLowerCase().includes(q) || (r.building||'').toLowerCase().includes(q))) return false; if(selectedCharacteristics.size>0){ if(!r.characteristics) return false; for(const c of selectedCharacteristics) if(!r.characteristics.includes(c)) return false; } if(start&&end){ if(selectedDay){ if(!isRoomFreeAtTime(r,selectedDay,start,end)) return false; } else{ const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']; if(!days.some(d=>isRoomFreeAtTime(r,d,start,end))) return false; } } return true; });
-        filtered=sortRooms(filtered);
-        document.getElementById('totalRooms').textContent=filtered.length; const now=new Date(), dayName=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][now.getDay()], nowStr=now.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',hour12:true}); document.getElementById('availableRooms').textContent=filtered.filter(r=>isRoomFreeAtTime(r,dayName,nowStr,nowStr)).length;
-        const wrap=document.getElementById('results'); if(filtered.length===0){ wrap.innerHTML=`<div class="no-results"><h3>No rooms found</h3><p>Adjust filters to see results.</p></div>`; return }
-        wrap.innerHTML=filtered.map(r=>{
-            const chars=r.characteristics? r.characteristics.map(c=>`<span class="char-tag">${c}</span>`).join('') : '';
-            let imgHtml = '';
-            if (r.image_url) {
-                // Image with loading states; fails silently due to CORS restrictions
-                imgHtml = `<div class="room-image"><img src="${r.image_url}" alt="${r.text}" loading="lazy" decoding="async" class="loading" onload="this.classList.remove('loading')" onerror="this.closest('.room-image').parentElement.classList.add('no-image');this.closest('.room-image').style.display='none'"></div>`;
-            }
-            const scheduleHtml = buildCalendarGrid(r);
+    async function loadData(){
+        $('results').innerHTML = '<div class="no-results">Loading…</div>';
+        try{
+            const res = await fetch('classrooms.json', {cache:'no-cache'});
+            if(!res.ok) throw new Error(res.status);
+            const raw = await res.json();
+            state.rooms = raw.filter(r => r.offered).map(prepRoom);
+        }catch(err){
+            console.error(err);
+            $('termInfo').textContent = 'Could not load classrooms.json. Serve this folder over HTTP.';
+            $('results').innerHTML = '<div class="no-results"><h3>No data</h3></div>';
+            return;
+        }
+        const term = termLabel(state.rooms[0] && state.rooms[0].url);
+        if(term) document.title = `UCLA StudySpace · ${term}`;
+        const nEv = state.rooms.reduce((n, r) => n + r._ev.length, 0);
+        $('termInfo').textContent = `${term ? term + ' · ' : ''}${state.rooms.length} general assignment classrooms${nEv ? ` · ${nEv} club/org events` : ''} · times are campus time (PT)`;
+        initFilters();
+        render();
+    }
 
-            return `
-                <div class="room-card ${r.image_url ? '' : 'no-image'}">
-                    ${imgHtml}
-                    <div class="room-body">
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><h3 class="room-title">${r.text}</h3><span style="font-size:0.8rem;color:#94a3b8">${selectedDay ? calculateDayAvailability(r, selectedDay) + '%' : ''}</span></div>
-                        <div class="room-info"><span class="badge">${r.building||''}</span>${r.capacity?`<span class="badge">Cap ${r.capacity}</span>`:''}${r.type?`<span class="badge">${r.type}</span>`:''}</div>
-                        <div style="margin-top:8px"><button class="btn btn-details" onclick="toggleDetails(this)">Details ▾</button></div>
-                        <div class="details">
-                            <div class="char-tags">${chars}</div>
-                            <div class="schedule">${scheduleHtml}</div>
-                            <div style="margin-top:12px;text-align:right"><a href="${r.url||'#'}" target="_blank">UCLA Schedule →</a></div>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }).join(''); }
+    // ---------- wiring ----------
+    document.addEventListener('DOMContentLoaded', () => {
+        $('site-year').textContent = new Date().getFullYear();
+        buildStaticControls();
+        state.allChars = new Set(DEFAULT_CHARS);
+        renderCharacteristics();
 
-    function setDefaultTimesAndDay(){ const s=document.getElementById('startTime'), e=document.getElementById('endTime'); if(!s||!e) return; const now=new Date(); let h=now.getHours(); if(h<8)h=8; if(h>22)h=22; const fmt=h=>{ const p=h>=12?'PM':'AM'; let hh=h%12; if(hh===0)hh=12; return (hh<10?'0'+hh:hh)+':00 '+p }; s.value=[...s.options].some(o=>o.value===fmt(h))?fmt(h):''; e.value=[...e.options].some(o=>o.value===fmt(Math.min(h+2,22)))?fmt(Math.min(h+2,22)):''; const today=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][now.getDay()]; const btn=document.querySelector(`.day-btn[data-day="${today}"]`); if(btn){ document.querySelectorAll('.day-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); selectedDay=today } document.getElementById('sortBy').value='available'; }
+        ['capacityFilter','maxCapacityFilter'].forEach(id => $(id).addEventListener('input', debounce(render, 150)));
+        $('roomSearch').addEventListener('input', debounce(render, 150));
+        ['startTime','endTime','sortBy'].forEach(id => $(id).addEventListener('change', render));
+        $('dayFilter').addEventListener('click', e => {
+            const b = e.target.closest('.day-btn'); if(!b) return;
+            selectDay(state.day === b.dataset.day ? '' : b.dataset.day);
+            render();
+        });
 
-    function debounce(fn,ms){ let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a),ms) } }
+        const dd = $('buildingDropdown');
+        $('buildingDisplay').addEventListener('click', e => { e.stopPropagation(); dd.classList.toggle('open'); });
+        $('buildingDisplay').addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); dd.classList.toggle('open'); } });
+        dd.addEventListener('click', e => e.stopPropagation());
+        dd.addEventListener('change', e => {
+            e.target.checked ? state.buildings.add(e.target.value) : state.buildings.delete(e.target.value);
+            updateBuildingDisplay(); render();
+        });
+        document.addEventListener('click', () => dd.classList.remove('open'));
+
+        const cf = $('characteristicsFilter');
+        cf.addEventListener('change', e => {
+            if(e.target.type !== 'checkbox') return;
+            e.target.checked ? state.chars.add(e.target.value) : state.chars.delete(e.target.value);
+            render();
+        });
+        cf.addEventListener('click', e => {
+            const b = e.target.closest('[data-group-action]'); if(!b) return;
+            setChars(b.closest('.char-group').querySelectorAll('input'), b.dataset.groupAction === 'select');
+        });
+        $('charSelectAll').addEventListener('click', () => setChars(cf.querySelectorAll('input'), true));
+        $('charClear').addEventListener('click', () => setChars(cf.querySelectorAll('input'), false));
+        $('clearAll').addEventListener('click', clearFilters);
+        let lastW = window.innerWidth;
+        window.addEventListener('resize', debounce(() => { if(Math.abs(window.innerWidth - lastW) > 50){ lastW = window.innerWidth; renderCharacteristics(); } }, 200));
+
+        $('results').addEventListener('click', e => {
+            const card = e.target.closest('.room-card');
+            if(!card || e.target.closest('a') || e.target.closest('.details')) return;
+            toggleCard(card);
+        });
+
+        // keep "free now" fresh if the tab stays open
+        setInterval(() => { if(!document.hidden) render(); }, 5*60*1000);
+
+        setDefaults();
+        loadData();
+    });
     </script>
-
-    <footer class="site-footer">
-        <div class="container" style="max-width:1100px;padding:12px 20px">© <span id="site-year"></span> Taylor Nilsen — <a href="https://github.com/Taylor-Nilsen" target="_blank">Repo</a></div>
-    </footer>
-    <script>document.getElementById('site-year').textContent=new Date().getFullYear()</script>
 </body>
 </html>

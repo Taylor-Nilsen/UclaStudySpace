@@ -6,6 +6,13 @@ on:
   push:
     branches: ["master"]
 
+  # Pushes made by the data workflow use GITHUB_TOKEN, which does not fire
+  # push events, so redeploy whenever that workflow finishes.
+  workflow_run:
+    workflows: ["Update Classroom Data"]
+    types: [completed]
+    branches: ["master"]
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -24,6 +31,7 @@ concurrency:
 jobs:
   # Single deploy job since we're just deploying
   deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -31,6 +39,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: master
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

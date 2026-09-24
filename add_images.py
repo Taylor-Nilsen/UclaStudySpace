@@ -261,6 +261,6 @@ print(f"\nMatched {matches} rooms with images")
 
 # Save updated JSON
 with open('classrooms.json', 'w') as f:
-    json.dump(classrooms, f, indent=4)
+    json.dump(classrooms, f, indent=1)
 
 print("Updated classrooms.json with image URLs")

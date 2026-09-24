@@ -12,6 +12,8 @@ Output: Creates classrooms.json with building, room, and url fields for each cla
 
 import json
 
+from scrape import current_term
+
 def normalize_room_number(room):
     """Normalize room number by removing leading zeros and trailing spaces for comparison."""
     import re
@@ -38,7 +40,7 @@ def normalize_room_number(room):
 def generate_urls(classroom_list, offered_rooms=None, building_name_map=None):
     """
     Function to generate URLs for each classroom based on building and room.
-    URL format: https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26W&classroom={encoded_value}
+    URL format: https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term={term}&classroom={encoded_value}
     
     Args:
         classroom_list: List of classroom dictionaries with 'text' and 'value' keys
@@ -89,7 +91,7 @@ def generate_urls(classroom_list, offered_rooms=None, building_name_map=None):
             
         # Encode the value: replace | with %7C and spaces with +
         encoded_classroom = value.replace('|', '%7C').replace(' ', '+')
-        url = f"https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term=26S&classroom={encoded_classroom}"
+        url = f"https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term={current_term()}&classroom={encoded_classroom}"
         classroom['url'] = url
         # Remove the original value
         del classroom['value']
@@ -1437,7 +1439,7 @@ def main():
     # Save to JSON
     print("Saving to classrooms.json...")
     with open('classrooms.json', 'w') as f:
-        json.dump(filled_classrooms, f, indent=4)
+        json.dump(filled_classrooms, f, indent=1)
     
     print(f"✓ Successfully generated URLs for {len(filled_classrooms)} classrooms")
     print("✓ Saved to classrooms.json")

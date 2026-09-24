@@ -9,6 +9,8 @@ import requests
 from pathlib import Path
 from urllib.parse import urlparse
 import hashlib
+import re
+from urllib.parse import unquote
 
 def download_image(url, local_dir='images'):
     """Download an image and return the local path, or None if it fails."""
@@ -23,6 +25,9 @@ def download_image(url, local_dir='images'):
         url_hash = hashlib.md5(url.encode()).hexdigest()[:8]
         parsed_url = urlparse(url)
         original_filename = parsed_url.path.split('/')[-1].split('?')[0]
+        # Decode %20 etc. and keep filenames URL-safe; a literal "%20" in a
+        # filename 404s on GitHub Pages because the browser decodes it first.
+        original_filename = re.sub(r'[^A-Za-z0-9._-]+', '-', unquote(original_filename))
         
         # Clean up filename
         if not original_filename or original_filename.startswith('styles'):
@@ -78,7 +83,7 @@ def main():
     
     # Save updated classrooms.json
     with open('classrooms.json', 'w') as f:
-        json.dump(classrooms, f, indent=4)
+        json.dump(classrooms, f, indent=1)
     
     print(f"\nDownload complete!")
     print(f"Downloaded: {downloaded}")

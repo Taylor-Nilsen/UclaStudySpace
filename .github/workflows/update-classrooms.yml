@@ -1,96 +1,54 @@
-name: Update Classroom Data for New Quarter
+name: Update Classroom Data
 
 on:
   schedule:
-    # Run at 6 AM UTC on the first day of each UCLA quarter
-    # Spring (March 17), Summer (June 17), Fall (Sept 29), Winter (Jan 6)
-    - cron: '0 6 17 3 *'  # Spring Quarter
-    - cron: '0 6 17 6 *'  # Summer Quarter
-    - cron: '0 6 29 9 *'  # Fall Quarter
-    - cron: '0 6 6 1 *'   # Winter Quarter
-  
-  # Also allow manual trigger
+    # Daily at 13:00 UTC (6 AM PT). A full run takes under a minute and only
+    # commits when the registrar or UCLA Community data actually changed.
+    - cron: '0 13 * * *'
   workflow_dispatch:
+    inputs:
+      term:
+        description: 'Term code like 26F (blank = auto)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-classrooms
+  cancel-in-progress: false
 
 jobs:
-  update-classrooms:
+  update:
     runs-on: ubuntu-latest
-    
+    timeout-minutes: 20
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
-      
-      - name: Install dependencies
+          python-version: '3.12'
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Scrape class schedules
+        run: python scrape.py ${{ inputs.term && format('--term {0}', inputs.term) || '' }}
+
+      - name: Scrape club / org events
+        # Best effort: a UCLA Community outage should not block class data.
+        continue-on-error: true
+        run: python scrape_events.py ${{ inputs.term && format('--term {0}', inputs.term) || '' }}
+
+      - name: Commit if changed
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install requests
-      
-      - name: Detect quarter and update term code
-        id: quarter
-        run: |
-          import datetime
-          import re
-          
-          today = datetime.date.today()
-          year = today.year % 100  # Get last 2 digits of year
-          month = today.month
-          
-          # Determine quarter and term code
-          if month in [1, 2, 3]:
-              quarter = "Winter"
-              term_code = f"{year}W"
-          elif month in [4, 5, 6]:
-              quarter = "Spring"
-              term_code = f"{year}S"
-          elif month in [7, 8, 9]:
-              quarter = "Summer"
-              term_code = f"{year}U"
-          else:
-              quarter = "Fall"
-              term_code = f"{year}F"
-          
-          print(f"::set-output name=quarter::{quarter}")
-          print(f"::set-output name=term_code::{term_code}")
-          
-          # Update generate_urls.py with new term code
-          with open('generate_urls.py', 'r') as f:
-              content = f.read()
-          
-          # Replace term code in URL generation
-          old_pattern = r'term=\d{2}[WSUF]'
-          new_content = re.sub(old_pattern, f'term={term_code}', content)
-          
-          with open('generate_urls.py', 'w') as f:
-              f.write(new_content)
-          
-          print(f"Updated term code to: {term_code}")
-        shell: python3 {0}
-      
-      - name: Generate URLs
-        run: python generate_urls.py
-      
-      - name: Scrape classroom data
-        run: python scrape.py 0 4
-        timeout-minutes: 120
-      
-      - name: Add classroom images
-        run: python add_images.py
-      
-      - name: Download and cache images locally
-        run: python download_images.py
-      
-      - name: Commit and push changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add classrooms.json generate_urls.py images/
-          git commit -m "chore: update classroom data for ${{ steps.quarter.outputs.quarter }} quarter ${{ steps.quarter.outputs.term_code }}"
+          if git diff --quiet -- classrooms.json; then
+            echo "No changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add classrooms.json
+          git commit -m "chore: update classroom data ($(date -u +%Y-%m-%d))"
           git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
