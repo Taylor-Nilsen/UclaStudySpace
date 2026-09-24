@@ -6,6 +6,19 @@ on:
   push:
     branches: ["master"]
 
+  # Pushes made by the data workflow use GITHUB_TOKEN, which does not fire
+  # push events, so redeploy whenever that workflow finishes.
+  workflow_run:
+    workflows: ["Update Classroom Data"]
+    types: [completed]
+    branches: ["master"]
+
+  # Refresh Hill study room availability (reserve.reslife.ucla.edu) and
+  # redeploy. That data changes by the minute, so it is scraped at deploy time
+  # instead of being committed.
+  schedule:
+    - cron: '*/30 * * * *'
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -24,6 +37,7 @@ concurrency:
 jobs:
   # Single deploy job since we're just deploying
   deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -31,6 +45,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: master
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Refresh Hill study room availability
+        # Best effort: on failure the committed hill.json snapshot ships.
+        continue-on-error: true
+        run: python scrape_hill.py
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

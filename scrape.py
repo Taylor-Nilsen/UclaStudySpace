@@ -1,334 +1,274 @@
+"""
+Scrape UCLA classroom schedules into classrooms.json.
+
+The registrar's ClassroomDetail page embeds the whole term calendar as JSON in
+a <script> tag, so plain HTTP requests are enough. No browser needed.
+
+Scrapes the general assignment classrooms plus registrar rooms in Hill
+buildings (Covel, De Neve, Carnesale, ...). --all scrapes every registrar room.
+New rooms in the registrar list are added to classrooms.json automatically.
+
+Usage:
+    python scrape.py [--term 26F] [--limit N] [--workers 8] [--all]
+
+If --term is omitted, the current/upcoming UCLA term is picked from today's date.
+"""
+
+import argparse
+import html as htmllib
 import json
-from bs4 import BeautifulSoup
 import re
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.options import Options
+import sys
 import time
-from multiprocessing import Pool
-from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import date, datetime
+from urllib.parse import quote_plus
 
-def scrape_classroom_schedule(url, driver):
+import requests
+from bs4 import BeautifulSoup
+
+DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+DAY_CODES = {'M': 'Monday', 'T': 'Tuesday', 'W': 'Wednesday', 'R': 'Thursday',
+             'F': 'Friday', 'S': 'Saturday', 'U': 'Sunday'}
+CALENDAR_RE = re.compile(r"createFullCalendar\(\$\.parseJSON\('(.*?)'\)\)", re.S)
+ENR_RE = re.compile(r'Enr:\s*(\d+)\s*of\s*(\d+)')
+TERM_RE = re.compile(r'term=\d{2}[WSUF]')
+# Residential buildings ("the Hill") whose registrar rooms we also show.
+HILL_BUILDINGS = {'COVEL', 'DE NEVE', 'CARNESL', 'HEDRICK', 'RIEBER', 'SPROUL', 'HITCH', 'OLYMPIC', 'CNYN PT'}
+HEADER_RE = re.compile(r'id="classroomHeader">(.*?)</h2>', re.S)
+GRID_SEARCH = 'https://sa.ucla.edu/RO/Public/SOC/Search/ClassroomGridSearch'
+DETAIL_URL = 'https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term={term}&classroom={value}'
+OPTION_RE = re.compile(r'&quot;text&quot;:&quot;([^&]*)&quot;,&quot;value&quot;:&quot;([^&]*\|[^&]*)&quot;')
+HEADERS = {'User-Agent': 'UclaStudySpace/2.0 (+https://github.com/Taylor-Nilsen/UclaStudySpace)'}
+
+
+def current_term(today=None):
+    """Return the term code (e.g. '26F') for the current or about-to-start quarter.
+
+    Cutoffs sit ~2 weeks before each quarter starts so a run right before a new
+    quarter already targets it.
     """
-    Scrape the classroom schedule from a UCLA classroom detail page using Selenium.
-    Returns a dictionary with the schedule organized by day of week.
-    """
-    try:
-        driver.get(url)
-        
-        try:
-            WebDriverWait(driver, 6).until(EC.presence_of_element_located((By.ID, "classroomDetails")))
-        except:
-            pass
-        
-        time.sleep(2)
-        
-        try:
-            WebDriverWait(driver, 4).until(lambda driver: len(driver.find_elements(By.CSS_SELECTOR, ".fc-event, [class*='fc-event']")) > 0)
-        except:
-            pass
-        
-        page_source = driver.page_source
-        soup = BeautifulSoup(page_source, 'html.parser')
-        
-        # Extract room characteristics
-        characteristics = []
-        characteristics_list = soup.find('ul', {'class': 'room-attributes', 'id': 'characteristics-list'})
-        if characteristics_list:
-            for li in characteristics_list.find_all('li'):
-                # Use .string instead of .get_text() due to BeautifulSoup quirk with whitespace
-                characteristic = li.string
-                if characteristic:
-                    # Strip the whitespace manually
-                    characteristic = characteristic.strip()
-                    if characteristic:
-                        characteristics.append(characteristic)
-        
-        calendar_data = None
-        
-        for script in soup.find_all('script'):
-            script_text = script.string
-            if script_text and 'createFullCalendar' in script_text:
-                match = re.search(r'createFullCalendar\(\$\.parseJSON\(\'(.+?)\'\)\)', script_text)
-                if match:
-                    json_str = match.group(1).replace('\\"', '"')
-                    try:
-                        calendar_data = json.loads(json_str)
-                        if len(calendar_data) == 0:
-                            return {"no_calendar": True, "schedule": {}, "characteristics": characteristics}
-                        break
-                    except json.JSONDecodeError:
-                        pass
-        
-        if not calendar_data:
-            calendar_div = soup.find('div', id='calendar')
-            if calendar_div and ('no classes' in calendar_div.get_text(strip=True).lower() or not calendar_div.get_text(strip=True)):
-                return {"no_calendar": True, "schedule": {}, "characteristics": characteristics}
-            return {"no_calendar": True, "schedule": {}, "characteristics": characteristics}
-        
-        days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-        schedule = {day: [] for day in days}
-        
-        for event in calendar_data:
-            start_dt_str = event.get('start', '')
-            end_dt_str = event.get('end', '')
-            
-            if start_dt_str:
-                try:
-                    if 'T' in start_dt_str:
-                        start_dt = datetime.fromisoformat(start_dt_str)
-                        end_dt = datetime.fromisoformat(end_dt_str) if end_dt_str and 'T' in end_dt_str else None
-                    else:
-                        days_str = event.get('Days_in_week', '').strip()
-                        strt_time = event.get('strt_time', start_dt_str)
-                        stop_time = event.get('stop_time', end_dt_str)
-                        
-                        if strt_time:
-                            start_dt = datetime.strptime(strt_time, '%H:%M:%S')
-                        else:
-                            continue
-                        
-                        end_dt = datetime.strptime(stop_time, '%H:%M:%S') if stop_time else None
-                        
-                        day_map = {'M': 'Monday', 'T': 'Tuesday', 'W': 'Wednesday', 'R': 'Thursday', 'F': 'Friday', 'S': 'Saturday', 'U': 'Sunday'}
-                        
-                        for day_code in days_str:
-                            day_of_week = day_map.get(day_code)
-                            if not day_of_week:
-                                continue
-                            
-                            start_time = start_dt.strftime('%I:%M %p')
-                            end_time = end_dt.strftime('%I:%M %p') if end_dt else ''
-                            
-                            course_name = event.get('title', '').strip()
-                            course_type = event.get('lecture', '').strip()
-                            enrollment_str = event.get('enrollment', '')
-                            
-                            enr_match = re.search(r'Enr:\s*(\d+)\s*of\s*(\d+)', enrollment_str)
-                            if enr_match:
-                                enrolled = int(enr_match.group(1))
-                                capacity = int(enr_match.group(2))
-                            else:
-                                enrolled = event.get('enroll_total')
-                                capacity = event.get('enroll_capacity')
-                            
-                            event_data = {
-                                'course': course_name,
-                                'type': course_type,
-                                'start_time': start_time,
-                                'end_time': end_time,
-                                'enrolled': enrolled,
-                                'capacity': capacity
-                            }
-                            
-                            if day_of_week in schedule:
-                                schedule[day_of_week].append(event_data)
-                        
-                        continue
-                    
-                    day_of_week = start_dt.strftime('%A')
-                    start_time = start_dt.strftime('%I:%M %p')
-                    end_time = end_dt.strftime('%I:%M %p') if end_dt else ''
-                    
-                    course_name = event.get('title', '').strip()
-                    course_type = event.get('lecture', '').strip()
-                    enrollment_str = event.get('enrollment', '')
-                    
-                    enr_match = re.search(r'Enr:\s*(\d+)\s*of\s*(\d+)', enrollment_str)
-                    if enr_match:
-                        enrolled = int(enr_match.group(1))
-                        capacity = int(enr_match.group(2))
-                    else:
-                        enrolled = event.get('enroll_total')
-                        capacity = event.get('enroll_capacity')
-                    
-                    event_data = {
-                        'course': course_name,
-                        'type': course_type,
-                        'start_time': start_time,
-                        'end_time': end_time,
-                        'enrolled': enrolled,
-                        'capacity': capacity
-                    }
-                    
-                    if day_of_week in schedule:
-                        schedule[day_of_week].append(event_data)
-                        
-                except Exception:
-                    continue
-        
-        for day in schedule:
-            schedule[day].sort(key=lambda x: x['start_time'])
-        
-        return {"no_calendar": False, "schedule": schedule, "characteristics": characteristics}
-        
-    except Exception:
-        return None
+    today = today or date.today()
+    md = (today.month, today.day)
+    yy = today.year % 100
+    if md >= (12, 15):
+        return f"{(yy + 1) % 100:02d}W"
+    if md < (3, 10):
+        return f"{yy:02d}W"
+    if md < (6, 10):
+        return f"{yy:02d}S"
+    if md < (9, 10):
+        return f"{yy:02d}U"
+    return f"{yy:02d}F"
 
 
-def process_classroom_worker(args):
-    """Worker function for multiprocessing."""
-    classroom, index, total = args
-    driver = None
-    
+def fmt_time(t):
+    return t.strftime('%I:%M %p')
+
+
+def parse_page(html):
+    """Parse a ClassroomDetail page into (schedule or None, characteristics)."""
+    soup = BeautifulSoup(html, 'html.parser')
+
+    characteristics = []
+    ul = soup.find('ul', id='characteristics-list')
+    if ul:
+        for li in ul.find_all('li'):
+            # The page sits inside a <template>, and get_text() skips
+            # TemplateString nodes, so read .string directly.
+            text = (li.string or '').strip()
+            if text:
+                characteristics.append(text)
+
+    match = CALENDAR_RE.search(html)
+    if not match:
+        return None, characteristics
     try:
-        chrome_options = Options()
-        chrome_options.add_argument('--headless')
-        chrome_options.add_argument('--no-sandbox')
-        chrome_options.add_argument('--disable-dev-shm-usage')
-        chrome_options.add_argument('--disable-gpu')
-        chrome_options.add_argument('--window-size=1920,1080')
-        chrome_options.add_argument('--disable-logging')
-        chrome_options.add_argument('--log-level=3')
-        
-        driver = webdriver.Chrome(options=chrome_options)
-        
-        building = classroom.get('building', 'Unknown')
-        room = classroom.get('room', 'Unknown')
-        url = classroom.get('url', '')
-        
-        result = scrape_classroom_schedule(url, driver)
-        
-        stats = {'success': 0, 'no_calendar': 0, 'failed': 0}
-        
-        if result:
-            schedule = result.get('schedule', {})
-            has_no_calendar = result.get('no_calendar', False)
-            characteristics = result.get('characteristics', [])
-            
-            classroom['characteristics'] = characteristics
-            
-            if has_no_calendar:
-                classroom['schedule'] = None
-                classroom['no_calendar'] = True
-                stats['no_calendar'] = 1
-                print(f"[{index}/{total}] {building} {room}: NO_CALENDAR")
+        events = json.loads(match.group(1).replace("\\'", "'").replace('\\"', '"'))
+    except json.JSONDecodeError:
+        return None, characteristics
+    if not events:
+        return None, characteristics
+
+    schedule = {day: [] for day in DAYS}
+    seen = set()
+    for event in events:
+        start_str, end_str = event.get('start') or '', event.get('end') or ''
+        try:
+            if 'T' in start_str:
+                start = datetime.fromisoformat(start_str)
+                end = datetime.fromisoformat(end_str) if 'T' in end_str else None
+                days = [start.strftime('%A')]
             else:
-                classroom['schedule'] = schedule
-                classroom['no_calendar'] = False
-                total_events = sum(len(events) for events in schedule.values())
-                stats['success'] = 1
-                print(f"[{index}/{total}] {building} {room}: OK ({total_events} events)")
-        else:
-            classroom['schedule'] = None
-            classroom['no_calendar'] = None
-            stats['failed'] = 1
-            print(f"[{index}/{total}] {building} {room}: FAILED")
-        
-        return (index, classroom, stats)
-        
-    except Exception as e:
-        print(f"[{index}/{total}] ERROR: {e}")
-        classroom['schedule'] = None
-        classroom['no_calendar'] = None
-        return (index, classroom, {'success': 0, 'no_calendar': 0, 'failed': 1})
-    finally:
-        if driver:
-            driver.quit()
+                start = datetime.strptime(event['strt_time'], '%H:%M:%S')
+                end = datetime.strptime(event['stop_time'], '%H:%M:%S') if event.get('stop_time') else None
+                days = [DAY_CODES[c] for c in (event.get('Days_in_week') or '') if c in DAY_CODES]
+        except (KeyError, ValueError):
+            continue
+
+        enr = ENR_RE.search(event.get('enrollment') or '')
+        enrolled = int(enr.group(1)) if enr else event.get('enroll_total')
+        capacity = int(enr.group(2)) if enr else event.get('enroll_capacity')
+        course = ' '.join((event.get('title') or '').split())
+        kind = (event.get('lecture') or '').strip()
+
+        for day in days:
+            key = (day, course, kind, start.time(), end.time() if end else None)
+            if key in seen:
+                continue
+            seen.add(key)
+            schedule[day].append({
+                'course': course,
+                'type': kind,
+                'start_time': fmt_time(start),
+                'end_time': fmt_time(end) if end else '',
+                'enrolled': enrolled,
+                'capacity': capacity,
+                '_sort': start.hour * 60 + start.minute,
+            })
+
+    for day in schedule:
+        schedule[day].sort(key=lambda e: e['_sort'])
+        for e in schedule[day]:
+            del e['_sort']
+    return schedule, characteristics
 
 
-def main(limit=None, num_processes=8, batch_size=None):
-    """Main function to scrape schedules from all classrooms using multiprocessing"""
-    with open('classrooms.json', 'r') as f:
-        all_classrooms = json.load(f)
-    
-    if not isinstance(all_classrooms, list):
-        print("ERROR: classrooms.json must contain a top-level array")
-        return
-    
-    if not all_classrooms:
-        print("ERROR: No classrooms found in classrooms.json")
-        return
-    
-    # Filter for only offered classrooms and track their indices in the original list
-    classrooms_to_scrape = []
-    original_indices = []
-    for i, classroom in enumerate(all_classrooms):
-        if classroom.get('offered', False):
-            classrooms_to_scrape.append(classroom)
-            original_indices.append(i)
-    
-    if limit and limit > 0:
-        classrooms_to_scrape = classrooms_to_scrape[:limit]
-        original_indices = original_indices[:limit]
-    
-    total_classrooms = len(classrooms_to_scrape)
-    
-    if batch_size is None:
-        batch_size = num_processes
-    
-    print(f"Total: {total_classrooms} | Processes: {num_processes} | Batch size: {batch_size}")
-    print("="*80)
-    
-    total_success = 0
-    total_no_calendar = 0
-    total_failed = 0
-    
-    work_items = [(classroom, i+1, total_classrooms) for i, classroom in enumerate(classrooms_to_scrape)]
-    
-    print(f"Starting parallel execution...\n")
-    
-    with Pool(processes=num_processes) as pool:
-        for batch_start in range(0, total_classrooms, batch_size):
-            batch_end = min(batch_start + batch_size, total_classrooms)
-            batch_items = work_items[batch_start:batch_end]
-            
-            print(f"Batch [{batch_start + 1}-{batch_end}/{total_classrooms}]")
-            
-            batch_results = pool.map(process_classroom_worker, batch_items)
-            
-            for index, classroom_data, stats in batch_results:
-                # Update both the filtered list and the original list
-                classrooms_to_scrape[index - 1] = classroom_data
-                all_classrooms[original_indices[index - 1]] = classroom_data
-                
-                total_success += stats['success']
-                total_no_calendar += stats['no_calendar']
-                total_failed += stats['failed']
-            
-            with open('classrooms.json', 'w') as f:
-                json.dump(all_classrooms, f, indent=4)
-            
-            print(f"Saved: {batch_end}/{total_classrooms} | Success: {total_success} | No calendar: {total_no_calendar} | Failed: {total_failed}\n")
-    
-    print("\n" + "="*80)
-    print("COMPLETE")
-    print("="*80)
-    with open('classrooms.json', 'w') as f:
-        json.dump(all_classrooms, f, indent=4)
-    
-    print(f"Total processed: {total_classrooms}")
-    print(f"Success: {total_success}")
-    print(f"No calendar: {total_no_calendar}")
-    print(f"Failed: {total_failed}")
-    print("="*80)
-
-
-if __name__ == "__main__":
-    import sys
-    
-    limit = None
-    num_processes = 4
-    batch_size = None
-    
-    if len(sys.argv) > 1:
+def fetch(session, url, retries=3):
+    for attempt in range(retries):
         try:
-            limit = int(sys.argv[1])
-        except ValueError:
-            print("ERROR: Invalid limit argument")
-    
-    if len(sys.argv) > 2:
-        try:
-            num_processes = int(sys.argv[2])
-        except ValueError:
-            print("ERROR: Invalid num_processes argument, using default (4)")
-    
-    if len(sys.argv) > 3:
-        try:
-            batch_size = int(sys.argv[3])
-        except ValueError:
-            print("ERROR: Invalid batch_size argument, using default (same as num_processes)")
-    
-    main(limit, num_processes, batch_size)
+            r = session.get(url, timeout=30)
+            r.raise_for_status()
+            return r.text
+        except requests.RequestException:
+            if attempt == retries - 1:
+                raise
+            time.sleep(2 ** attempt)
+
+
+def parse_header(html):
+    """'Room Use ...: 84% | Capacity: 9 | Seminar Room' -> (9, 'Seminar Room')."""
+    m = HEADER_RE.search(html)
+    if not m:
+        return None, None
+    parts = [p.strip() for p in re.sub(r'<[^>]+>', '|', m.group(1)).split('|') if p.strip()]
+    capacity = kind = None
+    for part in parts:
+        cap = re.match(r'Capacity:\s*(\d+)', part)
+        if cap:
+            capacity = int(cap.group(1))
+        elif not part.startswith('Room Use'):
+            kind = part
+    return capacity, kind
+
+
+def scrape_room(session, room):
+    html = fetch(session, room['url'])
+    schedule, characteristics = parse_page(html)
+    room['characteristics'] = characteristics
+    room['schedule'] = schedule
+    room['no_calendar'] = schedule is None
+    if not room.get('offered'):
+        # General assignment rooms keep the capacity/type from the DTS list.
+        capacity, kind = parse_header(html)
+        if capacity:
+            room['capacity'] = capacity
+        if kind:
+            room['type'] = kind.replace('General Assignment Classroom', 'Classroom')
+    return room
+
+
+def sync_room_list(session, rooms, term):
+    """Add rooms that the registrar lists but classrooms.json doesn't have yet."""
+    try:
+        page = fetch(session, GRID_SEARCH)
+    except requests.RequestException as e:
+        print(f"Could not load registrar room list ({e}); using existing rooms")
+        return 0
+    known = {r['text'] for r in rooms}
+    added = 0
+    for text, value in OPTION_RE.findall(page):
+        text, value = htmllib.unescape(text), htmllib.unescape(value)
+        if text in known:
+            continue
+        building, _, room = value.partition('|')
+        rooms.append({
+            'text': text,
+            'building': building.strip(),
+            'room': room.strip(),
+            'offered': False,
+            'url': DETAIL_URL.format(term=term, value=quote_plus(value)),
+        })
+        known.add(text)
+        added += 1
+    return added
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument('--term', default=None, help='Term code like 26F (default: auto)')
+    ap.add_argument('--limit', type=int, default=0, help='Only scrape the first N rooms')
+    ap.add_argument('--all', action='store_true', help='Scrape every registrar room, not just GA + Hill')
+    ap.add_argument('--workers', type=int, default=8, help='Concurrent requests (default 8)')
+    ap.add_argument('--file', default='classrooms.json')
+    args = ap.parse_args()
+
+    term = args.term or current_term()
+    if not re.fullmatch(r'\d{2}[WSUF]', term):
+        sys.exit(f"ERROR: bad term code {term!r}")
+
+    with open(args.file) as f:
+        rooms = json.load(f)
+
+    stats = {'ok': 0, 'empty': 0, 'failed': 0}
+    started = time.time()
+    session = requests.Session()
+    session.headers.update(HEADERS)
+    adapter = requests.adapters.HTTPAdapter(pool_connections=args.workers, pool_maxsize=args.workers)
+    session.mount('https://', adapter)
+
+    added = sync_room_list(session, rooms, term)
+    if added:
+        print(f"Added {added} new rooms from the registrar list")
+
+    for room in rooms:
+        if room.get('url'):
+            room['url'] = TERM_RE.sub(f'term={term}', room['url'])
+
+    todo = [r for r in rooms if r.get('url') and (args.all or r.get('offered') or r.get('building') in HILL_BUILDINGS)]
+    if args.limit > 0:
+        todo = todo[:args.limit]
+    print(f"Term {term} | {len(todo)} rooms | {args.workers} workers")
+
+    with ThreadPoolExecutor(max_workers=args.workers) as pool:
+        futures = {pool.submit(scrape_room, session, room): room for room in todo}
+        for i, fut in enumerate(as_completed(futures), 1):
+            room = futures[fut]
+            try:
+                fut.result()
+                if room['no_calendar']:
+                    stats['empty'] += 1
+                    status = 'no classes'
+                else:
+                    stats['ok'] += 1
+                    status = f"{sum(len(v) for v in room['schedule'].values())} events"
+            except Exception as e:
+                room['schedule'] = None
+                room['no_calendar'] = None
+                stats['failed'] += 1
+                status = f"FAILED ({e})"
+            print(f"[{i}/{len(todo)}] {room.get('text')}: {status}")
+
+    # Refuse to overwrite good data with a mostly failed run.
+    if todo and stats['failed'] > len(todo) // 2:
+        sys.exit(f"ERROR: {stats['failed']}/{len(todo)} rooms failed, not saving")
+
+    with open(args.file, 'w') as f:
+        json.dump(rooms, f, indent=1)
+        f.write('\n')
+
+    print(f"Done in {time.time() - started:.0f}s | ok {stats['ok']} | no classes {stats['empty']} | failed {stats['failed']}")
+
+
+if __name__ == '__main__':
+    main()
