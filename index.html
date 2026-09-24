@@ -629,25 +629,78 @@
             $('results').innerHTML = '<div class="no-results"><h3>No data</h3></div>';
             return;
         }
-        const nClass = state.rooms.length;
-        state.hillUpdated = null;
+        state.nClass = state.rooms.length;
+        // Show the bundled snapshot right away, then swap in live data.
         try{
             const res = await fetch('hill.json', {cache:'no-cache'});
-            if(res.ok){
-                const hill = await res.json();
-                state.hillUpdated = hill.updated;
-                state.rooms = state.rooms.concat(hill.rooms.map(r => prepRoom({...r, reservable:true})));
-            }
+            if(res.ok) setHill(await res.json(), false);
         }catch(err){ console.warn('hill.json', err); }
         const term = termLabel(state.rooms[0] && state.rooms[0].url);
         if(term) document.title = `UCLA StudySpace · ${term}`;
-        const nHill = state.rooms.length - nClass;
-        const nEv = state.rooms.reduce((n, r) => n + r._ev.filter(e => e.org).length, 0);
-        const age = state.hillUpdated ? Math.round((Date.now() - new Date(state.hillUpdated)) / 60000) : null;
-        const hillNote = nHill ? ` · ${nHill} Hill study rooms (updated ${age == null ? '?' : age < 90 ? age + ' min ago' : Math.round(age / 60) + ' hr ago'})` : '';
-        $('termInfo').textContent = `${term ? term + ' · ' : ''}${nClass} classrooms${hillNote}${nEv ? ` · ${nEv} club/dept events` : ''} · campus time (PT)`;
+        state.term = term;
+        updateHeader();
         initFilters();
         render();
+        refreshHill();
+    }
+
+    // ---------- live Hill availability ----------
+    // reserve.reslife.ucla.edu has no CORS headers, so a small relay
+    // (hill_api.py on Render) scrapes it and serves JSON the page can read.
+    const HILL_API = 'https://uclastudyspace-hill.onrender.com/hill';
+    function setHill(hill, live){
+        const keep = state.rooms.filter(r => !r.reservable);
+        if(live && state.hillSnapshot){
+            // Fill gaps from the snapshot: a room or day the live read missed
+            // (a failed page) should keep old data, not vanish or look booked.
+            const snap = new Map(state.hillSnapshot.rooms.map(r => [r.text, r]));
+            const liveNames = new Set(hill.rooms.map(r => r.text));
+            hill = {...hill, rooms: hill.rooms.map(r => {
+                const old = snap.get(r.text);
+                return old ? {...r, days: {...old.days, ...r.days}} : r;
+            }).concat(state.hillSnapshot.rooms.filter(r => !liveNames.has(r.text)))};
+        }
+        if(!live) state.hillSnapshot = hill;
+        // Open cards are tracked by index; drop Hill ones since the list is rebuilt.
+        for(const i of [...state.open]) if(i >= keep.length) state.open.delete(i);
+        state.rooms = keep.concat(hill.rooms.map(r => prepRoom({...r, reservable:true})));
+        state.hillUpdated = hill.updated;
+        state.hillLive = live;
+    }
+    async function refreshHill(){
+        if(state.hillLoading) return;
+        state.hillLoading = true; state.hillError = false; updateHeader();
+        const ctrl = new AbortController();
+        const timer = setTimeout(() => ctrl.abort(), 150000);  // cold start + a slow booking site can take ~2 min
+        try{
+            const res = await fetch(HILL_API, {signal: ctrl.signal, cache:'no-store'});
+            if(!res.ok) throw new Error(res.status);
+            setHill(await res.json(), true);
+            render();
+        }catch(err){
+            console.warn('live Hill data unavailable, using snapshot', err);
+            state.hillError = true;
+        }finally{
+            clearTimeout(timer);
+            state.hillLoading = false;
+            updateHeader();
+        }
+    }
+    function ago(iso){
+        const min = Math.round((Date.now() - new Date(iso)) / 60000);
+        return min < 1 ? 'just now' : min < 90 ? `${min} min ago` : `${Math.round(min / 60)} hr ago`;
+    }
+    function updateHeader(){
+        const nHill = state.rooms.length - state.nClass;
+        const nEv = state.rooms.reduce((n, r) => n + r._ev.filter(e => e.org).length, 0);
+        let hill = '';
+        if(nHill){
+            const status = state.hillLoading ? 'checking live bookings…'
+                : state.hillLive ? `live, updated ${ago(state.hillUpdated)}`
+                : `snapshot from ${ago(state.hillUpdated)}${state.hillError ? ', live check failed' : ''}`;
+            hill = ` · ${nHill} Hill study rooms (${status})`;
+        }
+        $('termInfo').textContent = `${state.term ? state.term + ' · ' : ''}${state.nClass} classrooms${hill}${nEv ? ` · ${nEv} club/dept events` : ''} · campus time (PT)`;
     }
 
     // ---------- wiring ----------
@@ -706,7 +759,11 @@
         });
 
         // keep "free now" fresh if the tab stays open
-        setInterval(() => { if(!document.hidden) render(); }, 5*60*1000);
+        setInterval(() => { if(!document.hidden){ render(); refreshHill(); } }, 5*60*1000);
+        // Coming back to the tab after a while: pull fresh bookings.
+        document.addEventListener('visibilitychange', () => {
+            if(!document.hidden && state.hillUpdated && Date.now() - new Date(state.hillUpdated) > 2*60*1000) refreshHill();
+        });
 
         setDefaults();
         loadData();

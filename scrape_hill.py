@@ -6,8 +6,9 @@ The site lists every open one-hour slot per room for the next two weeks,
 publicly. A slot missing inside a building's open hours is reserved. These rooms
 can only be booked by on-campus residents.
 
-The data changes by the minute, so the Pages workflow runs this right before
-each deploy (every 30 minutes) instead of committing it.
+The data changes by the minute. hill_api.py serves collect() live so the page
+can refresh on every open; the Pages workflow also runs this before each deploy
+so the bundled hill.json snapshot stays reasonably fresh as a fallback.
 
 Usage:
     python scrape_hill.py [--days 8] [--file hill.json]
@@ -17,6 +18,7 @@ import argparse
 import json
 import re
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
@@ -80,39 +82,42 @@ def parse_slots(html):
         yield s, e if e > s else 24 * 60, title.get_text(' ', strip=True)
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument('--days', type=int, default=8)
-    ap.add_argument('--file', default='hill.json')
-    args = ap.parse_args()
+class ScrapeError(Exception):
+    pass
 
+
+def collect(days=8, workers=12):
+    """Scrape the reservation site and return the hill.json structure."""
     session = requests.Session()
     session.headers.update(HEADERS)
+    adapter = requests.adapters.HTTPAdapter(pool_connections=workers, pool_maxsize=workers)
+    session.mount('https://', adapter)
     spaces = list_spaces(session)
     if not spaces:
-        sys.exit('ERROR: no spaces found on the reservation site')
+        raise ScrapeError('no spaces found on the reservation site')
     today = datetime.now(LA).date()
-    dates = [(today + timedelta(days=i)).isoformat() for i in range(args.days)]
+    dates = [(today + timedelta(days=i)).isoformat() for i in range(days)]
     jobs = [(sid, d) for sid in spaces for d in dates]
 
     def get(job):
         sid, d = job
         url = f"{BASE}/reserve/{sid}?date={d}&duration=PT1H"
-        for attempt in range(3):
+        for attempt in range(4):
             try:
-                r = session.get(url, timeout=30)
+                r = session.get(url, timeout=20)
                 r.raise_for_status()
                 return job, list(parse_slots(r.text))
             except requests.RequestException:
-                pass
+                time.sleep(0.5 * 2 ** attempt)  # the site drops bursts; back off
         return job, None
 
-    with ThreadPoolExecutor(max_workers=6) as pool:
+    with ThreadPoolExecutor(max_workers=workers) as pool:
         results = list(pool.map(get, jobs))
 
-    failed = sum(1 for _, slots in results if slots is None)
+    failed_pages = {job for job, slots in results if slots is None}
+    failed = len(failed_pages)
     if failed > len(jobs) // 2:
-        sys.exit(f"ERROR: {failed}/{len(jobs)} pages failed, not saving")
+        raise ScrapeError(f"{failed}/{len(jobs)} pages failed")
 
     rooms = {}
     hours = {}  # (space, date) -> [open, close] from the union of all slots
@@ -149,19 +154,37 @@ def main():
     for room in rooms.values():
         sid = room.pop('sid')
         for d in dates:
+            if (sid, d) in failed_pages:
+                # Unknown, not "fully reserved": leave the day out so the page
+                # can fall back to its snapshot for it.
+                room['days'].pop(d, None)
+                continue
             day = room['days'].setdefault(d, {'free': []})
             day['hours'] = hours.get((sid, d))
             day['free'].sort()
 
-    out = {
-        'updated': datetime.now(LA).isoformat(timespec='minutes'),
+    return {
+        'updated': datetime.now(LA).isoformat(timespec='seconds'),
         'source': BASE + '/reserve',
+        'pages_failed': failed,
+        'dates': dates,
         'rooms': sorted(rooms.values(), key=lambda r: r['text']),
     }
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--days', type=int, default=8)
+    ap.add_argument('--file', default='hill.json')
+    args = ap.parse_args()
+    try:
+        out = collect(args.days)
+    except ScrapeError as e:
+        sys.exit(f"ERROR: {e}, not saving")
     with open(args.file, 'w') as f:
         json.dump(out, f, indent=1)
         f.write('\n')
-    print(f"{len(spaces)} spaces, {len(rooms)} rooms, {len(dates)} days, {failed} pages failed")
+    print(f"{len(out['rooms'])} rooms, {args.days} days, {out['pages_failed']} pages failed")
 
 
 if __name__ == '__main__':
