@@ -21,6 +21,10 @@
         .day-time-row{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:12px}
         .day-filter{display:flex;gap:6px;flex-wrap:wrap}
         .day-btn{padding:6px 8px;border-radius:6px;border:1px solid var(--card);background:var(--card);cursor:pointer;color:var(--text);font:inherit}
+        .area-switch{display:inline-flex;border-radius:8px;overflow:hidden;border:1px solid #334155;margin-bottom:12px}
+        .area-switch button{padding:8px 16px;border:0;background:var(--card);color:var(--text);font:inherit;font-weight:600;cursor:pointer}
+        .area-switch button+button{border-left:1px solid #334155}
+        .area-switch button.active{background:var(--accent);color:#fff}
         .day-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
         .time-picker{display:flex;gap:6px;align-items:center}
         .custom-multiselect{position:relative}
@@ -98,6 +102,11 @@
 
     <main>
         <section class="full-filters" aria-label="Filters">
+            <div class="area-switch" role="group" aria-label="Where to look">
+                <button type="button" data-area="classroom" aria-pressed="false">🏛️ Campus</button>
+                <button type="button" data-area="hill" aria-pressed="false">🏠 The Hill</button>
+                <button type="button" data-area="" aria-pressed="true" class="active">Both</button>
+            </div>
             <div class="selectors-grid">
                 <div class="filter-group">
                     <label>🏢 Building</label>
@@ -117,14 +126,6 @@
                 <div class="filter-group">
                     <label for="roomSearch">🔍 Search Room</label>
                     <input type="search" id="roomSearch" placeholder="e.g., BH 3400, 3400 boelter, ms 5200">
-                </div>
-                <div class="filter-group">
-                    <label for="areaFilter">📍 Area</label>
-                    <select id="areaFilter">
-                        <option value="">Everywhere</option>
-                        <option value="classroom">Classrooms</option>
-                        <option value="hill">The Hill</option>
-                    </select>
                 </div>
                 <div class="filter-group">
                     <label for="sortBy">Sort</label>
@@ -388,6 +389,16 @@
         $('buildingDisplay').textContent = n === 0 ? 'All Buildings' : n === 1 ? [...state.buildings][0] : `${n} selected`;
     }
 
+    // Campus / The Hill / Both
+    function setArea(area){
+        state.area = area;
+        document.querySelectorAll('.area-switch [data-area]').forEach(b => {
+            const on = b.dataset.area === area;
+            b.classList.toggle('active', on);
+            b.setAttribute('aria-pressed', on);
+        });
+    }
+
     function selectDay(day){
         state.day = day;
         document.querySelectorAll('.day-btn').forEach(b => b.classList.toggle('active', b.dataset.day === day));
@@ -403,7 +414,8 @@
     }
 
     function clearFilters(){
-        ['capacityFilter','maxCapacityFilter','roomSearch','startTime','endTime','areaFilter'].forEach(id => $(id).value = '');
+        ['capacityFilter','maxCapacityFilter','roomSearch','startTime','endTime'].forEach(id => $(id).value = '');
+        setArea('');
         $('sortBy').value = 'available';
         selectDay('');
         state.chars.clear(); state.buildings.clear();
@@ -420,7 +432,7 @@
         const s = $('startTime').value === '' ? null : +$('startTime').value;
         const e = $('endTime').value === '' ? null : +$('endTime').value;
         const timeOk = s != null && e != null && e > s;
-        const area = $('areaFilter').value;
+        const area = state.area || '';
         return state.rooms.filter(r => {
             if(area && r._area !== area) return false;
             if(state.buildings.size && !state.buildings.has(r.building)) return false;
@@ -584,7 +596,11 @@
 
         ['capacityFilter','maxCapacityFilter'].forEach(id => $(id).addEventListener('input', debounce(render, 150)));
         $('roomSearch').addEventListener('input', debounce(render, 150));
-        ['startTime','endTime','sortBy','areaFilter'].forEach(id => $(id).addEventListener('change', render));
+        ['startTime','endTime','sortBy'].forEach(id => $(id).addEventListener('change', render));
+        document.querySelector('.area-switch').addEventListener('click', e => {
+            const b = e.target.closest('[data-area]'); if(!b) return;
+            setArea(b.dataset.area); render();
+        });
         $('dayFilter').addEventListener('click', e => {
             const b = e.target.closest('.day-btn'); if(!b) return;
             selectDay(state.day === b.dataset.day ? '' : b.dataset.day);
