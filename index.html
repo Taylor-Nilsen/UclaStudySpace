@@ -235,7 +235,7 @@
         return r._cls[day].concat(r._ev.filter(e => e.date === date)).sort((a, b) => a.s - b.s);
     }
     function isFree(r, day, s, e){
-        return !busy(r, day).some(b => (s === e) ? (b.s <= s && s < b.e) : (b.s < e && s < b.e));
+        return !busy(r, day).some(b => b.s < e && s < b.e);
     }
     // Status at a moment: {free, until}. `until` is when that state ends (null = rest of day).
     function statusAt(r, day, min){

@@ -55,6 +55,10 @@ BUILDING_ALIASES = {
 }
 BUILDING_RES = {code: re.compile(p, re.I) for code, p in BUILDING_ALIASES.items()}
 ROOM_TOKEN_RE = re.compile(r'\b([A-Z]{0,2})\s?0*(\d{1,5}[A-Z]?)\b', re.I)
+# Words allowed between the building name and the room number ("Hall, Room 5200").
+FILLER_RE = re.compile(r'^(?:[\s,.:#-]|hall\b|building\b|bldg\b|rooms?\b|rm\b)*', re.I)
+# One or more room numbers right there: "200", "200 & 208", "CS 50".
+ROOM_LIST_RE = re.compile(r'[A-Z]{0,2}\s?\d{1,5}[A-Z]?\b(?:\s*(?:&|and|,|/)\s*[A-Z]{0,2}\s?\d{1,5}[A-Z]?\b)*', re.I)
 
 
 def norm_room(room):
@@ -71,8 +75,14 @@ def match_rooms(location, room_index):
         if not m:
             continue
         rooms = room_index.get(code, {})
+        # Only look at the room number(s) directly after the building name, so
+        # "Dodd family ... Parking Structure 121" does not become DODD 121.
         rest = location[m.end():]
-        for prefix, num in ROOM_TOKEN_RE.findall(rest):
+        rest = rest[FILLER_RE.match(rest).end():]
+        near = ROOM_LIST_RE.match(rest)
+        if not near:
+            continue
+        for prefix, num in ROOM_TOKEN_RE.findall(near.group(0)):
             key = (prefix + num).upper()
             if key in rooms:
                 hits.append(rooms[key])
