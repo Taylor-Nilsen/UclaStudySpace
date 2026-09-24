@@ -6,7 +6,9 @@ the browser. This server scrapes it (scrape_hill.collect) and returns the same
 JSON as hill.json with CORS enabled, so the page can refresh on every open.
 
 Results are cached for CACHE_SECONDS (the booking site itself sends
-max-age=60), and concurrent requests share one scrape.
+max-age=60) and concurrent requests share one scrape. Data up to MAX_STALE old
+is served immediately while a fresh scrape runs in the background; the JSON's
+"updated" field always says how old it is.
 
     GET /hill    -> hill.json structure, plus "live": true
     GET /health  -> "ok"
@@ -26,18 +28,53 @@ CACHE_SECONDS = int(os.environ.get('CACHE_SECONDS', 60))
 DAYS = int(os.environ.get('DAYS', 8))
 ALLOW_ORIGIN = os.environ.get('ALLOW_ORIGIN', '*')
 
-_lock = threading.Lock()
+MAX_STALE = int(os.environ.get('MAX_STALE', 15 * 60))
+
+_lock = threading.Lock()          # guards _cache
+_refreshing = threading.Lock()    # held while a scrape runs
 _cache = {'at': 0.0, 'body': None}
 
 
+def _refresh():
+    """Scrape once and store the result. Only one scrape runs at a time."""
+    with _refreshing:
+        with _lock:  # another thread may have just finished one
+            if _cache['body'] is not None and time.time() - _cache['at'] <= CACHE_SECONDS:
+                return
+        data = collect(DAYS)
+        data['live'] = True
+        body = json.dumps(data, separators=(',', ':')).encode()
+        with _lock:
+            _cache['body'], _cache['at'] = body, time.time()
+
+
+def _refresh_in_background():
+    def run():
+        try:
+            _refresh()
+        except Exception as e:
+            print(f"background refresh failed: {e}", flush=True)
+    if not _refreshing.locked():
+        threading.Thread(target=run, daemon=True).start()
+
+
 def get_hill():
-    """Return cached JSON bytes, refreshing at most once per CACHE_SECONDS."""
-    with _lock:  # one scrape at a time; waiters get its result
-        if _cache['body'] is None or time.time() - _cache['at'] > CACHE_SECONDS:
-            data = collect(DAYS, workers=24)
-            data['live'] = True
-            _cache['body'] = json.dumps(data, separators=(',', ':')).encode()
-            _cache['at'] = time.time()
+    """Return (json bytes, age in seconds).
+
+    Fresh (under CACHE_SECONDS): served from cache. Stale but under MAX_STALE:
+    served immediately while a background refresh runs, because the booking
+    site can take a minute to answer. Older or empty: wait for a scrape.
+    """
+    with _lock:
+        body, at = _cache['body'], _cache['at']
+    age = time.time() - at
+    if body is not None and age <= CACHE_SECONDS:
+        return body, int(age)
+    if body is not None and age <= MAX_STALE:
+        _refresh_in_background()
+        return body, int(age)
+    _refresh()
+    with _lock:
         return _cache['body'], int(time.time() - _cache['at'])
 
 

@@ -18,6 +18,7 @@ import argparse
 import json
 import re
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
@@ -85,7 +86,7 @@ class ScrapeError(Exception):
     pass
 
 
-def collect(days=8, workers=8):
+def collect(days=8, workers=12):
     """Scrape the reservation site and return the hill.json structure."""
     session = requests.Session()
     session.headers.update(HEADERS)
@@ -101,19 +102,20 @@ def collect(days=8, workers=8):
     def get(job):
         sid, d = job
         url = f"{BASE}/reserve/{sid}?date={d}&duration=PT1H"
-        for attempt in range(3):
+        for attempt in range(4):
             try:
-                r = session.get(url, timeout=30)
+                r = session.get(url, timeout=20)
                 r.raise_for_status()
                 return job, list(parse_slots(r.text))
             except requests.RequestException:
-                pass
+                time.sleep(0.5 * 2 ** attempt)  # the site drops bursts; back off
         return job, None
 
     with ThreadPoolExecutor(max_workers=workers) as pool:
         results = list(pool.map(get, jobs))
 
-    failed = sum(1 for _, slots in results if slots is None)
+    failed_pages = {job for job, slots in results if slots is None}
+    failed = len(failed_pages)
     if failed > len(jobs) // 2:
         raise ScrapeError(f"{failed}/{len(jobs)} pages failed")
 
@@ -152,6 +154,11 @@ def collect(days=8, workers=8):
     for room in rooms.values():
         sid = room.pop('sid')
         for d in dates:
+            if (sid, d) in failed_pages:
+                # Unknown, not "fully reserved": leave the day out so the page
+                # can fall back to its snapshot for it.
+                room['days'].pop(d, None)
+                continue
             day = room['days'].setdefault(d, {'free': []})
             day['hours'] = hours.get((sid, d))
             day['free'].sort()
@@ -160,6 +167,7 @@ def collect(days=8, workers=8):
         'updated': datetime.now(LA).isoformat(timespec='seconds'),
         'source': BASE + '/reserve',
         'pages_failed': failed,
+        'dates': dates,
         'rooms': sorted(rooms.values(), key=lambda r: r['text']),
     }
 

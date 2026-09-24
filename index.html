@@ -575,6 +575,17 @@
     const HILL_API = 'https://uclastudyspace-hill.onrender.com/hill';
     function setHill(hill, live){
         const keep = state.rooms.filter(r => !r.reservable);
+        if(live && state.hillSnapshot){
+            // Fill gaps from the snapshot: a room or day the live read missed
+            // (a failed page) should keep old data, not vanish or look booked.
+            const snap = new Map(state.hillSnapshot.rooms.map(r => [r.text, r]));
+            const liveNames = new Set(hill.rooms.map(r => r.text));
+            hill = {...hill, rooms: hill.rooms.map(r => {
+                const old = snap.get(r.text);
+                return old ? {...r, days: {...old.days, ...r.days}} : r;
+            }).concat(state.hillSnapshot.rooms.filter(r => !liveNames.has(r.text)))};
+        }
+        if(!live) state.hillSnapshot = hill;
         // Open cards are tracked by index; drop Hill ones since the list is rebuilt.
         for(const i of [...state.open]) if(i >= keep.length) state.open.delete(i);
         state.rooms = keep.concat(hill.rooms.map(r => prepRoom({...r, reservable:true})));
@@ -585,7 +596,7 @@
         if(state.hillLoading) return;
         state.hillLoading = true; state.hillError = false; updateHeader();
         const ctrl = new AbortController();
-        const timer = setTimeout(() => ctrl.abort(), 90000);  // free Render instances can take ~1 min to wake
+        const timer = setTimeout(() => ctrl.abort(), 150000);  // cold start + a slow booking site can take ~2 min
         try{
             const res = await fetch(HILL_API, {signal: ctrl.signal, cache:'no-store'});
             if(!res.ok) throw new Error(res.status);
