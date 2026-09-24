@@ -32,6 +32,8 @@ It keeps events whose location names one of our rooms ("3400 Boelter Hall", "Mat
 
 Reservations change constantly, so the Pages workflow runs `scrape_hill.py` right before every deploy, every 30 minutes, instead of committing each change.
 
+**Nearest to me.** The "📍 Nearest to me" button is a toggle: gray when off, blue when on. Turning it on asks the browser for your location (the first time only; a fix from the last 5 minutes is reused), loads `buildings.json` and sorts rooms by straight-line distance to their building, with a rough walking time. Turning it off, or picking another sort, goes back to the normal sort. Nothing is requested before you press it, and your location is never sent or stored anywhere. `buildings.json` holds building centroids from OpenStreetMap. Carnesale Commons is not in OpenStreetMap, so it has no coordinates; add them if its rooms start showing up.
+
 ## Data contract
 
 `classrooms.json` is an array. The frontend only uses rooms with `offered: true`:
