@@ -22,7 +22,7 @@
         .day-filter{display:flex;gap:6px;flex-wrap:wrap}
         .day-btn{padding:6px 8px;border-radius:6px;border:1px solid var(--card);background:var(--card);cursor:pointer;color:var(--text);font:inherit}
         .area-switch{display:inline-flex;border-radius:8px;overflow:hidden;border:1px solid #334155;margin-bottom:12px}
-        .area-switch button{padding:8px 16px;border:0;background:var(--card);color:var(--text);font:inherit;font-weight:600;cursor:pointer}
+        .area-switch button{padding:8px 14px;border:0;background:var(--card);color:var(--text);font:inherit;font-weight:600;cursor:pointer}
         .area-switch button+button{border-left:1px solid #334155}
         .area-switch button.active{background:var(--accent);color:#fff}
         .day-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
@@ -53,7 +53,7 @@
         .results{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0 20px}
         @media (max-width:1000px){.results{grid-template-columns:repeat(2,1fr)}}
         @media (max-width:640px){.results{grid-template-columns:1fr}}
-        @media (max-width:880px){.selectors-grid{grid-template-columns:1fr}.day-time-row{flex-direction:column;align-items:stretch}.checkbox-group{max-height:180px}.full-filters{padding:12px}.results{padding:0 12px}}
+        @media (max-width:880px){.selectors-grid{grid-template-columns:1fr}.area-switch{flex-wrap:wrap}.area-switch button{flex:1 1 auto;border-left:0!important;border-top:1px solid #334155}.day-time-row{flex-direction:column;align-items:stretch}.checkbox-group{max-height:180px}.full-filters{padding:12px}.results{padding:0 12px}}
         @media (max-width:700px){.char-columns{flex-direction:column}.char-column{max-width:none;min-width:0}}
         .room-card{background:var(--card);border:1px solid var(--card);padding:12px;border-radius:12px;display:flex;flex-direction:column;cursor:pointer;transition:transform .12s,box-shadow .12s}
         .room-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.3);border-color:rgba(96,165,250,0.2)}
@@ -66,7 +66,12 @@
         .room-info{display:flex;gap:8px;flex-wrap:wrap;font-size:0.9rem}
         .badge{padding:4px 8px;border-radius:6px;font-size:0.8rem;background:#111827}
         .status{margin-top:8px;font-size:0.9rem;font-weight:600}
-        .status.free{color:var(--free)} .status.busy{color:var(--busy)}
+        .status.free{color:var(--free)} .status.busy{color:var(--busy)} .status.unknown{color:var(--muted)}
+        .desc{font-size:0.9rem;color:#cbd5e1;margin:0 0 8px;line-height:1.4}
+        .meta{font-size:0.85rem;color:var(--muted);margin:4px 0}
+        .hours-list{margin:8px 0 0;padding:0;list-style:none;font-size:0.85rem;display:grid;grid-template-columns:auto 1fr;gap:2px 12px}
+        .hours-list .today{color:var(--accent);font-weight:600}
+        .links{margin-top:12px;text-align:right;display:flex;gap:14px;justify-content:flex-end;flex-wrap:wrap}
         .status small{display:block;font-weight:400;color:var(--muted);margin-top:2px}
         .details{display:none;margin-top:10px;cursor:default}
         .room-card.open .details{display:block}
@@ -105,9 +110,11 @@
     <main>
         <section class="full-filters" aria-label="Filters">
             <div class="area-switch" role="group" aria-label="Where to look">
-                <button type="button" data-area="classroom" aria-pressed="false">🏛️ Campus</button>
+                <button type="button" data-area="classroom" aria-pressed="false">🏛️ Classrooms</button>
                 <button type="button" data-area="hill" aria-pressed="false">🏠 The Hill</button>
-                <button type="button" data-area="" aria-pressed="true" class="active">Both</button>
+                <button type="button" data-area="library" aria-pressed="false">📚 Libraries</button>
+                <button type="button" data-area="space" aria-pressed="false">☕ More spaces</button>
+                <button type="button" data-area="" aria-pressed="true" class="active">All</button>
             </div>
             <div class="selectors-grid">
                 <div class="filter-group">
@@ -115,6 +122,13 @@
                     <div class="custom-multiselect">
                         <div class="multiselect-display" id="buildingDisplay" tabindex="0" role="button">All Buildings</div>
                         <div class="multiselect-dropdown" id="buildingDropdown"></div>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label>🏷️ Type</label>
+                    <div class="custom-multiselect">
+                        <div class="multiselect-display" id="typeDisplay" tabindex="0" role="button">All Types</div>
+                        <div class="multiselect-dropdown" id="typeDropdown"></div>
                     </div>
                 </div>
                 <div class="filter-group">
@@ -127,7 +141,7 @@
                 </div>
                 <div class="filter-group">
                     <label for="roomSearch">🔍 Search Room</label>
-                    <input type="search" id="roomSearch" placeholder="e.g., BH 3400, 3400 boelter, ms 5200">
+                    <input type="search" id="roomSearch" placeholder="e.g., BH 3400, powell, makerspace, cafe">
                 </div>
                 <div class="filter-group">
                     <label for="sortBy">Sort</label>
@@ -183,6 +197,7 @@
     <footer>
         Class schedules from the UCLA Registrar. Club, department and seminar events from <a href="https://community.ucla.edu/calendars" target="_blank" rel="noopener">UCLA Community</a> and about 25 department calendars, when posted with a room number.
         Events booked through the UCLA Events Office are not public, so a room shown as free can still be taken.<br>
+        Library hours and study room bookings from the <a href="https://calendar.library.ucla.edu/spaces" target="_blank" rel="noopener">UCLA Library calendar</a>, Hill rooms from <a href="https://reserve.reslife.ucla.edu/reserve" target="_blank" rel="noopener">Residential Life</a>, café and lounge hours from ASUCLA when it answers. Other spaces list posted hours from their own pages; check before you walk over.<br>
         © <span id="site-year"></span> Taylor Nilsen · <a href="https://github.com/Taylor-Nilsen/UclaStudySpace" target="_blank" rel="noopener">Repo</a>
     </footer>
 
@@ -194,7 +209,10 @@
     const PCT_START = 8*60, PCT_END = 20*60;         // same window the registrar uses for room-use %
     const MIN_GAP = 60;                              // gaps shorter than this between bookings count as busy
     const DEFAULT_CHARS = ['Air Conditioning','Chalkboard','Projection Screen','Video Projector-Installed','Microphone-Installed'];
+    // Study space features come first so "Whiteboards" and friends don't land in the classroom groups.
+    const SPACE_FEATURES = ['Outlets','Printing','Computers','Laptop lending','Whiteboards','Quiet','Group study','Bookable rooms','Food & coffee','3D printers','Laser cutter','Machine tools','Late night','Open 24 hours','Outdoor','Open to public'];
     const CHAR_CATEGORIES = [
+        {name:'Study Spaces', rx:new RegExp('^(' + SPACE_FEATURES.map(f => f.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')$', 'i')},
         {name:'Room Features', rx:/air conditioning|window|chalkboard|white ?board/i},
         {name:'Audio / AV', rx:/projector|audio|video|microphone|projection screen|media equipment|vhs|monitor/i},
         {name:'Seating & Layout', rx:/auditorium|fixed tabl|tablet arm|fixed arm|seating/i},
@@ -213,8 +231,17 @@
         'HEDRICK':'hedrick hill', 'RIEBER':'rieber hill', 'SPROUL':'sproul hill', 'HITCH':'hitch suites hill',
         'OLYMPIC':'olympic hill', 'CNYN PT':'canyon point hill', 'GAYLEY HEIGHTS':'gayley heights hill',
         'TIPUANA':'tipuana southwest sw apartments hill', 'LAUREL':'laurel southwest sw apartments hill',
-        'PALOS VERDE':'palos verde southwest sw apartments hill',
+        'PALOS VERDE':'palos verde southwest sw apartments hill', 'DELTA TERRACE':'delta terrace sunset village hill',
+        // libraries and other spaces
+        'POWELL':'powell library', 'YRL':'yrl young research library', 'SMB':'schoenberg music smb', 'OSTIN':'ostin music',
+        'HLTHSCI':'chs center health sciences biomed biomedical', 'AU':'ackerman union au', 'KERCKHOFF':'kerckhoff kh',
+        'SAC':'sac student activities center', 'LUVALLE':'lu valle luvalle commons', 'NCSC':'north campus student center',
+        'ROSNFLD':'rosenfeld anderson entrepreneurs', 'ANDERSON':'anderson', 'LAW':'law', 'ENGR VI':'engineering vi 6 eng',
+        'WOODEN':'wooden center', 'HERSHEY':'hershey', 'GONDA':'gonda', 'PRITZKER':'pritzker psychology',
+        'COURT OF SCI':'court of sciences student center bombshelter', 'SCULPTURE GDN':'sculpture garden murphy',
+        'BOTANICAL GDN':'botanical garden mathias', 'DICKSON CT':'dickson court royce quad', 'HAMMER':'hammer museum westwood',
     };
+    const CATEGORIES = ['Classroom','Hill study room','Library study room','Library','Computer lab','Makerspace','Study lounge','Student union','Café','Outdoor'];
     const HILL_BUILDINGS = new Set(['COVEL','DE NEVE','CARNESL','HEDRICK','RIEBER','SPROUL','HITCH','OLYMPIC','CNYN PT']);
     const normRoom = s => String(s || '').toLowerCase().replace(/\s+/g, '').replace(/^([a-z]*)0+(?=\d)/, '$1');
     // Search terms in any order: each term must match the building (name or
@@ -224,7 +251,7 @@
     }
     function termMatches(r, t){
         const room = normRoom(t);
-        if(/\d/.test(t) && r._room.startsWith(room)) return true;
+        if(/\d/.test(t) && (r._room.startsWith(room) || r._words.some(w => normRoom(w).startsWith(room)))) return true;
         if(!/\d/.test(t)) return r._words.some(w => w.startsWith(t));
         const parts = t.match(/[a-z]+|\d+[a-z]?/g) || [];
         return parts.length > 1 && parts.every(p => termMatches(r, p));
@@ -238,10 +265,10 @@
         return !!next && /^[a-z]+$/.test(t) && /^\d/.test(next) && termMatches(r, t + next) && matchesAll(r, terms, i + 2);
     }
 
-    const state = {rooms:[], day:'', chars:new Set(), buildings:new Set(), allChars:new Set(), open:new Set()};
+    const state = {rooms:[], day:'', chars:new Set(), buildings:new Set(), types:new Set(), allChars:new Set(), open:new Set(), feeds:{}};
     const $ = id => document.getElementById(id);
     const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-    const norm = s => String(s || '').toLowerCase().replace(/\s+/g, ' ').trim();
+    const norm = s => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, ' ').trim();
     const debounce = (fn, ms) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
 
     function toMin(t){
@@ -273,7 +300,10 @@
     // Precompute minute intervals once so filtering is cheap.
     function prepRoom(r){
         r._room = normRoom(r.room);
-        r._words = norm(`${r.building} ${BUILDING_ALIASES[r.building] || ''} ${r.type || ''}`).split(/[\s&/,-]+/).filter(Boolean);
+        r._space = !!r.category;   // spaces.json entry: a library, lab, lounge, café or outdoor spot with open hours
+        r._key = `${r.feed || (r._space ? 'space' : 'class')}|${r.url || r.text}`;
+        r._cat = r.category || (r.reservable ? (r.feed === 'library' ? 'Library study room' : 'Hill study room') : 'Classroom');
+        r._words = norm(`${r.building} ${BUILDING_ALIASES[r.building] || ''} ${r.type || ''} ${r._space ? r.text + ' ' + r.category : ''} ${r.library || ''} ${r.reservable ? r.text + ' study room' : ''}`).split(/[\s&/,()-]+/).filter(Boolean);
         r._cls = {};
         DAYS.forEach(d => {
             r._cls[d] = ((r.schedule && r.schedule[d]) || []).map(s => {
@@ -285,9 +315,34 @@
             const a = toMin(e.start_time), b = toMin(e.end_time);
             return a == null ? null : {date:e.date, s:a, e:b ?? a + 60, label:e.title, sub:e.org, url:e.url, org:true};
         }).filter(Boolean);
-        r._area = (r.reservable || HILL_BUILDINGS.has(r.building)) ? 'hill' : 'classroom';
+        r._area = r.area || (r.reservable ? (r.feed === 'library' ? 'library' : 'hill') : HILL_BUILDINGS.has(r.building) ? 'hill' : 'classroom');
         if(r.reservable) r._ev = r._ev.concat(reservationBlocks(r.days || {}));
+        if(r._space){
+            // Static weekly hours from spaces.json, as minute ranges. Live
+            // hours (library API, ASUCLA) land in r._days by date and win.
+            r._weekly = {};
+            if(r.hours) DAYS.forEach(d => { r._weekly[d] = (r.hours[d] || []).map(([a, b]) => { const s = toMin(a), e = toMin(b); return s == null ? null : [s, e == null || e <= s ? 24*60 : e]; }).filter(Boolean); });
+            r._days = r._days || {};
+        }
         return r;
+    }
+    // Open hours for a space on `day`: [[open, close], ...] in minutes, [] if
+    // closed, null if nobody has posted hours for that date.
+    function hoursFor(r, day){
+        const date = dateForDay(day);
+        if(date in r._days) return r._days[date];
+        return r.hours ? r._weekly[day] : null;
+    }
+    // Closed blocks for a space: everything outside its open hours.
+    function closedBlocks(ranges){
+        const out = [];
+        let cur = 0;
+        for(const [a, b] of [...ranges].sort((x, y) => x[0] - y[0])){
+            if(a > cur) out.push({s:cur, e:a, label:'Closed', closed:true});
+            cur = Math.max(cur, b);
+        }
+        if(cur < 24*60) out.push({s:cur, e:24*60, label:'Closed', closed:true});
+        return out;
     }
     // Hill study rooms: the reservation site lists open hourly slots. Anything
     // inside open hours that isn't listed is reserved; outside is closed.
@@ -311,6 +366,10 @@
     // bookings: a 30 minute window between classes isn't a usable study slot.
     function busy(r, day){
         const date = dateForDay(day);
+        if(r._space){
+            const ranges = hoursFor(r, day);
+            return ranges ? closedBlocks(ranges) : [];
+        }
         const list = r._cls[day].concat(r._ev.filter(e => e.date === date)).sort((a, b) => a.s - b.s);
         const gaps = [];
         let end = -1;
@@ -325,6 +384,7 @@
     }
     // Status at a moment: {free, until}. `until` is when that state ends (null = rest of day).
     function statusAt(r, day, min){
+        if(r._space && hoursFor(r, day) == null) return {free:false, unknown:true, until:null};
         const list = busy(r, day);
         const cur = list.find(b => b.s <= min && min < b.e);
         if(!cur){
@@ -336,6 +396,7 @@
         return {free:false, until:end, cur};
     }
     function freePct(r, day){
+        if(r._space && hoursFor(r, day) == null) return null;
         let covered = 0, cursor = PCT_START;
         for(const b of busy(r, day)){
             const s = Math.max(b.s, cursor), e = Math.min(b.e, PCT_END);
@@ -387,12 +448,16 @@
         state.rooms.forEach(r => (r.characteristics || []).forEach(c => state.allChars.add(c)));
         renderCharacteristics();
         const buildings = [...new Set(state.rooms.map(r => r.building).filter(Boolean))].sort();
-        $('buildingDropdown').innerHTML = buildings.map(b => `<label><input type="checkbox" value="${esc(b)}"> ${esc(b)}</label>`).join('');
+        $('buildingDropdown').innerHTML = buildings.map(b => `<label><input type="checkbox" value="${esc(b)}" ${state.buildings.has(b) ? 'checked' : ''}> ${esc(b)}</label>`).join('');
+        const cats = new Set(state.rooms.map(r => r._cat));
+        $('typeDropdown').innerHTML = CATEGORIES.filter(c => cats.has(c)).map(c => `<label><input type="checkbox" value="${esc(c)}" ${state.types.has(c) ? 'checked' : ''}> ${esc(c)}</label>`).join('');
     }
 
     function updateBuildingDisplay(){
         const n = state.buildings.size;
         $('buildingDisplay').textContent = n === 0 ? 'All Buildings' : n === 1 ? [...state.buildings][0] : `${n} selected`;
+        const t = state.types.size;
+        $('typeDisplay').textContent = t === 0 ? 'All Types' : t === 1 ? [...state.types][0] : `${t} selected`;
     }
 
     // Campus / The Hill / Both
@@ -424,8 +489,8 @@
         setArea('');
         $('sortBy').value = 'available';
         selectDay('');
-        state.chars.clear(); state.buildings.clear();
-        document.querySelectorAll('#buildingDropdown input, #characteristicsFilter input').forEach(cb => cb.checked = false);
+        state.chars.clear(); state.buildings.clear(); state.types.clear();
+        document.querySelectorAll('#buildingDropdown input, #typeDropdown input, #characteristicsFilter input').forEach(cb => cb.checked = false);
         updateBuildingDisplay();
         render();
     }
@@ -442,7 +507,9 @@
         return state.rooms.filter(r => {
             if(area && r._area !== area) return false;
             if(state.buildings.size && !state.buildings.has(r.building)) return false;
-            if(minCap && (r.capacity || 0) < minCap) return false;
+            if(state.types.size && !state.types.has(r._cat)) return false;
+            if(minCap && r.capacity && r.capacity < minCap) return false;   // unknown capacity is not "small"
+            if(minCap && !r.capacity && !r._space) return false;
             if(maxCap !== Infinity && r.capacity && r.capacity > maxCap) return false;
             if(terms.length && !matchesAll(r, terms)) return false;
             if(state.chars.size){ const rc = r.characteristics || []; for(const c of state.chars) if(!rc.includes(c)) return false; }
@@ -464,7 +531,7 @@
             // Closest building first; inside a building, free rooms first.
             return list.sort((a, b) => (distTo(a) ?? 1e9) - (distTo(b) ?? 1e9) || (b._now.free - a._now.free) || byName(a, b));
         }
-        if(how === 'free_pct'){ const d = state.day || now.day; return list.sort((a, b) => freePct(b, d) - freePct(a, d) || byName(a, b)); }
+        if(how === 'free_pct'){ const d = state.day || now.day; return list.sort((a, b) => (freePct(b, d) ?? -1) - (freePct(a, d) ?? -1) || byName(a, b)); }
         // available: free now first, longest remaining free window first; busy rooms by soonest free
         return list.sort((a, b) => {
             const sa = a._now, sb = b._now;
@@ -475,15 +542,40 @@
     }
 
     function statusHtml(st, r){
+        if(st.unknown) return `<div class="status unknown">Hours not posted<small>${esc(r.hours_note || 'Check the building before you go')}</small></div>`;
         if(st.free){
+            if(r._space){
+                const allDay = st.until == null && !busy(r, campusNow().day).length;
+                const until = allDay ? (hoursFor(r, campusNow().day).some(([a, b]) => a === 0 && b === 24*60) ? 'all day (24 hours)' : 'all day') : st.until == null || st.until >= 24*60 ? 'until midnight' : `until ${fmtMin(st.until)}`;
+                return `<div class="status free">Open now ${until}</div>`;
+            }
             const until = st.until == null || st.until >= OPEN_END ? 'for the rest of the day' : `until ${fmtMin(st.until)}`;
             const next = st.next ? `<small>Next: ${esc(st.next.label)}${st.next.org ? ' (event)' : ''}</small>` : '';
             return `<div class="status free">${r.reservable ? 'Open to reserve' : 'Free now'} ${until}${next}</div>`;
         }
-        if(st.cur.closed) return `<div class="status busy">Closed until ${fmtMin(st.until)}</div>`;
+        if(st.cur.closed){
+            const until = st.until == null || st.until >= 24*60 ? 'for the rest of the day' : `until ${fmtMin(st.until)}`;
+            return `<div class="status busy">Closed ${until}</div>`;
+        }
         if(st.cur.res) return `<div class="status busy">Reserved until ${fmtMin(st.until)}</div>`;
         if(st.cur.gap) return `<div class="status busy">Busy until ${fmtMin(st.until)}<small>Less than an hour between bookings</small></div>`;
         return `<div class="status busy">In use until ${fmtMin(st.until)}<small>${esc(st.cur.label)}${st.cur.org ? ' (event)' : ''}</small></div>`;
+    }
+
+    // Short access label for a card badge; the full text is in the details.
+    function accessLabel(r){
+        const a = r.access || '';
+        if(r.reservable) return r.feed === 'library' ? 'UCLA Logon to book' : 'Residents only';
+        if(!a || /not posted/i.test(a)) return '';
+        if(/open to (the )?public|open to all/i.test(a)) return 'Open to public';
+        if(/engineering/i.test(a)) return 'Engineering students';
+        if(/anderson-only|anderson bruincard/i.test(a)) return 'Anderson-only areas';
+        if(/law students/i.test(a)) return 'Law Library rules';
+        if(/residents/i.test(a)) return 'Housing residents';
+        if(/graduate students/i.test(a)) return 'UCLA ID, grads after hours';
+        if(/enrolled|course|luskin|pic |social sciences|life sciences/i.test(a)) return 'Course or school access';
+        if(/bruincard|ucla students|any student|ucla id/i.test(a)) return 'UCLA students';
+        return 'See access';
     }
 
     function render(){
@@ -501,11 +593,15 @@
             const pctDay = state.day || now.day;
             const nUp = r._ev.filter(e => e.org && e.date >= today).length;
             const img = r.image_url ? `<div class="room-image"><img src="${esc(r.image_url)}" alt="${esc(r.text)}" loading="lazy" decoding="async" onerror="this.parentElement.remove()"></div>` : '';
-            const open = state.open.has(idx);
+            const open = state.open.has(r._key);
+            const pct = freePct(r, pctDay);
+            const pctHtml = pct == null ? '' : `<span class="pct" title="Share of 8am to 8pm that is ${r._space ? 'open' : 'free, not counting gaps under an hour'}">${pct}% ${r._space ? 'open' : 'free'} ${pctDay.slice(0,3)}</span>`;
+            const access = accessLabel(r);
+            const typeLabel = r._space ? r._cat : r.type;
             return `<article class="room-card${open ? ' open' : ''}" data-idx="${idx}">
                 ${img}
-                <div class="room-head"><h3 class="room-title">${esc(r.text.replace(/\s+/g, ' '))}</h3><span class="pct" title="Share of 8am to 8pm that is open, not counting gaps under an hour">${freePct(r, pctDay)}% free ${pctDay.slice(0,3)}</span></div>
-                <div class="room-info"><span class="badge">${esc(r.building)}</span>${r.capacity ? `<span class="badge">Cap ${r.capacity}</span>` : ''}${r.type ? `<span class="badge">${esc(r.type)}</span>` : ''}${r._area === 'hill' ? `<span class="badge" style="color:var(--free)">The Hill</span>` : ''}${state.nearOn && distTo(r) != null ? `<span class="badge" style="color:var(--accent)">${distLabel(distTo(r))}</span>` : ''}${r.reservable ? `<span class="badge" title="${esc(r.description || '')}">Residents only</span>` : ''}${nUp ? `<span class="badge" style="color:var(--event)">${nUp} upcoming event${nUp > 1 ? 's' : ''}</span>` : ''}</div>
+                <div class="room-head"><h3 class="room-title">${esc(r.text.replace(/\s+/g, ' '))}</h3>${pctHtml}</div>
+                <div class="room-info"><span class="badge">${esc(r.building)}</span>${r.capacity ? `<span class="badge">Cap ${r.capacity}</span>` : ''}${typeLabel ? `<span class="badge">${esc(typeLabel)}</span>` : ''}${r._area === 'hill' ? `<span class="badge" style="color:var(--free)">The Hill</span>` : ''}${state.nearOn && distTo(r) != null ? `<span class="badge" style="color:var(--accent)">${distLabel(distTo(r))}</span>` : ''}${access ? `<span class="badge" title="${esc(r.access || r.description || '')}">${esc(access)}</span>` : ''}${nUp ? `<span class="badge" style="color:var(--event)">${nUp} upcoming event${nUp > 1 ? 's' : ''}</span>` : ''}</div>
                 ${statusHtml(r._now, r)}
                 <div style="margin-top:8px"><button class="btn btn-details" type="button" data-toggle>Details ${open ? '▴' : '▾'}</button></div>
                 <div class="details">${open ? detailsHtml(r) : ''}</div>
@@ -516,6 +612,21 @@
     function detailsHtml(r){
         const now = campusNow();
         const chars = (r.characteristics || []).map(c => `<span class="char-tag">${esc(c)}</span>`).join('');
+        let intro = '';
+        if(r._space || r.reservable){
+            const start = DAYS.indexOf(now.day);
+            const week = r._space ? DAYS.slice(start).concat(DAYS.slice(0, start)).map(d => {
+                const h = hoursFor(r, d);
+                const txt = h == null ? 'not posted' : !h.length ? 'Closed' : h.map(([a, b]) => a === 0 && b === 24*60 ? '24 hours' : `${fmtMin(a)} to ${b >= 24*60 ? '12:00 AM' : fmtMin(b)}`).join(', ');
+                return `<span class="${d === now.day ? 'today' : ''}">${d.slice(0,3)} ${dateForDay(d).slice(5).replace('-', '/')}</span><span class="${d === now.day ? 'today' : ''}">${esc(txt)}</span>`;
+            }).join('') : '';
+            intro = `${r.description ? `<p class="desc">${esc(r.description)}</p>` : ''}
+                ${r.library ? `<div class="meta">${esc(r.library)}</div>` : ''}
+                ${r.room && r._space ? `<div class="meta">Room: ${esc(r.room)}</div>` : ''}
+                ${r.access ? `<div class="meta">Access: ${esc(r.access)}</div>` : ''}
+                ${r.hours_note ? `<div class="meta">${esc(r.hours_note)}</div>` : ''}
+                ${week ? `<ul class="hours-list">${week}</ul>` : ''}`;
+        }
         const range = CAL_END - CAL_START;
         let head = '<div class="cal-head"><div class="cal-head-time"></div>', body = '<div class="cal-body"><div class="cal-time-col">';
         for(let h = CAL_START/60; h < CAL_END/60; h++) body += `<div class="cal-time-label">${fmtHour(h)}</div>`;
@@ -541,18 +652,24 @@
         const upcoming = r._ev.filter(e => e.org && e.date >= today);
         const events = upcoming.length ? `<ul class="event-list">${upcoming.map(e =>
             `<li><span class="when">${new Date(e.date + 'T12:00').toLocaleDateString('en-US', {weekday:'short', month:'numeric', day:'numeric'})} ${fmtMin(e.s)}</span>${e.url ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.label)}</a>` : esc(e.label)}${e.sub ? `<div class="org">${esc(e.sub)}</div>` : ''}</li>`).join('')}</ul>` : '';
-        return `<div>${chars}</div>
+        const legend = r._space ? `<span><i style="background:var(--panel);border:1px solid #334155"></i>Open</span><span><i style="background:#0b1220"></i>Closed</span>`
+            : r.reservable ? `<span><i style="background:#a78bfa"></i>Reserved</span><span><i style="background:#0b1220"></i>Closed</span><span><i style="background:repeating-linear-gradient(45deg,rgba(148,163,184,0.6) 0 2px,transparent 2px 4px)"></i>Gap under 1 hr</span>`
+            : `<span><i style="background:var(--accent)"></i>Class (weekly)</span><span><i style="background:var(--event)"></i>Club / org event</span><span><i style="background:repeating-linear-gradient(45deg,rgba(148,163,184,0.6) 0 2px,transparent 2px 4px)"></i>Gap under 1 hr</span>`;
+        const links = [];
+        if(r.url) links.push(`<a href="${esc(r.url)}" target="_blank" rel="noopener">${r.reservable ? (r.feed === 'library' ? 'Reserve (UCLA Library) →' : 'Reserve (Residential Life) →') : r._space ? 'Website →' : 'UCLA Schedule →'}</a>`);
+        if(r.reserve_url) links.push(`<a href="${esc(r.reserve_url)}" target="_blank" rel="noopener">Book a room →</a>`);
+        return `${intro}<div>${chars}</div>
             <div class="schedule-calendar">${head}${body}</div>
-            <div class="legend">${r.reservable ? `<span><i style="background:#a78bfa"></i>Reserved</span><span><i style="background:#0b1220"></i>Closed</span>` : `<span><i style="background:var(--accent)"></i>Class (weekly)</span><span><i style="background:var(--event)"></i>Club / org event</span>`}<span><i style="background:repeating-linear-gradient(45deg,rgba(148,163,184,0.6) 0 2px,transparent 2px 4px)"></i>Gap under 1 hr</span></div>
+            <div class="legend">${legend}</div>
             ${events}
-            <div style="margin-top:12px;text-align:right"><a href="${esc(r.url || '#')}" target="_blank" rel="noopener">${r.reservable ? 'Reserve (Residential Life) →' : 'UCLA Schedule →'}</a></div>`;
+            <div class="links">${links.join('')}</div>`;
     }
 
     function toggleCard(card){
         const details = card.querySelector('.details');
-        if(!details.innerHTML) details.innerHTML = detailsHtml(state.rooms[+card.dataset.idx]);
-        const idx = +card.dataset.idx;
-        card.classList.toggle('open') ? state.open.add(idx) : state.open.delete(idx);
+        const r = state.rooms[+card.dataset.idx];
+        if(!details.innerHTML) details.innerHTML = detailsHtml(r);
+        card.classList.toggle('open') ? state.open.add(r._key) : state.open.delete(r._key);
         card.querySelector('[data-toggle]').textContent = card.classList.contains('open') ? 'Details ▴' : 'Details ▾';
     }
 
@@ -630,77 +747,150 @@
             return;
         }
         state.nClass = state.rooms.length;
-        // Show the bundled snapshot right away, then swap in live data.
+        // Libraries, labs, lounges, cafés: curated list with posted hours.
         try{
-            const res = await fetch('hill.json', {cache:'no-cache'});
-            if(res.ok) setHill(await res.json(), false);
-        }catch(err){ console.warn('hill.json', err); }
+            const res = await fetch('spaces.json', {cache:'no-cache'});
+            if(res.ok) state.spaces = (await res.json()).spaces.map(prepRoom);
+        }catch(err){ console.warn('spaces.json', err); }
+        state.spaces = state.spaces || [];
+        // Show the bundled snapshots right away, then swap in live data.
+        for(const kind of Object.keys(FEEDS)){
+            try{
+                const res = await fetch(FEEDS[kind].file, {cache:'no-cache'});
+                if(res.ok) setFeed(kind, await res.json(), false);
+            }catch(err){ console.warn(FEEDS[kind].file, err); }
+        }
+        rebuildRooms();
         const term = termLabel(state.rooms[0] && state.rooms[0].url);
         if(term) document.title = `UCLA StudySpace · ${term}`;
         state.term = term;
         updateHeader();
         initFilters();
         render();
-        refreshHill();
+        for(const kind of Object.keys(FEEDS)) refreshFeed(kind);
+        refreshAsucla();
     }
 
-    // ---------- live Hill availability ----------
-    // reserve.reslife.ucla.edu has no CORS headers, so a small relay
-    // (hill_api.py on Render) scrapes it and serves JSON the page can read.
-    const HILL_API = 'https://uclastudyspace-hill.onrender.com/hill';
-    function setHill(hill, live){
-        const keep = state.rooms.filter(r => !r.reservable);
-        if(live && state.hillSnapshot){
+    // ---------- live availability feeds ----------
+    // reserve.reslife.ucla.edu and calendar.library.ucla.edu have no CORS
+    // headers, so a small relay (hill_api.py on Render) scrapes them and
+    // serves JSON the page can read. Each feed ships as a snapshot file too.
+    const RELAY = 'https://uclastudyspace-hill.onrender.com';
+    const FEEDS = {
+        hill: {file:'hill.json', api:RELAY + '/hill', label:'Hill study rooms'},
+        library: {file:'library.json', api:RELAY + '/library', label:'library study rooms'},
+    };
+    function feedState(kind){ return state.feeds[kind] || (state.feeds[kind] = {}); }
+    function setFeed(kind, data, live){
+        const f = feedState(kind);
+        if(live && f.snapshot){
             // Fill gaps from the snapshot: a room or day the live read missed
             // (a failed page) should keep old data, not vanish or look booked.
-            const snap = new Map(state.hillSnapshot.rooms.map(r => [r.text, r]));
-            const liveNames = new Set(hill.rooms.map(r => r.text));
-            hill = {...hill, rooms: hill.rooms.map(r => {
+            const snap = new Map(f.snapshot.rooms.map(r => [r.text, r]));
+            const liveNames = new Set(data.rooms.map(r => r.text));
+            data = {...data, rooms: data.rooms.map(r => {
                 const old = snap.get(r.text);
                 return old ? {...r, days: {...old.days, ...r.days}} : r;
-            }).concat(state.hillSnapshot.rooms.filter(r => !liveNames.has(r.text)))};
+            }).concat(f.snapshot.rooms.filter(r => !liveNames.has(r.text)))};
+            if(f.snapshot.hours) data.hours = {...f.snapshot.hours, ...(data.hours || {})};
         }
-        if(!live) state.hillSnapshot = hill;
-        // Open cards are tracked by index; drop Hill ones since the list is rebuilt.
-        for(const i of [...state.open]) if(i >= keep.length) state.open.delete(i);
-        state.rooms = keep.concat(hill.rooms.map(r => prepRoom({...r, reservable:true})));
-        state.hillUpdated = hill.updated;
-        state.hillLive = live;
+        if(!live) f.snapshot = data;
+        f.rooms = data.rooms.map(r => prepRoom({...r, reservable:true, feed:kind}));
+        f.updated = data.updated;
+        f.live = live;
+        // Library hours API: spaces.json entries point at a location id.
+        if(data.hours) for(const r of state.spaces){
+            const loc = r.hours_lid && data.hours[r.hours_lid];
+            if(loc) Object.assign(r._days, loc.days);
+        }
     }
-    async function refreshHill(){
-        if(state.hillLoading) return;
-        state.hillLoading = true; state.hillError = false; updateHeader();
+    function rebuildRooms(){
+        state.rooms = state.rooms.slice(0, state.nClass).concat(state.spaces, ...Object.values(state.feeds).map(f => f.rooms || []));
+    }
+    async function refreshFeed(kind){
+        const f = feedState(kind);
+        if(f.loading) return;
+        f.loading = true; f.error = false; updateHeader();
         const ctrl = new AbortController();
         const timer = setTimeout(() => ctrl.abort(), 150000);  // cold start + a slow booking site can take ~2 min
         try{
-            const res = await fetch(HILL_API, {signal: ctrl.signal, cache:'no-store'});
+            const res = await fetch(FEEDS[kind].api, {signal: ctrl.signal, cache:'no-store'});
             if(!res.ok) throw new Error(res.status);
-            setHill(await res.json(), true);
+            setFeed(kind, await res.json(), true);
+            rebuildRooms();
             render();
         }catch(err){
-            console.warn('live Hill data unavailable, using snapshot', err);
-            state.hillError = true;
+            console.warn(`live ${kind} data unavailable, using snapshot`, err);
+            f.error = true;
         }finally{
             clearTimeout(timer);
-            state.hillLoading = false;
+            f.loading = false;
             updateHeader();
         }
     }
+
+    // ---------- ASUCLA hours (Ackerman, Kerckhoff, cafés) ----------
+    // asucla.ucla.edu/hours reads these from the browser, so they come with
+    // CORS headers and need no relay. If the API is down the static hours in
+    // spaces.json stay.
+    const ASUCLA_API = 'https://mobileapp.asucla.ucla.edu:3004/api/property/';
+    function parseAsuclaHours(value){
+        const v = String(value || '');
+        if(/closed/i.test(v)) return [];
+        const times = [...v.matchAll(/(\d{1,2})(?::(\d{2}))?\s*([ap])\.?\s*m?\.?/gi)].map(m => ((+m[1] % 12) + (m[3].toLowerCase() === 'p' ? 12 : 0)) * 60 + +(m[2] || 0));
+        if(times.length < 2 || times.length % 2) return null;
+        const out = [];
+        for(let i = 0; i < times.length; i += 2){ const a = times[i], b = times[i + 1]; out.push([a, b <= a ? 24*60 : b]); }
+        return out;
+    }
+    async function refreshAsucla(){
+        const groups = [...new Set(state.spaces.filter(r => r.asucla).map(r => r.asucla.group))];
+        await Promise.all(groups.map(async group => {
+            try{
+                const ctrl = new AbortController();
+                const timer = setTimeout(() => ctrl.abort(), 15000);
+                const res = await fetch(ASUCLA_API + encodeURIComponent(group), {signal: ctrl.signal});
+                clearTimeout(timer);
+                if(!res.ok) throw new Error(res.status);
+                const items = await res.json();
+                if(!Array.isArray(items)) return;
+                for(const r of state.spaces.filter(r => r.asucla && r.asucla.group === group)){
+                    const rx = new RegExp(r.asucla.match, 'i');
+                    const item = items.find(it => rx.test(it.name || ''));
+                    if(!item) continue;
+                    let n = 0;
+                    for(const day of item.availability || []){
+                        const m = /(\d{1,2})-(\d{1,2})-(\d{4})/.exec(day.name || '');
+                        const ranges = parseAsuclaHours(day.value);
+                        if(!m || ranges === null) continue;
+                        r._days[`${m[3]}-${m[1].padStart(2, '0')}-${m[2].padStart(2, '0')}`] = ranges;
+                        n++;
+                    }
+                    if(n) r._live = 'ASUCLA';
+                }
+            }catch(err){ console.warn('ASUCLA hours unavailable', group, err); }
+        }));
+        render();
+    }
+
     function ago(iso){
         const min = Math.round((Date.now() - new Date(iso)) / 60000);
         return min < 1 ? 'just now' : min < 90 ? `${min} min ago` : `${Math.round(min / 60)} hr ago`;
     }
     function updateHeader(){
-        const nHill = state.rooms.length - state.nClass;
         const nEv = state.rooms.reduce((n, r) => n + r._ev.filter(e => e.org).length, 0);
-        let hill = '';
-        if(nHill){
-            const status = state.hillLoading ? 'checking live bookings…'
-                : state.hillLive ? `live, updated ${ago(state.hillUpdated)}`
-                : `snapshot from ${ago(state.hillUpdated)}${state.hillError ? ', live check failed' : ''}`;
-            hill = ` · ${nHill} Hill study rooms (${status})`;
+        const parts = [`${state.nClass} classrooms`];
+        for(const [kind, f] of Object.entries(state.feeds)){
+            const n = (f.rooms || []).length;
+            if(!n) continue;
+            const status = f.loading ? 'checking live bookings…'
+                : f.live ? `live, updated ${ago(f.updated)}`
+                : `snapshot from ${ago(f.updated)}${f.error ? ', live check failed' : ''}`;
+            parts.push(`${n} ${FEEDS[kind].label} (${status})`);
         }
-        $('termInfo').textContent = `${state.term ? state.term + ' · ' : ''}${state.nClass} classrooms${hill}${nEv ? ` · ${nEv} club/dept events` : ''} · campus time (PT)`;
+        if((state.spaces || []).length) parts.push(`${state.spaces.length} libraries, labs and other spaces`);
+        if(nEv) parts.push(`${nEv} club/dept events`);
+        $('termInfo').textContent = `${state.term ? state.term + ' · ' : ''}${parts.join(' · ')} · campus time (PT)`;
     }
 
     // ---------- wiring ----------
@@ -723,15 +913,19 @@
             render();
         });
 
-        const dd = $('buildingDropdown');
-        $('buildingDisplay').addEventListener('click', e => { e.stopPropagation(); dd.classList.toggle('open'); });
-        $('buildingDisplay').addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); dd.classList.toggle('open'); } });
-        dd.addEventListener('click', e => e.stopPropagation());
-        dd.addEventListener('change', e => {
-            e.target.checked ? state.buildings.add(e.target.value) : state.buildings.delete(e.target.value);
-            updateBuildingDisplay(); render();
-        });
-        document.addEventListener('click', () => dd.classList.remove('open'));
+        const dropdowns = [['buildingDisplay', 'buildingDropdown', state.buildings], ['typeDisplay', 'typeDropdown', state.types]];
+        for(const [displayId, dropId, set] of dropdowns){
+            const dd = $(dropId);
+            $(displayId).addEventListener('click', e => { e.stopPropagation(); closeDropdowns(dd); dd.classList.toggle('open'); });
+            $(displayId).addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); closeDropdowns(dd); dd.classList.toggle('open'); } });
+            dd.addEventListener('click', e => e.stopPropagation());
+            dd.addEventListener('change', e => {
+                e.target.checked ? set.add(e.target.value) : set.delete(e.target.value);
+                updateBuildingDisplay(); render();
+            });
+        }
+        function closeDropdowns(except){ dropdowns.forEach(([, id]) => { if($(id) !== except) $(id).classList.remove('open'); }); }
+        document.addEventListener('click', () => closeDropdowns());
 
         const cf = $('characteristicsFilter');
         cf.addEventListener('change', e => {
@@ -759,10 +953,11 @@
         });
 
         // keep "free now" fresh if the tab stays open
-        setInterval(() => { if(!document.hidden){ render(); refreshHill(); } }, 5*60*1000);
+        setInterval(() => { if(!document.hidden){ render(); Object.keys(FEEDS).forEach(refreshFeed); } }, 5*60*1000);
         // Coming back to the tab after a while: pull fresh bookings.
         document.addEventListener('visibilitychange', () => {
-            if(!document.hidden && state.hillUpdated && Date.now() - new Date(state.hillUpdated) > 2*60*1000) refreshHill();
+            if(document.hidden) return;
+            for(const [kind, f] of Object.entries(state.feeds)) if(f.updated && Date.now() - new Date(f.updated) > 2*60*1000) refreshFeed(kind);
         });
 
         setDefaults();
