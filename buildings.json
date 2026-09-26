@@ -1,10 +1,25 @@
 {
- "source": "OpenStreetMap contributors (ODbL), building centroids via Overpass API, Sept 2026",
+ "source": "OpenStreetMap contributors (ODbL), building centroids via Overpass API and Nominatim, Sept 2026",
  "buildings": {
+  "ANDERSON": {
+   "name": "Anderson School of Management",
+   "lat": 34.0739918,
+   "lon": -118.4435621
+  },
+  "AU": {
+   "name": "Ackerman Union",
+   "lat": 34.070433,
+   "lon": -118.444302
+  },
   "BOELTER": {
    "name": "Boelter Hall",
    "lat": 34.0688672,
    "lon": -118.4429887
+  },
+  "BOTANICAL GDN": {
+   "name": "Mildred E. Mathias Botanical Garden",
+   "lat": 34.0654842,
+   "lon": -118.4410125
   },
   "BROAD": {
    "name": "Broad Art Center",
@@ -21,6 +36,11 @@
    "lat": 34.0736778,
    "lon": -118.4508516
   },
+  "COURT OF SCI": {
+   "name": "Court of Sciences Student Center",
+   "lat": 34.0681795,
+   "lon": -118.4421824
+  },
   "COVEL": {
    "name": "Covel Commons",
    "lat": 34.073014,
@@ -31,10 +51,25 @@
    "lat": 34.0703525,
    "lon": -118.4501825
   },
+  "DELTA TERRACE": {
+   "name": "Delta Terrace (Sunset Village)",
+   "lat": 34.0729536,
+   "lon": -118.4513574
+  },
+  "DICKSON CT": {
+   "name": "Dickson Court",
+   "lat": 34.0722014,
+   "lon": -118.4409516
+  },
   "DODD": {
    "name": "Dodd Hall",
    "lat": 34.0727884,
    "lon": -118.4392619
+  },
+  "ENGR VI": {
+   "name": "Engineering VI",
+   "lat": 34.0694799,
+   "lon": -118.4444444
   },
   "FOWLER": {
    "name": "Fowler Museum",
@@ -56,20 +91,40 @@
    "lat": 34.0692437,
    "lon": -118.441226
   },
+  "GONDA": {
+   "name": "Gonda Neuroscience and Genetics Research Center (bus stop)",
+   "lat": 34.0670979,
+   "lon": -118.4443621
+  },
   "HAINES": {
    "name": "Haines Hall",
    "lat": 34.0728984,
    "lon": -118.4412787
+  },
+  "HAMMER": {
+   "name": "Hammer Museum",
+   "lat": 34.0594661,
+   "lon": -118.4437539
   },
   "HEDRICK": {
    "name": "Hedrick Hall",
    "lat": 34.0732895,
    "lon": -118.4524109
   },
+  "HERSHEY": {
+   "name": "Hershey Hall",
+   "lat": 34.0668935,
+   "lon": -118.4397854
+  },
   "HITCH": {
    "name": "Hitch Residential Suites",
    "lat": 34.0735903,
    "lon": -118.4538208
+  },
+  "HLTHSCI": {
+   "name": "Center for the Health Sciences (Biomedical Library)",
+   "lat": 34.0663256,
+   "lon": -118.442138
   },
   "KAPLAN": {
    "name": "Kaplan Hall",
@@ -80,6 +135,11 @@
    "name": "Kaufman Hall",
    "lat": 34.0727708,
    "lon": -118.4440763
+  },
+  "KERCKHOFF": {
+   "name": "Kerckhoff Hall",
+   "lat": 34.0704408,
+   "lon": -118.4436387
   },
   "KNSY PV": {
    "name": "Kinsey Teaching Pavilion",
@@ -96,6 +156,16 @@
    "lat": 34.0627213,
    "lon": -118.4501766
   },
+  "LAW": {
+   "name": "Law Building",
+   "lat": 34.072651,
+   "lon": -118.43826
+  },
+  "LUVALLE": {
+   "name": "Lu Valle Commons",
+   "lat": 34.0736572,
+   "lon": -118.4392498
+  },
   "MOORE": {
    "name": "Moore Hall",
    "lat": 34.0704228,
@@ -106,10 +176,20 @@
    "lat": 34.069544,
    "lon": -118.4428178
   },
+  "NCSC": {
+   "name": "North Campus Student Center",
+   "lat": 34.0744727,
+   "lon": -118.442019
+  },
   "OLYMPIC": {
    "name": "Olympic Hall",
    "lat": 34.0723793,
    "lon": -118.4536285
+  },
+  "OSTIN": {
+   "name": "Ostin Music Center",
+   "lat": 34.0702098,
+   "lon": -118.4404905
   },
   "PAB": {
    "name": "Physics & Astronomy Building",
@@ -126,6 +206,16 @@
    "lat": 34.0733539,
    "lon": -118.4402192
   },
+  "POWELL": {
+   "name": "Powell Library",
+   "lat": 34.0715451,
+   "lon": -118.4421746
+  },
+  "PRITZKER": {
+   "name": "Pritzker Hall",
+   "lat": 34.0696018,
+   "lon": -118.4407603
+  },
   "PUB AFF": {
    "name": "Public Affairs Building",
    "lat": 34.0744384,
@@ -141,15 +231,35 @@
    "lat": 34.0738676,
    "lon": -118.442121
   },
+  "ROSNFLD": {
+   "name": "Rosenfeld Management Library (Entrepreneurs Hall)",
+   "lat": 34.0743923,
+   "lon": -118.4434567
+  },
   "ROYCE": {
    "name": "Royce Hall",
    "lat": 34.0729044,
    "lon": -118.4421895
   },
+  "SAC": {
+   "name": "Student Activities Center",
+   "lat": 34.0715182,
+   "lon": -118.444094
+  },
+  "SCULPTURE GDN": {
+   "name": "Franklin D. Murphy Sculpture Garden",
+   "lat": 34.0751064,
+   "lon": -118.440065
+  },
   "SLICHTR": {
    "name": "Slichter Hall",
    "lat": 34.0688944,
    "lon": -118.4407938
+  },
+  "SMB": {
+   "name": "Schoenberg Music Building",
+   "lat": 34.0707474,
+   "lon": -118.4400871
   },
   "SPROUL": {
    "name": "Sproul Hall",
@@ -165,6 +275,16 @@
    "name": "Young Hall",
    "lat": 34.0685978,
    "lon": -118.4412304
+  },
+  "WOODEN": {
+   "name": "John Wooden Center",
+   "lat": 34.0716489,
+   "lon": -118.4454125
+  },
+  "YRL": {
+   "name": "Charles E. Young Research Library",
+   "lat": 34.0749744,
+   "lon": -118.4414894
   }
  }
 }

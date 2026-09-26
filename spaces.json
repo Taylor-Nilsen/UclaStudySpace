@@ -1,0 +1,1775 @@
+{
+ "updated": "2026-09-26",
+ "sources": [
+  "UCLA Library (library.ucla.edu, calendar.library.ucla.edu)",
+  "UCLA Samueli, SEASnet, Residential Life, Housing, CPO, HumTech, SSC, Luskin, LS Core, UCLA Recreation, ASUCLA, Transfer Student Center, Hammer Museum and Botanical Garden pages, plus BruinLife and Daily Bruin write-ups for the outdoor spots"
+ ],
+ "spaces": [
+  {
+   "text": "Powell Library",
+   "building": "POWELL",
+   "category": "Library",
+   "area": "library",
+   "hours_lid": 2572,
+   "access": "UCLA students, faculty and staff; physical BruinCard for CLICC loans",
+   "description": "Main undergraduate library. Quiet reading rooms on the 2nd floor (Main Reading Room, Rose Gilbert Reading Room), the 1st-floor Study Hall, six bookable group study rooms, the CLICC Lab and wēpa printing. The Study Hall stays open overnight as Night Powell.",
+   "characteristics": [
+    "Quiet",
+    "Outlets",
+    "Printing",
+    "Laptop lending",
+    "Group study",
+    "Bookable rooms"
+   ],
+   "url": "https://www.library.ucla.edu/visit/locations/powell-library/",
+   "reserve_url": "https://calendar.library.ucla.edu/spaces?lid=4361"
+  },
+  {
+   "text": "Night Powell (overnight Study Hall)",
+   "building": "POWELL",
+   "room": "1st floor Study Hall",
+   "category": "Library",
+   "area": "library",
+   "hours_lid": 4699,
+   "access": "Physical BruinCard only: current UCLA students, faculty and staff (Law, Anderson and UCLA Health cards accepted). Screenshots are not accepted.",
+   "description": "Overnight study in Powell's 1st-floor Study Hall after the library closes; every other floor is closed. Two wēpa printers, a scanner, the six group study rooms and the CLICC lockers stay available. No staffed services.",
+   "hours_note": "Overnight hours vary on weekends and holidays.",
+   "characteristics": [
+    "Late night",
+    "Quiet",
+    "Outlets",
+    "Printing",
+    "Bookable rooms"
+   ],
+   "url": "https://www.library.ucla.edu/help/services-resources/overnight-study-space/",
+   "reserve_url": "https://calendar.library.ucla.edu/spaces?lid=4361"
+  },
+  {
+   "text": "CLICC Lab (Powell 145)",
+   "building": "POWELL",
+   "room": "145",
+   "category": "Computer lab",
+   "area": "library",
+   "hours_lid": 2609,
+   "access": "Active UCLA students, faculty and staff; physical BruinCard shown at the door and for any loan",
+   "description": "Drop-in collaborative study and computing space for 100+ students on Powell's 1st floor: MacBook, iPad and Chromebook lending, wēpa printing, scanners, adapters and chargers, plus three bookable single-person Loop Booths.",
+   "characteristics": [
+    "Laptop lending",
+    "Printing",
+    "Outlets",
+    "Group study",
+    "Bookable rooms"
+   ],
+   "url": "https://www.library.ucla.edu/about/programs/campus-library-instructional-computing-commons-clicc/",
+   "reserve_url": "https://calendar.library.ucla.edu/spaces?lid=4361&gid=35623"
+  },
+  {
+   "text": "Instructional Media Lab (Powell 270)",
+   "building": "POWELL",
+   "room": "270",
+   "category": "Library",
+   "area": "library",
+   "hours_lid": 22369,
+   "access": "UCLA students, faculty and staff with BruinCard; check in at the front desk for a room",
+   "description": "Media viewing stations, first-come study cubicles and small bookable quiet rooms for 1 to 4 people on Powell's 2nd floor, across from the circulation desk. Closed weekends, breaks and holidays.",
+   "characteristics": [
+    "Quiet",
+    "Computers",
+    "Bookable rooms"
+   ],
+   "url": "https://www.library.ucla.edu/help/services-resources/instructional-media-lab/",
+   "reserve_url": "https://calendar.library.ucla.edu/spaces?lid=19391"
+  },
+  {
+   "text": "Charles E. Young Research Library (YRL)",
+   "building": "YRL",
+   "category": "Library",
+   "area": "library",
+   "hours_lid": 1916,
+   "access": "Reading Room open to all; group rooms and equipment lending need a BruinCard",
+   "description": "Main research library on north campus. 1st-floor Reading Room with outlets and a scanner, the Research Commons with bookable group study rooms, the Garden Commons on the A-level with outlets and a printer, Café 451 by the entrance, and free day-use lockers.",
+   "characteristics": [
+    "Outlets",
+    "Printing",
+    "Laptop lending",
+    "Group study",
+    "Bookable rooms",
+    "Food & coffee",
+    "Open to public"
+   ],
+   "url": "https://www.library.ucla.edu/visit/locations/research-library/",
+   "reserve_url": "https://calendar.library.ucla.edu/spaces?lid=5567"
+  },
+  {
+   "text": "East Asian Library (YRL 21617)",
+   "building": "YRL",
+   "room": "21617",
+   "category": "Library",
+   "area": "library",
+   "hours_lid": 4693,
+   "access": "UCLA students, faculty, staff and researchers",
+   "description": "Richard C. Rudolph East Asian Library on the 2nd floor of YRL: Chinese, Japanese and Korean collections with computers, printing and research help.",
+   "characteristics": [
+    "Computers",
+    "Printing"
+   ],
+   "url": "https://www.library.ucla.edu/visit/locations/east-asian-library/"
+  },
+  {
+   "text": "Library Lux Lab (YRL and Powell 331)",
+   "building": "YRL",
+   "category": "Makerspace",
+   "area": "library",
+   "access": "UCLA students, orgs, staff and faculty for university-related work; no personal projects. Submit a request first.",
+   "hours_note": "By request or appointment; no drop-in hours are posted.",
+   "description": "The UCLA Library makerspace: MakerBot 3D printers and Artec 3D scanners in YRL's Research Commons, and an Epilog laser cutter plus Formlabs resin and Lulzbot printers in Powell 331. Little or no cost.",
+   "characteristics": [
+    "3D printers",
+    "Laser cutter"
+   ],
+   "url": "https://www.library.ucla.edu/help/services-resources/yrl-lux-lab/"
+  },
+  {
+   "text": "Science and Engineering Library (SEL/Boelter 8270)",
+   "building": "BOELTER",
+   "room": "8270",
+   "category": "Library",
+   "area": "library",
+   "hours_lid": 4702,
+   "access": "UCLA students, faculty and staff; the STEM Collaborative Learning Center needs a BruinCard",
+   "description": "Engineering and physical sciences library on Boelter's 8th floor: the Learning Commons (8270) and Research Commons (8251) with the STEM Collaborative Learning Center (dual-screen desktops, wall monitors for laptops, whiteboards), laptop lending, printing and a bookable group study room (8251A).",
+   "characteristics": [
+    "Outlets",
+    "Computers",
+    "Printing",
+    "Laptop lending",
+    "Whiteboards",
+    "Group study",
+    "Bookable rooms"
+   ],
+   "url": "https://www.library.ucla.edu/visit/locations/science-engineering-library/",
+   "reserve_url": "https://calendar.library.ucla.edu/spaces?lid=8312"
+  },
+  {
+   "text": "SEL/Geology reading room (Geology 4697)",
+   "building": "GEOLOGY",
+   "room": "4697",
+   "category": "Library",
+   "area": "library",
+   "hours_lid": 4703,
+   "access": "UCLA students, faculty and staff",
+   "description": "Quiet reading room and stacks in the Geology Building with laptop lending, printing and two bookable group study rooms (4697A for 8, 4697B for 4).",
+   "characteristics": [
+    "Quiet",
+    "Printing",
+    "Laptop lending",
+    "Bookable rooms"
+   ],
+   "url": "https://www.library.ucla.edu/visit/locations/science-engineering-library/",
+   "reserve_url": "https://calendar.library.ucla.edu/spaces?lid=8312"
+  },
+  {
+   "text": "Biomedical Library (CHS 12-077)",
+   "building": "HLTHSCI",
+   "room": "12-077",
+   "category": "Library",
+   "area": "library",
+   "hours_lid": 2081,
+   "access": "UCLA students, faculty and staff",
+   "description": "Louise M. Darling Biomedical Library in the Center for the Health Sciences: study space, computers, laptop lending, printing, a bookable main-floor group study room (12-077E) and the Collaboration Hub upstairs. Hosts the 24-hour Biomedical Study Commons.",
+   "characteristics": [
+    "Outlets",
+    "Computers",
+    "Printing",
+    "Laptop lending",
+    "Group study",
+    "Bookable rooms"
+   ],
+   "url": "https://www.library.ucla.edu/visit/locations/biomed/",
+   "reserve_url": "https://calendar.library.ucla.edu/spaces?lid=6578"
+  },
+  {
+   "text": "Biomedical Study Commons (24 hours)",
+   "building": "HLTHSCI",
+   "room": "after-hours entrance CHS 32-001",
+   "category": "Library",
+   "area": "library",
+   "hours_lid": 2082,
+   "access": "Regular library hours: any current UCLA student, faculty or staff. After hours: BruinCard swipe for graduate students in Medicine, Dentistry, Nursing, Public Health and the Life Sciences division only.",
+   "description": "24-hour quiet study commons reached from the 8th stack level of the Biomedical Library during regular hours (after-hours entrance at CHS 32-001). Bookable rooms inside are for groups only; food and drink allowed if you clean up.",
+   "characteristics": [
+    "Open 24 hours",
+    "Late night",
+    "Quiet",
+    "Group study",
+    "Bookable rooms"
+   ],
+   "url": "https://www.library.ucla.edu/help/services-resources/biomedical-study-commons/",
+   "reserve_url": "https://calendar.library.ucla.edu/spaces?lid=6578&gid=53757"
+  },
+  {
+   "text": "Biomedical Library Collaboration Hub (CHS 22-001)",
+   "building": "HLTHSCI",
+   "room": "22-001",
+   "category": "Library",
+   "area": "library",
+   "hours_lid": 24794,
+   "access": "UCLA students, faculty and staff in groups of 2 or more; check in at the service desk with your reservation",
+   "description": "Group-only study rooms with whiteboards (3 to 15 people) and a 20-seat presentation space on the 6th floor of CHS.",
+   "characteristics": [
+    "Whiteboards",
+    "Group study",
+    "Bookable rooms"
+   ],
+   "url": "https://www.library.ucla.edu/visit/locations/biomed/",
+   "reserve_url": "https://calendar.library.ucla.edu/reserve/biomed-hub"
+  },
+  {
+   "text": "Arts Library (Public Affairs 1400)",
+   "building": "PUB AFF",
+   "room": "1400",
+   "category": "Library",
+   "area": "library",
+   "hours_lid": 4690,
+   "access": "UCLA students, faculty and staff",
+   "description": "Art, architecture, film and design library on the 1st floor of the Public Affairs Building. The 5th-floor reading room is reserved for quiet study, with carrels and tables. Computers, laptop lending and printing.",
+   "characteristics": [
+    "Quiet",
+    "Computers",
+    "Printing",
+    "Laptop lending"
+   ],
+   "url": "https://www.library.ucla.edu/visit/locations/arts-library/"
+  },
+  {
+   "text": "Music Library (Schoenberg 1102)",
+   "building": "SMB",
+   "room": "1102",
+   "category": "Library",
+   "area": "library",
+   "hours_lid": 4696,
+   "access": "UCLA students and staff, and the public",
+   "description": "Walter H. Rubsamen Music Library off the Schoenberg atrium. The Reading Room is the main quiet study space, the classroom is quiet study when no class is in it, and the 20-seat Seminar Room is bookable for groups of 7 to 20. Computers, laptop lending, printing.",
+   "characteristics": [
+    "Quiet",
+    "Computers",
+    "Printing",
+    "Laptop lending",
+    "Bookable rooms",
+    "Open to public"
+   ],
+   "url": "https://www.library.ucla.edu/visit/locations/music-library/",
+   "reserve_url": "https://calendar.library.ucla.edu/spaces?lid=4752"
+  },
+  {
+   "text": "Rosenfeld Management Library (Anderson)",
+   "building": "ROSNFLD",
+   "category": "Library",
+   "area": "library",
+   "hours_lid": 3280,
+   "access": "3rd-floor study areas open to all UCLA; the 1st, 2nd and 4th floors, group rooms and labs are Anderson-only (Anderson BruinCard)",
+   "description": "Anderson School library in Entrepreneurs Hall. Non-Anderson students can use the 3rd-floor study areas and one public workstation; the group study rooms, computing labs, pods and the whole 4th floor are for Anderson students.",
+   "characteristics": [
+    "Outlets",
+    "Computers",
+    "Printing"
+   ],
+   "url": "https://www.library.ucla.edu/visit/locations/eugene-and-maxine-rosenfeld-management-library/"
+  },
+  {
+   "text": "Law Library (Law 1112)",
+   "building": "LAW",
+   "room": "1112",
+   "category": "Library",
+   "area": "library",
+   "hours_lid": 4694,
+   "access": "UCLA Law students and UCLA faculty/staff with BruinCard. Other UCLA students must reserve a study space online in advance (ucla.edu email) and show a BruinCard; access can be suspended during law finals.",
+   "description": "Hugh & Hazel Darling Law Library: big reading rooms on the 1st floor, the Tower Reading Room on the 4th (law students only), public computers and a wēpa kiosk. Non-law students book entry on the Law Library's own site.",
+   "characteristics": [
+    "Quiet",
+    "Computers",
+    "Printing"
+   ],
+   "url": "https://law.ucla.edu/library",
+   "reserve_url": "https://libbooking.law.ucla.edu/r"
+  },
+  {
+   "text": "UCLA Samueli Makerspace (Boelter 1805 & 2808)",
+   "building": "BOELTER",
+   "room": "1805 and 2808",
+   "category": "Makerspace",
+   "area": "space",
+   "hours": {
+    "Sunday": [],
+    "Monday": [
+     [
+      "9:00 AM",
+      "6:00 PM"
+     ]
+    ],
+    "Tuesday": [
+     [
+      "9:00 AM",
+      "6:00 PM"
+     ]
+    ],
+    "Wednesday": [
+     [
+      "9:00 AM",
+      "6:00 PM"
+     ]
+    ],
+    "Thursday": [
+     [
+      "9:00 AM",
+      "6:00 PM"
+     ]
+    ],
+    "Friday": [
+     [
+      "9:00 AM",
+      "6:00 PM"
+     ]
+    ],
+    "Saturday": [
+     [
+      "12:00 PM",
+      "5:00 PM"
+     ]
+    ]
+   },
+   "hours_note": "Open during the academic quarter only; closed finals week, breaks and university holidays.",
+   "access": "All UCLA Engineering students, free. Student staff train you on each machine before you use it.",
+   "description": "9,000 sq ft engineering makerspace: Prusa 3D printer farm, laser cutters, light machining tools, PCB printers, a reflow oven, electronics test gear, an embroidery machine and VR, supervised by trained student staff.",
+   "characteristics": [
+    "3D printers",
+    "Laser cutter",
+    "Machine tools"
+   ],
+   "url": "https://samueli.ucla.edu/makerspace/"
+  },
+  {
+   "text": "Samueli Student Machine Shop (Boelter 1805)",
+   "building": "BOELTER",
+   "room": "1805",
+   "category": "Makerspace",
+   "area": "space",
+   "hours": {
+    "Sunday": [],
+    "Monday": [
+     [
+      "7:30 AM",
+      "12:00 PM"
+     ],
+     [
+      "1:00 PM",
+      "4:00 PM"
+     ]
+    ],
+    "Tuesday": [
+     [
+      "7:30 AM",
+      "12:00 PM"
+     ],
+     [
+      "1:00 PM",
+      "4:00 PM"
+     ]
+    ],
+    "Wednesday": [
+     [
+      "7:30 AM",
+      "12:00 PM"
+     ],
+     [
+      "1:00 PM",
+      "4:00 PM"
+     ]
+    ],
+    "Thursday": [
+     [
+      "7:30 AM",
+      "12:00 PM"
+     ],
+     [
+      "1:00 PM",
+      "4:00 PM"
+     ]
+    ],
+    "Friday": [
+     [
+      "7:30 AM",
+      "12:00 PM"
+     ],
+     [
+      "1:00 PM",
+      "3:00 PM"
+     ]
+    ],
+    "Saturday": []
+   },
+   "access": "Engineering students, faculty and staff; staffed by machinists who instruct and supervise",
+   "description": "General metal machining shop (mills, lathes, drill presses, band saws) run by UCLA Samueli Shop Services. Submit an online machine shop request.",
+   "characteristics": [
+    "Machine tools"
+   ],
+   "url": "https://seasshops.ucla.edu/machine-shop/"
+  },
+  {
+   "text": "Makerspace on the Hill (Olympic Hall)",
+   "building": "OLYMPIC",
+   "category": "Makerspace",
+   "area": "hill",
+   "hours": {
+    "Sunday": [
+     [
+      "12:00 PM",
+      "5:30 PM"
+     ]
+    ],
+    "Monday": [
+     [
+      "12:00 PM",
+      "9:30 PM"
+     ]
+    ],
+    "Tuesday": [
+     [
+      "12:00 PM",
+      "9:30 PM"
+     ]
+    ],
+    "Wednesday": [
+     [
+      "12:00 PM",
+      "9:30 PM"
+     ]
+    ],
+    "Thursday": [
+     [
+      "12:00 PM",
+      "9:30 PM"
+     ]
+    ],
+    "Friday": [
+     [
+      "12:00 PM",
+      "9:30 PM"
+     ]
+    ],
+    "Saturday": [
+     [
+      "12:00 PM",
+      "5:30 PM"
+     ]
+    ]
+   },
+   "access": "All UCLA students, on or off campus, free. Technicians show you the machines; the wood and metal zone needs extra training.",
+   "description": "Residential Life's 3,000 sq ft makerspace: a 3D printing and laser cutting hub, a soft-goods zone (sewing, embroidery), a woodshop and metalworking zone, and general workspace.",
+   "characteristics": [
+    "3D printers",
+    "Laser cutter",
+    "Machine tools"
+   ],
+   "url": "https://reslife.ucla.edu/learning-centers"
+  },
+  {
+   "text": "Sunset Village Learning Center (Delta Terrace 150)",
+   "building": "DELTA TERRACE",
+   "room": "150",
+   "category": "Study lounge",
+   "area": "hill",
+   "hours": {
+    "Sunday": [
+     [
+      "6:00 PM",
+      "12:00 AM"
+     ]
+    ],
+    "Monday": [
+     [
+      "12:00 PM",
+      "12:00 AM"
+     ]
+    ],
+    "Tuesday": [
+     [
+      "12:00 PM",
+      "12:00 AM"
+     ]
+    ],
+    "Wednesday": [
+     [
+      "12:00 PM",
+      "12:00 AM"
+     ]
+    ],
+    "Thursday": [
+     [
+      "12:00 PM",
+      "12:00 AM"
+     ]
+    ],
+    "Friday": [
+     [
+      "12:00 PM",
+      "5:00 PM"
+     ]
+    ],
+    "Saturday": [
+     [
+      "12:00 PM",
+      "8:00 PM"
+     ]
+    ]
+   },
+   "access": "All UCLA students, on or off campus",
+   "description": "Residential Life learning center with two 20-seat study labs, lounge seating with outlets and two wēpa printers (B&W and color). Open to every UCLA student, not just residents.",
+   "characteristics": [
+    "Outlets",
+    "Printing",
+    "Group study",
+    "Late night"
+   ],
+   "url": "https://reslife.ucla.edu/learning-centers"
+  },
+  {
+   "text": "De Neve Labs (De Neve Commons P333)",
+   "building": "DE NEVE",
+   "room": "P333",
+   "category": "Study lounge",
+   "area": "hill",
+   "hours": {
+    "Sunday": [
+     [
+      "6:00 PM",
+      "12:00 AM"
+     ]
+    ],
+    "Monday": [
+     [
+      "12:00 PM",
+      "12:00 AM"
+     ]
+    ],
+    "Tuesday": [
+     [
+      "12:00 PM",
+      "12:00 AM"
+     ]
+    ],
+    "Wednesday": [
+     [
+      "12:00 PM",
+      "12:00 AM"
+     ]
+    ],
+    "Thursday": [
+     [
+      "12:00 PM",
+      "12:00 AM"
+     ]
+    ],
+    "Friday": [
+     [
+      "12:00 PM",
+      "5:00 PM"
+     ]
+    ],
+    "Saturday": []
+   },
+   "access": "All UCLA students, on or off campus",
+   "description": "Residential Life learning center on the 3rd floor of De Neve Commons: a computer lab, a music production studio, lounge seating with outlets and two wēpa printers.",
+   "characteristics": [
+    "Computers",
+    "Outlets",
+    "Printing",
+    "Late night"
+   ],
+   "url": "https://reslife.ucla.edu/learning-centers"
+  },
+  {
+   "text": "Student Technology Center (Covel L-06)",
+   "building": "COVEL",
+   "room": "L-06 (lobby level)",
+   "category": "Computer lab",
+   "area": "hill",
+   "hours": {
+    "Sunday": [],
+    "Monday": [
+     [
+      "8:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Tuesday": [
+     [
+      "8:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Wednesday": [
+     [
+      "8:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Thursday": [
+     [
+      "8:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Friday": [
+     [
+      "8:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Saturday": []
+   },
+   "access": "UCLA Housing residents (it is the housing tech help desk); the lab is open for use",
+   "description": "Housing's tech center in Covel Commons: eight Windows PCs with Office, B&W and color printing, copying, scanning and computer repair.",
+   "characteristics": [
+    "Computers",
+    "Printing"
+   ],
+   "url": "https://housing.ucla.edu/student-technology-center"
+  },
+  {
+   "text": "SEASnet Computer Labs (Boelter 2664, 3760, 4404, 4405, 4442)",
+   "building": "BOELTER",
+   "room": "2664, 3760, 4404, 4405, 4442",
+   "category": "Computer lab",
+   "area": "space",
+   "hours": {
+    "Sunday": [
+     [
+      "1:00 PM",
+      "9:00 PM"
+     ]
+    ],
+    "Monday": [
+     [
+      "10:00 AM",
+      "9:00 PM"
+     ]
+    ],
+    "Tuesday": [
+     [
+      "8:00 AM",
+      "9:00 PM"
+     ]
+    ],
+    "Wednesday": [
+     [
+      "8:00 AM",
+      "9:00 PM"
+     ]
+    ],
+    "Thursday": [
+     [
+      "8:00 AM",
+      "9:00 PM"
+     ]
+    ],
+    "Friday": [
+     [
+      "8:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Saturday": [
+     [
+      "10:00 AM",
+      "5:00 PM"
+     ]
+    ]
+   },
+   "hours_note": "Closed university holidays. Monday 8 to 10 AM is maintenance. 3760 and 4404 can be reserved for classes.",
+   "access": "SEASnet account (students in engineering courses); coursework has priority",
+   "description": "About 200 Windows workstations across five Boelter labs for engineering coursework. BruinPrint printer in 2664.",
+   "characteristics": [
+    "Computers",
+    "Printing"
+   ],
+   "url": "https://www.seasnet.ucla.edu/seasnet-computer-labs/"
+  },
+  {
+   "text": "PIC Lab (Math Sciences 2000)",
+   "building": "MS",
+   "room": "2000",
+   "category": "Computer lab",
+   "area": "space",
+   "hours_note": "Hours are on pic.ucla.edu, which was unreachable when this list was built.",
+   "access": "Students enrolled in PIC classes and Math students (PIC account)",
+   "description": "Program in Computing lab on the 2nd floor of the Math Sciences building, for PIC and math coursework.",
+   "characteristics": [
+    "Computers"
+   ],
+   "url": "https://www.pic.ucla.edu/lab.html"
+  },
+  {
+   "text": "Social Sciences Computing Labs (Public Affairs 2035B, 2400, 2400A)",
+   "building": "PUB AFF",
+   "room": "2035B, 2400, 2400A",
+   "category": "Computer lab",
+   "area": "space",
+   "hours": {
+    "Sunday": [],
+    "Monday": [
+     [
+      "9:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Tuesday": [
+     [
+      "9:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Wednesday": [
+     [
+      "9:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Thursday": [
+     [
+      "9:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Friday": [
+     [
+      "9:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Saturday": []
+   },
+   "hours_note": "Walk in whenever no class is scheduled in the room. Closed university holidays.",
+   "access": "Students enrolled in a Social Sciences course and Social Sciences grad students (account is created when you first log in)",
+   "description": "About 155 Windows workstations with statistical and GIS software across three Public Affairs labs. Printing 10¢ a side with a quarterly subsidy for eligible undergrads.",
+   "characteristics": [
+    "Computers",
+    "Printing"
+   ],
+   "url": "https://computing.sscnet.ucla.edu/labs/"
+  },
+  {
+   "text": "Luskin School Computer Lab (Public Affairs 1015)",
+   "building": "PUB AFF",
+   "room": "1015",
+   "category": "Computer lab",
+   "area": "space",
+   "hours": {
+    "Sunday": [],
+    "Monday": [
+     [
+      "9:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Tuesday": [
+     [
+      "9:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Wednesday": [
+     [
+      "9:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Thursday": [
+     [
+      "9:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Friday": [
+     [
+      "9:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Saturday": []
+   },
+   "hours_note": "Closed between quarters, in summer and on university holidays.",
+   "access": "Luskin School students, faculty and staff only",
+   "description": "Windows lab with ArcGIS, SPSS, Stata, SAS, R, AutoCAD and Adobe Creative Suite. Not open for general UCLA use.",
+   "characteristics": [
+    "Computers",
+    "Printing"
+   ],
+   "url": "https://luskin.ucla.edu/administration/information-technology/computer-lab/"
+  },
+  {
+   "text": "HumTech Learning Lab (Rolfe 2118)",
+   "building": "ROLFE",
+   "room": "2118",
+   "category": "Computer lab",
+   "area": "space",
+   "hours": {
+    "Sunday": [],
+    "Monday": [
+     [
+      "9:00 AM",
+      "6:00 PM"
+     ]
+    ],
+    "Tuesday": [
+     [
+      "9:00 AM",
+      "7:00 PM"
+     ]
+    ],
+    "Wednesday": [
+     [
+      "9:00 AM",
+      "7:00 PM"
+     ]
+    ],
+    "Thursday": [
+     [
+      "9:00 AM",
+      "7:00 PM"
+     ]
+    ],
+    "Friday": [
+     [
+      "9:00 AM",
+      "4:00 PM"
+     ]
+    ],
+    "Saturday": []
+   },
+   "hours_note": "Classes and exams booked in the room take priority; check the lab calendar for free-use hours.",
+   "access": "Any student during open hours, no reservation needed",
+   "description": "Humanities Technology lab with 30 MacBooks to borrow in the room, a color printer for enrolled classes and an instructional 3D printer. Drop in to study, take an exam or borrow a laptop.",
+   "characteristics": [
+    "Laptop lending",
+    "Computers",
+    "Group study"
+   ],
+   "url": "https://humtech.ucla.edu/labs/rolfe-ucla-humanities-learning-lab"
+  },
+  {
+   "text": "Life Sciences Core Computing Lab (Hershey 150)",
+   "building": "HERSHEY",
+   "room": "150",
+   "category": "Computer lab",
+   "area": "space",
+   "hours": {
+    "Sunday": [],
+    "Monday": [
+     [
+      "9:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Tuesday": [
+     [
+      "9:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Wednesday": [
+     [
+      "9:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Thursday": [
+     [
+      "9:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Friday": [
+     [
+      "9:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Saturday": []
+   },
+   "access": "Students registered in Life Sciences or Physical Sciences classes",
+   "description": "LS Core computing lab for LIFESCI coursework. Printing 5¢ a page, billed to BAR.",
+   "characteristics": [
+    "Computers",
+    "Printing"
+   ],
+   "url": "https://www.lscore.ucla.edu/computing-lab/"
+  },
+  {
+   "text": "CPO Computer Lab & Study Hall (SAC 121D)",
+   "building": "SAC",
+   "room": "121D",
+   "category": "Computer lab",
+   "area": "space",
+   "hours": {
+    "Sunday": [],
+    "Monday": [
+     [
+      "8:00 AM",
+      "8:00 PM"
+     ],
+     [
+      "8:30 PM",
+      "12:00 AM"
+     ]
+    ],
+    "Tuesday": [
+     [
+      "8:00 AM",
+      "8:00 PM"
+     ],
+     [
+      "8:30 PM",
+      "12:00 AM"
+     ]
+    ],
+    "Wednesday": [
+     [
+      "8:00 AM",
+      "8:00 PM"
+     ],
+     [
+      "8:30 PM",
+      "12:00 AM"
+     ]
+    ],
+    "Thursday": [
+     [
+      "8:00 AM",
+      "8:00 PM"
+     ],
+     [
+      "8:30 PM",
+      "12:00 AM"
+     ]
+    ],
+    "Friday": [
+     [
+      "8:00 AM",
+      "4:00 PM"
+     ]
+    ],
+    "Saturday": []
+   },
+   "hours_note": "CPO Study Hall (8:30 PM to midnight, Mon to Thu) runs weeks 2 through finals, with a free ride home if you study at least an hour.",
+   "access": "All UCLA students, free",
+   "description": "Community Programs Office lab in the Student Activities Center with free printing (150 duplex prints a quarter). The Basic Needs lounge next door in suite 121 has café seating, microwaves, lockers and the Food Closet.",
+   "characteristics": [
+    "Computers",
+    "Printing",
+    "Late night",
+    "Food & coffee"
+   ],
+   "url": "https://cpo.ucla.edu/our-work/computer-lab-test-bank"
+  },
+  {
+   "text": "Ackerman Union open study rooms (2nd & 3rd floor)",
+   "building": "AU",
+   "room": "2408, 2410, 2412, 3508, 3517, 3608",
+   "category": "Student union",
+   "area": "space",
+   "hours": {
+    "Sunday": [
+     [
+      "8:00 AM",
+      "11:00 PM"
+     ]
+    ],
+    "Monday": [
+     [
+      "8:00 AM",
+      "11:00 PM"
+     ]
+    ],
+    "Tuesday": [
+     [
+      "8:00 AM",
+      "11:00 PM"
+     ]
+    ],
+    "Wednesday": [
+     [
+      "8:00 AM",
+      "11:00 PM"
+     ]
+    ],
+    "Thursday": [
+     [
+      "8:00 AM",
+      "11:00 PM"
+     ]
+    ],
+    "Friday": [
+     [
+      "8:00 AM",
+      "11:00 PM"
+     ]
+    ],
+    "Saturday": [
+     [
+      "8:00 AM",
+      "11:00 PM"
+     ]
+    ]
+   },
+   "asucla": {
+    "group": "Study Lounges",
+    "match": "open study|ackerman"
+   },
+   "access": "UCLA students, faculty and staff",
+   "description": "Any unreserved meeting room on Ackerman's 2nd and 3rd floors is open for studying; the day's schedule is posted next to each door. The food court is one floor down.",
+   "characteristics": [
+    "Group study",
+    "Food & coffee"
+   ],
+   "url": "https://www.asucla.ucla.edu/open-study"
+  },
+  {
+   "text": "Ackerman Union",
+   "building": "AU",
+   "category": "Student union",
+   "area": "space",
+   "asucla": {
+    "group": "Student Union",
+    "match": "ackerman"
+   },
+   "access": "Open to the public",
+   "description": "The student union: 1st-floor food court seating, the outdoor Wescom Student Terrace over Bruin Plaza, the Bruin Viewpoint study lounge on the A-level next to the A-level restaurants, and lounges on the 2nd and 3rd floors.",
+   "characteristics": [
+    "Food & coffee",
+    "Open to public"
+   ],
+   "url": "https://www.asucla.ucla.edu/ucla/ackerman-union"
+  },
+  {
+   "text": "Kerckhoff Hall 2nd floor study lounge",
+   "building": "KERCKHOFF",
+   "room": "2nd floor, by the Coffee House",
+   "category": "Study lounge",
+   "area": "space",
+   "hours": {
+    "Sunday": [
+     [
+      "8:00 AM",
+      "11:00 PM"
+     ]
+    ],
+    "Monday": [
+     [
+      "8:00 AM",
+      "11:00 PM"
+     ]
+    ],
+    "Tuesday": [
+     [
+      "8:00 AM",
+      "11:00 PM"
+     ]
+    ],
+    "Wednesday": [
+     [
+      "8:00 AM",
+      "11:00 PM"
+     ]
+    ],
+    "Thursday": [
+     [
+      "8:00 AM",
+      "11:00 PM"
+     ]
+    ],
+    "Friday": [
+     [
+      "8:00 AM",
+      "11:00 PM"
+     ]
+    ],
+    "Saturday": [
+     [
+      "8:00 AM",
+      "11:00 PM"
+     ]
+    ]
+   },
+   "asucla": {
+    "group": "Study Lounges",
+    "match": "2nd|second"
+   },
+   "access": "UCLA students",
+   "description": "Small ASUCLA lounge with bright lighting and couches right beside Kerckhoff Coffee House.",
+   "characteristics": [
+    "Food & coffee"
+   ],
+   "url": "https://www.asucla.ucla.edu/study-lounges"
+  },
+  {
+   "text": "Louise Kerckhoff Study Lounge (3rd floor)",
+   "building": "KERCKHOFF",
+   "room": "3rd floor",
+   "category": "Study lounge",
+   "area": "space",
+   "hours": {
+    "Sunday": [
+     [
+      "8:00 AM",
+      "11:00 PM"
+     ]
+    ],
+    "Monday": [
+     [
+      "8:00 AM",
+      "11:00 PM"
+     ]
+    ],
+    "Tuesday": [
+     [
+      "8:00 AM",
+      "11:00 PM"
+     ]
+    ],
+    "Wednesday": [
+     [
+      "8:00 AM",
+      "11:00 PM"
+     ]
+    ],
+    "Thursday": [
+     [
+      "8:00 AM",
+      "11:00 PM"
+     ]
+    ],
+    "Friday": [
+     [
+      "8:00 AM",
+      "11:00 PM"
+     ]
+    ],
+    "Saturday": [
+     [
+      "8:00 AM",
+      "11:00 PM"
+     ]
+    ]
+   },
+   "asucla": {
+    "group": "Study Lounges",
+    "match": "louise|3rd|third"
+   },
+   "access": "UCLA students",
+   "description": "The larger of the two Kerckhoff lounges: a co-ed lounge with comfortable couch seating.",
+   "characteristics": [],
+   "url": "https://www.asucla.ucla.edu/study-lounges"
+  },
+  {
+   "text": "Kerckhoff Coffee House",
+   "building": "KERCKHOFF",
+   "room": "2nd floor",
+   "category": "Café",
+   "area": "space",
+   "asucla": {
+    "group": "UCLA Restaurants - Central Campus",
+    "match": "kerckhoff"
+   },
+   "access": "Open to the public",
+   "description": "Historic brick-and-stained-glass café that fills with students studying over coffee; the patio outside has shaded tables and a view of Bruin Walk.",
+   "characteristics": [
+    "Food & coffee",
+    "Open to public",
+    "Outdoor"
+   ],
+   "url": "https://www.asucla.ucla.edu/ucla/kerckhoff-coffeehouse"
+  },
+  {
+   "text": "Transfer Student Center (Kerckhoff 128)",
+   "building": "KERCKHOFF",
+   "room": "128",
+   "category": "Study lounge",
+   "area": "space",
+   "hours": {
+    "Sunday": [],
+    "Monday": [
+     [
+      "10:00 AM",
+      "6:00 PM"
+     ]
+    ],
+    "Tuesday": [
+     [
+      "10:00 AM",
+      "6:00 PM"
+     ]
+    ],
+    "Wednesday": [
+     [
+      "10:00 AM",
+      "6:00 PM"
+     ]
+    ],
+    "Thursday": [
+     [
+      "10:00 AM",
+      "6:00 PM"
+     ]
+    ],
+    "Friday": [
+     [
+      "10:00 AM",
+      "2:00 PM"
+     ]
+    ],
+    "Saturday": []
+   },
+   "hours_note": "Summer: Mon to Thu 10 AM to 2 PM.",
+   "access": "UCLA students; built for transfer, commuter and non-traditional students",
+   "description": "Lounge to hang out, study and meet other transfers, on the ground floor of Kerckhoff.",
+   "characteristics": [],
+   "url": "https://transfers.ucla.edu/contact"
+  },
+  {
+   "text": "Student Activities Center (SAC)",
+   "building": "SAC",
+   "category": "Student union",
+   "area": "space",
+   "hours": {
+    "Sunday": [
+     [
+      "7:45 AM",
+      "9:00 PM"
+     ]
+    ],
+    "Monday": [
+     [
+      "6:45 AM",
+      "12:00 AM"
+     ]
+    ],
+    "Tuesday": [
+     [
+      "6:45 AM",
+      "12:00 AM"
+     ]
+    ],
+    "Wednesday": [
+     [
+      "6:45 AM",
+      "12:00 AM"
+     ]
+    ],
+    "Thursday": [
+     [
+      "6:45 AM",
+      "12:00 AM"
+     ]
+    ],
+    "Friday": [
+     [
+      "6:45 AM",
+      "10:00 PM"
+     ]
+    ],
+    "Saturday": [
+     [
+      "7:45 AM",
+      "9:00 PM"
+     ]
+    ]
+   },
+   "access": "UCLA students (gym and pool need a BruinCard or Rec membership)",
+   "description": "Home of the Community Programs Office, the Bruin Resource Center, student org offices, a gym and a pool. Lobbies and hallways get used for studying; the CPO lab and Basic Needs lounge are in suite 121.",
+   "characteristics": [
+    "Late night"
+   ],
+   "url": "https://recreation.ucla.edu/facilities/student-activities-center"
+  },
+  {
+   "text": "John Wooden Center patio & BruinHub",
+   "building": "WOODEN",
+   "room": "2nd floor",
+   "category": "Study lounge",
+   "area": "space",
+   "hours": {
+    "Sunday": [
+     [
+      "8:00 AM",
+      "11:00 PM"
+     ]
+    ],
+    "Monday": [
+     [
+      "5:15 AM",
+      "1:00 AM"
+     ]
+    ],
+    "Tuesday": [
+     [
+      "5:15 AM",
+      "1:00 AM"
+     ]
+    ],
+    "Wednesday": [
+     [
+      "5:15 AM",
+      "1:00 AM"
+     ]
+    ],
+    "Thursday": [
+     [
+      "5:15 AM",
+      "1:00 AM"
+     ]
+    ],
+    "Friday": [
+     [
+      "5:15 AM",
+      "10:00 PM"
+     ]
+    ],
+    "Saturday": [
+     [
+      "8:00 AM",
+      "8:00 PM"
+     ]
+    ]
+   },
+   "access": "UCLA students with BruinCard. BruinHub study pods need a quarterly passholder application.",
+   "description": "BruinHub on the 2nd floor is a space for commuter and housing-insecure students with study tables, charging stations, a microwave, fridge, lockers and study pods. The 2nd-floor succulent garden has umbrella tables over Bruin Walk.",
+   "characteristics": [
+    "Outlets",
+    "Late night",
+    "Outdoor"
+   ],
+   "url": "https://recreation.ucla.edu/facilities/jwc"
+  },
+  {
+   "text": "Lu Valle Commons & Jimmy’s Coffee House",
+   "building": "LUVALLE",
+   "category": "Café",
+   "area": "space",
+   "asucla": {
+    "group": "UCLA Restaurants - North Campus",
+    "match": "jimmy"
+   },
+   "access": "Open to the public",
+   "description": "North campus food hall next to the Law School with Peet's coffee at Jimmy's, several restaurants and indoor and outdoor seating. Busy at lunch.",
+   "characteristics": [
+    "Food & coffee",
+    "Open to public",
+    "Outdoor"
+   ],
+   "url": "https://www.asucla.ucla.edu/locations"
+  },
+  {
+   "text": "Northern Lights (North Campus Student Center)",
+   "building": "NCSC",
+   "category": "Café",
+   "area": "space",
+   "asucla": {
+    "group": "UCLA Restaurants - North Campus",
+    "match": "northern"
+   },
+   "access": "Open to the public",
+   "description": "Café with paninis, soup and poke bowls near Bunche Hall and the Sculpture Garden, with a little fireplace for chilly days.",
+   "characteristics": [
+    "Food & coffee",
+    "Open to public"
+   ],
+   "url": "https://www.asucla.ucla.edu/locations"
+  },
+  {
+   "text": "Court of Sciences Student Center",
+   "building": "COURT OF SCI",
+   "category": "Student union",
+   "area": "space",
+   "asucla": {
+    "group": "UCLA Restaurants - South Campus",
+    "match": "court of sci"
+   },
+   "access": "Open to the public",
+   "description": "South campus food court one level below the Court of Sciences, between Boelter, Young and Boyer, with Peet's Coffee, indoor tables and outdoor seating. Busy at lunch.",
+   "characteristics": [
+    "Food & coffee",
+    "Open to public",
+    "Outdoor"
+   ],
+   "url": "https://www.asucla.ucla.edu/locations"
+  },
+  {
+   "text": "Café 451 (YRL lobby)",
+   "building": "YRL",
+   "room": "1st floor",
+   "category": "Café",
+   "area": "space",
+   "hours": {
+    "Sunday": [
+     [
+      "1:30 PM",
+      "9:30 PM"
+     ]
+    ],
+    "Monday": [
+     [
+      "8:00 AM",
+      "8:00 PM"
+     ]
+    ],
+    "Tuesday": [
+     [
+      "8:00 AM",
+      "8:00 PM"
+     ]
+    ],
+    "Wednesday": [
+     [
+      "8:00 AM",
+      "8:00 PM"
+     ]
+    ],
+    "Thursday": [
+     [
+      "8:00 AM",
+      "8:00 PM"
+     ]
+    ],
+    "Friday": [
+     [
+      "8:00 AM",
+      "4:00 PM"
+     ]
+    ],
+    "Saturday": [
+     [
+      "9:30 AM",
+      "4:30 PM"
+     ]
+    ]
+   },
+   "asucla": {
+    "group": "UCLA Restaurants - North Campus",
+    "match": "451"
+   },
+   "access": "Open to the public",
+   "description": "Peet's café at the entrance of YRL. Seating spills into the library's 1st-floor commons, which has outlets and a printer.",
+   "characteristics": [
+    "Food & coffee",
+    "Outlets",
+    "Open to public"
+   ],
+   "url": "https://www.library.ucla.edu/visit/locations/research-library/"
+  },
+  {
+   "text": "Café Synapse (Gonda Center)",
+   "building": "GONDA",
+   "category": "Café",
+   "area": "space",
+   "asucla": {
+    "group": "UCLA Restaurants - South Campus",
+    "match": "synapse"
+   },
+   "access": "Open to the public",
+   "description": "Peet's café at the Gonda Research Center on south campus with indoor and outdoor seating; quieter than the central cafés.",
+   "characteristics": [
+    "Food & coffee",
+    "Open to public",
+    "Outdoor"
+   ],
+   "url": "https://www.asucla.ucla.edu/ucla/caf-synapse"
+  },
+  {
+   "text": "Anderson Café",
+   "building": "ANDERSON",
+   "category": "Café",
+   "area": "space",
+   "asucla": {
+    "group": "UCLA Restaurants - North Campus",
+    "match": "anderson"
+   },
+   "access": "Open to the public",
+   "description": "Coffee Bean & Tea Leaf café in the Anderson complex with shaded outdoor seating, next to the Rosenfeld Library.",
+   "characteristics": [
+    "Food & coffee",
+    "Open to public",
+    "Outdoor"
+   ],
+   "url": "https://www.asucla.ucla.edu/locations"
+  },
+  {
+   "text": "Music Café (Ostin Music Center)",
+   "building": "OSTIN",
+   "category": "Café",
+   "area": "space",
+   "asucla": {
+    "group": "UCLA Restaurants - North Campus",
+    "match": "music"
+   },
+   "access": "Open to the public",
+   "description": "Small café in the Ostin Music Center beside the Music Library.",
+   "characteristics": [
+    "Food & coffee",
+    "Open to public"
+   ],
+   "url": "https://www.asucla.ucla.edu/locations"
+  },
+  {
+   "text": "Engineering VI 3rd-floor patio & lounge",
+   "building": "ENGR VI",
+   "room": "3rd floor",
+   "category": "Study lounge",
+   "area": "space",
+   "hours_note": "No hours are posted; follows Engineering VI building access.",
+   "access": "Not posted (engineering building)",
+   "description": "Patio between Engineering V and VI shaded by the surrounding buildings, with benches, tables and plants, plus an indoor lounge with comfy seating, movable chairs and a TV for group work. Take the elevator to 3.",
+   "characteristics": [
+    "Outdoor",
+    "Group study"
+   ],
+   "url": "https://samueli.ucla.edu/engineering-vi-meeting-areas/"
+  },
+  {
+   "text": "Boelter Hall 9th-floor roof",
+   "building": "BOELTER",
+   "room": "9th floor",
+   "category": "Outdoor",
+   "area": "space",
+   "hours_note": "No hours are posted; follows Boelter Hall access.",
+   "access": "Not posted",
+   "description": "Open rooftop above the Science and Engineering Library with awnings for shade and restrooms. Quiet and rarely crowded. No outlets.",
+   "characteristics": [
+    "Outdoor",
+    "Quiet"
+   ]
+  },
+  {
+   "text": "Math Sciences patio tables",
+   "building": "MS",
+   "room": "ground level",
+   "category": "Outdoor",
+   "area": "space",
+   "access": "Open to the public",
+   "description": "Wooden outdoor tables with power outlets at the base of the Math Sciences building, near Boelter and the Court of Sciences Student Center.",
+   "characteristics": [
+    "Outdoor",
+    "Outlets",
+    "Open to public"
+   ]
+  },
+  {
+   "text": "Physics & Astronomy 3rd-floor patio",
+   "building": "PAB",
+   "room": "3rd floor",
+   "category": "Outdoor",
+   "area": "space",
+   "hours_note": "No hours are posted; follows building access.",
+   "access": "Not posted",
+   "description": "Elevated patio with a shade structure and tables looking toward Powell and Kaplan Hall. Low foot traffic, no outlets.",
+   "characteristics": [
+    "Outdoor",
+    "Quiet"
+   ]
+  },
+  {
+   "text": "Broad Art Center 8th-floor balcony",
+   "building": "BROAD",
+   "room": "8th floor",
+   "category": "Outdoor",
+   "area": "space",
+   "hours_note": "No hours are posted; follows building access.",
+   "access": "Not posted",
+   "description": "White balcony on Broad's top floor with south-facing views toward Santa Monica. Quiet, no outlets.",
+   "characteristics": [
+    "Outdoor",
+    "Quiet"
+   ]
+  },
+  {
+   "text": "Pritzker Hall 2nd-floor lounges",
+   "building": "PRITZKER",
+   "room": "2nd floor",
+   "category": "Study lounge",
+   "area": "space",
+   "hours_note": "No hours are posted; follows building access.",
+   "access": "Not posted",
+   "description": "Study and lounge areas with outlets overlooking the Inverted Fountain, for solo or group work. Popular with psych majors.",
+   "characteristics": [
+    "Outlets",
+    "Group study"
+   ]
+  },
+  {
+   "text": "Moore Hall student lounge",
+   "building": "MOORE",
+   "room": "2nd floor",
+   "category": "Study lounge",
+   "area": "space",
+   "hours_note": "No hours are posted; follows building access.",
+   "access": "Not posted",
+   "description": "Compact, tucked-away lounge in the School of Education with whiteboards; good for long solo or group sessions.",
+   "characteristics": [
+    "Whiteboards",
+    "Quiet",
+    "Group study"
+   ]
+  },
+  {
+   "text": "Franklin D. Murphy Sculpture Garden",
+   "building": "SCULPTURE GDN",
+   "category": "Outdoor",
+   "area": "space",
+   "access": "Open to the public",
+   "description": "Five-acre lawn and brick plaza with 70+ sculptures between Broad, Bunche and YRL. Lawn seating, coral-tree shade, no outlets. Café 451 and Northern Lights are a short walk.",
+   "characteristics": [
+    "Outdoor",
+    "Quiet",
+    "Open to public"
+   ],
+   "url": "https://hammer.ucla.edu/collections/franklin-d-murphy-sculpture-garden"
+  },
+  {
+   "text": "Mildred E. Mathias Botanical Garden",
+   "building": "BOTANICAL GDN",
+   "category": "Outdoor",
+   "area": "space",
+   "hours": {
+    "Sunday": [
+     [
+      "9:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Monday": [
+     [
+      "8:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Tuesday": [
+     [
+      "8:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Wednesday": [
+     [
+      "8:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Thursday": [
+     [
+      "8:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Friday": [
+     [
+      "8:00 AM",
+      "5:00 PM"
+     ]
+    ],
+    "Saturday": [
+     [
+      "9:00 AM",
+      "5:00 PM"
+     ]
+    ]
+   },
+   "hours_note": "November to January it closes at 4 PM. Closed Thanksgiving and Christmas.",
+   "access": "Open to the public, free",
+   "description": "Seven-acre garden on the southeast edge of campus with benches tucked into leafy nooks, wooden tables, a stream and a bamboo grove. Very quiet, no outlets.",
+   "characteristics": [
+    "Outdoor",
+    "Quiet",
+    "Open to public"
+   ],
+   "url": "https://www.botgard.ucla.edu/"
+  },
+  {
+   "text": "Royce Quad & Dickson Court lawns",
+   "building": "DICKSON CT",
+   "category": "Outdoor",
+   "area": "space",
+   "access": "Open to the public",
+   "description": "The main quad between Royce, Powell, Haines and Kaplan, plus the shady fig and sycamore lawns of Dickson Court North and South just east of it. Benches and grass only, lots of foot traffic. Powell and Kerckhoff Coffee House are steps away.",
+   "characteristics": [
+    "Outdoor",
+    "Open to public"
+   ]
+  },
+  {
+   "text": "Law Building courtyard",
+   "building": "LAW",
+   "category": "Outdoor",
+   "area": "space",
+   "access": "Not posted (open courtyard)",
+   "description": "Well-furnished courtyard shaded by evergreens and lit by string lights in the evening, next to Lu Valle Commons.",
+   "characteristics": [
+    "Outdoor",
+    "Quiet"
+   ]
+  },
+  {
+   "text": "Hammer Museum courtyard",
+   "building": "HAMMER",
+   "category": "Outdoor",
+   "area": "space",
+   "hours": {
+    "Sunday": [
+     [
+      "11:00 AM",
+      "6:00 PM"
+     ]
+    ],
+    "Monday": [],
+    "Tuesday": [
+     [
+      "11:00 AM",
+      "6:00 PM"
+     ]
+    ],
+    "Wednesday": [
+     [
+      "11:00 AM",
+      "6:00 PM"
+     ]
+    ],
+    "Thursday": [
+     [
+      "11:00 AM",
+      "6:00 PM"
+     ]
+    ],
+    "Friday": [
+     [
+      "11:00 AM",
+      "6:00 PM"
+     ]
+    ],
+    "Saturday": [
+     [
+      "11:00 AM",
+      "6:00 PM"
+     ]
+    ]
+   },
+   "access": "Open to the public, free admission",
+   "description": "Half-indoor, half-outdoor museum courtyard in Westwood Village, a short walk south of campus, with outlets for laptops and the Lulu café. Quiet on weekdays.",
+   "characteristics": [
+    "Outdoor",
+    "Outlets",
+    "Food & coffee",
+    "Open to public"
+   ],
+   "url": "https://hammer.ucla.edu/visit"
+  }
+ ]
+}
