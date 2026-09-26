@@ -14,8 +14,9 @@ on:
     branches: ["master"]
 
   # Refresh Hill study room availability (reserve.reslife.ucla.edu) and
-  # redeploy. That data changes by the minute, so it is scraped at deploy time
-  # instead of being committed.
+  # UCLA Library availability (calendar.library.ucla.edu), then redeploy.
+  # That data changes by the minute, so it is scraped at deploy time instead
+  # of being committed.
   schedule:
     - cron: '*/30 * * * *'
 
@@ -56,6 +57,10 @@ jobs:
         # Best effort: on failure the committed hill.json snapshot ships.
         continue-on-error: true
         run: python scrape_hill.py
+      - name: Refresh Library study room availability
+        # Best effort: on failure the committed library.json snapshot ships.
+        continue-on-error: true
+        run: python scrape_library.py
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
