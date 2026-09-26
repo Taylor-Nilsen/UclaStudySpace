@@ -251,7 +251,7 @@
     }
     function termMatches(r, t){
         const room = normRoom(t);
-        if(/\d/.test(t) && r._room.startsWith(room)) return true;
+        if(/\d/.test(t) && (r._room.startsWith(room) || r._words.some(w => normRoom(w).startsWith(room)))) return true;
         if(!/\d/.test(t)) return r._words.some(w => w.startsWith(t));
         const parts = t.match(/[a-z]+|\d+[a-z]?/g) || [];
         return parts.length > 1 && parts.every(p => termMatches(r, p));
@@ -268,7 +268,7 @@
     const state = {rooms:[], day:'', chars:new Set(), buildings:new Set(), types:new Set(), allChars:new Set(), open:new Set(), feeds:{}};
     const $ = id => document.getElementById(id);
     const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-    const norm = s => String(s || '').toLowerCase().replace(/\s+/g, ' ').trim();
+    const norm = s => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, ' ').trim();
     const debounce = (fn, ms) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
 
     function toMin(t){
@@ -301,9 +301,9 @@
     function prepRoom(r){
         r._room = normRoom(r.room);
         r._space = !!r.category;   // spaces.json entry: a library, lab, lounge, café or outdoor spot with open hours
-        r._key = `${r.feed || (r._space ? 'space' : 'class')}|${r.text}`;
+        r._key = `${r.feed || (r._space ? 'space' : 'class')}|${r.url || r.text}`;
         r._cat = r.category || (r.reservable ? (r.feed === 'library' ? 'Library study room' : 'Hill study room') : 'Classroom');
-        r._words = norm(`${r.building} ${BUILDING_ALIASES[r.building] || ''} ${r.type || ''} ${r._space ? r.text + ' ' + r.category : ''} ${r.library || ''} ${r.reservable ? 'study room' : ''}`).split(/[\s&/,()-]+/).filter(Boolean);
+        r._words = norm(`${r.building} ${BUILDING_ALIASES[r.building] || ''} ${r.type || ''} ${r._space ? r.text + ' ' + r.category : ''} ${r.library || ''} ${r.reservable ? r.text + ' study room' : ''}`).split(/[\s&/,()-]+/).filter(Boolean);
         r._cls = {};
         DAYS.forEach(d => {
             r._cls[d] = ((r.schedule && r.schedule[d]) || []).map(s => {
@@ -567,13 +567,13 @@
         const a = r.access || '';
         if(r.reservable) return r.feed === 'library' ? 'UCLA Logon to book' : 'Residents only';
         if(!a || /not posted/i.test(a)) return '';
-        if(/public/i.test(a)) return 'Open to public';
+        if(/open to (the )?public|open to all/i.test(a)) return 'Open to public';
         if(/engineering/i.test(a)) return 'Engineering students';
         if(/anderson-only|anderson bruincard/i.test(a)) return 'Anderson-only areas';
         if(/law students/i.test(a)) return 'Law Library rules';
         if(/residents/i.test(a)) return 'Housing residents';
-        if(/enrolled|course|luskin|pic |social sciences|life sciences/i.test(a)) return 'Course or school access';
         if(/graduate students/i.test(a)) return 'UCLA ID, grads after hours';
+        if(/enrolled|course|luskin|pic |social sciences|life sciences/i.test(a)) return 'Course or school access';
         if(/bruincard|ucla students|any student|ucla id/i.test(a)) return 'UCLA students';
         return 'See access';
     }

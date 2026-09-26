@@ -43,7 +43,7 @@ Render settings: runtime Python, build `pip install -r requirements.txt`, start 
 **Libraries.** `scrape_library.py` pulls from the UCLA Library's LibCal site (calendar.library.ucla.edu), two public feeds, no login needed:
 
 - Hours: `api_hours_grid.php` lists open hours per date for the next couple of weeks for every library and department (Powell, YRL, Night Powell, CLICC lab, Biomedical Study Commons, ...). `spaces.json` entries point at one of these locations with an `hours_lid`, so a library card's hours come straight from this feed. A day can be open all day, closed, or unposted (the LibCal status is neither "open" nor "closed" nor "24hours"); unposted hours show as "Hours not posted" rather than a guess.
-- Bookable group study rooms: each library's `/spaces` page lists its rooms with capacities, and `/spaces/availability/grid` returns every 30 minute slot for a date range, flagged when booked. Slots only exist inside booking hours, so the union of a day's slots is that day's open window and a missing slot inside it is reserved. The LibCal booking window only opens about 3 days out, so `scrape_library.py` defaults to `--days 4`. Anyone with a UCLA Logon (not just current UCLA affiliates with special access) can book a library study room, unlike the Hill rooms.
+- Bookable group study rooms: each library's `/spaces` page lists its rooms with capacities, and `/spaces/availability/grid` returns every 30 minute slot for a date range, flagged when booked. Slots only exist inside booking hours, so the union of a day's slots is that day's open window and a missing slot inside it is reserved. The LibCal booking window only opens about 3 days out, so `scrape_library.py` defaults to `--days 4`. Anyone with a UCLA Logon can book a library study room; Hill rooms are residents only.
 
 `library.json` has the same room shape as `hill.json` (`days: {date: {hours: [open, close], free: [[a, b], ...]}}`), plus an `hours` map keyed by LibCal location id (`days: {date: [[open, close], ...] | [] | null}`, `null` meaning hours weren't posted for that date).
 
@@ -86,7 +86,7 @@ Render settings: runtime Python, build `pip install -r requirements.txt`, start 
 {
   "text": "Powell Library",
   "building": "POWELL",
-  "room": "2408, 2410, 2412",
+  "room": "",
   "category": "Library",
   "area": "library",
   "hours_lid": 2572,
@@ -122,7 +122,7 @@ The term is chosen from the date, switching about 2 weeks before each quarter st
 ## Automation
 
 - `.github/workflows/update-classrooms.yml` runs daily at 6 AM PT (and on demand, with an optional term). It scrapes both sources and commits `classrooms.json` only if something changed.
-- `.github/workflows/static.yml` deploys to GitHub Pages on pushes to `master` and after every data update. Pushes made with the Actions token don't fire other workflows on their own, so it listens for `workflow_run`. It also runs every 30 minutes on a schedule to refresh the committed `hill.json` and `library.json` snapshots and redeploy, since both change by the minute. Each refresh is best effort: if a scrape fails, that step is skipped and the previously committed snapshot ships.
+- `.github/workflows/static.yml` deploys to GitHub Pages on pushes to `master` and after every data update. Pushes made with the Actions token don't fire other workflows on their own, so it listens for `workflow_run`. It also runs every 30 minutes on a schedule, re-scrapes `hill.json` and `library.json` at deploy time (nothing is committed) and redeploys, since both change by the minute. Each refresh is best effort: if a scrape fails, that step is skipped and the previously committed snapshot ships.
 
 ## Etiquette
 
