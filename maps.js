@@ -15,7 +15,21 @@
     const ft = m => Math.round(m * 3.281);
     const distLabel = m => m < 1000 ? `${Math.round(m)} m (${ft(m)} ft)` : `${(m/1000).toFixed(2)} km (${(m/1609.34).toFixed(2)} mi)`;
 
-    let index = null, buildingsGeo = null;
+    let index = null, buildingsGeo = null, roomsIndex = null;
+    // UCLA Space Inventory's public room list per floor: the exact floor for a
+    // room, plus which stair and elevator "rooms" each floor has.
+    async function loadRoomsIndex(){
+        if(roomsIndex) return roomsIndex;
+        try{ roomsIndex = (await getJSON(DIR + 'rooms_index.json')).buildings; }catch(e){ roomsIndex = {}; }
+        return roomsIndex;
+    }
+    function indexFloor(code, room){
+        const b = roomsIndex && roomsIndex[code];
+        if(!b) return null;
+        const want = roomKey(room);
+        for(const [lv, f] of Object.entries(b.floors)) if(f.rooms.some(r => roomKey(r) === want)) return lv;
+        return null;
+    }
     const cache = {};
     const ui = {};          // modal state
     const loc = {fix:null, stop:null, err:'', on:false};
@@ -267,6 +281,7 @@
         try{
             await loadIndex();
             await loadBuildingsGeo();
+            await loadRoomsIndex();
             ui.code = resolveCode(opts.building, opts.name);
             if(ui.code) ui.data = await getJSON(DIR + index.buildings[ui.code].file);
         }catch(err){
@@ -279,9 +294,11 @@
         setupHeader();
         if(ui.data){
             ui.roomPos = findRoom(ui.data, opts.room, opts.label);
-            const f = ui.roomPos ? ui.roomPos.floor : floorOf(opts.room, ui.data.floor_rule);
+            ui.indexFloor = indexFloor(ui.code, opts.room);
+            const f = ui.roomPos ? ui.roomPos.floor : (ui.indexFloor || floorOf(opts.room, ui.data.floor_rule));
             ui.roomFloor = f;
             const levels = new Set(ui.data.levels);
+            for(const lv of Object.keys(((roomsIndex || {})[ui.code] || {floors:{}}).floors)) if(lv !== 'R' && lv !== 'RF') levels.add(lv);
             if(f) levels.add(f);
             ui.levels = [...levels].sort((a, b) => levelKey(a) - levelKey(b) || a.localeCompare(b));
             ui.level = f || (ui.levels.includes('1') ? '1' : ui.levels[0] || null);
@@ -815,6 +832,7 @@
         const f = ui.roomFloor, r = d.floor_rule || {};
         let floor;
         if(!f) floor = `Can't tell the floor from the room number`;
+        else if(ui.indexFloor) floor = `${esc(levelName(f))}, from UCLA Space Inventory's room list for this building`;
         else if(r.checked && r.agree === r.checked) floor = `${esc(levelName(f))}, from the room number (UCLA's own restroom records for this building follow that rule: ${r.agree} of ${r.checked})`;
         else if(r.checked) floor = `Probably ${esc(levelName(f).toLowerCase())}, from the room number, but only ${r.agree} of ${r.checked} UCLA records here follow that rule`;
         else floor = `${esc(levelName(f))}, from the room number (UCLA's usual numbering, not confirmed for this building)`;
