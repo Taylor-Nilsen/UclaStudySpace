@@ -39,6 +39,17 @@ Render settings: runtime Python, build `pip install -r requirements.txt`, start 
 
 **Nearest to me.** The "📍 Nearest to me" button is a toggle: gray when off, blue when on. Turning it on asks the browser for your location (the first time only; a fix from the last 5 minutes is reused), loads `buildings.json` and sorts rooms by straight-line distance to their building, with a rough walking time. Turning it off, or picking another sort, goes back to the normal sort. Nothing is requested before you press it, and your location is never sent or stored anywhere. `buildings.json` holds building centroids from OpenStreetMap. Carnesale Commons is not in OpenStreetMap, so it has no coordinates; add them if its rooms start showing up.
 
+If it can't get your location, the message next to the button says why and where to fix it. Safari notes:
+
+- iPhone and iPad: Settings > Privacy & Security > Location Services has to be on, and Safari Websites under it set to While Using the App (or Ask Next Time). Settings > Apps > Safari > Location has to be Ask or Allow, not Deny.
+- Mac: Safari > Settings > Websites > Location has to be Ask or Allow for this site, and Safari has to be on in System Settings > Privacy & Security > Location Services.
+- After you change any of these, reload the page. Once Safari says no, it keeps saying no until the page is reloaded.
+- If the prompt never shows up, the button says "Locating…" and nags after a few seconds. Tap it again to cancel.
+- Macs have no GPS, so if a precise fix takes too long it falls back to a rough Wi-Fi one. Wi-Fi has to be on.
+- Links opened inside Instagram, TikTok and similar apps use the app's own browser, which usually can't get location. Open the page in Safari.
+
+`window.StudyLocate` is the one piece of code that asks for location, so other features (like the map) reuse the same fix and error messages: `get()` returns `{lat, lon, accuracy, at}` and has to be called straight from a tap the first time, `watch(onFix, onError)` gives live updates and returns a stop function, `last()` is the latest fix or null, and `explainError(err)` turns an error into the message above.
+
 ## Data contract
 
 `classrooms.json` is an array. The frontend only uses rooms with `offered: true`:

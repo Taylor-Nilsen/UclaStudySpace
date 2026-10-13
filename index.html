@@ -558,7 +558,79 @@
 
     // ---------- location ----------
     // Nothing here runs until the "Nearest to me" button is pressed: no
-    // permission prompt, no buildings.json fetch, nothing stored.
+    // permission prompt, no buildings.json fetch. The position lives only in
+    // this tab's memory; it is never stored or sent anywhere.
+    //
+    // StudyLocate is the one place that talks to navigator.geolocation, so the
+    // list sort and the map share the same fix and the same error wording.
+    //   get(opts)   -> Promise<{lat, lon, accuracy, at}>. Call it straight from a
+    //                  click/tap handler (no await before it) the first time.
+    //                  opts.maximumAge (ms, default 60000) reuses a recent fix.
+    //   watch(onFix, onError) -> stop(). Live updates via watchPosition. Start it
+    //                  after get() has succeeded so the prompt comes from a tap.
+    //   last()      -> the latest fix or null.
+    //   explainError(err) -> a short, plain sentence saying what to do.
+    const StudyLocate = (() => {
+        let lastFix = null, inFlight = null;
+        const geo = () => ('geolocation' in navigator) ? navigator.geolocation : null;
+        const keep = p => (lastFix = {lat:p.coords.latitude, lon:p.coords.longitude, accuracy:p.coords.accuracy, at:Date.now()});
+        const ask = o => new Promise((ok, fail) => geo().getCurrentPosition(ok, fail, o));
+        function get(opts = {}){
+            const maxAge = opts.maximumAge ?? 60000;
+            if(lastFix && Date.now() - lastFix.at < maxAge) return Promise.resolve(lastFix);
+            if(inFlight) return inFlight;
+            if(!geo()) return Promise.reject({code:0, message:'Geolocation not supported'});
+            // getCurrentPosition is called synchronously here, inside the caller's
+            // click handler. Only a timeout or "position unavailable" is retried,
+            // and by then permission is settled, so the retry needs no gesture.
+            // Mac Safari has no GPS and often can't get a high accuracy fix in
+            // time, so the retry asks for a coarse one with longer patience.
+            inFlight = ask({enableHighAccuracy:true, timeout:opts.timeout ?? 10000, maximumAge:maxAge})
+                .catch(err => (err && (err.code === 2 || err.code === 3))
+                    ? ask({enableHighAccuracy:false, timeout:20000, maximumAge:5*60*1000})
+                    : Promise.reject(err))
+                .then(keep)
+                .finally(() => { inFlight = null; });
+            return inFlight;
+        }
+        function watch(onFix, onError){
+            if(!geo()){ onError && onError({code:0}); return () => {}; }
+            const id = geo().watchPosition(p => onFix(keep(p)), e => onError && onError(e), {enableHighAccuracy:true, maximumAge:10000});
+            return () => geo().clearWatch(id);
+        }
+        function explainError(err){
+            const ua = navigator.userAgent;
+            const ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+            const macSafari = !ios && /Macintosh/.test(ua) && /Safari\//.test(ua) && !/Chrome|Chromium|Edg|OPR|Firefox/.test(ua);
+            // Apps like Instagram, TikTok or Facebook open links in their own
+            // browser, and most of them never get location access on iOS.
+            const inApp = /FBAN|FBAV|Instagram|TikTok|musical_ly|Snapchat|LinkedInApp|Line\/|GSA\//.test(ua);
+            const code = err && err.code;
+            if(code === 0 || !geo()) return 'Location is not available in this browser.';
+            if(!window.isSecureContext) return 'Location only works when the page is opened over https.';
+            if(code === 1){
+                if(inApp) return "This app's built-in browser blocks location. Open the page in Safari or Chrome.";
+                if(ios) return 'Location is blocked. Turn on Settings > Privacy & Security > Location Services > Safari Websites, and set Settings > Apps > Safari > Location to Ask or Allow. Then reload this page.';
+                if(macSafari) return 'Location is blocked. In Safari > Settings > Websites > Location, set this site to Ask or Allow, and turn on Safari in System Settings > Privacy & Security > Location Services. Then reload this page.';
+                return "Location is blocked for this site. Allow it in your browser's site settings, then reload this page.";
+            }
+            if(code === 2) return "Your device couldn't find where you are. Turn on Wi-Fi and try again.";
+            if(code === 3) return 'Finding your location took too long. Try again.';
+            return 'Could not get your location. Try again.';
+        }
+        return {get, watch, last:() => lastFix, explainError};
+    })();
+    window.StudyLocate = StudyLocate;
+
+    let buildingsGeoLoad = null;
+    function loadBuildingsGeo(){
+        if(state.buildingsGeo) return Promise.resolve(state.buildingsGeo);
+        return buildingsGeoLoad ||= fetch('buildings.json')
+            .then(res => { if(!res.ok) throw new Error('buildings.json ' + res.status); return res.json(); })
+            .then(j => (state.buildingsGeo = j.buildings))
+            .finally(() => { buildingsGeoLoad = null; });
+    }
+
     function distTo(r){
         const b = state.buildingsGeo && state.buildingsGeo[r.building];
         if(!b || !state.here) return null;
@@ -583,30 +655,38 @@
         if(!on) $('nearMsg').textContent = '';
         render();
     }
-    async function toggleNear(){
-        if(state.nearOn){ setNear(false); return; }
+    // Must stay a plain (non-async) click handler that calls StudyLocate.get()
+    // before anything is awaited, so the location prompt comes from the tap.
+    function toggleNear(){
         const btn = $('nearMe'), msg = $('nearMsg');
-        if(!('geolocation' in navigator)){ msg.textContent = 'Location is not available in this browser.'; return; }
-        // Reuse a fix from the last 5 minutes instead of asking again.
-        if(state.here && Date.now() - state.hereAt < 5*60*1000){ setNear(true); return; }
-        btn.disabled = true; btn.textContent = '📍 Locating…'; msg.textContent = '';
-        try{
-            if(!state.buildingsGeo){
-                const res = await fetch('buildings.json');
-                state.buildingsGeo = (await res.json()).buildings;
-            }
-            const pos = await new Promise((ok, fail) => navigator.geolocation.getCurrentPosition(ok, fail, {enableHighAccuracy:true, timeout:15000, maximumAge:60000}));
-            state.here = {lat:pos.coords.latitude, lon:pos.coords.longitude};
-            state.hereAt = Date.now();
+        if(state.locating){
+            // Second tap while waiting cancels. Safari's timeout only starts once
+            // the prompt is answered, so an ignored prompt would otherwise leave
+            // the button stuck on "Locating…".
+            clearTimeout(state.locating.slow); state.locating = null; setNear(false); return;
+        }
+        if(state.nearOn){ setNear(false); return; }
+        // A fix from the last 5 minutes is reused instead of asking again.
+        const fix = StudyLocate.get({maximumAge:5*60*1000});
+        const job = state.locating = {slow:setTimeout(() => {
+            if(state.locating === job) msg.textContent = 'Still waiting. Answer the location prompt, or tap again to cancel.';
+        }, 8000)};
+        btn.textContent = '📍 Locating…'; msg.textContent = '';
+        Promise.all([fix, loadBuildingsGeo().catch(() => null)]).then(([here, geo]) => {
+            if(state.locating !== job) return;
+            if(!geo){ setNear(false); msg.textContent = "Couldn't load building locations. Try again."; return; }
+            state.here = here; state.hereAt = here.at;
             const fromCampus = distTo({building:'ROYCE'});
             setNear(true);
             msg.textContent = fromCampus > 3000 ? `You're about ${(fromCampus/1609.34).toFixed(1)} mi from campus. Sorted by distance anyway.` : '';
-        }catch(err){
-            msg.textContent = err && err.code === 1 ? 'Location permission was denied.' : 'Could not get your location. Try again.';
+        }, err => {
+            if(state.locating !== job) return;
             setNear(false);
-        }finally{
-            btn.disabled = false;
-        }
+            msg.textContent = StudyLocate.explainError(err);
+        }).finally(() => {
+            clearTimeout(job.slow);
+            if(state.locating === job) state.locating = null;
+        });
     }
 
     // ---------- data ----------
