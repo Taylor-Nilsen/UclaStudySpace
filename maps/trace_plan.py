@@ -540,7 +540,17 @@ def _fit_sim(U, X):
     return np.array([[a, b, tx], [b, -a, ty], [0, 0, 1]])
 
 
-def outline_icp(foot, shape, rot0=0.0, trim=0.85):
+def _fit_sim_fixed(U, X, th):
+    c, sn = math.cos(th), math.sin(th)
+    rows, rhs = [], []
+    for (u, v), (x, y) in zip(U, X):
+        rows += [[c * u + sn * v, 1, 0], [sn * u - c * v, 0, 1]]
+        rhs += [x, y]
+    s_, tx, ty = np.linalg.lstsq(np.array(rows), np.array(rhs), rcond=None)[0]
+    return np.array([[s_ * c, s_ * sn, tx], [s_ * sn, -s_ * c, ty], [0, 0, 1]])
+
+
+def outline_icp(foot, shape, rot0=0.0, trim=0.85, fixed=False):
     """Fit the plan's footprint (bool mask) to the building outline (projected metres) by ICP."""
     import cv2
     cs, _ = cv2.findContours(foot.astype(np.uint8), cv2.RETR_CCOMP, cv2.CHAIN_APPROX_NONE)
@@ -566,7 +576,7 @@ def outline_icp(foot, shape, rot0=0.0, trim=0.85):
             Xp = (M[:2, :2] @ U.T).T + M[:2, 2]
             Q, d = _seg_closest(Xp, A, B)
             keep = d <= np.quantile(d, trim)
-            M = _fit_sim(U[keep], Q[keep])
+            M = _fit_sim_fixed(U[keep], Q[keep], th) if fixed else _fit_sim(U[keep], Q[keep])
         Xp = (M[:2, :2] @ U.T).T + M[:2, 2]
         _, d = _seg_closest(Xp, A, B)
         med = float(np.median(d))
@@ -894,24 +904,39 @@ def wall_thickness_px(wall, sk):
 NUMWORD = re.compile(r'[A-Z]{0,2}\d{3,5}[A-Z]{0,2}|[A-Z]{1,2}\d{2}')
 
 
+def ndi_fill(m):
+    from scipy import ndimage as ndi
+    return ndi.binary_fill_holes(m)
+
+
 def ndi_label(m):
     from scipy import ndimage as ndi
     return ndi.label(m)
 
 
-def split_by_labels(lab, regions, words, mpp, min_m2, near_px, extra=None):
-    """A region holding two or more room numbers is several spaces joined through door gaps:
-    split it by watershed from the numbers (it cuts at the narrowest places, the doorways)."""
+def split_by_labels(lab, regions, words, mpp, min_m2, near_px, on='numbers'):
+    """A region holding two or more room numbers (or, with on='text', named labels) is several spaces
+    joined through door gaps: split it by watershed from the labels (it cuts at the narrowest places, the doorways)."""
     import cv2
     from skimage.segmentation import watershed
     byreg = {}
+    if on == 'text':
+        words = [{'text': b['text'], 'box': b['box'], 'members': b['words']} for b in text_blocks(words, gap=0.8)
+                 if NUMWORD.search(b['text'].upper()) or len(re.sub(r'[^A-Za-z]', '', b['text'])) >= 4]
     for w in words:
-        if not NUMWORD.fullmatch(w['text'].upper().replace(' ', '')):
+        if on != 'text' and not NUMWORD.fullmatch(w['text'].upper().replace(' ', '')):
             continue
         cx_, cy_ = int((w['box'][0] + w['box'][2]) / 2), int((w['box'][1] + w['box'][3]) / 2)
-        i = region_at(lab, (cx_, cy_), regions, r=near_px)
+        i = region_at(lab, (cx_, cy_), regions, r=max(near_px, int((w['box'][3] - w['box'][1]) / 2)))
         if i is not None:
-            byreg.setdefault(i, []).append((cx_, cy_, w['text'].upper()))
+            if lab[cy_, cx_] != i:   # the seed must sit on the region: nearest pixel of it
+                win = lab[max(0, cy_ - 40):cy_ + 41, max(0, cx_ - 40):cx_ + 41] == i
+                ys_, xs_ = np.nonzero(win)
+                if not len(ys_):
+                    continue
+                k_ = int(np.argmin((ys_ - min(40, cy_)) ** 2 + (xs_ - min(40, cx_)) ** 2))
+                cy_, cx_ = max(0, cy_ - 40) + int(ys_[k_]), max(0, cx_ - 40) + int(xs_[k_])
+            byreg.setdefault(i, []).append((cx_, cy_, w['text'].upper(), w.get('members', [w])))
     nxt = int(lab.max()) + 1
     nsplit = 0
     for i, seeds in byreg.items():
@@ -921,13 +946,13 @@ def split_by_labels(lab, regions, words, mpp, min_m2, near_px, extra=None):
         m = lab[sl] == i
         dt = cv2.distanceTransform(m.astype(np.uint8), cv2.DIST_L2, 5)
         mk = np.zeros(m.shape, np.int32)
-        for k, (sx, sy, _) in enumerate(seeds, start=1):
+        for k, (sx, sy, _, _) in enumerate(seeds, start=1):
             mk[max(0, sy - sl[0].start - 2):sy - sl[0].start + 3, max(0, sx - sl[1].start - 2):sx - sl[1].start + 3] = k
         # unlabeled floor far from every number (a corridor run) gets its own shared seed,
         # so a small labeled space (an elevator) can't flood the whole corridor through its door
         far = 3.5 / mpp
         sd = np.ones(m.shape, np.uint8)
-        for sx, sy, _ in seeds:
+        for sx, sy, _, _ in seeds:
             sd[min(m.shape[0] - 1, max(0, sy - sl[0].start)), min(m.shape[1] - 1, max(0, sx - sl[1].start))] = 0
         dseed = cv2.distanceTransform(sd, cv2.DIST_L2, 5)
         free_seed = m & (dseed > far) & (dt >= 0.6 / mpp)
@@ -944,7 +969,7 @@ def split_by_labels(lab, regions, words, mpp, min_m2, near_px, extra=None):
                 piece = fl == c
                 ring = cv2.dilate(piece.astype(np.uint8), np.ones((3, 3), np.uint8)).astype(bool) & ~piece & m
                 best, bn = None, 0
-                for k, (_, _, t) in enumerate(seeds, start=1):
+                for k, (_, _, t, _) in enumerate(seeds, start=1):
                     if re.search(r'(EL|ST)$', t):
                         continue
                     cnt = int((ring & (ws == k)).sum())
@@ -970,6 +995,9 @@ def split_by_labels(lab, regions, words, mpp, min_m2, near_px, extra=None):
                       'area': part.sum() * mpp * mpp, 'hw': pdt.max() * mpp, 'at': (xx + sl[1].start, yy + sl[0].start), 'split': True})
             if 'words' in r:
                 r['words'] = []
+            if k <= len(seeds):
+                for mw in seeds[k - 1][3]:
+                    mw['_region'] = nxt
             regions[nxt] = r
             nxt += 1
     return nsplit
@@ -1082,9 +1110,14 @@ def trace(ctl, ctl_path, debug=None):
         foot = roi & ~outside & ~(img > 245).all(axis=2)
         foot = cv2.morphologyEx(foot.astype(np.uint8), cv2.MORPH_CLOSE, np.ones((5, 5), np.uint8))
         n_, lab_, st_, _ = cv2.connectedComponentsWithStats(foot, connectivity=8)
-        big = 1 + int(np.argmax(st_[1:, cv2.CC_STAT_AREA]))
+        big = 1 + int(np.argmax(st_[1:, cv2.CC_STAT_WIDTH].astype(np.int64) * st_[1:, cv2.CC_STAT_HEIGHT]))
         foot = lab_ == big
-        M, med, p90, dists = outline_icp(foot, shape, ctl['control'].get('rot_init', 0.0))
+        if foot.mean() < 0.5 * (st_[big, cv2.CC_STAT_WIDTH] * st_[big, cv2.CC_STAT_HEIGHT]) / foot.size:
+            # line drawing on white: the footprint is what the walls enclose (doorways closed first)
+            kk = max(5, int(0.012 * max(H, W))) | 1
+            foot = ndi_fill(cv2.morphologyEx(foot.astype(np.uint8), cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (kk, kk))))
+        cv2.imwrite(os.path.join(HERE, '.cache', f'foot-{FP.slug(code)}-{floor}.png'), (foot * 255).astype(np.uint8))
+        M, med, p90, dists = outline_icp(foot, shape, ctl['control'].get('rot_init', 0.0), P.get('icp_trim', 0.85), ctl['control'].get('fix_rotation', False))
         mpp = math.sqrt(abs(np.linalg.det(M[:2, :2])))
         rot = math.degrees(math.atan2(M[1, 0], M[0, 0]))
         icp = {'median_m': round(med, 2), 'p90_m': round(p90, 2)}
@@ -1272,7 +1305,7 @@ def trace(ctl, ctl_path, debug=None):
             dropped['hand'] += 1
 
     if P.get('split', True):
-        ns_ = split_by_labels(lab, regions, words, mpp, P['min_room_m2'], max(2, int(0.6 / mpp)))
+        ns_ = split_by_labels(lab, regions, words, mpp, P['min_room_m2'], max(2, int(0.6 / mpp)), P.get('split_on', 'numbers'))
         if ns_:
             say(f'  {ns_} regions holding several room numbers split at their doorways')
 
@@ -1284,7 +1317,7 @@ def trace(ctl, ctl_path, debug=None):
         xi, yi = int(round(cx)), int(round(cy))
         if not (0 <= xi < W and 0 <= yi < H):
             continue
-        i = int(lab[yi, xi])
+        i = w.get('_region') if w.get('_region') in regions else int(lab[yi, xi])
         if i not in regions:
             win = lab[max(0, yi - near_px):yi + near_px + 1, max(0, xi - near_px):xi + near_px + 1]
             cand = [int(v) for v in np.unique(win) if int(v) in regions]
@@ -1339,13 +1372,20 @@ def trace(ctl, ctl_path, debug=None):
         if not kind:
             if nums:
                 kind = 'room'
-            elif mode == 'fills':
+            elif mode == 'fills' or len(re.sub(r'[^A-Za-z]', '', text)) >= 4:
                 kind = 'room' if text else 'other'
             elif R['hw'] <= P['corridor_halfwidth_m'] and R['area'] >= 8 and R['area'] / (4 * R['hw'] ** 2) >= 3:
                 kind = 'corridor'
             else:
                 kind = 'other'
-        words_only = ' '.join(w['text'] for w in ws if not ROOMNUM.match(w['text'].upper()))
+        wo = [w for w in ws if not ROOMNUM.match(w['text'].upper())]
+        if any(len(w['text']) > 10 and ' ' not in w['text'] for w in wo):
+            # RapidOCR runs words together ("StaffOffices"): read the same text again with tesseract for the spaces
+            bx = [min(w['box'][0] for w in wo), min(w['box'][1] for w in wo), max(w['box'][2] for w in wo), max(w['box'][3] for w in wo)]
+            t2 = spaced_text(img, bx, 3)
+            if t2 and abs(len(t2.replace(' ', '')) - sum(len(w['text'].replace(' ', '')) for w in wo)) <= 3:
+                wo = [{'text': t2, 'box': bx}]
+        words_only = ' '.join(w['text'] for w in wo)
         if r.get('ref'):
             r['label'] = r['ref']
         elif r.get('refs'):
@@ -1993,10 +2033,12 @@ def write_debug(stem, img, lab, rooms, regions, wall, sk, added, cps, M, res, ou
     base = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
     over = (base * 0.45 + 140).astype(np.uint8)
     col = np.zeros_like(over)
+    rng = np.random.default_rng(7)
     for r in rooms:
         i = r.get('_i')
         if i:
-            col[lab == i] = KIND_BGR[r['kind']]
+            # each space its own shade of its kind's color, so merged spaces stand out
+            col[lab == i] = np.clip(np.array(KIND_BGR[r['kind']]) + rng.integers(-60, 60, 3), 0, 255)
     m = col.any(axis=2)
     over[m] = (over[m] * 0.4 + col[m] * 0.6).astype(np.uint8)
     over[wall] = (40, 40, 40)
