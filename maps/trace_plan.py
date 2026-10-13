@@ -1044,6 +1044,40 @@ def trace(ctl, ctl_path, debug=None):
 
     # georeference
     icp = None
+    early_words = None
+    if isinstance(ctl['control'], dict) and ctl['control'].get('auto') == 'stack':
+        # stairs and elevators stack floor over floor: line their labels up with a floor that's already traced
+        early_words = rapid_words_all(img, P['ocr_rotated'], P.get('ocr_upscale', 1.0)) or []
+        ref_floor = str(ctl['control']['ref_floor'])
+        recs = [r for r in FP.load_records(os.path.join(HERE, 'plans')).get(code, []) if r['floor'] == ref_floor]
+        if not recs:
+            raise SystemExit(f'stack: no traced floor {ref_floor} for {code} yet')
+        pat = re.compile(ctl['control'].get('pattern', r'^\d(\d{3}(?:EL|ST))$'))
+        refpts = {}
+        for r in recs[0]['rooms']:
+            mm = pat.match(r.get('ref') or '')
+            if mm and r.get('poly'):
+                refpts[mm.group(1)] = FP.room_point(r)
+        ctl['control'] = []
+        seen = set()
+        for w in early_words:
+            mm = pat.match(w['text'].upper().replace(' ', ''))
+            if mm and mm.group(1) in refpts and mm.group(1) not in seen:
+                seen.add(mm.group(1))
+                ctl['control'].append({'px': [(w['box'][0] + w['box'][2]) / 2, (w['box'][1] + w['box'][3]) / 2],
+                                       'll': refpts[mm.group(1)], 'what': f'{w["text"]} over floor {ref_floor} {mm.group(1)}'})
+        # drop labels that don't fit the rest (a misread number, a core that moved)
+        while len(ctl['control']) > 3:
+            cps_ = resolve_control(ctl['control'], bdoc)
+            _, res_, _, _, _ = georef(cps_, 'similarity')
+            if max(res_) <= 2.5:
+                break
+            bad = int(np.argmax(res_))
+            say(f'  stack: dropping {ctl["control"][bad]["what"]} ({res_[bad]:.1f} m off)')
+            ctl['control'].pop(bad)
+        say(f'  stack: {len(ctl["control"])} stair/elevator labels match floor {ref_floor}')
+        if len(ctl['control']) < 2:
+            raise SystemExit('stack: fewer than 2 matching stair/elevator labels')
     if isinstance(ctl['control'], dict) and ctl['control'].get('auto') == 'outline':
         foot = roi & ~outside & ~(img > 245).all(axis=2)
         foot = cv2.morphologyEx(foot.astype(np.uint8), cv2.MORPH_CLOSE, np.ones((5, 5), np.uint8))
@@ -1087,7 +1121,7 @@ def trace(ctl, ctl_path, debug=None):
         wall, words, nvec = pdf_walls(path, page, dpi, (H, W), P['min_lw_pt'])
         say(f'  vector: {nvec} PDF line objects drawn, {len(words)} words')
     else:
-        rw = rapid_words_all(img, P['ocr_rotated'], P.get('ocr_upscale', 1.0)) if ctl.get('ocr', True) and P.get('engine', 'rapid') == 'rapid' else None
+        rw = early_words if early_words is not None else (rapid_words_all(img, P['ocr_rotated'], P.get('ocr_upscale', 1.0)) if ctl.get('ocr', True) and P.get('engine', 'rapid') == 'rapid' else None)
         if rw is not None:
             words = rw
             say(f'  OCR (RapidOCR): {len(words)} words')
@@ -1384,13 +1418,17 @@ def trace(ctl, ctl_path, debug=None):
             if cv2.arcLength(c, False) * mpp < P['min_wall_line_m']:
                 continue
             ap = cv2.approxPolyDP(c, eps, False)
-            walls.append([to_ll(float(p[0][0]), float(p[0][1])) for p in ap])
+            wl = [to_ll(float(p[0][0]), float(p[0][1])) for p in ap]
+            # line work well outside the building (page frame, scroll bars, neighbours) isn't a wall of this floor
+            if min(dist_to_shape(proj(*q), shape) for q in wl) > P['outside_m']:
+                continue
+            walls.append(wl)
     wall_m = round(wpx * mpp, 2) if mode != 'fills' else None
 
     # check: features that carry a room number (UCLA's restroom records) against the traced room with that number
     checks = []
     for f in bdoc['features']:
-        if f.get('room') and f.get('floor') == floor and f.get('acc') != 'building' and 'lat' in f:
+        if f.get('room') and f.get('floor') == floor and f.get('acc') != 'building' and 'lat' in f and f.get('src') == 'ucla_gis':
             want = re.sub(r'^0+', '', f['room'].upper())
             hit = [r for r in rooms if r.get('ref') and re.sub(r'^0+', '', r['ref']) == want and r.get('poly')]
             g = proj(f['lat'], f['lon'])
@@ -1871,7 +1909,7 @@ def trace_photo(ctl, ctl_path, debug=None):
 
     checks = []
     for f in bdoc['features']:
-        if f.get('room') and f.get('floor') == floor and 'lat' in f and f.get('acc') != 'building':
+        if f.get('room') and f.get('floor') == floor and 'lat' in f and f.get('acc') != 'building' and f.get('src') == 'ucla_gis':
             want = re.sub(r'^0+', '', f['room'].upper())
             hit = [r for r in rooms if r.get('ref') and re.sub(r'^0+', '', r['ref']) == want and r.get('poly')]
             d = None

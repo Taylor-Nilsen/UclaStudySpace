@@ -17,7 +17,8 @@
  },
  "mode": "walls",
  "control": {
-  "auto": "outline"
+  "auto": "stack",
+  "ref_floor": "2"
  },
  "crop": [
   0,
@@ -39,8 +40,7 @@
   "hatch_m": 0.6,
   "door_m": 2.2,
   "open_px": 0,
-  "wall_neutral": 140,
-  "warp": "axes"
+  "wall_neutral": 140
  },
  "notes": [
   "Room numbers are read from the plan's label boxes. Suffixes: CO and CU are corridors, ST stairs, EL elevators (UCLA Space Inventory codes)."
