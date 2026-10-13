@@ -1,6 +1,6 @@
 # StudySpace
 
-Find empty UCLA classrooms to study in. The site shows every general assignment classroom, whether it's free right now (campus time), and its week of classes and club/org events.
+Find empty UCLA classrooms to study in. The site shows every general assignment classroom, whether it's free right now (campus time), and its week of classes and club/org events. It also shows Hill study rooms, libraries, library study rooms and computer labs.
 
 ## What's in here
 
@@ -8,7 +8,9 @@ Find empty UCLA classrooms to study in. The site shows every general assignment 
 - `classrooms.json`: the data the site reads.
 - `scrape.py`: pulls class schedules and room characteristics from the UCLA Registrar.
 - `scrape_hill.py`: pulls Hill study room availability from Residential Life into `hill.json`.
-- `hill_api.py`: live relay for Hill availability, deployed on Render.
+- `scrape_library.py`: pulls library hours, library study room bookings and computer lab hours into `library.json`.
+- `hill_api.py`: live relay for Hill and library availability, deployed on Render.
+- `buildings.json`: every building code with its name, area (campus, Hill, ...) and location.
 - `scrape_events.py`: pulls club / org / department events from [UCLA Community](https://community.ucla.edu/calendars) and attaches the ones held in our classrooms.
 - `generate_urls.py`: rebuilds the classroom list and registrar URLs from scratch. You only need this if the room list changes.
 - `add_images.py`, `download_images.py`: match room photos from UCLA DTS and cache them in `images/`.
@@ -26,18 +28,38 @@ It keeps events whose location names one of our rooms ("3400 Boelter Hall", "Mat
 
 **Short gaps.** A gap under an hour between two bookings counts as busy. It shows as a hatched block on the calendar.
 
-**The Hill.** A Campus / The Hill / Both switch at the top picks where to look. Two kinds of Hill rooms show up under The Hill:
+**The Hill.** A Campus / The Hill / Libraries / All switch at the top picks where to look. Two kinds of Hill rooms show up under The Hill:
 
 - Registrar rooms in Hill buildings that have classes this term (Covel 210/218/225/319A, De Neve P350). `scrape.py` scrapes these along with the general assignment rooms. `--all` scrapes every registrar room.
-- Residential study rooms (Hedrick, The Study at Hedrick, Rieber, Sproul, Olympic, Southwest Apartments, Gayley Heights) from [Residential Life reservations](https://reserve.reslife.ucla.edu/reserve). That site publicly lists every open hourly slot for the next two weeks, so `scrape_hill.py` writes `hill.json` with each room's open hours and free slots. Anything inside open hours that isn't listed is reserved. Only on-campus residents can book these rooms. Covel and Carnesale study spaces are not on that site.
+- Residential study rooms (Hedrick, The Study at Hedrick, Rieber, Sproul, Olympic, Southwest Apartments, Gayley Heights) from [Residential Life reservations](https://reserve.reslife.ucla.edu/reserve). That site publicly lists every open hourly slot for the next two weeks, so `scrape_hill.py` writes `hill.json` with each room's open hours and free slots. Anything inside open hours that isn't listed is reserved. Only residents can book these rooms. Covel and Carnesale study spaces are not on that site. Gayley Heights, Laurel, Tipuana and Palo Verde are University Apartments, not the Hill (Residential Life lists them as off campus), so their rooms show under The Hill with a "University Apartments" badge instead of "The Hill".
 
 Reservations change constantly, so the page pulls them live every time it opens (and every 5 minutes while open). The booking site sends no CORS headers, so the browser can't read it directly. `hill_api.py` is a small relay on Render (`https://uclastudyspace-hill.onrender.com/hill`). It runs the same scraper, caches the result for 60 seconds, and returns JSON with CORS enabled. If its last read is under 15 minutes old, it answers immediately with that read and refreshes in the background, since the booking site sometimes takes a minute or more to answer. Pages that fail to load are left out rather than shown as booked, and the page fills those gaps from the snapshot. The page shows the bundled `hill.json` snapshot immediately, then swaps in the live data. The header says which one you're seeing ("live, updated just now" or "snapshot from 20 min ago"). The Pages workflow still refreshes the snapshot before every deploy, every 30 minutes.
 
 The relay runs on Render's free plan, which sleeps after 15 minutes idle, so the first visit after a quiet spell can take up to a minute to go live. The snapshot shows in the meantime.
 
-Render settings: runtime Python, build `pip install -r requirements.txt`, start `python hill_api.py`, branch `master`.
+Render settings: runtime Python, build `pip install -r requirements.txt`, start `python hill_api.py`, branch `master`. The same relay serves `/library`.
 
-**Nearest to me.** The "📍 Nearest to me" button is a toggle: gray when off, blue when on. Turning it on asks the browser for your location (the first time only; a fix from the last 5 minutes is reused), loads `buildings.json` and sorts rooms by straight-line distance to their building, with a rough walking time. Turning it off, or picking another sort, goes back to the normal sort. Nothing is requested before you press it, and your location is never sent or stored anywhere. `buildings.json` holds building centroids from OpenStreetMap. Carnesale Commons is not in OpenStreetMap, so it has no coordinates; add them if its rooms start showing up.
+**Where buildings are.** `buildings.json` is the one list of which building is on campus and which is on the Hill. The page, `scrape.py` and `scrape_hill.py` all read it, so a building only has to be fixed in one place. Each entry has a `source` saying where its name, area and location came from:
+
+- Names: the [Registrar building list](https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list).
+- The Hill: Residential Life's [communities list](https://reslife.ucla.edu/communities) (Sunset Village, Olympic/Centennial, De Neve, Dykstra, Hedrick, Hitch, Rieber, Saxon, Sproul), its "Study Spaces on the Hill" (Covel), [UCLA Conferences](https://conferences.ucla.edu/building-locations/) (Carnesale Commons, Northwest Campus Auditorium) and the Wikipedia UCLA Housing article (Bradley Hall).
+- Areas: `campus`, `hill`, `apartments` (University Apartments), `offsite` (Clark Library) and `none` (ONLINE).
+- Locations: centroids from OpenStreetMap map data. Carnesale Commons isn't in OpenStreetMap, so it uses the map pin that UCLA Conferences links to.
+
+Covel was always tagged as Hill in the code. What made it look like campus was the Building filter: it listed every building in one list no matter which area was picked, so Covel, De Neve and the Hill dorms showed up as options under Campus. The filter now only lists buildings in the picked area, and under All it groups them by area.
+
+**Libraries and labs.** The Libraries button shows:
+
+- Whole libraries with their hours from [UCLA Library](https://calendar.library.ucla.edu/hours): Powell, Night Powell, YRL, East Asian, Biomedical, Biomedical Study Commons, SEL Boelter, SEL Geology, Arts, Music, Rosenfeld and Law. The Law Library is limited access for non-law students (same day reservation).
+- Library study rooms from [LibCal spaces](https://calendar.library.ucla.edu/spaces): Powell group rooms, CLICC loop booths, YRL pods and group rooms, Music seminar room, Biomedical rooms, SEL rooms and the Powell Media Lab rooms. LibCal's availability grid lists every bookable 30 minute slot in the booking window (3 days for CLICC rooms, 7 for others); a booked slot shows as reserved. Past the window nobody can book yet, so the room counts as free during library hours. CLICC rooms are drop-in when nobody has them.
+- CLICC classrooms (Powell 307, 320, 320B, YRL 11630F): open for drop-in study when not booked. Bookings come from the CLICC classrooms calendar.
+- The CLICC Lab in Powell 145.
+
+SEASnet computer labs (Boelter 2664, 3760, 4404, 4405, 4442) show under Campus with type "Computer lab". Hours come from the [SEASnet labs page](https://www.seasnet.ucla.edu/seasnet-computer-labs/). You need a SEASnet account, which engineering students and anyone in an engineering course can get. 3760 and 4404 also hold classes; `scrape.py` scrapes those two rooms so the classes show. Social Sciences Computing and Luskin labs are not included: SSC's posted hours are from Fall 2025 and its class schedule isn't public, and the Luskin lab needs a Luskin account.
+
+`scrape_library.py` makes about 17 requests per run, one at a time. The Pages workflow runs it before every deploy, and the relay caches it for 5 minutes.
+
+**Nearest to me.** The "📍 Nearest to me" button is a toggle: gray when off, blue when on. Turning it on asks the browser for your location (the first time only; a fix from the last 5 minutes is reused), loads `buildings.json` and sorts rooms by straight-line distance to their building, with a rough walking time. Turning it off, or picking another sort, goes back to the normal sort. Nothing is requested before you press it, and your location is never sent or stored anywhere. `buildings.json` holds building centroids from OpenStreetMap (see "Where buildings are").
 
 If it can't get your location, the message next to the button says why and where to fix it. Safari notes:
 
@@ -98,11 +120,11 @@ The term is chosen from the date, switching about 2 weeks before each quarter st
 ## Automation
 
 - `.github/workflows/update-classrooms.yml` runs daily at 6 AM PT (and on demand, with an optional term). It scrapes both sources and commits `classrooms.json` only if something changed.
-- `.github/workflows/static.yml` deploys to GitHub Pages on pushes to `master` and after every data update. Pushes made with the Actions token don't fire other workflows on their own, so it listens for `workflow_run`.
+- `.github/workflows/static.yml` deploys to GitHub Pages on pushes to `master` and after every data update. Pushes made with the Actions token don't fire other workflows on their own, so it listens for `workflow_run`. It refreshes `hill.json` and `library.json` before each deploy.
 
 ## Etiquette
 
-Educational use. The scraper makes about 190 requests with 8 at a time, once a day. Keep it around that.
+Educational use. The scraper makes about 220 requests with 8 at a time, once a day. Keep it around that. `scrape_library.py` makes about 17, one at a time.
 
 ---
 

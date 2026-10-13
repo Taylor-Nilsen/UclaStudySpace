@@ -16,6 +16,7 @@ Usage:
 
 import argparse
 import json
+import os
 import re
 import sys
 import time
@@ -27,6 +28,12 @@ import requests
 from bs4 import BeautifulSoup
 
 from scrape import HEADERS
+
+try:
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'buildings.json')) as _f:
+        KNOWN_BUILDINGS = set(json.load(_f)['buildings'])
+except (OSError, ValueError, KeyError):
+    KNOWN_BUILDINGS = set()
 
 BASE = 'https://reserve.reslife.ucla.edu'
 LA = ZoneInfo('America/Los_Angeles')
@@ -49,6 +56,18 @@ def clean_title(title):
              if n.strip() and not CAP_RE.search(n) and not n.strip().isdigit()]
     name = re.sub(r'\s*\([^)]*\)', '', title).replace('#', '').strip()
     return ' '.join(name.split()), int(cap.group(1)) if cap else None, notes
+
+
+def building_code(name):
+    """'De Neve Meeting Rooms' -> 'DE NEVE': match the codes in buildings.json
+    so the page can look up the building's area and location."""
+    name = ' '.join(name.upper().split())
+    if name in KNOWN_BUILDINGS:
+        return name
+    for code in sorted(KNOWN_BUILDINGS, key=len, reverse=True):
+        if name.startswith(code + ' '):
+            return code
+    return name
 
 
 def to_min(t):
@@ -128,12 +147,12 @@ def collect(days=8, workers=12):
         for s, e, title in slots:
             name, cap, notes = clean_title(title)
             rm = ROOM_RE.match(name)
-            building = rm.group('building').strip() if rm and rm.group('building').strip() else re.sub(r'\s*(study\s+rooms?|the study at)\s*', ' ', space, flags=re.I).strip()
+            building = rm.group('building').strip() if rm and rm.group('building').strip() else re.sub(r'\s*((study|meeting)\s+rooms?|the study at)\s*', ' ', space, flags=re.I).strip()
             if not name.lower().startswith(building.lower()):
                 name = f"{building} {name}"
             room = rooms.setdefault(name, {
                 'text': name,
-                'building': building.upper(),
+                'building': building_code(building),
                 'room': rm.group('room') if rm else name,
                 'space': space,
                 'description': spaces[sid]['description'],

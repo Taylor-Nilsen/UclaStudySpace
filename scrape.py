@@ -5,7 +5,9 @@ The registrar's ClassroomDetail page embeds the whole term calendar as JSON in
 a <script> tag, so plain HTTP requests are enough. No browser needed.
 
 Scrapes the general assignment classrooms plus registrar rooms in Hill
-buildings (Covel, De Neve, Carnesale, ...). --all scrapes every registrar room.
+buildings (Covel, De Neve, Carnesale, ...; the list is the "hill" area in
+buildings.json) and the two SEASnet labs that also hold classes
+(scrape_library.py reads their schedules). --all scrapes every registrar room.
 New rooms in the registrar list are added to classrooms.json automatically.
 
 Usage:
@@ -33,8 +35,18 @@ DAY_CODES = {'M': 'Monday', 'T': 'Tuesday', 'W': 'Wednesday', 'R': 'Thursday',
 CALENDAR_RE = re.compile(r"createFullCalendar\(\$\.parseJSON\('(.*?)'\)\)", re.S)
 ENR_RE = re.compile(r'Enr:\s*(\d+)\s*of\s*(\d+)')
 TERM_RE = re.compile(r'term=\d{2}[WSUF]')
+
+
+def load_hill_buildings(path=None):
+    """Building codes on the Hill, from buildings.json (the one list of areas)."""
+    import os
+    path = path or os.path.join(os.path.dirname(os.path.abspath(__file__)), 'buildings.json')
+    with open(path) as f:
+        return {code for code, b in json.load(f)['buildings'].items() if b.get('area') == 'hill'}
+
+
 # Residential buildings ("the Hill") whose registrar rooms we also show.
-HILL_BUILDINGS = {'COVEL', 'DE NEVE', 'CARNESL', 'HEDRICK', 'RIEBER', 'SPROUL', 'HITCH', 'OLYMPIC', 'CNYN PT'}
+HILL_BUILDINGS = load_hill_buildings()
 HEADER_RE = re.compile(r'id="classroomHeader">(.*?)</h2>', re.S)
 GRID_SEARCH = 'https://sa.ucla.edu/RO/Public/SOC/Search/ClassroomGridSearch'
 DETAIL_URL = 'https://sa.ucla.edu/ro/Public/SOC/Results/ClassroomDetail?term={term}&classroom={value}'
@@ -208,7 +220,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--term', default=None, help='Term code like 26F (default: auto)')
     ap.add_argument('--limit', type=int, default=0, help='Only scrape the first N rooms')
-    ap.add_argument('--all', action='store_true', help='Scrape every registrar room, not just GA + Hill')
+    ap.add_argument('--all', action='store_true', help='Scrape every registrar room, not just GA + Hill + labs')
     ap.add_argument('--workers', type=int, default=8, help='Concurrent requests (default 8)')
     ap.add_argument('--file', default='classrooms.json')
     args = ap.parse_args()
@@ -235,7 +247,9 @@ def main():
         if room.get('url'):
             room['url'] = TERM_RE.sub(f'term={term}', room['url'])
 
-    todo = [r for r in rooms if r.get('url') and (args.all or r.get('offered') or r.get('building') in HILL_BUILDINGS)]
+    from scrape_library import LAB_REGISTRAR_ROOMS
+    lab = lambda r: (r.get('building'), str(r.get('room', '')).lstrip('0')) in LAB_REGISTRAR_ROOMS
+    todo = [r for r in rooms if r.get('url') and (args.all or r.get('offered') or r.get('building') in HILL_BUILDINGS or lab(r))]
     if args.limit > 0:
         todo = todo[:args.limit]
     print(f"Term {term} | {len(todo)} rooms | {args.workers} workers")
