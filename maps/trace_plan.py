@@ -316,11 +316,34 @@ def rapid_words(img, min_conf=0.5):
     res, _ = _RAPID(img[..., ::-1].copy())
     out = []
     for box, txt, conf in res or []:
+        txt = re.sub(r'[^A-Za-z0-9&/.,\- ]', '', txt).strip()
         if float(conf) < min_conf or not re.search(r'[A-Za-z0-9]', txt):
             continue
         xs, ys = [p[0] for p in box], [p[1] for p in box]
         out.append({'text': txt.strip(), 'conf': float(conf) * 100, 'box': [min(xs), min(ys), max(xs), max(ys)]})
     return out
+
+
+def rapid_words_all(img, rotated=True, scale=1.0):
+    """RapidOCR on the image and (for labels turned 90 degrees) on it turned both ways; None if not installed."""
+    import cv2
+    src = cv2.resize(img, None, fx=scale, fy=scale, interpolation=cv2.INTER_CUBIC) if scale != 1 else img
+    ws = rapid_words(src)
+    if ws is None:
+        return None
+    H, W = src.shape[:2]
+    if rotated:
+        for rot, back in ((cv2.ROTATE_90_CLOCKWISE, lambda b: [b[1], H - b[2], b[3], H - b[0]]),
+                          (cv2.ROTATE_90_COUNTERCLOCKWISE, lambda b: [W - b[3], b[0], W - b[1], b[2]])):
+            for w in rapid_words(cv2.rotate(src, rot)) or []:
+                w['box'] = back(w['box'])
+                bw, bh = w['box'][2] - w['box'][0], w['box'][3] - w['box'][1]
+                if bh > 1.5 * bw and not any(_iou(w['box'], o['box']) > 0.1 for o in ws):
+                    w['rotated'] = True
+                    ws.append(w)
+    for w in ws:
+        w['box'] = [v / scale for v in w['box']]
+    return ws
 
 
 def spaced_text(img, box, pad=6):
@@ -868,6 +891,90 @@ def wall_thickness_px(wall, sk):
 # ---------------------------------------------------------------------------
 # trace
 # ---------------------------------------------------------------------------
+NUMWORD = re.compile(r'[A-Z]{0,2}\d{3,5}[A-Z]{0,2}|[A-Z]{1,2}\d{2}')
+
+
+def ndi_label(m):
+    from scipy import ndimage as ndi
+    return ndi.label(m)
+
+
+def split_by_labels(lab, regions, words, mpp, min_m2, near_px, extra=None):
+    """A region holding two or more room numbers is several spaces joined through door gaps:
+    split it by watershed from the numbers (it cuts at the narrowest places, the doorways)."""
+    import cv2
+    from skimage.segmentation import watershed
+    byreg = {}
+    for w in words:
+        if not NUMWORD.fullmatch(w['text'].upper().replace(' ', '')):
+            continue
+        cx_, cy_ = int((w['box'][0] + w['box'][2]) / 2), int((w['box'][1] + w['box'][3]) / 2)
+        i = region_at(lab, (cx_, cy_), regions, r=near_px)
+        if i is not None:
+            byreg.setdefault(i, []).append((cx_, cy_, w['text'].upper()))
+    nxt = int(lab.max()) + 1
+    nsplit = 0
+    for i, seeds in byreg.items():
+        if len(seeds) < 2 or i not in regions:
+            continue
+        sl = regions[i]['sl']
+        m = lab[sl] == i
+        dt = cv2.distanceTransform(m.astype(np.uint8), cv2.DIST_L2, 5)
+        mk = np.zeros(m.shape, np.int32)
+        for k, (sx, sy, _) in enumerate(seeds, start=1):
+            mk[max(0, sy - sl[0].start - 2):sy - sl[0].start + 3, max(0, sx - sl[1].start - 2):sx - sl[1].start + 3] = k
+        # unlabeled floor far from every number (a corridor run) gets its own shared seed,
+        # so a small labeled space (an elevator) can't flood the whole corridor through its door
+        far = 3.5 / mpp
+        sd = np.ones(m.shape, np.uint8)
+        for sx, sy, _ in seeds:
+            sd[min(m.shape[0] - 1, max(0, sy - sl[0].start)), min(m.shape[1] - 1, max(0, sx - sl[1].start))] = 0
+        dseed = cv2.distanceTransform(sd, cv2.DIST_L2, 5)
+        free_seed = m & (dseed > far) & (dt >= 0.6 / mpp)
+        mk[free_seed] = len(seeds) + 1
+        mk[~m] = 0
+        ws = watershed(-dt, mk, mask=m)
+        fk = len(seeds) + 1
+        if (ws == fk).any():
+            # each unlabeled piece goes back to the labeled neighbour that wraps most of it (a big room's far end);
+            # a piece that no single space wraps (a corridor run) stays a space of its own
+            fl, fn = ndi_label(ws == fk)
+            nk = fk + 1
+            for c in range(1, fn + 1):
+                piece = fl == c
+                ring = cv2.dilate(piece.astype(np.uint8), np.ones((3, 3), np.uint8)).astype(bool) & ~piece & m
+                best, bn = None, 0
+                for k, (_, _, t) in enumerate(seeds, start=1):
+                    if re.search(r'(EL|ST)$', t):
+                        continue
+                    cnt = int((ring & (ws == k)).sum())
+                    if cnt > bn:
+                        best, bn = k, cnt
+                if best and bn > 0.5 * ring.sum():
+                    ws[piece] = best
+                else:
+                    ws[piece] = nk
+                    nk += 1
+        base = regions.pop(i)
+        nsplit += 1
+        for k in range(1, int(ws.max()) + 1):
+            part = ws == k
+            if part.sum() * mpp * mpp < min_m2:
+                continue
+            lab[sl][part] = nxt
+            pdt = cv2.distanceTransform(np.pad(part, 1).astype(np.uint8), cv2.DIST_L2, 5)[1:-1, 1:-1]
+            yy, xx = np.unravel_index(int(pdt.argmax()), pdt.shape)
+            ys_, xs_ = np.nonzero(part)
+            r = dict(base)
+            r.update({'sl': (slice(sl[0].start + ys_.min(), sl[0].start + ys_.max() + 1), slice(sl[1].start + xs_.min(), sl[1].start + xs_.max() + 1)),
+                      'area': part.sum() * mpp * mpp, 'hw': pdt.max() * mpp, 'at': (xx + sl[1].start, yy + sl[0].start), 'split': True})
+            if 'words' in r:
+                r['words'] = []
+            regions[nxt] = r
+            nxt += 1
+    return nsplit
+
+
 def _inside(a, b):
     return all(x.start >= y.start and x.stop <= y.stop for x, y in zip(a, b))
 
@@ -957,15 +1064,34 @@ def trace(ctl, ctl_path, debug=None):
             + (f', leave-one-out max {max(loo):.2f} m' if loo else ''))
     Minv = np.linalg.inv(M)
     to_ll = lambda u, v: [r6(t) for t in unproj(*apply(M, u, v))]
-    outline_px = [np.array([apply(Minv, *proj(*q)) for q in p['outer']], np.float64) for p in bdoc['outline']['polys']]
+    from_xy = lambda X, Y: apply(Minv, X, Y)
+    warp = None
+    if icp and P.get('warp') == 'axes':
+        fc0, _ = cv2.findContours(foot.astype(np.uint8), cv2.RETR_CCOMP, cv2.CHAIN_APPROX_NONE)
+        sp = [cv2.approxPolyDP(c, 0.8 / mpp, True).reshape(-1, 2).astype(float).tolist() for c in fc0 if len(c) > 20]
+        warp = AxisWarp(M, sp, shape, P.get('warp_tol_m', 4.0))
+        to_ll = lambda u, v: [r6(t) for t in unproj(*warp.xy(u, v))]
+        from_xy = warp.inv
+        segs = [(r[i - 1], r[i]) for o, holes in shape for r in [o] + holes for i in range(len(r))]
+        pts = np.concatenate([c[:, 0, :] for c in fc0 if len(c) > 20]).astype(float)[::5]
+        _, dw = _seg_closest(np.array([warp.xy(u, v) for u, v in pts]), np.array([a for a, _ in segs], float), np.array([b for _, b in segs], float))
+        say(f'  axis stretch: outline fit now median {np.median(dw):.2f} m, 90% within {np.quantile(dw, 0.9):.2f} m')
+        icp.update({'similarity_median_m': icp['median_m'], 'similarity_p90_m': icp['p90_m'],
+                    'median_m': round(float(np.median(dw)), 2), 'p90_m': round(float(np.quantile(dw, 0.9)), 2)})
+    outline_px = [np.array([from_xy(*proj(*q)) for q in p['outer']], np.float64) for p in bdoc['outline']['polys']]
 
     # ink and text
     words = []
+    boxmask = None
     if mode == 'vector':
         wall, words, nvec = pdf_walls(path, page, dpi, (H, W), P['min_lw_pt'])
         say(f'  vector: {nvec} PDF line objects drawn, {len(words)} words')
     else:
-        if ctl.get('ocr', True):
+        rw = rapid_words_all(img, P['ocr_rotated'], P.get('ocr_upscale', 1.0)) if ctl.get('ocr', True) and P.get('engine', 'rapid') == 'rapid' else None
+        if rw is not None:
+            words = rw
+            say(f'  OCR (RapidOCR): {len(words)} words')
+        elif ctl.get('ocr', True):
             if P['label_boxes']:
                 words = box_labels(img)
             else:
@@ -976,12 +1102,24 @@ def trace(ctl, ctl_path, debug=None):
         gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
         thr = P['dark'] if P['dark'] is not None else (70 if mode == 'fills' else otsu(gray))
         wall = gray < thr
+        if P.get('wall_neutral'):
+            # colored fills (Space Inventory's blue rooms) can be as dark as the gray walls: walls are the gray ones
+            spread = img.max(axis=2).astype(np.int16) - img.min(axis=2)
+            wall = (gray < P['wall_neutral']) & (spread < 30)
         if P['label_boxes']:
+            # erase the whole white box each label sits in, frame and all
             m = np.zeros((H, W), np.uint8)
+            wn, wlab, wst, _ = cv2.connectedComponentsWithStats((img > 225).all(axis=2).astype(np.uint8), connectivity=4)
             for w in words:
                 b = [int(v) for v in w['box']]
-                cv2.rectangle(m, (b[0] - 2, b[1] - 2), (b[2] + 2, b[3] + 2), 1, -1)
+                win = wlab[max(0, b[1]):b[3] + 1, max(0, b[0]):b[2] + 1]
+                ids = [int(v) for v in np.unique(win) if v and wst[v, cv2.CC_STAT_AREA] < 60 * (b[2] - b[0] + 2) * (b[3] - b[1] + 2)]
+                for v in ids:
+                    x_, y_, w_, h_ = wst[v, :4]
+                    b = [min(b[0], x_), min(b[1], y_), max(b[2], x_ + w_), max(b[3], y_ + h_)]
+                cv2.rectangle(m, (b[0] - 3, b[1] - 3), (b[2] + 3, b[3] + 3), 1, -1)
             wall &= ~m.astype(bool)
+            boxmask = m.astype(bool)
         if P['hatch_m']:
             k = max(3, int(round(P['hatch_m'] / mpp)))
             ker = cv2.getStructuringElement(cv2.MORPH_RECT, (k, k))
@@ -1033,6 +1171,8 @@ def trace(ctl, ctl_path, debug=None):
             free &= np.abs(rgb - np.array([r, g, b])).max(axis=2) > tol
     else:
         free = ~sealed & roi & ~outside
+        if boxmask is not None:
+            free |= boxmask & roi
     n, lab = cv2.connectedComponents(free.astype(np.uint8), connectivity=4)
     if mode == 'fills':
         # fill holes left by text and icons inside a colored block; blocks nested inside a hole
@@ -1096,6 +1236,11 @@ def trace(ctl, ctl_path, debug=None):
         if i in regions:
             del regions[i]
             dropped['hand'] += 1
+
+    if P.get('split', True):
+        ns_ = split_by_labels(lab, regions, words, mpp, P['min_room_m2'], max(2, int(0.6 / mpp)))
+        if ns_:
+            say(f'  {ns_} regions holding several room numbers split at their doorways')
 
     # labels -> regions
     unplaced = []
@@ -1312,8 +1457,12 @@ def trace(ctl, ctl_path, debug=None):
         'walls': walls,
     }
     if icp:
-        rec['fit'].update({'transform': 'similarity, plan footprint fitted to the building outline (ICP)', 'points': None,
-                           'max_m': icp['p90_m'], 'rms_m': None, 'median_m': icp['median_m'], 'p90_m': icp['p90_m'], 'loo_max_m': None})
+        rec['fit'].update({'transform': 'similarity, plan footprint fitted to the building outline (ICP)' + (', then stretched along the building grid' if warp else ''),
+                           'points': None, 'max_m': icp['p90_m'], 'rms_m': None, 'loo_max_m': None, **icp})
+        if warp:
+            rec['fit']['stretch'] = {'grid_deg': round(math.degrees(warp.th), 2),
+                                     'x_pairs_m': [[round(a, 1), round(b, 1)] for a, b in warp.px],
+                                     'y_pairs_m': [[round(a, 1), round(b, 1)] for a, b in warp.py]}
     return rec
 
 
@@ -1580,41 +1729,7 @@ def trace_photo(ctl, ctl_path, debug=None):
             continue
         hset[i] = e
 
-    # a region holding two or more room numbers is two or more rooms joined through a gap: split it
-    numw = [w for w in allwords if re.fullmatch(r'[A-Z]{0,2}\d{3,5}[A-Z]?|[A-Z]{1,2}\d{2}', w['text'].upper().replace(' ', ''))]
-    byreg = {}
-    for w in numw:
-        cx_, cy_ = int((w['box'][0] + w['box'][2]) / 2), int((w['box'][1] + w['box'][3]) / 2)
-        i = region_at(lab, (cx_, cy_), regions, r=px(0.6))
-        if i is not None:
-            byreg.setdefault(i, []).append((cx_, cy_))
-    from skimage.segmentation import watershed
-    nxt = int(lab.max()) + 1
-    for i, seeds in byreg.items():
-        if len(seeds) < 2 or i not in regions:
-            continue
-        sl = regions[i]['sl']
-        m = lab[sl] == i
-        dt = cv2.distanceTransform(m.astype(np.uint8), cv2.DIST_L2, 5)
-        mk = np.zeros(m.shape, np.int32)
-        for k, (sx, sy) in enumerate(seeds, start=1):
-            mk[max(0, sy - sl[0].start - 3):sy - sl[0].start + 4, max(0, sx - sl[1].start - 3):sx - sl[1].start + 4] = k
-        mk[~m] = 0
-        ws = watershed(-dt, mk, mask=m)
-        base_reg = regions.pop(i)
-        for k in range(1, len(seeds) + 1):
-            part = ws == k
-            if part.sum() * mpp * mpp < P['min_room_m2']:
-                continue
-            sub = lab[sl]
-            sub[part] = nxt
-            pdt = cv2.distanceTransform(np.pad(part, 1).astype(np.uint8), cv2.DIST_L2, 5)[1:-1, 1:-1]
-            yy, xx = np.unravel_index(int(pdt.argmax()), pdt.shape)
-            ys_, xs_ = np.nonzero(part)
-            regions[nxt] = {'sl': (slice(sl[0].start + ys_.min(), sl[0].start + ys_.max() + 1), slice(sl[1].start + xs_.min(), sl[1].start + xs_.max() + 1)),
-                            'area': part.sum() * mpp * mpp, 'hw': pdt.max() * mpp, 'at': (xx + sl[1].start, yy + sl[0].start),
-                            'bright': base_reg['bright'], 'split': True}
-            nxt += 1
+    split_by_labels(lab, regions, allwords, mpp, P['min_room_m2'], px(0.6))
     inroom = {}
     for w in allwords:
         cx_, cy_ = int((w['box'][0] + w['box'][2]) / 2), int((w['box'][1] + w['box'][3]) / 2)

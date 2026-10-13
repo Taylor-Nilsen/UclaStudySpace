@@ -564,7 +564,7 @@
                 if(p.length === 4) s += `<path d="M${f2(p[0][0])} ${f2(p[0][1])}L${f2(p[2][0])} ${f2(p[2][1])}M${f2(p[1][0])} ${f2(p[1][1])}L${f2(p[3][0])} ${f2(p[3][1])}" class="pp-xline"/>`;
             }
             if(r.kind === 'elevator'){
-                const b = bboxOf(r.pts), k = Math.min(b.w, b.h) * .32;
+                const b = bboxOf(r.pts), k = Math.min(Math.min(b.w, b.h) * .32, u * 1.1);
                 if(k > u * .25) s += SYM.elevator(r.lp[0], r.lp[1], k).replace('class="pp-elev"', 'class="pp-elev pp-noline"');
             }
             labels += roomLabel_(r, u, isSel);
@@ -822,7 +822,7 @@
             const pl = (((d.floors || {})[ui.roomPos.floor] || {}).plans || []).find(p => p.file === ui.roomPos.plan) || {};
             const src = pl.source || {};
             const here = M && M.lv === ui.roomPos.floor ? 'highlighted in yellow' : `on ${esc(levelName(ui.roomPos.floor).toLowerCase())} (pick it above)`;
-            return `<b>Room ${rl}</b>: ${esc(levelName(ui.roomPos.floor))}, ${here}. Position from ${esc(src.publisher || 'a published plan')}'s plan${src.date ? ` (${esc(src.date)})` : ''}.`;
+            return `<b>Room ${rl}</b>: ${esc(levelName(ui.roomPos.floor))}, ${here}. Position from ${esc(src.what || 'a published plan')}${src.date && !(src.what || '').includes(src.date) ? ` (${esc(src.date)})` : ''}; source under the map.`;
         }
         const traced = M && M.fl;
         const pos = traced ? ` This floor's plan doesn't show a room numbered ${rl}, so there's no room marker.` : ' Room position not mapped: no public floor plan places it, so there\'s no room marker.';

@@ -1,0 +1,48 @@
+{
+ "building": "BOELTER",
+ "floor": "1",
+ "title": "Boelter Hall floor 1",
+ "extent": "full",
+ "source": {
+  "publisher": "UCLA Space Inventory plan via github.com/tiffanyzhoujh/BoelterNavApp",
+  "what": "UCLA Space Inventory plan of Boelter Hall floor 1",
+  "url": "https://github.com/tiffanyzhoujh/BoelterNavApp",
+  "date": "2025 screenshot",
+  "accessed": "2026-10-13",
+  "license": "none stated (the repository has no license file; the drawing is UCLA's)"
+ },
+ "plan": {
+  "file": "boelter-1f_SpaceInventory-screenshot.png",
+  "url": "https://raw.githubusercontent.com/tiffanyzhoujh/BoelterNavApp/a83410fa63f9aa191cc36185bf34c88bc72ec397/%E6%A5%BC%E5%B1%82%E5%B9%B3%E9%9D%A2%E5%9B%BE_raw/boelter-1f.png"
+ },
+ "mode": "walls",
+ "control": {
+  "auto": "outline"
+ },
+ "crop": [
+  0,
+  170,
+  1900,
+  1600
+ ],
+ "params": {
+  "label_boxes": true,
+  "outside_colors": [
+   [
+    158,
+    158,
+    158,
+    12
+   ]
+  ],
+  "dark": 75,
+  "hatch_m": 0.6,
+  "door_m": 2.2,
+  "open_px": 0,
+  "wall_neutral": 140,
+  "warp": "axes"
+ },
+ "notes": [
+  "Room numbers are read from the plan's label boxes. Suffixes: CO and CU are corridors, ST stairs, EL elevators (UCLA Space Inventory codes)."
+ ]
+}
