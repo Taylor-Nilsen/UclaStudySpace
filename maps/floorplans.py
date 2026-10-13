@@ -142,6 +142,8 @@ def write_plans_md(path, records_by_code, today):
             ctl = '; '.join(f"{c['what']} {c['res_m']} m" for c in fit.get('control', []))
             if fit.get('median_m') is not None:
                 ctl = f"outline fit: median {fit['median_m']} m, 90% within {fit['p90_m']} m"
+                if fit.get('similarity_median_m') is not None:
+                    ctl += f" (before the stretch: {fit['similarity_median_m']} / {fit['similarity_p90_m']} m)"
             chk = [c for c in rec.get('checks', []) if c.get('off_m') is not None]
             if rec.get('checks'):
                 ctl += (f"; UCLA restroom check: {sum(1 for c in chk if c['off_m'] == 0)} of {len(rec['checks'])} "
@@ -151,7 +153,8 @@ def write_plans_md(path, records_by_code, today):
             rows.append(
                 f"| {code} | {rec['floor']} | {rec.get('extent', 'full')} | {src} | {s.get('date', 'undated')} | "
                 f"{tr.get('mode', '?')} | {fit.get('transform', '?')}{npts}: {ctl} "
-                f"(max {fit.get('max_m', '?')} m, rms {fit.get('rms_m', '?')} m, {fit.get('m_per_px', '?')} m/px) | "
+                f"({'max ' + str(fit['max_m']) + ' m, ' if fit.get('max_m') is not None and fit.get('median_m') is None else ''}"
+                f"{'rms ' + str(fit['rms_m']) + ' m, ' if fit.get('rms_m') is not None else ''}{fit.get('m_per_px', '?')} m/px) | "
                 f"{', '.join(f'{k} {v}' for k, v in sorted(kinds.items()))}; {len(rec.get('walls', []))} wall lines"
                 f"{f'; {flags} flagged' if flags else ''} | `{rec['file']}` |")
     head = ('| Code | Floor | Extent | Plan | Plan date | Trace | Georeference (control point residuals) | Contents | File |\n'

@@ -30,7 +30,6 @@
   "wall_neutral": 150,
   "door_m": 2.5,
   "min_room_m2": 2.0,
-  "warp": "axes",
   "min_wall_m": 1.0,
   "split_on": "text"
  },

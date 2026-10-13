@@ -88,7 +88,7 @@ What's accurate and what isn't:
 - Outlines are from OpenStreetMap or UCLA's campus GIS, good to about a meter. Each building says how well the two agree.
 - Doors are from UCLA's accessibility survey on maps.ucla.edu and from OpenStreetMap. Restrooms are from UCLA's GIS and the same survey, with room numbers.
 - Most elevators come from UCLA's 2020 accessibility map PDF, which has no coordinates. The script lines it up with the building outlines, and its dots end up about 7 m from where they really are. Those show with a dashed ring and say "approximate".
-- Rooms, corridors, stairs and walls are only drawn where a published plan exists. `maps/trace_plan.py` traces the plan (an image or a PDF page) into rooms and walls and lines it up with the ground using 2 to 4 control points; `maps/SOURCES.md` lists every traced floor with its source, date and fit error, and the map names the plan and its date under the drawing. Right now that's the YRL Research Commons (group study rooms G01 to G15 and the pods), traced from the UCLA Library's map. UCLA keeps real floor plans in its Space Inventory, but that needs a UCLA login. A floor with no plan shows the outline, doors, elevators and restrooms, and the page says "room position not mapped" instead of guessing.
+- Rooms, corridors, stairs and walls are only drawn where a published plan exists. `maps/trace_plan.py` traces the plan (an image or a PDF page) into rooms and walls and lines it up with the ground using 2 to 4 control points; `maps/SOURCES.md` lists every traced floor with its source, date and fit error, and the map names the plan and its date under the drawing. Right now that's Boelter Hall floors 1 to 9 (UCLA Space Inventory plans), Young Hall floor 2 (a photo of the evacuation plan posted on that floor), Powell floor 2 and YRL floor 1 (UCLA Library maps). UCLA keeps real floor plans in its Space Inventory, but that needs a UCLA login. A floor with no plan shows the outline, doors, elevators and restrooms, and the page says "room position not mapped" instead of guessing.
 
 `maps/SOURCES.md` lists every source, how each one was lined up, the leads that didn't pan out, and a table of what's known for each building. To rebuild the map data:
 
@@ -103,6 +103,14 @@ To trace a plan, write a control file next to the others in `maps/plans/` and ru
 python maps/trace_plan.py maps/plans/YRL-1.control.json --debug /tmp/trace   # writes maps/plans/YRL-1.json and updates maps/YRL.json
 python maps/trace_plan.py --render plan.pdf --page 2 --out grid.png          # a pixel grid for picking control points
 ```
+
+The fastest source is a phone photo of the evacuation plan posted on each floor (`pip install rapidocr-onnxruntime` reads its room numbers far better than tesseract):
+
+```bash
+python maps/trace_plan.py IMG_1234.jpg --building WGYOUNG --floor 2 --date 2026-10-12
+```
+
+That squares up the sign, traces it, fits it to the building outline, writes `maps/plans/WGYOUNG-2.json` and updates `maps/WGYOUNG.json`. To check it, open `maps/.cache/plans/WGYOUNG/review/WGYOUNG-2-trace.png` (each space shaded on its own, with its kind and number) and the map itself. Fix what's wrong in `maps/plans/WGYOUNG-2.labels.json` (room numbers and kinds; set `"checked": true` on the entries you looked at) or in `maps/plans/WGYOUNG-2.control.json` (`cuts` to close a wall the photo shows with a gap, `set` to name a space), then rerun `python maps/trace_plan.py maps/plans/WGYOUNG-2.control.json`. The photo itself stays in `maps/.cache` and isn't committed.
 
 Downloads go to `maps/.cache` (git-ignored). Only the small JSON files in `maps/` get committed. `maps.js` is all the page code for the maps; it does nothing until you press a Map button.
 
