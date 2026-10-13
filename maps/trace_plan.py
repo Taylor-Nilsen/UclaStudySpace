@@ -1434,6 +1434,9 @@ def trace(ctl, ctl_path, debug=None):
                 x.pop('ref')
                 x['flag'] = 'duplicate-label'
 
+    if ctl.get('rooms_from') == 'hand':
+        rooms = []   # only the spaces listed under "add", read off the plan by hand
+
     # hand-placed elements
     for a in ctl.get('add', []):
         r = {k: v for k, v in a.items() if k not in ('px', 'pt')}
@@ -1448,9 +1451,20 @@ def trace(ctl, ctl_path, debug=None):
         r['hand'] = True
         rooms.append(r)
 
+    # a newer plan of part of this floor wins: leave out what it already covers
+    if ctl.get('skip_where_traced'):
+        others = [r for r in FP.load_records(os.path.join(HERE, 'plans')).get(code, [])
+                  if r['floor'] == floor and r['file'] != f'plans/{ctl.get("out") or FP.slug(code) + "-" + floor + ".json"}']
+        pts = np.array([proj(*q) for r in others for x in r['rooms'] for q in (x.get('poly') or [x['at']])], np.float32)
+        if len(pts):
+            hull = cv2.convexHull(pts).reshape(-1, 2)
+            before = len(rooms)
+            rooms = [r for r in rooms if cv2.pointPolygonTest(hull.astype(np.float32), tuple(float(v) for v in proj(*r['at'])), True) < -1.0]
+            say(f'  {before - len(rooms)} spaces left out: a newer plan of this floor covers them')
+
     # walls
     walls = []
-    if mode != 'fills':
+    if mode != 'fills' and ctl.get('walls', True):
         for ln in sk_lines:
             if len(ln) < 2:
                 continue
