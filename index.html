@@ -95,6 +95,63 @@
         .no-results{padding:28px;text-align:center;color:var(--muted);grid-column:1/-1}
         footer{padding:22px 10px;text-align:center;color:var(--muted);font-size:0.85rem}
     </style>
+    <style id="maps-css">
+        /* building + campus maps (maps.js) */
+        .smap-lock,.smap-lock body{overflow:hidden}
+        .smap-overlay{position:fixed;inset:0;z-index:2000;background:rgba(2,6,23,.75);display:flex;align-items:center;justify-content:center;padding:16px}
+        .smap-overlay[hidden]{display:none}
+        .smap-box{background:var(--bg);border:1px solid #334155;border-radius:12px;width:min(920px,100%);max-height:100%;display:flex;flex-direction:column;overflow:hidden}
+        .smap-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:12px 14px 6px}
+        .smap-head h2{margin:0;font-size:1.05rem;color:#f8fafc}
+        .smap-sub,.smap-loc{color:var(--muted);font-size:.85rem}
+        .smap-head,.smap-bar,.smap-loc{flex:none}
+        .smap-loc{padding:0 14px;min-height:1.2em}
+        .smap-bar{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding:4px 14px 8px}
+        .smap-tabs{display:inline-flex;border:1px solid #334155;border-radius:8px;overflow:hidden}
+        .smap-tabs button{padding:6px 14px;border:0;background:var(--card);color:var(--text);font:inherit;font-weight:600;cursor:pointer}
+        .smap-tabs button[aria-selected="true"]{background:var(--accent);color:#fff}
+        .smap-acts{display:flex;gap:6px;flex-wrap:wrap}
+        .smap-acts a.btn{text-decoration:none;color:var(--text)}
+        .smap-me.on{background:#3b82f6;color:#fff;border-color:#3b82f6}
+        .smap-body{overflow:auto;padding:0 14px 14px}
+        .smap-floors{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}
+        .smap-roomline{font-size:.88rem;margin:6px 0}
+        .smap-zoom{margin:0 0 6px}
+        .smap-svgwrap{background:#0b1220;border-radius:8px;border:1px solid #1e293b}
+        .smap-svg{display:block;width:100%;height:auto;max-height:58vh}
+        .smap-box .m-bg{fill:#0b1220}.smap-box .m-wall{fill:#111c30;stroke:#e5e7eb;stroke-width:2px;vector-effect:non-scaling-stroke;stroke-linejoin:round}
+        .smap-box .m-door{fill:#34d399;stroke:#0b1220;stroke-width:1px;vector-effect:non-scaling-stroke}
+        .smap-box .m-elev{fill:#a78bfa}.smap-box .m-stair{fill:#facc15}.smap-box .m-wc{fill:#60a5fa}
+        .smap-box .m-glyph{fill:#0b1220}.smap-box .m-stroke{fill:none;stroke:#0b1220;stroke-width:1.5px;vector-effect:non-scaling-stroke}
+        .smap-box .m-txt{fill:#0b1220;font-weight:700;text-anchor:middle;font-family:system-ui,sans-serif}
+        .smap-box .m-num{fill:#e5e7eb;font-weight:600;font-family:system-ui,sans-serif}
+        .smap-box .m-steps{fill:none;stroke:#facc15;stroke-dasharray:1 1;opacity:.85}
+        .smap-box .m-approx{fill:none;stroke:#cbd5e1;stroke-dasharray:3 3;stroke-width:1px;vector-effect:non-scaling-stroke}
+        .smap-box .m-isapprox{opacity:.7}
+        .smap-box .m-north{fill:#e5e7eb}.smap-box .m-lbl{fill:#cbd5e1;text-anchor:middle;font-family:system-ui,sans-serif}
+        .smap-box .m-scale{fill:none;stroke:#cbd5e1;stroke-width:1.5px;vector-effect:non-scaling-stroke}
+        .smap-box .m-room{fill:none;stroke:var(--accent);stroke-width:3px;vector-effect:non-scaling-stroke}
+        .smap-box .m-acc{fill:rgba(52,211,153,.15);stroke:#34d399;stroke-width:1px;vector-effect:non-scaling-stroke}
+        .smap-box .m-me{fill:#34d399;stroke:#fff;stroke-width:2px;vector-effect:non-scaling-stroke}
+        .smap-box .r-other{fill:#1e293b;stroke:#475569;stroke-width:.75px;vector-effect:non-scaling-stroke}
+        .smap-box .r-study,.smap-box .r-room{fill:#14243d;stroke:#cbd5e1;stroke-width:1px;vector-effect:non-scaling-stroke}
+        .smap-box .r-restroom{fill:#1e3a5f;stroke:#60a5fa;stroke-width:1px;vector-effect:non-scaling-stroke}
+        .smap-box .r-xbox{fill:#2e1f4d;stroke:#a78bfa;stroke-width:1px;vector-effect:non-scaling-stroke}
+        .smap-box .r-xline{stroke:#a78bfa;stroke-width:1px;vector-effect:non-scaling-stroke}
+        .smap-box .r-pod{fill:#334155;stroke:#cbd5e1;stroke-width:.75px;vector-effect:non-scaling-stroke}
+        .smap-box .r-sel{fill:var(--accent);stroke:#fff}
+        .smap-box .r-lbl{fill:#e5e7eb;text-anchor:middle;font-family:system-ui,sans-serif;font-weight:600}
+        .smap-box .r-lbl-sel{fill:#0b1220}
+        .m-key-room{display:inline-block;width:12px;height:10px;background:#14243d;border:1px solid #cbd5e1;margin-right:4px;vertical-align:-1px}
+        .smap-legend{display:flex;gap:12px;flex-wrap:wrap;font-size:.78rem;color:var(--muted);margin-top:6px}
+        .smap-legend svg{width:14px;height:14px;vertical-align:-3px;margin-right:4px}
+        .m-key-approx{display:inline-block;width:12px;height:12px;border:1px dashed #cbd5e1;border-radius:50%;margin-right:4px;vertical-align:-2px}
+        .smap-list{font-size:.82rem;margin:8px 0;padding-left:22px}.smap-list li{margin:2px 0}.smap-list span{color:var(--muted)}
+        .smap-note{font-size:.78rem;color:var(--muted);margin:6px 0}
+        .smap-leaflet{height:min(60vh,520px);border-radius:8px;background:#0b1220}
+        .smap-leaflet .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.85) contrast(.9)}
+        @media (max-width:640px){.smap-overlay{padding:0}.smap-box{border-radius:0;height:100%;width:100%}.smap-svg{max-height:52vh}}
+    </style>
 </head>
 <body>
     <header>
@@ -507,7 +564,7 @@
                 <div class="room-head"><h3 class="room-title">${esc(r.text.replace(/\s+/g, ' '))}</h3><span class="pct" title="Share of 8am to 8pm that is open, not counting gaps under an hour">${freePct(r, pctDay)}% free ${pctDay.slice(0,3)}</span></div>
                 <div class="room-info"><span class="badge">${esc(r.building)}</span>${r.capacity ? `<span class="badge">Cap ${r.capacity}</span>` : ''}${r.type ? `<span class="badge">${esc(r.type)}</span>` : ''}${r._area === 'hill' ? `<span class="badge" style="color:var(--free)">The Hill</span>` : ''}${state.nearOn && distTo(r) != null ? `<span class="badge" style="color:var(--accent)">${distLabel(distTo(r))}</span>` : ''}${r.reservable ? `<span class="badge" title="${esc(r.description || '')}">Residents only</span>` : ''}${nUp ? `<span class="badge" style="color:var(--event)">${nUp} upcoming event${nUp > 1 ? 's' : ''}</span>` : ''}</div>
                 ${statusHtml(r._now, r)}
-                <div style="margin-top:8px"><button class="btn btn-details" type="button" data-toggle>Details ${open ? '▴' : '▾'}</button></div>
+                <div style="margin-top:8px"><button class="btn btn-details" type="button" data-toggle>Details ${open ? '▴' : '▾'}</button> <button class="btn" type="button" data-map="${esc(r.building)}" data-room="${esc(r.room)}" data-label="${esc(r.text.replace(/\s+/g, ' '))}">🗺️ Map</button></div>
                 <div class="details">${open ? detailsHtml(r) : ''}</div>
             </article>`;
         }).join('');
@@ -769,5 +826,6 @@
         loadData();
     });
     </script>
+    <script src="maps.js" defer></script>
 </body>
 </html>
