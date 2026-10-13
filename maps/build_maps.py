@@ -114,11 +114,11 @@ B = {
     'YRL': dict(name='Charles E. Young Research Library', ucla=['Young Research Library', 'Charles E. Young Research Library'],
                 osm=['Charles E. Young Research Library'], aliases=['YRL LIB', 'YOUNG RESEARCH LIBRARY', 'RESEARCH LIB']),
     'CHS': dict(name='Center for Health Sciences (Biomedical Library)', ucla=['Center for Health Sciences'],
-                osm=['Center for Health Sciences'], level_first_letter=True, aliases=['BIOMED', 'BIOMED LIB', 'BIOMEDLIB', 'BIOMEDICAL LIBRARY', 'LS BIOMED']),
+                osm=['Center for Health Sciences'], level_first_letter=True, aliases=['BIOMED', 'BIOMED LIB', 'BIOMEDLIB', 'BIOMEDICAL LIBRARY', 'LS BIOMED', 'HLTHSCI']),
     'SCHOENBG': dict(name='Schoenberg Music Building (Music Library)', ucla=['Schoenberg Music Building', 'Schoenberg Hall'],
-                     osm=['Schoenberg Music Building'], aliases=['SCHOENBERG', 'SCHNBRG', 'MUSIC', 'MUSIC LIB', 'MUSICLIB', 'MUSIC LIBRARY']),
+                     osm=['Schoenberg Music Building'], aliases=['SCHOENBERG', 'SCHNBRG', 'MUSIC', 'MUSIC LIB', 'MUSICLIB', 'MUSIC LIBRARY', 'SMB']),
     'ROSENFLD': dict(name='Rosenfeld Library (Anderson School)', ucla=['Rosenfeld Library'], osm=['Rosenfeld Library'],
-                     aliases=['ROSENFELD', 'ROSENFELD LIB', 'MGMT LIB', 'MANAGEMENT LIBRARY', 'ANDERSON']),
+                     aliases=['ROSENFELD', 'ROSENFELD LIB', 'MGMT LIB', 'MANAGEMENT LIBRARY', 'ANDERSON', 'ROSNFLD']),
 }
 
 # Letters UCLA uses as floor names (its restroom records list floors "A", "B", "C", "M").
