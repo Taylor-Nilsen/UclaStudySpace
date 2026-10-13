@@ -1,0 +1,1118 @@
+{
+ "building": "YRL",
+ "floor": "1",
+ "title": "Research Commons, YRL floor 1 (west part of the floor only)",
+ "source": {
+  "publisher": "UCLA Library",
+  "what": "\"2024 Updated - YRL RC Wall Map\", the map on the Research Commons room booking page",
+  "image": "https://d2jv02qf7xgjwx.cloudfront.net/accounts/350886/images/2024_Updated_-_YRL_RC_Wall_Map.png",
+  "page": "https://calendar.library.ucla.edu/reserve/yrl_gsr",
+  "date": "2024",
+  "accessed": "2026-10-13",
+  "image_size": [
+   1870,
+   773
+  ]
+ },
+ "how": "Room rectangles were traced from the image by color (one solid color per room on the map). The image was fitted to the ground with a similarity transform (scale, rotation, shift) using the four all-gender restrooms, whose positions UCLA's GIS gives (rooms 11938, 11940, 11368A, 11368B).",
+ "control": [
+  {
+   "px": [
+    294.5,
+    297.5
+   ],
+   "ll": [
+    34.075109,
+    -118.441793
+   ],
+   "what": "all-gender restroom 11940 (UCLA GIS)"
+  },
+  {
+   "px": [
+    409.5,
+    297.5
+   ],
+   "ll": [
+    34.075109,
+    -118.441758
+   ],
+   "what": "all-gender restroom 11938 (UCLA GIS)"
+  },
+  {
+   "px": [
+    1501,
+    142.5
+   ],
+   "ll": [
+    34.075161,
+    -118.441351
+   ],
+   "what": "all-gender restroom 11368A (UCLA GIS)"
+  },
+  {
+   "px": [
+    1596,
+    165.5
+   ],
+   "ll": [
+    34.075154,
+    -118.441315
+   ],
+   "what": "all-gender restroom 11368B (UCLA GIS)"
+  }
+ ],
+ "notes": [
+  "The library map is a diagram: corridors are the white space between rooms, not drawn walls.",
+  "Which restroom number goes with which pink box is matched by position (west pair = 11938/11940, east pair = 11368A/B).",
+  "Gray blocks are areas the map leaves unlabeled.",
+  "Pod positions are the centers of the pod tables on the map."
+ ],
+ "spaces": [
+  {
+   "kind": "other",
+   "px": [
+    [
+     840,
+     10
+    ],
+    [
+     893,
+     10
+    ],
+    [
+     893,
+     131
+    ],
+    [
+     840,
+     131
+    ]
+   ]
+  },
+  {
+   "kind": "other",
+   "px": [
+    [
+     1469,
+     10
+    ],
+    [
+     1866,
+     10
+    ],
+    [
+     1866,
+     84
+    ],
+    [
+     1469,
+     84
+    ]
+   ]
+  },
+  {
+   "kind": "other",
+   "px": [
+    [
+     241,
+     124
+    ],
+    [
+     491,
+     124
+    ],
+    [
+     491,
+     191
+    ],
+    [
+     241,
+     191
+    ]
+   ]
+  },
+  {
+   "kind": "other",
+   "px": [
+    [
+     241,
+     376
+    ],
+    [
+     491,
+     376
+    ],
+    [
+     491,
+     671
+    ],
+    [
+     241,
+     671
+    ]
+   ]
+  },
+  {
+   "kind": "other",
+   "px": [
+    [
+     1614,
+     529
+    ],
+    [
+     1866,
+     529
+    ],
+    [
+     1866,
+     671
+    ],
+    [
+     1614,
+     671
+    ]
+   ]
+  },
+  {
+   "id": "G01",
+   "label": "G01",
+   "kind": "study",
+   "name": "Group study room G01",
+   "px": [
+    [
+     10,
+     694
+    ],
+    [
+     131,
+     694
+    ],
+    [
+     131,
+     761
+    ],
+    [
+     10,
+     761
+    ]
+   ]
+  },
+  {
+   "id": "G02",
+   "label": "G02",
+   "kind": "study",
+   "name": "Group study room G02",
+   "px": [
+    [
+     10,
+     617
+    ],
+    [
+     131,
+     617
+    ],
+    [
+     131,
+     684
+    ],
+    [
+     10,
+     684
+    ]
+   ]
+  },
+  {
+   "id": "G03",
+   "label": "G03",
+   "kind": "study",
+   "name": "Group study room G03",
+   "px": [
+    [
+     10,
+     542
+    ],
+    [
+     131,
+     542
+    ],
+    [
+     131,
+     608
+    ],
+    [
+     10,
+     608
+    ]
+   ]
+  },
+  {
+   "id": "G04",
+   "label": "G04",
+   "kind": "study",
+   "name": "Group study room G04",
+   "px": [
+    [
+     10,
+     464
+    ],
+    [
+     130,
+     464
+    ],
+    [
+     130,
+     531
+    ],
+    [
+     10,
+     531
+    ]
+   ]
+  },
+  {
+   "id": "G05",
+   "label": "G05",
+   "kind": "study",
+   "name": "Group study room G05",
+   "px": [
+    [
+     10,
+     390
+    ],
+    [
+     131,
+     390
+    ],
+    [
+     131,
+     455
+    ],
+    [
+     10,
+     455
+    ]
+   ]
+  },
+  {
+   "id": "G06",
+   "label": "G06",
+   "kind": "study",
+   "name": "Group study room G06",
+   "px": [
+    [
+     10,
+     314
+    ],
+    [
+     131,
+     314
+    ],
+    [
+     131,
+     382
+    ],
+    [
+     10,
+     382
+    ]
+   ]
+  },
+  {
+   "id": "G07",
+   "label": "G07",
+   "kind": "study",
+   "name": "Group study room G07",
+   "px": [
+    [
+     10,
+     236
+    ],
+    [
+     131,
+     236
+    ],
+    [
+     131,
+     304
+    ],
+    [
+     10,
+     304
+    ]
+   ]
+  },
+  {
+   "id": "G08",
+   "label": "G08",
+   "kind": "study",
+   "name": "Group study room G08",
+   "px": [
+    [
+     10,
+     158
+    ],
+    [
+     130,
+     158
+    ],
+    [
+     130,
+     225
+    ],
+    [
+     10,
+     225
+    ]
+   ]
+  },
+  {
+   "id": "G09",
+   "label": "G09",
+   "kind": "study",
+   "name": "Group study room G09",
+   "px": [
+    [
+     10,
+     86
+    ],
+    [
+     131,
+     86
+    ],
+    [
+     131,
+     149
+    ],
+    [
+     10,
+     149
+    ]
+   ]
+  },
+  {
+   "id": "G10",
+   "label": "G10",
+   "kind": "study",
+   "name": "Group study room G10",
+   "px": [
+    [
+     10,
+     10
+    ],
+    [
+     130,
+     10
+    ],
+    [
+     130,
+     77
+    ],
+    [
+     10,
+     77
+    ]
+   ]
+  },
+  {
+   "id": "G11",
+   "label": "G11",
+   "kind": "study",
+   "name": "Group study room G11",
+   "px": [
+    [
+     241,
+     200
+    ],
+    [
+     361,
+     200
+    ],
+    [
+     361,
+     267
+    ],
+    [
+     241,
+     267
+    ]
+   ]
+  },
+  {
+   "id": "G12",
+   "label": "G12",
+   "kind": "study",
+   "name": "Group study room G12",
+   "px": [
+    [
+     370,
+     200
+    ],
+    [
+     491,
+     200
+    ],
+    [
+     491,
+     267
+    ],
+    [
+     370,
+     267
+    ]
+   ]
+  },
+  {
+   "id": "G13",
+   "label": "G13",
+   "kind": "study",
+   "name": "Group study room G13",
+   "px": [
+    [
+     611,
+     10
+    ],
+    [
+     679,
+     10
+    ],
+    [
+     679,
+     130
+    ],
+    [
+     611,
+     130
+    ]
+   ]
+  },
+  {
+   "id": "G14",
+   "label": "G14",
+   "kind": "study",
+   "name": "Group study room G14",
+   "px": [
+    [
+     688,
+     10
+    ],
+    [
+     755,
+     10
+    ],
+    [
+     755,
+     130
+    ],
+    [
+     688,
+     130
+    ]
+   ]
+  },
+  {
+   "id": "G15",
+   "label": "G15",
+   "kind": "study",
+   "name": "Group study room G15",
+   "px": [
+    [
+     764,
+     10
+    ],
+    [
+     831,
+     10
+    ],
+    [
+     831,
+     130
+    ],
+    [
+     764,
+     130
+    ]
+   ]
+  },
+  {
+   "label": "RC Classroom",
+   "kind": "room",
+   "px": [
+    [
+     573,
+     200
+    ],
+    [
+     910,
+     200
+    ],
+    [
+     910,
+     381
+    ],
+    [
+     573,
+     381
+    ]
+   ]
+  },
+  {
+   "label": "Data Science Center",
+   "kind": "room",
+   "px": [
+    [
+     1143,
+     10
+    ],
+    [
+     1460,
+     10
+    ],
+    [
+     1460,
+     192
+    ],
+    [
+     1143,
+     192
+    ]
+   ]
+  },
+  {
+   "label": "PDF Center",
+   "kind": "room",
+   "px": [
+    [
+     1614,
+     451
+    ],
+    [
+     1786,
+     451
+    ],
+    [
+     1786,
+     520
+    ],
+    [
+     1614,
+     520
+    ]
+   ]
+  },
+  {
+   "label": "Lux Lab",
+   "kind": "room",
+   "px": [
+    [
+     1398,
+     711
+    ],
+    [
+     1605,
+     711
+    ],
+    [
+     1605,
+     762
+    ],
+    [
+     1398,
+     762
+    ]
+   ]
+  },
+  {
+   "label": "Laptop Lending",
+   "kind": "room",
+   "name": "Laptop Lending Desk",
+   "px": [
+    [
+     592,
+     585
+    ],
+    [
+     698,
+     585
+    ],
+    [
+     698,
+     766
+    ],
+    [
+     592,
+     766
+    ]
+   ]
+  },
+  {
+   "label": "WC",
+   "kind": "restroom",
+   "name": "All-gender restroom",
+   "px": [
+    [
+     1469,
+     93
+    ],
+    [
+     1533,
+     93
+    ],
+    [
+     1533,
+     192
+    ],
+    [
+     1469,
+     192
+    ]
+   ]
+  },
+  {
+   "label": "WC",
+   "kind": "restroom",
+   "name": "All-gender restroom",
+   "px": [
+    [
+     1542,
+     139
+    ],
+    [
+     1650,
+     139
+    ],
+    [
+     1650,
+     192
+    ],
+    [
+     1542,
+     192
+    ]
+   ]
+  },
+  {
+   "label": "WC",
+   "kind": "restroom",
+   "name": "All-gender restroom",
+   "px": [
+    [
+     241,
+     276
+    ],
+    [
+     348,
+     276
+    ],
+    [
+     348,
+     319
+    ],
+    [
+     241,
+     319
+    ]
+   ]
+  },
+  {
+   "label": "WC",
+   "kind": "restroom",
+   "name": "All-gender restroom",
+   "px": [
+    [
+     356,
+     276
+    ],
+    [
+     463,
+     276
+    ],
+    [
+     463,
+     319
+    ],
+    [
+     356,
+     319
+    ]
+   ]
+  },
+  {
+   "label": "Men",
+   "kind": "restroom",
+   "name": "Men's restroom",
+   "px": [
+    [
+     241,
+     377
+    ],
+    [
+     333,
+     377
+    ],
+    [
+     333,
+     523
+    ],
+    [
+     241,
+     523
+    ]
+   ]
+  },
+  {
+   "label": "Women",
+   "kind": "restroom",
+   "name": "Women's restroom",
+   "px": [
+    [
+     399,
+     377
+    ],
+    [
+     491,
+     377
+    ],
+    [
+     491,
+     523
+    ],
+    [
+     399,
+     523
+    ]
+   ]
+  },
+  {
+   "kind": "xbox",
+   "name": "Crossed box on the library map (no legend; looks like an elevator)",
+   "px": [
+    [
+     246,
+     680
+    ],
+    [
+     314,
+     680
+    ],
+    [
+     314,
+     762
+    ],
+    [
+     246,
+     762
+    ]
+   ]
+  },
+  {
+   "kind": "xbox",
+   "name": "Crossed box on the library map (no legend; looks like an elevator)",
+   "px": [
+    [
+     334,
+     680
+    ],
+    [
+     401,
+     680
+    ],
+    [
+     401,
+     762
+    ],
+    [
+     334,
+     762
+    ]
+   ]
+  },
+  {
+   "kind": "xbox",
+   "name": "Crossed box on the library map (no legend; looks like an elevator)",
+   "px": [
+    [
+     418,
+     680
+    ],
+    [
+     485,
+     680
+    ],
+    [
+     485,
+     762
+    ],
+    [
+     418,
+     762
+    ]
+   ]
+  },
+  {
+   "kind": "xbox",
+   "name": "Crossed box on the library map (no legend; looks like an elevator)",
+   "px": [
+    [
+     1621,
+     680
+    ],
+    [
+     1689,
+     680
+    ],
+    [
+     1689,
+     762
+    ],
+    [
+     1621,
+     762
+    ]
+   ]
+  },
+  {
+   "kind": "xbox",
+   "name": "Crossed box on the library map (no legend; looks like an elevator)",
+   "px": [
+    [
+     1711,
+     680
+    ],
+    [
+     1779,
+     680
+    ],
+    [
+     1779,
+     762
+    ],
+    [
+     1711,
+     762
+    ]
+   ]
+  },
+  {
+   "kind": "xbox",
+   "name": "Crossed box on the library map (no legend; looks like an elevator)",
+   "px": [
+    [
+     1798,
+     680
+    ],
+    [
+     1865,
+     680
+    ],
+    [
+     1865,
+     762
+    ],
+    [
+     1798,
+     762
+    ]
+   ]
+  },
+  {
+   "id": "R01",
+   "label": "R01",
+   "kind": "pod",
+   "name": "Collaboration pod R01",
+   "pt": [
+    627,
+    487
+   ]
+  },
+  {
+   "id": "R02",
+   "label": "R02",
+   "kind": "pod",
+   "name": "Collaboration pod R02",
+   "pt": [
+    685,
+    487
+   ]
+  },
+  {
+   "id": "R03",
+   "label": "R03",
+   "kind": "pod",
+   "name": "Collaboration pod R03",
+   "pt": [
+    829,
+    470
+   ]
+  },
+  {
+   "id": "R04",
+   "label": "R04",
+   "kind": "pod",
+   "name": "Collaboration pod R04",
+   "pt": [
+    992,
+    369
+   ]
+  },
+  {
+   "id": "R05",
+   "label": "R05",
+   "kind": "pod",
+   "name": "Collaboration pod R05",
+   "pt": [
+    1098,
+    265
+   ]
+  },
+  {
+   "id": "R06",
+   "label": "R06",
+   "kind": "pod",
+   "name": "Collaboration pod R06",
+   "pt": [
+    1148,
+    327
+   ]
+  },
+  {
+   "id": "R07",
+   "label": "R07",
+   "kind": "pod",
+   "name": "Collaboration pod R07",
+   "pt": [
+    1324,
+    282
+   ]
+  },
+  {
+   "id": "R08",
+   "label": "R08",
+   "kind": "pod",
+   "name": "Collaboration pod R08",
+   "pt": [
+    1515,
+    276
+   ]
+  },
+  {
+   "id": "R09",
+   "label": "R09",
+   "kind": "pod",
+   "name": "Collaboration pod R09",
+   "pt": [
+    1593,
+    291
+   ]
+  },
+  {
+   "id": "R10",
+   "label": "R10",
+   "kind": "pod",
+   "name": "Collaboration pod R10",
+   "pt": [
+    1700,
+    410
+   ]
+  },
+  {
+   "id": "R11",
+   "label": "R11",
+   "kind": "pod",
+   "name": "Collaboration pod R11",
+   "pt": [
+    1511,
+    438
+   ]
+  },
+  {
+   "id": "R12",
+   "label": "R12",
+   "kind": "pod",
+   "name": "Collaboration pod R12",
+   "pt": [
+    1517,
+    517
+   ]
+  },
+  {
+   "id": "R13",
+   "label": "R13",
+   "kind": "pod",
+   "name": "Collaboration pod R13",
+   "pt": [
+    1426,
+    589
+   ]
+  },
+  {
+   "id": "R14",
+   "label": "R14",
+   "kind": "pod",
+   "name": "Collaboration pod R14",
+   "pt": [
+    1340,
+    532
+   ]
+  },
+  {
+   "id": "R15",
+   "label": "R15",
+   "kind": "pod",
+   "name": "Collaboration pod R15",
+   "pt": [
+    1079,
+    650
+   ]
+  },
+  {
+   "id": "R16",
+   "label": "R16",
+   "kind": "pod",
+   "name": "Collaboration pod R16",
+   "pt": [
+    1008,
+    616
+   ]
+  },
+  {
+   "id": "R17",
+   "label": "R17",
+   "kind": "pod",
+   "name": "Collaboration pod R17",
+   "pt": [
+    1190,
+    469
+   ]
+  },
+  {
+   "id": "R18",
+   "label": "R18",
+   "kind": "pod",
+   "name": "Collaboration pod R18",
+   "pt": [
+    1045,
+    497
+   ]
+  },
+  {
+   "id": "R19",
+   "label": "R19",
+   "kind": "pod",
+   "name": "Collaboration pod R19",
+   "pt": [
+    772,
+    632
+   ]
+  },
+  {
+   "id": "R20",
+   "label": "R20",
+   "kind": "pod",
+   "name": "Collaboration pod R20",
+   "pt": [
+    780,
+    711
+   ]
+  }
+ ]
+}

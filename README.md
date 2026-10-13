@@ -5,6 +5,7 @@ Find empty UCLA classrooms to study in. The site shows every general assignment 
 ## What's in here
 
 - `index.html`: the whole frontend. It loads `classrooms.json` and does filtering, sorting and rendering in the browser.
+- `maps.js`, `maps/`: building floor maps and the campus map (see Maps below). `maps/build_maps.py` builds the data.
 - `classrooms.json`: the data the site reads.
 - `scrape.py`: pulls class schedules and room characteristics from the UCLA Registrar.
 - `scrape_hill.py`: pulls Hill study room availability from Residential Life into `hill.json`.
@@ -74,6 +75,29 @@ If it can't get your location, the message next to the button says why and where
 - Links opened inside Instagram, TikTok and similar apps use the app's own browser, which usually can't get location. Open the page in Safari.
 
 `window.StudyLocate` is the one piece of code that asks for location, so other features (like the map) reuse the same fix and error messages: `get()` returns `{lat, lon, accuracy, at}` and has to be called straight from a tap the first time, `watch(onFix, onError)` gives live updates and returns a stop function, `last()` is the latest fix or null, and `explainError(err)` turns an error into the message above.
+
+**Maps.** Every room card has a "🗺️ Map" button. It opens a popup with two tabs:
+
+- **Floor**: a simple line drawing of the building, like the fire escape plans on the wall. It shows the outline, doors and exits, stair doors and outside steps, elevators and restrooms, with a north arrow and a scale bar in meters and feet. Pick a floor at the top. The room's floor comes from its number (Boelter 2444 is on floor 2), and the page says how sure that is. "📍 Show me" puts a dot where you are with your GPS accuracy around it, and tells you if you're outside the building and how far away. GPS can't tell what floor you're on.
+- **Campus**: an OpenStreetMap map with the building in blue, the other StudySpace buildings outlined, and your position if location is on. Leaflet only loads the first time you open this tab.
+
+"Directions" opens walking directions in Apple Maps on iPhone, iPad and Mac, and in Google Maps everywhere else.
+
+What's accurate and what isn't:
+
+- Outlines are from OpenStreetMap or UCLA's campus GIS, good to about a meter. Each building says how well the two agree.
+- Doors are from UCLA's accessibility survey on maps.ucla.edu and from OpenStreetMap. Restrooms are from UCLA's GIS and the same survey, with room numbers.
+- Most elevators come from UCLA's 2020 accessibility map PDF, which has no coordinates. The script lines it up with the building outlines, and its dots end up about 7 m from where they really are. Those show with a dashed ring and say "approximate".
+- Rooms and corridors are only drawn where a published plan exists. Right now that's the YRL Research Commons (group study rooms G01 to G15 and the pods), traced from the UCLA Library's map. UCLA keeps real floor plans in its Space Inventory, but that needs a UCLA login. So for most buildings the room's spot inside isn't known, and the page says "position not mapped" instead of guessing. Indoor stairwells aren't in any public source either.
+
+`maps/SOURCES.md` lists every source, how each one was lined up, the leads that didn't pan out, and a table of what's known for each building. To rebuild the map data:
+
+```bash
+pip install pdfplumber
+python maps/build_maps.py            # add --refresh to download everything again
+```
+
+Downloads go to `maps/.cache` (git-ignored). Only the small JSON files in `maps/` get committed. `maps.js` is all the page code for the maps; it does nothing until you press a Map button.
 
 ## Data contract
 
