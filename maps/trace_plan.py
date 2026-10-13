@@ -550,7 +550,7 @@ def _fit_sim_fixed(U, X, th):
     return np.array([[s_ * c, s_ * sn, tx], [s_ * sn, -s_ * c, ty], [0, 0, 1]])
 
 
-def outline_icp(foot, shape, rot0=0.0, trim=0.85, fixed=False):
+def outline_icp(foot, shape, rot0=0.0, trim=0.85, fixed=False, search=False, one_sided=False):
     """Fit the plan's footprint (bool mask) to the building outline (projected metres) by ICP."""
     import cv2
     cs, _ = cv2.findContours(foot.astype(np.uint8), cv2.RETR_CCOMP, cv2.CHAIN_APPROX_NONE)
@@ -567,11 +567,23 @@ def outline_icp(foot, shape, rot0=0.0, trim=0.85, fixed=False):
     allpts = np.array([q for o, _ in shape for q in o])
     cx = allpts.mean(0)
     best = None
-    for rot in ([rot0] if rot0 is not None else [0, 90, 180, 270]):
+    starts = []
+    for rot in (rot0 if isinstance(rot0, list) else [rot0] if rot0 is not None else [0, 90, 180, 270]):
+        if not search:
+            starts.append((rot, s0, cx))
+            continue
+        # a plan of one wing: try smaller scales and several places on the outline
+        x0_, y0_ = allpts.min(0)
+        x1_, y1_ = allpts.max(0)
+        for f in (0.35, 0.5, 0.7, 1.0):
+            for gx in (0.2, 0.5, 0.8):
+                for gy in (0.2, 0.5, 0.8):
+                    starts.append((rot, s0 * f, np.array([x0_ + gx * (x1_ - x0_), y0_ + gy * (y1_ - y0_)])))
+    for rot, sc, cxy in starts:
         th = math.radians(rot)
-        a, b = s0 * math.cos(th), s0 * math.sin(th)
+        a, b = sc * math.cos(th), sc * math.sin(th)
         M = np.array([[a, b, 0], [b, -a, 0], [0, 0, 1.0]])
-        M[0, 2], M[1, 2] = cx[0] - (a * cu[0] + b * cu[1]), cx[1] - (b * cu[0] - a * cu[1])
+        M[0, 2], M[1, 2] = cxy[0] - (a * cu[0] + b * cu[1]), cxy[1] - (b * cu[0] - a * cu[1])
         for _ in range(60):
             Xp = (M[:2, :2] @ U.T).T + M[:2, 2]
             Q, d = _seg_closest(Xp, A, B)
@@ -955,7 +967,12 @@ def split_by_labels(lab, regions, words, mpp, min_m2, near_px, on='numbers'):
         for sx, sy, _, _ in seeds:
             sd[min(m.shape[0] - 1, max(0, sy - sl[0].start)), min(m.shape[1] - 1, max(0, sx - sl[1].start))] = 0
         dseed = cv2.distanceTransform(sd, cv2.DIST_L2, 5)
-        free_seed = m & (dseed > far) & (dt >= 0.6 / mpp)
+        # only in corridor-like strips (a hall's far corners belong to the hall)
+        free_seed = m & (dseed > far) & (dt >= 0.6 / mpp) & (dt <= 1.6 / mpp)
+        if free_seed.any():
+            n_fs, fs_lab = cv2.connectedComponents(free_seed.astype(np.uint8), connectivity=8)
+            sizes = np.bincount(fs_lab.ravel())
+            free_seed &= sizes[fs_lab] * mpp * mpp >= 4.0   # long enough to be a corridor run
         mk[free_seed] = len(seeds) + 1
         mk[~m] = 0
         ws = watershed(-dt, mk, mask=m)
@@ -1110,14 +1127,15 @@ def trace(ctl, ctl_path, debug=None):
         foot = roi & ~outside & ~(img > 245).all(axis=2)
         foot = cv2.morphologyEx(foot.astype(np.uint8), cv2.MORPH_CLOSE, np.ones((5, 5), np.uint8))
         n_, lab_, st_, _ = cv2.connectedComponentsWithStats(foot, connectivity=8)
-        big = 1 + int(np.argmax(st_[1:, cv2.CC_STAT_WIDTH].astype(np.int64) * st_[1:, cv2.CC_STAT_HEIGHT]))
+        big = 1 + int(np.argmax(st_[1:, cv2.CC_STAT_AREA]))
         foot = lab_ == big
-        if foot.mean() < 0.5 * (st_[big, cv2.CC_STAT_WIDTH] * st_[big, cv2.CC_STAT_HEIGHT]) / foot.size:
+        if foot.sum() < 0.4 * (st_[big, cv2.CC_STAT_WIDTH] * st_[big, cv2.CC_STAT_HEIGHT]):
             # line drawing on white: the footprint is what the walls enclose (doorways closed first)
             kk = max(5, int(0.012 * max(H, W))) | 1
             foot = ndi_fill(cv2.morphologyEx(foot.astype(np.uint8), cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (kk, kk))))
         cv2.imwrite(os.path.join(HERE, '.cache', f'foot-{FP.slug(code)}-{floor}.png'), (foot * 255).astype(np.uint8))
-        M, med, p90, dists = outline_icp(foot, shape, ctl['control'].get('rot_init', 0.0), P.get('icp_trim', 0.85), ctl['control'].get('fix_rotation', False))
+        M, med, p90, dists = outline_icp(foot, shape, ctl['control'].get('rot_init', 0.0), P.get('icp_trim', 0.85),
+                                         ctl['control'].get('fix_rotation', False), ctl['control'].get('search', False))
         mpp = math.sqrt(abs(np.linalg.det(M[:2, :2])))
         rot = math.degrees(math.atan2(M[1, 0], M[0, 0]))
         icp = {'median_m': round(med, 2), 'p90_m': round(p90, 2)}
@@ -1396,6 +1414,9 @@ def trace(ctl, ctl_path, debug=None):
             r['name'] = words_only[:40]
         r['kind'] = kind
         r.update(setters.get(i, {}))
+        if setters.get(i, {}).get('ref') or setters.get(i, {}).get('label'):
+            r.pop('flag', None)
+            r.pop('refs', None)
         if r['kind'] not in FP.KINDS:
             raise SystemExit(f'unknown kind {r["kind"]}')
         # polygon
@@ -1727,7 +1748,7 @@ def trace_photo(ctl, ctl_path, debug=None):
             continue
         sub = thin[y:y + h, x:x + w] & comp
         trans = max((np.diff(sub.astype(np.int8), axis=1) == 1).sum(1).mean(), (np.diff(sub.astype(np.int8), axis=0) == 1).sum(0).mean())
-        if 0.3 < dens < P.get('stair_density', 0.85) and am2 >= 2.0 and trans >= 3.5 and foot[int(scen[i][1]), int(scen[i][0])]:
+        if 0.3 < dens < P.get('stair_density', 0.85) and am2 >= 1.0 and trans >= 3.5 and foot[int(scen[i][1]), int(scen[i][0])]:
             stairs_m[y:y + h, x:x + w] |= comp
     allwords = (rapid_words(img) if ctl.get('ocr', True) else [])
     if allwords is None:
@@ -1737,10 +1758,12 @@ def trace_photo(ctl, ctl_path, debug=None):
     for w in allwords:
         b = [int(v) for v in w['box']]
         if (b[3] - b[1]) * mpp < 1.5:
-            cv2.rectangle(textm, (b[0] - 4, b[1] - 4), (b[2] + 4, b[3] + 4), 1, -1)
+            pd = 4 + int(0.35 * (b[3] - b[1]))   # OCR boxes can clip the first and last letter
+            cv2.rectangle(textm, (b[0] - pd, b[1] - 4), (b[2] + pd, b[3] + 4), 1, -1)
     textm = textm.astype(bool)
     stairs_m &= ~cv2.dilate(textm.astype(np.uint8), np.ones((9, 9), np.uint8)).astype(bool)
     stairs_m = remove_small(stairs_m, 1.2 / mpp)
+    cv2.imwrite(stem + "-stairs.png", (stairs_m * 255).astype(np.uint8))
     erase = cv2.dilate(solid, np.ones((5, 5), np.uint8)).astype(bool) | textm | cv2.dilate((pink | blue).astype(np.uint8), np.ones((5, 5), np.uint8)).astype(bool)
     wall = dark & ~erase & foot
     # drop text: pieces not part of the wall network that are too fat to be a wall line
@@ -1813,6 +1836,8 @@ def trace_photo(ctl, ctl_path, debug=None):
     if os.path.exists(lfile):
         with open(lfile, encoding='utf-8') as fh:
             human = json.load(fh).get('regions', [])
+    # only entries a person has checked override the tracer; the rest are refreshed every run
+    human = [e for e in human if e.get('checked')]
     hset = {}
     for e in human:
         i = region_at(lab, e['px'], regions)
@@ -1825,7 +1850,7 @@ def trace_photo(ctl, ctl_path, debug=None):
     inroom = {}
     for w in allwords:
         cx_, cy_ = int((w['box'][0] + w['box'][2]) / 2), int((w['box'][1] + w['box'][3]) / 2)
-        i = int(lab[min(H - 1, cy_), min(W - 1, cx_)])
+        i = w['_region'] if w.get('_region') in regions else int(lab[min(H - 1, cy_), min(W - 1, cx_)])
         if i not in regions:
             i = region_at(lab, (cx_, cy_), regions, r=px(0.6))
         if i in regions:
@@ -1892,7 +1917,7 @@ def trace_photo(ctl, ctl_path, debug=None):
         r['_i'] = i
         r['_px'] = [int(cx), int(cy)]
         rooms.append(r)
-        review.append({'px': [int(cx), int(cy)], 'kind': r['kind'], 'text': text, 'ocr': ocr})
+        review.append({'px': [int(cx), int(cy)], 'kind': r['kind'], 'text': text, 'ocr': ocr, 'checked': False})
 
     for cx, cy, hf in xb:
         sq = [(cx - hf, cy - hf), (cx + hf, cy - hf), (cx + hf, cy + hf), (cx - hf, cy + hf)]
@@ -1909,7 +1934,7 @@ def trace_photo(ctl, ctl_path, debug=None):
     extra = []
     for b in blocks:
         t = re.sub(r'\s+', ' ', b['text']).strip()
-        if re.match(r'(T0|TO)[A-Z]', t) or re.search(r'NOROOF|ROOFACCESS', t):
+        if re.match(r'(T0|TO)[A-Z]', t) or re.search(r'NOROOF|ROOFACCESS', t) or any(len(x) > 10 for x in t.split()):
             t = spaced_text(img, b['box']) or t
         bc = np.array([(b['box'][0] + b['box'][2]) / 2, (b['box'][1] + b['box'][3]) / 2])
         mS = re.search(r'STAIR\s*(\w+)?', t, re.I)
@@ -1941,6 +1966,9 @@ def trace_photo(ctl, ctl_path, debug=None):
         for r in rooms:
             if r.get('_i') == i:
                 r.update({k: v for k, v in a.items() if k != 'px'})
+                if a.get('ref') or a.get('label'):
+                    r.pop('flag', None)
+                    r.pop('refs', None)
     rooms += extra
 
     # write the review file for the human pass (keeps what's already in it)
@@ -1952,7 +1980,9 @@ def trace_photo(ctl, ctl_path, debug=None):
         json.dump({'about': ('One entry per traced space, by a pixel inside it on the rectified sign '
                              f'(maps/.cache/plans/{FP.slug(code)}/review/{FP.slug(code)}-{floor}-rectified.png). Fix "text" '
                              '(the room number or name as printed) and "kind" (room, corridor, stair, elevator, restroom, mech, '
-                             'other); add "drop": true for a space that is not real; then rerun the control file. "ocr" is what OCR read.'),
+                             'other), or add "drop": true for a space that is not real, and set "checked": true on every entry you '
+                             'looked at; then rerun the control file. Entries with "checked": true override the tracer; the others '
+                             'are rewritten on every run. "ocr" is what OCR read.'),
                    'regions': out}, fh, indent=1, ensure_ascii=False)
 
     walls = []
