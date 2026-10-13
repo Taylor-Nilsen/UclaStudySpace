@@ -1,0 +1,513 @@
+{
+ "building": "YRL",
+ "floor": "1",
+ "title": "Research Commons (west and central part of floor 1)",
+ "extent": "partial",
+ "source": {
+  "publisher": "UCLA Library",
+  "what": "\"2024 Updated - YRL RC Wall Map\", the map on the Research Commons room booking page",
+  "image": "https://d2jv02qf7xgjwx.cloudfront.net/accounts/350886/images/2024_Updated_-_YRL_RC_Wall_Map.png",
+  "page": "https://calendar.library.ucla.edu/reserve/yrl_gsr",
+  "date": "2024",
+  "accessed": "2026-10-13",
+  "image_size": [
+   1870,
+   773
+  ],
+  "url": "https://calendar.library.ucla.edu/reserve/yrl_gsr"
+ },
+ "plan": {
+  "file": "2024_Updated_-_YRL_RC_Wall_Map.png",
+  "url": "https://d2jv02qf7xgjwx.cloudfront.net/accounts/350886/images/2024_Updated_-_YRL_RC_Wall_Map.png"
+ },
+ "mode": "fills",
+ "transform": "similarity",
+ "control": [
+  {
+   "px": [
+    294.5,
+    297.5
+   ],
+   "feature": {
+    "t": "restroom",
+    "room": "11940"
+   },
+   "what": "all-gender restroom 11940 (UCLA GIS)"
+  },
+  {
+   "px": [
+    409.5,
+    297.5
+   ],
+   "feature": {
+    "t": "restroom",
+    "room": "11938"
+   },
+   "what": "all-gender restroom 11938 (UCLA GIS)"
+  },
+  {
+   "px": [
+    1501,
+    142.5
+   ],
+   "feature": {
+    "t": "restroom",
+    "room": "11368A"
+   },
+   "what": "all-gender restroom 11368A (UCLA GIS)"
+  },
+  {
+   "px": [
+    1596,
+    165.5
+   ],
+   "feature": {
+    "t": "restroom",
+    "room": "11368B"
+   },
+   "what": "all-gender restroom 11368B (UCLA GIS)"
+  }
+ ],
+ "params": {
+  "exclude_colors": [
+   [
+    100,
+    81,
+    143,
+    30
+   ],
+   [
+    158,
+    159,
+    158,
+    12
+   ]
+  ],
+  "min_room_m2": 1.0
+ },
+ "set": [
+  {
+   "px": [
+    294,
+    297
+   ],
+   "kind": "restroom",
+   "label": "WC",
+   "name": "All-gender restroom 11940"
+  },
+  {
+   "px": [
+    409,
+    297
+   ],
+   "kind": "restroom",
+   "label": "WC",
+   "name": "All-gender restroom 11938"
+  },
+  {
+   "px": [
+    1501,
+    142
+   ],
+   "kind": "restroom",
+   "label": "WC",
+   "name": "All-gender restroom 11368A"
+  },
+  {
+   "px": [
+    1596,
+    165
+   ],
+   "kind": "restroom",
+   "label": "WC",
+   "name": "All-gender restroom 11368B"
+  },
+  {
+   "px": [
+    285,
+    500
+   ],
+   "kind": "restroom",
+   "label": "Men",
+   "name": "Men's restroom"
+  },
+  {
+   "px": [
+    445,
+    500
+   ],
+   "kind": "restroom",
+   "label": "Women",
+   "name": "Women's restroom"
+  },
+  {
+   "px": [
+    1700,
+    500
+   ],
+   "label": "PDF Center"
+  }
+ ],
+ "add": [
+  {
+   "kind": "xbox",
+   "px": [
+    [
+     246,
+     680
+    ],
+    [
+     314,
+     680
+    ],
+    [
+     314,
+     762
+    ],
+    [
+     246,
+     762
+    ]
+   ],
+   "name": "Crossed box on the library map (no legend; the usual plan symbol for an elevator or shaft)"
+  },
+  {
+   "kind": "xbox",
+   "px": [
+    [
+     334,
+     680
+    ],
+    [
+     401,
+     680
+    ],
+    [
+     401,
+     762
+    ],
+    [
+     334,
+     762
+    ]
+   ],
+   "name": "Crossed box on the library map (no legend; the usual plan symbol for an elevator or shaft)"
+  },
+  {
+   "kind": "xbox",
+   "px": [
+    [
+     418,
+     680
+    ],
+    [
+     485,
+     680
+    ],
+    [
+     485,
+     762
+    ],
+    [
+     418,
+     762
+    ]
+   ],
+   "name": "Crossed box on the library map (no legend; the usual plan symbol for an elevator or shaft)"
+  },
+  {
+   "kind": "xbox",
+   "px": [
+    [
+     1621,
+     680
+    ],
+    [
+     1689,
+     680
+    ],
+    [
+     1689,
+     762
+    ],
+    [
+     1621,
+     762
+    ]
+   ],
+   "name": "Crossed box on the library map (no legend; the usual plan symbol for an elevator or shaft)"
+  },
+  {
+   "kind": "xbox",
+   "px": [
+    [
+     1711,
+     680
+    ],
+    [
+     1779,
+     680
+    ],
+    [
+     1779,
+     762
+    ],
+    [
+     1711,
+     762
+    ]
+   ],
+   "name": "Crossed box on the library map (no legend; the usual plan symbol for an elevator or shaft)"
+  },
+  {
+   "kind": "xbox",
+   "px": [
+    [
+     1798,
+     680
+    ],
+    [
+     1865,
+     680
+    ],
+    [
+     1865,
+     762
+    ],
+    [
+     1798,
+     762
+    ]
+   ],
+   "name": "Crossed box on the library map (no legend; the usual plan symbol for an elevator or shaft)"
+  },
+  {
+   "kind": "pod",
+   "pt": [
+    627,
+    487
+   ],
+   "ref": "R01",
+   "label": "R01",
+   "name": "Collaboration pod R01"
+  },
+  {
+   "kind": "pod",
+   "pt": [
+    685,
+    487
+   ],
+   "ref": "R02",
+   "label": "R02",
+   "name": "Collaboration pod R02"
+  },
+  {
+   "kind": "pod",
+   "pt": [
+    829,
+    470
+   ],
+   "ref": "R03",
+   "label": "R03",
+   "name": "Collaboration pod R03"
+  },
+  {
+   "kind": "pod",
+   "pt": [
+    992,
+    369
+   ],
+   "ref": "R04",
+   "label": "R04",
+   "name": "Collaboration pod R04"
+  },
+  {
+   "kind": "pod",
+   "pt": [
+    1098,
+    265
+   ],
+   "ref": "R05",
+   "label": "R05",
+   "name": "Collaboration pod R05"
+  },
+  {
+   "kind": "pod",
+   "pt": [
+    1148,
+    327
+   ],
+   "ref": "R06",
+   "label": "R06",
+   "name": "Collaboration pod R06"
+  },
+  {
+   "kind": "pod",
+   "pt": [
+    1324,
+    282
+   ],
+   "ref": "R07",
+   "label": "R07",
+   "name": "Collaboration pod R07"
+  },
+  {
+   "kind": "pod",
+   "pt": [
+    1515,
+    276
+   ],
+   "ref": "R08",
+   "label": "R08",
+   "name": "Collaboration pod R08"
+  },
+  {
+   "kind": "pod",
+   "pt": [
+    1593,
+    291
+   ],
+   "ref": "R09",
+   "label": "R09",
+   "name": "Collaboration pod R09"
+  },
+  {
+   "kind": "pod",
+   "pt": [
+    1700,
+    410
+   ],
+   "ref": "R10",
+   "label": "R10",
+   "name": "Collaboration pod R10"
+  },
+  {
+   "kind": "pod",
+   "pt": [
+    1511,
+    438
+   ],
+   "ref": "R11",
+   "label": "R11",
+   "name": "Collaboration pod R11"
+  },
+  {
+   "kind": "pod",
+   "pt": [
+    1517,
+    517
+   ],
+   "ref": "R12",
+   "label": "R12",
+   "name": "Collaboration pod R12"
+  },
+  {
+   "kind": "pod",
+   "pt": [
+    1426,
+    589
+   ],
+   "ref": "R13",
+   "label": "R13",
+   "name": "Collaboration pod R13"
+  },
+  {
+   "kind": "pod",
+   "pt": [
+    1340,
+    532
+   ],
+   "ref": "R14",
+   "label": "R14",
+   "name": "Collaboration pod R14"
+  },
+  {
+   "kind": "pod",
+   "pt": [
+    1079,
+    650
+   ],
+   "ref": "R15",
+   "label": "R15",
+   "name": "Collaboration pod R15"
+  },
+  {
+   "kind": "pod",
+   "pt": [
+    1008,
+    616
+   ],
+   "ref": "R16",
+   "label": "R16",
+   "name": "Collaboration pod R16"
+  },
+  {
+   "kind": "pod",
+   "pt": [
+    1190,
+    469
+   ],
+   "ref": "R17",
+   "label": "R17",
+   "name": "Collaboration pod R17"
+  },
+  {
+   "kind": "pod",
+   "pt": [
+    1045,
+    497
+   ],
+   "ref": "R18",
+   "label": "R18",
+   "name": "Collaboration pod R18"
+  },
+  {
+   "kind": "pod",
+   "pt": [
+    772,
+    632
+   ],
+   "ref": "R19",
+   "label": "R19",
+   "name": "Collaboration pod R19"
+  },
+  {
+   "kind": "pod",
+   "pt": [
+    780,
+    711
+   ],
+   "ref": "R20",
+   "label": "R20",
+   "name": "Collaboration pod R20"
+  }
+ ],
+ "notes": [
+  "The library map is a diagram: corridors are the white space between rooms, not drawn walls.",
+  "Which restroom number goes with which pink box is matched by position (west pair = 11938/11940, east pair = 11368A/B).",
+  "Gray blocks are areas the map leaves unlabeled.",
+  "Pod positions are the centers of the pod tables on the map.",
+  "The two small teal boxes next to the restrooms have no label or legend on the map."
+ ],
+ "erase": [
+  [
+   [
+    645,
+    58
+   ],
+   [
+    645,
+    80
+   ]
+  ]
+ ],
+ "labels": [
+  {
+   "px": [
+    645,
+    43
+   ],
+   "text": "G13"
+  }
+ ]
+}

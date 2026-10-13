@@ -39,6 +39,9 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import floorplans as FP  # noqa: E402
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 UA = 'UclaStudySpace-maps/1.0 (+https://github.com/Taylor-Nilsen/UclaStudySpace)'
 
@@ -303,55 +306,6 @@ def fit_affine(pairs):
 
 def apply_affine(T, u, v):
     return (T[0][0] * u + T[0][1] * v + T[0][2], T[1][0] * u + T[1][1] * v + T[1][2])
-
-
-def fit_similarity(pairs):
-    """pixel (x right, y down) -> projected metres. Returns (fn, residuals in m, metres per px, rotation deg)."""
-    rows, rhs = [], []
-    for (u, py), (X, Y) in pairs:
-        v = -py
-        rows.append([u, -v, 1, 0])
-        rhs.append(X)
-        rows.append([v, u, 0, 1])
-        rhs.append(Y)
-    A = [[sum(r[i] * r[j] for r in rows) for j in range(4)] for i in range(4)]
-    b = [sum(r[i] * y for r, y in zip(rows, rhs)) for i in range(4)]
-    a, c, tx, ty = solve(A, b)
-    fn = lambda u, py: (a * u + c * py + tx, c * u - a * py + ty)
-    res = [math.dist(fn(*uv), xy) for uv, xy in pairs]
-    return fn, res, math.hypot(a, c), math.degrees(math.atan2(c, a))
-
-
-def load_plans(out_dir, log):
-    """Hand-traced plans in maps/plans/*.json (pixel coordinates + control points)."""
-    plans = {}
-    pdir = os.path.join(out_dir, 'plans')
-    if not os.path.isdir(pdir):
-        return plans
-    for fn in sorted(os.listdir(pdir)):
-        if not fn.endswith('.json'):
-            continue
-        with open(os.path.join(pdir, fn), encoding='utf-8') as fh:
-            doc = json.load(fh)
-        pairs = [(tuple(c['px']), proj(*c['ll'])) for c in doc['control']]
-        f, res, scale, rot = fit_similarity(pairs)
-        ll = lambda pt: [r6(v) for v in unproj(*f(*pt))]
-        spaces = []
-        for sp in doc['spaces']:
-            o = {k: v for k, v in sp.items() if k not in ('px', 'pt')}
-            if 'px' in sp:
-                o['poly'] = [ll(pt) for pt in sp['px']]
-            if 'pt' in sp:
-                o['at'] = ll(sp['pt'])
-            spaces.append(o)
-        rms = math.sqrt(sum(r * r for r in res) / len(res))
-        log.append(f"plan {fn}: {len(spaces)} spaces, fit on {len(pairs)} control points, "
-                   f"residual max {max(res):.2f} m, rms {rms:.2f} m, {scale * 100:.1f} cm per pixel, rotated {rot:.1f} deg")
-        plans.setdefault(doc['building'], []).append({
-            'file': 'plans/' + fn, 'floor': doc['floor'], 'title': doc['title'], 'source': doc['source'], 'how': doc['how'],
-            'notes': doc.get('notes', []), 'fit': {'points': len(pairs), 'max_m': round(max(res), 2), 'rms_m': round(rms, 2)},
-            'control': [c['what'] for c in doc['control']], 'spaces': spaces})
-    return plans
 
 
 # ---------------------------------------------------------------------------
@@ -647,7 +601,12 @@ def main():
             areas_by_name.setdefault(norm_name(f['properties']['NAM']), []).append(f)
     floors_by_name = {norm_name(f['properties']['NAM']): f['properties'].get('FLR_QTY') for f in bldg_pts}
 
-    plans = load_plans(args.out, log)
+    records = FP.load_records(os.path.join(args.out, 'plans'))
+    for code, recs in records.items():
+        for rec in recs:
+            fit = rec.get('fit') or {}
+            log.append(f"floor record {rec['file']}: {code} floor {rec['floor']}, {len(rec['rooms'])} rooms, "
+                       f"{len(rec.get('walls', []))} wall lines, fit max {fit.get('max_m')} m on {fit.get('points')} points")
     index = {'generated': today, 'buildings': {}, 'aliases': {}, 'sources': SOURCES}
     coverage = {}
     feature_owner = {}  # c3d id -> code, so a door is used once
@@ -918,20 +877,8 @@ def main():
             uniq.append(f)
         feats = uniq
 
-        # traced plans: rooms with a sourced position
-        bplans = plans.get(code, [])
-        rooms = {}
-        for pl in bplans:
-            inside = [dist_to_shape(proj(*pt), shape) for sp in pl['spaces'] for pt in (sp.get('poly') or [sp['at']])]
-            pl['fit']['outside_outline_max_m'] = round(max(inside), 1)
-            for sp in pl['spaces']:
-                if sp.get('id'):
-                    pts = sp.get('poly') or [sp['at']]
-                    rooms[sp['id']] = {'floor': pl['floor'], 'lat': r6(sum(p[0] for p in pts) / len(pts)),
-                                       'lon': r6(sum(p[1] for p in pts) / len(pts)), 'plan': pl['file']}
-
         # floors evidenced by the data
-        levels = sorted({f['floor'] for f in feats if f.get('floor')} | {pl['floor'] for pl in bplans}, key=level_key)
+        levels = sorted({f['floor'] for f in feats if f.get('floor')}, key=level_key)
 
         outer_ll = [[[r6(v) for v in unproj(x, y)] for x, y in o] for o, _ in shape]
         holes_ll = [[[[r6(v) for v in unproj(x, y)] for x, y in h] for h in holes] for _, holes in shape]
@@ -949,9 +896,9 @@ def main():
             'levels': levels,
             'features': sorted(feats, key=lambda f: (f['t'], f.get('floor') or '', f.get('name') or '')),
         }
-        if bplans:
-            doc['plans'] = bplans
-            doc['rooms'] = rooms
+        # floors traced from published plans (maps/plans/*.json, written by trace_plan.py)
+        FP.merge_into(doc, records.get(code, []))
+        rooms = doc.get('rooms', {})
         with open(os.path.join(args.out, safe_name(code) + '.json'), 'w', encoding='utf-8') as fh:
             json.dump(doc, fh, ensure_ascii=False, separators=(',', ':'))
         index['buildings'][code] = {
@@ -974,7 +921,7 @@ def main():
             restrooms=sum(1 for f in feats if f['t'] == 'restroom' and f['acc'] != 'building'),
             restrooms_listed=cnt('restroom'),
             rule=f'{rule_ok}/{rule_checked}' if rule_checked else 'no UCLA floor records',
-            plans=[f"{pl['title']} ({len(pl['spaces'])} spaces, fit max {pl['fit']['max_m']} m)" for pl in bplans],
+            plans=FP.coverage_text(records.get(code, [])),
             rooms_placed=sorted(rooms),
             floors=cfg.get('_floors'))
 
@@ -988,6 +935,7 @@ def main():
     with open(os.path.join(args.out, 'coverage.json'), 'w', encoding='utf-8') as fh:
         json.dump({'generated': today, 'notes': log, 'buildings': coverage}, fh, ensure_ascii=False, indent=1)
     write_coverage_md(os.path.join(args.out, 'SOURCES.md'), coverage, today)
+    FP.write_plans_md(os.path.join(args.out, 'SOURCES.md'), records, today)
     for line in log:
         print('note:', line)
     print(f'wrote {len(index["buildings"])} buildings to {args.out}')
@@ -1025,7 +973,7 @@ def write_coverage_md(path, coverage, today):
             wc += f'; {listed} more listed without a position'
         rooms = '; '.join(c['plans']) if c['plans'] else 'missing (no public plan found)'
         if c['rooms_placed']:
-            rooms += f"; {len(c['rooms_placed'])} bookable rooms placed"
+            rooms += f"; {len(c['rooms_placed'])} numbered rooms placed"
         rows.append(f"| {code} | {outline} | {doors} | {elev} | {stairs} | {wc} | {rooms} | {c['rule']} |")
     body = f'{a}\n_Generated by build_maps.py on {today}._\n\n' + '\n'.join(rows) + f'\n{b}'
     text = text[:text.index(a)] + body + text[text.index(b) + len(b):]

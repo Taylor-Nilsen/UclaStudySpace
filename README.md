@@ -78,7 +78,7 @@ If it can't get your location, the message next to the button says why and where
 
 **Maps.** Every room card has a "🗺️ Map" button. It opens a popup with two tabs:
 
-- **Floor**: a simple line drawing of the building, like the fire escape plans on the wall. It shows the outline, doors and exits, stair doors and outside steps, elevators and restrooms, with a north arrow and a scale bar in meters and feet. Pick a floor at the top. The room's floor comes from its number (Boelter 2444 is on floor 2), and the page says how sure that is. "📍 Show me" puts a dot where you are with your GPS accuracy around it, and tells you if you're outside the building and how far away. GPS can't tell what floor you're on.
+- **Floor**: the building drawn like the fire escape plan on the wall, on a light "paper" panel (a ☾ Dark button switches the plan to dark colors and the choice is remembered). Thick black outer walls, thinner inside walls, every room as a box with its number, corridors left open, stairs with treads, elevators with the up/down sign, restrooms in blue, exits as green EXIT tags with the door swing, a north arrow, a scale bar in meters and feet, and a legend of what's on the plan. Your room is filled yellow. Pick a floor at the top (▦ marks floors that have a traced plan). Zoom with + and −, a pinch, ctrl+scroll or a double click, and drag to move; ⤢ shows the whole building. The room's floor comes from its number (Boelter 2444 is on floor 2), and the page says how sure that is. "📍 Show me" puts a red YOU ARE HERE marker where you are, with your GPS accuracy around it (an arrow at the edge when you're off the part shown), and tells you if you're outside the building and how far away. GPS can't tell what floor you're on.
 - **Campus**: an OpenStreetMap map with the building in blue, the other StudySpace buildings outlined, and your position if location is on. Leaflet only loads the first time you open this tab.
 
 "Directions" opens walking directions in Apple Maps on iPhone, iPad and Mac, and in Google Maps everywhere else.
@@ -88,13 +88,20 @@ What's accurate and what isn't:
 - Outlines are from OpenStreetMap or UCLA's campus GIS, good to about a meter. Each building says how well the two agree.
 - Doors are from UCLA's accessibility survey on maps.ucla.edu and from OpenStreetMap. Restrooms are from UCLA's GIS and the same survey, with room numbers.
 - Most elevators come from UCLA's 2020 accessibility map PDF, which has no coordinates. The script lines it up with the building outlines, and its dots end up about 7 m from where they really are. Those show with a dashed ring and say "approximate".
-- Rooms and corridors are only drawn where a published plan exists. Right now that's the YRL Research Commons (group study rooms G01 to G15 and the pods), traced from the UCLA Library's map. UCLA keeps real floor plans in its Space Inventory, but that needs a UCLA login. So for most buildings the room's spot inside isn't known, and the page says "position not mapped" instead of guessing. Indoor stairwells aren't in any public source either.
+- Rooms, corridors, stairs and walls are only drawn where a published plan exists. `maps/trace_plan.py` traces the plan (an image or a PDF page) into rooms and walls and lines it up with the ground using 2 to 4 control points; `maps/SOURCES.md` lists every traced floor with its source, date and fit error, and the map names the plan and its date under the drawing. Right now that's the YRL Research Commons (group study rooms G01 to G15 and the pods), traced from the UCLA Library's map. UCLA keeps real floor plans in its Space Inventory, but that needs a UCLA login. A floor with no plan shows the outline, doors, elevators and restrooms, and the page says "room position not mapped" instead of guessing.
 
 `maps/SOURCES.md` lists every source, how each one was lined up, the leads that didn't pan out, and a table of what's known for each building. To rebuild the map data:
 
 ```bash
 pip install pdfplumber
 python maps/build_maps.py            # add --refresh to download everything again
+```
+
+To trace a plan, write a control file next to the others in `maps/plans/` and run it (see the top of `trace_plan.py` for the format; it needs `pip install opencv-python-headless scikit-image scipy pypdfium2 pdfplumber pytesseract` and the `tesseract` program for scanned plans):
+
+```bash
+python maps/trace_plan.py maps/plans/YRL-1.control.json --debug /tmp/trace   # writes maps/plans/YRL-1.json and updates maps/YRL.json
+python maps/trace_plan.py --render plan.pdf --page 2 --out grid.png          # a pixel grid for picking control points
 ```
 
 Downloads go to `maps/.cache` (git-ignored). Only the small JSON files in `maps/` get committed. `maps.js` is all the page code for the maps; it does nothing until you press a Map button.

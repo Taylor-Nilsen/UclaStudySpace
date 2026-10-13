@@ -2,7 +2,7 @@
  "generated": "2026-10-13",
  "notes": [
   "accessibility PDF: 471 dots, affine fit on 75 buildings, median residual 6.5 m, 90th pct 13.4 m (before local correction)",
-  "plan YRL-research-commons.json: 57 spaces, fit on 4 control points, residual max 0.36 m, rms 0.25 m, 3.4 cm per pixel, rotated 0.6 deg",
+  "floor record plans/YRL-1.json: YRL floor 1, 60 rooms, 0 wall lines, fit max 0.36 m on 4 points",
   "FRANZ: OSM outline matches UCLA GIS 38% and Concept3D 36%; UCLA GIS outline matches Concept3D 78%, so the UCLA outline is used",
   "SPROUL: OSM outline matches UCLA GIS 58% and Concept3D 54%; UCLA GIS outline matches Concept3D 75%, so the UCLA outline is used",
   "PDF accessible-entrance dots vs nearest surveyed/OSM door: median 6.8 m, 90th pct 27.7 m (n=90)"
@@ -1006,7 +1006,7 @@
    "restrooms_listed": 5,
    "rule": "4/4",
    "plans": [
-    "Research Commons, YRL floor 1 (west part of the floor only) (57 spaces, fit max 0.36 m)"
+    "floor 1: 40 spaces from UCLA Library (2024), fit max 0.36 m"
    ],
    "rooms_placed": [
     "G01",
