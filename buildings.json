@@ -1357,6 +1357,20 @@
     "location": "OpenStreetMap way 422876661"
    }
   },
+  "SPROUL LANDING": {
+   "name": "Sproul Landing",
+   "area": "hill",
+   "lat": 34.0715448,
+   "lon": -118.4502119,
+   "source": {
+    "name": "https://reslife.ucla.edu/academics (\"Sproul Landing Living Room\")",
+    "area": [
+     "https://reslife.ucla.edu/communities"
+    ],
+    "area_note": "Sproul Cove/Landing listed under On Campus communities",
+    "location": "OpenStreetMap way 422876643"
+   }
+  },
   "STRTHMR": {
    "name": "Strathmore Building",
    "area": "campus",
@@ -1370,6 +1384,17 @@
     ],
     "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
     "location": "OpenStreetMap way 422876644"
+   }
+  },
+  "SUNSET VILLAGE": {
+   "name": "Sunset Village (Canyon Point, Courtside, Delta Terrace)",
+   "area": "hill",
+   "source": {
+    "name": "https://reslife.ucla.edu/communities",
+    "area": [
+     "https://reslife.ucla.edu/communities"
+    ],
+    "area_note": "Sunset Village: Canyon Point, Courtside, Delta Terrace listed under On Campus communities"
    }
   },
   "TERASKI": {

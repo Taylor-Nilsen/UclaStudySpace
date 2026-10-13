@@ -563,17 +563,19 @@
         return `<div class="status busy">In use until ${fmtMin(st.until)}<small>${esc(st.cur.label)}${st.cur.org ? ' (event)' : ''}</small></div>`;
     }
 
-    // Whole libraries and labs are "open"; Hill rooms are booked ahead; library
-    // rooms and classrooms are free for drop-in when nobody has them.
+    // Whole libraries, labs and open Hill study spaces are "open"; Hill rooms are
+    // booked ahead; library rooms and classrooms are free for drop-in when nobody has them.
+    const OPEN_TYPES = new Set(['Library', 'Computer lab', 'Hill study space']);
     function freeWord(r){
-        if(r.type === 'Library' || r.type === 'Computer lab') return 'Open';
+        if(OPEN_TYPES.has(r.type)) return 'Open';
         return r._src === 'hill' ? 'Open to reserve' : 'Free now';
     }
-    // Library and lab notes: where it is and who can get in.
+    // Library, lab and open Hill space notes: where it is and who can get in.
     function noteHtml(r){
-        return r._src === 'library' && r.description ? `<p class="room-note">${esc(r.description)}</p>` : '';
+        return (r._src === 'library' || r.type === 'Hill study space') && r.description ? `<p class="room-note">${esc(r.description)}</p>` : '';
     }
     function linkLabel(r){
+        if(r.type === 'Hill study space') return 'Residential Life study spaces →';
         if(r._src === 'hill') return 'Reserve (Residential Life) →';
         if(r._src === 'library') return /study room/i.test(r.type || '') ? 'Reserve (UCLA Library) →' : 'Hours and details →';
         return 'UCLA Schedule →';
@@ -598,7 +600,7 @@
             return `<article class="room-card${open ? ' open' : ''}" data-idx="${idx}">
                 ${img}
                 <div class="room-head"><h3 class="room-title">${esc(r.text.replace(/\s+/g, ' '))}</h3><span class="pct" title="Share of 8am to 8pm that is open, not counting gaps under an hour">${freePct(r, pctDay)}% free ${pctDay.slice(0,3)}</span></div>
-                <div class="room-info"><span class="badge">${esc(r.building)}</span>${r.capacity ? `<span class="badge">Cap ${r.capacity}</span>` : ''}${r.type ? `<span class="badge">${esc(r.type)}</span>` : ''}${(AREAS[r._area] || {}).badge ? `<span class="badge" style="color:var(--free)">${AREAS[r._area].badge}</span>` : ''}${state.nearOn && distTo(r) != null ? `<span class="badge" style="color:var(--accent)">${distLabel(distTo(r))}</span>` : ''}${r._src === 'hill' ? `<span class="badge" title="${esc(r.description || '')}">Residents only</span>` : ''}${nUp ? `<span class="badge" style="color:var(--event)">${nUp} upcoming event${nUp > 1 ? 's' : ''}</span>` : ''}</div>
+                <div class="room-info"><span class="badge">${esc(r.building)}</span>${r.capacity ? `<span class="badge">Cap ${r.capacity}</span>` : ''}${r.type ? `<span class="badge">${esc(r.type)}</span>` : ''}${(AREAS[r._area] || {}).badge ? `<span class="badge" style="color:var(--free)">${AREAS[r._area].badge}</span>` : ''}${state.nearOn && distTo(r) != null ? `<span class="badge" style="color:var(--accent)">${distLabel(distTo(r))}</span>` : ''}${r._src === 'hill' && r.type !== 'Hill study space' ? `<span class="badge" title="${esc(r.description || '')}">Residents only</span>` : ''}${nUp ? `<span class="badge" style="color:var(--event)">${nUp} upcoming event${nUp > 1 ? 's' : ''}</span>` : ''}</div>
                 ${statusHtml(r._now, r)}
                 <div style="margin-top:8px"><button class="btn btn-details" type="button" data-toggle>Details ${open ? '▴' : '▾'}</button></div>
                 <div class="details">${open ? noteHtml(r) + detailsHtml(r) : ''}</div>
