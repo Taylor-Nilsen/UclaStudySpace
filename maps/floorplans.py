@@ -140,10 +140,17 @@ def write_plans_md(path, records_by_code, today):
             for r in rec['rooms']:
                 kinds[r['kind']] = kinds.get(r['kind'], 0) + 1
             ctl = '; '.join(f"{c['what']} {c['res_m']} m" for c in fit.get('control', []))
+            if fit.get('median_m') is not None:
+                ctl = f"outline fit: median {fit['median_m']} m, 90% within {fit['p90_m']} m"
+            chk = [c for c in rec.get('checks', []) if c.get('off_m') is not None]
+            if rec.get('checks'):
+                ctl += (f"; UCLA restroom check: {sum(1 for c in chk if c['off_m'] == 0)} of {len(rec['checks'])} "
+                        f"inside the traced room with their number")
             flags = len([r for r in rec['rooms'] if r.get('flag')])
+            npts = f", {fit['points']} points" if fit.get('points') else ''
             rows.append(
                 f"| {code} | {rec['floor']} | {rec.get('extent', 'full')} | {src} | {s.get('date', 'undated')} | "
-                f"{tr.get('mode', '?')} | {fit.get('transform', '?')}, {fit.get('points', '?')} points: {ctl} "
+                f"{tr.get('mode', '?')} | {fit.get('transform', '?')}{npts}: {ctl} "
                 f"(max {fit.get('max_m', '?')} m, rms {fit.get('rms_m', '?')} m, {fit.get('m_per_px', '?')} m/px) | "
                 f"{', '.join(f'{k} {v}' for k, v in sorted(kinds.items()))}; {len(rec.get('walls', []))} wall lines"
                 f"{f'; {flags} flagged' if flags else ''} | `{rec['file']}` |")

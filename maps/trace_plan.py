@@ -109,7 +109,13 @@ DEFAULTS = {
     'ocr_conf': 55,
     'corridor_halfwidth_m': 1.6,
     'grow_px': None,        # how far rooms are grown into the walls (None: half the wall)
+    'label_boxes': False,   # labels sit in small white boxes (UCLA Space Inventory): OCR each box, then erase it
+    'outside_colors': [],   # [[r, g, b, tol], ...] colors that are outside the building (background, courtyards)
+    'hatch_m': 0,           # > 0: dense hatching (stair treads) in blocks wider than this is opened up into floor
+    'ocr_rotated': True,    # also read text turned 90 degrees
 }
+# Space Inventory style suffixes on room numbers
+SUFFIX_KIND = [('corridor', re.compile(r'\d(CO|CU|CR|LO|VE)$')), ('stair', re.compile(r'\dST$')), ('elevator', re.compile(r'\dEL$'))]
 
 ROOMNUM = re.compile(r'^[A-Z]{0,2}\d{1,5}[A-Z]{0,2}$')
 KIND_WORDS = [
@@ -262,9 +268,412 @@ def _iou(a, b):
     return inter / u if u > 0 else 0
 
 
+def box_labels(img, mpp_guess=None):
+    """White label boxes (UCLA Space Inventory style): find them, OCR each one on its own."""
+    import cv2
+    import pytesseract
+    white = (img > 228).all(axis=2).astype(np.uint8)
+    n, lab, st, _ = cv2.connectedComponentsWithStats(white, connectivity=4)
+    out = []
+    cfg = '--psm 7 -c tessedit_char_whitelist=0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    for i in range(1, n):
+        x, y, w, h, a = st[i]
+        if not (6 <= min(w, h) <= 40 and 14 <= max(w, h) <= 160) or a < 0.7 * w * h:
+            continue
+        crop = img[max(0, y - 1):y + h + 1, max(0, x - 1):x + w + 1]
+        g = cv2.cvtColor(crop, cv2.COLOR_RGB2GRAY)
+        g = cv2.resize(g, None, fx=4, fy=4, interpolation=cv2.INTER_CUBIC)
+        g = cv2.copyMakeBorder(g, 12, 12, 12, 12, cv2.BORDER_CONSTANT, value=255)
+        cands = [g] if w >= h else [cv2.rotate(g, cv2.ROTATE_90_CLOCKWISE), cv2.rotate(g, cv2.ROTATE_90_COUNTERCLOCKWISE)]
+        best = None
+        for c in cands:
+            d = pytesseract.image_to_data(c, config=cfg, output_type=pytesseract.Output.DICT)
+            txt = ''.join(t for t in d['text'] if t.strip())
+            confs = [float(v) for v, t in zip(d['conf'], d['text']) if t.strip()]
+            conf = min(confs) if confs else -1
+            if txt and ROOMNUM.match(txt):
+                conf += 50
+            if txt and (best is None or conf > best[1]):
+                best = (txt, conf)
+        if best:
+            out.append({'text': best[0], 'conf': best[1], 'box': [float(x), float(y), float(x + w), float(y + h)], 'labelbox': True})
+    return out
+
+
+_RAPID = None
+
+
+def rapid_words(img, min_conf=0.5):
+    """Words from RapidOCR (pip install rapidocr-onnxruntime), which reads photos far better than tesseract.
+    None when it isn't installed."""
+    global _RAPID
+    try:
+        if _RAPID is None:
+            from rapidocr_onnxruntime import RapidOCR
+            _RAPID = RapidOCR()
+    except Exception:
+        return None
+    res, _ = _RAPID(img[..., ::-1].copy())
+    out = []
+    for box, txt, conf in res or []:
+        if float(conf) < min_conf or not re.search(r'[A-Za-z0-9]', txt):
+            continue
+        xs, ys = [p[0] for p in box], [p[1] for p in box]
+        out.append({'text': txt.strip(), 'conf': float(conf) * 100, 'box': [min(xs), min(ys), max(xs), max(ys)]})
+    return out
+
+
+def spaced_text(img, box, pad=6):
+    """Tesseract on one text block, to get the spaces RapidOCR drops ("TOMOLECULARSCI")."""
+    import cv2
+    import pytesseract
+    x0, y0, x1, y1 = [int(v) for v in box]
+    c = img[max(0, y0 - pad):y1 + pad, max(0, x0 - pad):x1 + pad]
+    g = cv2.resize(cv2.cvtColor(c, cv2.COLOR_RGB2GRAY), None, fx=2, fy=2, interpolation=cv2.INTER_CUBIC)
+    try:
+        return ' '.join(pytesseract.image_to_string(g, config='--psm 6').split())
+    except Exception:
+        return ''
+
+
+def rotated_words(img, scale, conf):
+    """OCR on the image turned 90 degrees both ways, boxes mapped back."""
+    import cv2
+    H, W = img.shape[:2]
+    out = []
+    for rot, back in ((cv2.ROTATE_90_CLOCKWISE, lambda b: [b[1], H - b[2], b[3], H - b[0]]),
+                      (cv2.ROTATE_90_COUNTERCLOCKWISE, lambda b: [W - b[3], b[0], W - b[1], b[2]])):
+        for w in ocr_words(cv2.rotate(img, rot), scale, conf):
+            if len(w['text']) < 3:
+                continue
+            w['box'] = back(w['box'])
+            w['rotated'] = True
+            out.append(w)
+    return out
+
+
+# ---------------------------------------------------------------------------
+# photos of posted evacuation plans
+# ---------------------------------------------------------------------------
+def rectify(img, corners=None, scale=2.0, thr=90):
+    """Find the sign's rectangular frame (or use 4 given corners: TL, TR, BR, BL) and undo the perspective."""
+    import cv2
+    H, W = img.shape[:2]
+    if corners is None:
+        g = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+        m = cv2.morphologyEx((g < thr).astype(np.uint8), cv2.MORPH_CLOSE, np.ones((5, 5), np.uint8))
+        cs, _ = cv2.findContours(m, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)
+        cands = []
+        for c in cs:
+            hull = cv2.convexHull(c)
+            a = cv2.contourArea(hull)
+            if a < 0.05 * W * H or cv2.contourArea(c) / a < 0.95:
+                continue
+            peri = cv2.arcLength(hull, True)
+            q = None
+            for eps in (0.01, 0.02, 0.03, 0.05, 0.08):
+                q = cv2.approxPolyDP(hull, eps * peri, True)
+                if len(q) == 4:
+                    break
+            if len(q) == 4:
+                cands.append((a, c, q.reshape(-1, 2).astype(float)))
+        if not cands:
+            raise SystemExit('could not find the sign frame; give its 4 corners as plan.corners [[x,y] TL, TR, BR, BL] in photo pixels')
+        a, c, q = min(cands, key=lambda t: t[0])     # the inner edge of the frame
+        sm, df = q.sum(1), q[:, 0] - q[:, 1]
+        q = np.array([q[sm.argmin()], q[df.argmax()], q[sm.argmax()], q[df.argmin()]])
+        # a straight line through each side, ignoring the rounded corners
+        P = c.reshape(-1, 2).astype(float)
+        lines = []
+        for i in range(4):
+            A, B = q[i], q[(i + 1) % 4]
+            L = np.linalg.norm(B - A)
+            u = (B - A) / L
+            nrm = np.array([-u[1], u[0]])
+            t, dd = (P - A) @ u, np.abs((P - A) @ nrm)
+            sel = P[(t > 0.08 * L) & (t < 0.92 * L) & (dd < 0.02 * L)]
+            if len(sel) < 10:
+                lines.append((A, u))
+                continue
+            vx, vy, x0, y0 = cv2.fitLine(sel.astype(np.float32), cv2.DIST_HUBER, 0, 0.01, 0.01).ravel()
+            lines.append((np.array([x0, y0]), np.array([vx, vy])))
+
+        def inter(l1, l2):
+            (p0, u0), (p1, u1) = l1, l2
+            t = np.linalg.solve(np.array([u0, -u1]).T, p1 - p0)
+            return p0 + t[0] * u0
+        corners = [inter(lines[3], lines[0]), inter(lines[0], lines[1]), inter(lines[1], lines[2]), inter(lines[2], lines[3])]
+    C = np.array(corners, float)
+    w = (np.linalg.norm(C[1] - C[0]) + np.linalg.norm(C[2] - C[3])) / 2 * scale
+    h = (np.linalg.norm(C[3] - C[0]) + np.linalg.norm(C[2] - C[1])) / 2 * scale
+    w, h = int(round(w)), int(round(h))
+    T = cv2.getPerspectiveTransform(C.astype(np.float32), np.float32([[0, 0], [w, 0], [w, h], [0, h]]))
+    out = cv2.warpPerspective(img, T, (w, h), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
+    return out, [[round(float(x), 1), round(float(y), 1)] for x, y in C]
+
+
+def flatten(gray, sigma=None):
+    """Even out glare and shading: divide by a blurred copy of the bright paper."""
+    import cv2
+    H, W = gray.shape
+    sigma = sigma or max(H, W) / 40
+    bg = cv2.GaussianBlur(cv2.dilate(gray, np.ones((15, 15), np.uint8)), (0, 0), sigma)
+    return np.clip(gray.astype(float) / np.maximum(bg, 1) * 230, 0, 255).astype(np.uint8)
+
+
+def find_xboxes(wall, mpp, min_m=0.8, max_m=4.0):
+    """Crossed boxes (the plan symbol for an elevator): two diagonals crossing at their midpoints."""
+    import cv2
+    from skimage.morphology import skeletonize
+    sk = skeletonize(wall).astype(np.uint8) * 255
+    L = cv2.HoughLinesP(sk, 1, np.pi / 180, threshold=12, minLineLength=int(min_m * 1.2 / mpp), maxLineGap=3)
+    if L is None:
+        return []
+    diag = []
+    for x1, y1, x2, y2 in L.reshape(-1, 4):
+        ang = math.degrees(math.atan2(y2 - y1, x2 - x1)) % 180
+        ln = math.hypot(x2 - x1, y2 - y1)
+        if ln * mpp > max_m * 1.5:
+            continue
+        if 30 < ang < 60:
+            diag.append(('p', (x1 + x2) / 2, (y1 + y2) / 2, ln))
+        elif 120 < ang < 150:
+            diag.append(('n', (x1 + x2) / 2, (y1 + y2) / 2, ln))
+    boxes = []
+    for a in diag:
+        if a[0] != 'p':
+            continue
+        for b in diag:
+            if b[0] == 'n' and abs(a[3] - b[3]) < 0.35 * max(a[3], b[3]) and math.hypot(a[1] - b[1], a[2] - b[2]) < 0.2 * max(a[3], b[3]):
+                cx, cy, half = (a[1] + b[1]) / 2, (a[2] + b[2]) / 2, max(a[3], b[3]) / 2 / math.sqrt(2)
+                if min_m <= 2 * half * mpp <= max_m and not any(math.hypot(cx - o[0], cy - o[1]) < half for o in boxes):
+                    boxes.append((cx, cy, half))
+    return boxes
+
+
+def text_blocks(words, gap=1.6):
+    """Group OCR words into blocks (a sign label like "STAIR 1 / ROOF / ACCESS")."""
+    blocks = []
+    for w in sorted(words, key=lambda w: (w['box'][1], w['box'][0])):
+        h = w['box'][3] - w['box'][1]
+        for b in blocks:
+            bx = b['box']
+            if (w['box'][0] < bx[2] + gap * h and w['box'][2] > bx[0] - gap * h and
+                    w['box'][1] < bx[3] + 0.9 * h and w['box'][3] > bx[1] - 0.9 * h):
+                b['words'].append(w)
+                b['box'] = [min(bx[0], w['box'][0]), min(bx[1], w['box'][1]), max(bx[2], w['box'][2]), max(bx[3], w['box'][3])]
+                break
+        else:
+            blocks.append({'words': [w], 'box': list(w['box'])})
+    for b in blocks:
+        b['text'] = ' '.join(w['text'] for w in text_lines(b['words']))
+    return blocks
+
+
+def region_text(gray, mask, scale=4):
+    """OCR one room on its own: everything outside the room is blanked first."""
+    import cv2
+    import pytesseract
+    ys, xs = np.nonzero(mask)
+    if not len(ys):
+        return ''
+    y0, y1, x0, x1 = ys.min(), ys.max() + 1, xs.min(), xs.max() + 1
+    from scipy import ndimage as ndi
+    g = gray[y0:y1, x0:x1].copy()
+    m = cv2.erode(ndi.binary_fill_holes(mask[y0:y1, x0:x1]).astype(np.uint8), np.ones((3, 3), np.uint8)).astype(bool)
+    g[~m] = 255
+    g = cv2.resize(g, None, fx=scale, fy=scale, interpolation=cv2.INTER_CUBIC)
+    g = cv2.copyMakeBorder(g, 20, 20, 20, 20, cv2.BORDER_CONSTANT, value=255)
+    _, g = cv2.threshold(g, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+    cfg = '--psm 6 -c tessedit_char_whitelist=0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+    try:
+        txt = pytesseract.image_to_string(g, config=cfg)
+    except Exception:
+        return ''
+    return ' '.join(t for t in txt.split() if re.search(r'[A-Za-z0-9]', t))
+
+
 # ---------------------------------------------------------------------------
 # georeferencing
 # ---------------------------------------------------------------------------
+def _seg_closest(P, A, B):
+    """closest points on segments A->B (M,2) to points P (N,2): (N,2) points and distances."""
+    d = B - A
+    L = (d ** 2).sum(1)
+    L[L == 0] = 1e-12
+    t = np.clip(((P[:, None, :] - A[None]) * d[None]).sum(2) / L[None], 0, 1)
+    Q = A[None] + t[..., None] * d[None]
+    dist = np.linalg.norm(P[:, None, :] - Q, axis=2)
+    k = dist.argmin(1)
+    return Q[np.arange(len(P)), k], dist[np.arange(len(P)), k]
+
+
+def _fit_sim(U, X):
+    rows, rhs = [], []
+    for (u, v), (x, y) in zip(U, X):
+        rows += [[u, v, 1, 0], [-v, u, 0, 1]]
+        rhs += [x, y]
+    a, b, tx, ty = np.linalg.lstsq(np.array(rows), np.array(rhs), rcond=None)[0]
+    return np.array([[a, b, tx], [b, -a, ty], [0, 0, 1]])
+
+
+def outline_icp(foot, shape, rot0=0.0, trim=0.85):
+    """Fit the plan's footprint (bool mask) to the building outline (projected metres) by ICP."""
+    import cv2
+    cs, _ = cv2.findContours(foot.astype(np.uint8), cv2.RETR_CCOMP, cv2.CHAIN_APPROX_NONE)
+    pts = np.concatenate([c[:, 0, :] for c in cs if len(c) > 20]).astype(float)
+    step = max(1, len(pts) // 2500)
+    U = pts[::step]
+    segs = [(r[i - 1], r[i]) for o, holes in shape for r in [o] + holes for i in range(len(r))]
+    A = np.array([a for a, _ in segs], float)
+    B = np.array([b for _, b in segs], float)
+    area_px = foot.sum()
+    area_m = sum(abs(_area(o)) - sum(abs(_area(h)) for h in holes) for o, holes in shape)
+    s0 = math.sqrt(area_m / area_px)
+    cu = np.argwhere(foot)[:, ::-1].mean(0)
+    allpts = np.array([q for o, _ in shape for q in o])
+    cx = allpts.mean(0)
+    best = None
+    for rot in ([rot0] if rot0 is not None else [0, 90, 180, 270]):
+        th = math.radians(rot)
+        a, b = s0 * math.cos(th), s0 * math.sin(th)
+        M = np.array([[a, b, 0], [b, -a, 0], [0, 0, 1.0]])
+        M[0, 2], M[1, 2] = cx[0] - (a * cu[0] + b * cu[1]), cx[1] - (b * cu[0] - a * cu[1])
+        for _ in range(60):
+            Xp = (M[:2, :2] @ U.T).T + M[:2, 2]
+            Q, d = _seg_closest(Xp, A, B)
+            keep = d <= np.quantile(d, trim)
+            M = _fit_sim(U[keep], Q[keep])
+        Xp = (M[:2, :2] @ U.T).T + M[:2, 2]
+        _, d = _seg_closest(Xp, A, B)
+        med = float(np.median(d))
+        if best is None or med < best[1]:
+            best = (M, med, float(np.quantile(d, 0.9)), d)
+    return best
+
+
+def _edge_positions(polys, horizontal, min_len=2.0, tol=1.0):
+    """Positions of the long axis-parallel edges of rectilinear polygons (already rotated to the building grid)."""
+    vals = []
+    for ring in polys:
+        for i in range(len(ring)):
+            (x1, y1), (x2, y2) = ring[i - 1], ring[i]
+            dx, dy = x2 - x1, y2 - y1
+            L = math.hypot(dx, dy)
+            if L < min_len:
+                continue
+            if horizontal and abs(dy) < 0.15 * abs(dx):
+                vals.append(((y1 + y2) / 2, L))
+            if not horizontal and abs(dx) < 0.15 * abs(dy):
+                vals.append(((x1 + x2) / 2, L))
+    vals.sort()
+    out = []
+    for v, w in vals:
+        if out and v - out[-1][0] < tol:
+            pv, pw = out[-1]
+            out[-1] = ((pv * pw + v * w) / (pw + w), pw + w)
+        else:
+            out.append((v, w))
+    return [v for v, _ in out]
+
+
+def _align(a, b, tol):
+    """Order-preserving matching of two sorted lists (dynamic programming)."""
+    n, m = len(a), len(b)
+    S = np.zeros((n + 1, m + 1))
+    B = {}
+    for i in range(1, n + 1):
+        for j in range(1, m + 1):
+            best, how = S[i - 1, j], 'a'
+            if S[i, j - 1] > best:
+                best, how = S[i, j - 1], 'b'
+            d = abs(a[i - 1] - b[j - 1])
+            if d < tol and S[i - 1, j - 1] + 1 - d / tol > best:
+                best, how = S[i - 1, j - 1] + 1 - d / tol, 'm'
+            S[i, j], B[(i, j)] = best, how
+    i, j, pairs = n, m, []
+    while i > 0 and j > 0:
+        h = B[(i, j)]
+        if h == 'm':
+            pairs.append((a[i - 1], b[j - 1]))
+            i, j = i - 1, j - 1
+        elif h == 'a':
+            i -= 1
+        else:
+            j -= 1
+    return pairs[::-1]
+
+
+class AxisWarp:
+    """Sign -> ground: a similarity, then a piecewise-linear stretch along each axis of the building grid,
+    so a schematic sign (wings drawn narrower than they are) still lands on the building's walls."""
+
+    def __init__(self, M, sign_polys_px, shape, tol=8.0):
+        self.M = M
+        ang = []
+        for o, holes in shape:
+            for r in [o] + holes:
+                for i in range(len(r)):
+                    (x1, y1), (x2, y2) = r[i - 1], r[i]
+                    L = math.hypot(x2 - x1, y2 - y1)
+                    if L > 2:
+                        ang.append((math.atan2(y2 - y1, x2 - x1) % (math.pi / 2), L))
+        # dominant grid angle (circular mean on a 90 degree period)
+        c = sum(L * math.cos(4 * t) for t, L in ang)
+        s_ = sum(L * math.sin(4 * t) for t, L in ang)
+        self.th = math.atan2(s_, c) / 4
+        rot = lambda P, t: [(x * math.cos(t) - y * math.sin(t), x * math.sin(t) + y * math.cos(t)) for x, y in P]
+        self._rot = rot
+        S = [rot([apply(M, u, v) for u, v in ring], -self.th) for ring in sign_polys_px]
+        O = [rot(r, -self.th) for o, holes in shape for r in [o] + holes]
+        self.px = self._pairs(S, O, 0, tol)
+        self.py = self._pairs(S, O, 1, tol)
+
+    @staticmethod
+    def _pairs(S, O, k, tol):
+        # first line up the overall extents, then match the edges in between in order
+        s0, s1 = min(p[k] for r in S for p in r), max(p[k] for r in S for p in r)
+        o0, o1 = min(p[k] for r in O for p in r), max(p[k] for r in O for p in r)
+        a = (o1 - o0) / (s1 - s0)
+        es, eo = _edge_positions(S, k == 1), _edge_positions(O, k == 1)
+        m = _align([o0 + a * (v - s0) for v in es], eo, tol)
+        inv = {round(o0 + a * (v - s0), 6): v for v in es}
+        pairs = [(inv[round(p, 6)], q) for p, q in m]
+        pairs = [(s0, o0)] + [pq for pq in pairs if s0 + 0.5 < pq[0] < s1 - 0.5] + [(s1, o1)]
+        out = []
+        for p, q in pairs:   # keep it monotonic
+            if not out or (p > out[-1][0] + 0.3 and q > out[-1][1] + 0.3):
+                out.append((p, q))
+        return out
+
+    @staticmethod
+    def _pl(pairs, v, inv=False):
+        if len(pairs) < 2:
+            return v + ((pairs[0][1] - pairs[0][0]) * (-1 if inv else 1) if pairs else 0)
+        xs = [q if inv else p for p, q in pairs]
+        ys = [p if inv else q for p, q in pairs]
+        if v <= xs[0]:
+            return ys[0] + (v - xs[0])
+        if v >= xs[-1]:
+            return ys[-1] + (v - xs[-1])
+        return float(np.interp(v, xs, ys))
+
+    def xy(self, u, v):
+        x, y = apply(self.M, u, v)
+        (x, y), = self._rot([(x, y)], -self.th)
+        x, y = self._pl(self.px, x), self._pl(self.py, y)
+        (x, y), = self._rot([(x, y)], self.th)
+        return x, y
+
+    def inv(self, X, Y):
+        (x, y), = self._rot([(X, Y)], -self.th)
+        x, y = self._pl(self.px, x, True), self._pl(self.py, y, True)
+        (x, y), = self._rot([(x, y)], self.th)
+        return apply(np.linalg.inv(self.M), x, y)
+
+
+def _area(r):
+    return sum(r[i - 1][0] * r[i][1] - r[i][0] * r[i - 1][1] for i in range(len(r))) / 2
 def resolve_control(ctl, bdoc):
     pts = []
     for c in ctl:
@@ -516,21 +925,39 @@ def trace(ctl, ctl_path, debug=None):
     H, W = img.shape[:2]
     say(f'{code} floor {floor}: {os.path.basename(path)} page {page}, {W}x{H} px, mode {mode}')
 
-    # georeference
-    cps = resolve_control(ctl['control'], bdoc)
-    M, res, loo, mpp, rot = georef(cps, ctl.get('transform', 'similarity'))
-    Minv = np.linalg.inv(M)
-    to_ll = lambda u, v: [r6(t) for t in unproj(*apply(M, u, v))]
-    say(f'  fit: {len(cps)} points, residual max {max(res):.2f} m, {mpp * 100:.1f} cm/px, rotation {rot:.1f} deg'
-        + (f', leave-one-out max {max(loo):.2f} m' if loo else ''))
     shape = [([proj(*q) for q in p['outer']], [[proj(*q) for q in h] for h in p['holes']]) for p in bdoc['outline']['polys']]
-    outline_px = [np.array([apply(Minv, *proj(*q)) for q in p['outer']], np.float64) for p in bdoc['outline']['polys']]
-
     roi = np.ones((H, W), bool)
     if ctl.get('crop'):
         x0, y0, x1, y1 = [int(v) for v in ctl['crop']]
         roi[:] = False
         roi[max(0, y0):y1, max(0, x0):x1] = True
+    outside = np.zeros((H, W), bool)
+    for r, g, b, tol in P['outside_colors']:
+        outside |= (np.abs(img.astype(np.int16) - np.array([r, g, b])).max(axis=2) <= tol)
+
+    # georeference
+    icp = None
+    if isinstance(ctl['control'], dict) and ctl['control'].get('auto') == 'outline':
+        foot = roi & ~outside & ~(img > 245).all(axis=2)
+        foot = cv2.morphologyEx(foot.astype(np.uint8), cv2.MORPH_CLOSE, np.ones((5, 5), np.uint8))
+        n_, lab_, st_, _ = cv2.connectedComponentsWithStats(foot, connectivity=8)
+        big = 1 + int(np.argmax(st_[1:, cv2.CC_STAT_AREA]))
+        foot = lab_ == big
+        M, med, p90, dists = outline_icp(foot, shape, ctl['control'].get('rot_init', 0.0))
+        mpp = math.sqrt(abs(np.linalg.det(M[:2, :2])))
+        rot = math.degrees(math.atan2(M[1, 0], M[0, 0]))
+        icp = {'median_m': round(med, 2), 'p90_m': round(p90, 2)}
+        cps, res, loo = [], [med], []
+        say(f'  fit: plan footprint fitted to the building outline (ICP): median {med:.2f} m, 90% within {p90:.2f} m, '
+            f'{mpp * 100:.1f} cm/px, rotation {rot:.1f} deg')
+    else:
+        cps = resolve_control(ctl['control'], bdoc)
+        M, res, loo, mpp, rot = georef(cps, ctl.get('transform', 'similarity'))
+        say(f'  fit: {len(cps)} points, residual max {max(res):.2f} m, {mpp * 100:.1f} cm/px, rotation {rot:.1f} deg'
+            + (f', leave-one-out max {max(loo):.2f} m' if loo else ''))
+    Minv = np.linalg.inv(M)
+    to_ll = lambda u, v: [r6(t) for t in unproj(*apply(M, u, v))]
+    outline_px = [np.array([apply(Minv, *proj(*q)) for q in p['outer']], np.float64) for p in bdoc['outline']['polys']]
 
     # ink and text
     words = []
@@ -539,16 +966,35 @@ def trace(ctl, ctl_path, debug=None):
         say(f'  vector: {nvec} PDF line objects drawn, {len(words)} words')
     else:
         if ctl.get('ocr', True):
-            words = ocr_words(img, P['ocr_scale'], P['ocr_conf'])
+            if P['label_boxes']:
+                words = box_labels(img)
+            else:
+                words = ocr_words(img, P['ocr_scale'], P['ocr_conf'])
+                if P['ocr_rotated']:
+                    words += [w for w in rotated_words(img, P['ocr_scale'], P['ocr_conf']) if not any(_iou(w['box'], o['box']) > 0.2 for o in words)]
             say(f'  OCR: {len(words)} words')
         gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
         thr = P['dark'] if P['dark'] is not None else (70 if mode == 'fills' else otsu(gray))
         wall = gray < thr
+        if P['label_boxes']:
+            m = np.zeros((H, W), np.uint8)
+            for w in words:
+                b = [int(v) for v in w['box']]
+                cv2.rectangle(m, (b[0] - 2, b[1] - 2), (b[2] + 2, b[3] + 2), 1, -1)
+            wall &= ~m.astype(bool)
+        if P['hatch_m']:
+            k = max(3, int(round(P['hatch_m'] / mpp)))
+            ker = cv2.getStructuringElement(cv2.MORPH_RECT, (k, k))
+            closed = cv2.morphologyEx(wall.astype(np.uint8), cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5)))
+            hatch = cv2.morphologyEx(closed, cv2.MORPH_OPEN, ker)
+            inner = cv2.erode(hatch, cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))).astype(bool)
+            hatch_mask = inner
+            wall &= ~inner
     for lb in ctl.get('labels', []):
         x, y = lb['px']
         words.append({'text': lb['text'], 'conf': 100, 'box': [x - 1, y - 1, x + 1, y + 1], 'manual': True})
     wall &= roi
-    if mode == 'walls':
+    if mode == 'walls' and not P['label_boxes']:
         for w in words:
             if w.get('manual'):
                 continue
@@ -586,7 +1032,7 @@ def trace(ctl, ctl_path, debug=None):
         for r, g, b, tol in P['exclude_colors']:
             free &= np.abs(rgb - np.array([r, g, b])).max(axis=2) > tol
     else:
-        free = ~sealed & roi
+        free = ~sealed & roi & ~outside
     n, lab = cv2.connectedComponents(free.astype(np.uint8), connectivity=4)
     if mode == 'fills':
         # fill holes left by text and icons inside a colored block; blocks nested inside a hole
@@ -694,13 +1140,23 @@ def trace(ctl, ctl_path, debug=None):
             if ROOMNUM.match(t) and re.search(r'\d{2}', t) and t not in nums:
                 nums.append(t)
         r = {}
-        kind = classify_text(text)
+        kind = classify_text(' '.join(w['text'] for w in ws if not ROOMNUM.match(w['text'].upper())))
+        for k_, rx in SUFFIX_KIND:
+            if any(rx.search(t) for t in nums):
+                kind = kind or k_
         if len(nums) == 1:
             r['ref'] = nums[0]
         elif len(nums) > 1:
             r['refs'] = nums
             r['flag'] = 'merged'
             flags.append(f'region at px {R["at"]} has {len(nums)} room numbers {nums}: rooms merged, add a cut')
+        wcs = [f for f in bdoc['features'] if f['t'] == 'restroom' and f.get('room') and f.get('floor') == floor and
+               any(re.sub(r'^0+', '', f['room'].upper()) == re.sub(r'^0+', '', t) for t in nums)]
+        if wcs and kind in (None, 'room'):
+            kind = 'restroom'
+            r['name'] = wcs[0].get('name') or 'Restroom'
+            if wcs[0].get('note'):
+                r['name'] += ' (' + wcs[0]['note'] + ')'
         if not kind:
             if nums:
                 kind = 'room'
@@ -717,7 +1173,7 @@ def trace(ctl, ctl_path, debug=None):
             r['label'] = '/'.join(r['refs'])
         elif words_only and kind != 'corridor':
             r['label'] = words_only[:28]
-        if words_only and (r.get('ref') or r.get('refs')):
+        if words_only and (r.get('ref') or r.get('refs')) and not r.get('name'):
             r['name'] = words_only[:40]
         r['kind'] = kind
         r.update(setters.get(i, {}))
@@ -786,6 +1242,27 @@ def trace(ctl, ctl_path, debug=None):
             walls.append([to_ll(float(p[0][0]), float(p[0][1])) for p in ap])
     wall_m = round(wpx * mpp, 2) if mode != 'fills' else None
 
+    # check: features that carry a room number (UCLA's restroom records) against the traced room with that number
+    checks = []
+    for f in bdoc['features']:
+        if f.get('room') and f.get('floor') == floor and f.get('acc') != 'building' and 'lat' in f:
+            want = re.sub(r'^0+', '', f['room'].upper())
+            hit = [r for r in rooms if r.get('ref') and re.sub(r'^0+', '', r['ref']) == want and r.get('poly')]
+            g = proj(f['lat'], f['lon'])
+            if hit:
+                ring = [proj(*q) for q in hit[0]['poly']]
+                d = dist_to_shape(g, [(ring, [])])
+                checks.append({'room': f['room'], 'src': f['src'], 'off_m': round(d, 1)})
+            else:
+                checks.append({'room': f['room'], 'src': f['src'], 'off_m': None})
+    if checks:
+        ok = [c for c in checks if c['off_m'] is not None]
+        say(f'  check: {len(ok)}/{len(checks)} numbered restrooms found on the plan; '
+            f'{sum(1 for c in ok if c["off_m"] == 0)} of them inside their traced room, worst {max([c["off_m"] for c in ok], default=0)} m off')
+        for c in checks:
+            if c['off_m'] is None or c['off_m'] > 0:
+                say(f'    {c["room"]} ({c["src"]}): ' + ('no traced room with that number' if c['off_m'] is None else f'{c["off_m"]} m outside its traced room'))
+
     # QA against the building outline
     outside = 0.0
     for r in rooms:
@@ -829,10 +1306,513 @@ def trace(ctl, ctl_path, debug=None):
                   'params': {k: v for k, v in ctl.get('params', {}).items()},
                   'sealed_doors': len(added), 'dropped': dropped, 'flags': flags,
                   'unplaced_labels': [w['text'] for w in unplaced]},
+        'checks': checks,
         'wall_m': wall_m,
         'rooms': [{k: v for k, v in r.items() if not k.startswith('_')} for r in rooms],
         'walls': walls,
     }
+    if icp:
+        rec['fit'].update({'transform': 'similarity, plan footprint fitted to the building outline (ICP)', 'points': None,
+                           'max_m': icp['p90_m'], 'rms_m': None, 'median_m': icp['median_m'], 'p90_m': icp['p90_m'], 'loo_max_m': None})
+    return rec
+
+
+PHOTO_DEFAULTS = {
+    'photo_scale': 2.0,     # the rectified sign is drawn at this many pixels per photo pixel
+    'dark': 170,            # ink, on the glare-flattened gray scale (paper = 230); thickened by a pixel
+    'min_wall_m': 1.2,      # ink pieces smaller than this are text and icons
+    'min_room_m2': 1.2,
+    'door_m': 1.6,          # door gaps on signs are short; 0 = no door sealing
+    'corridor_level': None, # region brightness above this is corridor (None: split the two clusters)
+    'net_m': 6.0,           # ink pieces at least this long are walls whatever their shape
+    'north_deg': 0.0,       # where north points on the sign, degrees clockwise from up (the sign's NORTH arrow)
+}
+
+
+def sign_footprint(norm, thr=170):
+    """The building on a sign: closed boxes that touch each other (rooms), not the legend or label boxes."""
+    import cv2
+    from scipy import ndimage as ndi
+    H, W = norm.shape
+    d = (norm < thr).astype(np.uint8)
+    mg = int(0.012 * max(H, W))
+    d[:mg] = d[-mg:] = 0
+    d[:, :mg] = d[:, -mg:] = 0
+    d = cv2.dilate(d, np.ones((3, 3), np.uint8))
+    n, lab, st, _ = cv2.connectedComponentsWithStats((1 - d).astype(np.uint8), connectivity=4)
+    border = set(np.unique(np.r_[lab[mg + 2], lab[-mg - 3], lab[:, mg + 2], lab[:, -mg - 3]]).tolist())
+    keep = np.zeros(n, bool)
+    amin = 0.0004 * H * W
+    for i in range(1, n):
+        if i in border or st[i, cv2.CC_STAT_AREA] < amin:
+            continue
+        keep[i] = True
+    cand = keep[lab].astype(np.uint8)
+    kk = int(0.04 * max(H, W)) | 1
+    near = cv2.morphologyEx(cand, cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (kk, kk)))
+    m, cl = cv2.connectedComponents(near, connectivity=8)
+    sizes = ndi.sum(cand, cl, range(1, m))
+    blob = cl == 1 + int(np.argmax(sizes))
+    return ndi.binary_fill_holes(blob)
+
+
+def region_poly(lab, i, sl, grow_k, eps, to_ll, H, W, pad, min_hole_px=1e9):
+    import cv2
+    ys, xs = slice(max(0, sl[0].start - pad), min(H, sl[0].stop + pad)), slice(max(0, sl[1].start - pad), min(W, sl[1].stop + pad))
+    m = cv2.dilate((lab[ys, xs] == i).astype(np.uint8), grow_k)
+    cs, hier = cv2.findContours(m, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_NONE)
+    if not cs:
+        return None, None
+    k_out = max((k for k in range(len(cs)) if hier[0][k][3] < 0), key=lambda k: cv2.contourArea(cs[k]))
+    ring = lambda c: [to_ll(float(p[0][0] + xs.start), float(p[0][1] + ys.start)) for p in cv2.approxPolyDP(c, eps, True)]
+    return ring(cs[k_out]), [ring(cs[k]) for k in range(len(cs)) if hier[0][k][3] == k_out and cv2.contourArea(cs[k]) > min_hole_px]
+
+
+def trace_photo(ctl, ctl_path, debug=None):
+    """A phone photo of a posted evacuation plan -> floor record."""
+    import cv2
+    from scipy import ndimage as ndi
+    code, floor = ctl['building'], str(ctl['floor'])
+    P = dict(DEFAULTS, **PHOTO_DEFAULTS, **ctl.get('params', {}))
+    bfile = os.path.join(HERE, FP.slug(code) + '.json')
+    with open(bfile, encoding='utf-8') as fh:
+        bdoc = json.load(fh)
+    shape = [([proj(*q) for q in p['outer']], [[proj(*q) for q in h] for h in p['holes']]) for p in bdoc['outline']['polys']]
+    path = plan_path(ctl['plan'], ctl_path, code)
+    raw = load_raster(path)
+    img, corners = rectify(raw, ctl['plan'].get('corners'), P['photo_scale'])
+    H, W = img.shape[:2]
+    rdir = debug or os.path.join(HERE, '.cache', 'plans', FP.slug(code), 'review')
+    os.makedirs(rdir, exist_ok=True)
+    stem = os.path.join(rdir, f'{FP.slug(code)}-{floor}')
+    cv2.imwrite(stem + '-rectified.png', cv2.cvtColor(img, cv2.COLOR_RGB2BGR))
+    say(f'{code} floor {floor}: photo {os.path.basename(path)} {raw.shape[1]}x{raw.shape[0]}, sign frame {corners}, rectified {W}x{H} px')
+
+    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+    norm = flatten(gray)
+    dark = cv2.dilate((norm < P['dark']).astype(np.uint8), np.ones((3, 3), np.uint8)).astype(bool)
+    rgb = img.astype(np.int16)
+    R, G, B = rgb[..., 0], rgb[..., 1], rgb[..., 2]
+    pink = (R - G > 35) & (R - B > 20)
+    blue = (B - R > 25) & (B - G > 12)
+
+    # the building: the enclosed spaces (rooms) that hang together, closed over the corridors and filled
+    foot = sign_footprint(norm, P['dark'])
+    cv2.imwrite(stem + '-footprint.png', (foot * 255).astype(np.uint8))
+    cps = []
+    if isinstance(ctl['control'], list):
+        cps = resolve_control(ctl['control'], bdoc)
+        M, res, loo, mpp, rot = georef(cps, ctl.get('transform', 'similarity'))
+        med, p90 = float(np.median(res)), max(res)
+        say(f'  fit: {len(cps)} control points, residual max {max(res):.2f} m' + (f', leave-one-out max {max(loo):.2f} m' if loo else ''))
+    else:
+        M, med, p90, _ = outline_icp(foot, shape, P['north_deg'], trim=P.get('icp_trim', 0.85))
+        say(f'  fit: sign outline fitted to the building outline: median {med:.2f} m, 90% within {p90:.2f} m')
+    mpp = math.sqrt(abs(np.linalg.det(M[:2, :2])))
+    rot = math.degrees(math.atan2(M[1, 0], M[0, 0]))
+    to_ll = lambda u, v: [r6(t) for t in unproj(*apply(M, u, v))]
+    to_xy = lambda u, v: apply(M, u, v)
+    from_xy = lambda X, Y: apply(np.linalg.inv(M), X, Y)
+    say(f'  {mpp * 100:.1f} cm/px, rotation {rot:.1f} deg')
+    warp = None
+    if not cps and P.get('warp', 'axes') == 'axes':
+        fc0, _ = cv2.findContours(foot.astype(np.uint8), cv2.RETR_CCOMP, cv2.CHAIN_APPROX_NONE)
+        sp = [cv2.approxPolyDP(c, 0.8 / mpp, True).reshape(-1, 2).astype(float).tolist() for c in fc0 if len(c) > 20]
+        warp = AxisWarp(M, sp, shape, P.get('warp_tol_m', 4.0))
+        to_xy, from_xy = warp.xy, warp.inv
+        to_ll = lambda u, v: [r6(t) for t in unproj(*warp.xy(u, v))]
+        segs = [(r[i - 1], r[i]) for o, holes in shape for r in [o] + holes for i in range(len(r))]
+        pts = np.concatenate([c[:, 0, :] for c in fc0 if len(c) > 20]).astype(float)[::5]
+        Xw = np.array([warp.xy(u, v) for u, v in pts])
+        _, dw = _seg_closest(Xw, np.array([a for a, _ in segs], float), np.array([b for _, b in segs], float))
+        say(f'  axis stretch: {len(warp.px)} x and {len(warp.py)} y edge pairs; outline fit now median {np.median(dw):.2f} m, '
+            f'90% within {np.quantile(dw, 0.9):.2f} m (was {med:.2f} / {p90:.2f})')
+        icp_before = (med, p90)
+        med, p90 = float(np.median(dw)), float(np.quantile(dw, 0.9))
+    px = lambda m: max(1, int(round(m / mpp)))
+
+    # solid ink: exit arrows, the YOU ARE HERE disc, stair treads, icons (much thicker than a wall line)
+    thin = norm < P['dark']
+    tw = wall_thickness_px(thin, skeleton(thin))
+    closed = cv2.morphologyEx(thin.astype(np.uint8), cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_RECT, (px(0.3), px(0.3))))
+    ko = max(px(0.45), int(2.2 * tw) + 1)
+    solid = cv2.morphologyEx(closed, cv2.MORPH_OPEN, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (ko, ko)))
+    ns, slab, sst, scen = cv2.connectedComponentsWithStats(solid, connectivity=8)
+    stairs_m = np.zeros((H, W), bool)
+    yah = None
+    xb = []
+    light = norm > P['dark']
+
+    def diag_light(x0, y0, sw, sh):
+        t = np.linspace(0.2, 0.8, 25)
+        best = 0
+        for dx in (-2, 0, 2):
+            a = light[(y0 + t * sh).astype(int), (x0 + dx + t * sw).astype(int)].mean()
+            b = light[(y0 + t * sh).astype(int), (x0 + dx + (1 - t) * sw).astype(int)].mean()
+            best = max(best, min(a, b))
+        return best
+    # elevators: a dark box cut by a light X into four dark triangles
+    nt, tlab, tst, tcen = cv2.connectedComponentsWithStats((thin & foot).astype(np.uint8), connectivity=4)
+    tri = [i for i in range(1, nt) if 0.3 <= max(tst[i, 2], tst[i, 3]) * mpp <= 4 and 0.3 < tst[i, 4] / (tst[i, 2] * tst[i, 3]) < 0.7]
+    tall = [j for j in tri if tst[j, 3] > 1.3 * tst[j, 2]]
+    wide = [j for j in tri if tst[j, 2] > 1.3 * tst[j, 3]]
+    for l_ in tall:
+        for r_ in tall:
+            hl = tst[l_, 3]
+            dx = tcen[r_][0] - tcen[l_][0]
+            if not (abs(tcen[l_][1] - tcen[r_][1]) < 0.15 * hl and 0.3 * hl < dx < 1.3 * hl):
+                continue
+            cx_, cy_ = (tcen[l_][0] + tcen[r_][0]) / 2, (tcen[l_][1] + tcen[r_][1]) / 2
+            up = [u for u in wide if abs(tcen[u][0] - cx_) < 0.2 * hl and -0.6 * hl < tcen[u][1] - cy_ < 0]
+            dn = [u for u in wide if abs(tcen[u][0] - cx_) < 0.2 * hl and 0 < tcen[u][1] - cy_ < 0.6 * hl]
+            if up and dn and 0.8 <= hl * mpp <= 4 and not any(math.hypot(cx_ - o[0], cy_ - o[1]) < hl / 2 for o in xb):
+                xb.append((cx_, cy_, hl / 2 + 3))
+    for i in range(1, ns):
+        x, y, w, h, a = sst[i]
+        comp = slab[y:y + h, x:x + w] == i
+        dens = thin[y:y + h, x:x + w][comp].mean()
+        if os.environ.get('TRACE_DEBUG'):
+            say(f'    solid {i}: {w}x{h} px at {x},{y}, {a * mpp * mpp:.1f} m2, density {dens:.2f}')
+        am2 = a * mpp * mpp
+        round_ = a / (math.pi * (max(w, h) / 2) ** 2)
+        # elevator: a dark box with a light X (one car, or several side by side)
+        k = max(1, int(round(max(w, h) / max(1, min(w, h)))))
+        side = min(w, h)
+        if False:
+            pass
+        if 0.7 < w / h < 1.4 and round_ > 0.7 and 0.8 < max(w, h) * mpp < 3.5 and foot[int(scen[i][1]), int(scen[i][0])]:
+            if yah is None or a > yah[2]:
+                yah = (scen[i][0], scen[i][1], a)
+            continue
+        sub = thin[y:y + h, x:x + w] & comp
+        trans = max((np.diff(sub.astype(np.int8), axis=1) == 1).sum(1).mean(), (np.diff(sub.astype(np.int8), axis=0) == 1).sum(0).mean())
+        if 0.3 < dens < P.get('stair_density', 0.85) and am2 >= 2.0 and trans >= 3.5 and foot[int(scen[i][1]), int(scen[i][0])]:
+            stairs_m[y:y + h, x:x + w] |= comp
+    allwords = (rapid_words(img) if ctl.get('ocr', True) else [])
+    if allwords is None:
+        allwords = ocr_words(img, 1, 50)
+    say(f'  OCR: {len(allwords)} text pieces')
+    textm = np.zeros((H, W), np.uint8)
+    for w in allwords:
+        b = [int(v) for v in w['box']]
+        if (b[3] - b[1]) * mpp < 1.5:
+            cv2.rectangle(textm, (b[0] - 4, b[1] - 4), (b[2] + 4, b[3] + 4), 1, -1)
+    textm = textm.astype(bool)
+    stairs_m &= ~cv2.dilate(textm.astype(np.uint8), np.ones((9, 9), np.uint8)).astype(bool)
+    stairs_m = remove_small(stairs_m, 1.2 / mpp)
+    erase = cv2.dilate(solid, np.ones((5, 5), np.uint8)).astype(bool) | textm | cv2.dilate((pink | blue).astype(np.uint8), np.ones((5, 5), np.uint8)).astype(bool)
+    wall = dark & ~erase & foot
+    # drop text: pieces not part of the wall network that are too fat to be a wall line
+    nn, wl, wst, _ = cv2.connectedComponentsWithStats(wall.astype(np.uint8), connectivity=8)
+    keepw = np.zeros(nn, bool)
+    for i in range(1, nn):
+        w_, h_ = wst[i, cv2.CC_STAT_WIDTH], wst[i, cv2.CC_STAT_HEIGHT]
+        keepw[i] = max(w_, h_) * mpp >= P['net_m'] or (max(w_, h_) * mpp >= P['min_wall_m'] and min(w_, h_) <= 2 * tw + 3)
+    wall = keepw[wl]
+    # the stair box keeps its outline
+    wall |= (cv2.morphologyEx(stairs_m.astype(np.uint8), cv2.MORPH_GRADIENT, np.ones((3, 3), np.uint8)).astype(bool) & dark)
+    # elevators: crossed boxes; their diagonals go, the box stays
+    for cx, cy, hf in xb:
+        x0, y0, x1, y1 = int(cx - hf + 3), int(cy - hf + 3), int(cx + hf - 3), int(cy + hf - 3)
+        wall[y0:y1, x0:x1] = False
+        cv2.rectangle(wall.view(np.uint8), (int(cx - hf), int(cy - hf)), (int(cx + hf), int(cy + hf)), 1, 2)
+    for a, b in ctl.get('cuts', []):
+        cv2.line(wall.view(np.uint8), tuple(int(v) for v in a), tuple(int(v) for v in b), 1, 3)
+    for a, b in ctl.get('erase', []):
+        cv2.line(wall.view(np.uint8), tuple(int(v) for v in a), tuple(int(v) for v in b), 0, 7)
+    sk = skeleton(wall)
+    wpx = wall_thickness_px(wall, sk)
+    if P['door_m']:
+        wall, sealed_ = seal_doors(wall, skel_graph(sk), sk, P['door_m'] / mpp, wpx)
+        say(f'  {len(sealed_)} door gaps closed')
+        sk = skeleton(wall)
+
+    # rooms and corridors: walls split them, and so does the fill (rooms gray, corridors white)
+    free = ~wall & foot
+    # under the erased arrows and icons the fill is unknown: paint it in from around
+    small = cv2.resize(norm, None, fx=0.5, fy=0.5, interpolation=cv2.INTER_AREA)
+    em = cv2.resize(erase.astype(np.uint8), (small.shape[1], small.shape[0]), interpolation=cv2.INTER_NEAREST)
+    filled = cv2.resize(cv2.inpaint(small, cv2.dilate(em, np.ones((3, 3), np.uint8)), 3, cv2.INPAINT_TELEA), (W, H), interpolation=cv2.INTER_LINEAR)
+    base = np.where(erase, filled, norm).astype(np.uint8)
+    sm = cv2.medianBlur(base, 7)
+    vals = sm[free & ~dark]
+    tone_cut = P['corridor_level'] or float(cv2.threshold(vals.reshape(-1, 1).astype(np.uint8), 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[0])
+    whiteish = sm > tone_cut
+    n1, lab1 = cv2.connectedComponents((free & ~whiteish).astype(np.uint8), connectivity=4)
+    n2, lab2 = cv2.connectedComponents((free & whiteish).astype(np.uint8), connectivity=4)
+    lab = np.where(lab2 > 0, lab2 + n1, lab1).astype(np.int32)
+    say(f'  fill tone cut {tone_cut:.0f} (rooms below, corridors above)')
+    objs = ndi.find_objects(lab)
+    regions = {}
+    for i, sl in enumerate(objs, start=1):
+        if sl is None:
+            continue
+        m = lab[sl] == i
+        area = m.sum() * mpp * mpp
+        if area < P['min_room_m2']:
+            continue
+        dt = cv2.distanceTransform(np.pad(m, 1).astype(np.uint8), cv2.DIST_L2, 5)[1:-1, 1:-1]
+        if dt.max() * mpp < P['min_halfwidth_m']:
+            continue
+        yy, xx = np.unravel_index(int(dt.argmax()), dt.shape)
+        regions[i] = {'sl': sl, 'area': area, 'hw': dt.max() * mpp, 'at': (xx + sl[1].start, yy + sl[0].start),
+                      'bright': float(np.median(norm[sl][m & ~dark[sl]])) if (m & ~dark[sl]).any() else 0}
+    for pxy in ctl.get('drop', []):
+        i = region_at(lab, pxy, regions)
+        regions.pop(i, None)
+    br = sorted(r['bright'] for r in regions.values())
+    lvl = tone_cut
+    blue_lab, nb = ndi.label(cv2.dilate(blue.astype(np.uint8), np.ones((3, 3), np.uint8)))
+    blue_pts = [c for c in ndi.center_of_mass(blue, blue_lab, range(1, nb + 1)) if c] if nb else []
+    blue_pts = [(x, y) for (y, x), sz in zip(blue_pts, ndi.sum(blue, blue_lab, range(1, nb + 1))) if sz * mpp * mpp > 0.15]
+
+    # labels file: the human-checked truth once it exists
+    lfile = os.path.join(HERE, 'plans', f'{FP.slug(code)}-{floor}.labels.json')
+    human = []
+    if os.path.exists(lfile):
+        with open(lfile, encoding='utf-8') as fh:
+            human = json.load(fh).get('regions', [])
+    hset = {}
+    for e in human:
+        i = region_at(lab, e['px'], regions)
+        if i is None:
+            say(f'  labels file: nothing at px {e["px"]} ({e.get("text")})')
+            continue
+        hset[i] = e
+
+    # a region holding two or more room numbers is two or more rooms joined through a gap: split it
+    numw = [w for w in allwords if re.fullmatch(r'[A-Z]{0,2}\d{3,5}[A-Z]?|[A-Z]{1,2}\d{2}', w['text'].upper().replace(' ', ''))]
+    byreg = {}
+    for w in numw:
+        cx_, cy_ = int((w['box'][0] + w['box'][2]) / 2), int((w['box'][1] + w['box'][3]) / 2)
+        i = region_at(lab, (cx_, cy_), regions, r=px(0.6))
+        if i is not None:
+            byreg.setdefault(i, []).append((cx_, cy_))
+    from skimage.segmentation import watershed
+    nxt = int(lab.max()) + 1
+    for i, seeds in byreg.items():
+        if len(seeds) < 2 or i not in regions:
+            continue
+        sl = regions[i]['sl']
+        m = lab[sl] == i
+        dt = cv2.distanceTransform(m.astype(np.uint8), cv2.DIST_L2, 5)
+        mk = np.zeros(m.shape, np.int32)
+        for k, (sx, sy) in enumerate(seeds, start=1):
+            mk[max(0, sy - sl[0].start - 3):sy - sl[0].start + 4, max(0, sx - sl[1].start - 3):sx - sl[1].start + 4] = k
+        mk[~m] = 0
+        ws = watershed(-dt, mk, mask=m)
+        base_reg = regions.pop(i)
+        for k in range(1, len(seeds) + 1):
+            part = ws == k
+            if part.sum() * mpp * mpp < P['min_room_m2']:
+                continue
+            sub = lab[sl]
+            sub[part] = nxt
+            pdt = cv2.distanceTransform(np.pad(part, 1).astype(np.uint8), cv2.DIST_L2, 5)[1:-1, 1:-1]
+            yy, xx = np.unravel_index(int(pdt.argmax()), pdt.shape)
+            ys_, xs_ = np.nonzero(part)
+            regions[nxt] = {'sl': (slice(sl[0].start + ys_.min(), sl[0].start + ys_.max() + 1), slice(sl[1].start + xs_.min(), sl[1].start + xs_.max() + 1)),
+                            'area': part.sum() * mpp * mpp, 'hw': pdt.max() * mpp, 'at': (xx + sl[1].start, yy + sl[0].start),
+                            'bright': base_reg['bright'], 'split': True}
+            nxt += 1
+    inroom = {}
+    for w in allwords:
+        cx_, cy_ = int((w['box'][0] + w['box'][2]) / 2), int((w['box'][1] + w['box'][3]) / 2)
+        i = int(lab[min(H - 1, cy_), min(W - 1, cx_)])
+        if i not in regions:
+            i = region_at(lab, (cx_, cy_), regions, r=px(0.6))
+        if i in regions:
+            inroom.setdefault(i, []).append(w)
+    rooms, review = [], []
+    grow = max(1, wpx // 2 + 1)
+    gk = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * grow + 1, 2 * grow + 1))
+    eps = max(0.8, P['simplify_m'] / mpp)
+    for i, Rg in regions.items():
+        sl = Rg['sl']
+        mask_full = lab[sl] == i
+        cx, cy = Rg['at']
+        kind = 'corridor' if Rg['bright'] >= lvl else 'room'
+        if (stairs_m[sl] & mask_full).sum() > P.get('stair_share', 0.35) * mask_full.sum() and Rg['area'] <= P.get('stair_max_m2', 45):
+            kind = 'stair'
+        if any(int(round(by)) in range(sl[0].start, sl[0].stop) and int(round(bx)) in range(sl[1].start, sl[1].stop) and lab[int(by), int(bx)] == i for bx, by, _ in xb):
+            kind = 'elevator'
+        if kind == 'room' and any(lab[int(by), int(bx)] == i for bx, by in blue_pts):
+            kind = 'restroom'
+        ocr = ''
+        if kind in ('room', 'restroom') and ctl.get('ocr', True):
+            ws_ = text_lines(inroom.get(i, []))
+            ocr = ' '.join(w['text'] for w in ws_)
+            if not ocr:
+                ocr = region_text(norm[sl], mask_full)
+        e = hset.get(i)
+        text = e.get('text', '') if e else ocr
+        if e and e.get('kind'):
+            kind = e['kind']
+        if e and e.get('drop'):
+            continue
+        r = {'kind': kind}
+        toks = [t.upper() for t in text.split()]
+        nums = []
+        for t in toks:
+            t2 = t.replace('O', '0') if re.fullmatch(r'[0-9O]{3,5}[A-Z]?', t) else t
+            if re.fullmatch(r'[A-Z]{0,2}\d{3,5}[A-Z]{0,2}|[A-Z]{1,2}\d{2}', t2):
+                nums.append(t2)
+        # "2057 A" on two lines is room 2057A
+        if len(nums) == 1 and len(toks) == 2 and re.fullmatch(r'[A-Z]', toks[1]) and toks[0] == nums[0]:
+            nums = [nums[0] + toks[1]]
+        words = [t for t in text.split() if t.upper() not in nums and not re.fullmatch(r'[A-Za-z]{0,2}\d{3,5}[A-Za-z]{0,2}', t)]
+        if len(nums) == 1:
+            r['ref'] = nums[0]
+            r['label'] = nums[0]
+        elif len(nums) > 1:
+            r['label'] = '/'.join(nums)
+            r['flag'] = 'merged'
+        elif text and kind != 'corridor':
+            r['label'] = text[:24]
+        kw = classify_text(' '.join(words))
+        if kw == 'restroom' and kind == 'room':
+            r['kind'] = kind = 'restroom'
+        if kind == 'restroom':
+            w = ' '.join(words).lower()
+            r['label'] = 'Women' if 'women' in w else 'Men' if re.search(r'\bmen\b', w) else r.get('label') or 'WC'
+            r['name'] = f"{r['label'] if r['label'] in ('Women', 'Men') else 'Restroom'}{' ' + r['ref'] if r.get('ref') else ''}"
+        poly, holes = region_poly(lab, i, sl, gk, eps, to_ll, H, W, grow + 2, 4.0 / mpp / mpp)
+        if not poly or len(poly) < 3:
+            continue
+        r['poly'] = poly
+        if holes:
+            r['holes'] = holes
+        r['_i'] = i
+        r['_px'] = [int(cx), int(cy)]
+        rooms.append(r)
+        review.append({'px': [int(cx), int(cy)], 'kind': r['kind'], 'text': text, 'ocr': ocr})
+
+    for cx, cy, hf in xb:
+        sq = [(cx - hf, cy - hf), (cx + hf, cy - hf), (cx + hf, cy + hf), (cx - hf, cy + hf)]
+        rooms = [r for r in rooms if not (r.get('_i') and lab[int(cy), int(cx)] == r['_i'] and regions[r['_i']]['area'] < 4 * (hf * mpp) ** 2 * 2)]
+        rooms.append({'kind': 'elevator', 'label': '', 'name': 'Elevator', 'poly': [to_ll(*q) for q in sq], '_px': [int(cx), int(cy)]})
+    say(f'  elevator cars: {[(int(x), int(y)) for x, y, _ in xb]}')
+
+    # sign text: stair names, connections to other buildings
+    used = {id(w) for ws_ in inroom.values() for w in ws_}
+    blocks = text_blocks([w for w in allwords if id(w) not in used], gap=1.0)
+    stairs = [r for r in rooms if r['kind'] == 'stair']
+    fc, _ = cv2.findContours(foot.astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+    fpts = np.concatenate([c[:, 0, :] for c in fc]).astype(float)
+    extra = []
+    for b in blocks:
+        t = re.sub(r'\s+', ' ', b['text']).strip()
+        if re.match(r'(T0|TO)[A-Z]', t) or re.search(r'NOROOF|ROOFACCESS', t):
+            t = spaced_text(img, b['box']) or t
+        bc = np.array([(b['box'][0] + b['box'][2]) / 2, (b['box'][1] + b['box'][3]) / 2])
+        mS = re.search(r'STAIR\s*(\w+)?', t, re.I)
+        if mS and stairs:
+            near = min(stairs, key=lambda r: math.dist(r['_px'], bc))
+            if math.dist(near['_px'], bc) * mpp < 15 and not near.get('label'):
+                near['label'] = f'Stair {mS.group(1)}' if mS.group(1) and mS.group(1).upper() != 'UP' else 'Stair'
+                rest = t[mS.end():].strip()
+                near['name'] = (near['label'] + (f' ({rest.lower()})' if rest else '')).replace('(no roof access)', '(no roof access)')
+        mT = re.match(r'(?:T0|TO)\s+([A-Z][^|]+?)[\s\W]*$', t, re.I)
+        if mT:
+            k = int(np.argmin(np.linalg.norm(fpts - bc, axis=1)))
+            if np.linalg.norm(fpts[k] - bc) * mpp < 15:
+                dest = re.sub(r'\s*&\s*', ' and ', mT.group(1))
+                dest = ' '.join(t for t in dest.split() if len(t) > 2 or t.lower() in ('and', 'of'))
+                dest = re.sub(r'\bSci\b', 'Sciences', dest.title()).replace(' And ', ' and ').replace(' Of ', ' of ')
+                extra.append({'kind': 'exit', 'label': 'To ' + dest, 'name': 'Connection to ' + dest,
+                              'at': to_ll(*fpts[k]), '_px': [int(fpts[k][0]), int(fpts[k][1])]})
+    for e in ctl.get('add', []):
+        r = {k: v for k, v in e.items() if k not in ('px', 'pt')}
+        if 'px' in e:
+            r['poly'] = [to_ll(*q) for q in e['px']]
+        if 'pt' in e:
+            r['at'] = to_ll(*e['pt'])
+        r['hand'] = True
+        extra.append(r)
+    for a in ctl.get('set', []):
+        i = region_at(lab, a['px'], regions)
+        for r in rooms:
+            if r.get('_i') == i:
+                r.update({k: v for k, v in a.items() if k != 'px'})
+    rooms += extra
+
+    # write the review file for the human pass (keeps what's already in it)
+    if ctl.get('_dry'):
+        lfile = stem + '-labels.json'
+    known = {tuple(e['px']) for e in human}
+    out = human + [e for e in review if tuple(e['px']) not in known and not any(region_at(lab, h['px'], regions) == region_at(lab, e['px'], regions) for h in human)]
+    with open(lfile, 'w', encoding='utf-8') as fh:
+        json.dump({'about': ('One entry per traced space, by a pixel inside it on the rectified sign '
+                             f'(maps/.cache/plans/{FP.slug(code)}/review/{FP.slug(code)}-{floor}-rectified.png). Fix "text" '
+                             '(the room number or name as printed) and "kind" (room, corridor, stair, elevator, restroom, mech, '
+                             'other); add "drop": true for a space that is not real; then rerun the control file. "ocr" is what OCR read.'),
+                   'regions': out}, fh, indent=1, ensure_ascii=False)
+
+    walls = []
+    for ln in skel_graph(sk):
+        c = np.array(ln, np.int32).reshape(-1, 1, 2)
+        if len(ln) > 1 and cv2.arcLength(c, False) * mpp >= P['min_wall_line_m']:
+            walls.append([to_ll(float(q[0][0]), float(q[0][1])) for q in cv2.approxPolyDP(c, eps, False)])
+
+    checks = []
+    for f in bdoc['features']:
+        if f.get('room') and f.get('floor') == floor and 'lat' in f and f.get('acc') != 'building':
+            want = re.sub(r'^0+', '', f['room'].upper())
+            hit = [r for r in rooms if r.get('ref') and re.sub(r'^0+', '', r['ref']) == want and r.get('poly')]
+            d = None
+            if hit:
+                d = round(dist_to_shape(proj(f['lat'], f['lon']), [([proj(*q) for q in hit[0]['poly']], [])]), 1)
+            checks.append({'room': f['room'], 'src': f['src'], 'off_m': d})
+    kinds = {}
+    for r in rooms:
+        kinds[r['kind']] = kinds.get(r['kind'], 0) + 1
+    say(f'  {len(rooms)} spaces {kinds}; corridor brightness cut {lvl}; {len(xb)} crossed boxes, {len(blue_pts)} restroom icons'
+        + (', YOU ARE HERE found' if yah else ''))
+    say(f'  room numbers: {sorted(r["ref"] for r in rooms if r.get("ref"))}')
+    for c in checks:
+        say(f'  check {c["room"]} ({c["src"]}): ' + ('not on the traced plan' if c['off_m'] is None else f'{c["off_m"]} m from its traced room'))
+    write_debug(stem, img, lab, rooms, {r['_i']: {'at': r['_px']} for r in rooms if r.get('_i')}, wall, sk, [], [], M, [], [], [])
+    ov = cv2.imread(stem + '-trace.png')
+    for r in rooms:
+        if r.get('_px') and not r.get('_i'):
+            cv2.drawMarker(ov, tuple(r['_px']), (0, 160, 0), cv2.MARKER_TRIANGLE_UP, 30, 3)
+            cv2.putText(ov, r['label'], (r['_px'][0] + 10, r['_px'][1]), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 120, 0), 2)
+    fpx = [np.array([from_xy(*proj(*q)) for q in p['outer']]) for p in bdoc['outline']['polys']]
+    for q in fpx:
+        cv2.polylines(ov, [np.round(q).astype(np.int32)], True, (0, 140, 255), 3)
+    cv2.imwrite(stem + '-trace.png', ov)
+
+    date = ctl['source'].get('date', '')
+    rec = {
+        'format': FP.FORMAT, 'building': code, 'floor': floor,
+        'title': ctl.get('title') or f'{bdoc["name"]}, floor {floor}',
+        'extent': ctl.get('extent', 'full'),
+        'source': ctl['source'],
+        'how': ctl.get('how') or ('Traced from a photo of the evacuation plan posted on this floor. The photo was squared up '
+                                  'from the sign\'s frame; walls are its dark lines, corridors its white spaces, rooms its gray '
+                                  'boxes; stairs are the hatched boxes, elevators the crossed boxes, restrooms the boxes with '
+                                  'the restroom icon. Room numbers were read by OCR and checked by hand. The sign has no scale, '
+                                  'so its building outline was fitted to the mapped outline (with north as its NORTH arrow shows).'),
+        'notes': ctl.get('notes', []),
+        'fit': {'transform': 'similarity, sign outline fitted to the building outline (ICP)' + (', then stretched along the building grid to match its walls' if warp else ''),
+                'similarity_median_m': round(icp_before[0], 2) if warp else None, 'similarity_p90_m': round(icp_before[1], 2) if warp else None,
+                'points': None,
+                'max_m': round(p90, 2), 'rms_m': None, 'median_m': round(med, 2), 'p90_m': round(p90, 2), 'loo_max_m': None,
+                'm_per_px': round(mpp, 4), 'rot_deg': round(rot, 2), 'control': []},
+        'trace': {'mode': 'photo', 'tool': 'maps/trace_plan.py', 'date': datetime.date.today().isoformat(),
+                  'plan_file': os.path.basename(path), 'sign_corners_px': corners, 'rectified_px': [W, H],
+                  'params': ctl.get('params', {}), 'labels_file': os.path.basename(lfile)},
+        'checks': checks,
+        'wall_m': round(wpx * mpp, 2),
+        'rooms': [{k: v for k, v in r.items() if not k.startswith('_')} for r in rooms],
+        'walls': walls,
+    }
+    if yah:
+        rec['sign_at'] = to_ll(yah[0], yah[1])
+    if warp:
+        rec['fit']['stretch'] = {'grid_deg': round(math.degrees(warp.th), 2),
+                                 'x_pairs_m': [[round(a, 1), round(b, 1)] for a, b in warp.px],
+                                 'y_pairs_m': [[round(a, 1), round(b, 1)] for a, b in warp.py]}
     return rec
 
 
@@ -840,6 +1820,9 @@ def default_how(mode, ctl, cps):
     what = {'walls': 'Walls are the dark lines of the plan image; rooms are the spaces they enclose, with door gaps closed by extending each wall end up to 2 m.',
             'vector': "Walls are the plan's own vector lines (from the PDF), rooms are the spaces they enclose, and room numbers are the PDF's text.",
             'fills': 'Rooms are the solid colored blocks of the map; labels were read by OCR and checked by hand.'}[mode]
+    if not cps:
+        return (f'{what} The plan has no scale or north arrow, so its building outline was fitted to the mapped outline '
+                f'(scale, rotation and shift, by iterative closest point).')
     return (f'{what} The plan was fitted to the ground with a {ctl.get("transform", "similarity")} transform on {len(cps)} '
             f'control points ({"; ".join(c["what"] for c in cps)}).')
 
@@ -933,9 +1916,48 @@ def merge_all(codes=None):
     FP.write_plans_md(os.path.join(HERE, 'SOURCES.md'), recs, datetime.date.today().isoformat())
 
 
+def photo_control(photo, a):
+    """Start (or update) the control file for a photo of a posted evacuation plan."""
+    import shutil
+    if not (a.building and a.floor):
+        raise SystemExit('a photo needs --building and --floor')
+    code, floor = a.building.upper(), str(a.floor)
+    if not os.path.exists(os.path.join(HERE, FP.slug(code) + '.json')):
+        raise SystemExit(f'no maps/{FP.slug(code)}.json; use a code from maps/index.json')
+    ext = os.path.splitext(photo)[1].lower() or '.jpg'
+    name = f'{FP.slug(code)}-{floor}-evac{ext}'
+    dst = os.path.join(HERE, '.cache', 'plans', FP.slug(code), name)
+    os.makedirs(os.path.dirname(dst), exist_ok=True)
+    if os.path.abspath(photo) != os.path.abspath(dst):
+        shutil.copyfile(photo, dst)
+    date = a.date or datetime.date.fromtimestamp(os.path.getmtime(photo)).isoformat()
+    cp = os.path.join(HERE, 'plans', f'{FP.slug(code)}-{floor}.control.json')
+    ctl = {}
+    if os.path.exists(cp):
+        with open(cp, encoding='utf-8') as fh:
+            ctl = json.load(fh)
+    ctl.update({'building': code, 'floor': floor, 'mode': 'photo', 'extent': ctl.get('extent', 'full')})
+    ctl['plan'] = dict(ctl.get('plan', {}), file=name)
+    if a.corners:
+        v = [float(t) for t in a.corners.split(',')]
+        ctl['plan']['corners'] = [v[i:i + 2] for i in range(0, 8, 2)]
+    ctl.setdefault('source', {})
+    ctl['source'].update({'publisher': 'UCLA', 'what': f'posted evacuation plan, floor {floor}, photographed {date}',
+                          'date': f'photographed {date}', 'kind': 'posted evacuation plan (photo)'})
+    ctl.setdefault('control', {'auto': 'outline'})
+    with open(cp, 'w', encoding='utf-8') as fh:
+        json.dump(ctl, fh, indent=1, ensure_ascii=False)
+    say(f'control file maps/plans/{os.path.basename(cp)} (edit it, or maps/plans/{FP.slug(code)}-{floor}.labels.json, and rerun it)')
+    return cp
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('control', nargs='*', help='control file(s)')
+    ap.add_argument('control', nargs='*', help='control file(s), or a photo of a posted evacuation plan (with --building and --floor)')
+    ap.add_argument('--building', help='photo: building code, as in maps/index.json (e.g. WGYOUNG)')
+    ap.add_argument('--floor', help='photo: floor (e.g. 2)')
+    ap.add_argument('--date', help='photo: the day it was taken (YYYY-MM-DD); default: the file date')
+    ap.add_argument('--corners', help='photo: the sign\'s corners TL,TR,BR,BL as x,y,x,y,... in photo pixels, if the frame isn\'t found')
     ap.add_argument('--debug', help='write overlay PNGs here')
     ap.add_argument('--dry-run', action='store_true', help="don't write anything but the debug images")
     ap.add_argument('--render', help='rasterize this plan with a pixel grid (for picking control points)')
@@ -948,10 +1970,17 @@ def main():
         render_grid(a.render, a.page, a.dpi, a.out or 'grid.png')
         return
     touched = set()
+    controls = []
     for cp in a.control:
+        if cp.lower().endswith('.json'):
+            controls.append(cp)
+        else:
+            controls.append(photo_control(cp, a))
+    for cp in controls:
         with open(cp, encoding='utf-8') as fh:
             ctl = json.load(fh)
-        rec = trace(ctl, cp, a.debug)
+        ctl['_dry'] = a.dry_run
+        rec = trace_photo(ctl, cp, a.debug) if ctl.get('mode') == 'photo' else trace(ctl, cp, a.debug)
         if not a.dry_run:
             write_record(rec, ctl.get('out'))
             touched.add(rec['building'])

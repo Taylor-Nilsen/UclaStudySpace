@@ -569,7 +569,19 @@
             }
             labels += roomLabel_(r, u, isSel);
         }
-        for(const r of rooms.filter(r => !r.pts && r.lp)){
+        // exits and connections the plan names ("to Molecular Sciences"): an EXIT tag pointing out, with where it goes
+        const exitPts = [];
+        for(const r of rooms.filter(r => !r.pts && r.lp && r.kind === 'exit')){
+            const w = nearestWall(r.lp, polys);
+            const p = w && w.dist < 6 ? w.p : r.lp, n = w ? w.n : [0, -1];
+            exitPts.push(p);
+            labels += exitTag(p[0], p[1], u, n[0], n[1]) + `<g><title>${esc(r.name || r.label || 'Exit')}</title></g>`;
+            if(r.label){
+                const tx = p[0] + n[0] * u * (Math.abs(n[0]) > .5 ? 5.2 : 2.6), ty = p[1] + n[1] * u * 2.6 + (n[1] >= -.5 ? u * 1.6 : -u * .3);
+                labels += `<text x="${f2(tx)}" y="${f2(ty)}" class="pp-lbl pp-exitlbl" font-size="${f2(u*.85)}">${esc(r.label)}</text>`;
+            }
+        }
+        for(const r of rooms.filter(r => !r.pts && r.lp && r.kind !== 'exit')){
             const isSel = r === sel;
             s += `<circle cx="${f2(r.lp[0])}" cy="${f2(r.lp[1])}" r="${f2(Math.max(u*.55, .5))}" class="pp-pod${isSel ? ' pp-sel' : ''}"><title>${esc(r.name || r.label || '')}</title></circle>`;
             if(r.label && (u < 1.2 || isSel)) labels += `<text x="${f2(r.lp[0])}" y="${f2(r.lp[1] - u*.85)}" class="pp-lbl${isSel ? ' pp-lblsel' : ''}" font-size="${f2(u*.8)}">${esc(r.label)}</text>`;
@@ -605,7 +617,7 @@
                 const w = nearestWall([x, y], polys);
                 if(w && w.dist <= 3){
                     marks += doorAt(w, u) + `<g>${title}</g>`;
-                    if(!tagged.some(t => Math.hypot(t[0] - w.p[0], t[1] - w.p[1]) < u * 4)){
+                    if(!tagged.some(t => Math.hypot(t[0] - w.p[0], t[1] - w.p[1]) < u * 4) && !exitPts.some(t => Math.hypot(t[0] - w.p[0], t[1] - w.p[1]) < u * 4)){
                         tagged.push(w.p);
                         marks += exitTag(w.p[0], w.p[1], u, w.n[0], w.n[1]);
                     }
@@ -639,7 +651,7 @@
         const has = k => rooms.some(r => r.kind === k);
         const key = (sym, label) => `<span><svg viewBox="-2 -2 4 4" aria-hidden="true">${sym}</svg>${label}</span>`;
         const items = [];
-        if(feats.some(f => f.t === 'entrance')) items.push(key(`<rect x="-1.9" y="-1" width="3.8" height="2" rx=".3" class="pp-exitfill"/><text x="0" y=".55" class="pp-exittxt" font-size="1.3">EXIT</text>`, 'Exit (door)'));
+        if(feats.some(f => f.t === 'entrance') || has('exit')) items.push(key(`<rect x="-1.9" y="-1" width="3.8" height="2" rx=".3" class="pp-exitfill"/><text x="0" y=".55" class="pp-exittxt" font-size="1.3">EXIT</text>`, 'Exit (door)'));
         if(has('stair') || feats.some(f => f.t === 'stairs')) items.push(key(SYM.stairs(0, 0, 1.6), 'Stairs'));
         if(has('elevator') || feats.some(f => f.t === 'elevator')) items.push(key(SYM.elevator(0, 0, 1.6), 'Elevator'));
         if(has('restroom') || feats.some(f => f.t === 'restroom')) items.push(key(SYM.restroom(0, 0, 1.6), 'Restroom'));
