@@ -1,0 +1,11446 @@
+{
+ "updated": "2026-10-12T18:29:34-07:00",
+ "source": "https://calendar.library.ucla.edu",
+ "failed": [],
+ "dates": [
+  "2026-10-12",
+  "2026-10-13",
+  "2026-10-14",
+  "2026-10-15",
+  "2026-10-16",
+  "2026-10-17",
+  "2026-10-18",
+  "2026-10-19"
+ ],
+ "rooms": [
+  {
+   "text": "Powell Library",
+   "building": "POWELL",
+   "room": "Library",
+   "space": "Powell Library",
+   "description": "Main undergraduate library. Reading rooms on the first and second floors.",
+   "capacity": null,
+   "type": "Library",
+   "characteristics": [],
+   "url": "https://www.library.ucla.edu/visit/locations/powell-library/",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       1080
+      ]
+     ],
+     "hours": [
+      480,
+      1080
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       600,
+       1080
+      ]
+     ],
+     "hours": [
+      600,
+      1080
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       600,
+       1260
+      ]
+     ],
+     "hours": [
+      600,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "Night Powell",
+   "building": "POWELL",
+   "room": "First floor study hall",
+   "space": "Night Powell",
+   "description": "Overnight study in the Powell first floor study hall for current UCLA students, faculty and staff. Physical BruinCard needed.",
+   "capacity": null,
+   "type": "Library",
+   "characteristics": [],
+   "url": "https://www.library.ucla.edu/visit/locations/powell-library/",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       0,
+       300
+      ],
+      [
+       1320,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ],
+     "closed": [
+      [
+       300,
+       1320
+      ]
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       0,
+       300
+      ],
+      [
+       1320,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ],
+     "closed": [
+      [
+       300,
+       1320
+      ]
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       0,
+       300
+      ],
+      [
+       1320,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ],
+     "closed": [
+      [
+       300,
+       1320
+      ]
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       0,
+       300
+      ],
+      [
+       1320,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ],
+     "closed": [
+      [
+       300,
+       1320
+      ]
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       0,
+       300
+      ],
+      [
+       1080,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ],
+     "closed": [
+      [
+       300,
+       1080
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       1260,
+       1440
+      ]
+     ],
+     "hours": [
+      1260,
+      1440
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       0,
+       300
+      ],
+      [
+       1320,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ],
+     "closed": [
+      [
+       300,
+       1320
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "Young Research Library",
+   "building": "YRL",
+   "room": "Library",
+   "space": "Young Research Library",
+   "description": "Research library. The first floor Reading Room and Research Commons are open to all.",
+   "capacity": null,
+   "type": "Library",
+   "characteristics": [],
+   "url": "https://www.library.ucla.edu/visit/locations/research-library/",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       1080
+      ]
+     ],
+     "hours": [
+      480,
+      1080
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       600,
+       1080
+      ]
+     ],
+     "hours": [
+      600,
+      1080
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       720,
+       1260
+      ]
+     ],
+     "hours": [
+      720,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "East Asian Library",
+   "building": "YRL",
+   "room": "21617",
+   "space": "East Asian Library",
+   "description": "Second floor of the Young Research Library.",
+   "capacity": null,
+   "type": "Library",
+   "characteristics": [],
+   "url": "https://www.library.ucla.edu/visit/locations/east-asian-library/",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       1080
+      ]
+     ],
+     "hours": [
+      480,
+      1080
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       600,
+       1080
+      ]
+     ],
+     "hours": [
+      600,
+      1080
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       720,
+       1260
+      ]
+     ],
+     "hours": [
+      720,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Library",
+   "building": "HLTHSCI",
+   "room": "12-077",
+   "space": "Biomedical Library",
+   "description": "Louise M. Darling Biomedical Library, first floor of the Center for the Health Sciences.",
+   "capacity": null,
+   "type": "Library",
+   "characteristics": [],
+   "url": "https://www.library.ucla.edu/visit/locations/biomed/",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1380
+      ]
+     ],
+     "hours": [
+      480,
+      1380
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1380
+      ]
+     ],
+     "hours": [
+      480,
+      1380
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1380
+      ]
+     ],
+     "hours": [
+      480,
+      1380
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1380
+      ]
+     ],
+     "hours": [
+      480,
+      1380
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       1080
+      ]
+     ],
+     "hours": [
+      480,
+      1080
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       540,
+       1020
+      ]
+     ],
+     "hours": [
+      540,
+      1020
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1320
+      ]
+     ],
+     "hours": [
+      780,
+      1320
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       1380
+      ]
+     ],
+     "hours": [
+      480,
+      1380
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Study Commons",
+   "building": "HLTHSCI",
+   "room": "Study Commons",
+   "space": "Biomedical Study Commons",
+   "description": "Open to UCLA students, faculty and staff during library hours. Overnight only for graduate students in Medicine, Dentistry, Nursing, Public Health and Life Sciences.",
+   "capacity": null,
+   "type": "Library",
+   "characteristics": [],
+   "url": "https://www.library.ucla.edu/visit/locations/biomed/",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       0,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       0,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       0,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       0,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       0,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       0,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       0,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       0,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ]
+    }
+   }
+  },
+  {
+   "text": "Science and Engineering Library (Boelter)",
+   "building": "BOELTER",
+   "room": "8270",
+   "space": "Science and Engineering Library (Boelter)",
+   "description": "SEL/Boelter, 8270 Boelter Hall, via the northeast elevator or stairs.",
+   "capacity": null,
+   "type": "Library",
+   "characteristics": [],
+   "url": "https://www.library.ucla.edu/visit/locations/science-engineering-library/",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       1080
+      ]
+     ],
+     "hours": [
+      480,
+      1080
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1200
+      ]
+     ],
+     "hours": [
+      780,
+      1200
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    }
+   }
+  },
+  {
+   "text": "Science and Engineering Library (Geology)",
+   "building": "GEOLOGY",
+   "room": "4697",
+   "space": "Science and Engineering Library (Geology)",
+   "description": "SEL/Geology, 4697 Geology Building. Quiet reading room.",
+   "capacity": null,
+   "type": "Library",
+   "characteristics": [],
+   "url": "https://www.library.ucla.edu/visit/locations/science-engineering-library/",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    }
+   }
+  },
+  {
+   "text": "Arts Library",
+   "building": "PUB AFF",
+   "room": "1400",
+   "space": "Arts Library",
+   "description": "First floor of the Public Affairs (Luskin) building.",
+   "capacity": null,
+   "type": "Library",
+   "characteristics": [],
+   "url": "https://www.library.ucla.edu/visit/locations/arts-library/",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       540,
+       1260
+      ]
+     ],
+     "hours": [
+      540,
+      1260
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       540,
+       1260
+      ]
+     ],
+     "hours": [
+      540,
+      1260
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       540,
+       1260
+      ]
+     ],
+     "hours": [
+      540,
+      1260
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       540,
+       1260
+      ]
+     ],
+     "hours": [
+      540,
+      1260
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       540,
+       1020
+      ]
+     ],
+     "hours": [
+      540,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       780,
+       1020
+      ]
+     ],
+     "hours": [
+      780,
+      1020
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       540,
+       1260
+      ]
+     ],
+     "hours": [
+      540,
+      1260
+     ]
+    }
+   }
+  },
+  {
+   "text": "Music Library",
+   "building": "SMB",
+   "room": "1102",
+   "space": "Music Library",
+   "description": "Walter H. Rubsamen Music Library, off the Schoenberg Music Building entrance atrium.",
+   "capacity": null,
+   "type": "Library",
+   "characteristics": [],
+   "url": "https://www.library.ucla.edu/visit/locations/music-library/",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       540,
+       1260
+      ]
+     ],
+     "hours": [
+      540,
+      1260
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       540,
+       1260
+      ]
+     ],
+     "hours": [
+      540,
+      1260
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       540,
+       1260
+      ]
+     ],
+     "hours": [
+      540,
+      1260
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       540,
+       1260
+      ]
+     ],
+     "hours": [
+      540,
+      1260
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       540,
+       1020
+      ]
+     ],
+     "hours": [
+      540,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1020
+      ]
+     ],
+     "hours": [
+      780,
+      1020
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       540,
+       1260
+      ]
+     ],
+     "hours": [
+      540,
+      1260
+     ]
+    }
+   }
+  },
+  {
+   "text": "Rosenfeld Management Library",
+   "building": "ROSNFLD",
+   "room": "Library",
+   "space": "Rosenfeld Management Library",
+   "description": "Anderson School of Management, E building. Open to UCLA Anderson and the public.",
+   "capacity": null,
+   "type": "Library",
+   "characteristics": [],
+   "url": "https://www.library.ucla.edu/visit/locations/eugene-and-maxine-rosenfeld-management-library/",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       540,
+       1260
+      ]
+     ],
+     "hours": [
+      540,
+      1260
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       540,
+       1260
+      ]
+     ],
+     "hours": [
+      540,
+      1260
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       540,
+       1260
+      ]
+     ],
+     "hours": [
+      540,
+      1260
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       540,
+       1260
+      ]
+     ],
+     "hours": [
+      540,
+      1260
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       540,
+       1080
+      ]
+     ],
+     "hours": [
+      540,
+      1080
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       600,
+       1140
+      ]
+     ],
+     "hours": [
+      600,
+      1140
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       540,
+       1260
+      ]
+     ],
+     "hours": [
+      540,
+      1260
+     ]
+    }
+   }
+  },
+  {
+   "text": "Law Library",
+   "building": "LAW",
+   "room": "1112",
+   "space": "Law Library",
+   "description": "Hugh & Hazel Darling Law Library. Limited access: non-law UCLA students need a same day reservation and a BruinCard.",
+   "capacity": null,
+   "type": "Library",
+   "characteristics": [],
+   "url": "https://law.ucla.edu/library/access-policies",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1290
+      ]
+     ],
+     "hours": [
+      480,
+      1290
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1290
+      ]
+     ],
+     "hours": [
+      480,
+      1290
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1290
+      ]
+     ],
+     "hours": [
+      480,
+      1290
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1290
+      ]
+     ],
+     "hours": [
+      480,
+      1290
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       1230
+      ]
+     ],
+     "hours": [
+      480,
+      1230
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       540,
+       990
+      ]
+     ],
+     "hours": [
+      540,
+      990
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1290
+      ]
+     ],
+     "hours": [
+      780,
+      1290
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       1290
+      ]
+     ],
+     "hours": [
+      480,
+      1290
+     ]
+    }
+   }
+  },
+  {
+   "text": "Powell Group Study Room A",
+   "building": "POWELL",
+   "room": "Study Room A",
+   "space": "Powell Group Study Room A",
+   "description": "By the first floor reading room in Powell. Whiteboard and screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29694",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1260,
+       1290
+      ]
+     ],
+     "hours": [
+      480,
+      1440
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       30,
+       270
+      ],
+      [
+       1260,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ],
+     "closed": [
+      [
+       270,
+       480
+      ]
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       0,
+       270
+      ],
+      [
+       480,
+       540
+      ],
+      [
+       810,
+       840
+      ],
+      [
+       1380,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ],
+     "closed": [
+      [
+       270,
+       480
+      ]
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       0,
+       270
+      ],
+      [
+       660,
+       720
+      ],
+      [
+       780,
+       840
+      ],
+      [
+       1020,
+       1080
+      ],
+      [
+       1200,
+       1439
+      ]
+     ],
+     "hours": [
+      0,
+      1439
+     ],
+     "closed": [
+      [
+       270,
+       480
+      ]
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "Powell Group Study Room B",
+   "building": "POWELL",
+   "room": "Study Room B",
+   "space": "Powell Group Study Room B",
+   "description": "By the first floor reading room in Powell. Whiteboard and screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29695",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ]
+     ],
+     "hours": [
+      480,
+      1440
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       0,
+       270
+      ],
+      [
+       750,
+       780
+      ],
+      [
+       1050,
+       1080
+      ],
+      [
+       1140,
+       1200
+      ],
+      [
+       1380,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ],
+     "closed": [
+      [
+       270,
+       480
+      ]
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       180,
+       270
+      ],
+      [
+       1080,
+       1140
+      ],
+      [
+       1260,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ],
+     "closed": [
+      [
+       270,
+       480
+      ]
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       0,
+       270
+      ],
+      [
+       480,
+       660
+      ],
+      [
+       750,
+       840
+      ],
+      [
+       1380,
+       1439
+      ]
+     ],
+     "hours": [
+      0,
+      1439
+     ],
+     "closed": [
+      [
+       270,
+       480
+      ]
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "Powell Group Study Room C",
+   "building": "POWELL",
+   "room": "Study Room C",
+   "space": "Powell Group Study Room C",
+   "description": "By the first floor reading room in Powell. Whiteboard and screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29696",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1380,
+       1440
+      ]
+     ],
+     "hours": [
+      480,
+      1440
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       0,
+       270
+      ],
+      [
+       480,
+       540
+      ],
+      [
+       1230,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ],
+     "closed": [
+      [
+       270,
+       480
+      ]
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       0,
+       270
+      ],
+      [
+       480,
+       540
+      ],
+      [
+       1080,
+       1140
+      ],
+      [
+       1260,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ],
+     "closed": [
+      [
+       270,
+       480
+      ]
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       0,
+       270
+      ],
+      [
+       480,
+       630
+      ],
+      [
+       810,
+       900
+      ],
+      [
+       1020,
+       1439
+      ]
+     ],
+     "hours": [
+      0,
+      1439
+     ],
+     "closed": [
+      [
+       270,
+       480
+      ]
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "Powell Group Study Room D",
+   "building": "POWELL",
+   "room": "Study Room D",
+   "space": "Powell Group Study Room D",
+   "description": "By the first floor reading room in Powell. Whiteboard and screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29697",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1200,
+       1230
+      ],
+      [
+       1260,
+       1290
+      ]
+     ],
+     "hours": [
+      480,
+      1440
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       30,
+       90
+      ],
+      [
+       120,
+       270
+      ],
+      [
+       480,
+       540
+      ],
+      [
+       960,
+       990
+      ],
+      [
+       1380,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ],
+     "closed": [
+      [
+       270,
+       480
+      ]
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       0,
+       270
+      ],
+      [
+       1200,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ],
+     "closed": [
+      [
+       270,
+       480
+      ]
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       0,
+       270
+      ],
+      [
+       480,
+       780
+      ],
+      [
+       1200,
+       1439
+      ]
+     ],
+     "hours": [
+      0,
+      1439
+     ],
+     "closed": [
+      [
+       270,
+       480
+      ]
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "Powell Group Study Room E",
+   "building": "POWELL",
+   "room": "Study Room E",
+   "space": "Powell Group Study Room E",
+   "description": "By the first floor reading room in Powell. Whiteboard and screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29698",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ]
+     ],
+     "hours": [
+      480,
+      1440
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       60,
+       270
+      ],
+      [
+       480,
+       570
+      ],
+      [
+       660,
+       690
+      ],
+      [
+       810,
+       840
+      ],
+      [
+       1380,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ],
+     "closed": [
+      [
+       270,
+       480
+      ]
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       0,
+       270
+      ],
+      [
+       480,
+       600
+      ],
+      [
+       1260,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ],
+     "closed": [
+      [
+       270,
+       480
+      ]
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       0,
+       270
+      ],
+      [
+       480,
+       570
+      ],
+      [
+       1200,
+       1439
+      ]
+     ],
+     "hours": [
+      0,
+      1439
+     ],
+     "closed": [
+      [
+       270,
+       480
+      ]
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "Powell Group Study Room F",
+   "building": "POWELL",
+   "room": "Study Room F",
+   "space": "Powell Group Study Room F",
+   "description": "By the first floor reading room in Powell. Whiteboard and screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29699",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ]
+     ],
+     "hours": [
+      480,
+      1440
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       1320,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ],
+     "closed": [
+      [
+       270,
+       480
+      ]
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       0,
+       270
+      ],
+      [
+       480,
+       600
+      ],
+      [
+       1200,
+       1440
+      ]
+     ],
+     "hours": [
+      0,
+      1440
+     ],
+     "closed": [
+      [
+       270,
+       480
+      ]
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       0,
+       270
+      ],
+      [
+       480,
+       600
+      ],
+      [
+       990,
+       1439
+      ]
+     ],
+     "hours": [
+      0,
+      1439
+     ],
+     "closed": [
+      [
+       270,
+       480
+      ]
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "Powell CLICC Loop Booth A",
+   "building": "POWELL",
+   "room": "145 Loop Booth A",
+   "space": "Loop Booth A (CLICC)",
+   "description": "Individual booth in the CLICC Lab (Powell 145). Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 1,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/141964",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       510
+      ],
+      [
+       900,
+       930
+      ],
+      [
+       990,
+       1020
+      ],
+      [
+       1110,
+       1140
+      ],
+      [
+       1170,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       540
+      ],
+      [
+       720,
+       780
+      ],
+      [
+       900,
+       930
+      ],
+      [
+       1140,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       570,
+       600
+      ],
+      [
+       660,
+       780
+      ],
+      [
+       840,
+       900
+      ],
+      [
+       1020,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "Powell CLICC Loop Booth B",
+   "building": "POWELL",
+   "room": "145 Loop Booth B",
+   "space": "Loop Booth B (CLICC)",
+   "description": "Individual booth in the CLICC Lab (Powell 145). Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 1,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/141966",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1230,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       960,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       630
+      ],
+      [
+       870,
+       900
+      ],
+      [
+       1020,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       660
+      ],
+      [
+       930,
+       990
+      ],
+      [
+       1080,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "Powell CLICC Loop Booth C",
+   "building": "POWELL",
+   "room": "145 Loop Booth C",
+   "space": "Loop Booth C (CLICC)",
+   "description": "Individual booth in the CLICC Lab (Powell 145). Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 1,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/230799",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1200
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       540
+      ],
+      [
+       720,
+       750
+      ],
+      [
+       1020,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       750,
+       780
+      ],
+      [
+       960,
+       1020
+      ],
+      [
+       1110,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       540
+      ],
+      [
+       720,
+       870
+      ],
+      [
+       1020,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Collaboration Pod R01",
+   "building": "YRL",
+   "room": "Pod R01",
+   "space": "YRL Collaboration Pod R01",
+   "description": "YRL Research Commons, first floor. LCD screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 7,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29719",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1110
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       660
+      ],
+      [
+       780,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       960
+      ],
+      [
+       1080,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Collaboration Pod R02",
+   "building": "YRL",
+   "room": "Pod R02",
+   "space": "YRL Collaboration Pod R02",
+   "description": "YRL Research Commons, first floor. LCD screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 7,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29720",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1200,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       780
+      ],
+      [
+       840,
+       930
+      ],
+      [
+       1050,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Collaboration Pod R03",
+   "building": "YRL",
+   "room": "Pod R03",
+   "space": "YRL Collaboration Pod R03",
+   "description": "YRL Research Commons, first floor. LCD screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29721",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1140,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       630
+      ],
+      [
+       720,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1050
+      ],
+      [
+       1200,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Collaboration Pod R04",
+   "building": "YRL",
+   "room": "Pod R04",
+   "space": "YRL Collaboration Pod R04",
+   "description": "YRL Research Commons, first floor. LCD screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29722",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1290,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       660
+      ],
+      [
+       750,
+       870
+      ],
+      [
+       960,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1050
+      ],
+      [
+       1200,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Collaboration Pod R05",
+   "building": "YRL",
+   "room": "Pod R05",
+   "space": "YRL Collaboration Pod R05",
+   "description": "YRL Research Commons, first floor. LCD screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29723",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1140,
+       1200
+      ],
+      [
+       1290,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1050
+      ],
+      [
+       1200,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Collaboration Pod R06",
+   "building": "YRL",
+   "room": "Pod R06",
+   "space": "YRL Collaboration Pod R06",
+   "description": "YRL Research Commons, first floor. LCD screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29724",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1140,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1080
+      ],
+      [
+       1140,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       900
+      ],
+      [
+       1020,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Collaboration Pod R07",
+   "building": "YRL",
+   "room": "Pod R07",
+   "space": "YRL Collaboration Pod R07",
+   "description": "YRL Research Commons, first floor. LCD screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29725",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       990
+      ],
+      [
+       1080,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       900
+      ],
+      [
+       1020,
+       1080
+      ],
+      [
+       1260,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Collaboration Pod R08",
+   "building": "YRL",
+   "room": "Pod R08",
+   "space": "YRL Collaboration Pod R08",
+   "description": "YRL Research Commons, first floor. LCD screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29726",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1170,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       870
+      ],
+      [
+       1020,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       930
+      ],
+      [
+       1050,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Collaboration Pod R09",
+   "building": "YRL",
+   "room": "Pod R09",
+   "space": "YRL Collaboration Pod R09",
+   "description": "YRL Research Commons, first floor. LCD screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29727",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1200,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Collaboration Pod R11",
+   "building": "YRL",
+   "room": "Pod R11",
+   "space": "YRL Collaboration Pod R11",
+   "description": "YRL Research Commons, first floor. LCD screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29729",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1140,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Collaboration Pod R12",
+   "building": "YRL",
+   "room": "Pod R12",
+   "space": "YRL Collaboration Pod R12",
+   "description": "YRL Research Commons, first floor. LCD screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29730",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1260,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Collaboration Pod R13",
+   "building": "YRL",
+   "room": "Pod R13",
+   "space": "YRL Collaboration Pod R13",
+   "description": "YRL Research Commons, first floor. LCD screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29731",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1200,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       780
+      ],
+      [
+       960,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Collaboration Pod R14",
+   "building": "YRL",
+   "room": "Pod R14",
+   "space": "YRL Collaboration Pod R14",
+   "description": "YRL Research Commons, first floor. LCD screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29732",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1290,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1020
+      ],
+      [
+       1140,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1080
+      ],
+      [
+       1200,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Collaboration Pod R15",
+   "building": "YRL",
+   "room": "Pod R15",
+   "space": "YRL Collaboration Pod R15",
+   "description": "YRL Research Commons, first floor. LCD screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29733",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1230,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Collaboration Pod R16",
+   "building": "YRL",
+   "room": "Pod R16",
+   "space": "YRL Collaboration Pod R16",
+   "description": "YRL Research Commons, first floor. LCD screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29734",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1110,
+       1140
+      ],
+      [
+       1200,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Collaboration Pod R17",
+   "building": "YRL",
+   "room": "Pod R17",
+   "space": "YRL Collaboration Pod R17",
+   "description": "YRL Research Commons, first floor. LCD screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29735",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1140,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       960
+      ],
+      [
+       1080,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Collaboration Pod R18",
+   "building": "YRL",
+   "room": "Pod R18",
+   "space": "YRL Collaboration Pod R18",
+   "description": "YRL Research Commons, first floor. LCD screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29736",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Collaboration Pod R19",
+   "building": "YRL",
+   "room": "Pod R19",
+   "space": "YRL Collaboration Pod R19",
+   "description": "YRL Research Commons, first floor. LCD screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29737",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       540
+      ],
+      [
+       660,
+       810
+      ],
+      [
+       930,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1020
+      ],
+      [
+       1200,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Collaboration Pod R20",
+   "building": "YRL",
+   "room": "Pod R20",
+   "space": "YRL Collaboration Pod R20",
+   "description": "YRL Research Commons, first floor. LCD screen. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29738",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1110,
+       1140
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       780
+      ],
+      [
+       870,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Group Study Room G02",
+   "building": "YRL",
+   "room": "Study Room G02",
+   "space": "YRL Group Study Room G02",
+   "description": "YRL Research Commons, first floor. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29704",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       1080,
+       1140
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       1140,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       630
+      ],
+      [
+       690,
+       720
+      ],
+      [
+       960,
+       1020
+      ],
+      [
+       1140,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Group Study Room G03",
+   "building": "YRL",
+   "room": "Study Room G03",
+   "space": "YRL Group Study Room G03",
+   "description": "YRL Research Commons, first floor. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29705",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       540
+      ],
+      [
+       960,
+       990
+      ],
+      [
+       1080,
+       1140
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       540,
+       600
+      ],
+      [
+       750,
+       780
+      ],
+      [
+       840,
+       900
+      ],
+      [
+       1140,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       540
+      ],
+      [
+       660,
+       1080
+      ],
+      [
+       1290,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Group Study Room G04",
+   "building": "YRL",
+   "room": "Study Room G04",
+   "space": "YRL Group Study Room G04",
+   "description": "YRL Research Commons, first floor. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29706",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       540
+      ],
+      [
+       960,
+       990
+      ],
+      [
+       1200,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       600
+      ],
+      [
+       660,
+       690
+      ],
+      [
+       870,
+       900
+      ],
+      [
+       1140,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       960
+      ],
+      [
+       1020,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Group Study Room G05",
+   "building": "YRL",
+   "room": "Study Room G05",
+   "space": "YRL Group Study Room G05",
+   "description": "YRL Research Commons, first floor. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29707",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1260,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       510
+      ],
+      [
+       1230,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       540
+      ],
+      [
+       1110,
+       1140
+      ],
+      [
+       1200,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       600
+      ],
+      [
+       750,
+       780
+      ],
+      [
+       1020,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Group Study Room G06",
+   "building": "YRL",
+   "room": "Study Room G06",
+   "space": "YRL Group Study Room G06",
+   "description": "YRL Research Commons, first floor. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29708",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       570
+      ],
+      [
+       1200,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       600
+      ],
+      [
+       1200,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       600
+      ],
+      [
+       780,
+       960
+      ],
+      [
+       1020,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Group Study Room G07",
+   "building": "YRL",
+   "room": "Study Room G07",
+   "space": "YRL Group Study Room G07",
+   "description": "YRL Research Commons, first floor. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29709",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1260,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       540
+      ],
+      [
+       1290,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       600
+      ],
+      [
+       780,
+       810
+      ],
+      [
+       1140,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       660
+      ],
+      [
+       840,
+       900
+      ],
+      [
+       1020,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Group Study Room G08",
+   "building": "YRL",
+   "room": "Study Room G08",
+   "space": "YRL Group Study Room G08",
+   "description": "YRL Research Commons, first floor. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29710",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       510
+      ],
+      [
+       1260,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       510
+      ],
+      [
+       1050,
+       1080
+      ],
+      [
+       1140,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       600
+      ],
+      [
+       630,
+       720
+      ],
+      [
+       780,
+       840
+      ],
+      [
+       1080,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Group Study Room G09",
+   "building": "YRL",
+   "room": "Study Room G09",
+   "space": "YRL Group Study Room G09",
+   "description": "YRL Research Commons, first floor. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29712",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1290,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       570,
+       600
+      ],
+      [
+       1260,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       540
+      ],
+      [
+       1140,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       540
+      ],
+      [
+       600,
+       780
+      ],
+      [
+       810,
+       840
+      ],
+      [
+       870,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Group Study Room G10",
+   "building": "YRL",
+   "room": "Study Room G10",
+   "space": "YRL Group Study Room G10",
+   "description": "YRL Research Commons, first floor. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29713",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1260,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       570,
+       600
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       540
+      ],
+      [
+       1140,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       540
+      ],
+      [
+       600,
+       660
+      ],
+      [
+       720,
+       810
+      ],
+      [
+       930,
+       960
+      ],
+      [
+       1080,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Group Study Room G11",
+   "building": "YRL",
+   "room": "Study Room G11",
+   "space": "YRL Group Study Room G11",
+   "description": "YRL Research Commons, first floor. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29714",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       600
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       600
+      ],
+      [
+       1140,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       720
+      ],
+      [
+       900,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Group Study Room G12",
+   "building": "YRL",
+   "room": "Study Room G12",
+   "space": "YRL Group Study Room G12",
+   "description": "YRL Research Commons, first floor. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29715",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       1200,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       600
+      ],
+      [
+       1080,
+       1140
+      ],
+      [
+       1260,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       540
+      ],
+      [
+       720,
+       900
+      ],
+      [
+       1020,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Group Study Room G13",
+   "building": "YRL",
+   "room": "Study Room G13",
+   "space": "YRL Group Study Room G13",
+   "description": "YRL Research Commons, first floor. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29716",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       540
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       600
+      ],
+      [
+       1200,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       630
+      ],
+      [
+       660,
+       780
+      ],
+      [
+       1080,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Group Study Room G14",
+   "building": "YRL",
+   "room": "Study Room G14",
+   "space": "YRL Group Study Room G14",
+   "description": "YRL Research Commons, first floor. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29717",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1260,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       600
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       600
+      ],
+      [
+       1230,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       540
+      ],
+      [
+       660,
+       840
+      ],
+      [
+       1020,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "YRL Group Study Room G15",
+   "building": "YRL",
+   "room": "Study Room G15",
+   "space": "YRL Group Study Room G15",
+   "description": "YRL Research Commons, first floor. Current UCLA students, faculty and staff can book up to 3 hours, 3 days ahead. Drop-in study when not reserved.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/29718",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1290,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       600
+      ],
+      [
+       1260,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       600
+      ],
+      [
+       1140,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       630
+      ],
+      [
+       780,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "Music Library Seminar Room",
+   "building": "SMB",
+   "room": "Seminar Room",
+   "space": "Music Library Seminar Room",
+   "description": "Music Library, 1102 Schoenberg Music Building.",
+   "capacity": 20,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/55358",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       540,
+       1109
+      ],
+      [
+       1200,
+       1260
+      ]
+     ],
+     "hours": [
+      540,
+      1260
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       600,
+       1080
+      ],
+      [
+       1140,
+       1200
+      ]
+     ],
+     "hours": [
+      540,
+      1260
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       540,
+       720
+      ],
+      [
+       780,
+       1080
+      ],
+      [
+       1200,
+       1260
+      ]
+     ],
+     "hours": [
+      540,
+      1260
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       540,
+       1080
+      ]
+     ],
+     "hours": [
+      540,
+      1260
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       540,
+       900
+      ]
+     ],
+     "hours": [
+      540,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1020
+      ]
+     ],
+     "hours": [
+      780,
+      1020
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       540,
+       1020
+      ],
+      [
+       1200,
+       1260
+      ]
+     ],
+     "hours": [
+      540,
+      1260
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Library 12-077E Group Study Room",
+   "building": "HLTHSCI",
+   "room": "12-077E",
+   "space": "12-077E Group Study Room",
+   "description": "Biomedical Library first floor. For groups of two or more.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/44647",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ],
+      [
+       1110,
+       1140
+      ],
+      [
+       1200,
+       1380
+      ]
+     ],
+     "hours": [
+      480,
+      1380
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       750
+      ],
+      [
+       870,
+       900
+      ],
+      [
+       1230,
+       1380
+      ]
+     ],
+     "hours": [
+      480,
+      1380
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       690
+      ],
+      [
+       810,
+       1110
+      ],
+      [
+       1230,
+       1380
+      ]
+     ],
+     "hours": [
+      480,
+      1380
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       690
+      ],
+      [
+       810,
+       840
+      ],
+      [
+       900,
+       960
+      ],
+      [
+       1080,
+       1380
+      ]
+     ],
+     "hours": [
+      480,
+      1380
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       900
+      ],
+      [
+       1020,
+       1080
+      ]
+     ],
+     "hours": [
+      480,
+      1080
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       540,
+       1020
+      ]
+     ],
+     "hours": [
+      540,
+      1020
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1320
+      ]
+     ],
+     "hours": [
+      780,
+      1320
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       780
+      ],
+      [
+       840,
+       1380
+      ]
+     ],
+     "hours": [
+      480,
+      1380
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Collaboration Study Room A",
+   "building": "HLTHSCI",
+   "room": "Collab Room A",
+   "space": "Collaboration Study Room A",
+   "description": "Biomedical Library Collaboration Hub, sixth floor of CHS (22-001). Groups of two or more; check in at the service desk.",
+   "capacity": 4,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/53897",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       540,
+       1109
+      ],
+      [
+       1140,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       540,
+       780
+      ],
+      [
+       870,
+       900
+      ],
+      [
+       1020,
+       1080
+      ],
+      [
+       1170,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       540,
+       660
+      ],
+      [
+       900,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       540,
+       660
+      ],
+      [
+       900,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       540,
+       1020
+      ]
+     ],
+     "hours": [
+      540,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       720,
+       960
+      ]
+     ],
+     "hours": [
+      720,
+      960
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       540,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Collaboration Study Room B",
+   "building": "HLTHSCI",
+   "room": "Collab Room B",
+   "space": "Collaboration Study Room B",
+   "description": "Biomedical Library Collaboration Hub, sixth floor of CHS (22-001). Groups of two or more; check in at the service desk.",
+   "capacity": 4,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/200545",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       540,
+       1109
+      ],
+      [
+       1230,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       540,
+       780
+      ],
+      [
+       840,
+       1110
+      ],
+      [
+       1230,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       540,
+       720
+      ],
+      [
+       810,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       540,
+       810
+      ],
+      [
+       930,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       540,
+       1020
+      ]
+     ],
+     "hours": [
+      540,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       720,
+       960
+      ]
+     ],
+     "hours": [
+      720,
+      960
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       540,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Collaboration Study Room C",
+   "building": "HLTHSCI",
+   "room": "Collab Room C",
+   "space": "Collaboration Study Room C",
+   "description": "Biomedical Library Collaboration Hub, sixth floor of CHS (22-001). Groups of two or more; check in at the service desk.",
+   "capacity": 3,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/200546",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       540,
+       1109
+      ],
+      [
+       1110,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       540,
+       900
+      ],
+      [
+       960,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       540,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       540,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       540,
+       1020
+      ]
+     ],
+     "hours": [
+      540,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       720,
+       960
+      ]
+     ],
+     "hours": [
+      720,
+      960
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       540,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Collaboration Study Room D",
+   "building": "HLTHSCI",
+   "room": "Collab Room D",
+   "space": "Collaboration Study Room D",
+   "description": "Biomedical Library Collaboration Hub, sixth floor of CHS (22-001). Groups of two or more; check in at the service desk.",
+   "capacity": 4,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/200547",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       540,
+       1109
+      ],
+      [
+       1110,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       540,
+       1080
+      ],
+      [
+       1200,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       540,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       540,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       540,
+       1020
+      ]
+     ],
+     "hours": [
+      540,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       720,
+       960
+      ]
+     ],
+     "hours": [
+      720,
+      960
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       540,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Collaboration Study Room E",
+   "building": "HLTHSCI",
+   "room": "Collab Room E",
+   "space": "Collaboration Study Room E",
+   "description": "Biomedical Library Collaboration Hub, sixth floor of CHS (22-001). Groups of two or more; check in at the service desk.",
+   "capacity": 4,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/200548",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       540,
+       1109
+      ],
+      [
+       1110,
+       1140
+      ],
+      [
+       1260,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       540,
+       1080
+      ],
+      [
+       1200,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       540,
+       1020
+      ],
+      [
+       1260,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       540,
+       1020
+      ],
+      [
+       1260,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       540,
+       1020
+      ]
+     ],
+     "hours": [
+      540,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       720,
+       960
+      ]
+     ],
+     "hours": [
+      720,
+      960
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       540,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Collaboration Study Room F",
+   "building": "HLTHSCI",
+   "room": "Collab Room F",
+   "space": "Collaboration Study Room F",
+   "description": "Biomedical Library Collaboration Hub, sixth floor of CHS (22-001). Groups of two or more; check in at the service desk.",
+   "capacity": 3,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/200730",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       540,
+       1109
+      ],
+      [
+       1110,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       540,
+       570
+      ],
+      [
+       690,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       540,
+       720
+      ],
+      [
+       840,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       540,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       540,
+       1020
+      ]
+     ],
+     "hours": [
+      540,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       720,
+       960
+      ]
+     ],
+     "hours": [
+      720,
+      960
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       540,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Collaboration Study Room G",
+   "building": "HLTHSCI",
+   "room": "Collab Room G",
+   "space": "Collaboration Study Room G",
+   "description": "Biomedical Library Collaboration Hub, sixth floor of CHS (22-001). Groups of two or more; check in at the service desk.",
+   "capacity": 4,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/200549",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       540,
+       1109
+      ],
+      [
+       1110,
+       1140
+      ],
+      [
+       1260,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       540,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       540,
+       1020
+      ],
+      [
+       1260,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       540,
+       1020
+      ],
+      [
+       1260,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       540,
+       1020
+      ]
+     ],
+     "hours": [
+      540,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       720,
+       960
+      ]
+     ],
+     "hours": [
+      720,
+      960
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       540,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Collaboration Study Room H",
+   "building": "HLTHSCI",
+   "room": "Collab Room H",
+   "space": "Collaboration Study Room H",
+   "description": "Biomedical Library Collaboration Hub, sixth floor of CHS (22-001). Groups of two or more; check in at the service desk.",
+   "capacity": 4,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/200550",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       540,
+       1109
+      ],
+      [
+       1290,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       540,
+       750
+      ],
+      [
+       840,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       540,
+       1050
+      ],
+      [
+       1200,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       540,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       540,
+       1020
+      ]
+     ],
+     "hours": [
+      540,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       720,
+       960
+      ]
+     ],
+     "hours": [
+      720,
+      960
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       540,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Collaboration Study Room L",
+   "building": "HLTHSCI",
+   "room": "Collab Room L",
+   "space": "Collaboration Study Room L",
+   "description": "Biomedical Library Collaboration Hub, sixth floor of CHS (22-001). Groups of two or more; check in at the service desk.",
+   "capacity": 15,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/212974",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       540,
+       1109
+      ],
+      [
+       1110,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       540,
+       630
+      ],
+      [
+       900,
+       1080
+      ],
+      [
+       1200,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       540,
+       780
+      ],
+      [
+       1020,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       540,
+       660
+      ],
+      [
+       900,
+       1020
+      ],
+      [
+       1260,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       540,
+       780
+      ]
+     ],
+     "hours": [
+      540,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       720,
+       960
+      ]
+     ],
+     "hours": [
+      720,
+      960
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       1140,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       540,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Collaboration Study Room M",
+   "building": "HLTHSCI",
+   "room": "Collab Room M",
+   "space": "Collaboration Study Room M",
+   "description": "Biomedical Library Collaboration Hub, sixth floor of CHS (22-001). Groups of two or more; check in at the service desk.",
+   "capacity": 10,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/212973",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       540,
+       1109
+      ],
+      [
+       1200,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       540,
+       960
+      ],
+      [
+       1290,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       660,
+       720
+      ],
+      [
+       780,
+       840
+      ],
+      [
+       960,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       540,
+       1020
+      ],
+      [
+       1140,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       540,
+       1020
+      ]
+     ],
+     "hours": [
+      540,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       720,
+       960
+      ]
+     ],
+     "hours": [
+      720,
+      960
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       540,
+       1320
+      ]
+     ],
+     "hours": [
+      540,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Study Commons Room 32035",
+   "building": "HLTHSCI",
+   "room": "32035",
+   "space": "Biomedical Study Commons Room 32035",
+   "description": "Biomedical Study Commons. Open to BruinCard holders during library hours.",
+   "capacity": 6,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/238891",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       0,
+       1109
+      ],
+      [
+       1140,
+       1170
+      ],
+      [
+       1200,
+       1320
+      ]
+     ],
+     "hours": [
+      0,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       1020
+      ]
+     ],
+     "hours": [
+      480,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       540,
+       960
+      ]
+     ],
+     "hours": [
+      540,
+      960
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Study Commons Room 32037",
+   "building": "HLTHSCI",
+   "room": "32037",
+   "space": "Biomedical Study Commons Room 32037",
+   "description": "Biomedical Study Commons. Open to BruinCard holders during library hours.",
+   "capacity": 6,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/238892",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       0,
+       1109
+      ],
+      [
+       1140,
+       1320
+      ]
+     ],
+     "hours": [
+      0,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       1020
+      ]
+     ],
+     "hours": [
+      480,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       540,
+       960
+      ]
+     ],
+     "hours": [
+      540,
+      960
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Study Commons Room 32041",
+   "building": "HLTHSCI",
+   "room": "32041",
+   "space": "Biomedical Study Commons Room 32041",
+   "description": "Biomedical Study Commons. Open to BruinCard holders during library hours.",
+   "capacity": 6,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/238911",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       0,
+       1109
+      ],
+      [
+       1230,
+       1320
+      ]
+     ],
+     "hours": [
+      0,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       1020
+      ]
+     ],
+     "hours": [
+      480,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       540,
+       960
+      ]
+     ],
+     "hours": [
+      540,
+      960
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Study Commons Room 32045",
+   "building": "HLTHSCI",
+   "room": "32045",
+   "space": "Biomedical Study Commons Room 32045",
+   "description": "Biomedical Study Commons. Open to BruinCard holders during library hours.",
+   "capacity": 6,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/238893",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       0,
+       1109
+      ],
+      [
+       1140,
+       1320
+      ]
+     ],
+     "hours": [
+      0,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       930
+      ],
+      [
+       1170,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       930
+      ],
+      [
+       1170,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       510,
+       540
+      ],
+      [
+       570,
+       600
+      ],
+      [
+       720,
+       780
+      ],
+      [
+       900,
+       930
+      ],
+      [
+       960,
+       990
+      ],
+      [
+       1020,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       600
+      ],
+      [
+       900,
+       1020
+      ]
+     ],
+     "hours": [
+      480,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       540,
+       960
+      ]
+     ],
+     "hours": [
+      540,
+      960
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Study Commons Room 32049",
+   "building": "HLTHSCI",
+   "room": "32049",
+   "space": "Biomedical Study Commons Room 32049",
+   "description": "Biomedical Study Commons. Open to BruinCard holders during library hours.",
+   "capacity": 6,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/238894",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       0,
+       1320
+      ]
+     ],
+     "hours": [
+      0,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       1020
+      ]
+     ],
+     "hours": [
+      480,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       540,
+       960
+      ]
+     ],
+     "hours": [
+      540,
+      960
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Study Commons Room 32061",
+   "building": "HLTHSCI",
+   "room": "32061",
+   "space": "Biomedical Study Commons Room 32061",
+   "description": "Biomedical Study Commons. Open to BruinCard holders during library hours.",
+   "capacity": 6,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/238905",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       0,
+       1320
+      ]
+     ],
+     "hours": [
+      0,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       1020
+      ]
+     ],
+     "hours": [
+      480,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       540,
+       960
+      ]
+     ],
+     "hours": [
+      540,
+      960
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Study Commons Room 32063",
+   "building": "HLTHSCI",
+   "room": "32063",
+   "space": "Biomedical Study Commons Room 32063",
+   "description": "Biomedical Study Commons. Open to BruinCard holders during library hours.",
+   "capacity": 6,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/238906",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       0,
+       1320
+      ]
+     ],
+     "hours": [
+      0,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       1020
+      ]
+     ],
+     "hours": [
+      480,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       540,
+       960
+      ]
+     ],
+     "hours": [
+      540,
+      960
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Study Commons Room 32071",
+   "building": "HLTHSCI",
+   "room": "32071",
+   "space": "Biomedical Study Commons Room 32071",
+   "description": "Biomedical Study Commons. Open to BruinCard holders during library hours.",
+   "capacity": 6,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/238907",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       0,
+       1320
+      ]
+     ],
+     "hours": [
+      0,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       1020
+      ]
+     ],
+     "hours": [
+      480,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       540,
+       960
+      ]
+     ],
+     "hours": [
+      540,
+      960
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Study Commons Room 32080D",
+   "building": "HLTHSCI",
+   "room": "32080D",
+   "space": "Biomedical Study Commons Room 32080D",
+   "description": "Biomedical Study Commons. Open to BruinCard holders during library hours.",
+   "capacity": 6,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/238908",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       0,
+       1320
+      ]
+     ],
+     "hours": [
+      0,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       1020
+      ]
+     ],
+     "hours": [
+      480,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       540,
+       960
+      ]
+     ],
+     "hours": [
+      540,
+      960
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "Biomedical Study Commons Room 32080E",
+   "building": "HLTHSCI",
+   "room": "32080E",
+   "space": "Biomedical Study Commons Room 32080E",
+   "description": "Biomedical Study Commons. Open to BruinCard holders during library hours.",
+   "capacity": 6,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/238909",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       0,
+       1109
+      ],
+      [
+       1170,
+       1320
+      ]
+     ],
+     "hours": [
+      0,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       1020
+      ]
+     ],
+     "hours": [
+      480,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       540,
+       960
+      ]
+     ],
+     "hours": [
+      540,
+      960
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "SEL Group Study Room Boelter 8251A",
+   "building": "BOELTER",
+   "room": "8251A",
+   "space": "Boelter 8251A - SEL/Research Commons",
+   "description": "Science and Engineering Library. Groups of two or more, up to 2 hours, 7 days ahead.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/55389",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1109
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       510
+      ],
+      [
+       1230,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       600,
+       630
+      ],
+      [
+       1230,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       630
+      ],
+      [
+       1230,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       600,
+       630
+      ]
+     ],
+     "hours": [
+      480,
+      1080
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1200
+      ]
+     ],
+     "hours": [
+      780,
+      1200
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       510
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    }
+   }
+  },
+  {
+   "text": "SEL Group Study Room Geology 4697A",
+   "building": "GEOLOGY",
+   "room": "4697A",
+   "space": "Geology 4697A - SEL/Geology Collection",
+   "description": "Science and Engineering Library. Groups of two or more, up to 2 hours, 7 days ahead.",
+   "capacity": 8,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/55390",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       600,
+       660
+      ],
+      [
+       900,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       600,
+       660
+      ],
+      [
+       780,
+       840
+      ],
+      [
+       960,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       600,
+       870
+      ],
+      [
+       990,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       600,
+       720
+      ],
+      [
+       840,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    }
+   }
+  },
+  {
+   "text": "SEL Group Study Room Geology 4697B",
+   "building": "GEOLOGY",
+   "room": "4697B",
+   "space": "Geology 4697B - SEL/Geology Collection",
+   "description": "Science and Engineering Library. Groups of two or more, up to 2 hours, 7 days ahead.",
+   "capacity": 4,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/55391",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       780,
+       840
+      ],
+      [
+       960,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       600,
+       720
+      ],
+      [
+       960,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       600,
+       960
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       600,
+       630
+      ],
+      [
+       840,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    }
+   }
+  },
+  {
+   "text": "Powell Media Lab Room 2",
+   "building": "POWELL",
+   "room": "270 Room 2",
+   "space": "Room 2",
+   "description": "Instructional Media Lab, Powell 270. Quiet study; check in at the front desk. Up to 2 hours, 7 days ahead.",
+   "capacity": 4,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/165438",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       600,
+       630
+      ],
+      [
+       750,
+       900
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       600,
+       840
+      ],
+      [
+       960,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       720,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    }
+   }
+  },
+  {
+   "text": "Powell Media Lab Room 3",
+   "building": "POWELL",
+   "room": "270 Room 3",
+   "space": "Room 3",
+   "description": "Instructional Media Lab, Powell 270. Quiet study; check in at the front desk. Up to 2 hours, 7 days ahead.",
+   "capacity": 4,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/165439",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       975,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       600,
+       840
+      ],
+      [
+       960,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       600,
+       615
+      ],
+      [
+       735,
+       825
+      ],
+      [
+       915,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    }
+   }
+  },
+  {
+   "text": "Powell Media Lab Room 5",
+   "building": "POWELL",
+   "room": "270 Room 5",
+   "space": "Room 5",
+   "description": "Instructional Media Lab, Powell 270. Quiet study; check in at the front desk. Up to 2 hours, 7 days ahead.",
+   "capacity": 4,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/165440",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       720,
+       840
+      ],
+      [
+       960,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       600,
+       735
+      ],
+      [
+       825,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       600,
+       780
+      ],
+      [
+       825,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    }
+   }
+  },
+  {
+   "text": "Powell Media Lab Room 6",
+   "building": "POWELL",
+   "room": "270 Room 6",
+   "space": "Room 6",
+   "description": "Instructional Media Lab, Powell 270. Quiet study; check in at the front desk. Up to 2 hours, 7 days ahead.",
+   "capacity": 4,
+   "type": "Library study room",
+   "characteristics": [],
+   "url": "https://calendar.library.ucla.edu/space/165441",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       720,
+       825
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       600,
+       720
+      ],
+      [
+       900,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    }
+   }
+  },
+  {
+   "text": "CLICC Lab (Powell 145)",
+   "building": "POWELL",
+   "room": "145",
+   "space": "CLICC Lab",
+   "description": "Computer Lab (CLICC) in Powell: a large drop-in space for collaborative study with outlets and wepa printing. Current UCLA students, faculty and staff; show your BruinCard.",
+   "capacity": null,
+   "type": "Computer lab",
+   "characteristics": [],
+   "url": "https://www.library.ucla.edu/visit/locations/powell-library/",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       1080
+      ]
+     ],
+     "hours": [
+      480,
+      1080
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       720,
+       1020
+      ]
+     ],
+     "hours": [
+      720,
+      1020
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       1320
+      ]
+     ],
+     "hours": [
+      480,
+      1320
+     ]
+    }
+   }
+  },
+  {
+   "text": "CLICC Classroom A (Powell 307)",
+   "building": "POWELL",
+   "room": "307",
+   "space": "CLICC Classroom A",
+   "description": "Technology classroom, open for drop-in study when not booked.",
+   "capacity": 25,
+   "type": "Library classroom",
+   "characteristics": [],
+   "url": "https://www.library.ucla.edu/help/services-resources/clicc-classrooms/",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1170
+      ]
+     ],
+     "hours": [
+      480,
+      1170
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       660
+      ],
+      [
+       735,
+       840
+      ],
+      [
+       915,
+       930
+      ],
+      [
+       1110,
+       1170
+      ]
+     ],
+     "hours": [
+      480,
+      1170
+     ],
+     "booked": [
+      [
+       660,
+       735,
+       "KOREA 1"
+      ],
+      [
+       840,
+       915,
+       "KOREA 101A"
+      ],
+      [
+       930,
+       1110,
+       "MIMG 101: Office Hours"
+      ]
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       600
+      ],
+      [
+       710,
+       900
+      ],
+      [
+       1020,
+       1170
+      ]
+     ],
+     "hours": [
+      480,
+      1170
+     ],
+     "booked": [
+      [
+       600,
+       710,
+       "FRNCH 2"
+      ],
+      [
+       900,
+       1020,
+       "Philosophy 31: Office Hours"
+      ]
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       660
+      ],
+      [
+       735,
+       840
+      ],
+      [
+       915,
+       1020
+      ],
+      [
+       1140,
+       1170
+      ]
+     ],
+     "hours": [
+      480,
+      1170
+     ],
+     "booked": [
+      [
+       660,
+       735,
+       "KOREA 1"
+      ],
+      [
+       840,
+       915,
+       "KOREA 101A"
+      ],
+      [
+       1020,
+       1140,
+       "BIOENGR 176: Office Hours"
+      ]
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       600
+      ],
+      [
+       710,
+       720
+      ],
+      [
+       840,
+       1050
+      ]
+     ],
+     "hours": [
+      480,
+      1050
+     ],
+     "booked": [
+      [
+       600,
+       710,
+       "FRNCH 2"
+      ],
+      [
+       720,
+       840,
+       "Philosophy 31: Office Hours"
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       600
+      ],
+      [
+       710,
+       840
+      ],
+      [
+       950,
+       1170
+      ]
+     ],
+     "hours": [
+      480,
+      1170
+     ],
+     "booked": [
+      [
+       600,
+       710,
+       "FRNCH 2"
+      ],
+      [
+       840,
+       950,
+       "GRAD PD 497B"
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "CLICC Classroom B (Powell 320B)",
+   "building": "POWELL",
+   "room": "320B",
+   "space": "CLICC Classroom B",
+   "description": "Technology classroom, open for drop-in study when not booked.",
+   "capacity": 26,
+   "type": "Library classroom",
+   "characteristics": [],
+   "url": "https://www.library.ucla.edu/help/services-resources/clicc-classrooms/",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1170
+      ]
+     ],
+     "hours": [
+      480,
+      1170
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       540
+      ],
+      [
+       650,
+       780
+      ],
+      [
+       830,
+       840
+      ],
+      [
+       960,
+       1170
+      ]
+     ],
+     "hours": [
+      480,
+      1170
+     ],
+     "booked": [
+      [
+       540,
+       650,
+       "JAPAN 100A"
+      ],
+      [
+       780,
+       830,
+       "CLICC"
+      ],
+      [
+       840,
+       960,
+       "Philosophy 31: Office Hours"
+      ]
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       540
+      ],
+      [
+       710,
+       720
+      ],
+      [
+       780,
+       900
+      ],
+      [
+       1020,
+       1170
+      ]
+     ],
+     "hours": [
+      480,
+      1170
+     ],
+     "booked": [
+      [
+       540,
+       710,
+       "ENG 270"
+      ],
+      [
+       720,
+       780,
+       "URC-HASS Scholarship Info Session"
+      ],
+      [
+       900,
+       1020,
+       "URC-HASS Scholarship Info Session & Proposal and Personal Statement Workshop"
+      ]
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       540
+      ],
+      [
+       650,
+       840
+      ],
+      [
+       900,
+       1170
+      ]
+     ],
+     "hours": [
+      480,
+      1170
+     ],
+     "booked": [
+      [
+       540,
+       650,
+       "JAPAN 100A"
+      ],
+      [
+       840,
+       900,
+       "EDUC 107A: Office Hours"
+      ]
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       540
+      ],
+      [
+       650,
+       660
+      ],
+      [
+       780,
+       1050
+      ]
+     ],
+     "hours": [
+      480,
+      1050
+     ],
+     "booked": [
+      [
+       540,
+       650,
+       "Philosophy 31: Office Hours"
+      ],
+      [
+       660,
+       780,
+       "JAPAN 1 & Office Hours"
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       690
+      ],
+      [
+       810,
+       900
+      ],
+      [
+       1020,
+       1170
+      ]
+     ],
+     "hours": [
+      480,
+      1170
+     ],
+     "booked": [
+      [
+       690,
+       810,
+       "Philosophy 31: Office Hours"
+      ],
+      [
+       900,
+       1020,
+       "Philosophy 31: Office Hours"
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "text": "CLICC Classroom C (Powell 320)",
+   "building": "POWELL",
+   "room": "320",
+   "space": "CLICC Classroom C",
+   "description": "Technology classroom, open for drop-in study when not booked.",
+   "capacity": 32,
+   "type": "Library classroom",
+   "characteristics": [],
+   "url": "https://www.library.ucla.edu/help/services-resources/clicc-classrooms/",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1170
+      ]
+     ],
+     "hours": [
+      480,
+      1170
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       750
+      ],
+      [
+       825,
+       840
+      ],
+      [
+       930,
+       1170
+      ]
+     ],
+     "hours": [
+      480,
+      1170
+     ],
+     "booked": [
+      [
+       750,
+       825,
+       "ASIAN 104"
+      ],
+      [
+       840,
+       930,
+       "URC HASS: Mellon Mays/URFP/McNair Scholarship Info Session"
+      ]
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1170
+      ]
+     ],
+     "hours": [
+      480,
+      1170
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       750
+      ],
+      [
+       825,
+       1170
+      ]
+     ],
+     "hours": [
+      480,
+      1170
+     ],
+     "booked": [
+      [
+       750,
+       825,
+       "ASIAN 104"
+      ]
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       840
+      ],
+      [
+       930,
+       1050
+      ]
+     ],
+     "hours": [
+      480,
+      1050
+     ],
+     "booked": [
+      [
+       840,
+       930,
+       "URC HASS: Mellon Mays/URFP/McNair Scholarship Info Session"
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       1170
+      ]
+     ],
+     "hours": [
+      480,
+      1170
+     ]
+    }
+   }
+  },
+  {
+   "text": "CLICC RC Classroom (YRL 11630F)",
+   "building": "YRL",
+   "room": "11630F",
+   "space": "CLICC RC Classroom",
+   "description": "Technology classroom, open for drop-in study when not booked.",
+   "capacity": 26,
+   "type": "Library classroom",
+   "characteristics": [],
+   "url": "https://www.library.ucla.edu/help/services-resources/clicc-classrooms/",
+   "area": "library",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       480,
+       1170
+      ]
+     ],
+     "hours": [
+      480,
+      1170
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       600
+      ],
+      [
+       710,
+       750
+      ],
+      [
+       825,
+       1170
+      ]
+     ],
+     "hours": [
+      480,
+      1170
+     ],
+     "booked": [
+      [
+       600,
+       710,
+       "YIDDSH 101A"
+      ],
+      [
+       750,
+       825,
+       "JAPAN 101A"
+      ]
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       660
+      ],
+      [
+       830,
+       900
+      ],
+      [
+       1020,
+       1170
+      ]
+     ],
+     "hours": [
+      480,
+      1170
+     ],
+     "booked": [
+      [
+       660,
+       830,
+       "Asia Am C142A/C242A"
+      ],
+      [
+       900,
+       1020,
+       "RUSSN 90A: Office Hours"
+      ]
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       600
+      ],
+      [
+       710,
+       750
+      ],
+      [
+       825,
+       1170
+      ]
+     ],
+     "hours": [
+      480,
+      1170
+     ],
+     "booked": [
+      [
+       600,
+       710,
+       "YIDDSH 101A"
+      ],
+      [
+       750,
+       825,
+       "JAPAN 101A"
+      ]
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       660
+      ],
+      [
+       710,
+       1050
+      ]
+     ],
+     "hours": [
+      480,
+      1050
+     ],
+     "booked": [
+      [
+       660,
+       710,
+       "FIAT LX 19"
+      ]
+     ]
+    },
+    "2026-10-17": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-18": {
+     "free": [],
+     "hours": null,
+     "closed": [
+      [
+       0,
+       1440
+      ]
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       480,
+       1170
+      ]
+     ],
+     "hours": [
+      480,
+      1170
+     ]
+    }
+   }
+  },
+  {
+   "text": "SEASnet Lab (Boelter 2664)",
+   "building": "BOELTER",
+   "room": "2664",
+   "space": "SEASnet",
+   "description": "Windows lab for engineering coursework. Needs a SEASnet account (engineering students, or anyone enrolled in an engineering course). Closed on university holidays.",
+   "capacity": 53,
+   "type": "Computer lab",
+   "characteristics": [],
+   "url": "https://www.seasnet.ucla.edu/seasnet-computer-labs/",
+   "area": "campus",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       600,
+       1260
+      ]
+     ],
+     "hours": [
+      600,
+      1260
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       1020
+      ]
+     ],
+     "hours": [
+      480,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       600,
+       1260
+      ]
+     ],
+     "hours": [
+      600,
+      1260
+     ]
+    }
+   }
+  },
+  {
+   "text": "SEASnet Lab (Boelter 3760)",
+   "building": "BOELTER",
+   "room": "3760",
+   "space": "SEASnet",
+   "description": "Windows lab for engineering coursework. Needs a SEASnet account (engineering students, or anyone enrolled in an engineering course). Closed on university holidays. Classes are held here at times.",
+   "capacity": 29,
+   "type": "Computer lab",
+   "characteristics": [],
+   "url": "https://www.seasnet.ucla.edu/seasnet-computer-labs/",
+   "area": "campus",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       600,
+       1260
+      ]
+     ],
+     "hours": [
+      600,
+      1260
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       1020
+      ]
+     ],
+     "hours": [
+      480,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       600,
+       1260
+      ]
+     ],
+     "hours": [
+      600,
+      1260
+     ]
+    }
+   }
+  },
+  {
+   "text": "SEASnet Lab (Boelter 4404)",
+   "building": "BOELTER",
+   "room": "4404",
+   "space": "SEASnet",
+   "description": "Windows lab for engineering coursework. Needs a SEASnet account (engineering students, or anyone enrolled in an engineering course). Closed on university holidays. Classes are held here at times.",
+   "capacity": 65,
+   "type": "Computer lab",
+   "characteristics": [],
+   "url": "https://www.seasnet.ucla.edu/seasnet-computer-labs/",
+   "area": "campus",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       600,
+       1260
+      ]
+     ],
+     "hours": [
+      600,
+      1260
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       1020
+      ]
+     ],
+     "hours": [
+      480,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       600,
+       1260
+      ]
+     ],
+     "hours": [
+      600,
+      1260
+     ]
+    }
+   }
+  },
+  {
+   "text": "SEASnet Lab (Boelter 4405)",
+   "building": "BOELTER",
+   "room": "4405",
+   "space": "SEASnet",
+   "description": "Windows lab for engineering coursework. Needs a SEASnet account (engineering students, or anyone enrolled in an engineering course). Closed on university holidays.",
+   "capacity": 16,
+   "type": "Computer lab",
+   "characteristics": [],
+   "url": "https://www.seasnet.ucla.edu/seasnet-computer-labs/",
+   "area": "campus",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       600,
+       1260
+      ]
+     ],
+     "hours": [
+      600,
+      1260
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       1020
+      ]
+     ],
+     "hours": [
+      480,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       600,
+       1260
+      ]
+     ],
+     "hours": [
+      600,
+      1260
+     ]
+    }
+   }
+  },
+  {
+   "text": "SEASnet Lab (Boelter 4442)",
+   "building": "BOELTER",
+   "room": "4442",
+   "space": "SEASnet",
+   "description": "Windows lab for engineering coursework. Needs a SEASnet account (engineering students, or anyone enrolled in an engineering course). Closed on university holidays.",
+   "capacity": 36,
+   "type": "Computer lab",
+   "characteristics": [],
+   "url": "https://www.seasnet.ucla.edu/seasnet-computer-labs/",
+   "area": "campus",
+   "days": {
+    "2026-10-12": {
+     "free": [
+      [
+       600,
+       1260
+      ]
+     ],
+     "hours": [
+      600,
+      1260
+     ]
+    },
+    "2026-10-13": {
+     "free": [
+      [
+       480,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-14": {
+     "free": [
+      [
+       480,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-15": {
+     "free": [
+      [
+       480,
+       1260
+      ]
+     ],
+     "hours": [
+      480,
+      1260
+     ]
+    },
+    "2026-10-16": {
+     "free": [
+      [
+       480,
+       1020
+      ]
+     ],
+     "hours": [
+      480,
+      1020
+     ]
+    },
+    "2026-10-17": {
+     "free": [
+      [
+       600,
+       1020
+      ]
+     ],
+     "hours": [
+      600,
+      1020
+     ]
+    },
+    "2026-10-18": {
+     "free": [
+      [
+       780,
+       1260
+      ]
+     ],
+     "hours": [
+      780,
+      1260
+     ]
+    },
+    "2026-10-19": {
+     "free": [
+      [
+       600,
+       1260
+      ]
+     ],
+     "hours": [
+      600,
+      1260
+     ]
+    }
+   }
+  }
+ ]
+}
