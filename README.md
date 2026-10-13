@@ -28,6 +28,8 @@ It keeps events whose location names one of our rooms ("3400 Boelter Hall", "Mat
 
 **Short gaps.** A gap under an hour between two bookings counts as busy. It shows as a hatched block on the calendar.
 
+**Time window.** "Show rooms free between" keeps a room if it has at least an hour free inside the window (or the whole window, when the window is shorter than an hour). A room that is only partly free says which part on its card. Before, a single half hour booking anywhere in the window hid the room, which made bookable library rooms disappear in the evening.
+
 **The Hill.** A Campus / The Hill / Libraries / All switch at the top picks where to look. Two kinds of Hill rooms show up under The Hill:
 
 - Registrar rooms in Hill buildings that have classes this term (Covel 210/218/225/319A, De Neve P350). `scrape.py` scrapes these along with the general assignment rooms. `--all` scrapes every registrar room.
