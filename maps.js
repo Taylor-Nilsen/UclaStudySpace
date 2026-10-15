@@ -686,8 +686,9 @@
     }
 
     function roomLabel_(r, u, isSel){
-        const txt = r.kind === 'restroom' ? (r.label || 'WC') : r.label;
+        let txt = r.kind === 'restroom' ? (r.label || 'WC') : r.label;
         if(!txt) return '';
+        txt = String(txt).replace(/^0+(?=\d)/, '');   // "0301" (Olympic's O301 read as a zero) shows as 301, like the site's room numbers
         const b = bboxOf(r.pts);
         const F = frameOf(r.pts);
         const along = F.s1 - F.s0, across = F.t1 - F.t0;
