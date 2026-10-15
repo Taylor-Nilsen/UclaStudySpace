@@ -1,0 +1,130 @@
+{
+ "building": "ROSENFLD",
+ "floor": "4",
+ "title": "Rosenfeld Library, architect's Plan Level 3 (UCLA floor 4, uncertain)",
+ "extent": "full",
+ "source": {
+  "publisher": "Pei Cobb Freed & Partners (architects of the Anderson complex, 1995)",
+  "url": "https://www.pcf-p.com/projects/ucla-anderson-school-of-management/",
+  "date": "building completed 1995; portfolio drawings, undated",
+  "accessed": "2026-10-15",
+  "license": "Copyright Pei Cobb Freed & Partners; portfolio images with no stated license, used as reference for tracing only",
+  "what": "Pei Cobb Freed & Partners, UCLA Anderson School of Management, Plan Level 3 (whole complex; building E is the library)",
+  "file": "https://pcfandtypecodewebstuff.s3.amazonaws.com/original_images/3.lin.PCF.8723_dwgs4.jpg"
+ },
+ "plan": {
+  "file": "pcfp_anderson_plan_level3.jpg",
+  "url": "https://pcfandtypecodewebstuff.s3.amazonaws.com/original_images/3.lin.PCF.8723_dwgs4.jpg"
+ },
+ "mode": "walls",
+ "control": {
+  "auto": "outline",
+  "rot_init": 0,
+  "fix_rotation": true
+ },
+ "crop": [
+  1590,
+  30,
+  2500,
+  660
+ ],
+ "ocr": false,
+ "params": {
+  "dark": 180,
+  "open_px": 3,
+  "door_m": 2.0,
+  "min_room_m2": 2.0,
+  "min_wall_m": 1.0
+ },
+ "notes": [
+  "The plan is the architects' presentation drawing of the whole Anderson complex; only building E (Rosenfeld Library, the trapezoid at the north end of the complex) is traced, cropped to that block and fitted to the mapped outline by ICP.",
+  "Floor numbering is reconciled with UCLA's as: architect's Level 1 = UCLA 1, Ground Floor = UCLA 2, Level 2 = UCLA 3, Level 3 = UCLA 4. Reasoning: the Level 1 sheet shows the parking deck under the Marion Anderson Courtyard, so Level 1 is below the Ground Floor; the Anderson complex map (2018) calls the courtyard the 2nd level, Wells Fargo Court (the plaza south of the library, drawn paved on the Level 2 sheet) the 3rd level, and the Structure 5 entrance level 1; the library has four UCLA floors (1 to 4). This is a reading of the drawings, not a statement from the architects, so the UCLA floor is uncertain and the architect's level name is kept in the title.",
+  "No room numbers, scale or north arrow on the drawing: rooms are unlabeled; walls, stairs, the elevator core and the stacks/reading areas are what the trace gives. Furniture (stacks, tables, chairs) is drawn with thin lines and is removed with open_px; thick walls stay.",
+  "Orientation: the block's slanted west side and the notch on its south side match the mapped outline only one way round, and the complex map confirms the library at the north end with Cornell Hall (D) to its south-east; the drawing is taken north-up (rot_init 0) and the ICP refines it.",
+  "This sheet is printed in light grey, so the ink threshold is raised (dark 180).",
+  "The outer walls of the reading room are drawn as dashed window walls; cuts along them keep the room from leaking into the terraces outside. The free ICP on this grey sheet wandered off (the terrace hatching joins the footprint), so the rotation is fixed at 0: the Ground and Level 1 sheets of the same set fit freely at 0.3 to 0.4 degrees.",
+  "The two stairs are typed by hand from the stair symbols on the drawing; everything else is left unlabeled (no text on the plan)."
+ ],
+ "cuts": [
+  [
+   [
+    1710,
+    175
+   ],
+   [
+    1650,
+    490
+   ]
+  ],
+  [
+   [
+    1710,
+    175
+   ],
+   [
+    2000,
+    175
+   ]
+  ],
+  [
+   [
+    2070,
+    62
+   ],
+   [
+    2460,
+    62
+   ]
+  ],
+  [
+   [
+    2460,
+    62
+   ],
+   [
+    2460,
+    610
+   ]
+  ],
+  [
+   [
+    1933,
+    476
+   ],
+   [
+    1935,
+    501
+   ]
+  ],
+  [
+   [
+    1935,
+    501
+   ],
+   [
+    2072,
+    501
+   ]
+  ]
+ ],
+ "set": [
+  {
+   "px": [
+    1730,
+    470
+   ],
+   "kind": "stair",
+   "label": "Stair",
+   "name": "Stair (south-west, drawn with DN/UP arrows)"
+  },
+  {
+   "px": [
+    2030,
+    120
+   ],
+   "kind": "stair",
+   "label": "Stair",
+   "name": "Stair tower (north)"
+  }
+ ]
+}

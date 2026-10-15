@@ -5,6 +5,7 @@ Find empty UCLA classrooms to study in. The site shows every general assignment 
 ## What's in here
 
 - `index.html`: the whole frontend. It loads `classrooms.json` and does filtering, sorting and rendering in the browser.
+- `maps.js`, `maps/`: building floor maps and the campus map (see Maps below). `maps/build_maps.py` builds the data.
 - `classrooms.json`: the data the site reads.
 - `scrape.py`: pulls class schedules and room characteristics from the UCLA Registrar.
 - `scrape_hill.py`: pulls Hill study room availability from Residential Life into `hill.json`.
@@ -74,6 +75,44 @@ If it can't get your location, the message next to the button says why and where
 - Links opened inside Instagram, TikTok and similar apps use the app's own browser, which usually can't get location. Open the page in Safari.
 
 `window.StudyLocate` is the one piece of code that asks for location, so other features (like the map) reuse the same fix and error messages: `get()` returns `{lat, lon, accuracy, at}` and has to be called straight from a tap the first time, `watch(onFix, onError)` gives live updates and returns a stop function, `last()` is the latest fix or null, and `explainError(err)` turns an error into the message above.
+
+**Maps.** Every room card has a "🗺️ Map" button. It opens a popup with two tabs:
+
+- **Floor**: the building drawn like the fire escape plan on the wall, on a light "paper" panel (a ☾ Dark button switches the plan to dark colors and the choice is remembered). Thick black outer walls, thinner inside walls, every room as a box with its number, corridors left open, stairs with treads, elevators with the up/down sign, restrooms in blue, exits as green EXIT tags with the door swing, a north arrow, a scale bar in meters and feet, and a legend of what's on the plan. Your room is filled yellow. Pick a floor at the top (▦ marks floors that have a traced plan). Zoom with + and −, a pinch, ctrl+scroll or a double click, and drag to move; ⤢ shows the whole building. The room's floor comes from its number (Boelter 2444 is on floor 2), and the page says how sure that is. "📍 Show me" puts a red YOU ARE HERE marker where you are, with your GPS accuracy around it (an arrow at the edge when you're off the part shown), and tells you if you're outside the building and how far away. GPS can't tell what floor you're on.
+- **Campus**: an OpenStreetMap map with the building in blue, the other StudySpace buildings outlined, and your position if location is on. Leaflet only loads the first time you open this tab.
+
+"Directions" opens walking directions in Apple Maps on iPhone, iPad and Mac, and in Google Maps everywhere else.
+
+What's accurate and what isn't:
+
+- Outlines are from OpenStreetMap or UCLA's campus GIS, good to about a meter. Each building says how well the two agree.
+- Doors are from UCLA's accessibility survey on maps.ucla.edu and from OpenStreetMap. Restrooms are from UCLA's GIS and the same survey, with room numbers.
+- Most elevators come from UCLA's 2020 accessibility map PDF, which has no coordinates. The script lines it up with the building outlines, and its dots end up about 7 m from where they really are. Those show with a dashed ring and say "approximate".
+- Rooms, corridors, stairs and walls are only drawn where a published plan exists. `maps/trace_plan.py` traces the plan (an image or a PDF page) into rooms and walls and lines it up with the ground using 2 to 4 control points; `maps/SOURCES.md` lists every traced floor with its source, date and fit error, and the map names the plan and its date under the drawing. Right now that's 120 floors in 26 buildings: Boelter 1 to 9, Bunche 10, Math Sciences 1 to 5, Young Hall 2 and 4, Powell ground to 3, YRL 1 to 5, Schoenberg 1 and 2, PAB 1, Perloff B to 2, Broad 1 and 2, CHS A to 1, Rosenfeld 1 to 4, Royce's stage level, Covel 3, Carnesale 2 and 3, De Neve 1, Olympic 1 to 9, Hedrick, Rieber and Sproul 2 to 7, Hitch, Canyon Point House 1, Gayley Heights 1 to 17, Tipuana, Laurel and Palo Verde. They come from UCLA Housing's room sign-up plans, UCLA Library, School of Music and Samueli PDFs (some recovered from Common Crawl after being taken down), department and venue pages, an emergency plan, student reports and architects' portfolios; `maps/SOURCES.md` has each one. UCLA keeps real floor plans in its Space Inventory, but those need a UCLA login with the right role. Its room lists are public, so `maps/rooms_index.json` holds the exact floor of every room in 29 buildings and the floor picker uses that before falling back to the room number. A floor with no plan shows the outline, doors, elevators and restrooms, and the page says "room position not mapped" instead of guessing.
+
+`maps/SOURCES.md` lists every source, how each one was lined up, the leads that didn't pan out, and a table of what's known for each building. To rebuild the map data:
+
+```bash
+pip install pdfplumber
+python maps/build_maps.py            # add --refresh to download everything again
+```
+
+To trace a plan, write a control file next to the others in `maps/plans/` and run it (see the top of `trace_plan.py` for the format; it needs `pip install opencv-python-headless scikit-image scipy pypdfium2 pdfplumber pytesseract` and the `tesseract` program for scanned plans):
+
+```bash
+python maps/trace_plan.py maps/plans/YRL-1.control.json --debug /tmp/trace   # writes maps/plans/YRL-1.json and updates maps/YRL.json
+python maps/trace_plan.py --render plan.pdf --page 2 --out grid.png          # a pixel grid for picking control points
+```
+
+Most plans came from published PDFs and images (see `maps/SOURCES.md` for where to look and what was already checked). A phone photo of the evacuation plan posted on a floor also works (`pip install rapidocr-onnxruntime` reads its room numbers far better than tesseract):
+
+```bash
+python maps/trace_plan.py IMG_1234.jpg --building WGYOUNG --floor 2 --date 2026-10-12
+```
+
+That squares up the sign, traces it, fits it to the building outline, writes `maps/plans/WGYOUNG-2.json` and updates `maps/WGYOUNG.json`. To check it, open `maps/.cache/plans/WGYOUNG/review/WGYOUNG-2-trace.png` (each space shaded on its own, with its kind and number) and the map itself. Fix what's wrong in `maps/plans/WGYOUNG-2.labels.json` (room numbers and kinds; set `"checked": true` on the entries you looked at) or in `maps/plans/WGYOUNG-2.control.json` (`cuts` to close a wall the photo shows with a gap, `set` to name a space), then rerun `python maps/trace_plan.py maps/plans/WGYOUNG-2.control.json`. The photo itself stays in `maps/.cache` and isn't committed.
+
+Downloads go to `maps/.cache` (git-ignored). Only the small JSON files in `maps/` get committed. `maps.js` is all the page code for the maps; it does nothing until you press a Map button.
 
 ## Data contract
 

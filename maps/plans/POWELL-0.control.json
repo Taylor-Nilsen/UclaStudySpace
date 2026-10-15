@@ -1,0 +1,487 @@
+{
+ "building": "POWELL",
+ "floor": "0",
+ "title": "Powell Library floor 0",
+ "extent": "full",
+ "source": {
+  "publisher": "UCLA Library",
+  "what": "\"Powell Library Building Floorplans\" (color vector PDF, all four floors on one sheet with room numbers; taken down since, recovered from the Common Crawl 2018-03 capture)",
+  "url": "https://www.library.ucla.edu/sites/default/files/Powell-floorplan-color_link_0.pdf",
+  "file": "https://www.library.ucla.edu/sites/default/files/Powell-floorplan-color_link_0.pdf",
+  "archive": "Common Crawl CC-MAIN-2018-13, captured 2018-03-20",
+  "date": "undated, online 2018-03",
+  "accessed": "2026-10-15"
+ },
+ "plan": {
+  "file": "Powell-floorplan-color_link_0.pdf",
+  "url": "https://www.library.ucla.edu/sites/default/files/Powell-floorplan-color_link_0.pdf",
+  "page": 1,
+  "dpi": 150
+ },
+ "mode": "vector",
+ "transform": "similarity",
+ "control": [
+  {
+   "px": [
+    60.5,
+    1124.7
+   ],
+   "outline_vertex": [
+    0,
+    11
+   ],
+   "what": "outer corner of the east wing's south end (plan top left; the plan is drawn south up)"
+  },
+  {
+   "px": [
+    179.3,
+    1124.7
+   ],
+   "outline_vertex": [
+    0,
+    12
+   ],
+   "what": "inner corner of the east wing's south end"
+  },
+  {
+   "px": [
+    477.9,
+    1124.7
+   ],
+   "outline_vertex": [
+    0,
+    21
+   ],
+   "what": "inner corner of the west wing's south end"
+  },
+  {
+   "px": [
+    593.2,
+    1124.7
+   ],
+   "outline_vertex": [
+    0,
+    22
+   ],
+   "what": "outer corner of the west wing's south end (plan top right)"
+  },
+  {
+   "px": [
+    54.5,
+    1723.4
+   ],
+   "outline_vertex": [
+    0,
+    6
+   ],
+   "what": "north-east corner of the building (plan bottom left)"
+  },
+  {
+   "px": [
+    607.5,
+    1723.4
+   ],
+   "outline_vertex": [
+    0,
+    25
+   ],
+   "what": "north-west corner of the building (plan bottom right)"
+  },
+  {
+   "px": [
+    54.5,
+    1585.9
+   ],
+   "outline_vertex": [
+    0,
+    7
+   ],
+   "what": "jog in the east wall where the wider north block starts"
+  },
+  {
+   "px": [
+    607.5,
+    1585.9
+   ],
+   "outline_vertex": [
+    0,
+    24
+   ],
+   "what": "jog in the west wall where the wider north block starts"
+  }
+ ],
+ "crop": [
+  30,
+  1118,
+  640,
+  1775
+ ],
+ "params": {
+  "door_m": 2.0,
+  "min_room_m2": 5.0,
+  "split_on": "text"
+ },
+ "notes": [
+  "Traced from the Ground Floor (bottom left of the sheet) of the UCLA Library sheet.",
+  "The sheet is drawn south up (its compass has E on the left and W on the right); UCLA's main entrance is on the north face and the plan's Main Entrance is at the bottom, so the plan is turned 180 degrees. The fit uses the outer wall corners of the two wings and of the wider north block against the building outline.",
+  "Elevators are the gray boxes with the up/down glyph and stairs the hatched boxes (both from the sheet's legend); they are added as hand-placed boxes at the sheet's positions. Restroom icons (legend: Restrooms) set the kind of the room holding them.",
+  "The sheet leaves openings in the outer wall of the west wing (plan right) on floors 0, 2 and 3 and in the east wall on floors 0 and 1; cuts close them so the rooms along those walls (228, 238, 330) don't leak outside.",
+  "The library plan is a diagram: rooms are drawn as blocks with simplified walls; open areas (rotunda, stacks, reading room) are separated along the drawn wall lines and by their labels.",
+  "The two restroom icons next to room 70 point with arrows at the small rooms east of them; those rooms get the restroom kind."
+ ],
+ "cuts": [
+  [
+   [
+    593,
+    1470
+   ],
+   [
+    593,
+    1500
+   ]
+  ],
+  [
+   [
+    60,
+    1495
+   ],
+   [
+    60,
+    1530
+   ]
+  ]
+ ],
+ "set": [
+  {
+   "px": [
+    205,
+    1355
+   ],
+   "kind": "restroom",
+   "label": "Women",
+   "name": "Women's restroom (icon and arrow on the plan)"
+  },
+  {
+   "px": [
+    205,
+    1388
+   ],
+   "kind": "restroom",
+   "label": "Men",
+   "name": "Men's restroom (icon and arrow on the plan)"
+  },
+  {
+   "px": [
+    380,
+    1600
+   ],
+   "kind": "restroom",
+   "label": "Men",
+   "name": "Men's restroom (icon on the plan)"
+  },
+  {
+   "px": [
+    345,
+    1655
+   ],
+   "kind": "restroom",
+   "label": "Women",
+   "name": "Women's restroom (icon on the plan)"
+  },
+  {
+   "px": [
+    530,
+    1487
+   ],
+   "kind": "exit",
+   "label": "Emergency Exit"
+  },
+  {
+   "px": [
+    100,
+    1200
+   ],
+   "kind": "room",
+   "ref": "86",
+   "label": "86",
+   "name": "OID BruinCast and Classroom Technology Design and Maintenance"
+  },
+  {
+   "px": [
+    100,
+    1400
+   ],
+   "kind": "room",
+   "ref": "70",
+   "label": "70",
+   "name": "Office of Instructional Development (OID) Administrative Offices, CBL, CUTF"
+  },
+  {
+   "px": [
+    150,
+    1680
+   ],
+   "kind": "room",
+   "ref": "46",
+   "label": "46",
+   "name": "Instructional Media Library and Film and Television Archive Research and Study Center"
+  },
+  {
+   "px": [
+    520,
+    1680
+   ],
+   "kind": "room",
+   "ref": "30",
+   "label": "30",
+   "name": "Shared Processing Facility"
+  },
+  {
+   "px": [
+    540,
+    1300
+   ],
+   "kind": "room",
+   "label": "Book Stacks PQ - Z",
+   "name": "Ground Floor Book Stacks PQ - Z"
+  },
+  {
+   "px": [
+    330,
+    1450
+   ],
+   "kind": "room",
+   "ref": "",
+   "label": "Book Stacks H - PQ",
+   "name": "Ground Floor Book Stacks H - PQ"
+  }
+ ],
+ "drop": [
+  [
+   612,
+   1392
+  ]
+ ],
+ "add": [
+  {
+   "kind": "elevator",
+   "px": [
+    [
+     258.3,
+     1370.9
+    ],
+    [
+     272.8,
+     1370.9
+    ],
+    [
+     272.8,
+     1385.5
+    ],
+    [
+     258.3,
+     1385.5
+    ]
+   ],
+   "name": "Elevator (gray box on the plan)"
+  },
+  {
+   "kind": "elevator",
+   "px": [
+    [
+     509.6,
+     1453.4
+    ],
+    [
+     524.1,
+     1453.4
+    ],
+    [
+     524.1,
+     1468
+    ],
+    [
+     509.6,
+     1468
+    ]
+   ],
+   "name": "Elevator (gray box on the plan)"
+  },
+  {
+   "kind": "elevator",
+   "px": [
+    [
+     138.6,
+     1553.1
+    ],
+    [
+     153.1,
+     1553.1
+    ],
+    [
+     153.1,
+     1567.6
+    ],
+    [
+     138.6,
+     1567.6
+    ]
+   ],
+   "name": "Elevator (gray box on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     479,
+     1125
+    ],
+    [
+     517,
+     1125
+    ],
+    [
+     517,
+     1160
+    ],
+    [
+     479,
+     1160
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     219,
+     1260
+    ],
+    [
+     240,
+     1260
+    ],
+    [
+     240,
+     1296
+    ],
+    [
+     219,
+     1296
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     254,
+     1327
+    ],
+    [
+     271,
+     1327
+    ],
+    [
+     271,
+     1365
+    ],
+    [
+     254,
+     1365
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     480,
+     1491
+    ],
+    [
+     507,
+     1491
+    ],
+    [
+     507,
+     1529
+    ],
+    [
+     480,
+     1529
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     96,
+     1533
+    ],
+    [
+     132,
+     1533
+    ],
+    [
+     132,
+     1557
+    ],
+    [
+     96,
+     1557
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     379,
+     1635
+    ],
+    [
+     421,
+     1635
+    ],
+    [
+     421,
+     1685
+    ],
+    [
+     379,
+     1685
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     243,
+     1661
+    ],
+    [
+     268,
+     1661
+    ],
+    [
+     268,
+     1685
+    ],
+    [
+     243,
+     1685
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  }
+ ]
+}

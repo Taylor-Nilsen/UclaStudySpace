@@ -1,0 +1,206 @@
+{
+ "building": "YRL",
+ "floor": "4",
+ "title": "Young Research Library floor 4 (library floor map)",
+ "extent": "full",
+ "source": {
+  "publisher": "UCLA Library",
+  "what": "\"Charles E. Young Research Library Floor Maps\" (web edition: schematic block diagrams of floors A, 1, 2, 3, 4 and 5 with stair, elevator and restroom icons, no room numbers; raster images in a PDF; taken down since, recovered from the Common Crawl 2019-10 capture)",
+  "url": "https://www.library.ucla.edu/sites/default/files/location_floor_maps/YRL%20-%20All%20Floors%20-%20web.pdf",
+  "file": "https://www.library.ucla.edu/sites/default/files/location_floor_maps/YRL%20-%20All%20Floors%20-%20web.pdf",
+  "archive": "Common Crawl CC-MAIN-2019-43, captured 2019-10-21",
+  "date": "undated, online 2019-10",
+  "accessed": "2026-10-15"
+ },
+ "plan": {
+  "file": "YRL - All Floors - web.pdf",
+  "url": "https://www.library.ucla.edu/sites/default/files/location_floor_maps/YRL%20-%20All%20Floors%20-%20web.pdf",
+  "page": 2,
+  "dpi": 300
+ },
+ "mode": "fills",
+ "transform": "affine",
+ "control": [
+  {
+   "px": [
+    1125,
+    1185
+   ],
+   "outline_vertex": [
+    0,
+    9
+   ],
+   "what": "NW corner of the floor's frame on the map"
+  },
+  {
+   "px": [
+    2366,
+    1185
+   ],
+   "outline_vertex": [
+    0,
+    0
+   ],
+   "what": "NE corner of the frame"
+  },
+  {
+   "px": [
+    2366,
+    2105
+   ],
+   "outline_vertex": [
+    0,
+    1
+   ],
+   "what": "SE corner of the frame"
+  },
+  {
+   "px": [
+    1125,
+    2105
+   ],
+   "outline_vertex": [
+    0,
+    8
+   ],
+   "what": "SW corner of the frame"
+  }
+ ],
+ "crop": [
+  1137,
+  1197,
+  2354,
+  2093
+ ],
+ "params": {
+  "min_room_m2": 2.0,
+  "dark": 130
+ },
+ "cuts": [
+  [
+   [
+    1140,
+    1564
+   ],
+   [
+    1382,
+    1564
+   ]
+  ],
+  [
+   [
+    1890,
+    1544
+   ],
+   [
+    2076,
+    1544
+   ]
+  ]
+ ],
+ "set": [
+  {
+   "px": [
+    1983,
+    1617
+   ],
+   "kind": "elevator",
+   "label": "Elevators",
+   "name": "Elevators (icons on the map)"
+  },
+  {
+   "px": [
+    1298,
+    1623
+   ],
+   "kind": "elevator",
+   "label": "Elevators",
+   "name": "Elevators (icons on the map)"
+  },
+  {
+   "px": [
+    1741,
+    1286
+   ],
+   "kind": "room",
+   "label": "Oversized books"
+  },
+  {
+   "px": [
+    1651,
+    1811
+   ],
+   "kind": "room",
+   "label": "Assigned Faculty Studies"
+  },
+  {
+   "px": [
+    1211,
+    1811
+   ],
+   "kind": "room",
+   "label": "Assigned Faculty Studies"
+  },
+  {
+   "px": [
+    1704,
+    2011
+   ],
+   "kind": "room",
+   "label": "Doctoral Candidate Desks"
+  },
+  {
+   "px": [
+    1845,
+    2028
+   ],
+   "kind": "stair",
+   "label": "Stairs",
+   "name": "Stairs (icon on the map)"
+  },
+  {
+   "px": [
+    1943,
+    1452
+   ],
+   "kind": "restroom",
+   "label": "WC",
+   "name": "Restroom (icon on the map)"
+  },
+  {
+   "px": [
+    2023,
+    1452
+   ],
+   "kind": "restroom",
+   "label": "WC",
+   "name": "Restroom (icon on the map)"
+  },
+  {
+   "px": [
+    1263,
+    1490
+   ],
+   "kind": "restroom",
+   "label": "WC",
+   "name": "Restroom (icon on the map)"
+  },
+  {
+   "px": [
+    1334,
+    1490
+   ],
+   "kind": "restroom",
+   "label": "WC",
+   "name": "Restroom (icon on the map)"
+  }
+ ],
+ "notes": [
+  "The library map is a block diagram: blue blocks are the spaces it names, white is open floor and corridors, the gray blocks hold the restroom and elevator icons. No room numbers; the stacks blocks are labelled with their call-number ranges as on the map.",
+  "The map's rectangular frame is taken as the building envelope (affine fit to the outline's four corners), so shapes are only as good as the diagram. North is up on the map: the restroom/elevator cores sit where UCLA's floor 1 restroom records put them (north half, west and east).",
+  "The crop is set 12 px inside the diagram's frame line: the frame's anti-aliased inner edge is neither ink nor paper, so it forms a thin ring region whose hole is the whole floor and the tracer's hole filling then swallows every block inside it. The ink threshold is 130 so the frame itself counts as wall.",
+  "Labels the OCR garbled (Doctoral Candidate Desks, Assigned Faculty Studies, the oversized-books blocks) are typed in from the map with set.",
+  "The two stair icons' boxes get the stair kind with set; the gray cores are split into restrooms (top) and elevators (bottom).",
+  "Each gray block on the map holds the restroom icons in its top half and the elevator icons in its bottom half; a cut across the middle of each block (carried on through the small block attached to the west core's side) separates them and set gives them their kinds."
+ ]
+}

@@ -1,0 +1,211 @@
+{
+ "building": "OLYMPIC",
+ "floor": "5",
+ "title": "Olympic Hall floor 5",
+ "extent": "full",
+ "source": {
+  "publisher": "UCLA Housing",
+  "what": "Olympic Hall level 5 plan (CAD export) from UCLA Housing's room sign-up map site",
+  "url": "http://www.housing.ucla.edu/maps/plans/Olympic-05.htm",
+  "file": "http://www.housing.ucla.edu/maps/plans/Olympic/O-05.png",
+  "index": "https://housing.ucla.edu/my-housing/maps-and-tours/housing-building-maps -> http://www.housing.ucla.edu/maps/",
+  "date": "2021-04-02 (file date)",
+  "accessed": "2026-10-15"
+ },
+ "plan": {
+  "file": "O-05.png",
+  "url": "http://www.housing.ucla.edu/maps/plans/Olympic/O-05.png"
+ },
+ "mode": "walls",
+ "control": {
+  "auto": "outline",
+  "search": true,
+  "rot_init": 30
+ },
+ "params": {
+  "dark": 150,
+  "open_px": 0,
+  "door_m": 4.0,
+  "min_room_m2": 2.0,
+  "min_wall_m": 1.0
+ },
+ "notes": [
+  "Plan: UCLA Housing's CAD export of Olympic Hall level 5 (room sign-up map, file dated 2021-04-02). Walls are its dark lines (gray level below 150); the furniture is drawn lighter and is left out. Room numbers are the plan's labels (O501...); the tracer stores the leading letter O as a zero (0501), which the site's room-key normalisation reads as 501.",
+  "Georeference: the plan footprint (the L-shaped wing plus the study-commons tower) is fitted to the mapped outline by ICP, with the same 20 degree rotation on every floor; orientation checked on floors 2 and 4 with UCLA GIS restrooms (OH227/OH262, OH427/OH456), which fall on the plan's all-gender restrooms. The housing site's north arrow (north up-left) agrees.",
+  "The exterior walls are drawn as light glazing in places, so rooms along them leaked to the outside; cuts along the mapped outline (the L wing and the tower) seal them. The outline's north block (the makerspace / upper-floor housing bar) is not cut.",
+  "Study rooms, lounges and other spaces the plan labels by name only (OPEN STUDY, GROUP STUDY, LOUNGE...) carry that name; the site's room numbers (375B/C/D, 470, 475) are not printed on the plan, so they are not assigned.",
+  "The makerspace, the outdoor stair between the wings and the site lines are not part of this floor; unlabeled spaces are recorded with kind 'other'."
+ ],
+ "cuts": [
+  [
+   [
+    1873,
+    257
+   ],
+   [
+    1429,
+    1433
+   ]
+  ],
+  [
+   [
+    1429,
+    1433
+   ],
+   [
+    1399,
+    1501
+   ]
+  ],
+  [
+   [
+    1399,
+    1501
+   ],
+   [
+    1485,
+    1530
+   ]
+  ],
+  [
+   [
+    1485,
+    1530
+   ],
+   [
+    1386,
+    1783
+   ]
+  ],
+  [
+   [
+    1386,
+    1783
+   ],
+   [
+    202,
+    1791
+   ]
+  ],
+  [
+   [
+    202,
+    1791
+   ],
+   [
+    202,
+    1825
+   ]
+  ],
+  [
+   [
+    202,
+    1825
+   ],
+   [
+    20,
+    1822
+   ]
+  ],
+  [
+   [
+    20,
+    1822
+   ],
+   [
+    16,
+    751
+   ]
+  ],
+  [
+   [
+    16,
+    751
+   ],
+   [
+    265,
+    751
+   ]
+  ],
+  [
+   [
+    265,
+    751
+   ],
+   [
+    268,
+    880
+   ]
+  ],
+  [
+   [
+    268,
+    880
+   ],
+   [
+    388,
+    885
+   ]
+  ],
+  [
+   [
+    388,
+    885
+   ],
+   [
+    392,
+    1420
+   ]
+  ],
+  [
+   [
+    392,
+    1420
+   ],
+   [
+    1044,
+    1422
+   ]
+  ],
+  [
+   [
+    1044,
+    1422
+   ],
+   [
+    1342,
+    606
+   ]
+  ],
+  [
+   [
+    1342,
+    606
+   ],
+   [
+    1260,
+    576
+   ]
+  ],
+  [
+   [
+    1260,
+    576
+   ],
+   [
+    1231,
+    654
+   ]
+  ],
+  [
+   [
+    1231,
+    654
+   ],
+   [
+    1211,
+    646
+   ]
+  ]
+ ]
+}

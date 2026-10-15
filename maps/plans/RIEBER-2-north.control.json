@@ -1,0 +1,161 @@
+{
+ "building": "RIEBER",
+ "floor": "2",
+ "out": "RIEBER-2-north.json",
+ "title": "Rieber Hall floor 2, north wing",
+ "extent": "partial",
+ "source": {
+  "publisher": "UCLA Housing",
+  "what": "Room sign-up floor plan of Rieber Hall, north wing, floor 2 (CAD line drawing with room numbers; legacy www.housing.ucla.edu/maps site)",
+  "url": "http://www.housing.ucla.edu/maps/plans/rie-no-02.htm",
+  "file": "http://www.housing.ucla.edu/maps/plans/rie-no-02.gif",
+  "date": "2002 (file date on the server)",
+  "accessed": "2026-10-15"
+ },
+ "plan": {
+  "file": "rie-no-02.gif",
+  "url": "http://www.housing.ucla.edu/maps/plans/rie-no-02.gif"
+ },
+ "mode": "walls",
+ "transform": "similarity",
+ "control": [
+  {
+   "px": [
+    12,
+    9
+   ],
+   "outline_vertex": [
+    0,
+    23
+   ],
+   "what": "plan outer-wall corner TL on outline vertex 23"
+  },
+  {
+   "px": [
+    317,
+    9
+   ],
+   "outline_vertex": [
+    0,
+    0
+   ],
+   "what": "plan outer-wall corner TR on outline vertex 0"
+  },
+  {
+   "px": [
+    12,
+    1049
+   ],
+   "outline_vertex": [
+    0,
+    18
+   ],
+   "what": "plan outer-wall corner BL on outline vertex 18"
+  },
+  {
+   "px": [
+    317,
+    1049
+   ],
+   "outline_vertex": [
+    0,
+    5
+   ],
+   "what": "plan outer-wall corner BR on outline vertex 5"
+  }
+ ],
+ "params": {
+  "dark": 200,
+  "door_m": 2.0,
+  "min_room_m2": 2.0,
+  "ocr_upscale": 1.0
+ },
+ "labels": [
+  {
+   "px": [
+    58,
+    46
+   ],
+   "text": "room",
+   "ocr": "886"
+  },
+  {
+   "px": [
+    262,
+    98
+   ],
+   "text": "285",
+   "ocr": "885"
+  },
+  {
+   "px": [
+    262,
+    146
+   ],
+   "text": "283",
+   "ocr": "883"
+  },
+  {
+   "px": [
+    58,
+    272
+   ],
+   "text": "278",
+   "ocr": "878"
+  },
+  {
+   "px": [
+    58,
+    335
+   ],
+   "text": "276",
+   "ocr": "876"
+  },
+  {
+   "px": [
+    262,
+    494
+   ],
+   "text": "room",
+   "ocr": "27"
+  },
+  {
+   "px": [
+    262,
+    666
+   ],
+   "text": "265",
+   "ocr": "865"
+  },
+  {
+   "px": [
+    58,
+    840
+   ],
+   "text": "258",
+   "ocr": "858"
+  },
+  {
+   "px": [
+    59,
+    956
+   ],
+   "text": "254",
+   "ocr": "854"
+  },
+  {
+   "px": [
+    263,
+    954
+   ],
+   "text": "255",
+   "ocr": "855"
+  }
+ ],
+ "how": "The plan shows one wing with no scale. Its outer-wall corners (the bounding box of the drawing's black lines) are paired with the building outline vertices at the wing's corners; the fit is a similarity transform. Orientation: north-up (the plan's bottom end, with the double door, is the wing's south end at the bridge to the south wing).",
+ "notes": [
+  "Plan of one wing of the building only (the 2002 Housing room sign-up map). No scale bar: the scale comes from the outline fit.",
+  "Room numbers are read from the plan by OCR (25 of them). This CAD font's 2 reads as 8 (854 for 254): a number whose first digit is not the floor is corrected to the floor digit, and stray numeric readings are replaced by the word room; these fixes are the labels list (ocr gives what was read).",
+  "Stairs, elevators and restrooms are drawn where the plan draws them. Door swings and window dashes are drawn in color on the plan and are taken as walls, so some door openings are closed."
+ ]
+}

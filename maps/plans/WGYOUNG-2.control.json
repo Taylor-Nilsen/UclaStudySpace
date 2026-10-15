@@ -1,0 +1,65 @@
+{
+ "building": "WGYOUNG",
+ "floor": "2",
+ "mode": "photo",
+ "extent": "full",
+ "plan": {
+  "file": "WGYOUNG-2-evac.jpg"
+ },
+ "source": {
+  "publisher": "UCLA",
+  "what": "posted evacuation plan, floor 2, photographed 2026-10-12",
+  "date": "photographed 2026-10-12",
+  "kind": "posted evacuation plan (photo)"
+ },
+ "control": {
+  "auto": "outline"
+ },
+ "params": {},
+ "cuts": [
+  [
+   [
+    1180,
+    342
+   ],
+   [
+    1552,
+    342
+   ]
+  ],
+  [
+   [
+    1165,
+    930
+   ],
+   [
+    1545,
+    930
+   ]
+  ],
+  [
+   [
+    1486,
+    690
+   ],
+   [
+    1486,
+    930
+   ]
+  ]
+ ],
+ "set": [
+  {
+   "px": [
+    1363,
+    800
+   ],
+   "ref": "CS24",
+   "label": "CS24",
+   "kind": "room"
+  }
+ ],
+ "notes": [
+  "Hand fixes: three wall cuts where the photo shows the lecture-hall walls with gaps, and CS24 labeled by hand (the 2250B label sat at its edge)."
+ ]
+}

@@ -1,0 +1,574 @@
+{
+ "building": "PERLOFF",
+ "floor": "B",
+ "title": "Perloff Hall basement (floor B)",
+ "extent": "full",
+ "source": {
+  "publisher": "UCLA IoES Sustainability Action Research, Energy Team 2023 (reproducing UCLA Energy Services building-automation graphics)",
+  "what": "Perloff Hall \"BASEMENT\" screen of the UCLA Energy Services building-automation system (fig. 1 of the report): walls, stairs, elevators, all room numbers, air-handler zones in color",
+  "url": "https://www.ioes.ucla.edu/project/energy2023",
+  "file": "https://www.ioes.ucla.edu/wp-content/uploads/2023/06/Energy-Team-Final-Report.pdf",
+  "page": "fig. 1, p.7",
+  "date": "June 2023",
+  "accessed": "2026-10-15",
+  "license": "UCLA IoES student report; the graphic is UCLA Energy Services'"
+ },
+ "plan": {
+  "file": "perloff_floorB_energyservices_bms_ioes_sar2023_fig1.png",
+  "url": "https://www.ioes.ucla.edu/wp-content/uploads/2023/06/Energy-Team-Final-Report.pdf"
+ },
+ "mode": "walls",
+ "control": {
+  "auto": "outline",
+  "rot_init": 0
+ },
+ "crop": [
+  0,
+  95,
+  925,
+  634
+ ],
+ "params": {
+  "wall_neutral": 150,
+  "door_m": 2.0,
+  "min_room_m2": 2.0,
+  "ocr_upscale": 3.0,
+  "outside_colors": [
+   [
+    207,
+    218,
+    236,
+    14
+   ]
+  ]
+ },
+ "labels": [
+  {
+   "px": [
+    143,
+    153
+   ],
+   "text": "B203"
+  },
+  {
+   "px": [
+    205,
+    133
+   ],
+   "text": "B215A"
+  },
+  {
+   "px": [
+    277,
+    133
+   ],
+   "text": "B225B"
+  },
+  {
+   "px": [
+    312,
+    131
+   ],
+   "text": "B225A"
+  },
+  {
+   "px": [
+    238,
+    173
+   ],
+   "text": "B215"
+  },
+  {
+   "px": [
+    293,
+    173
+   ],
+   "text": "B225"
+  },
+  {
+   "px": [
+    403,
+    143
+   ],
+   "text": "B227"
+  },
+  {
+   "px": [
+    75,
+    203
+   ],
+   "text": "B188CU"
+  },
+  {
+   "px": [
+    387,
+    210
+   ],
+   "text": "B200CO"
+  },
+  {
+   "px": [
+    205,
+    220
+   ],
+   "text": "B208"
+  },
+  {
+   "px": [
+    157,
+    245
+   ],
+   "text": "B277"
+  },
+  {
+   "px": [
+    272,
+    238
+   ],
+   "text": "B212"
+  },
+  {
+   "px": [
+    77,
+    287
+   ],
+   "text": "B129"
+  },
+  {
+   "px": [
+    395,
+    264
+   ],
+   "text": "B222"
+  },
+  {
+   "px": [
+    188,
+    326
+   ],
+   "text": "B128A2"
+  },
+  {
+   "px": [
+    140,
+    383
+   ],
+   "text": "B125"
+  },
+  {
+   "px": [
+    73,
+    515
+   ],
+   "text": "B125B1"
+  },
+  {
+   "px": [
+    168,
+    543
+   ],
+   "text": "B125B"
+  },
+  {
+   "px": [
+    62,
+    585
+   ],
+   "text": "B125B2"
+  },
+  {
+   "px": [
+    117,
+    583
+   ],
+   "text": "B125B3"
+  },
+  {
+   "px": [
+    487,
+    163
+   ],
+   "text": "B229"
+  },
+  {
+   "px": [
+    653,
+    133
+   ],
+   "text": "B237D"
+  },
+  {
+   "px": [
+    535,
+    173
+   ],
+   "text": "B233"
+  },
+  {
+   "px": [
+    617,
+    173
+   ],
+   "text": "B237"
+  },
+  {
+   "px": [
+    690,
+    158
+   ],
+   "text": "B241"
+  },
+  {
+   "px": [
+    707,
+    207
+   ],
+   "text": "B243"
+  },
+  {
+   "px": [
+    610,
+    235
+   ],
+   "text": "B240"
+  },
+  {
+   "px": [
+    532,
+    238
+   ],
+   "text": "B230"
+  },
+  {
+   "px": [
+    630,
+    245
+   ],
+   "text": "B242"
+  },
+  {
+   "px": [
+    655,
+    244
+   ],
+   "text": "B266"
+  },
+  {
+   "px": [
+    598,
+    268
+   ],
+   "text": "B240A"
+  },
+  {
+   "px": [
+    728,
+    262
+   ],
+   "text": "B330"
+  },
+  {
+   "px": [
+    648,
+    316
+   ],
+   "text": "B324"
+  },
+  {
+   "px": [
+    707,
+    316
+   ],
+   "text": "B321"
+  },
+  {
+   "px": [
+    747,
+    320
+   ],
+   "text": "B315A"
+  },
+  {
+   "px": [
+    623,
+    332
+   ],
+   "text": "B324A"
+  },
+  {
+   "px": [
+    612,
+    396
+   ],
+   "text": "B320"
+  },
+  {
+   "px": [
+    710,
+    399
+   ],
+   "text": "B315"
+  },
+  {
+   "px": [
+    755,
+    358
+   ],
+   "text": "B315B"
+  },
+  {
+   "px": [
+    755,
+    399
+   ],
+   "text": "B315C"
+  },
+  {
+   "px": [
+    753,
+    449
+   ],
+   "text": "B315D"
+  },
+  {
+   "px": [
+    712,
+    454
+   ],
+   "text": "B311"
+  },
+  {
+   "px": [
+    617,
+    491
+   ],
+   "text": "B306B"
+  },
+  {
+   "px": [
+    729,
+    495
+   ],
+   "text": "B309"
+  },
+  {
+   "px": [
+    617,
+    533
+   ],
+   "text": "B306"
+  },
+  {
+   "px": [
+    623,
+    576
+   ],
+   "text": "B306A"
+  },
+  {
+   "px": [
+    703,
+    576
+   ],
+   "text": "B302B"
+  },
+  {
+   "px": [
+    746,
+    575
+   ],
+   "text": "B302A"
+  },
+  {
+   "px": [
+    167,
+    277
+   ],
+   "text": "Stair"
+  },
+  {
+   "px": [
+    645,
+    277
+   ],
+   "text": "Stair"
+  },
+  {
+   "px": [
+    70,
+    235
+   ],
+   "text": "Stair"
+  },
+  {
+   "px": [
+    228,
+    238
+   ],
+   "text": "Elevator"
+  },
+  {
+   "px": [
+    585,
+    238
+   ],
+   "text": "Elevator"
+  },
+  {
+   "px": [
+    405,
+    178
+   ],
+   "text": "Elevator"
+  },
+  {
+   "px": [
+    207,
+    268
+   ],
+   "text": "Restroom"
+  },
+  {
+   "px": [
+    598,
+    268
+   ],
+   "text": "Restroom"
+  }
+ ],
+ "notes": [
+  "Basement (UCLA floor B). Low-resolution building-automation screenshot (925 px wide, about 9 cm/px). All room numbers typed by hand from the plan; zone colours not kept.",
+  "Georeference: footprint fitted to the building outline (ICP); orientation confirmed by the plan's north arrow and the U shape open to the south.",
+  "Hand cuts at partitions the screenshot draws too thin (B222/B200CO, B225A/B227, B229/B233, B243/B330, B306/B306B, B125/B125B and the B208 lobby).",
+  "The OCR reads the B prefix as 8 in a few rooms; those pieces are relabeled by hand (set)."
+ ],
+ "cuts": [
+  [
+   [
+    300,
+    224
+   ],
+   [
+    470,
+    224
+   ]
+  ],
+  [
+   [
+    337,
+    113
+   ],
+   [
+    337,
+    190
+   ]
+  ],
+  [
+   [
+    502,
+    112
+   ],
+   [
+    502,
+    188
+   ]
+  ],
+  [
+   [
+    690,
+    223
+   ],
+   [
+    775,
+    223
+   ]
+  ],
+  [
+   [
+    573,
+    512
+   ],
+   [
+    667,
+    512
+   ]
+  ],
+  [
+   [
+    40,
+    492
+   ],
+   [
+    242,
+    492
+   ]
+  ],
+  [
+   [
+    147,
+    307
+   ],
+   [
+    242,
+    307
+   ]
+  ],
+  [
+   [
+    150,
+    340
+   ],
+   [
+    242,
+    340
+   ]
+  ]
+ ],
+ "set": [
+  {
+   "px": [
+    518,
+    170
+   ],
+   "ref": "B233",
+   "label": "B233",
+   "kind": "room"
+  },
+  {
+   "px": [
+    587,
+    174
+   ],
+   "ref": "B237",
+   "label": "B237",
+   "kind": "room"
+  },
+  {
+   "px": [
+    759,
+    318
+   ],
+   "ref": "B315A",
+   "label": "B315A",
+   "kind": "room"
+  },
+  {
+   "px": [
+    691,
+    584
+   ],
+   "ref": "B302B",
+   "label": "B302B",
+   "kind": "room"
+  },
+  {
+   "px": [
+    748,
+    349
+   ],
+   "ref": "B315B",
+   "label": "B315B",
+   "kind": "room"
+  }
+ ]
+}

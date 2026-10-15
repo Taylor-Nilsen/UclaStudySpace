@@ -1,0 +1,87 @@
+{
+ "building": "BROAD",
+ "floor": "2",
+ "title": "Broad Art Center floor 2 (south wing, as drawn on the architects' first floor sheet)",
+ "extent": "partial",
+ "source": {
+  "publisher": "STUDIOpractice (Richard Meier & Partners / STUDIOpractice, the architects; not UCLA)",
+  "what": "\"First Floor Plan\" of the Eli and Edythe Broad Art Center from the architects' portfolio: walls, stairs, elevators, restroom fixtures, site context; scale bar 25/50/100 ft and north arrow; no room numbers",
+  "url": "https://www.studiopractice.com/eli-edythe-broad-art-center-ucla",
+  "file": "https://static1.squarespace.com/static/5eb1e180d1aaaa079bb58596/t/606d67bd286e044e6a150c1f/1617782718002/STUDIOpractice-eli-and-edythe-broad-art-center-university-of-california-los-angeles-16-drawing.jpg",
+  "date": "building completed 2006; drawings posted 2021",
+  "accessed": "2026-10-15",
+  "license": "architects' portfolio drawing, copyright STUDIOpractice / Richard Meier & Partners; used only to trace wall positions"
+ },
+ "plan": {
+  "file": "studiopractice_broad_first_floor_plan.jpg",
+  "url": "https://static1.squarespace.com/static/5eb1e180d1aaaa079bb58596/t/606d67bd286e044e6a150c1f/1617782718002/STUDIOpractice-eli-and-edythe-broad-art-center-university-of-california-los-angeles-16-drawing.jpg"
+ },
+ "mode": "walls",
+ "transform": "similarity",
+ "control": [
+  {
+   "px": [
+    190.0,
+    790.0
+   ],
+   "ll": [
+    34.0758865,
+    -118.4414669
+   ],
+   "what": "crop corner through the sheet transform (scale from the scale bar, rotation and position from the outline fit)"
+  },
+  {
+   "px": [
+    700.0,
+    790.0
+   ],
+   "ll": [
+    34.0758695,
+    -118.440845
+   ],
+   "what": "crop corner through the sheet transform (scale from the scale bar, rotation and position from the outline fit)"
+  },
+  {
+   "px": [
+    700.0,
+    1240.0
+   ],
+   "ll": [
+    34.0754117,
+    -118.440863
+   ],
+   "what": "crop corner through the sheet transform (scale from the scale bar, rotation and position from the outline fit)"
+  },
+  {
+   "px": [
+    190.0,
+    1240.0
+   ],
+   "ll": [
+    34.0754288,
+    -118.4414849
+   ],
+   "what": "crop corner through the sheet transform (scale from the scale bar, rotation and position from the outline fit)"
+  }
+ ],
+ "crop": [
+  190,
+  790,
+  700,
+  1240
+ ],
+ "params": {
+  "dark": 200,
+  "wall_neutral": 200,
+  "door_m": 3.0,
+  "min_room_m2": 3.0,
+  "min_wall_m": 1.0
+ },
+ "ocr": false,
+ "notes": [
+  "The south wing on the architects' \"First Floor Plan\" sheet sits a level above the wing's ground floor (the site slopes): UCLA GIS restroom 2113, floor 2, lands in its restroom block, so it is recorded as floor 2. Uncertain: the plan has no room numbers.",
+  "No room numbers on the plan: rooms are unlabeled spaces, corridors, stairs and restrooms."
+ ],
+ "how": "Architects' plan with a 25/50/100 ft scale bar (100 ft = 270 px, 11.25 cm/px) and a north arrow. With that scale, the rotation (-1.9 deg) and position come from fitting the building footprint on the sheet to the building outline (median 2.7 m, 90% within 8.4 m; the outline is OSM's roof line). Check: UCLA GIS restroom 2113 (floor 2) lands in the restroom block of the south wing. Four synthetic control points carry that transform.",
+ "out": "BROAD-2-wing.json"
+}

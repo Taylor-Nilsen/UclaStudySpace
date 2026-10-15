@@ -1,0 +1,268 @@
+{
+ "building": "YRL",
+ "floor": "1",
+ "title": "YRL floor 1 outside the Research Commons (2016 map)",
+ "extent": "partial",
+ "source": {
+  "publisher": "UCLA Library",
+  "what": "Charles E. Young Research Library First Floor Map (2016, before the Research Commons remodel; hosted by UCLA Humanities)",
+  "url": "https://humanities.ucla.edu/wp-content/uploads/2016/09/YRL-Map.jpg",
+  "date": "2016",
+  "accessed": "2026-10-13"
+ },
+ "plan": {
+  "file": "YRL_1st-floor_UCLALibrary-FirstFloorMap_via-humanities-2016.jpg",
+  "url": "https://humanities.ucla.edu/wp-content/uploads/2016/09/YRL-Map.jpg"
+ },
+ "mode": "walls",
+ "control": {
+  "auto": "outline",
+  "rot_init": 0.0,
+  "fix_rotation": true
+ },
+ "crop": [
+  70,
+  128,
+  716,
+  566
+ ],
+ "skip_where_traced": true,
+ "out": "YRL-1-2016.json",
+ "params": {
+  "wall_neutral": 150,
+  "door_m": 2.0,
+  "min_room_m2": 3.0,
+  "split_on": "text",
+  "ocr_upscale": 2.0
+ },
+ "notes": [
+  "This map is from 2016. The Research Commons part of the floor was remodeled since, so that part comes from the 2024 map; only the rest of the floor is taken from this one.",
+  "The spaces from this map were read off it by hand as rectangles; the map is a diagram without real wall lines."
+ ],
+ "rooms_from": "hand",
+ "walls": false,
+ "add": [
+  {
+   "kind": "room",
+   "label": "Conference Room",
+   "px": [
+    [
+     605,
+     135
+    ],
+    [
+     710,
+     135
+    ],
+    [
+     710,
+     240
+    ],
+    [
+     605,
+     240
+    ]
+   ]
+  },
+  {
+   "kind": "room",
+   "label": "Executive Conference Room",
+   "px": [
+    [
+     618,
+     255
+    ],
+    [
+     680,
+     255
+    ],
+    [
+     680,
+     295
+    ],
+    [
+     618,
+     295
+    ]
+   ]
+  },
+  {
+   "kind": "room",
+   "label": "Parlor",
+   "px": [
+    [
+     680,
+     255
+    ],
+    [
+     710,
+     255
+    ],
+    [
+     710,
+     295
+    ],
+    [
+     680,
+     295
+    ]
+   ]
+  },
+  {
+   "kind": "room",
+   "label": "Presentation Room",
+   "px": [
+    [
+     618,
+     295
+    ],
+    [
+     710,
+     295
+    ],
+    [
+     710,
+     348
+    ],
+    [
+     618,
+     348
+    ]
+   ]
+  },
+  {
+   "kind": "room",
+   "label": "Office of the University Librarian",
+   "name": "Office of the University Librarian",
+   "px": [
+    [
+     605,
+     348
+    ],
+    [
+     710,
+     348
+    ],
+    [
+     710,
+     558
+    ],
+    [
+     605,
+     558
+    ]
+   ]
+  },
+  {
+   "kind": "room",
+   "label": "Main Gallery",
+   "px": [
+    [
+     515,
+     160
+    ],
+    [
+     605,
+     160
+    ],
+    [
+     605,
+     240
+    ],
+    [
+     515,
+     240
+    ]
+   ]
+  },
+  {
+   "kind": "room",
+   "label": "Cafe 451",
+   "px": [
+    [
+     550,
+     285
+    ],
+    [
+     605,
+     285
+    ],
+    [
+     605,
+     345
+    ],
+    [
+     550,
+     345
+    ]
+   ]
+  },
+  {
+   "kind": "room",
+   "label": "Circulation Desk",
+   "px": [
+    [
+     552,
+     455
+    ],
+    [
+     605,
+     455
+    ],
+    [
+     605,
+     520
+    ],
+    [
+     552,
+     520
+    ]
+   ]
+  },
+  {
+   "kind": "room",
+   "label": "Reserves and Holds",
+   "px": [
+    [
+     552,
+     520
+    ],
+    [
+     605,
+     520
+    ],
+    [
+     605,
+     558
+    ],
+    [
+     552,
+     558
+    ]
+   ]
+  },
+  {
+   "kind": "room",
+   "label": "Reading Room",
+   "name": "Reading Room (2016 layout)",
+   "px": [
+    [
+     78,
+     395
+    ],
+    [
+     380,
+     395
+    ],
+    [
+     380,
+     558
+    ],
+    [
+     78,
+     558
+    ]
+   ]
+  }
+ ]
+}

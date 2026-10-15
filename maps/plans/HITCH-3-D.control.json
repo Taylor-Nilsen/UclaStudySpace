@@ -1,0 +1,33 @@
+{
+ "building": "HITCH",
+ "floor": "3",
+ "out": "HITCH-3-D.json",
+ "title": "Hitch Residential Suites building D, floor 3",
+ "extent": "partial",
+ "source": {
+  "publisher": "UCLA Housing",
+  "what": "Hitch Suites building D floor 3 suite plan (room sign-up map)",
+  "url": "http://www.housing.ucla.edu/maps/plans/hit-0d-03.htm",
+  "file": "http://www.housing.ucla.edu/maps/plans/hit-0d-03.gif",
+  "index": "https://housing.ucla.edu/my-housing/maps-and-tours/housing-building-maps -> http://www.housing.ucla.edu/maps/hitch.htm",
+  "date": "2002-03-22 (file date)",
+  "accessed": "2026-10-15"
+ },
+ "plan": {
+  "file": "hit-0d-03.gif",
+  "url": "http://www.housing.ucla.edu/maps/plans/hit-0d-03.gif"
+ },
+ "mode": "walls",
+ "control": {
+  "auto": "outline",
+  "search": true,
+  "rot_init": 90
+ },
+ "params": {
+  "wall_neutral": 160,
+  "door_m": 3.0,
+  "min_room_m2": 2.0,
+  "min_wall_m": 0.8
+ },
+ "notes": []
+}

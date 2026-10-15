@@ -1,0 +1,875 @@
+{
+ "about": "One entry per traced space, by a pixel inside it on the rectified sign (maps/.cache/plans/WGYOUNG/review/WGYOUNG-2-rectified.png). Fix \"text\" (the room number or name as printed) and \"kind\" (room, corridor, stair, elevator, restroom, mech, other), or add \"drop\": true for a space that is not real, and set \"checked\": true on every entry you looked at; then rerun the control file. Entries with \"checked\": true override the tracer; the others are rewritten on every run. \"ocr\" is what OCR read.",
+ "regions": [
+  {
+   "px": [
+    1493,
+    287
+   ],
+   "kind": "room",
+   "text": "2250",
+   "ocr": "2250",
+   "checked": false
+  },
+  {
+   "px": [
+    1334,
+    182
+   ],
+   "kind": "room",
+   "text": "CS76",
+   "ocr": "CS76",
+   "checked": false
+  },
+  {
+   "px": [
+    1406,
+    321
+   ],
+   "kind": "room",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1396,
+    501
+   ],
+   "kind": "room",
+   "text": "CS50",
+   "ocr": "CS50",
+   "checked": false
+  },
+  {
+   "px": [
+    1391,
+    353
+   ],
+   "kind": "room",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1499,
+    364
+   ],
+   "kind": "room",
+   "text": "i",
+   "ocr": "i",
+   "checked": false
+  },
+  {
+   "px": [
+    1516,
+    418
+   ],
+   "kind": "room",
+   "text": "W",
+   "ocr": "W",
+   "checked": false
+  },
+  {
+   "px": [
+    1533,
+    597
+   ],
+   "kind": "room",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    469,
+    704
+   ],
+   "kind": "room",
+   "text": "DC",
+   "ocr": "DC",
+   "checked": false
+  },
+  {
+   "px": [
+    544,
+    830
+   ],
+   "kind": "room",
+   "text": "2002",
+   "ocr": "2002",
+   "checked": false
+  },
+  {
+   "px": [
+    1521,
+    905
+   ],
+   "kind": "room",
+   "text": "wi",
+   "ocr": "wi",
+   "checked": false
+  },
+  {
+   "px": [
+    1247,
+    1010
+   ],
+   "kind": "room",
+   "text": "2200",
+   "ocr": "2200",
+   "checked": false
+  },
+  {
+   "px": [
+    465,
+    977
+   ],
+   "kind": "room",
+   "text": "A",
+   "ocr": "A",
+   "checked": false
+  },
+  {
+   "px": [
+    545,
+    971
+   ],
+   "kind": "room",
+   "text": "2021",
+   "ocr": "2021",
+   "checked": false
+  },
+  {
+   "px": [
+    665,
+    970
+   ],
+   "kind": "room",
+   "text": "2018",
+   "ocr": "2018",
+   "checked": false
+  },
+  {
+   "px": [
+    834,
+    1012
+   ],
+   "kind": "room",
+   "text": "2042",
+   "ocr": "2042",
+   "checked": false
+  },
+  {
+   "px": [
+    983,
+    1053
+   ],
+   "kind": "room",
+   "text": "2048",
+   "ocr": "2048",
+   "checked": false
+  },
+  {
+   "px": [
+    1047,
+    977
+   ],
+   "kind": "room",
+   "text": "2050",
+   "ocr": "2050",
+   "checked": false
+  },
+  {
+   "px": [
+    1759,
+    1003
+   ],
+   "kind": "room",
+   "text": "2078",
+   "ocr": "2078",
+   "checked": false
+  },
+  {
+   "px": [
+    1883,
+    987
+   ],
+   "kind": "room",
+   "text": "2082",
+   "ocr": "2082",
+   "checked": false
+  },
+  {
+   "px": [
+    2002,
+    998
+   ],
+   "kind": "room",
+   "text": "2086",
+   "ocr": "2086",
+   "checked": false
+  },
+  {
+   "px": [
+    2325,
+    972
+   ],
+   "kind": "room",
+   "text": "2104",
+   "ocr": "2104",
+   "checked": false
+  },
+  {
+   "px": [
+    2580,
+    1005
+   ],
+   "kind": "room",
+   "text": "2110",
+   "ocr": "2110",
+   "checked": false
+  },
+  {
+   "px": [
+    2148,
+    1013
+   ],
+   "kind": "room",
+   "text": "2096",
+   "ocr": "2096",
+   "checked": false
+  },
+  {
+   "px": [
+    1094,
+    1018
+   ],
+   "kind": "stair",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    2284,
+    1041
+   ],
+   "kind": "room",
+   "text": "Camk",
+   "ocr": "Camk",
+   "checked": false
+  },
+  {
+   "px": [
+    562,
+    1050
+   ],
+   "kind": "room",
+   "text": "2023",
+   "ocr": "2023",
+   "checked": false
+  },
+  {
+   "px": [
+    1429,
+    1058
+   ],
+   "kind": "elevator",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1220,
+    1115
+   ],
+   "kind": "corridor",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1686,
+    1131
+   ],
+   "kind": "corridor",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1903,
+    1112
+   ],
+   "kind": "corridor",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    2127,
+    1109
+   ],
+   "kind": "corridor",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1529,
+    1219
+   ],
+   "kind": "room",
+   "text": "2069",
+   "ocr": "2069",
+   "checked": false
+  },
+  {
+   "px": [
+    2527,
+    1230
+   ],
+   "kind": "room",
+   "text": "2111",
+   "ocr": "2111",
+   "checked": false
+  },
+  {
+   "px": [
+    955,
+    1213
+   ],
+   "kind": "room",
+   "text": "2041",
+   "ocr": "2041",
+   "checked": false
+  },
+  {
+   "px": [
+    1058,
+    1176
+   ],
+   "kind": "room",
+   "text": "2051",
+   "ocr": "2051",
+   "checked": false
+  },
+  {
+   "px": [
+    1140,
+    1192
+   ],
+   "kind": "restroom",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    509,
+    1215
+   ],
+   "kind": "room",
+   "text": "2033",
+   "ocr": "2033",
+   "checked": false
+  },
+  {
+   "px": [
+    629,
+    1158
+   ],
+   "kind": "room",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    657,
+    1157
+   ],
+   "kind": "room",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    714,
+    1187
+   ],
+   "kind": "room",
+   "text": "2037",
+   "ocr": "2037",
+   "checked": false
+  },
+  {
+   "px": [
+    1610,
+    1182
+   ],
+   "kind": "room",
+   "text": "2077",
+   "ocr": "2077",
+   "checked": false
+  },
+  {
+   "px": [
+    2144,
+    1246
+   ],
+   "kind": "restroom",
+   "text": "2085",
+   "ocr": "2085",
+   "checked": false
+  },
+  {
+   "px": [
+    1950,
+    1176
+   ],
+   "kind": "room",
+   "text": "i",
+   "ocr": "i",
+   "checked": false
+  },
+  {
+   "px": [
+    2392,
+    1248
+   ],
+   "kind": "room",
+   "text": "2107",
+   "ocr": "2107",
+   "checked": false
+  },
+  {
+   "px": [
+    1283,
+    1192
+   ],
+   "kind": "stair",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1333,
+    1196
+   ],
+   "kind": "room",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1275,
+    1248
+   ],
+   "kind": "restroom",
+   "text": "uJ",
+   "ocr": "uJ",
+   "checked": false
+  },
+  {
+   "px": [
+    633,
+    1265
+   ],
+   "kind": "room",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1667,
+    1250
+   ],
+   "kind": "room",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1734,
+    1250
+   ],
+   "kind": "room",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1779,
+    1234
+   ],
+   "kind": "room",
+   "text": "u",
+   "ocr": "u",
+   "checked": false
+  },
+  {
+   "px": [
+    1604,
+    1249
+   ],
+   "kind": "room",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1058,
+    1412
+   ],
+   "kind": "room",
+   "text": "2057",
+   "ocr": "2057",
+   "checked": false
+  },
+  {
+   "px": [
+    1144,
+    1433
+   ],
+   "kind": "room",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1206,
+    1309
+   ],
+   "kind": "room",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1260,
+    1310
+   ],
+   "kind": "room",
+   "text": "a",
+   "ocr": "a",
+   "checked": false
+  },
+  {
+   "px": [
+    1232,
+    1471
+   ],
+   "kind": "room",
+   "text": "2337",
+   "ocr": "2337",
+   "checked": false
+  },
+  {
+   "px": [
+    1261,
+    1671
+   ],
+   "kind": "room",
+   "text": "2343",
+   "ocr": "2343",
+   "checked": false
+  },
+  {
+   "px": [
+    1433,
+    1559
+   ],
+   "kind": "room",
+   "text": "2340",
+   "ocr": "2340",
+   "checked": false
+  },
+  {
+   "px": [
+    1491,
+    1542
+   ],
+   "kind": "room",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1513,
+    1703
+   ],
+   "kind": "room",
+   "text": "2344",
+   "ocr": "2344",
+   "checked": false
+  },
+  {
+   "px": [
+    1434,
+    1687
+   ],
+   "kind": "room",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1423,
+    1742
+   ],
+   "kind": "room",
+   "text": "2360",
+   "ocr": "2360",
+   "checked": false
+  },
+  {
+   "px": [
+    1477,
+    1863
+   ],
+   "kind": "room",
+   "text": "2370",
+   "ocr": "2370",
+   "checked": false
+  },
+  {
+   "px": [
+    1302,
+    1809
+   ],
+   "kind": "room",
+   "text": "2369",
+   "ocr": "2369",
+   "checked": false
+  },
+  {
+   "px": [
+    1226,
+    1808
+   ],
+   "kind": "room",
+   "text": "A",
+   "ocr": "A",
+   "checked": false
+  },
+  {
+   "px": [
+    1265,
+    1969
+   ],
+   "kind": "room",
+   "text": "2379",
+   "ocr": "2379",
+   "checked": false
+  },
+  {
+   "px": [
+    1012,
+    1114
+   ],
+   "kind": "corridor",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1093,
+    967
+   ],
+   "kind": "corridor",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    2269,
+    988
+   ],
+   "kind": "corridor",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1108,
+    990
+   ],
+   "kind": "stair",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    519,
+    1050
+   ],
+   "kind": "corridor",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1141,
+    1063
+   ],
+   "kind": "corridor",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    2268,
+    1062
+   ],
+   "kind": "corridor",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1365,
+    1128
+   ],
+   "kind": "corridor",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1789,
+    1118
+   ],
+   "kind": "corridor",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    2035,
+    1119
+   ],
+   "kind": "corridor",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    2553,
+    1122
+   ],
+   "kind": "corridor",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1263,
+    1162
+   ],
+   "kind": "stair",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1232,
+    1188
+   ],
+   "kind": "corridor",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1345,
+    2026
+   ],
+   "kind": "corridor",
+   "text": "",
+   "ocr": "",
+   "checked": false
+  },
+  {
+   "px": [
+    1405,
+    803
+   ],
+   "kind": "room",
+   "text": "2250 CS24",
+   "ocr": "2250 CS24",
+   "checked": false
+  },
+  {
+   "px": [
+    1505,
+    1010
+   ],
+   "kind": "room",
+   "text": "2070",
+   "ocr": "2070",
+   "checked": false
+  },
+  {
+   "px": [
+    1630,
+    992
+   ],
+   "kind": "room",
+   "text": "2072",
+   "ocr": "2072",
+   "checked": false
+  },
+  {
+   "px": [
+    1442,
+    1201
+   ],
+   "kind": "room",
+   "text": "2304",
+   "ocr": "2304",
+   "checked": false
+  },
+  {
+   "px": [
+    1476,
+    1379
+   ],
+   "kind": "room",
+   "text": "2336",
+   "ocr": "2336",
+   "checked": false
+  }
+ ]
+}

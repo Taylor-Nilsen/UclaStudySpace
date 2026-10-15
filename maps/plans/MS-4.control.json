@@ -1,0 +1,89 @@
+{
+ "building": "MS",
+ "floor": "4",
+ "title": "Mathematical Sciences floor 4",
+ "extent": "full",
+ "source": {
+  "publisher": "UCLA Samueli School of Engineering",
+  "what": "\"BH and MS (4th Floor)\" Bruin Card door-access sheet: scanned UCLA Space Inventory plan of Mathematical Sciences floor 4 (top half of the page) and Boelter Hall floor 4 (bottom half), room numbers with square footage, red circles on the card-reader doors",
+  "url": "https://samueli.ucla.edu/wp-content/uploads/samueli/Floor_plan-BH_MS-060111_its.pdf",
+  "file": "https://samueli.ucla.edu/wp-content/uploads/samueli/Floor_plan-BH_MS-060111_its.pdf",
+  "archive": "Common Crawl CC-MAIN-2018-51 (captured 2018-12); the samueli.ucla.edu file is gone",
+  "date": "2011-06-01",
+  "accessed": "2026-10-15",
+  "license": "UCLA's own drawing (Space Inventory), posted by UCLA Samueli; no license stated"
+ },
+ "plan": {
+  "file": "boelter_mathsci_floor4_samueli_2011_cc2018.pdf",
+  "url": "https://samueli.ucla.edu/wp-content/uploads/samueli/Floor_plan-BH_MS-060111_its.pdf",
+  "page": 1,
+  "dpi": 200
+ },
+ "mode": "walls",
+ "transform": "similarity",
+ "control": [
+  {
+   "px": [
+    227.0,
+    187.0
+   ],
+   "ll": [
+    34.0698901,
+    -118.4435764
+   ],
+   "what": "crop corner through the sheet transform (scale and rotation from the Boelter Hall half of the same sheet fitted to the traced BOELTER-4 rooms; position from a translation-only fit of the floor footprint to the building outline)"
+  },
+  {
+   "px": [
+    1300.0,
+    187.0
+   ],
+   "ll": [
+    34.0699076,
+    -118.4423338
+   ],
+   "what": "crop corner through the sheet transform (scale and rotation from the Boelter Hall half of the same sheet fitted to the traced BOELTER-4 rooms; position from a translation-only fit of the floor footprint to the building outline)"
+  },
+  {
+   "px": [
+    1300.0,
+    917.0
+   ],
+   "ll": [
+    34.0692024,
+    -118.4423195
+   ],
+   "what": "crop corner through the sheet transform (scale and rotation from the Boelter Hall half of the same sheet fitted to the traced BOELTER-4 rooms; position from a translation-only fit of the floor footprint to the building outline)"
+  },
+  {
+   "px": [
+    227.0,
+    917.0
+   ],
+   "ll": [
+    34.0691849,
+    -118.4435621
+   ],
+   "what": "crop corner through the sheet transform (scale and rotation from the Boelter Hall half of the same sheet fitted to the traced BOELTER-4 rooms; position from a translation-only fit of the floor footprint to the building outline)"
+  }
+ ],
+ "crop": [
+  227,
+  187,
+  1300,
+  917
+ ],
+ "params": {
+  "wall_neutral": 160,
+  "door_m": 2.0,
+  "min_room_m2": 2.0,
+  "ocr_upscale": 2.0
+ },
+ "notes": [
+  "The room numbers on this sheet are too small to read (the scan is about 4 px per digit; RapidOCR at 2x to 4x reads none), so rooms are traced without numbers: walls, corridors, stairs and elevators only.",
+  "2011 sheet (the others are 2010). The hatched 'unexcavated' box east of the office wing is cropped off. Georeference: scale and rotation from the Boelter Hall half of the same sheet (17 room numbers, residual max 1.4 m), position from the footprint against the outline; the floor-4 footprint (lecture hall, open lobby) differs from the roof outline, so the position is uncertain by several metres.",
+  "Rendered at 200 dpi (300 dpi ran out of memory on the build machine); the plan is a 150-215 ppi scan, so nothing is lost."
+ ],
+ "cuts": [],
+ "how": "Scanned Space Inventory sheet with Math Sciences on the top half and Boelter Hall on the bottom half. The Boelter half was fitted to the already traced Boelter floor 4 through 17 room numbers (residual max 1.4 m, 7.12 cm/px, 0.97 deg); the Math Sciences half is the same scan, so it has the same scale and rotation, and only its position was fitted, by sliding the floor footprint over the building outline (see fit). Four synthetic control points carry that transform."
+}

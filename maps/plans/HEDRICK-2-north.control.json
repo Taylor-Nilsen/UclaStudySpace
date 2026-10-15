@@ -1,0 +1,80 @@
+{
+ "building": "HEDRICK",
+ "floor": "2",
+ "out": "HEDRICK-2-north.json",
+ "title": "Hedrick Hall floor 2, north wing",
+ "extent": "partial",
+ "source": {
+  "publisher": "UCLA Housing",
+  "what": "Room sign-up floor plan of Hedrick Hall, north wing, floor 2 (CAD line drawing with room numbers; legacy www.housing.ucla.edu/maps site)",
+  "url": "http://www.housing.ucla.edu/maps/plans/hed-no-02.htm",
+  "file": "http://www.housing.ucla.edu/maps/plans/hed-no-02.gif",
+  "date": "2002 (file date on the server)",
+  "accessed": "2026-10-15"
+ },
+ "plan": {
+  "file": "hed-no-02.gif",
+  "url": "http://www.housing.ucla.edu/maps/plans/hed-no-02.gif"
+ },
+ "mode": "walls",
+ "transform": "similarity",
+ "control": [
+  {
+   "px": [
+    10,
+    7
+   ],
+   "outline_vertex": [
+    0,
+    7
+   ],
+   "what": "plan outer-wall corner TL on outline vertex 7"
+  },
+  {
+   "px": [
+    1514,
+    7
+   ],
+   "outline_vertex": [
+    0,
+    36
+   ],
+   "what": "plan outer-wall corner TR on outline vertex 36"
+  },
+  {
+   "px": [
+    10,
+    426
+   ],
+   "outline_vertex": [
+    0,
+    5
+   ],
+   "what": "plan outer-wall corner BL on outline vertex 5"
+  },
+  {
+   "px": [
+    1514,
+    426
+   ],
+   "outline_vertex": [
+    0,
+    37
+   ],
+   "what": "plan outer-wall corner BR on outline vertex 37"
+  }
+ ],
+ "params": {
+  "dark": 200,
+  "door_m": 2.0,
+  "min_room_m2": 2.0,
+  "ocr_upscale": 1.0
+ },
+ "labels": [],
+ "how": "The plan shows one wing with no scale. Its outer-wall corners (the bounding box of the drawing's black lines) are paired with the building outline vertices at the wing's corners; the fit is a similarity transform. Orientation: north-down (the plan is turned 180 degrees: its top edge is the wing's south face, which carries the bridge to the south wing).",
+ "notes": [
+  "Plan of one wing of the building only (the 2002 Housing room sign-up map). No scale bar: the scale comes from the outline fit.",
+  "Room numbers are read from the plan by OCR (34 of them). This CAD font's 2 reads as 8 (854 for 254): a number whose first digit is not the floor is corrected to the floor digit, and stray numeric readings are replaced by the word room; these fixes are the labels list (ocr gives what was read).",
+  "Stairs, elevators and restrooms are drawn where the plan draws them. Door swings and window dashes are drawn in color on the plan and are taken as walls, so some door openings are closed."
+ ]
+}

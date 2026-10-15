@@ -1,0 +1,86 @@
+{
+ "building": "RIEBER",
+ "floor": "6",
+ "out": "RIEBER-6-south.json",
+ "title": "Rieber Hall floor 6, south wing",
+ "extent": "partial",
+ "source": {
+  "publisher": "UCLA Housing",
+  "what": "Room sign-up floor plan of Rieber Hall, south wing, floor 6 (CAD line drawing with room numbers; legacy www.housing.ucla.edu/maps site)",
+  "url": "http://www.housing.ucla.edu/maps/plans/rie-so-06.htm",
+  "file": "http://www.housing.ucla.edu/maps/plans/rie-so-06.gif",
+  "date": "2002 (file date on the server)",
+  "accessed": "2026-10-15"
+ },
+ "plan": {
+  "file": "rie-so-06.gif",
+  "url": "http://www.housing.ucla.edu/maps/plans/rie-so-06.gif"
+ },
+ "mode": "walls",
+ "transform": "similarity",
+ "control": [
+  {
+   "px": [
+    12,
+    11
+   ],
+   "outline_vertex": [
+    0,
+    15
+   ],
+   "what": "plan outer-wall corner TL on outline vertex 15"
+  },
+  {
+   "px": [
+    1451,
+    11
+   ],
+   "outline_vertex": [
+    0,
+    8
+   ],
+   "what": "plan outer-wall corner TR on outline vertex 8"
+  },
+  {
+   "px": [
+    12,
+    412
+   ],
+   "outline_vertex": [
+    0,
+    14
+   ],
+   "what": "plan outer-wall corner BL on outline vertex 14"
+  }
+ ],
+ "params": {
+  "dark": 200,
+  "door_m": 2.0,
+  "min_room_m2": 2.0,
+  "ocr_upscale": 2.0
+ },
+ "labels": [
+  {
+   "px": [
+    50,
+    349
+   ],
+   "text": "601",
+   "ocr": "801"
+  },
+  {
+   "px": [
+    205,
+    349
+   ],
+   "text": "605",
+   "ocr": "805"
+  }
+ ],
+ "how": "The plan shows one wing with no scale. Its outer-wall corners (the bounding box of the drawing's black lines) are paired with the building outline vertices at the wing's corners; the fit is a similarity transform. Orientation: north-up (UCLA GIS restroom 216U lies 34% of the way from the wing's west end; room 216 is 35% from the plan's left edge).",
+ "notes": [
+  "Plan of one wing of the building only (the 2002 Housing room sign-up map). No scale bar: the scale comes from the outline fit.",
+  "Room numbers are read from the plan by OCR (36 of them). This CAD font's 2 reads as 8 (854 for 254): a number whose first digit is not the floor is corrected to the floor digit, and stray numeric readings are replaced by the word room; these fixes are the labels list (ocr gives what was read).",
+  "Stairs, elevators and restrooms are drawn where the plan draws them. Door swings and window dashes are drawn in color on the plan and are taken as walls, so some door openings are closed."
+ ]
+}

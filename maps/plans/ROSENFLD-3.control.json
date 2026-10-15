@@ -1,0 +1,152 @@
+{
+ "building": "ROSENFLD",
+ "floor": "3",
+ "title": "Rosenfeld Library, architect's Plan Level 2 (UCLA floor 3, uncertain)",
+ "extent": "full",
+ "source": {
+  "publisher": "Pei Cobb Freed & Partners (architects of the Anderson complex, 1995)",
+  "url": "https://www.pcf-p.com/projects/ucla-anderson-school-of-management/",
+  "date": "building completed 1995; portfolio drawings, undated",
+  "accessed": "2026-10-15",
+  "license": "Copyright Pei Cobb Freed & Partners; portfolio images with no stated license, used as reference for tracing only",
+  "what": "Pei Cobb Freed & Partners, UCLA Anderson School of Management, Plan Level 2 (whole complex; building E is the library)",
+  "file": "https://pcfandtypecodewebstuff.s3.amazonaws.com/original_images/3.lin.PCF.8723_dwgs3.jpg"
+ },
+ "plan": {
+  "file": "pcfp_anderson_plan_level2.jpg",
+  "url": "https://pcfandtypecodewebstuff.s3.amazonaws.com/original_images/3.lin.PCF.8723_dwgs3.jpg"
+ },
+ "mode": "walls",
+ "control": [
+  {
+   "px": [
+    1000,
+    112
+   ],
+   "ll": [
+    34.074431,
+    -118.443675
+   ],
+   "what": "NW corner of the reading room (top of the slanted west wall); ground position taken from the Ground Floor sheet's outline fit (this sheet is the same drawing set at 0.5817 scale, shifted (-13, -16) px, by image registration of the library block)"
+  },
+  {
+   "px": [
+    1446,
+    46
+   ],
+   "ll": [
+    34.074469,
+    -118.443328
+   ],
+   "what": "NE corner of the block; ground position taken from the Ground Floor sheet's outline fit (this sheet is the same drawing set at 0.5817 scale, shifted (-13, -16) px, by image registration of the library block)"
+  },
+  {
+   "px": [
+    1446,
+    380
+   ],
+   "ll": [
+    34.074253,
+    -118.443332
+   ],
+   "what": "east wall at the south end of the office wing; ground position taken from the Ground Floor sheet's outline fit (this sheet is the same drawing set at 0.5817 scale, shifted (-13, -16) px, by image registration of the library block)"
+  },
+  {
+   "px": [
+    960,
+    400
+   ],
+   "ll": [
+    34.074245,
+    -118.44371
+   ],
+   "what": "south end of the slanted west wall; ground position taken from the Ground Floor sheet's outline fit (this sheet is the same drawing set at 0.5817 scale, shifted (-13, -16) px, by image registration of the library block)"
+  }
+ ],
+ "crop": [
+  930,
+  18,
+  1470,
+  400
+ ],
+ "ocr": false,
+ "params": {
+  "dark": 180,
+  "open_px": 3,
+  "door_m": 2.0,
+  "min_room_m2": 2.0,
+  "min_wall_m": 1.0
+ },
+ "notes": [
+  "The plan is the architects' presentation drawing of the whole Anderson complex; only building E (Rosenfeld Library, the trapezoid at the north end of the complex) is traced, cropped to that block and fitted to the mapped outline by ICP.",
+  "Floor numbering is reconciled with UCLA's as: architect's Level 1 = UCLA 1, Ground Floor = UCLA 2, Level 2 = UCLA 3, Level 3 = UCLA 4. Reasoning: the Level 1 sheet shows the parking deck under the Marion Anderson Courtyard, so Level 1 is below the Ground Floor; the Anderson complex map (2018) calls the courtyard the 2nd level, Wells Fargo Court (the plaza south of the library, drawn paved on the Level 2 sheet) the 3rd level, and the Structure 5 entrance level 1; the library has four UCLA floors (1 to 4). This is a reading of the drawings, not a statement from the architects, so the UCLA floor is uncertain and the architect's level name is kept in the title.",
+  "No room numbers, scale or north arrow on the drawing: rooms are unlabeled; walls, stairs, the elevator core and the stacks/reading areas are what the trace gives. Furniture (stacks, tables, chairs) is drawn with thin lines and is removed with open_px; thick walls stay.",
+  "Orientation: the block's slanted west side and the notch on its south side match the mapped outline only one way round, and the complex map confirms the library at the north end with Cornell Hall (D) to its south-east; the drawing is taken north-up (rot_init 0) and the ICP refines it.",
+  "This sheet (Level 2) is a smaller scan of the same drawing set (2000 px wide against 3438), printed in light grey (dark 180). Its own outline fit wandered (the terrace paving joins the footprint), so it is georeferenced through the Ground Floor sheet: the library block was registered to the Ground sheet by normalized cross-correlation (scale 0.5817, shift (-13, -16) px at this sheet's scale, peak 0.50 against 0.24 for the runner-up) and four points carry the Ground sheet's fitted ground positions over as control points. The outer walls are dashed window walls and the entrance ramp edge, so they are cut as on the other sheets.",
+  "The reading room opens without a door into the lounge south of it (service counter, cafe tables), which runs off the cropped sheet; a cut across that opening lets the reading room close, and the lounge is not traced. The south-west stair is typed by hand from its stair symbol; the north stair tower opens onto the terrace and gets no polygon; everything else is left unlabeled (no text on the plan)."
+ ],
+ "cuts": [
+  [
+   [
+    1002,
+    117
+   ],
+   [
+    958,
+    405
+   ]
+  ],
+  [
+   [
+    1002,
+    117
+   ],
+   [
+    1180,
+    117
+   ]
+  ],
+  [
+   [
+    1180,
+    50
+   ],
+   [
+    1445,
+    50
+   ]
+  ],
+  [
+   [
+    1442,
+    50
+   ],
+   [
+    1442,
+    380
+   ]
+  ],
+  [
+   [
+    1118,
+    292
+   ],
+   [
+    1252,
+    292
+   ]
+  ]
+ ],
+ "transform": "similarity",
+ "set": [
+  {
+   "px": [
+    1015,
+    283
+   ],
+   "kind": "stair",
+   "label": "Stair",
+   "name": "Stair (south-west, drawn with DN/UP arrows)"
+  }
+ ]
+}

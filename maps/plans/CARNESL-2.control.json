@@ -1,0 +1,202 @@
+{
+ "building": "CARNESL",
+ "floor": "2",
+ "title": "Carnesale Commons floor 2 (event wing: lobby, Hermosa, Venice, Malibu)",
+ "extent": "partial",
+ "source": {
+  "publisher": "UCLA Conferences & Catering",
+  "what": "Carnesale Commons second floor event-space diagram (lobby, elevators, corridor, Hermosa A/B, Venice A/B, Malibu, patio)",
+  "url": "https://conferences.ucla.edu/meeting-event-spaces/carnesale-commons/",
+  "file": "https://conferences.ucla.edu/wp-content/uploads/2019/03/Floorplan_Carnesale_SecondFloor.jpg",
+  "date": "2019-03",
+  "accessed": "2026-10-15",
+  "license": "UCLA's own page (Housing & Hospitality); no license stated"
+ },
+ "plan": {
+  "file": "Floorplan_Carnesale_SecondFloor.jpg",
+  "url": "https://conferences.ucla.edu/wp-content/uploads/2019/03/Floorplan_Carnesale_SecondFloor.jpg"
+ },
+ "mode": "walls",
+ "control": [
+  {
+   "px": [
+    3,
+    3
+   ],
+   "outline_vertex": [
+    0,
+    34
+   ],
+   "what": "NW corner of the lobby block"
+  },
+  {
+   "px": [
+    3,
+    290
+   ],
+   "outline_vertex": [
+    0,
+    35
+   ],
+   "what": "SW corner of the lobby block"
+  },
+  {
+   "px": [
+    935,
+    150
+   ],
+   "outline_vertex": [
+    0,
+    11
+   ],
+   "what": "NE corner of the wing (Malibu room)"
+  },
+  {
+   "px": [
+    935,
+    290
+   ],
+   "outline_vertex": [
+    0,
+    4
+   ],
+   "what": "SE corner of the wing (Malibu room)"
+  }
+ ],
+ "params": {
+  "wall_neutral": 232,
+  "door_m": 2.5,
+  "min_room_m2": 2.0,
+  "min_wall_m": 1.0,
+  "split_on": "text"
+ },
+ "notes": [
+  "The plan is UCLA Conferences & Catering's event-space diagram of the second-floor event wing (lobby, Hermosa A/B, Venice A/B, Malibu, patio): room names, no numbers, no scale. Fitted with a similarity transform on the wing's four corners from the mapped outline; the diagram is schematic, residuals up to 3.6 m.",
+  "Floor 2 is the plan's own 'Second Floor'; UCLA Space Inventory floor 2 rooms are SP2xx but have no names, so no room numbers are recorded. The site's Carnesale rooms 212A, 218 and SP206 cannot be matched to this plan.",
+  "Hermosa A/B and Venice A/B are divided by dashed lines (movable partitions); cuts follow them."
+ ],
+ "transform": "similarity",
+ "cuts": [
+  [
+   [
+    320,
+    150
+   ],
+   [
+    320,
+    290
+   ]
+  ],
+  [
+   [
+    572,
+    150
+   ],
+   [
+    572,
+    290
+   ]
+  ]
+ ],
+ "set": [
+  {
+   "px": [
+    260,
+    220
+   ],
+   "label": "Hermosa A",
+   "name": "Hermosa Room A",
+   "kind": "room"
+  },
+  {
+   "px": [
+    380,
+    220
+   ],
+   "label": "Hermosa B",
+   "name": "Hermosa Room B",
+   "kind": "room"
+  },
+  {
+   "px": [
+    500,
+    220
+   ],
+   "label": "Venice A",
+   "name": "Venice Room A",
+   "kind": "room"
+  },
+  {
+   "px": [
+    640,
+    220
+   ],
+   "label": "Venice B",
+   "name": "Venice Room B",
+   "kind": "room"
+  },
+  {
+   "px": [
+    850,
+    220
+   ],
+   "label": "Malibu",
+   "name": "Malibu Room",
+   "kind": "room"
+  },
+  {
+   "px": [
+    735,
+    260
+   ],
+   "label": "Patio",
+   "name": "Patio",
+   "kind": "other"
+  },
+  {
+   "px": [
+    60,
+    145
+   ],
+   "label": "Lobby",
+   "name": "Lobby",
+   "kind": "corridor"
+  },
+  {
+   "px": [
+    600,
+    125
+   ],
+   "label": "Corridor",
+   "name": "Corridor",
+   "kind": "corridor"
+  },
+  {
+   "px": [
+    35,
+    75
+   ],
+   "label": "",
+   "name": "Elevator",
+   "kind": "elevator"
+  },
+  {
+   "px": [
+    90,
+    75
+   ],
+   "label": "",
+   "name": "Elevator",
+   "kind": "elevator"
+  },
+  {
+   "px": [
+    150,
+    60
+   ],
+   "label": "",
+   "name": "Stairs",
+   "kind": "stair"
+  }
+ ]
+}

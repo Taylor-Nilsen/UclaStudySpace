@@ -1,0 +1,59 @@
+{
+ "building": "SPROUL",
+ "floor": "6",
+ "out": "SPROUL-6-north.json",
+ "title": "Sproul Hall floor 6, north wing",
+ "extent": "partial",
+ "source": {
+  "publisher": "UCLA Housing",
+  "what": "Room sign-up floor plan of Sproul Hall, north wing, floor 6 (CAD line drawing with room numbers; legacy www.housing.ucla.edu/maps site)",
+  "url": "http://www.housing.ucla.edu/maps/plans/spr-no-06.htm",
+  "file": "http://www.housing.ucla.edu/maps/plans/spr-no-06.gif",
+  "date": "2002 (file date on the server)",
+  "accessed": "2026-10-15"
+ },
+ "plan": {
+  "file": "spr-no-06.gif",
+  "url": "http://www.housing.ucla.edu/maps/plans/spr-no-06.gif"
+ },
+ "mode": "walls",
+ "transform": "similarity",
+ "control": [
+  {
+   "px": [
+    13,
+    12
+   ],
+   "outline_vertex": [
+    0,
+    12
+   ],
+   "what": "plan outer-wall corner TL on outline vertex 12"
+  },
+  {
+   "px": [
+    1224,
+    12
+   ],
+   "outline_vertex": [
+    0,
+    23
+   ],
+   "what": "plan outer-wall corner TR on outline vertex 23"
+  }
+ ],
+ "params": {
+  "dark": 200,
+  "door_m": 2.0,
+  "min_room_m2": 2.0,
+  "ocr_upscale": 1.0
+ },
+ "labels": [],
+ "how": "The plan shows one wing with no scale. Its outer-wall corners (the bounding box of the drawing's black lines) are paired with the building outline vertices at the wing's corners; the fit is a similarity transform. Orientation: north-down (UCLA GIS restroom 216U lies 61% of the way from the wing's west end; room 216 is 37% from the plan's left edge, so the plan is turned 180 degrees).",
+ "notes": [
+  "Plan of one wing of the building only (the 2002 Housing room sign-up map). No scale bar: the scale comes from the outline fit.",
+  "Room numbers are read from the plan by OCR (36 of them). This CAD font's 2 reads as 8 (854 for 254): a number whose first digit is not the floor is corrected to the floor digit, and stray numeric readings are replaced by the word room; these fixes are the labels list (ocr gives what was read).",
+  "Stairs, elevators and restrooms are drawn where the plan draws them. Door swings and window dashes are drawn in color on the plan and are taken as walls, so some door openings are closed.",
+  "Only the two corners at the wing's free end are outline vertices; the wing's other end merges into the rest of the building, so the plan's aspect ratio sets its length."
+ ]
+}

@@ -1,0 +1,152 @@
+{
+ "building": "ROYCE",
+ "floor": "1",
+ "title": "Royce Hall stage and orchestra level (auditorium block only)",
+ "extent": "partial",
+ "source": {
+  "publisher": "Royce Hall / UCLA Center for the Art of Performance (roycehall.org)",
+  "what": "Royce Hall Stage Floor Plan: Plan View (Vectorworks drawing by A. Gutierrez, dated 5/1/2020, scale 3/8\" = 1'0\"), the ground plan on the rental page",
+  "url": "https://roycehall.org/rent",
+  "file": "https://roycehall.org/assets/Uploads/rent/Royce-Hall-Ground-Plan.pdf",
+  "date": "2020-05-01",
+  "accessed": "2026-10-15",
+  "license": "UCLA (CAP UCLA) document, public on roycehall.org"
+ },
+ "plan": {
+  "file": "Royce-Hall-Ground-Plan.pdf",
+  "url": "https://roycehall.org/assets/Uploads/rent/Royce-Hall-Ground-Plan.pdf",
+  "page": 1,
+  "dpi": 100
+ },
+ "mode": "walls",
+ "transform": "similarity",
+ "control": [
+  {
+   "px": [
+    2229.2,
+    201.7
+   ],
+   "ll": [
+    34.073152,
+    -118.442182
+   ],
+   "what": "stage centre line at the crossover's north wall, placed on the building's symmetry axis (x of the south portico and twin towers in the mapped outline) at the outline's north wall"
+  },
+  {
+   "px": [
+    2229.2,
+    1567.2
+   ],
+   "ll": [
+    34.073051,
+    -118.442182
+   ],
+   "what": "stage centre line at the plaster line, 11.1 m south of the first point at the drawing's stated scale (3/8 in = 1 ft)"
+  }
+ ],
+ "crop": [
+  20,
+  100,
+  4270,
+  2490
+ ],
+ "params": {
+  "wall_neutral": 120,
+  "door_m": 2.6,
+  "min_room_m2": 2.0,
+  "ocr_upscale": 1.5
+ },
+ "notes": [
+  "The drawing shows only the stage house, its wings, the crossover corridor, the dressing-room stairs and the front of the orchestra seating down to row G, with the side lobby walls; nothing beyond that is drawn, so this is a partial record of the floor and no exterior wall of Royce Hall appears on it except the crossover's north wall.",
+  "Georeference: the drawing is placed on the building's north-south symmetry axis (the mapped outline's south portico, twin towers and the 20 m rear bump are all centred on x = 259.9 m in the projection used here) with the crossover's north wall on the outline's north wall, and scaled by the sheet's stated 3/8\" = 1' (1:32), which puts the plaster line 11.1 m south of the north wall. The outline fit (ICP) cannot be used because the drawn walls are interior ones. No independent check of the scale was possible: the stage as traced is 24.5 m wide between the lineset rail and the stage-right wall and 10.5 m deep, and the house between the side lobby walls about 38 m, all inside the 74 m wide outline, so the only fitted quantity is the stated scale itself (0.0081 m/px at 100 dpi).",
+  "Orientation: Royce Hall's main entrance and portico face south onto Dickson Court and the stage is at the north end; the drawing's seating is at the bottom and the stage at the top, so north is up.",
+  "Floor: UCLA floor 1 (the orchestra level is at the level of the south entrance; UCLA GIS lists restroom 128 on floor 1). maps/rooms_index.json has no ROYCE entry, so the auditorium's room number could not be checked.",
+  "Seats are drawn in red and are not walls (wall_neutral). OCR is off (the lineset schedule and notes produced spurious numbers); the stage and the organ console are labeled by hand from the drawing's own text. The upstage wall and the stage-right walls are drawn as hollow double-line bands whose cavities the tracer takes for rooms, so they are dropped; the band's south face, the stage-left lineset rail line and the plaster line are cut so that the stage is a closed room (the three upstage doors and the open stage-left side would otherwise join it to the crossover and the wings, which run off the sheet). The house itself reaches the cut edge of the drawing and gets no polygon. A further cut closes the stage-right door (Step Down -3 1/2\") at the east wall, which the door sealing cannot close because the hollow wall bands have no free ends.",
+  "door_m is 2.6 m because the backstage doors are drawn open (clearances 6'6\" to 7'8\", the loading door 7'3\"); the orchestra shell wall storage is hatched and comes out as slivers, so it has no polygon."
+ ],
+ "ocr": false,
+ "cuts": [
+  [
+   [
+    267,
+    284
+   ],
+   [
+    3713,
+    284
+   ]
+  ],
+  [
+   [
+    630,
+    284
+   ],
+   [
+    630,
+    1567
+   ]
+  ],
+  [
+   [
+    3654,
+    674
+   ],
+   [
+    3654,
+    792
+   ]
+  ],
+  [
+   [
+    604,
+    1567
+   ],
+   [
+    3713,
+    1567
+   ]
+  ]
+ ],
+ "set": [
+  {
+   "px": [
+    2229,
+    900
+   ],
+   "kind": "room",
+   "label": "Stage",
+   "name": "Stage (between the plaster line and the upstage wall)"
+  },
+  {
+   "px": [
+    3800,
+    2367
+   ],
+   "kind": "other",
+   "label": "Organ console",
+   "name": "Pipe organ console"
+  }
+ ],
+ "drop": [
+  [
+   833,
+   243
+  ],
+  [
+   1667,
+   243
+  ],
+  [
+   2778,
+   243
+  ],
+  [
+   3472,
+   249
+  ],
+  [
+   3317,
+   1633
+  ]
+ ]
+}

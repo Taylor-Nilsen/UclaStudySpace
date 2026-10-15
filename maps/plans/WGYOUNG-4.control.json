@@ -1,0 +1,171 @@
+{
+ "building": "WGYOUNG",
+ "floor": "4",
+ "title": "Young Hall floor 4",
+ "extent": "full",
+ "source": {
+  "publisher": "Paul Murdoch Architects (not UCLA)",
+  "what": "\"Fourth Floor Plan\" from the architects' UCLA Young Hall chemistry lab feasibility study: full floor with walls, corridors, stairs, elevators, restrooms and the bridge to the adjacent building; the project area is shaded; no room numbers, no scale bar",
+  "url": "https://www.paulmurdocharchitects.com/ucla-young-hall-chemistry-lab",
+  "file": "https://images.squarespace-cdn.com/content/v1/599c94d48fd4d2fa52d2d2d4/1586302345636-SOPU2XOBQKTJP4WOI4VG/fourth%2Bfloor%2Blayout.jpg",
+  "date": "2019 study (posted 2020)",
+  "accessed": "2026-10-15",
+  "license": "architect's portfolio image, copyright Paul Murdoch Architects; used here only to trace wall positions"
+ },
+ "plan": {
+  "file": "young_hall_4th_floor_plan_paul_murdoch_architects_2019.png",
+  "url": "https://images.squarespace-cdn.com/content/v1/599c94d48fd4d2fa52d2d2d4/1586302345636-SOPU2XOBQKTJP4WOI4VG/fourth%2Bfloor%2Blayout.jpg"
+ },
+ "mode": "walls",
+ "control": [
+  {
+   "px": [
+    200.0,
+    70.0
+   ],
+   "ll": [
+    34.0691923,
+    -118.4404645
+   ],
+   "what": "crop corner through the sheet transform (plan rotated 90 deg clockwise to north-up, 10.5 cm/px, translation-only fit of the footprint to the building outline)"
+  },
+  {
+   "px": [
+    1450.0,
+    70.0
+   ],
+   "ll": [
+    34.0680049,
+    -118.4404645
+   ],
+   "what": "crop corner through the sheet transform (plan rotated 90 deg clockwise to north-up, 10.5 cm/px, translation-only fit of the footprint to the building outline)"
+  },
+  {
+   "px": [
+    1450.0,
+    1400.0
+   ],
+   "ll": [
+    34.0680049,
+    -118.4419789
+   ],
+   "what": "crop corner through the sheet transform (plan rotated 90 deg clockwise to north-up, 10.5 cm/px, translation-only fit of the footprint to the building outline)"
+  },
+  {
+   "px": [
+    200.0,
+    1400.0
+   ],
+   "ll": [
+    34.0691923,
+    -118.4419789
+   ],
+   "what": "crop corner through the sheet transform (plan rotated 90 deg clockwise to north-up, 10.5 cm/px, translation-only fit of the footprint to the building outline)"
+  }
+ ],
+ "crop": [
+  200,
+  70,
+  1450,
+  1400
+ ],
+ "params": {
+  "wall_neutral": 150,
+  "door_m": 2.0,
+  "min_room_m2": 2.0
+ },
+ "notes": [
+  "Architects' feasibility-study plan (2019): no room numbers and no scale bar, so rooms are traced without numbers; stairs, elevators and restrooms labeled by hand from the plan's own callouts. The 'PROJECT AREA 8,850 GSF' shading is the study's lab area, not a room.",
+  "Georeference: the plan is drawn with north to the left; it is turned 90 degrees and scaled by a sweep of the footprint against the building outline (best 10.5 cm/px, median 1.05 m). Orientation check: the floor 2 trace's elevator, stair and two restrooms land within 0.5 to 3 m of the same cores on this plan.",
+  "Hand cuts seal the two restroom doors off the junction lobby."
+ ],
+ "transform": "similarity",
+ "labels": [
+  {
+   "px": [
+    925,
+    110
+   ],
+   "text": "Stair"
+  },
+  {
+   "px": [
+    880,
+    870
+   ],
+   "text": "Stair"
+  },
+  {
+   "px": [
+    815,
+    1345
+   ],
+   "text": "Stair"
+  },
+  {
+   "px": [
+    1375,
+    735
+   ],
+   "text": "Stair"
+  },
+  {
+   "px": [
+    815,
+    772
+   ],
+   "text": "Elevator"
+  },
+  {
+   "px": [
+    875,
+    330
+   ],
+   "text": "Elevator"
+  },
+  {
+   "px": [
+    905,
+    330
+   ],
+   "text": "Elevator"
+  },
+  {
+   "px": [
+    925,
+    875
+   ],
+   "text": "Restroom"
+  },
+  {
+   "px": [
+    925,
+    945
+   ],
+   "text": "Restroom"
+  }
+ ],
+ "how": "Architects' plan with no scale bar. The plan's long bar runs top to bottom, so it is turned 90 degrees (north is to the plan's left); with the rotation fixed, a scale sweep of the footprint against the building outline is best at 10.5 cm/px (median 1.05 m, 90% within 4.7 m). Orientation check: the floor 2 trace's elevator, stair and two restrooms land within 5 to 30 px (0.5 to 3 m) of the same cores on this plan. Four synthetic control points carry that transform.",
+ "cuts": [
+  [
+   [
+    905,
+    832
+   ],
+   [
+    955,
+    832
+   ]
+  ],
+  [
+   [
+    872,
+    905
+   ],
+   [
+    872,
+    985
+   ]
+  ]
+ ]
+}

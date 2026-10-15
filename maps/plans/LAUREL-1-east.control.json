@@ -1,0 +1,78 @@
+{
+ "building": "LAUREL",
+ "floor": "1",
+ "title": "Laurel level 1, east half",
+ "extent": "partial",
+ "source": {
+  "publisher": "UCLA Housing",
+  "what": "Room sign-up plan of Laurel East level 1 (\"FLOOR PLAN - BUILDING 3 - LEVEL 01 B\": the north-eastern half of the building; CAD plan with unit numbers, bedrooms A to D, stairs and elevators)",
+  "url": "http://www.housing.ucla.edu/maps/laurel.htm",
+  "file": "http://www.housing.ucla.edu/maps/plans/Laurel/Laurel-East-01.png",
+  "date": "2024-02-09 (file dates)",
+  "accessed": "2026-10-15"
+ },
+ "plan": {
+  "file": "Laurel-East-01.png",
+  "url": "http://www.housing.ucla.edu/maps/plans/Laurel/Laurel-East-01.png"
+ },
+ "mode": "walls",
+ "control": [
+  {
+   "px": [
+    0,
+    0
+   ],
+   "ll": [
+    34.062673,
+    -118.449596
+   ],
+   "what": "image corner (0,0) from the joined-plan outline fit"
+  },
+  {
+   "px": [
+    588,
+    0
+   ],
+   "ll": [
+    34.062406,
+    -118.449399
+   ],
+   "what": "image corner (588,0) from the joined-plan outline fit"
+  },
+  {
+   "px": [
+    0,
+    860
+   ],
+   "ll": [
+    34.062432,
+    -118.450064
+   ],
+   "what": "image corner (0,860) from the joined-plan outline fit"
+  },
+  {
+   "px": [
+    588,
+    860
+   ],
+   "ll": [
+    34.062165,
+    -118.449866
+   ],
+   "what": "image corner (588,860) from the joined-plan outline fit"
+  }
+ ],
+ "params": {
+  "door_m": 2.0,
+  "min_room_m2": 2.0,
+  "ocr_rotated": false,
+  "ocr_upscale": 3.0
+ },
+ "how": "The two half-plans of this level were joined at their overlap (the elevator core; sheet B placed above sheet A by ink correlation, offset 0,708 px) and the joined footprint fitted to the building outline by ICP (median 1.74 m, 90% within 7.08 m, 5.9 cm/px, rotation -58.3 deg). Each half's four image corners are then used as ll control points from that fit. No scale bar on the plan: the outline fit is the only scale. No north arrow on the plan. The Regents' January 2018 design plan for the Southwest Campus Apartments draws the same three buildings in the same orientation with a north arrow pointing to the page's upper left (the page's up is north-east), so the ICP starts from that rotation.",
+ "notes": [
+  "Unit numbers are printed as -NN on the sheet (the level is the sheet's, so -13 on the level 2 sheet is unit 13 of level 2); they are kept as labels in that printed form, not as room numbers. Bedroom letters A to D are read by OCR; a letter alone is not a room number.",
+  "No scale bar on the plan: the scale comes from the outline fit."
+ ],
+ "out": "LAUREL-1-east.json",
+ "labels": []
+}

@@ -1,0 +1,122 @@
+{
+ "building": "SCHOENBG",
+ "floor": "1",
+ "title": "Schoenberg Music Building floor 1",
+ "extent": "full",
+ "source": {
+  "publisher": "UCLA Herb Alpert School of Music",
+  "what": "\"Schoenberg Hall - 1st Floor\" architectural plan (scan in a PDF, room numbers, scale bar, north arrow)",
+  "url": "https://www.music.ucla.edu/",
+  "file": "https://www.music.ucla.edu/files/acrobatfiles/music/About/1stfloor.pdf",
+  "archive": "Common Crawl CC-MAIN-2017-39, captured 2017-09-21",
+  "date": "captured 2017-09",
+  "accessed": "2026-10-15"
+ },
+ "plan": {
+  "file": "1stfloor.pdf",
+  "url": "https://www.music.ucla.edu/files/acrobatfiles/music/About/1stfloor.pdf",
+  "page": 1,
+  "dpi": 300
+ },
+ "mode": "walls",
+ "control": [
+  {
+   "px": [
+    2552,
+    710
+   ],
+   "ll": [
+    34.070373,
+    -118.439974
+   ],
+   "what": "stair 1500ST, under floor 2's stair 2500ST (position from the floor 2 trace)"
+  },
+  {
+   "px": [
+    2450,
+    1415
+   ],
+   "ll": [
+    34.070391,
+    -118.440283
+   ],
+   "what": "stair 1655ST, under floor 2's stair 2655ST"
+  },
+  {
+   "px": [
+    920,
+    930
+   ],
+   "ll": [
+    34.070974,
+    -118.440056
+   ],
+   "what": "stair 1201ST, under floor 2's stair 2201ST"
+  }
+ ],
+ "crop": [
+  100,
+  100,
+  3290,
+  2040
+ ],
+ "params": {
+  "door_m": 2.0,
+  "min_room_m2": 2.0
+ },
+ "notes": [
+  "The plan is a scan drawn with north to the left, like the floor 2 sheet (both show the auditorium at the left and the long east wing along the top).",
+  "The outline fit (ICP) could not find the footprint on this scan and the automatic stair-label stacking found no readable labels, so the floor is pinned to floor 2 through three stairs read off both sheets by hand: 1500ST under 2500ST, 1655ST under 2655ST and 1201ST under 2201ST (floor 2 positions from its trace record).",
+  "OCR misreads on this scan are corrected with set (1503B, 1642, 1555, 1133A); 1200 is set back to a room (the tracer takes \"Jan\" for a janitor's closet).",
+  "The Green Room 1230 is still merged with corridor 1500CU through its door; Student Services 1672 (drawn in the courtyard) falls outside the building outline and is dropped. The plan's exterior colonnade on the north face and the Gamelan room's outside steps reach up to 7.7 m outside the OSM outline."
+ ],
+ "transform": "similarity",
+ "set": [
+  {
+   "px": [
+    2240,
+    614
+   ],
+   "kind": "room",
+   "ref": "1503B",
+   "label": "1503B"
+  },
+  {
+   "px": [
+    2720,
+    1180
+   ],
+   "kind": "room",
+   "ref": "1642",
+   "label": "1642"
+  },
+  {
+   "px": [
+    2940,
+    700
+   ],
+   "kind": "room",
+   "ref": "1555",
+   "label": "1555"
+  },
+  {
+   "px": [
+    1490,
+    1166
+   ],
+   "kind": "room",
+   "ref": "1133A",
+   "label": "1133A"
+  },
+  {
+   "px": [
+    1120,
+    1200
+   ],
+   "kind": "room",
+   "ref": "1200",
+   "label": "1200",
+   "name": "Jan Popper Theater"
+  }
+ ]
+}

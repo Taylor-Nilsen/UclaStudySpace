@@ -1,0 +1,1204 @@
+{
+ "building": "SCHOENBG",
+ "floor": "2",
+ "title": "Schoenberg Music Building floor 2",
+ "extent": "full",
+ "source": {
+  "publisher": "UCLA Herb Alpert School of Music",
+  "what": "\"Schoenberg Music Bldg. 2nd Floor\" architectural plan, updated 2016-11-28 (CAD drawing in a PDF, every room number with its area, scale bar, north arrow)",
+  "url": "https://www.music.ucla.edu/",
+  "file": "https://www.music.ucla.edu/files/acrobatfiles/music/About/SMB-Floor-2-082417.pdf",
+  "archive": "Common Crawl CC-MAIN-2017-39, captured 2017-09-21",
+  "date": "plan updated 2016-11-28, file 2017-08-24, captured 2017-09",
+  "accessed": "2026-10-15"
+ },
+ "plan": {
+  "file": "SMB-Floor-2-082417.pdf",
+  "url": "https://www.music.ucla.edu/files/acrobatfiles/music/About/SMB-Floor-2-082417.pdf",
+  "page": 1,
+  "dpi": 200
+ },
+ "mode": "walls",
+ "control": {
+  "auto": "outline",
+  "search": true,
+  "rot_init": null
+ },
+ "crop": [
+  133,
+  27,
+  3253,
+  1867
+ ],
+ "params": {
+  "door_m": 2.0,
+  "min_room_m2": 2.0
+ },
+ "notes": [
+  "Every room on this plan carries its area in square feet under the number (\"243sf\"); the tracer reads those as room numbers too and flags the rooms as merged, so each flagged room is given its real number back with a set entry taken from the flag list (kind from the UCLA suffix: ST stair, CO/CU/LO corridor). A tracer rule ignoring tokens ending in SF would make these unnecessary.",
+  "The plan is drawn with north to the left (its north arrow); the outline fit confirms it (rotation -90 degrees).",
+  "Rooms 2405, 2403 and 2404A (around corridor 2488CO) and 2843A with a stair are still merged through their door gaps.",
+  "The music library's upper rooms (1102M, 1102P, 1102X, 1188) are drawn on this sheet and kept with their numbers.",
+  "Rendered at 200 dpi (not 300): the 300 dpi raster of this sheet needs more memory than the trace machine allows alongside the other traces; the set positions were taken from a 300 dpi dry run and scaled by 2/3."
+ ],
+ "set": [
+  {
+   "px": [
+    1856,
+    777
+   ],
+   "kind": "room",
+   "ref": "2407",
+   "label": "2407"
+  },
+  {
+   "px": [
+    1911,
+    780
+   ],
+   "kind": "room",
+   "ref": "2405A",
+   "label": "2405A"
+  },
+  {
+   "px": [
+    1935,
+    1355
+   ],
+   "kind": "room",
+   "ref": "2435",
+   "label": "2435"
+  },
+  {
+   "px": [
+    2781,
+    1383
+   ],
+   "kind": "room",
+   "ref": "2671",
+   "label": "2671"
+  },
+  {
+   "px": [
+    2857,
+    1383
+   ],
+   "kind": "room",
+   "ref": "2675",
+   "label": "2675"
+  },
+  {
+   "px": [
+    2933,
+    1383
+   ],
+   "kind": "room",
+   "ref": "2679",
+   "label": "2679"
+  },
+  {
+   "px": [
+    1935,
+    1415
+   ],
+   "kind": "room",
+   "ref": "2439",
+   "label": "2439"
+  },
+  {
+   "px": [
+    854,
+    355
+   ],
+   "kind": "room",
+   "ref": "2235",
+   "label": "2235"
+  },
+  {
+   "px": [
+    2307,
+    349
+   ],
+   "kind": "room",
+   "ref": "2501",
+   "label": "2501"
+  },
+  {
+   "px": [
+    2937,
+    448
+   ],
+   "kind": "room",
+   "ref": "2531",
+   "label": "2531"
+  },
+  {
+   "px": [
+    3013,
+    449
+   ],
+   "kind": "room",
+   "ref": "2533",
+   "label": "2533"
+  },
+  {
+   "px": [
+    3137,
+    461
+   ],
+   "kind": "room",
+   "ref": "2535",
+   "label": "2535"
+  },
+  {
+   "px": [
+    2583,
+    473
+   ],
+   "kind": "stair",
+   "ref": "2500ST",
+   "label": "2500ST"
+  },
+  {
+   "px": [
+    1765,
+    519
+   ],
+   "kind": "room",
+   "ref": "2476C",
+   "label": "2476C"
+  },
+  {
+   "px": [
+    2407,
+    481
+   ],
+   "kind": "restroom",
+   "ref": "2513",
+   "label": "2513"
+  },
+  {
+   "px": [
+    843,
+    673
+   ],
+   "kind": "corridor",
+   "ref": "2201CO",
+   "label": "2201CO"
+  },
+  {
+   "px": [
+    844,
+    828
+   ],
+   "kind": "room",
+   "ref": "2211",
+   "label": "2211"
+  },
+  {
+   "px": [
+    2830,
+    513
+   ],
+   "kind": "corridor",
+   "ref": "2521LO",
+   "label": "2521LO"
+  },
+  {
+   "px": [
+    2839,
+    588
+   ],
+   "kind": "room",
+   "ref": "2520",
+   "label": "2520"
+  },
+  {
+   "px": [
+    3158,
+    560
+   ],
+   "kind": "room",
+   "ref": "2536",
+   "label": "2536"
+  },
+  {
+   "px": [
+    1723,
+    595
+   ],
+   "kind": "room",
+   "ref": "2476B",
+   "label": "2476B"
+  },
+  {
+   "px": [
+    2683,
+    656
+   ],
+   "kind": "room",
+   "ref": "2625A",
+   "label": "2625A"
+  },
+  {
+   "px": [
+    2890,
+    683
+   ],
+   "kind": "room",
+   "ref": "2526",
+   "label": "2526"
+  },
+  {
+   "px": [
+    3155,
+    655
+   ],
+   "kind": "room",
+   "ref": "2840A",
+   "label": "2840A"
+  },
+  {
+   "px": [
+    2956,
+    677
+   ],
+   "kind": "room",
+   "ref": "2532",
+   "label": "2532"
+  },
+  {
+   "px": [
+    2895,
+    767
+   ],
+   "kind": "room",
+   "ref": "2524",
+   "label": "2524"
+  },
+  {
+   "px": [
+    2727,
+    761
+   ],
+   "kind": "room",
+   "ref": "2625",
+   "label": "2625"
+  },
+  {
+   "px": [
+    3162,
+    778
+   ],
+   "kind": "room",
+   "ref": "2840",
+   "label": "2840"
+  },
+  {
+   "px": [
+    2176,
+    787
+   ],
+   "kind": "room",
+   "ref": "2401",
+   "label": "2401"
+  },
+  {
+   "px": [
+    1771,
+    785
+   ],
+   "kind": "room",
+   "ref": "2409",
+   "label": "2409"
+  },
+  {
+   "px": [
+    2685,
+    835
+   ],
+   "kind": "room",
+   "ref": "2631",
+   "label": "2631"
+  },
+  {
+   "px": [
+    341,
+    917
+   ],
+   "kind": "room",
+   "ref": "2213",
+   "label": "2213"
+  },
+  {
+   "px": [
+    1772,
+    943
+   ],
+   "kind": "room",
+   "ref": "2411",
+   "label": "2411"
+  },
+  {
+   "px": [
+    2685,
+    955
+   ],
+   "kind": "room",
+   "ref": "2637",
+   "label": "2637"
+  },
+  {
+   "px": [
+    1947,
+    1035
+   ],
+   "kind": "room",
+   "ref": "2404",
+   "label": "2404"
+  },
+  {
+   "px": [
+    2189,
+    1027
+   ],
+   "kind": "room",
+   "ref": "2410",
+   "label": "2410"
+  },
+  {
+   "px": [
+    2685,
+    1045
+   ],
+   "kind": "room",
+   "ref": "2643",
+   "label": "2643"
+  },
+  {
+   "px": [
+    2925,
+    1055
+   ],
+   "kind": "room",
+   "ref": "2744",
+   "label": "2744"
+  },
+  {
+   "px": [
+    2855,
+    1055
+   ],
+   "kind": "room",
+   "ref": "2738",
+   "label": "2738"
+  },
+  {
+   "px": [
+    3005,
+    1055
+   ],
+   "kind": "room",
+   "ref": "2746",
+   "label": "2746"
+  },
+  {
+   "px": [
+    2685,
+    1135
+   ],
+   "kind": "room",
+   "ref": "2649",
+   "label": "2649"
+  },
+  {
+   "px": [
+    2842,
+    1124
+   ],
+   "kind": "room",
+   "ref": "2853A",
+   "label": "2853A"
+  },
+  {
+   "px": [
+    3011,
+    1123
+   ],
+   "kind": "room",
+   "ref": "2853",
+   "label": "2853"
+  },
+  {
+   "px": [
+    1942,
+    1129
+   ],
+   "kind": "room",
+   "ref": "2419",
+   "label": "2419"
+  },
+  {
+   "px": [
+    2032,
+    1129
+   ],
+   "kind": "room",
+   "ref": "2418",
+   "label": "2418"
+  },
+  {
+   "px": [
+    2190,
+    1184
+   ],
+   "kind": "room",
+   "ref": "2420",
+   "label": "2420"
+  },
+  {
+   "px": [
+    2526,
+    1185
+   ],
+   "kind": "stair",
+   "ref": "2655ST",
+   "label": "2655ST"
+  },
+  {
+   "px": [
+    1771,
+    1171
+   ],
+   "kind": "room",
+   "ref": "2421",
+   "label": "2421"
+  },
+  {
+   "px": [
+    2935,
+    1241
+   ],
+   "kind": "room",
+   "ref": "2678A",
+   "label": "2678A"
+  },
+  {
+   "px": [
+    3003,
+    1200
+   ],
+   "kind": "room",
+   "ref": "2686",
+   "label": "2686"
+  },
+  {
+   "px": [
+    1923,
+    1245
+   ],
+   "kind": "room",
+   "ref": "2429",
+   "label": "2429"
+  },
+  {
+   "px": [
+    2030,
+    1245
+   ],
+   "kind": "room",
+   "ref": "2428",
+   "label": "2428"
+  },
+  {
+   "px": [
+    1771,
+    1333
+   ],
+   "kind": "room",
+   "ref": "2431",
+   "label": "2431"
+  },
+  {
+   "px": [
+    2190,
+    1340
+   ],
+   "kind": "room",
+   "ref": "2430",
+   "label": "2430"
+  },
+  {
+   "px": [
+    2013,
+    1407
+   ],
+   "kind": "room",
+   "ref": "2438",
+   "label": "2438"
+  },
+  {
+   "px": [
+    3174,
+    1401
+   ],
+   "kind": "room",
+   "ref": "2687",
+   "label": "2687"
+  },
+  {
+   "px": [
+    2191,
+    1393
+   ],
+   "kind": "room",
+   "ref": "2436",
+   "label": "2436"
+  },
+  {
+   "px": [
+    1060,
+    1323
+   ],
+   "kind": "room",
+   "ref": "1102X",
+   "label": "1102X"
+  },
+  {
+   "px": [
+    1763,
+    1395
+   ],
+   "kind": "room",
+   "ref": "2441",
+   "label": "2441"
+  },
+  {
+   "px": [
+    2188,
+    1472
+   ],
+   "kind": "room",
+   "ref": "2440",
+   "label": "2440"
+  },
+  {
+   "px": [
+    1845,
+    1569
+   ],
+   "kind": "room",
+   "ref": "2445",
+   "label": "2445"
+  },
+  {
+   "px": [
+    1928,
+    1559
+   ],
+   "kind": "room",
+   "ref": "2449",
+   "label": "2449"
+  },
+  {
+   "px": [
+    2169,
+    1541
+   ],
+   "kind": "stair",
+   "ref": "2401ST",
+   "label": "2401ST"
+  },
+  {
+   "px": [
+    1301,
+    1719
+   ],
+   "kind": "room",
+   "ref": "1102M",
+   "label": "1102M"
+  },
+  {
+   "px": [
+    984,
+    556
+   ],
+   "kind": "room",
+   "ref": "2228",
+   "label": "2228",
+   "name": "2228 (the closets 2234 and 2228A labelled inside it are not separated)"
+  },
+  {
+   "px": [
+    1265,
+    1318
+   ],
+   "kind": "room",
+   "ref": "1102P",
+   "label": "1102P"
+  },
+  {
+   "px": [
+    1707,
+    373
+   ],
+   "kind": "room",
+   "ref": "2476D",
+   "label": "2476D"
+  },
+  {
+   "px": [
+    747,
+    407
+   ],
+   "kind": "other",
+   "label": ""
+  },
+  {
+   "px": [
+    1787,
+    1093
+   ],
+   "kind": "room",
+   "ref": "2417",
+   "label": "2417"
+  },
+  {
+   "px": [
+    867,
+    933
+   ],
+   "kind": "other",
+   "label": "",
+   "name": "closet next to 2211 (number not readable)"
+  },
+  {
+   "px": [
+    1856,
+    776
+   ],
+   "kind": "room",
+   "ref": "2407",
+   "label": "2407"
+  },
+  {
+   "px": [
+    1934,
+    1354
+   ],
+   "kind": "room",
+   "ref": "2435",
+   "label": "2435"
+  },
+  {
+   "px": [
+    2705,
+    1382
+   ],
+   "kind": "room",
+   "ref": "2665",
+   "label": "2665"
+  },
+  {
+   "px": [
+    2856,
+    1383
+   ],
+   "kind": "room",
+   "ref": "2675",
+   "label": "2675"
+  },
+  {
+   "px": [
+    2932,
+    1383
+   ],
+   "kind": "room",
+   "ref": "2679",
+   "label": "2679"
+  },
+  {
+   "px": [
+    1936,
+    1414
+   ],
+   "kind": "room",
+   "ref": "2439",
+   "label": "2439"
+  },
+  {
+   "px": [
+    847,
+    391
+   ],
+   "kind": "room",
+   "ref": "2235",
+   "label": "2235"
+  },
+  {
+   "px": [
+    1762,
+    371
+   ],
+   "kind": "room",
+   "ref": "2476D",
+   "label": "2476D"
+  },
+  {
+   "px": [
+    2306,
+    348
+   ],
+   "kind": "room",
+   "ref": "2501",
+   "label": "2501"
+  },
+  {
+   "px": [
+    3012,
+    450
+   ],
+   "kind": "room",
+   "ref": "2533",
+   "label": "2533"
+  },
+  {
+   "px": [
+    2937,
+    450
+   ],
+   "kind": "room",
+   "ref": "2531",
+   "label": "2531"
+  },
+  {
+   "px": [
+    3137,
+    462
+   ],
+   "kind": "room",
+   "ref": "2535",
+   "label": "2535"
+  },
+  {
+   "px": [
+    2501,
+    429
+   ],
+   "kind": "corridor",
+   "ref": "2500LO",
+   "label": "2500LO"
+  },
+  {
+   "px": [
+    2199,
+    592
+   ],
+   "kind": "corridor",
+   "ref": "2500CO",
+   "label": "2500CO"
+  },
+  {
+   "px": [
+    1766,
+    520
+   ],
+   "kind": "room",
+   "ref": "2476C",
+   "label": "2476C"
+  },
+  {
+   "px": [
+    2833,
+    513
+   ],
+   "kind": "corridor",
+   "ref": "2521LO",
+   "label": "2521LO"
+  },
+  {
+   "px": [
+    2839,
+    589
+   ],
+   "kind": "room",
+   "ref": "2520",
+   "label": "2520"
+  },
+  {
+   "px": [
+    930,
+    650
+   ],
+   "kind": "stair",
+   "ref": "2201ST",
+   "label": "2201ST"
+  },
+  {
+   "px": [
+    2891,
+    684
+   ],
+   "kind": "room",
+   "ref": "2526",
+   "label": "2526"
+  },
+  {
+   "px": [
+    2955,
+    610
+   ],
+   "kind": "room",
+   "ref": "2532",
+   "label": "2532"
+  },
+  {
+   "px": [
+    3157,
+    654
+   ],
+   "kind": "room",
+   "ref": "2840A",
+   "label": "2840A"
+  },
+  {
+   "px": [
+    2896,
+    765
+   ],
+   "kind": "room",
+   "ref": "2524",
+   "label": "2524"
+  },
+  {
+   "px": [
+    2983,
+    742
+   ],
+   "kind": "room",
+   "ref": "2843",
+   "label": "2843"
+  },
+  {
+   "px": [
+    2727,
+    760
+   ],
+   "kind": "room",
+   "ref": "2625",
+   "label": "2625"
+  },
+  {
+   "px": [
+    3163,
+    777
+   ],
+   "kind": "room",
+   "ref": "2840",
+   "label": "2840"
+  },
+  {
+   "px": [
+    1770,
+    784
+   ],
+   "kind": "room",
+   "ref": "2409",
+   "label": "2409"
+  },
+  {
+   "px": [
+    2685,
+    834
+   ],
+   "kind": "room",
+   "ref": "2631",
+   "label": "2631"
+  },
+  {
+   "px": [
+    1770,
+    944
+   ],
+   "kind": "room",
+   "ref": "2411",
+   "label": "2411"
+  },
+  {
+   "px": [
+    2683,
+    955
+   ],
+   "kind": "room",
+   "ref": "2637",
+   "label": "2637"
+  },
+  {
+   "px": [
+    1763,
+    1006
+   ],
+   "kind": "room",
+   "ref": "2415",
+   "label": "2415"
+  },
+  {
+   "px": [
+    2191,
+    1028
+   ],
+   "kind": "room",
+   "ref": "2410",
+   "label": "2410"
+  },
+  {
+   "px": [
+    2683,
+    1045
+   ],
+   "kind": "room",
+   "ref": "2643",
+   "label": "2643"
+  },
+  {
+   "px": [
+    2844,
+    1056
+   ],
+   "kind": "room",
+   "ref": "2738",
+   "label": "2738"
+  },
+  {
+   "px": [
+    2924,
+    1056
+   ],
+   "kind": "room",
+   "ref": "2744",
+   "label": "2744"
+  },
+  {
+   "px": [
+    3004,
+    1056
+   ],
+   "kind": "room",
+   "ref": "2746",
+   "label": "2746"
+  },
+  {
+   "px": [
+    2190,
+    1082
+   ],
+   "kind": "room",
+   "ref": "2414",
+   "label": "2414"
+  },
+  {
+   "px": [
+    3012,
+    1123
+   ],
+   "kind": "room",
+   "ref": "2853",
+   "label": "2853"
+  },
+  {
+   "px": [
+    1943,
+    1128
+   ],
+   "kind": "room",
+   "ref": "2419",
+   "label": "2419"
+  },
+  {
+   "px": [
+    2032,
+    1128
+   ],
+   "kind": "room",
+   "ref": "2418",
+   "label": "2418"
+  },
+  {
+   "px": [
+    2191,
+    1184
+   ],
+   "kind": "room",
+   "ref": "2420",
+   "label": "2420"
+  },
+  {
+   "px": [
+    2528,
+    1182
+   ],
+   "kind": "stair",
+   "ref": "2655ST",
+   "label": "2655ST"
+  },
+  {
+   "px": [
+    1770,
+    1170
+   ],
+   "kind": "room",
+   "ref": "2421",
+   "label": "2421"
+  },
+  {
+   "px": [
+    2936,
+    1242
+   ],
+   "kind": "room",
+   "ref": "2678A",
+   "label": "2678A"
+  },
+  {
+   "px": [
+    3003,
+    1199
+   ],
+   "kind": "room",
+   "ref": "2686",
+   "label": "2686"
+  },
+  {
+   "px": [
+    1923,
+    1244
+   ],
+   "kind": "room",
+   "ref": "2429",
+   "label": "2429"
+  },
+  {
+   "px": [
+    2029,
+    1244
+   ],
+   "kind": "room",
+   "ref": "2428",
+   "label": "2428"
+  },
+  {
+   "px": [
+    1770,
+    1333
+   ],
+   "kind": "room",
+   "ref": "2431",
+   "label": "2431"
+  },
+  {
+   "px": [
+    2191,
+    1340
+   ],
+   "kind": "room",
+   "ref": "2430",
+   "label": "2430"
+  },
+  {
+   "px": [
+    2012,
+    1408
+   ],
+   "kind": "room",
+   "ref": "2438",
+   "label": "2438"
+  },
+  {
+   "px": [
+    3175,
+    1400
+   ],
+   "kind": "room",
+   "ref": "2687",
+   "label": "2687"
+  },
+  {
+   "px": [
+    1060,
+    1322
+   ],
+   "kind": "room",
+   "ref": "1102X",
+   "label": "1102X"
+  },
+  {
+   "px": [
+    1846,
+    1569
+   ],
+   "kind": "room",
+   "ref": "2445",
+   "label": "2445"
+  },
+  {
+   "px": [
+    1297,
+    1721
+   ],
+   "kind": "room",
+   "ref": "1102M",
+   "label": "1102M"
+  },
+  {
+   "px": [
+    2330,
+    477
+   ],
+   "kind": "room",
+   "ref": "",
+   "label": "",
+   "name": "room number not readable on the plan (only its area)"
+  },
+  {
+   "px": [
+    859,
+    934
+   ],
+   "kind": "other",
+   "ref": "",
+   "label": "",
+   "name": "room number not readable on the plan (only its area)"
+  },
+  {
+   "px": [
+    2201,
+    1586
+   ],
+   "kind": "room",
+   "ref": "",
+   "label": "",
+   "name": "room number not readable on the plan (only its area)"
+  },
+  {
+   "px": [
+    770,
+    422
+   ],
+   "kind": "other",
+   "ref": "",
+   "label": "",
+   "name": "room number not readable on the plan (only its area)"
+  },
+  {
+   "px": [
+    1757,
+    1495
+   ],
+   "kind": "room",
+   "ref": "",
+   "label": "",
+   "name": "room number not readable on the plan (only its area)"
+  }
+ ],
+ "cuts": []
+}

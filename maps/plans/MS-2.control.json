@@ -1,0 +1,338 @@
+{
+ "building": "MS",
+ "floor": "2",
+ "title": "Mathematical Sciences floor 2 (west part: the floor stops under the Court of Sciences)",
+ "extent": "partial",
+ "source": {
+  "publisher": "UCLA Samueli School of Engineering",
+  "what": "\"BH and MS (2nd Floor)\" Bruin Card door-access sheet: scanned UCLA Space Inventory plan of Mathematical Sciences floor 2 (top half of the page) and Boelter Hall floor 2 (bottom half), room numbers with square footage, red circles on the card-reader doors",
+  "url": "https://samueli.ucla.edu/wp-content/uploads/samueli/Floor_plan-BH_MS-OnLinePosting-113010-2.pdf",
+  "file": "https://samueli.ucla.edu/wp-content/uploads/samueli/Floor_plan-BH_MS-OnLinePosting-113010-2.pdf",
+  "archive": "Common Crawl CC-MAIN-2018-51 (captured 2018-12); the samueli.ucla.edu file is gone",
+  "date": "2010-11-30",
+  "accessed": "2026-10-15",
+  "license": "UCLA's own drawing (Space Inventory), posted by UCLA Samueli; no license stated"
+ },
+ "plan": {
+  "file": "boelter_mathsci_floor2_samueli_2010_cc2018.pdf",
+  "url": "https://samueli.ucla.edu/wp-content/uploads/samueli/Floor_plan-BH_MS-OnLinePosting-113010-2.pdf",
+  "page": 1,
+  "dpi": 300
+ },
+ "mode": "walls",
+ "transform": "similarity",
+ "control": [
+  {
+   "px": [
+    560.0,
+    320.0
+   ],
+   "ll": [
+    34.0698375,
+    -118.4436737
+   ],
+   "what": "crop corner through the sheet transform (scale 6.47 cm/px and rotation 1.84 deg from the Boelter Hall half of the same sheet fitted to the traced BOELTER-2 rooms; position from a translation-only fit of the floor footprint to the building outline)"
+  },
+  {
+   "px": [
+    2000.0,
+    320.0
+   ],
+   "ll": [
+    34.0698645,
+    -118.4426639
+   ],
+   "what": "crop corner through the sheet transform (scale 6.47 cm/px and rotation 1.84 deg from the Boelter Hall half of the same sheet fitted to the traced BOELTER-2 rooms; position from a translation-only fit of the floor footprint to the building outline)"
+  },
+  {
+   "px": [
+    2000.0,
+    1300.0
+   ],
+   "ll": [
+    34.0692912,
+    -118.4426418
+   ],
+   "what": "crop corner through the sheet transform (scale 6.47 cm/px and rotation 1.84 deg from the Boelter Hall half of the same sheet fitted to the traced BOELTER-2 rooms; position from a translation-only fit of the floor footprint to the building outline)"
+  },
+  {
+   "px": [
+    560.0,
+    1300.0
+   ],
+   "ll": [
+    34.0692642,
+    -118.4436517
+   ],
+   "what": "crop corner through the sheet transform (scale 6.47 cm/px and rotation 1.84 deg from the Boelter Hall half of the same sheet fitted to the traced BOELTER-2 rooms; position from a translation-only fit of the floor footprint to the building outline)"
+  }
+ ],
+ "crop": [
+  500,
+  320,
+  2000,
+  1340
+ ],
+ "params": {
+  "wall_neutral": 160,
+  "door_m": 2.0,
+  "min_room_m2": 2.0,
+  "ocr_upscale": 2.0
+ },
+ "notes": [
+  "The sheet shows the part of floor 2 west of the Court of Sciences; the OSM outline is the roof line of the whole building, so the floor covers only its west part (extent partial).",
+  "Room numbers read by OCR from the 2010 sheet (RapidOCR, 2x); 2915, 2922, 2110, 2000, 2000A-C, 2907, 2907B, 2951, 2312 and 2102ST typed by hand where the OCR misread them or its box sat on a wall. Red circles on the sheet mark Bruin Card doors (2010) and are ignored by the colour filter.",
+  "Georeference: scale and rotation from the Boelter Hall half of the same sheet (fitted to the traced BOELTER-2 rooms), position from the footprint against the outline. Check: UCLA GIS restroom 2922 lands about 16 m east of the plan's 2922 (near 2941); the OSM stairwell door lands within about 5 m of the north block's stair 1915A-1. The 16 m disagreement with the GIS point is unresolved; the position is from the footprint fit.",
+  "A cut closes the open colonnade side of lecture hall 2000 (drawn with columns only).",
+  "Cuts close the exterior door on the west side of stair 2102ST, the entrance vestibule below it, the hollow of the east wall where it runs off the sheet, and the hollow double-line walls around 2915, 2000B and 2907 (the wall cavities join rooms to the corridor at the door jambs)."
+ ],
+ "cuts": [
+  [
+   [
+    990,
+    1162
+   ],
+   [
+    1295,
+    1162
+   ]
+  ],
+  [
+   [
+    740,
+    940
+   ],
+   [
+    740,
+    1160
+   ]
+  ],
+  [
+   [
+    740,
+    940
+   ],
+   [
+    830,
+    940
+   ]
+  ],
+  [
+   [
+    580,
+    1160
+   ],
+   [
+    900,
+    1160
+   ]
+  ],
+  [
+   [
+    742,
+    1060
+   ],
+   [
+    742,
+    1152
+   ]
+  ],
+  [
+   [
+    800,
+    1232
+   ],
+   [
+    834,
+    1232
+   ]
+  ],
+  [
+   [
+    1740,
+    1300
+   ],
+   [
+    1780,
+    1300
+   ]
+  ],
+  [
+   [
+    1028,
+    583
+   ],
+   [
+    1210,
+    583
+   ]
+  ],
+  [
+   [
+    1210,
+    583
+   ],
+   [
+    1210,
+    737
+   ]
+  ],
+  [
+   [
+    1028,
+    737
+   ],
+   [
+    1210,
+    737
+   ]
+  ],
+  [
+   [
+    1028,
+    583
+   ],
+   [
+    1028,
+    737
+   ]
+  ],
+  [
+   [
+    988,
+    1040
+   ],
+   [
+    988,
+    1145
+   ]
+  ],
+  [
+   [
+    905,
+    1040
+   ],
+   [
+    990,
+    1040
+   ]
+  ],
+  [
+   [
+    905,
+    1145
+   ],
+   [
+    990,
+    1145
+   ]
+  ],
+  [
+   [
+    905,
+    737
+   ],
+   [
+    957,
+    737
+   ]
+  ]
+ ],
+ "how": "Scanned Space Inventory sheet with Math Sciences on the top half and Boelter Hall on the bottom half. The Boelter half was fitted to the already traced Boelter floor 2 through 15 room numbers read on it (residual max 1.6 m, 6.47 cm/px, 1.84 deg); the Math Sciences half is the same scan, so it has the same scale and rotation, and only its position was fitted, by sliding the floor footprint over the building outline (median 2.5 m, 90% within 6.6 m: the floor covers only the west part of the outline). Four synthetic control points carry that transform.",
+ "labels": [
+  {
+   "px": [
+    1070,
+    700
+   ],
+   "text": "2915"
+  },
+  {
+   "px": [
+    1240,
+    820
+   ],
+   "text": "2922"
+  },
+  {
+   "px": [
+    1130,
+    400
+   ],
+   "text": "2110"
+  },
+  {
+   "px": [
+    1130,
+    1120
+   ],
+   "text": "2000"
+  },
+  {
+   "px": [
+    1000,
+    985
+   ],
+   "text": "2312"
+  },
+  {
+   "px": [
+    783,
+    1000
+   ],
+   "text": "2102ST"
+  },
+  {
+   "px": [
+    970,
+    1000
+   ],
+   "text": "2000A"
+  },
+  {
+   "px": [
+    965,
+    1100
+   ],
+   "text": "2000B"
+  },
+  {
+   "px": [
+    950,
+    1190
+   ],
+   "text": "2000C"
+  },
+  {
+   "px": [
+    970,
+    690
+   ],
+   "text": "2907B"
+  },
+  {
+   "px": [
+    930,
+    705
+   ],
+   "text": "2907"
+  },
+  {
+   "px": [
+    1649,
+    700
+   ],
+   "text": "2951"
+  }
+ ],
+ "set": [
+  {
+   "px": [
+    1200,
+    480
+   ],
+   "kind": "other",
+   "label": "OPEN"
+  }
+ ]
+}
