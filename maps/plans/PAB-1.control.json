@@ -1,0 +1,420 @@
+{
+ "building": "PAB",
+ "floor": "1",
+ "title": "Physics and Astronomy Building floor 1 (west and central part)",
+ "extent": "partial",
+ "source": {
+  "publisher": "UCLA IoES Sustainability Action Research, Energy Team 2015 (reproducing a UCLA plan)",
+  "what": "\"PHYSICS-ASTRONOMY, UNIVERSITY OF CALIFORNIA LOS ANGELES, LEVEL 1 FLOOR\": scanned UCLA plan with room numbers and areas, embedded in the report appendix (p.25, \"Floor Plan Level 1 with Light Fixtures\"); the east edge of the building is cut off",
+  "url": "https://www.ioes.ucla.edu/project/campus-energy",
+  "file": "https://www.ioes.ucla.edu/wp-content/uploads/2016/12/EnergyTeam.pdf",
+  "page": "appendix p.25",
+  "date": "2015 (report posted 2016-12)",
+  "accessed": "2026-10-15",
+  "license": "UCLA IoES student report; the plan itself is UCLA's"
+ },
+ "plan": {
+  "file": "pab_level1_floorplan_spaceinventory_scan_ioes_sar2016_p25_embedded.jpg",
+  "url": "https://www.ioes.ucla.edu/wp-content/uploads/2016/12/EnergyTeam.pdf"
+ },
+ "mode": "walls",
+ "control": [
+  {
+   "px": [
+    150.0,
+    280.0
+   ],
+   "ll": [
+    34.0709248,
+    -118.4419373
+   ],
+   "what": "px 150,280 through the sheet transform (see how)"
+  },
+  {
+   "px": [
+    976.0,
+    280.0
+   ],
+   "ll": [
+    34.0709248,
+    -118.4412601
+   ],
+   "what": "px 976,280 through the sheet transform (see how)"
+  },
+  {
+   "px": [
+    976.0,
+    960.0
+   ],
+   "ll": [
+    34.0704598,
+    -118.4412601
+   ],
+   "what": "px 976,960 through the sheet transform (see how)"
+  },
+  {
+   "px": [
+    150.0,
+    960.0
+   ],
+   "ll": [
+    34.0704598,
+    -118.4419373
+   ],
+   "what": "px 150,960 through the sheet transform (see how)"
+  }
+ ],
+ "crop": [
+  150,
+  280,
+  976,
+  960
+ ],
+ "params": {
+  "wall_neutral": 150,
+  "door_m": 2.0,
+  "min_room_m2": 2.0,
+  "ocr_upscale": 3.0
+ },
+ "notes": [
+  "Scan reproduced in a student report; the east part of the building (rooms 1xxx east of 1339/1434) is cut off at the page edge (extent partial).",
+  "Georeference: scale from the plan's 0-32 ft scale bar (32 ft = 129 px, 7.56 cm/px), rotation 0 (the plan is north-up and its walls are square to the page), position from a translation-only fit of the footprint to the building outline (median 2.5 m, 90% within 8.4 m). Check: UCLA restroom 1721 (c3d, floor 1) lands in 1721, 2721/3721 (upper floors) in the same stack; the traced area of 1707 (812 sf) matches the plan's 783 sf.",
+  "Room numbers typed by hand from the plan where RapidOCR could not read them (the scan is faint). The lecture halls 1425 and 1434A are drawn with their seating, which the tracer takes for walls, so each hall comes out as the numbered main region plus unnumbered pieces.",
+  "Hand cuts: the 1707 office corridor walls (the office doors were merging offices and corridor), the wall between 1434A and 1439A, and the booth 1425A inside 1425."
+ ],
+ "transform": "similarity",
+ "labels": [
+  {
+   "px": [
+    600,
+    335
+   ],
+   "text": "1704A"
+  },
+  {
+   "px": [
+    600,
+    395
+   ],
+   "text": "1704B"
+  },
+  {
+   "px": [
+    598,
+    540
+   ],
+   "text": "1425"
+  },
+  {
+   "px": [
+    520,
+    565
+   ],
+   "text": "1425A"
+  },
+  {
+   "px": [
+    720,
+    523
+   ],
+   "text": "1425C"
+  },
+  {
+   "px": [
+    475,
+    520
+   ],
+   "text": "1425E"
+  },
+  {
+   "px": [
+    598,
+    615
+   ],
+   "text": "1435"
+  },
+  {
+   "px": [
+    620,
+    668
+   ],
+   "text": "1400CO"
+  },
+  {
+   "px": [
+    540,
+    705
+   ],
+   "text": "1434"
+  },
+  {
+   "px": [
+    620,
+    705
+   ],
+   "text": "1434B"
+  },
+  {
+   "px": [
+    700,
+    718
+   ],
+   "text": "1005ST"
+  },
+  {
+   "px": [
+    695,
+    815
+   ],
+   "text": "1339"
+  },
+  {
+   "px": [
+    655,
+    870
+   ],
+   "text": "1300CO"
+  },
+  {
+   "px": [
+    555,
+    885
+   ],
+   "text": "1434A"
+  },
+  {
+   "px": [
+    610,
+    915
+   ],
+   "text": "1439A"
+  },
+  {
+   "px": [
+    660,
+    925
+   ],
+   "text": "1439"
+  },
+  {
+   "px": [
+    320,
+    795
+   ],
+   "text": "1749"
+  },
+  {
+   "px": [
+    335,
+    715
+   ],
+   "text": "1733"
+  },
+  {
+   "px": [
+    415,
+    385
+   ],
+   "text": "1700CO"
+  },
+  {
+   "px": [
+    260,
+    660
+   ],
+   "text": "1707CO"
+  },
+  {
+   "px": [
+    345,
+    545
+   ],
+   "text": "1721"
+  },
+  {
+   "px": [
+    345,
+    440
+   ],
+   "text": "1711"
+  },
+  {
+   "px": [
+    310,
+    605
+   ],
+   "text": "1707P2"
+  },
+  {
+   "px": [
+    305,
+    640
+   ],
+   "text": "1707P"
+  },
+  {
+   "px": [
+    305,
+    665
+   ],
+   "text": "1707P1"
+  },
+  {
+   "px": [
+    270,
+    320
+   ],
+   "text": "1707"
+  },
+  {
+   "px": [
+    365,
+    325
+   ],
+   "text": "1004ST"
+  },
+  {
+   "px": [
+    210,
+    325
+   ],
+   "text": "1707A"
+  },
+  {
+   "px": [
+    205,
+    380
+   ],
+   "text": "1707B"
+  },
+  {
+   "px": [
+    205,
+    425
+   ],
+   "text": "1707C"
+  },
+  {
+   "px": [
+    215,
+    465
+   ],
+   "text": "1707D"
+  },
+  {
+   "px": [
+    215,
+    520
+   ],
+   "text": "1707E"
+  },
+  {
+   "px": [
+    215,
+    560
+   ],
+   "text": "1707F"
+  },
+  {
+   "px": [
+    215,
+    605
+   ],
+   "text": "1707G"
+  },
+  {
+   "px": [
+    215,
+    650
+   ],
+   "text": "1707H"
+  },
+  {
+   "px": [
+    215,
+    690
+   ],
+   "text": "1707I"
+  },
+  {
+   "px": [
+    215,
+    735
+   ],
+   "text": "1707J"
+  },
+  {
+   "px": [
+    215,
+    780
+   ],
+   "text": "1707K"
+  },
+  {
+   "px": [
+    215,
+    820
+   ],
+   "text": "1707L"
+  },
+  {
+   "px": [
+    215,
+    860
+   ],
+   "text": "1707M"
+  }
+ ],
+ "cuts": [
+  [
+   [
+    244,
+    300
+   ],
+   [
+    244,
+    880
+   ]
+  ],
+  [
+   [
+    268,
+    390
+   ],
+   [
+    268,
+    880
+   ]
+  ],
+  [
+   [
+    470,
+    903
+   ],
+   [
+    720,
+    903
+   ]
+  ],
+  [
+   [
+    495,
+    548
+   ],
+   [
+    557,
+    548
+   ]
+  ],
+  [
+   [
+    557,
+    548
+   ],
+   [
+    557,
+    592
+   ]
+  ]
+ ]
+}

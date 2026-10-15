@@ -1,0 +1,531 @@
+{
+ "building": "PERLOFF",
+ "floor": "1",
+ "title": "Perloff Hall floor 1",
+ "extent": "full",
+ "source": {
+  "publisher": "UCLA IoES Sustainability Action Research, Energy Team 2023 (reproducing UCLA Energy Services building-automation graphics)",
+  "what": "Perloff Hall \"FLOOR 1\" screen of the UCLA Energy Services building-automation system (fig. 2 of the report): walls, stairs, elevators, all room numbers, air-handler zones in color",
+  "url": "https://www.ioes.ucla.edu/project/energy2023",
+  "file": "https://www.ioes.ucla.edu/wp-content/uploads/2023/06/Energy-Team-Final-Report.pdf",
+  "page": "fig. 2, p.7",
+  "date": "June 2023",
+  "accessed": "2026-10-15",
+  "license": "UCLA IoES student report; the graphic is UCLA Energy Services'"
+ },
+ "plan": {
+  "file": "perloff_floor1_energyservices_bms_ioes_sar2023_fig2.png",
+  "url": "https://www.ioes.ucla.edu/wp-content/uploads/2023/06/Energy-Team-Final-Report.pdf"
+ },
+ "mode": "walls",
+ "control": {
+  "auto": "outline",
+  "rot_init": 0
+ },
+ "crop": [
+  0,
+  80,
+  600,
+  492
+ ],
+ "params": {
+  "wall_neutral": 150,
+  "door_m": 2.0,
+  "min_room_m2": 2.0,
+  "ocr_upscale": 3.0,
+  "outside_colors": [
+   [
+    207,
+    218,
+    236,
+    14
+   ]
+  ]
+ },
+ "notes": [
+  "Low-resolution building-automation screenshot (712 px wide, about 12 cm/px). All room numbers typed by hand from the plan (the OCR reads most of them but misreads some and also reads the temperature readouts as numbers); the zone colours (AH-1 green, AH-2 yellow) are not kept.",
+  "Georeference: footprint fitted to the building outline (ICP, median 0.7 m); orientation confirmed by the plan's north arrow (north up) and the U shape open to the south.",
+  "Hand cuts along the corridor walls of the north and east wings and a few office partitions where the screenshot's thin walls broke."
+ ],
+ "labels": [
+  {
+   "px": [
+    77,
+    92
+   ],
+   "text": "1203B"
+  },
+  {
+   "px": [
+    89,
+    125
+   ],
+   "text": "1203"
+  },
+  {
+   "px": [
+    135,
+    122
+   ],
+   "text": "1209A"
+  },
+  {
+   "px": [
+    207,
+    118
+   ],
+   "text": "1209B"
+  },
+  {
+   "px": [
+    312,
+    108
+   ],
+   "text": "1266A"
+  },
+  {
+   "px": [
+    42,
+    152
+   ],
+   "text": "1188"
+  },
+  {
+   "px": [
+    230,
+    165
+   ],
+   "text": "1266"
+  },
+  {
+   "px": [
+    150,
+    210
+   ],
+   "text": "1208A"
+  },
+  {
+   "px": [
+    197,
+    200
+   ],
+   "text": "1220"
+  },
+  {
+   "px": [
+    330,
+    195
+   ],
+   "text": "1224"
+  },
+  {
+   "px": [
+    233,
+    226
+   ],
+   "text": "1220A"
+  },
+  {
+   "px": [
+    32,
+    190
+   ],
+   "text": "1125B"
+  },
+  {
+   "px": [
+    62,
+    187
+   ],
+   "text": "1129"
+  },
+  {
+   "px": [
+    28,
+    222
+   ],
+   "text": "1125C"
+  },
+  {
+   "px": [
+    65,
+    255
+   ],
+   "text": "1125L"
+  },
+  {
+   "px": [
+    28,
+    272
+   ],
+   "text": "1125D"
+  },
+  {
+   "px": [
+    89,
+    245
+   ],
+   "text": "1255"
+  },
+  {
+   "px": [
+    28,
+    295
+   ],
+   "text": "1125E"
+  },
+  {
+   "px": [
+    63,
+    290
+   ],
+   "text": "1125K"
+  },
+  {
+   "px": [
+    150,
+    275
+   ],
+   "text": "1118"
+  },
+  {
+   "px": [
+    45,
+    320
+   ],
+   "text": "1125"
+  },
+  {
+   "px": [
+    28,
+    350
+   ],
+   "text": "1125G"
+  },
+  {
+   "px": [
+    65,
+    368
+   ],
+   "text": "1125J"
+  },
+  {
+   "px": [
+    32,
+    372
+   ],
+   "text": "1125H"
+  },
+  {
+   "px": [
+    118,
+    345
+   ],
+   "text": "1112E"
+  },
+  {
+   "px": [
+    160,
+    350
+   ],
+   "text": "1112A"
+  },
+  {
+   "px": [
+    118,
+    375
+   ],
+   "text": "1112D"
+  },
+  {
+   "px": [
+    142,
+    370
+   ],
+   "text": "1112"
+  },
+  {
+   "px": [
+    155,
+    413
+   ],
+   "text": "1112C"
+  },
+  {
+   "px": [
+    60,
+    440
+   ],
+   "text": "1102"
+  },
+  {
+   "px": [
+    425,
+    120
+   ],
+   "text": "1243A"
+  },
+  {
+   "px": [
+    520,
+    110
+   ],
+   "text": "1243C"
+  },
+  {
+   "px": [
+    470,
+    180
+   ],
+   "text": "1240"
+  },
+  {
+   "px": [
+    487,
+    193
+   ],
+   "text": "1277"
+  },
+  {
+   "px": [
+    452,
+    220
+   ],
+   "text": "1240A"
+  },
+  {
+   "px": [
+    522,
+    215
+   ],
+   "text": "1317CO"
+  },
+  {
+   "px": [
+    557,
+    196
+   ],
+   "text": "1327"
+  },
+  {
+   "px": [
+    565,
+    226
+   ],
+   "text": "1317A"
+  },
+  {
+   "px": [
+    467,
+    248
+   ],
+   "text": "1318A"
+  },
+  {
+   "px": [
+    492,
+    253
+   ],
+   "text": "1317B"
+  },
+  {
+   "px": [
+    532,
+    266
+   ],
+   "text": "1317"
+  },
+  {
+   "px": [
+    465,
+    302
+   ],
+   "text": "1318"
+  },
+  {
+   "px": [
+    515,
+    302
+   ],
+   "text": "1317C"
+  },
+  {
+   "px": [
+    545,
+    302
+   ],
+   "text": "1317D"
+  },
+  {
+   "px": [
+    575,
+    300
+   ],
+   "text": "1317E"
+  },
+  {
+   "px": [
+    560,
+    345
+   ],
+   "text": "1302A"
+  },
+  {
+   "px": [
+    500,
+    410
+   ],
+   "text": "1302"
+  },
+  {
+   "px": [
+    120,
+    215
+   ],
+   "text": "Stair"
+  },
+  {
+   "px": [
+    478,
+    205
+   ],
+   "text": "Stair"
+  },
+  {
+   "px": [
+    40,
+    130
+   ],
+   "text": "Stair"
+  },
+  {
+   "px": [
+    160,
+    190
+   ],
+   "text": "Elevator"
+  },
+  {
+   "px": [
+    217,
+    182
+   ],
+   "text": "Elevator"
+  },
+  {
+   "px": [
+    300,
+    130
+   ],
+   "text": "Elevator"
+  },
+  {
+   "px": [
+    443,
+    185
+   ],
+   "text": "Elevator"
+  }
+ ],
+ "cuts": [
+  [
+   [
+    95,
+    147
+   ],
+   [
+    545,
+    147
+   ]
+  ],
+  [
+   [
+    205,
+    236
+   ],
+   [
+    400,
+    236
+   ]
+  ],
+  [
+   [
+    430,
+    363
+   ],
+   [
+    590,
+    363
+   ]
+  ],
+  [
+   [
+    100,
+    262
+   ],
+   [
+    100,
+    335
+   ]
+  ],
+  [
+   [
+    80,
+    275
+   ],
+   [
+    80,
+    345
+   ]
+  ],
+  [
+   [
+    98,
+    387
+   ],
+   [
+    142,
+    387
+   ]
+  ],
+  [
+   [
+    438,
+    193
+   ],
+   [
+    472,
+    193
+   ]
+  ]
+ ],
+ "set": [
+  {
+   "px": [
+    204,
+    137
+   ],
+   "ref": "1209B",
+   "label": "1209B",
+   "kind": "room"
+  },
+  {
+   "px": [
+    499,
+    243
+   ],
+   "ref": "1317CO",
+   "label": "1317CO",
+   "kind": "corridor"
+  },
+  {
+   "px": [
+    57,
+    360
+   ],
+   "ref": "1125J",
+   "label": "1125J",
+   "kind": "room"
+  }
+ ]
+}

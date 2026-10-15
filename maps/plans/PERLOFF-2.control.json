@@ -1,0 +1,321 @@
+{
+ "building": "PERLOFF",
+ "floor": "2",
+ "title": "Perloff Hall floor 2 (north bar and roof structures)",
+ "extent": "partial",
+ "source": {
+  "publisher": "UCLA IoES Sustainability Action Research, Energy Team 2023 (reproducing UCLA Energy Services building-automation graphics)",
+  "what": "Perloff Hall \"FLOOR 2\" screen of the UCLA Energy Services building-automation system (fig. 3 of the report): walls, stairs, elevators, all room numbers, air-handler zones in color",
+  "url": "https://www.ioes.ucla.edu/project/energy2023",
+  "file": "https://www.ioes.ucla.edu/wp-content/uploads/2023/06/Energy-Team-Final-Report.pdf",
+  "page": "fig. 3, p.8",
+  "date": "June 2023",
+  "accessed": "2026-10-15",
+  "license": "UCLA IoES student report; the graphic is UCLA Energy Services'"
+ },
+ "plan": {
+  "file": "perloff_floor2_energyservices_bms_ioes_sar2023_fig3.png",
+  "url": "https://www.ioes.ucla.edu/wp-content/uploads/2023/06/Energy-Team-Final-Report.pdf"
+ },
+ "mode": "walls",
+ "control": {
+  "auto": "outline",
+  "rot_init": 0,
+  "search": true
+ },
+ "crop": [
+  0,
+  85,
+  918,
+  644
+ ],
+ "params": {
+  "wall_neutral": 150,
+  "door_m": 2.0,
+  "min_room_m2": 2.0,
+  "ocr_upscale": 3.0,
+  "outside_colors": [
+   [
+    207,
+    218,
+    236,
+    14
+   ]
+  ]
+ },
+ "labels": [
+  {
+   "px": [
+    399,
+    122
+   ],
+   "text": "2217D"
+  },
+  {
+   "px": [
+    142,
+    261
+   ],
+   "text": "2200"
+  },
+  {
+   "px": [
+    195,
+    285
+   ],
+   "text": "2201XX"
+  },
+  {
+   "px": [
+    225,
+    311
+   ],
+   "text": "2208"
+  },
+  {
+   "px": [
+    187,
+    319
+   ],
+   "text": "2266"
+  },
+  {
+   "px": [
+    395,
+    225
+   ],
+   "text": "2217"
+  },
+  {
+   "px": [
+    330,
+    289
+   ],
+   "text": "2217A"
+  },
+  {
+   "px": [
+    447,
+    259
+   ],
+   "text": "2244"
+  },
+  {
+   "px": [
+    435,
+    289
+   ],
+   "text": "2217B"
+  },
+  {
+   "px": [
+    472,
+    289
+   ],
+   "text": "2217C"
+  },
+  {
+   "px": [
+    576,
+    285
+   ],
+   "text": "2201XY"
+  },
+  {
+   "px": [
+    575,
+    305
+   ],
+   "text": "2240"
+  },
+  {
+   "px": [
+    602,
+    320
+   ],
+   "text": "2288"
+  },
+  {
+   "px": [
+    222,
+    340
+   ],
+   "text": "Restroom"
+  },
+  {
+   "px": [
+    565,
+    340
+   ],
+   "text": "Restroom"
+  },
+  {
+   "px": [
+    395,
+    260
+   ],
+   "text": "Elevator"
+  },
+  {
+   "px": [
+    237,
+    320
+   ],
+   "text": "Elevator"
+  },
+  {
+   "px": [
+    545,
+    327
+   ],
+   "text": "Elevator"
+  },
+  {
+   "px": [
+    387,
+    315
+   ],
+   "text": "Stair"
+  },
+  {
+   "px": [
+    187,
+    345
+   ],
+   "text": "Stair"
+  },
+  {
+   "px": [
+    600,
+    345
+   ],
+   "text": "Stair"
+  },
+  {
+   "px": [
+    387,
+    155
+   ],
+   "text": "Stair"
+  }
+ ],
+ "notes": [
+  "Floor 2 is only the north bar of the building plus the roof structure 2217D/2277 (extent partial). Low-resolution building-automation screenshot (918 px wide). All room numbers typed by hand from the plan; zone colours not kept.",
+  "Georeference: footprint fitted to the north bar of the building outline (ICP with search); orientation confirmed by the plan's north arrow.",
+  "Hand cuts around the enclosed rooms 2200, 2201XX and 2217A inside the open office 2217.",
+  "The roof structure 2217D north of the bar lies outside the building outline and is dropped; the elevator cabs are drawn as crossed boxes too small to keep."
+ ],
+ "cuts": [
+  [
+   [
+    165,
+    207
+   ],
+   [
+    165,
+    367
+   ]
+  ],
+  [
+   [
+    165,
+    268
+   ],
+   [
+    245,
+    268
+   ]
+  ],
+  [
+   [
+    292,
+    256
+   ],
+   [
+    377,
+    256
+   ]
+  ],
+  [
+   [
+    377,
+    256
+   ],
+   [
+    377,
+    320
+   ]
+  ],
+  [
+   [
+    292,
+    320
+   ],
+   [
+    377,
+    320
+   ]
+  ],
+  [
+   [
+    292,
+    256
+   ],
+   [
+    292,
+    320
+   ]
+  ],
+  [
+   [
+    375,
+    303
+   ],
+   [
+    400,
+    303
+   ]
+  ],
+  [
+   [
+    400,
+    303
+   ],
+   [
+    400,
+    327
+   ]
+  ],
+  [
+   [
+    375,
+    327
+   ],
+   [
+    400,
+    327
+   ]
+  ],
+  [
+   [
+    375,
+    303
+   ],
+   [
+    375,
+    327
+   ]
+  ]
+ ],
+ "set": [
+  {
+   "px": [
+    445,
+    297
+   ],
+   "ref": "2217B",
+   "label": "2217B",
+   "kind": "room"
+  }
+ ]
+}
