@@ -1,0 +1,70 @@
+{
+ "building": "CNYN PT",
+ "floor": "1",
+ "out": "CNYN_PT-1-A1.json",
+ "title": "Canyon Point building A1, floor 1",
+ "extent": "partial",
+ "source": {
+  "publisher": "UCLA Housing",
+  "what": "Canyon Point (Sunset Village) building A1 floor 1 plan (room sign-up map)",
+  "url": "http://www.housing.ucla.edu/maps/plans/can-a1-01.htm",
+  "file": "http://www.housing.ucla.edu/maps/plans/can-a1-01.gif",
+  "index": "https://housing.ucla.edu/my-housing/maps-and-tours/housing-building-maps -> http://www.housing.ucla.edu/maps/canyon.htm",
+  "date": "2002-03-22 (file date)",
+  "accessed": "2026-10-15"
+ },
+ "plan": {
+  "file": "can-a1-01.gif",
+  "url": "http://www.housing.ucla.edu/maps/plans/can-a1-01.gif"
+ },
+ "mode": "walls",
+ "control": {
+  "auto": "outline",
+  "search": true,
+  "rot_init": -13
+ },
+ "params": {
+  "wall_neutral": 160,
+  "door_m": 2.0,
+  "min_room_m2": 2.0,
+  "min_wall_m": 0.8
+ },
+ "notes": [
+  "Plan: UCLA Housing's room sign-up map of Canyon Point building A1, floor 1 (GIF, 2002). Walls are its black lines; door swings are drawn in color and are left out, the door gaps are closed by the tracer.",
+  "Georeference: the house's footprint is fitted to the mapped Canyon Point outline by ICP (search over the whole complex, all four rotations on the first pass; the rotation found is pinned for the final pass). Check: concept3d 'House 1' lands 4.5 m from the nearest traced space (A1106) at plan px (82,402).",
+  "Room numbers: the plan labels rooms A1-101, A1-102A... (OCR reads them without the hyphen). UCLA Space Inventory numbers the same rooms 1101, 1102A... (building digit plus the room number), so each OCR'd label is recorded with the UCLA number as ref and the plan's label as the name. Labels the OCR misread are left as read (flagged in the report), not guessed.",
+  "The site's Canyon Point room F401 is not on these plans."
+ ],
+ "set": [
+  {
+   "px": [
+    253.5,
+    115.1
+   ],
+   "ref": "1103",
+   "label": "1103",
+   "name": "A1-103 (plan label)",
+   "kind": "room"
+  },
+  {
+   "px": [
+    123.3,
+    268.3
+   ],
+   "ref": "1104",
+   "label": "1104",
+   "name": "A1-104 (plan label)",
+   "kind": "room"
+  },
+  {
+   "px": [
+    191.6,
+    375.3
+   ],
+   "ref": "1106",
+   "label": "1106",
+   "name": "A1-106 (plan label)",
+   "kind": "room"
+  }
+ ]
+}
