@@ -1,0 +1,219 @@
+{
+ "building": "POWELL",
+ "floor": "2",
+ "title": "Powell Library floor 2",
+ "extent": "full",
+ "source": {
+  "publisher": "UCLA Library",
+  "what": "Powell Library second floor map (Media Lab booking page)",
+  "url": "https://calendar.library.ucla.edu/spaces?lid=19391",
+  "image": "https://d2jv02qf7xgjwx.cloudfront.net/accounts/424119/images/POW_Media_Lab_Map_for_LibCal.png",
+  "date": "undated, online October 2026",
+  "accessed": "2026-10-13"
+ },
+ "plan": {
+  "file": "POW_Media_Lab_Map_for_LibCal.png",
+  "url": "https://d2jv02qf7xgjwx.cloudfront.net/accounts/424119/images/POW_Media_Lab_Map_for_LibCal.png"
+ },
+ "mode": "walls",
+ "control": {
+  "auto": "outline",
+  "rot_init": null
+ },
+ "crop": [
+  0,
+  80,
+  700,
+  840
+ ],
+ "params": {
+  "wall_neutral": 150,
+  "door_m": 2.5,
+  "min_room_m2": 2.0,
+  "min_wall_m": 1.0,
+  "split_on": "text"
+ },
+ "notes": [
+  "The library map is a diagram: room shapes are close to the real walls but simplified."
+ ],
+ "cuts": [
+  [
+   [
+    655,
+    440
+   ],
+   [
+    655,
+    625
+   ]
+  ],
+  [
+   [
+    595,
+    625
+   ],
+   [
+    658,
+    625
+   ]
+  ],
+  [
+   [
+    38,
+    265
+   ],
+   [
+    145,
+    265
+   ]
+  ],
+  [
+   [
+    38,
+    452
+   ],
+   [
+    145,
+    452
+   ]
+  ],
+  [
+   [
+    38,
+    612
+   ],
+   [
+    670,
+    612
+   ]
+  ],
+  [
+   [
+    150,
+    595
+   ],
+   [
+    150,
+    612
+   ]
+  ],
+  [
+   [
+    518,
+    90
+   ],
+   [
+    518,
+    240
+   ]
+  ],
+  [
+   [
+    520,
+    365
+   ],
+   [
+    600,
+    365
+   ]
+  ],
+  [
+   [
+    175,
+    395
+   ],
+   [
+    175,
+    600
+   ]
+  ],
+  [
+   [
+    520,
+    395
+   ],
+   [
+    520,
+    550
+   ]
+  ]
+ ],
+ "set": [
+  {
+   "px": [
+    215,
+    315
+   ],
+   "ref": "285",
+   "label": "285",
+   "name": "CAT Classroom II",
+   "kind": "room"
+  },
+  {
+   "px": [
+    625,
+    480
+   ],
+   "ref": "228",
+   "label": "228",
+   "name": "InqLab 2",
+   "kind": "room"
+  },
+  {
+   "px": [
+    625,
+    560
+   ],
+   "ref": "238",
+   "label": "238",
+   "name": "InqLab 1",
+   "kind": "room"
+  },
+  {
+   "px": [
+    300,
+    480
+   ],
+   "label": "East Rotunda"
+  },
+  {
+   "px": [
+    350,
+    480
+   ],
+   "label": "Rotunda"
+  },
+  {
+   "px": [
+    470,
+    480
+   ],
+   "label": "Circulation Desk / West Rotunda"
+  },
+  {
+   "px": [
+    90,
+    180
+   ],
+   "label": "Center for the Advancement of Teaching",
+   "kind": "room"
+  },
+  {
+   "px": [
+    350,
+    700
+   ],
+   "label": "Main Reading Room",
+   "name": "Main Reading Room and Reference Collection",
+   "kind": "room"
+  },
+  {
+   "px": [
+    372,
+    578
+   ],
+   "label": "",
+   "kind": "other"
+  }
+ ]
+}

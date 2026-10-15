@@ -5,215 +5,504 @@
  "extent": "full",
  "source": {
   "publisher": "UCLA Library",
-  "what": "Powell Library second floor map (Media Lab booking page)",
-  "url": "https://calendar.library.ucla.edu/spaces?lid=19391",
-  "image": "https://d2jv02qf7xgjwx.cloudfront.net/accounts/424119/images/POW_Media_Lab_Map_for_LibCal.png",
-  "date": "undated, online October 2026",
-  "accessed": "2026-10-13"
+  "what": "\"Powell Library Building Floorplans\" (color vector PDF, all four floors on one sheet with room numbers; taken down since, recovered from the Common Crawl 2018-03 capture)",
+  "url": "https://www.library.ucla.edu/sites/default/files/Powell-floorplan-color_link_0.pdf",
+  "file": "https://www.library.ucla.edu/sites/default/files/Powell-floorplan-color_link_0.pdf",
+  "archive": "Common Crawl CC-MAIN-2018-13, captured 2018-03-20",
+  "date": "undated, online 2018-03",
+  "accessed": "2026-10-15"
  },
  "plan": {
-  "file": "POW_Media_Lab_Map_for_LibCal.png",
-  "url": "https://d2jv02qf7xgjwx.cloudfront.net/accounts/424119/images/POW_Media_Lab_Map_for_LibCal.png"
+  "file": "Powell-floorplan-color_link_0.pdf",
+  "url": "https://www.library.ucla.edu/sites/default/files/Powell-floorplan-color_link_0.pdf",
+  "page": 1,
+  "dpi": 150
  },
- "mode": "walls",
- "control": {
-  "auto": "outline",
-  "rot_init": null
- },
+ "mode": "vector",
+ "transform": "similarity",
+ "control": [
+  {
+   "px": [
+    60.6,
+    273.1
+   ],
+   "outline_vertex": [
+    0,
+    11
+   ],
+   "what": "outer corner of the east wing's south end (plan top left; the plan is drawn south up)"
+  },
+  {
+   "px": [
+    179.4,
+    273.1
+   ],
+   "outline_vertex": [
+    0,
+    12
+   ],
+   "what": "inner corner of the east wing's south end"
+  },
+  {
+   "px": [
+    478.0,
+    273.1
+   ],
+   "outline_vertex": [
+    0,
+    21
+   ],
+   "what": "inner corner of the west wing's south end"
+  },
+  {
+   "px": [
+    593.4,
+    273.1
+   ],
+   "outline_vertex": [
+    0,
+    22
+   ],
+   "what": "outer corner of the west wing's south end (plan top right)"
+  },
+  {
+   "px": [
+    54.4,
+    871.8
+   ],
+   "outline_vertex": [
+    0,
+    6
+   ],
+   "what": "north-east corner of the building (plan bottom left)"
+  },
+  {
+   "px": [
+    607.6,
+    871.8
+   ],
+   "outline_vertex": [
+    0,
+    25
+   ],
+   "what": "north-west corner of the building (plan bottom right)"
+  },
+  {
+   "px": [
+    54.4,
+    734.4
+   ],
+   "outline_vertex": [
+    0,
+    7
+   ],
+   "what": "jog in the east wall where the wider north block starts"
+  },
+  {
+   "px": [
+    607.6,
+    734.4
+   ],
+   "outline_vertex": [
+    0,
+    24
+   ],
+   "what": "jog in the west wall where the wider north block starts"
+  }
+ ],
  "crop": [
-  0,
-  80,
-  700,
-  840
+  30,
+  260,
+  630,
+  880
  ],
  "params": {
-  "wall_neutral": 150,
-  "door_m": 2.5,
-  "min_room_m2": 2.0,
-  "min_wall_m": 1.0,
+  "door_m": 2.0,
+  "min_room_m2": 5.0,
   "split_on": "text"
  },
  "notes": [
-  "The library map is a diagram: room shapes are close to the real walls but simplified."
+  "Traced from the Second Floor (top left) of the UCLA Library sheet.",
+  "The sheet is drawn south up (its compass has E on the left and W on the right); UCLA's main entrance is on the north face and the plan's Main Entrance is at the bottom, so the plan is turned 180 degrees. The fit uses the outer wall corners of the two wings and of the wider north block against the building outline.",
+  "Elevators are the gray boxes with the up/down glyph and stairs the hatched boxes (both from the sheet's legend); they are added as hand-placed boxes at the sheet's positions. Restroom icons (legend: Restrooms) set the kind of the room holding them.",
+  "The sheet leaves openings in the outer wall of the west wing (plan right) on floors 0, 2 and 3 and in the east wall on floors 0 and 1; cuts close them so the rooms along those walls (228, 238, 330) don't leak outside.",
+  "The library plan is a diagram: rooms are drawn as blocks with simplified walls; open areas (rotunda, stacks, reading room) are separated along the drawn wall lines and by their labels.",
+  "Room names are typed in from the plan where the doubled text layer garbles them (270) or the tracer spaces the letters out.",
+  "The PDF text layer is doubled and some numbers come out as single characters (390, 228) or sit outside their room (285), so those refs are typed in from the plan with set.",
+  "Replaces the earlier floor 2 trace from the LibCal Media Lab map (control file kept in maps/plans/retired/POWELL-2-medialab.control.json); this sheet is the library's own building plan with the room numbers 220, 228, 238, 270, 285 and 236A."
  ],
  "cuts": [
   [
    [
-    655,
-    440
-   ],
-   [
-    655,
-    625
-   ]
-  ],
-  [
-   [
-    595,
-    625
-   ],
-   [
-    658,
-    625
-   ]
-  ],
-  [
-   [
-    38,
-    265
-   ],
-   [
-    145,
-    265
-   ]
-  ],
-  [
-   [
-    38,
-    452
-   ],
-   [
-    145,
-    452
-   ]
-  ],
-  [
-   [
-    38,
-    612
-   ],
-   [
-    670,
-    612
-   ]
-  ],
-  [
-   [
-    150,
-    595
-   ],
-   [
-    150,
-    612
-   ]
-  ],
-  [
-   [
-    518,
-    90
-   ],
-   [
-    518,
-    240
-   ]
-  ],
-  [
-   [
-    520,
-    365
-   ],
-   [
-    600,
-    365
-   ]
-  ],
-  [
-   [
-    175,
+    155,
     395
    ],
    [
-    175,
+    155,
+    605
+   ]
+  ],
+  [
+   [
+    54,
+    735
+   ],
+   [
+    607,
+    735
+   ]
+  ],
+  [
+   [
+    296,
+    536
+   ],
+   [
+    368,
+    536
+   ]
+  ],
+  [
+   [
+    593,
     600
-   ]
-  ],
-  [
-   [
-    520,
-    395
    ],
    [
-    520,
-    550
+    593,
+    736
    ]
   ]
  ],
  "set": [
   {
    "px": [
-    215,
-    315
+    440,
+    428
    ],
+   "kind": "restroom",
+   "label": "Men",
+   "name": "Men's restroom (icon on the plan)"
+  },
+  {
+   "px": [
+    440,
+    492
+   ],
+   "kind": "restroom",
+   "label": "Women",
+   "name": "Women's restroom (icon on the plan)"
+  },
+  {
+   "px": [
+    215,
+    465
+   ],
+   "kind": "room",
    "ref": "285",
    "label": "285",
-   "name": "CAT Classroom II",
-   "kind": "room"
+   "name": "OID Classroom II"
   },
   {
    "px": [
-    625,
-    480
+    100,
+    350
    ],
-   "ref": "228",
-   "label": "228",
-   "name": "InqLab 2",
-   "kind": "room"
+   "kind": "room",
+   "ref": "270",
+   "label": "270",
+   "name": "Instructional Media Lab and Faculty New Media Center"
   },
   {
    "px": [
-    625,
-    560
+    92,
+    618
    ],
-   "ref": "238",
-   "label": "238",
-   "name": "InqLab 1",
-   "kind": "room"
+   "kind": "room",
+   "label": "Group Viewing Room"
   },
   {
    "px": [
-    300,
-    480
+    227,
+    606
    ],
+   "kind": "room",
    "label": "East Rotunda"
   },
   {
    "px": [
-    350,
-    480
+    395,
+    595
    ],
-   "label": "Rotunda"
+   "kind": "room",
+   "label": "West Rotunda"
   },
   {
    "px": [
-    470,
-    480
+    440,
+    587
    ],
-   "label": "Circulation Desk / West Rotunda"
+   "kind": "room",
+   "label": "Inquiry Desk"
   },
   {
    "px": [
-    90,
-    180
+    570,
+    612
    ],
-   "label": "Center for the Advancement of Teaching",
-   "kind": "room"
+   "kind": "room",
+   "ref": "228",
+   "label": "228",
+   "name": "InqLab 2"
   },
   {
    "px": [
-    350,
-    700
+    570,
+    680
    ],
-   "label": "Main Reading Room",
-   "name": "Main Reading Room and Reference Collection",
-   "kind": "room"
+   "kind": "room",
+   "ref": "238",
+   "label": "238",
+   "name": "InqLab 1"
   },
   {
    "px": [
-    372,
-    578
+    332,
+    505
    ],
+   "kind": "room",
+   "label": "Rose Gilbert Reading Room",
+   "name": "Rose Gilbert Reading Room"
+  },
+  {
+   "px": [
+    515,
+    575
+   ],
+   "kind": "corridor",
    "label": "",
-   "kind": "other"
+   "name": "Corridor around the rotunda and West Elevator Foyer"
+  }
+ ],
+ "add": [
+  {
+   "kind": "elevator",
+   "px": [
+    [
+     258.4,
+     519.3
+    ],
+    [
+     273,
+     519.3
+    ],
+    [
+     273,
+     533.9
+    ],
+    [
+     258.4,
+     533.9
+    ]
+   ],
+   "name": "Elevator (gray box on the plan)"
+  },
+  {
+   "kind": "elevator",
+   "px": [
+    [
+     509.7,
+     601.8
+    ],
+    [
+     524.2,
+     601.8
+    ],
+    [
+     524.2,
+     616.3
+    ],
+    [
+     509.7,
+     616.3
+    ]
+   ],
+   "name": "Elevator (gray box on the plan)"
+  },
+  {
+   "kind": "elevator",
+   "px": [
+    [
+     138.7,
+     701.4
+    ],
+    [
+     153.2,
+     701.4
+    ],
+    [
+     153.2,
+     716
+    ],
+    [
+     138.7,
+     716
+    ]
+   ],
+   "name": "Elevator (gray box on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     479,
+     274
+    ],
+    [
+     517,
+     274
+    ],
+    [
+     517,
+     308
+    ],
+    [
+     479,
+     308
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     208,
+     408
+    ],
+    [
+     240,
+     408
+    ],
+    [
+     240,
+     444
+    ],
+    [
+     208,
+     444
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     255,
+     463
+    ],
+    [
+     296,
+     463
+    ],
+    [
+     296,
+     514
+    ],
+    [
+     255,
+     514
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     480,
+     639
+    ],
+    [
+     525,
+     639
+    ],
+    [
+     525,
+     678
+    ],
+    [
+     480,
+     678
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     236,
+     678
+    ],
+    [
+     303,
+     678
+    ],
+    [
+     303,
+     725
+    ],
+    [
+     236,
+     725
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     359,
+     678
+    ],
+    [
+     399,
+     678
+    ],
+    [
+     399,
+     725
+    ],
+    [
+     359,
+     725
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     96,
+     682
+    ],
+    [
+     132,
+     682
+    ],
+    [
+     132,
+     706
+    ],
+    [
+     96,
+     706
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
   }
  ]
 }

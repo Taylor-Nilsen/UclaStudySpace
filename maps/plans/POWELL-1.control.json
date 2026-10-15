@@ -1,0 +1,584 @@
+{
+ "building": "POWELL",
+ "floor": "1",
+ "title": "Powell Library floor 1",
+ "extent": "full",
+ "source": {
+  "publisher": "UCLA Library",
+  "what": "\"Powell Library Building Floorplans\" (color vector PDF, all four floors on one sheet with room numbers; taken down since, recovered from the Common Crawl 2018-03 capture)",
+  "url": "https://www.library.ucla.edu/sites/default/files/Powell-floorplan-color_link_0.pdf",
+  "file": "https://www.library.ucla.edu/sites/default/files/Powell-floorplan-color_link_0.pdf",
+  "archive": "Common Crawl CC-MAIN-2018-13, captured 2018-03-20",
+  "date": "undated, online 2018-03",
+  "accessed": "2026-10-15"
+ },
+ "plan": {
+  "file": "Powell-floorplan-color_link_0.pdf",
+  "url": "https://www.library.ucla.edu/sites/default/files/Powell-floorplan-color_link_0.pdf",
+  "page": 1,
+  "dpi": 150
+ },
+ "mode": "vector",
+ "transform": "similarity",
+ "control": [
+  {
+   "px": [
+    654.7,
+    1124.7
+   ],
+   "outline_vertex": [
+    0,
+    11
+   ],
+   "what": "outer corner of the east wing's south end (plan top left; the plan is drawn south up)"
+  },
+  {
+   "px": [
+    773.3,
+    1124.7
+   ],
+   "outline_vertex": [
+    0,
+    12
+   ],
+   "what": "inner corner of the east wing's south end"
+  },
+  {
+   "px": [
+    1071.5,
+    1124.7
+   ],
+   "outline_vertex": [
+    0,
+    21
+   ],
+   "what": "inner corner of the west wing's south end"
+  },
+  {
+   "px": [
+    1186.7,
+    1124.7
+   ],
+   "outline_vertex": [
+    0,
+    22
+   ],
+   "what": "outer corner of the west wing's south end (plan top right)"
+  },
+  {
+   "px": [
+    648.7,
+    1722.5
+   ],
+   "outline_vertex": [
+    0,
+    6
+   ],
+   "what": "north-east corner of the building (plan bottom left)"
+  },
+  {
+   "px": [
+    1200.9,
+    1722.5
+   ],
+   "outline_vertex": [
+    0,
+    25
+   ],
+   "what": "north-west corner of the building (plan bottom right)"
+  },
+  {
+   "px": [
+    648.7,
+    1585.3
+   ],
+   "outline_vertex": [
+    0,
+    7
+   ],
+   "what": "jog in the east wall where the wider north block starts"
+  },
+  {
+   "px": [
+    1200.9,
+    1585.3
+   ],
+   "outline_vertex": [
+    0,
+    24
+   ],
+   "what": "jog in the west wall where the wider north block starts"
+  }
+ ],
+ "crop": [
+  640,
+  1118,
+  1235,
+  1775
+ ],
+ "params": {
+  "door_m": 2.0,
+  "min_room_m2": 5.0,
+  "split_on": "text"
+ },
+ "notes": [
+  "Traced from the First Floor (bottom right) of the UCLA Library sheet.",
+  "The sheet is drawn south up (its compass has E on the left and W on the right); UCLA's main entrance is on the north face and the plan's Main Entrance is at the bottom, so the plan is turned 180 degrees. The fit uses the outer wall corners of the two wings and of the wider north block against the building outline.",
+  "Elevators are the gray boxes with the up/down glyph and stairs the hatched boxes (both from the sheet's legend); they are added as hand-placed boxes at the sheet's positions. Restroom icons (legend: Restrooms) set the kind of the room holding them.",
+  "The sheet leaves openings in the outer wall of the west wing (plan right) on floors 0, 2 and 3 and in the east wall on floors 0 and 1; cuts close them so the rooms along those walls (228, 238, 330) don't leak outside.",
+  "The library plan is a diagram: rooms are drawn as blocks with simplified walls; open areas (rotunda, stacks, reading room) are separated along the drawn wall lines and by their labels.",
+  "The Group Study Rooms are drawn as open bays along the Night Powell wall with one label for each group; the plan doesn't letter them (the site's Study Rooms A to F), so they get no refs.",
+  "The two Handicapped Lifts by the Main Entrance are added as elevator boxes from the plan's blue squares."
+ ],
+ "cuts": [
+  [
+   [
+    850,
+    1585
+   ],
+   [
+    850,
+    1725
+   ]
+  ],
+  [
+   [
+    1037,
+    1585
+   ],
+   [
+    1037,
+    1725
+   ]
+  ],
+  [
+   [
+    895,
+    1322
+   ],
+   [
+    985,
+    1322
+   ]
+  ],
+  [
+   [
+    760,
+    1520
+   ],
+   [
+    1065,
+    1520
+   ]
+  ],
+  [
+   [
+    790,
+    1395
+   ],
+   [
+    790,
+    1520
+   ]
+  ],
+  [
+   [
+    654,
+    1495
+   ],
+   [
+    654,
+    1530
+   ]
+  ]
+ ],
+ "set": [
+  {
+   "px": [
+    1030,
+    1265
+   ],
+   "kind": "restroom",
+   "label": "Men",
+   "name": "Men's restroom (icon on the plan)"
+  },
+  {
+   "px": [
+    1030,
+    1335
+   ],
+   "kind": "restroom",
+   "label": "Women",
+   "name": "Women's restroom (icon on the plan)"
+  },
+  {
+   "px": [
+    1130,
+    1200
+   ],
+   "kind": "room",
+   "label": "Night Powell",
+   "name": "Night Powell"
+  },
+  {
+   "px": [
+    700,
+    1180
+   ],
+   "kind": "room",
+   "ref": "190",
+   "label": "190",
+   "name": "UCLA Center for Educational Assessment"
+  },
+  {
+   "px": [
+    700,
+    1300
+   ],
+   "kind": "room",
+   "ref": "186",
+   "label": "186",
+   "name": "OID Classroom I"
+  },
+  {
+   "px": [
+    700,
+    1420
+   ],
+   "kind": "room",
+   "ref": "160",
+   "label": "160",
+   "name": "OID CCLE"
+  },
+  {
+   "px": [
+    1150,
+    1650
+   ],
+   "kind": "room",
+   "label": "Night Powell",
+   "name": "Night Powell"
+  },
+  {
+   "px": [
+    700,
+    1650
+   ],
+   "kind": "room",
+   "label": "CLICC",
+   "name": "CLICC (College Library Instructional Computing Commons)"
+  },
+  {
+   "px": [
+    940,
+    1640
+   ],
+   "kind": "corridor",
+   "label": "Main Entrance",
+   "name": "Main Entrance"
+  },
+  {
+   "px": [
+    900,
+    1440
+   ],
+   "kind": "room",
+   "label": "Book Stacks A - G",
+   "name": "First Floor Book Stacks A - G"
+  },
+  {
+   "px": [
+    805,
+    1330
+   ],
+   "kind": "room",
+   "ref": "181",
+   "label": "181",
+   "name": "Evaluation of Instruction Program"
+  },
+  {
+   "px": [
+    1095,
+    1267
+   ],
+   "kind": "room",
+   "label": "Group Study Rooms",
+   "name": "Group Study Rooms (one of the bays by that label)"
+  },
+  {
+   "px": [
+    1095,
+    1378
+   ],
+   "kind": "room",
+   "label": "Group Study Rooms",
+   "name": "Group Study Rooms (one of the bays by that label)"
+  }
+ ],
+ "add": [
+  {
+   "kind": "elevator",
+   "px": [
+    [
+     852.2,
+     1370.6
+    ],
+    [
+     866.7,
+     1370.6
+    ],
+    [
+     866.7,
+     1385.1
+    ],
+    [
+     852.2,
+     1385.1
+    ]
+   ],
+   "name": "Elevator (gray box on the plan)"
+  },
+  {
+   "kind": "elevator",
+   "px": [
+    [
+     1103.2,
+     1453
+    ],
+    [
+     1117.7,
+     1453
+    ],
+    [
+     1117.7,
+     1467.5
+    ],
+    [
+     1103.2,
+     1467.5
+    ]
+   ],
+   "name": "Elevator (gray box on the plan)"
+  },
+  {
+   "kind": "elevator",
+   "px": [
+    [
+     732.7,
+     1552.4
+    ],
+    [
+     747.2,
+     1552.4
+    ],
+    [
+     747.2,
+     1567
+    ],
+    [
+     732.7,
+     1567
+    ]
+   ],
+   "name": "Elevator (gray box on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     1073,
+     1125
+    ],
+    [
+     1110,
+     1125
+    ],
+    [
+     1110,
+     1160
+    ],
+    [
+     1073,
+     1160
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     802,
+     1260
+    ],
+    [
+     834,
+     1260
+    ],
+    [
+     834,
+     1295
+    ],
+    [
+     802,
+     1295
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     848,
+     1314
+    ],
+    [
+     892,
+     1314
+    ],
+    [
+     892,
+     1366
+    ],
+    [
+     848,
+     1366
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     1073,
+     1490
+    ],
+    [
+     1119,
+     1490
+    ],
+    [
+     1119,
+     1529
+    ],
+    [
+     1073,
+     1529
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     690,
+     1533
+    ],
+    [
+     726,
+     1533
+    ],
+    [
+     726,
+     1557
+    ],
+    [
+     690,
+     1557
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     842,
+     1634
+    ],
+    [
+     875,
+     1634
+    ],
+    [
+     875,
+     1684
+    ],
+    [
+     842,
+     1684
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     974,
+     1634
+    ],
+    [
+     1007,
+     1634
+    ],
+    [
+     1007,
+     1684
+    ],
+    [
+     974,
+     1684
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  },
+  {
+   "kind": "elevator",
+   "px": [
+    [
+     862,
+     1588
+    ],
+    [
+     890,
+     1588
+    ],
+    [
+     890,
+     1612
+    ],
+    [
+     862,
+     1612
+    ]
+   ],
+   "name": "Handicapped Lift (blue square on the plan)"
+  },
+  {
+   "kind": "elevator",
+   "px": [
+    [
+     1005,
+     1588
+    ],
+    [
+     1033,
+     1588
+    ],
+    [
+     1033,
+     1612
+    ],
+    [
+     1005,
+     1612
+    ]
+   ],
+   "name": "Handicapped Lift (blue square on the plan)"
+  }
+ ]
+}

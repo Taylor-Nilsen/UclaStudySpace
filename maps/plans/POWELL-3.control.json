@@ -1,0 +1,375 @@
+{
+ "building": "POWELL",
+ "floor": "3",
+ "title": "Powell Library floor 3",
+ "extent": "full",
+ "source": {
+  "publisher": "UCLA Library",
+  "what": "\"Powell Library Building Floorplans\" (color vector PDF, all four floors on one sheet with room numbers; taken down since, recovered from the Common Crawl 2018-03 capture)",
+  "url": "https://www.library.ucla.edu/sites/default/files/Powell-floorplan-color_link_0.pdf",
+  "file": "https://www.library.ucla.edu/sites/default/files/Powell-floorplan-color_link_0.pdf",
+  "archive": "Common Crawl CC-MAIN-2018-13, captured 2018-03-20",
+  "date": "undated, online 2018-03",
+  "accessed": "2026-10-15"
+ },
+ "plan": {
+  "file": "Powell-floorplan-color_link_0.pdf",
+  "url": "https://www.library.ucla.edu/sites/default/files/Powell-floorplan-color_link_0.pdf",
+  "page": 1,
+  "dpi": 150
+ },
+ "mode": "vector",
+ "transform": "similarity",
+ "control": [
+  {
+   "px": [
+    654.0,
+    273.1
+   ],
+   "outline_vertex": [
+    0,
+    11
+   ],
+   "what": "outer corner of the east wing's south end (plan top left; the plan is drawn south up)"
+  },
+  {
+   "px": [
+    772.7,
+    273.1
+   ],
+   "outline_vertex": [
+    0,
+    12
+   ],
+   "what": "inner corner of the east wing's south end"
+  },
+  {
+   "px": [
+    1071.3,
+    273.1
+   ],
+   "outline_vertex": [
+    0,
+    21
+   ],
+   "what": "inner corner of the west wing's south end"
+  },
+  {
+   "px": [
+    1186.7,
+    273.1
+   ],
+   "outline_vertex": [
+    0,
+    22
+   ],
+   "what": "outer corner of the west wing's south end (plan top right)"
+  },
+  {
+   "px": [
+    647.8,
+    871.8
+   ],
+   "outline_vertex": [
+    0,
+    6
+   ],
+   "what": "north-east corner of the building (plan bottom left)"
+  },
+  {
+   "px": [
+    1200.9,
+    871.8
+   ],
+   "outline_vertex": [
+    0,
+    25
+   ],
+   "what": "north-west corner of the building (plan bottom right)"
+  },
+  {
+   "px": [
+    647.8,
+    734.4
+   ],
+   "outline_vertex": [
+    0,
+    7
+   ],
+   "what": "jog in the east wall where the wider north block starts"
+  },
+  {
+   "px": [
+    1200.9,
+    734.4
+   ],
+   "outline_vertex": [
+    0,
+    24
+   ],
+   "what": "jog in the west wall where the wider north block starts"
+  }
+ ],
+ "crop": [
+  635,
+  255,
+  1230,
+  885
+ ],
+ "params": {
+  "door_m": 2.0,
+  "min_room_m2": 5.0,
+  "split_on": "text"
+ },
+ "notes": [
+  "Traced from the Third Floor (top right) of the UCLA Library sheet.",
+  "The sheet is drawn south up (its compass has E on the left and W on the right); UCLA's main entrance is on the north face and the plan's Main Entrance is at the bottom, so the plan is turned 180 degrees. The fit uses the outer wall corners of the two wings and of the wider north block against the building outline.",
+  "Elevators are the gray boxes with the up/down glyph and stairs the hatched boxes (both from the sheet's legend); they are added as hand-placed boxes at the sheet's positions. Restroom icons (legend: Restrooms) set the kind of the room holding them.",
+  "The sheet leaves openings in the outer wall of the west wing (plan right) on floors 0, 2 and 3 and in the east wall on floors 0 and 1; cuts close them so the rooms along those walls (228, 238, 330) don't leak outside.",
+  "The library plan is a diagram: rooms are drawn as blocks with simplified walls; open areas (rotunda, stacks, reading room) are separated along the drawn wall lines and by their labels.",
+  "The three CLICC Electronic Classrooms are marked A, B and C on the plan with one label \"307, 320, and 320B\"; which letter is which number is not on the plan, so they keep the letters.",
+  "The block over the Main Reading Room is drawn empty on this floor (the reading room is double height) and is left out."
+ ],
+ "cuts": [
+  [
+   [
+    1186,
+    640
+   ],
+   [
+    1186,
+    736
+   ]
+  ]
+ ],
+ "set": [
+  {
+   "px": [
+    1090,
+    565
+   ],
+   "kind": "restroom",
+   "label": "Men",
+   "name": "Men's restroom (icon on the plan)"
+  },
+  {
+   "px": [
+    1130,
+    705
+   ],
+   "kind": "restroom",
+   "label": "Women",
+   "name": "Women's restroom (icon on the plan)"
+  },
+  {
+   "px": [
+    1160,
+    295
+   ],
+   "kind": "room",
+   "label": "CLICC Classroom B",
+   "name": "CLICC Electronic Classroom B (one of 307, 320, 320B)"
+  },
+  {
+   "px": [
+    1150,
+    430
+   ],
+   "kind": "room",
+   "ref": "",
+   "label": "CLICC Classroom C",
+   "name": "CLICC Electronic Classroom C (one of 307, 320, 320B)"
+  },
+  {
+   "px": [
+    700,
+    500
+   ],
+   "kind": "room",
+   "ref": "390",
+   "label": "390",
+   "name": "UCLA Library Digital Initiatives and Information Technology"
+  },
+  {
+   "px": [
+    1170,
+    690
+   ],
+   "kind": "room",
+   "ref": "330",
+   "label": "330",
+   "name": "Library Reprographic Services"
+  },
+  {
+   "px": [
+    1165,
+    550
+   ],
+   "kind": "room",
+   "label": "CLICC Classroom A",
+   "name": "CLICC Electronic Classroom A (one of 307, 320, 320B)"
+  }
+ ],
+ "drop": [
+  [
+   715,
+   798
+  ]
+ ],
+ "add": [
+  {
+   "kind": "elevator",
+   "px": [
+    [
+     851.9,
+     519.2
+    ],
+    [
+     866.5,
+     519.2
+    ],
+    [
+     866.5,
+     533.7
+    ],
+    [
+     851.9,
+     533.7
+    ]
+   ],
+   "name": "Elevator (gray box on the plan)"
+  },
+  {
+   "kind": "elevator",
+   "px": [
+    [
+     1102.8,
+     601.6
+    ],
+    [
+     1117.4,
+     601.6
+    ],
+    [
+     1117.4,
+     616.2
+    ],
+    [
+     1102.8,
+     616.2
+    ]
+   ],
+   "name": "Elevator (gray box on the plan)"
+  },
+  {
+   "kind": "elevator",
+   "px": [
+    [
+     731.8,
+     701.2
+    ],
+    [
+     746.3,
+     701.2
+    ],
+    [
+     746.3,
+     715.8
+    ],
+    [
+     731.8,
+     715.8
+    ]
+   ],
+   "name": "Elevator (gray box on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     1073,
+     274
+    ],
+    [
+     1107,
+     274
+    ],
+    [
+     1107,
+     295
+    ],
+    [
+     1073,
+     295
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     801,
+     408
+    ],
+    [
+     833,
+     408
+    ],
+    [
+     833,
+     444
+    ],
+    [
+     801,
+     444
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     1092,
+     639
+    ],
+    [
+     1119,
+     639
+    ],
+    [
+     1119,
+     678
+    ],
+    [
+     1092,
+     678
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  },
+  {
+   "kind": "stair",
+   "px": [
+    [
+     690,
+     682
+    ],
+    [
+     726,
+     682
+    ],
+    [
+     726,
+     706
+    ],
+    [
+     690,
+     706
+    ]
+   ],
+   "name": "Stairs (hatched on the plan)"
+  }
+ ]
+}
