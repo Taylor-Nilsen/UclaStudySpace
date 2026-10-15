@@ -1,0 +1,80 @@
+{
+ "building": "GAYLEY HEIGHTS",
+ "floor": "10",
+ "title": "Gayley Heights level 10",
+ "extent": "full",
+ "source": {
+  "publisher": "UCLA Housing",
+  "what": "Room sign-up plan of Gayley Heights level 10 (site plan with the apartment units, stairs and elevators; streets and neighbours drawn in gray)",
+  "url": "http://www.housing.ucla.edu/maps/gayley-heights.htm",
+  "file": "http://www.housing.ucla.edu/maps/plans/Gayley-Heights/Gayley-Heights-10.png",
+  "date": "2021-04-02 (level 1 file date) / 2024-02-08 (levels 2 to 17)",
+  "accessed": "2026-10-15"
+ },
+ "plan": {
+  "file": "Gayley-Heights-10.png",
+  "url": "http://www.housing.ucla.edu/maps/plans/Gayley-Heights/Gayley-Heights-10.png"
+ },
+ "mode": "walls",
+ "control": {
+  "auto": "outline",
+  "rot_init": 0
+ },
+ "params": {
+  "dark": 150,
+  "door_m": 2.0,
+  "min_room_m2": 2.0,
+  "ocr_rotated": false,
+  "ocr_upscale": 3.0,
+  "outside_colors": [
+   [
+    200,
+    200,
+    200,
+    24
+   ],
+   [
+    232,
+    232,
+    232,
+    10
+   ],
+   [
+    216,
+    232,
+    200,
+    20
+   ],
+   [
+    200,
+    232,
+    168,
+    24
+   ],
+   [
+    248,
+    248,
+    232,
+    12
+   ],
+   [
+    184,
+    232,
+    232,
+    20
+   ]
+  ]
+ },
+ "how": "The plan's footprint is fitted to the building outline by ICP (the plan carries no scale bar, so the outline fit is the only scale). The plan is drawn north-up (Le Conte Avenue along the bottom, Gayley Avenue on the right; the Regents' January 2018 design plans show the same orientation with a north arrow).",
+ "notes": [
+  "Room numbers (unit numbers) and bedroom letters are read from the plan by OCR; a bedroom letter alone is not a room number.",
+  "No scale bar on the plan: the scale comes from the outline fit.",
+  "The plan is a site plan; the crop keeps the building and leaves out the streets and neighbours drawn around it (gray and green areas are also excluded by color)."
+ ],
+ "crop": [
+  160,
+  90,
+  950,
+  530
+ ]
+}

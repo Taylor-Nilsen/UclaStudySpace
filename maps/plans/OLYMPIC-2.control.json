@@ -31,9 +31,10 @@
  },
  "notes": [
   "Plan: UCLA Housing's CAD export of Olympic Hall level 2 (room sign-up map, file dated 2021-04-02). Walls are its dark lines (gray level below 150); the furniture is drawn lighter and is left out. Room numbers are the plan's labels (O201...); the tracer stores the leading letter O as a zero (0201), which the site's room-key normalisation reads as 201.",
-  "Georeference: the plan footprint (the L-shaped wing plus the study-commons tower) is fitted to the mapped outline by ICP; orientation checked with UCLA GIS: restrooms OH227 (L wing) and OH262 (tower) fall on the plan's all-gender restrooms. The housing site's north arrow (north up-left) agrees with the fitted 20 degree rotation.",
-  "The exterior walls are drawn as light glazing in places, so rooms along them leaked to the outside; cuts along the mapped outline (the L wing and the tower) seal them. The outline's north block (the makerspace / upper-floor housing bar) is not cut because the level-2 open study has a different footprint.",
-  "The makerspace, the outdoor stair between the wings and the site lines are not part of this floor; the open study area and unlabeled spaces are recorded with kind 'other'."
+  "Georeference: the plan footprint (the L-shaped wing plus the study-commons tower) is fitted to the mapped outline by ICP, with the same 20 degree rotation on every floor; orientation checked on floors 2 and 4 with UCLA GIS restrooms (OH227/OH262, OH427/OH456), which fall on the plan's all-gender restrooms. The housing site's north arrow (north up-left) agrees.",
+  "The exterior walls are drawn as light glazing in places, so rooms along them leaked to the outside; cuts along the mapped outline (the L wing and the tower) seal them. The outline's north block (the makerspace / upper-floor housing bar) is not cut.",
+  "Study rooms, lounges and other spaces the plan labels by name only (OPEN STUDY, GROUP STUDY, LOUNGE...) carry that name; the site's room numbers (375B/C/D, 470, 475) are not printed on the plan, so they are not assigned.",
+  "The makerspace, the outdoor stair between the wings and the site lines are not part of this floor; unlabeled spaces are recorded with kind 'other'."
  ],
  "cuts": [
   [
