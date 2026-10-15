@@ -1,0 +1,110 @@
+{
+ "building": "CHS",
+ "floor": "C",
+ "title": "Center for Health Sciences level C (west wings only)",
+ "extent": "partial",
+ "source": {
+  "publisher": "UCLA Semel Institute (Emergency Action Plan, Attachment B)",
+  "what": "UCLA Center for Health Sciences C level evacuation plan (CAD plan of the whole CHS complex, December 18, 2008), page 82 of the Semel Institute Emergency Action Plan (May 2025)",
+  "url": "https://space.semel.ucla.edu/wp-content/uploads/2025/12/SEMEL_EAP_5.2025.pdf",
+  "file": "https://space.semel.ucla.edu/wp-content/uploads/2025/12/SEMEL_EAP_5.2025.pdf#page=82",
+  "date": "December 18, 2008",
+  "accessed": "2026-10-15",
+  "license": "UCLA document, public on the Semel Institute site"
+ },
+ "plan": {
+  "file": "chs_C-level_2009_evac_plan_semel-eap.png",
+  "url": "https://space.semel.ucla.edu/wp-content/uploads/2025/12/SEMEL_EAP_5.2025.pdf"
+ },
+ "mode": "walls",
+ "control": [
+  {
+   "px": [
+    1328,
+    841
+   ],
+   "feature": {
+    "t": "restroom",
+    "room": "A4206"
+   },
+   "what": "restroom A4-206 (UCLA GIS), read on the A-level sheet; all four sheets share one frame"
+  },
+  {
+   "px": [
+    1328,
+    860
+   ],
+   "feature": {
+    "t": "restroom",
+    "room": "A4208"
+   },
+   "what": "restroom A4-208 (UCLA GIS), A-level sheet"
+  },
+  {
+   "px": [
+    1412,
+    753
+   ],
+   "feature": {
+    "t": "restroom",
+    "room": "AL217"
+   },
+   "what": "restroom AL-217 (UCLA GIS), top of the three small rooms east of corridor AL on the A-level sheet"
+  },
+  {
+   "px": [
+    1412,
+    780
+   ],
+   "feature": {
+    "t": "restroom",
+    "room": "AL213"
+   },
+   "what": "restroom AL-213 (UCLA GIS), bottom of the three small rooms"
+  },
+  {
+   "px": [
+    1699,
+    1032
+   ],
+   "feature": {
+    "t": "restroom",
+    "room": "12250"
+   },
+   "what": "restroom 12-250 (UCLA GIS), small room west of corridor 12"
+  },
+  {
+   "px": [
+    923,
+    481
+   ],
+   "feature": {
+    "t": "restroom",
+    "room": "16293"
+   },
+   "what": "restroom 16-293 (UCLA GIS), small room at the top of corridor 16-100"
+  }
+ ],
+ "crop": [
+  640,
+  300,
+  1000,
+  1200
+ ],
+ "params": {
+  "wall_neutral": 120,
+  "door_m": 2.0,
+  "min_room_m2": 2.0,
+  "outside_m": 8.0
+ },
+ "notes": [
+  "The plan is one sheet of the whole CHS complex; only the part inside the mapped outline (OSM relation 331542, the Biomedical Library block and the wings around the two courts) is traced. The four sheets (A, B, C, first floor) share one frame and one scale (scale bar 64 ft = 130 px, 0.15 m/px, matching the fit), so the same control points are used for every level.",
+  "Georeferenced on UCLA GIS restrooms that could be found on the sheets: A4-206 and A4-208 (labels readable on the A-level sheet), the three small rooms east of corridor AL that hold AL-213/AL-217, 12-250 and 16-293 (toilet-sized rooms where the GIS points fall; their labels are not legible). The mapped OSM outline is coarse (its two courtyards are drawn as equal 43 m squares; on the plan the west one is the roofed 17-267 block), so the outline is not used for the fit.",
+  "Room numbers (A4-206, AL-213, B3-144 style) are too small to OCR at this resolution, so OCR is off and the rooms are unlabeled.",
+  "Colored highlights are not walls: yellow stairs, red elevators, green exit arrows, light blue corridors (wall_neutral). The highlighted stairs and elevators have no enclosing walls of their own at this resolution, so they are left as unlabeled regions.",
+  "The C level sheet only shows the west wings of the complex; inside the mapped outline that is the west arm (corridor C8 area) only."
+ ],
+ "transform": "similarity",
+ "ocr": false,
+ "set": []
+}

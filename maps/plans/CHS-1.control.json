@@ -1,0 +1,190 @@
+{
+ "building": "CHS",
+ "floor": "1",
+ "title": "Center for Health Sciences floor 1 (Biomedical Library area)",
+ "extent": "full",
+ "source": {
+  "publisher": "UCLA Semel Institute (Emergency Action Plan, Attachment B)",
+  "what": "UCLA Center for Health Sciences first floor evacuation plan (CAD plan of the whole CHS complex, December 18, 2008), page 84 (second image) of the Semel Institute Emergency Action Plan (May 2025)",
+  "url": "https://space.semel.ucla.edu/wp-content/uploads/2025/12/SEMEL_EAP_5.2025.pdf",
+  "file": "https://space.semel.ucla.edu/wp-content/uploads/2025/12/SEMEL_EAP_5.2025.pdf#page=84",
+  "date": "December 18, 2008",
+  "accessed": "2026-10-15",
+  "license": "UCLA document, public on the Semel Institute site"
+ },
+ "plan": {
+  "file": "chs_floor1_2009_evac_plan_semel-eap.png",
+  "url": "https://space.semel.ucla.edu/wp-content/uploads/2025/12/SEMEL_EAP_5.2025.pdf"
+ },
+ "mode": "walls",
+ "control": [
+  {
+   "px": [
+    1328,
+    841
+   ],
+   "feature": {
+    "t": "restroom",
+    "room": "A4206"
+   },
+   "what": "restroom A4-206 (UCLA GIS), read on the A-level sheet; all four sheets share one frame"
+  },
+  {
+   "px": [
+    1328,
+    860
+   ],
+   "feature": {
+    "t": "restroom",
+    "room": "A4208"
+   },
+   "what": "restroom A4-208 (UCLA GIS), A-level sheet"
+  },
+  {
+   "px": [
+    1412,
+    753
+   ],
+   "feature": {
+    "t": "restroom",
+    "room": "AL217"
+   },
+   "what": "restroom AL-217 (UCLA GIS), top of the three small rooms east of corridor AL on the A-level sheet"
+  },
+  {
+   "px": [
+    1412,
+    780
+   ],
+   "feature": {
+    "t": "restroom",
+    "room": "AL213"
+   },
+   "what": "restroom AL-213 (UCLA GIS), bottom of the three small rooms"
+  },
+  {
+   "px": [
+    1699,
+    1032
+   ],
+   "feature": {
+    "t": "restroom",
+    "room": "12250"
+   },
+   "what": "restroom 12-250 (UCLA GIS), small room west of corridor 12"
+  },
+  {
+   "px": [
+    923,
+    481
+   ],
+   "feature": {
+    "t": "restroom",
+    "room": "16293"
+   },
+   "what": "restroom 16-293 (UCLA GIS), small room at the top of corridor 16-100"
+  }
+ ],
+ "crop": [
+  640,
+  40,
+  2000,
+  1200
+ ],
+ "params": {
+  "wall_neutral": 120,
+  "door_m": 2.0,
+  "min_room_m2": 2.0,
+  "outside_m": 8.0
+ },
+ "notes": [
+  "The plan is one sheet of the whole CHS complex; only the part inside the mapped outline (OSM relation 331542, the Biomedical Library block and the wings around the two courts) is traced. The four sheets (A, B, C, first floor) share one frame and one scale (scale bar 64 ft = 130 px, 0.15 m/px, matching the fit), so the same control points are used for every level.",
+  "Georeferenced on UCLA GIS restrooms that could be found on the sheets: A4-206 and A4-208 (labels readable on the A-level sheet), the three small rooms east of corridor AL that hold AL-213/AL-217, 12-250 and 16-293 (toilet-sized rooms where the GIS points fall; their labels are not legible). The mapped OSM outline is coarse (its two courtyards are drawn as equal 43 m squares; on the plan the west one is the roofed 17-267 block), so the outline is not used for the fit.",
+  "Room numbers on the plan are in the CHS corridor-room form (12-077) and are only 7 px high at this resolution, so OCR is off; the tracer's room-number pattern also does not take the hyphenated form. Only the Biomedical Library rooms whose labels could be read at 6x zoom are typed in: 12-077, 12-077A, 12-077D, 12-077KK (12-077B is the stacks block, which the tracer breaks into slivers along the shelf lines, so it gets no polygon). UCLA Space Inventory writes these without the hyphen (12077, A4206, AL213), with the level letter first on the A/B/C levels.",
+  "Colored highlights are not walls: yellow stairs, red elevators, green exit arrows, light blue corridors (wall_neutral). The highlighted stairs and elevators have no enclosing walls of their own at this resolution (the small stair and elevator in the stacks block are below the 2 m2 room threshold), so they are left as unlabeled regions.",
+  "The library lobby block east of the reading room (12-077M, 12-077U to 12-077X, corridor 1900CO, exit #1) lies east of the mapped outline and is dropped.",
+  "A cut along the reading room's north wall (y 172) closes the wide openings to the arcade north of it, which otherwise let the room leak into the outside.",
+  "A second cut seals the door between 12-077KK and 12-077D so each keeps its own number; the reading room, the stacks (12-077B) and the area south of them are one open region on the plan and carry the number 12-077."
+ ],
+ "transform": "similarity",
+ "ocr": false,
+ "set": [
+  {
+   "px": [
+    1800,
+    262
+   ],
+   "ref": "12-077",
+   "label": "12-077",
+   "kind": "room",
+   "name": "Louise M. Darling Biomedical Library, reading room (12-077)"
+  },
+  {
+   "px": [
+    1634,
+    195
+   ],
+   "ref": "12-077KK",
+   "label": "12-077KK",
+   "kind": "room"
+  },
+  {
+   "px": [
+    1702,
+    183
+   ],
+   "ref": "12-077D",
+   "label": "12-077D",
+   "kind": "room"
+  },
+  {
+   "px": [
+    1693,
+    330
+   ],
+   "ref": "12-077A",
+   "label": "12-077A",
+   "kind": "room"
+  },
+  {
+   "px": [
+    1699,
+    1032
+   ],
+   "kind": "restroom",
+   "label": "WC",
+   "name": "Restroom 12250 (UCLA GIS; all-gender, single stall)"
+  },
+  {
+   "px": [
+    923,
+    481
+   ],
+   "kind": "restroom",
+   "label": "WC",
+   "name": "Restroom 16293 (UCLA GIS; all-gender, single stall)"
+  }
+ ],
+ "cuts": [
+  [
+   [
+    1718,
+    172
+   ],
+   [
+    1852,
+    172
+   ]
+  ],
+  [
+   [
+    1680,
+    172
+   ],
+   [
+    1680,
+    205
+   ]
+  ]
+ ]
+}
