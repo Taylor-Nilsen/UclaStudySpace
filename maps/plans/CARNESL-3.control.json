@@ -1,0 +1,253 @@
+{
+ "building": "CARNESL",
+ "floor": "3",
+ "title": "Carnesale Commons floor 3 (Palisades Room and lobby)",
+ "extent": "partial",
+ "source": {
+  "publisher": "UCLA Conferences & Catering",
+  "what": "Carnesale Commons third floor event-space diagram (lobby, elevators, stairs, corridor, Palisades Room salons A to F)",
+  "url": "https://conferences.ucla.edu/meeting-event-spaces/carnesale-commons/",
+  "file": "https://conferences.ucla.edu/wp-content/uploads/2019/03/Floorplan_Carnesale_ThirdFloor.jpg",
+  "date": "2019-03",
+  "accessed": "2026-10-15",
+  "license": "UCLA's own page (Housing & Hospitality); no license stated"
+ },
+ "plan": {
+  "file": "Floorplan_Carnesale_ThirdFloor.jpg",
+  "url": "https://conferences.ucla.edu/wp-content/uploads/2019/03/Floorplan_Carnesale_ThirdFloor.jpg"
+ },
+ "mode": "walls",
+ "control": [
+  {
+   "px": [
+    510,
+    48
+   ],
+   "outline_vertex": [
+    0,
+    20
+   ],
+   "what": "step in the north wall, east part (corridor's outer wall)"
+  },
+  {
+   "px": [
+    510,
+    85
+   ],
+   "outline_vertex": [
+    0,
+    21
+   ],
+   "what": "step in the north wall, west part"
+  },
+  {
+   "px": [
+    878,
+    48
+   ],
+   "outline_vertex": [
+    0,
+    19
+   ],
+   "what": "NE corner of the building"
+  },
+  {
+   "px": [
+    190,
+    85
+   ],
+   "outline_vertex": [
+    0,
+    22
+   ],
+   "what": "NW corner of the north block (west end of the north wall)"
+  }
+ ],
+ "params": {
+  "wall_neutral": 232,
+  "door_m": 2.5,
+  "min_room_m2": 2.0,
+  "min_wall_m": 1.0,
+  "split_on": "text",
+  "outside_m": 10.0
+ },
+ "notes": [
+  "The plan is UCLA Conferences & Catering's event-space diagram of the third floor (lobby, elevators, stairs, corridor, Palisades Room salons A to F): room names, no numbers, no scale. Fitted with a similarity transform on four points of the mapped outline's north block (the step in the north wall, the NE and NW corners); the diagram is schematic, residuals up to 1.9 m, and its lobby extends west of the mapped footprint (outside_m raised so it is kept).",
+  "Floor 3 is the plan's own 'Third Floor'; UCLA Space Inventory floor 3 rooms are SP3xx but have no names, so no room numbers are recorded.",
+  "The Palisades Room's salons are divided by dashed lines (movable partitions); cuts follow them and close its many door openings."
+ ],
+ "transform": "similarity",
+ "cuts": [
+  [
+   [
+    355,
+    135
+   ],
+   [
+    855,
+    135
+   ]
+  ],
+  [
+   [
+    355,
+    470
+   ],
+   [
+    855,
+    470
+   ]
+  ],
+  [
+   [
+    355,
+    135
+   ],
+   [
+    355,
+    470
+   ]
+  ],
+  [
+   [
+    855,
+    135
+   ],
+   [
+    855,
+    470
+   ]
+  ],
+  [
+   [
+    355,
+    270
+   ],
+   [
+    855,
+    270
+   ]
+  ],
+  [
+   [
+    520,
+    135
+   ],
+   [
+    520,
+    470
+   ]
+  ],
+  [
+   [
+    690,
+    135
+   ],
+   [
+    690,
+    470
+   ]
+  ]
+ ],
+ "set": [
+  {
+   "px": [
+    440,
+    200
+   ],
+   "label": "Salon B",
+   "name": "Palisades Room, Salon B",
+   "kind": "room"
+  },
+  {
+   "px": [
+    605,
+    200
+   ],
+   "label": "Salon C",
+   "name": "Palisades Room, Salon C",
+   "kind": "room"
+  },
+  {
+   "px": [
+    780,
+    200
+   ],
+   "label": "Salon D",
+   "name": "Palisades Room, Salon D",
+   "kind": "room"
+  },
+  {
+   "px": [
+    440,
+    370
+   ],
+   "label": "Salon A",
+   "name": "Palisades Room, Salon A",
+   "kind": "room"
+  },
+  {
+   "px": [
+    605,
+    370
+   ],
+   "label": "Salon F",
+   "name": "Palisades Room, Salon F",
+   "kind": "room"
+  },
+  {
+   "px": [
+    780,
+    370
+   ],
+   "label": "Salon E",
+   "name": "Palisades Room, Salon E",
+   "kind": "room"
+  },
+  {
+   "px": [
+    230,
+    300
+   ],
+   "label": "Lobby",
+   "name": "Lobby",
+   "kind": "corridor"
+  },
+  {
+   "px": [
+    740,
+    120
+   ],
+   "label": "Corridor",
+   "name": "Corridor",
+   "kind": "corridor"
+  },
+  {
+   "px": [
+    75,
+    255
+   ],
+   "label": "",
+   "name": "Elevator",
+   "kind": "elevator"
+  },
+  {
+   "px": [
+    130,
+    255
+   ],
+   "label": "",
+   "name": "Elevator",
+   "kind": "elevator"
+  },
+  {
+   "px": [
+    120,
+    400
+   ],
+   "label": "",
+   "name": "Stairs",
+   "kind": "stair"
+  }
+ ]
+}

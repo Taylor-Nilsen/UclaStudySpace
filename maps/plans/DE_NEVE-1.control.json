@@ -1,0 +1,114 @@
+{
+ "building": "DE NEVE",
+ "floor": "1",
+ "title": "De Neve Commons floor 1 (Plaza Room and Lecture Auditorium level, north part)",
+ "extent": "partial",
+ "source": {
+  "publisher": "UCLA Conferences & Catering",
+  "what": "De Neve Plaza event-space diagram: Plaza Room salons A/B, foyer, A/V booth, Lecture Auditorium, Sycamore, Magnolia and Jacaranda rooms, Computer Labs 1 and 2 (room names, no numbers, no scale)",
+  "url": "https://conferences.ucla.edu/meeting-event-spaces/de-neve-plaza/",
+  "file": "https://conferences.ucla.edu/wp-content/uploads/2018/12/Floorplan_DeNeve.jpg",
+  "date": "2018-12 (upload date)",
+  "accessed": "2026-10-15",
+  "license": "UCLA's own page (Housing & Hospitality); no license stated"
+ },
+ "plan": {
+  "file": "Floorplan_DeNeve_1165px.jpg",
+  "url": "https://conferences.ucla.edu/wp-content/uploads/2018/12/Floorplan_DeNeve.jpg"
+ },
+ "mode": "walls",
+ "transform": "similarity",
+ "control": [
+  {
+   "px": [
+    455,
+    35
+   ],
+   "outline_vertex": [
+    0,
+    3
+   ],
+   "what": "west end of the Plaza Room's curved front"
+  },
+  {
+   "px": [
+    700,
+    35
+   ],
+   "outline_vertex": [
+    0,
+    14
+   ],
+   "what": "east end of the Plaza Room's curved front"
+  },
+  {
+   "px": [
+    580,
+    8
+   ],
+   "outline_vertex": [
+    0,
+    8
+   ],
+   "what": "top of the Plaza Room's curved front"
+  },
+  {
+   "px": [
+    320,
+    150
+   ],
+   "outline_vertex": [
+    0,
+    0
+   ],
+   "what": "NW corner of the building (west wing's north wall)"
+  },
+  {
+   "px": [
+    845,
+    150
+   ],
+   "outline_vertex": [
+    0,
+    17
+   ],
+   "what": "NE corner of the building (east wing's north wall)"
+  }
+ ],
+ "params": {
+  "wall_neutral": 232,
+  "door_m": 2.5,
+  "min_room_m2": 2.0,
+  "min_wall_m": 1.0,
+  "split_on": "text",
+  "outside_m": 6.0
+ },
+ "notes": [
+  "The diagram is schematic and has no scale: it is fitted with a similarity transform on five points where its Plaza Room front and the wings' north walls meet the mapped (roof) outline; the drawn Plaza Room is narrower than the roof's curved front, so the residuals are 3 to 5 m at the curve's ends.",
+  "Floor: UCLA Space Inventory lists De Neve Commons floors 1 to 3 (P1xx, P2xx, P3xx). The Learning Center P333 is on the 3rd floor (ResLife), the four PE entrance records are on floor 2 (the plaza / front-desk level), and this level has its side wings under the plaza, so it is taken as floor 1. The plan itself gives no floor; this is an inference.",
+  "Room names come from the plan (Plaza Room Salon A/B, Lecture Auditorium, Sycamore, Magnolia, Jacaranda, Computer Lab 1/2); the plan has no room numbers, so none are recorded.",
+  "The plan is cut off at the bottom (south), so the record covers the north part of the level only; two cuts close the foyer where it opens to the outdoor stairs."
+ ],
+ "cuts": [
+  [
+   [
+    455,
+    128
+   ],
+   [
+    455,
+    168
+   ]
+  ],
+  [
+   [
+    700,
+    128
+   ],
+   [
+    700,
+    168
+   ]
+  ]
+ ]
+}

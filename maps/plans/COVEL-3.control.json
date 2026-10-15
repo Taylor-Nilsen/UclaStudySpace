@@ -1,0 +1,426 @@
+{
+ "building": "COVEL",
+ "floor": "3",
+ "title": "Covel Commons floor 3 (Grand Horizon Room level)",
+ "extent": "full",
+ "source": {
+  "publisher": "UCLA Conferences & Catering",
+  "what": "Covel Commons Grand Horizon Room level floor plan (event-space diagram: Grand Horizon Room salons A to G, promenades, terrace, rotunda stairs, elevator, North Ridge, West Coast and South Bay rooms)",
+  "url": "https://conferences.ucla.edu/meeting-event-spaces/covel-commons/",
+  "file": "https://conferences.ucla.edu/wp-content/uploads/2019/03/Floorplan_Covel_GHB.jpg",
+  "date": "2019-03",
+  "accessed": "2026-10-15",
+  "license": "UCLA's own page (Housing & Hospitality); no license stated"
+ },
+ "plan": {
+  "file": "Floorplan_Covel_GHB.jpg",
+  "url": "https://conferences.ucla.edu/wp-content/uploads/2019/03/Floorplan_Covel_GHB.jpg"
+ },
+ "mode": "walls",
+ "control": [
+  {
+   "px": [
+    65,
+    57
+   ],
+   "outline_vertex": [
+    0,
+    46
+   ],
+   "what": "NW corner of the building (North Ridge room's NW corner)"
+  },
+  {
+   "px": [
+    28,
+    525
+   ],
+   "outline_vertex": [
+    0,
+    36
+   ],
+   "what": "SW corner (South Bay room's SW corner)"
+  },
+  {
+   "px": [
+    955,
+    285
+   ],
+   "outline_vertex": [
+    0,
+    20
+   ],
+   "what": "easternmost point of the terrace"
+  },
+  {
+   "px": [
+    250,
+    3
+   ],
+   "outline_vertex": [
+    0,
+    1
+   ],
+   "what": "NW corner of the north stair block"
+  },
+  {
+   "px": [
+    370,
+    3
+   ],
+   "outline_vertex": [
+    0,
+    2
+   ],
+   "what": "NE corner of the north stair block"
+  },
+  {
+   "px": [
+    250,
+    560
+   ],
+   "outline_vertex": [
+    0,
+    33
+   ],
+   "what": "SW corner of the south stair block"
+  },
+  {
+   "px": [
+    370,
+    560
+   ],
+   "outline_vertex": [
+    0,
+    32
+   ],
+   "what": "SE corner of the south stair block"
+  }
+ ],
+ "params": {
+  "wall_neutral": 232,
+  "door_m": 2.5,
+  "min_room_m2": 2.0,
+  "min_wall_m": 1.0,
+  "split_on": "text"
+ },
+ "notes": [
+  "The plan is UCLA Conferences & Catering's event-space diagram: room names, no room numbers, no scale, and it is schematic (the terrace is drawn larger than the mapped footprint). It is fitted with a similarity transform on seven outline points (building corners, the stair blocks, the terrace's east end); residuals up to 2.8 m.",
+  "Floor: the Grand Horizon Room is on Covel Commons' 3rd floor (UCLA International Education Office and Hill Residential Programs directions both say '3rd floor'); UCLA Space Inventory lists floor 3 rooms 300LO to 341 but no names, so no room numbers are recorded here. The site's Covel study rooms (210, 218, 225, 227, 229 on floor 2; 307, 319A on floor 3) cannot be matched to this plan.",
+  "The Grand Horizon Room's salons A to G are divided by dashed lines on the plan (movable partitions); cuts follow those lines so each salon is a space. North Ridge A/B and West Coast A/B likewise.",
+  "Kinds: the promenades and the rotunda hall are recorded as corridors, the terrace as 'other'."
+ ],
+ "transform": "similarity",
+ "cuts": [
+  [
+   [
+    425,
+    125
+   ],
+   [
+    697,
+    125
+   ]
+  ],
+  [
+   [
+    425,
+    440
+   ],
+   [
+    697,
+    440
+   ]
+  ],
+  [
+   [
+    425,
+    125
+   ],
+   [
+    425,
+    440
+   ]
+  ],
+  [
+   [
+    697,
+    125
+   ],
+   [
+    697,
+    440
+   ]
+  ],
+  [
+   [
+    425,
+    205
+   ],
+   [
+    697,
+    205
+   ]
+  ],
+  [
+   [
+    425,
+    362
+   ],
+   [
+    697,
+    362
+   ]
+  ],
+  [
+   [
+    515,
+    125
+   ],
+   [
+    515,
+    205
+   ]
+  ],
+  [
+   [
+    605,
+    125
+   ],
+   [
+    605,
+    205
+   ]
+  ],
+  [
+   [
+    515,
+    362
+   ],
+   [
+    515,
+    440
+   ]
+  ],
+  [
+   [
+    605,
+    362
+   ],
+   [
+    605,
+    440
+   ]
+  ],
+  [
+   [
+    145,
+    60
+   ],
+   [
+    145,
+    145
+   ]
+  ],
+  [
+   [
+    8,
+    288
+   ],
+   [
+    120,
+    288
+   ]
+  ]
+ ],
+ "set": [
+  {
+   "px": [
+    470,
+    165
+   ],
+   "label": "Salon B",
+   "name": "Grand Horizon Room, Salon B",
+   "kind": "room"
+  },
+  {
+   "px": [
+    560,
+    165
+   ],
+   "label": "Salon C",
+   "name": "Grand Horizon Room, Salon C",
+   "kind": "room"
+  },
+  {
+   "px": [
+    650,
+    165
+   ],
+   "label": "Salon D",
+   "name": "Grand Horizon Room, Salon D",
+   "kind": "room"
+  },
+  {
+   "px": [
+    560,
+    290
+   ],
+   "label": "Salon A",
+   "name": "Grand Horizon Room, Salon A",
+   "kind": "room"
+  },
+  {
+   "px": [
+    470,
+    400
+   ],
+   "label": "Salon E",
+   "name": "Grand Horizon Room, Salon E",
+   "kind": "room"
+  },
+  {
+   "px": [
+    560,
+    400
+   ],
+   "label": "Salon F",
+   "name": "Grand Horizon Room, Salon F",
+   "kind": "room"
+  },
+  {
+   "px": [
+    650,
+    400
+   ],
+   "label": "Salon G",
+   "name": "Grand Horizon Room, Salon G",
+   "kind": "room"
+  },
+  {
+   "px": [
+    560,
+    88
+   ],
+   "label": "North Promenade",
+   "name": "North Promenade",
+   "kind": "corridor"
+  },
+  {
+   "px": [
+    560,
+    485
+   ],
+   "label": "South Promenade",
+   "name": "South Promenade",
+   "kind": "corridor"
+  },
+  {
+   "px": [
+    380,
+    300
+   ],
+   "label": "Rotunda",
+   "name": "Rotunda",
+   "kind": "corridor"
+  },
+  {
+   "px": [
+    850,
+    290
+   ],
+   "label": "Terrace",
+   "name": "Terrace",
+   "kind": "other"
+  },
+  {
+   "px": [
+    105,
+    110
+   ],
+   "label": "North Ridge A",
+   "name": "North Ridge Room A",
+   "kind": "room"
+  },
+  {
+   "px": [
+    185,
+    110
+   ],
+   "label": "North Ridge B",
+   "name": "North Ridge Room B",
+   "kind": "room"
+  },
+  {
+   "px": [
+    60,
+    240
+   ],
+   "label": "West Coast B",
+   "name": "West Coast Room B",
+   "kind": "room"
+  },
+  {
+   "px": [
+    60,
+    330
+   ],
+   "label": "West Coast A",
+   "name": "West Coast Room A",
+   "kind": "room"
+  },
+  {
+   "px": [
+    95,
+    470
+   ],
+   "label": "South Bay",
+   "name": "South Bay Room",
+   "kind": "room"
+  },
+  {
+   "px": [
+    310,
+    285
+   ],
+   "label": "Stairs",
+   "name": "Rotunda stairs",
+   "kind": "stair"
+  },
+  {
+   "px": [
+    310,
+    410
+   ],
+   "label": "Elevator",
+   "name": "Passenger elevator",
+   "kind": "elevator"
+  },
+  {
+   "px": [
+    750,
+    90
+   ],
+   "label": "",
+   "kind": "stair",
+   "name": "Terrace stairs"
+  },
+  {
+   "px": [
+    750,
+    480
+   ],
+   "label": "",
+   "kind": "stair",
+   "name": "Terrace stairs"
+  },
+  {
+   "px": [
+    230,
+    300
+   ],
+   "label": "Rotunda",
+   "name": "Rotunda (west hall)",
+   "kind": "corridor"
+  }
+ ]
+}
