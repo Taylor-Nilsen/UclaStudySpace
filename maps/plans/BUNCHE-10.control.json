@@ -1,0 +1,57 @@
+{
+ "building": "BUNCHE",
+ "floor": "10",
+ "title": "Bunche Hall floor 10 (tower)",
+ "extent": "full",
+ "source": {
+  "publisher": "UCLA International Institute",
+  "what": "International Institute 10th floor map of Bunche Hall (CAD plan with room numbers and occupants, March 2006)",
+  "url": "https://international.ucla.edu/institute/article/44907",
+  "file": "https://international.ucla.edu/media/files/10FloorMap.pdf",
+  "date": "March 2006",
+  "accessed": "2026-10-15"
+ },
+ "plan": {
+  "file": "10FloorMap.pdf",
+  "url": "https://international.ucla.edu/media/files/10FloorMap.pdf",
+  "page": 1,
+  "dpi": 300
+ },
+ "mode": "walls",
+ "control": {
+  "auto": "outline",
+  "search": true,
+  "rot_init": 270
+ },
+ "crop": [
+  1072,
+  105,
+  1852,
+  3045
+ ],
+ "params": {
+  "wall_neutral": 200,
+  "door_m": 2.5,
+  "min_room_m2": 2.0,
+  "label_boxes": true,
+  "label_box_max": 2.5
+ },
+ "notes": [
+  "The tower floors (3 to 11) share this footprint; only floor 10 is drawn from this plan.",
+  "Room numbers come from the plan's labels; the occupant names (2006) are not kept.",
+  "The east wall is drawn with cyan window dashes over the black wall line; a cut along it seals the gaps the color filter leaves.",
+  "The tower footprint is symmetric end to end, so the outline fit alone can't tell which way round the plan goes; the orientation is set so UCLA's restroom records for the tower (x253, x257, x350 on floors 3, 4 and 8, which stack) fall in the plan's restrooms next to the elevator core."
+ ],
+ "cuts": [
+  [
+   [
+    1824,
+    117
+   ],
+   [
+    1824,
+    3033
+   ]
+  ]
+ ]
+}

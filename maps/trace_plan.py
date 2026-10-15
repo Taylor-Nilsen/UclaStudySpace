@@ -110,6 +110,7 @@ DEFAULTS = {
     'corridor_halfwidth_m': 1.6,
     'grow_px': None,        # how far rooms are grown into the walls (None: half the wall)
     'label_boxes': False,   # labels sit in small white boxes (UCLA Space Inventory): OCR each box, then erase it
+    'label_box_max': None,  # label_boxes: only erase a white box at most this many times the text's width and height
     'outside_colors': [],   # [[r, g, b, tol], ...] colors that are outside the building (background, courtyards)
     'hatch_m': 0,           # > 0: dense hatching (stair treads) in blocks wider than this is opened up into floor
     'ocr_rotated': True,    # also read text turned 90 degrees
@@ -592,6 +593,9 @@ def outline_icp(foot, shape, rot0=0.0, trim=0.85, fixed=False, search=False, one
         Xp = (M[:2, :2] @ U.T).T + M[:2, 2]
         _, d = _seg_closest(Xp, A, B)
         med = float(np.median(d))
+        sc_fin = math.sqrt(abs(np.linalg.det(M[:2, :2])))
+        if not np.isfinite(med) or sc_fin < 0.15 * s0 or sc_fin > 6 * s0:
+            continue  # collapsed onto one edge (scale ran away): not a fit
         if best is None or med < best[1]:
             best = (M, med, float(np.quantile(d, 0.9)), d)
     return best
@@ -1198,7 +1202,13 @@ def trace(ctl, ctl_path, debug=None):
             for w in words:
                 b = [int(v) for v in w['box']]
                 win = wlab[max(0, b[1]):b[3] + 1, max(0, b[0]):b[2] + 1]
-                ids = [int(v) for v in np.unique(win) if v and wst[v, cv2.CC_STAT_AREA] < 60 * (b[2] - b[0] + 2) * (b[3] - b[1] + 2)]
+                bw_, bh_ = b[2] - b[0] + 2, b[3] - b[1] + 2
+                if P.get('label_box_max'):
+                    # a label box is only a little bigger than its text; a room holding a label is not one
+                    ids = [int(v) for v in np.unique(win) if v and wst[v, cv2.CC_STAT_WIDTH] <= P['label_box_max'] * bw_
+                           and wst[v, cv2.CC_STAT_HEIGHT] <= P['label_box_max'] * bh_]
+                else:
+                    ids = [int(v) for v in np.unique(win) if v and wst[v, cv2.CC_STAT_AREA] < 60 * bw_ * bh_]
                 for v in ids:
                     x_, y_, w_, h_ = wst[v, :4]
                     b = [min(b[0], x_), min(b[1], y_), max(b[2], x_ + w_), max(b[3], y_ + h_)]
@@ -1558,6 +1568,7 @@ def trace(ctl, ctl_path, debug=None):
             'm_per_px': round(mpp, 4), 'rot_deg': round(rot, 2),
             'outside_outline_max_m': round(outside, 1),
             'control': [{'what': c['what'], 'px': c['px'], 'll': c['ll'], 'res_m': round(e, 2)} for c, e in zip(cps, res)],
+            'px_to_m': [[round(float(v), 6) for v in row] for row in M.tolist()],  # plan pixel -> projected metres (build_maps.proj), before any stretch
         },
         'trace': {'mode': mode, 'tool': 'maps/trace_plan.py', 'date': datetime.date.today().isoformat(),
                   'plan_file': os.path.basename(path), 'page': page, 'dpi': dpi,
