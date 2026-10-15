@@ -1,170 +1,1492 @@
 {
- "source": "OpenStreetMap contributors (ODbL), building centroids via Overpass API, Sept 2026",
+ "source": "Names: UCLA Registrar building list. Areas: UCLA Residential Life, UCLA Conferences & Catering and the Wikipedia UCLA Housing article (see each entry). Coordinates: OpenStreetMap contributors (ODbL), centroids computed from api.openstreetmap.org map data, Oct 2026.",
+ "areas": {
+  "campus": "Main Westwood campus (academic, medical and athletic buildings)",
+  "hill": "The Hill: UCLA Housing on-campus residential area",
+  "apartments": "UCLA University Apartments in Westwood (residents only, not on the Hill)",
+  "offsite": "UCLA building away from the Westwood campus",
+  "none": "Not a physical place"
+ },
  "buildings": {
+  "700 WWP": {
+   "name": "700 Westwood Plaza",
+   "area": "campus",
+   "lat": 34.0666559,
+   "lon": -118.4447911,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876589"
+   }
+  },
+  "ANDERSON": {
+   "name": "Marion Anderson Hall",
+   "area": "campus",
+   "lat": 34.0740128,
+   "lon": -118.4428935,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 1067733260"
+   }
+  },
+  "AU": {
+   "name": "Ackerman Student Union",
+   "area": "campus",
+   "lat": 34.0703958,
+   "lon": -118.4442291,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876518"
+   }
+  },
+  "BIO SCI": {
+   "name": "Biomedical Sciences Research Building",
+   "area": "campus",
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)"
+   }
+  },
   "BOELTER": {
    "name": "Boelter Hall",
-   "lat": 34.0688672,
-   "lon": -118.4429887
+   "area": "campus",
+   "lat": 34.0688797,
+   "lon": -118.4430112,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap relation 6287582"
+   }
+  },
+  "BOTANY": {
+   "name": "Botany Building",
+   "area": "campus",
+   "lat": 34.0668346,
+   "lon": -118.4412363,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876524"
+   }
+  },
+  "BOYER": {
+   "name": "Boyer Hall",
+   "area": "campus",
+   "lat": 34.0680965,
+   "lon": -118.4417223,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876525"
+   }
+  },
+  "BRADLEY": {
+   "name": "Bradley Hall",
+   "area": "hill",
+   "lat": 34.0694553,
+   "lon": -118.4490391,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://reslife.ucla.edu/communities",
+     "https://en.wikipedia.org/wiki/UCLA_Housing"
+    ],
+    "area_note": "Residential Life offices are at 205 Bradley Hall, 417 Charles E Young Dr W; Wikipedia lists Tom Bradley International Hall as part of the Hill",
+    "location": "OpenStreetMap way 422876526"
+   }
   },
   "BROAD": {
    "name": "Broad Art Center",
-   "lat": 34.0759023,
-   "lon": -118.4409878
+   "area": "campus",
+   "lat": 34.0759071,
+   "lon": -118.4410649,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap relation 12967372"
+   }
   },
   "BUNCHE": {
    "name": "Bunche Hall",
-   "lat": 34.0742872,
-   "lon": -118.4404263
+   "area": "campus",
+   "lat": 34.0743548,
+   "lon": -118.4402987,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap relation 12967374"
+   }
+  },
+  "CAMPBEL": {
+   "name": "Campbell Hall",
+   "area": "campus",
+   "lat": 34.0738169,
+   "lon": -118.4413885,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876531"
+   }
+  },
+  "CARNESL": {
+   "name": "Carnesale Commons",
+   "area": "hill",
+   "lat": 34.0721215,
+   "lon": -118.4497337,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://conferences.ucla.edu/building-locations/",
+     "https://en.wikipedia.org/wiki/UCLA_Housing"
+    ],
+    "area_note": "Conference venue on the Hill just south of Northwest Campus Auditorium, 350 De Neve Dr; part of the Sproul Plaza complex",
+    "location": "Google Maps pin linked from https://conferences.ucla.edu/building-locations/ (Carnesale Commons is not in OpenStreetMap)"
+   }
+  },
+  "CLARK": {
+   "name": "William Andrews Clark Memorial Library",
+   "area": "offsite",
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://clarklibrary.ucla.edu/"
+    ],
+    "area_note": "2520 Cimarron St, Los Angeles 90018 (West Adams), not on the Westwood campus"
+   }
+  },
+  "CNSI": {
+   "name": "California NanoSystems Institute",
+   "area": "campus",
+   "lat": 34.0680655,
+   "lon": -118.4430217,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap relation 13007994"
+   }
   },
   "CNYN PT": {
    "name": "Canyon Point",
-   "lat": 34.0736778,
-   "lon": -118.4508516
+   "area": "hill",
+   "lat": 34.0736427,
+   "lon": -118.4508014,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://reslife.ucla.edu/communities"
+    ],
+    "area_note": "Sunset Village: Canyon Point, listed under On Campus communities",
+    "location": "OpenStreetMap relation 6287583"
+   }
+  },
+  "COLLINS": {
+   "name": "Collins Center for Executive Education",
+   "area": "campus",
+   "lat": 34.073595,
+   "lon": -118.4446939,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876536"
+   }
+  },
+  "CORNELL": {
+   "name": "Cornell Hall",
+   "area": "campus",
+   "lat": 34.0739921,
+   "lon": -118.4433744,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 184488678"
+   }
   },
   "COVEL": {
    "name": "Covel Commons",
-   "lat": 34.073014,
-   "lon": -118.4499603
+   "area": "hill",
+   "lat": 34.073017,
+   "lon": -118.450027,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://reslife.ucla.edu/academics",
+     "https://conferences.ucla.edu/building-locations/"
+    ],
+    "area_note": "Listed under \"Study Spaces on the Hill\" (Covel 227, Epicuria at Covel); 200 De Neve Dr",
+    "location": "OpenStreetMap way 422876537"
+   }
   },
   "DE NEVE": {
-   "name": "De Neve Commons",
-   "lat": 34.0703525,
-   "lon": -118.4501825
+   "name": "De Neve Plaza Commons Building",
+   "area": "hill",
+   "lat": 34.0703192,
+   "lon": -118.4501004,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://reslife.ucla.edu/communities",
+     "https://conferences.ucla.edu/building-locations/"
+    ],
+    "area_note": "De Neve East/West/Towers listed under On Campus communities; De Neve Plaza, 351 Charles E Young Dr W",
+    "location": "OpenStreetMap way 422876538"
+   }
+  },
+  "DENT": {
+   "name": "Dentistry, School of",
+   "area": "campus",
+   "lat": 34.0664181,
+   "lon": -118.442097,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 230758455"
+   }
   },
   "DODD": {
    "name": "Dodd Hall",
-   "lat": 34.0727884,
-   "lon": -118.4392619
+   "area": "campus",
+   "lat": 34.0727678,
+   "lon": -118.4392451,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876541"
+   }
+  },
+  "E MLNTZ": {
+   "name": "Melnitz Hall East",
+   "area": "campus",
+   "lat": 34.0764693,
+   "lon": -118.4395429,
+   "source": {
+    "name": "OpenStreetMap name \"Melnitz East\"",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876597"
+   }
+  },
+  "ENGR IV": {
+   "name": "Engineering IV",
+   "area": "campus",
+   "lat": 34.0687917,
+   "lon": -118.443909,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422260003"
+   }
+  },
+  "ENGR V": {
+   "name": "Engineering V",
+   "area": "campus",
+   "lat": 34.0694999,
+   "lon": -118.4437714,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876660"
+   }
+  },
+  "ENGR VI": {
+   "name": "Engineering VI",
+   "area": "campus",
+   "lat": 34.0694588,
+   "lon": -118.4443371,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 184444681"
+   }
+  },
+  "ENTRPNR": {
+   "name": "Entrepreneurs Hall",
+   "area": "campus",
+   "lat": 34.0736008,
+   "lon": -118.4432705,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 185081403"
+   }
+  },
+  "FAC CTR": {
+   "name": "Faculty Center",
+   "area": "campus",
+   "lat": 34.0703182,
+   "lon": -118.4391482,
+   "source": {
+    "name": "OpenStreetMap name \"Faculty Center\"",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap relation 6287585"
+   }
+  },
+  "FACTOR": {
+   "name": "Factor Health Sciences Building",
+   "area": "campus",
+   "lat": 34.0666941,
+   "lon": -118.4418107,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 184480980"
+   }
+  },
+  "FERNALD": {
+   "name": "Fernald Center",
+   "area": "campus",
+   "lat": 34.0764332,
+   "lon": -118.4439193,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap relation 12996854"
+   }
   },
   "FOWLER": {
-   "name": "Fowler Museum",
-   "lat": 34.0729552,
-   "lon": -118.443232
+   "name": "Fowler Museum at UCLA",
+   "area": "campus",
+   "lat": 34.0729327,
+   "lon": -118.4431274,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap relation 6287586"
+   }
   },
   "FRANZ": {
    "name": "Franz Hall",
-   "lat": 34.0696199,
-   "lon": -118.4414617
+   "area": "campus",
+   "lat": 34.0696367,
+   "lon": -118.4414455,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876566"
+   }
   },
   "GAYLEY HEIGHTS": {
    "name": "Gayley Heights",
-   "lat": 34.0639639,
-   "lon": -118.4488293
+   "area": "apartments",
+   "lat": 34.063974,
+   "lon": -118.44891,
+   "source": {
+    "name": "https://housing.ucla.edu/student-housing/transfer-students/undergraduate-university-apartment-amenities",
+    "area": [
+     "https://reslife.ucla.edu/off-campus/university-apartments-north-undergraduate",
+     "https://reslife.ucla.edu/communities",
+     "https://housing.ucla.edu/student-housing/transfer-students/undergraduate-university-apartment-amenities"
+    ],
+    "area_note": "University Apartments North (listed under Off Campus by Residential Life); residents only",
+    "location": "OpenStreetMap way 1100753653"
+   }
+  },
+  "GEFFENHL": {
+   "name": "Geffen Hall",
+   "area": "campus",
+   "lat": 34.0644997,
+   "lon": -118.4422072,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap relation 12978307"
+   }
   },
   "GEOLOGY": {
    "name": "Geology Building",
+   "area": "campus",
    "lat": 34.0692437,
-   "lon": -118.441226
+   "lon": -118.441226,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap node 4226021488 (office node, no building outline)"
+   }
+  },
+  "GOLD": {
+   "name": "Gold Hall",
+   "area": "campus",
+   "lat": 34.0736055,
+   "lon": -118.4438111,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 184446757"
+   }
+  },
+  "GONDA": {
+   "name": "Gonda (Goldschmied) Neuroscience and Genetics Research Center",
+   "area": "campus",
+   "lat": 34.0673768,
+   "lon": -118.4447939,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876569"
+   }
+  },
+  "GSEIS": {
+   "name": "Graduate School of Education and Information Studies Building",
+   "area": "campus",
+   "lat": 34.0749959,
+   "lon": -118.4418788,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876567"
+   }
   },
   "HAINES": {
    "name": "Haines Hall",
-   "lat": 34.0728984,
-   "lon": -118.4412787
+   "area": "campus",
+   "lat": 34.0729251,
+   "lon": -118.4413339,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876570"
+   }
   },
   "HEDRICK": {
    "name": "Hedrick Hall",
-   "lat": 34.0732895,
-   "lon": -118.4524109
+   "area": "hill",
+   "lat": 34.0733037,
+   "lon": -118.452368,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://reslife.ucla.edu/communities"
+    ],
+    "area_note": "Hedrick Hall listed under On Campus communities",
+    "location": "OpenStreetMap way 422876571"
+   }
+  },
+  "HERSHEY": {
+   "name": "Hershey Hall",
+   "area": "campus",
+   "lat": 34.0669019,
+   "lon": -118.4399062,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap relation 6287587"
+   }
   },
   "HITCH": {
-   "name": "Hitch Residential Suites",
-   "lat": 34.0735903,
-   "lon": -118.4538208
+   "name": "Hitch Suites",
+   "area": "hill",
+   "lat": 34.0734998,
+   "lon": -118.4537177,
+   "source": {
+    "name": "https://reslife.ucla.edu/communities",
+    "area": [
+     "https://reslife.ucla.edu/communities"
+    ],
+    "area_note": "Hitch Suites listed under On Campus communities",
+    "location": "OpenStreetMap way 422876637, way 422876573, way 422876634, way 422876636"
+   }
+  },
+  "HLTHSCI": {
+   "name": "Center for the Health Sciences",
+   "area": "campus",
+   "lat": 34.0662206,
+   "lon": -118.4430222,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap relation 331542"
+   }
+  },
+  "HUMANTS": {
+   "name": "Humanities Building (now Kaplan Hall)",
+   "area": "campus",
+   "lat": 34.0714726,
+   "lon": -118.4412058,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list (KAPLAN: \"Kaplan Hall (formerly Humanities Building)\")",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876575"
+   }
+  },
+  "JSEI": {
+   "name": "Jules Stein Eye Institute",
+   "area": "campus",
+   "lat": 34.0649892,
+   "lon": -118.4438064,
+   "source": {
+    "name": "OpenStreetMap name \"Jules Stein Eye Institute\" (way 422876579); code not in the registrar list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876579"
+   }
+  },
+  "JWEST": {
+   "name": "James West Alumni Center",
+   "area": "campus",
+   "lat": 34.0702369,
+   "lon": -118.4454292,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876655"
+   }
   },
   "KAPLAN": {
-   "name": "Kaplan Hall",
-   "lat": 34.0714641,
-   "lon": -118.4412514
+   "name": "Kaplan Hall (formerly Humanities Building)",
+   "area": "campus",
+   "lat": 34.0714726,
+   "lon": -118.4412058,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876575"
+   }
   },
   "KAUFMAN": {
    "name": "Kaufman Hall",
-   "lat": 34.0727708,
-   "lon": -118.4440763
+   "area": "campus",
+   "lat": 34.0727597,
+   "lon": -118.4440473,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876580"
+   }
   },
   "KNSY PV": {
-   "name": "Kinsey Teaching Pavilion",
-   "lat": 34.0701537,
-   "lon": -118.4412986
+   "name": "Kinsey Science Teaching Pavilion",
+   "area": "campus",
+   "lat": 34.0701728,
+   "lon": -118.4413718,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876582"
+   }
+  },
+  "KNUDSEN": {
+   "name": "Knudsen Hall",
+   "area": "campus",
+   "lat": 34.070494,
+   "lon": -118.4412076,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876583"
+   }
+  },
+  "KORN": {
+   "name": "Korn Convocation Hall",
+   "area": "campus",
+   "lat": 34.0735699,
+   "lon": -118.4429447,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 1152240365"
+   }
   },
   "LAKRETZ": {
    "name": "La Kretz Hall",
-   "lat": 34.0675577,
-   "lon": -118.4427086
+   "area": "campus",
+   "lat": 34.0674904,
+   "lon": -118.4424159,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876588"
+   }
   },
   "LAUREL": {
-   "name": "Laurel (Southwest Campus Apartments)",
-   "lat": 34.0627213,
-   "lon": -118.4501766
+   "name": "Laurel Apartments",
+   "area": "apartments",
+   "lat": 34.0627399,
+   "lon": -118.4501776,
+   "source": {
+    "name": "https://housing.ucla.edu/student-housing/transfer-students/undergraduate-university-apartment-amenities",
+    "area": [
+     "https://reslife.ucla.edu/off-campus/university-apartments-north-undergraduate",
+     "https://reslife.ucla.edu/communities",
+     "https://housing.ucla.edu/student-housing/transfer-students/undergraduate-university-apartment-amenities"
+    ],
+    "area_note": "University Apartments North (listed under Off Campus by Residential Life); residents only",
+    "location": "OpenStreetMap way 965850072, way 965850073, way 965850074 (Southwest Campus Apartments, shared centroid)"
+   }
+  },
+  "LAW": {
+   "name": "Law Building",
+   "area": "campus",
+   "lat": 34.0730093,
+   "lon": -118.4384692,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876640"
+   }
+  },
+  "LKGP": {
+   "name": "La Kretz Garden Pavillion",
+   "area": "campus",
+   "lat": 34.0669463,
+   "lon": -118.4421989,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 1081958241"
+   }
+  },
+  "LS": {
+   "name": "Life Sciences",
+   "area": "campus",
+   "lat": 34.0672356,
+   "lon": -118.4425842,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876590"
+   }
+  },
+  "MACDNLD": {
+   "name": "MacDonald Medical Research Laboratories",
+   "area": "campus",
+   "lat": 34.0674013,
+   "lon": -118.4441593,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876593"
+   }
+  },
+  "MACGOWN": {
+   "name": "Macgowan Hall",
+   "area": "campus",
+   "lat": 34.0758316,
+   "lon": -118.4397768,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap relation 6287589"
+   }
+  },
+  "MCGWN E": {
+   "name": "Macgowan Hall East",
+   "area": "campus",
+   "lat": 34.0761146,
+   "lon": -118.4393162,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876727"
+   }
+  },
+  "MDCC": {
+   "name": "Marion Davies Children's Center",
+   "area": "campus",
+   "lat": 34.0651825,
+   "lon": -118.4424694,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 44669492"
+   }
+  },
+  "MELNITZ": {
+   "name": "Melnitz Hall",
+   "area": "campus",
+   "lat": 34.0764123,
+   "lon": -118.4401121,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876598"
+   }
+  },
+  "MNOUKIAN": {
+   "name": "Vatche and Tamar Manoukian Medical Building (formerly Medical Plaza 100)",
+   "area": "campus",
+   "lat": 34.0656027,
+   "lon": -118.4459747,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876595"
+   }
+  },
+  "MOL SCI": {
+   "name": "Molecular Sciences Building",
+   "area": "campus",
+   "lat": 34.0681586,
+   "lon": -118.4408987,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap node 4226023189 (office node, no building outline)"
+   }
   },
   "MOORE": {
    "name": "Moore Hall",
-   "lat": 34.0704228,
-   "lon": -118.4427289
+   "area": "campus",
+   "lat": 34.070424,
+   "lon": -118.4426888,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876599"
+   }
+  },
+  "MP 200": {
+   "name": "Medical Plaza 200 (Peter Morton Medical Building)",
+   "area": "campus",
+   "lat": 34.0652462,
+   "lon": -118.446631,
+   "source": {
+    "name": "OpenStreetMap alt_name \"Medical Plaza 200\"",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876623"
+   }
+  },
+  "MP 300": {
+   "name": "Medical Plaza 300 (Wendy and Leonard Goldberg Medical Building)",
+   "area": "campus",
+   "lat": 34.0643311,
+   "lon": -118.4460269,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list (GOLDBERG: \"formerly Medical Plaza 300\")",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876596"
+   }
   },
   "MS": {
-   "name": "Math Sciences",
-   "lat": 34.069544,
-   "lon": -118.4428178
+   "name": "Mathematical Sciences",
+   "area": "campus",
+   "lat": 34.0695585,
+   "lon": -118.4429384,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876594"
+   }
+  },
+  "MURPHY": {
+   "name": "Murphy Hall (Administration)",
+   "area": "campus",
+   "lat": 34.0715856,
+   "lon": -118.438699,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876600"
+   }
+  },
+  "NEUROSC": {
+   "name": "Neuroscience Research Building",
+   "area": "campus",
+   "lat": 34.0674192,
+   "lon": -118.4433406,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876601"
+   }
+  },
+  "NWAUD": {
+   "name": "Northwest Campus Auditorium",
+   "area": "hill",
+   "lat": 34.0719422,
+   "lon": -118.4506338,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://conferences.ucla.edu/building-locations/",
+     "https://en.wikipedia.org/wiki/UCLA_Housing"
+    ],
+    "area_note": "Adjacent to Sproul Hall, entrance on the Sproul Turnaround, 350 De Neve Dr",
+    "location": "OpenStreetMap way 422876603"
+   }
+  },
+  "OHRC": {
+   "name": "Orthopedic Hospital Research Center",
+   "area": "campus",
+   "lat": 34.067382,
+   "lon": -118.4413635,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876610"
+   }
   },
   "OLYMPIC": {
    "name": "Olympic Hall",
-   "lat": 34.0723793,
-   "lon": -118.4536285
+   "area": "hill",
+   "lat": 34.072372,
+   "lon": -118.4535769,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://reslife.ucla.edu/communities"
+    ],
+    "area_note": "Olympic/Centennial listed under On Campus communities",
+    "location": "OpenStreetMap way 964842615"
+   }
+  },
+  "ONLINE": {
+   "name": "Online (not a building)",
+   "area": "none",
+   "source": {
+    "name": "classrooms.json",
+    "area": [],
+    "area_note": "Not a physical place"
+   }
+  },
+  "OSTIN": {
+   "name": "Ostin Music Center",
+   "area": "campus",
+   "lat": 34.0704875,
+   "lon": -118.4408786,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 1026506167, way 1026506158"
+   }
   },
   "PAB": {
-   "name": "Physics & Astronomy Building",
-   "lat": 34.0706856,
-   "lon": -118.4415788
+   "name": "Physics and Astronomy Building",
+   "area": "campus",
+   "lat": 34.0706764,
+   "lon": -118.4415148,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876625"
+   }
   },
   "PALOS VERDE": {
-   "name": "Palos Verde (Southwest Campus Apartments)",
-   "lat": 34.0627213,
-   "lon": -118.4501766
+   "name": "Palo Verde Apartments",
+   "area": "apartments",
+   "lat": 34.0627399,
+   "lon": -118.4501776,
+   "source": {
+    "name": "https://housing.ucla.edu/student-housing/transfer-students/undergraduate-university-apartment-amenities",
+    "area": [
+     "https://reslife.ucla.edu/off-campus/university-apartments-north-undergraduate",
+     "https://reslife.ucla.edu/communities",
+     "https://housing.ucla.edu/student-housing/transfer-students/undergraduate-university-apartment-amenities"
+    ],
+    "area_note": "University Apartments North (listed under Off Campus by Residential Life); residents only",
+    "location": "OpenStreetMap way 965850072, way 965850073, way 965850074 (Southwest Campus Apartments, shared centroid)"
+   }
   },
   "PERLOFF": {
    "name": "Perloff Hall",
-   "lat": 34.0733539,
-   "lon": -118.4402192
+   "area": "campus",
+   "lat": 34.0733732,
+   "lon": -118.440287,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap relation 6287590"
+   }
+  },
+  "POWELL": {
+   "name": "Powell Library Building",
+   "area": "campus",
+   "lat": 34.071615,
+   "lon": -118.4422082,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876626"
+   }
+  },
+  "PRITZKER": {
+   "name": "Pritzker Hall (formerly Psychology Tower)",
+   "area": "campus",
+   "lat": 34.0696203,
+   "lon": -118.440702,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876565"
+   }
   },
   "PUB AFF": {
    "name": "Public Affairs Building",
-   "lat": 34.0744384,
-   "lon": -118.4391596
+   "area": "campus",
+   "lat": 34.0743768,
+   "lon": -118.4391704,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876627"
+   }
+  },
+  "PUB HLT": {
+   "name": "Public Health, School of",
+   "area": "campus",
+   "lat": 34.0667242,
+   "lon": -118.4435792,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 230758451"
+   }
+  },
+  "PVUB": {
+   "name": "Ueberroth Building",
+   "area": "campus",
+   "lat": 34.064005,
+   "lon": -118.4469849,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876624"
+   }
+  },
+  "REED": {
+   "name": "Reed Neurological Research Center",
+   "area": "campus",
+   "lat": 34.0663107,
+   "lon": -118.445113,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 44669498"
+   }
   },
   "RIEBER": {
    "name": "Rieber Hall",
-   "lat": 34.071954,
-   "lon": -118.4515036
+   "area": "hill",
+   "lat": 34.0718389,
+   "lon": -118.4515074,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://reslife.ucla.edu/communities"
+    ],
+    "area_note": "Rieber Hall listed under On Campus communities",
+    "location": "OpenStreetMap way 422876628"
+   }
   },
   "ROLFE": {
    "name": "Rolfe Hall",
-   "lat": 34.0738676,
-   "lon": -118.442121
+   "area": "campus",
+   "lat": 34.0738314,
+   "lon": -118.4421251,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876631"
+   }
+  },
+  "ROSNFLD": {
+   "name": "Eugene and Maxine Rosenfeld Library",
+   "area": "campus",
+   "lat": 34.0743565,
+   "lon": -118.4434161,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 854806689"
+   }
   },
   "ROYCE": {
    "name": "Royce Hall",
-   "lat": 34.0729044,
-   "lon": -118.4421895
+   "area": "campus",
+   "lat": 34.0728828,
+   "lon": -118.4423122,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876632"
+   }
+  },
+  "SAC": {
+   "name": "Student Activities Center",
+   "area": "campus",
+   "lat": 34.0715527,
+   "lon": -118.4441259,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876645"
+   }
+  },
+  "SEMEL": {
+   "name": "Semel Institute for Neuroscience and Human Behavior",
+   "area": "campus",
+   "lat": 34.0657921,
+   "lon": -118.4445906,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 44669501"
+   }
   },
   "SLICHTR": {
    "name": "Slichter Hall",
+   "area": "campus",
    "lat": 34.0688944,
-   "lon": -118.4407938
+   "lon": -118.4407938,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap node 4226023191 (office node, no building outline)"
+   }
+  },
+  "SMB": {
+   "name": "Schoenberg Music Building",
+   "area": "campus",
+   "lat": 34.0707184,
+   "lon": -118.4401112,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876611"
+   }
   },
   "SPROUL": {
    "name": "Sproul Hall",
-   "lat": 34.0723135,
-   "lon": -118.4500891
+   "area": "hill",
+   "lat": 34.0720761,
+   "lon": -118.4499312,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://reslife.ucla.edu/communities"
+    ],
+    "area_note": "Sproul Hall listed under On Campus communities",
+    "location": "OpenStreetMap way 422876661"
+   }
+  },
+  "SPROUL LANDING": {
+   "name": "Sproul Landing",
+   "area": "hill",
+   "lat": 34.0715448,
+   "lon": -118.4502119,
+   "source": {
+    "name": "https://reslife.ucla.edu/academics (\"Sproul Landing Living Room\")",
+    "area": [
+     "https://reslife.ucla.edu/communities"
+    ],
+    "area_note": "Sproul Cove/Landing listed under On Campus communities",
+    "location": "OpenStreetMap way 422876643"
+   }
+  },
+  "STRTHMR": {
+   "name": "Strathmore Building",
+   "area": "campus",
+   "lat": 34.0682982,
+   "lon": -118.4451775,
+   "source": {
+    "name": "OpenStreetMap name \"Strathmore Building\" (Westwood Plaza); code not in the registrar list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876644"
+   }
+  },
+  "SUNSET VILLAGE": {
+   "name": "Sunset Village (Canyon Point, Courtside, Delta Terrace)",
+   "area": "hill",
+   "source": {
+    "name": "https://reslife.ucla.edu/communities",
+    "area": [
+     "https://reslife.ucla.edu/communities"
+    ],
+    "area_note": "Sunset Village: Canyon Point, Courtside, Delta Terrace listed under On Campus communities"
+   }
+  },
+  "TERASKI": {
+   "name": "Terasaki Life Sciences Building",
+   "area": "campus",
+   "lat": 34.0672646,
+   "lon": -118.4402182,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876647"
+   }
   },
   "TIPUANA": {
-   "name": "Tipuana (Southwest Campus Apartments)",
-   "lat": 34.0627213,
-   "lon": -118.4501766
+   "name": "Tipuana Apartments",
+   "area": "apartments",
+   "lat": 34.0627399,
+   "lon": -118.4501776,
+   "source": {
+    "name": "https://housing.ucla.edu/student-housing/transfer-students/undergraduate-university-apartment-amenities",
+    "area": [
+     "https://reslife.ucla.edu/off-campus/university-apartments-north-undergraduate",
+     "https://reslife.ucla.edu/communities",
+     "https://housing.ucla.edu/student-housing/transfer-students/undergraduate-university-apartment-amenities"
+    ],
+    "area_note": "University Apartments North (listed under Off Campus by Residential Life); residents only",
+    "location": "OpenStreetMap way 965850072, way 965850073, way 965850074 (Southwest Campus Apartments, shared centroid)"
+   }
+  },
+  "WASSRMN": {
+   "name": "Wasserman Building",
+   "area": "campus",
+   "lat": 34.0652192,
+   "lon": -118.4445026,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876545"
+   }
   },
   "WGYOUNG": {
    "name": "Young Hall",
-   "lat": 34.0685978,
-   "lon": -118.4412304
+   "area": "campus",
+   "lat": 34.0686248,
+   "lon": -118.441318,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 1423107802"
+   }
+  },
+  "WOODEN": {
+   "name": "Wooden Recreation and Sports Center",
+   "area": "campus",
+   "lat": 34.0715798,
+   "lon": -118.4454108,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876578"
+   }
+  },
+  "YRL": {
+   "name": "Young Research Library",
+   "area": "campus",
+   "lat": 34.0749352,
+   "lon": -118.4414089,
+   "source": {
+    "name": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+    "area": [
+     "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+     "https://www.openstreetmap.org"
+    ],
+    "area_note": "UCLA building on the main campus; not a Residential Life on-campus community (https://reslife.ucla.edu/communities)",
+    "location": "OpenStreetMap way 422876535"
+   }
   }
  }
 }

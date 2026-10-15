@@ -10,12 +10,16 @@ The data changes by the minute. hill_api.py serves collect() live so the page
 can refresh on every open; the Pages workflow also runs this before each deploy
 so the bundled hill.json snapshot stays reasonably fresh as a fallback.
 
+It also adds the open (no reservation) study spaces that Residential Life
+lists with hours, like Covel 227 (see HILL_SPACES).
+
 Usage:
     python scrape_hill.py [--days 8] [--file hill.json]
 """
 
 import argparse
 import json
+import os
 import re
 import sys
 import time
@@ -27,6 +31,12 @@ import requests
 from bs4 import BeautifulSoup
 
 from scrape import HEADERS
+
+try:
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'buildings.json')) as _f:
+        KNOWN_BUILDINGS = set(json.load(_f)['buildings'])
+except (OSError, ValueError, KeyError):
+    KNOWN_BUILDINGS = set()
 
 BASE = 'https://reserve.reslife.ucla.edu'
 LA = ZoneInfo('America/Los_Angeles')
@@ -49,6 +59,18 @@ def clean_title(title):
              if n.strip() and not CAP_RE.search(n) and not n.strip().isdigit()]
     name = re.sub(r'\s*\([^)]*\)', '', title).replace('#', '').strip()
     return ' '.join(name.split()), int(cap.group(1)) if cap else None, notes
+
+
+def building_code(name):
+    """'De Neve Meeting Rooms' -> 'DE NEVE': match the codes in buildings.json
+    so the page can look up the building's area and location."""
+    name = ' '.join(name.upper().split())
+    if name in KNOWN_BUILDINGS:
+        return name
+    for code in sorted(KNOWN_BUILDINGS, key=len, reverse=True):
+        if name.startswith(code + ' '):
+            return code
+    return name
 
 
 def to_min(t):
@@ -84,6 +106,66 @@ def parse_slots(html):
 
 class ScrapeError(Exception):
     pass
+
+
+# Open study spaces on the Hill, from "Study Spaces on the Hill" on
+# Residential Life's academics page. Their hours are only posted as text on
+# that page, so they're kept here and checked against the page on every run:
+# an entry whose posted text no longer appears is left out rather than shown
+# with hours that may be stale. Minutes after midnight; 12 AM close = 1440.
+SPACES_URL = 'https://reslife.ucla.edu/academics'
+ALL_DAY = [[0, 24 * 60]]
+HILL_SPACES = [
+    # (text, building, room, weekly hours by weekday 0=Mon, posted text on the page)
+    ('Covel 227', 'COVEL', '227', {d: [[6 * 60, 24 * 60]] for d in range(7)},
+     'Covel 227: Everyday 6 AM to 12 AM'),
+    ('Sproul Landing Living Room', 'SPROUL LANDING', 'Living Room', {d: ALL_DAY for d in range(7)},
+     'Sproul Landing Living Room, Hedrick Study, & Olympic Hall Understory & Canopy: 24 Hour Study Space'),
+    ('Hedrick Study', 'HEDRICK', 'Hedrick Study', {d: ALL_DAY for d in range(7)},
+     'Sproul Landing Living Room, Hedrick Study, & Olympic Hall Understory & Canopy: 24 Hour Study Space'),
+    ('Olympic Hall Understory & Canopy', 'OLYMPIC', 'Understory & Canopy', {d: ALL_DAY for d in range(7)},
+     'Sproul Landing Living Room, Hedrick Study, & Olympic Hall Understory & Canopy: 24 Hour Study Space'),
+    ('Sunset Village Learning Center (150)', 'SUNSET VILLAGE', '150',
+     {0: [[720, 1440]], 1: [[720, 1440]], 2: [[720, 1440]], 3: [[720, 1440]],
+      4: [[720, 1020]], 5: [[720, 1200]], 6: [[1080, 1440]]},
+     'Sunset Village Learning Center (150): Monday - Thursday: 12 PM - 12 AM, Friday: 12 PM - 5 PM, '
+     'Saturday: 12 PM - 8 PM, Sunday: 6 PM - 12 AM'),
+    ('De Neve Learning Center (P333)', 'DE NEVE', 'P333',
+     {0: [[720, 1440]], 1: [[720, 1440]], 2: [[720, 1440]], 3: [[720, 1440]],
+      4: [[720, 1020]], 5: [], 6: [[1080, 1440]]},
+     'De Neve Learning Center (P333): Monday - Thursday: 12 PM - 12 AM, Friday: 12 PM - 5 PM, '
+     'Sunday: 6 PM - 12 AM'),
+]
+# Not included: "Epicuria at Covel: Open Week 4, Sunday through Thursday 10 PM
+# to 2 AM". Which dates "Week 4" covers isn't on the page.
+
+
+def hill_spaces(session, dates):
+    """Hours-based entries for HILL_SPACES, in the same shape as the study rooms."""
+    try:
+        page = BeautifulSoup(session.get(SPACES_URL, timeout=30).text, 'html.parser').get_text(' ')
+        page = ' '.join(page.split())
+    except requests.RequestException as e:
+        print(f"could not check {SPACES_URL} ({e}); using the hours on file", file=sys.stderr)
+        page = None
+    out = []
+    for text, building, room, weekly, posted in HILL_SPACES:
+        if page is not None and posted not in page:
+            print(f"{text}: posted hours changed on {SPACES_URL}, leaving it out", file=sys.stderr)
+            continue
+        days = {}
+        for d in dates:
+            ranges = weekly.get(datetime.strptime(d, '%Y-%m-%d').weekday(), [])
+            days[d] = ({'free': [list(r) for r in ranges], 'hours': [ranges[0][0], ranges[-1][1]]}
+                       if ranges else {'free': [], 'hours': None, 'closed': [[0, 24 * 60]]})
+        out.append({
+            'text': text, 'building': building, 'room': room, 'space': 'Study Spaces on the Hill',
+            'description': f'Open study space listed by Residential Life: "{posted}". '
+                           'No reservation. Hours may differ during breaks.',
+            'capacity': None, 'type': 'Hill study space', 'characteristics': [],
+            'url': SPACES_URL, 'area': 'hill', 'days': days,
+        })
+    return out
 
 
 def collect(days=8, workers=12):
@@ -128,12 +210,12 @@ def collect(days=8, workers=12):
         for s, e, title in slots:
             name, cap, notes = clean_title(title)
             rm = ROOM_RE.match(name)
-            building = rm.group('building').strip() if rm and rm.group('building').strip() else re.sub(r'\s*(study\s+rooms?|the study at)\s*', ' ', space, flags=re.I).strip()
+            building = rm.group('building').strip() if rm and rm.group('building').strip() else re.sub(r'\s*((study|meeting)\s+rooms?|the study at)\s*', ' ', space, flags=re.I).strip()
             if not name.lower().startswith(building.lower()):
                 name = f"{building} {name}"
             room = rooms.setdefault(name, {
                 'text': name,
-                'building': building.upper(),
+                'building': building_code(building),
                 'room': rm.group('room') if rm else name,
                 'space': space,
                 'description': spaces[sid]['description'],
@@ -168,7 +250,7 @@ def collect(days=8, workers=12):
         'source': BASE + '/reserve',
         'pages_failed': failed,
         'dates': dates,
-        'rooms': sorted(rooms.values(), key=lambda r: r['text']),
+        'rooms': sorted(rooms.values(), key=lambda r: r['text']) + hill_spaces(session, dates),
     }
 
 
