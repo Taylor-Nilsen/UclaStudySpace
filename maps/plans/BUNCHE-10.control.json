@@ -40,7 +40,8 @@
   "The tower floors (3 to 11) share this footprint; only floor 10 is drawn from this plan.",
   "Room numbers come from the plan's labels; the occupant names (2006) are not kept.",
   "The east wall is drawn with cyan window dashes over the black wall line; a cut along it seals the gaps the color filter leaves.",
-  "The tower footprint is symmetric end to end, so the outline fit alone can't tell which way round the plan goes; the orientation is set so UCLA's restroom records for the tower (x253, x257, x350 on floors 3, 4 and 8, which stack) fall in the plan's restrooms next to the elevator core."
+  "The tower footprint is symmetric end to end, so the outline fit alone can't tell which way round the plan goes; the orientation is set so UCLA's restroom records for the tower (x253, x257, x350 on floors 3, 4 and 8, which stack) fall in the plan's restrooms next to the elevator core.",
+  "Stray OCR readings from leader lines and the title (9820T, 1D2, 1028, 286, 27D) are cleared by hand; those rooms keep no number."
  ],
  "cuts": [
   [
@@ -53,5 +54,70 @@
     3033
    ]
   ]
+ ],
+ "set": [
+  {
+   "px": [
+    1732,
+    825
+   ],
+   "ref": "",
+   "label": "",
+   "kind": "room"
+  },
+  {
+   "px": [
+    1299,
+    473
+   ],
+   "ref": "",
+   "label": "",
+   "kind": "other"
+  },
+  {
+   "px": [
+    1737,
+    1948
+   ],
+   "ref": "",
+   "label": "",
+   "kind": "room"
+  },
+  {
+   "px": [
+    1448,
+    2360
+   ],
+   "ref": "",
+   "label": "",
+   "kind": "room"
+  },
+  {
+   "px": [
+    1449,
+    2465
+   ],
+   "ref": "",
+   "label": "",
+   "kind": "room"
+  },
+  {
+   "px": [
+    1706,
+    2481
+   ],
+   "ref": "",
+   "label": "",
+   "kind": "room"
+  },
+  {
+   "px": [
+    1699,
+    2687
+   ],
+   "ref": "",
+   "label": "",
+   "kind": "room"
+  }
  ]
 }

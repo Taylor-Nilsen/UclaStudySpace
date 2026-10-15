@@ -7,6 +7,7 @@
     python maps/trace_plan.py --render PLAN.pdf --page 2 --dpi 150 --out grid.png
                                                                       # rasterize with a pixel grid, to pick control points
     python maps/trace_plan.py --merge-all                             # re-merge every floor record into maps/<CODE>.json
+    python maps/trace_plan.py --regularize-all                        # snap every record's rooms and walls to its plan grid (done on every write too)
 
 Needs: numpy, opencv-python-headless, Pillow, scikit-image, scipy; pypdfium2 and
 pdfplumber for PDFs; pytesseract + the tesseract binary for OCR of raster plans
@@ -2141,8 +2142,230 @@ def render_grid(path, page, dpi, out, step=100):
 # ---------------------------------------------------------------------------
 # write
 # ---------------------------------------------------------------------------
+
+# ---------- regularize: snap rooms and walls to the plan's grid ----------
+# Traced polygons come off a raster: door swings and window dashes bite into rooms, thin walls wobble a
+# few degrees, and simplification leaves kinks. Buildings are rectilinear almost everywhere, so each
+# rectilinear room is rebuilt from its wall lines snapped to the plan's grid (or the room's own grid,
+# for an angled wing), short jogs (door bites) are dropped, and wall lines are snapped the same way.
+# Rooms that aren't rectilinear (curved, octagonal, diagonal walls) are left as traced.
+
+def _grid_angle(segs):
+    """Dominant axis of a set of segments (metres), period 90 degrees, in radians within (-45, 45]."""
+    s = c = 0.0
+    for (x0, y0), (x1, y1) in segs:
+        L = math.hypot(x1 - x0, y1 - y0)
+        if L < 0.3:
+            continue
+        a = 4 * math.atan2(y1 - y0, x1 - x0)
+        s += L * math.sin(a)
+        c += L * math.cos(a)
+    return math.atan2(s, c) / 4 if (s or c) else 0.0
+
+
+def _wrap90(deg):
+    return (deg + 45) % 90 - 45
+
+
+def _rot(pts, ang):
+    ca, sa = math.cos(ang), math.sin(ang)
+    return [(x * ca - y * sa, x * sa + y * ca) for x, y in pts]
+
+
+def _ring_segs(pts):
+    return [(pts[i - 1], pts[i]) for i in range(len(pts))]
+
+
+def _area(pts):
+    return 0.5 * sum(pts[i - 1][0] * pts[i][1] - pts[i][0] * pts[i - 1][1] for i in range(len(pts)))
+
+
+ORTHO_MIN_AXIS = 0.6    # share of a ring's edge length that must lie along its grid axes for it to count as rectilinear
+ORTHO_JOG_M = 0.9       # jogs shorter than this (door bites, pixel steps) are dropped
+
+
+def _orthogonalize(pts, tol_deg=12.0, jog_m=None):
+    jog_m = ORTHO_JOG_M if jog_m is None else jog_m
+    """Rebuild a ring (grid already axis-aligned) from axis-snapped runs of its edges; None when it isn't rectilinear."""
+    n = len(pts)
+    if n < 4:
+        return None
+    runs, tot, ok = [], 0.0, 0.0
+    for i in range(n):
+        (x0, y0), (x1, y1) = pts[i], pts[(i + 1) % n]
+        dx, dy = x1 - x0, y1 - y0
+        L = math.hypot(dx, dy)
+        if L < 1e-6:
+            continue
+        ang = abs(math.degrees(math.atan2(dy, dx))) % 180
+        tot += L
+        if min(ang, 180 - ang, abs(ang - 90)) <= tol_deg:
+            ok += L
+        k = 'H' if abs(dx) >= abs(dy) else 'V'
+        coord = (y0 + y1) / 2 if k == 'H' else (x0 + x1) / 2
+        if runs and runs[-1][0] == k:
+            runs[-1][1] += coord * L
+            runs[-1][2] += L
+        else:
+            runs.append([k, coord * L, L])
+    if tot == 0 or ok / tot < ORTHO_MIN_AXIS:
+        return None
+    if len(runs) > 1 and runs[0][0] == runs[-1][0]:
+        runs[0][1] += runs[-1][1]
+        runs[0][2] += runs[-1][2]
+        runs.pop()
+    # drop short jogs (door bites, pixel steps): a run whose neighbours sit within jog_m of each other
+    while len(runs) > 4:
+        m = len(runs)
+        pos = [r[1] / r[2] for r in runs]
+        j = min(range(m), key=lambda j: abs(pos[(j + 1) % m] - pos[j - 1]))
+        if abs(pos[(j + 1) % m] - pos[j - 1]) >= jog_m:
+            break
+        a, b = runs[j - 1], runs[(j + 1) % m]
+        a[1] += b[1]
+        a[2] += b[2]
+        for idx in sorted({j, (j + 1) % m}, reverse=True):
+            runs.pop(idx)
+    if len(runs) < 4 or len(runs) % 2:
+        return None
+    pos = [r[1] / r[2] for r in runs]
+    out = []
+    for j in range(len(runs)):
+        if runs[j - 1][0] == 'H':
+            out.append((pos[j], pos[j - 1]))
+        else:
+            out.append((pos[j - 1], pos[j]))
+    return out
+
+
+def _snap_ring_ll(ring, grid, plan_grid):
+    """ring: [[lat, lon], ...]. Returns the regularized ring or None."""
+    pts = [proj(a, b) for a, b in ring]
+    if len(pts) >= 2 and pts[0] == pts[-1]:
+        pts = pts[:-1]
+    if len(pts) < 4:
+        return None
+    own = _grid_angle(_ring_segs(pts))
+    ang = plan_grid if abs(_wrap90(math.degrees(own - plan_grid))) <= 7 else own
+    q = _rot(pts, -ang)
+    new = _orthogonalize(q)
+    if new is None:
+        return None
+    a0, a1 = abs(_area(q)), abs(_area(new))
+    if a0 < 0.5 or abs(a1 - a0) / a0 > 0.3:
+        return None
+    # the new ring must stay close to the traced one
+    def d_pt_seg(p, a, b):
+        ax, ay = a; bx, by = b; px, py = p
+        dx, dy = bx - ax, by - ay
+        t = 0 if dx == dy == 0 else max(0, min(1, ((px - ax) * dx + (py - ay) * dy) / (dx * dx + dy * dy)))
+        return math.hypot(px - ax - t * dx, py - ay - t * dy)
+    segs = _ring_segs(new)
+    if max(min(d_pt_seg(p, a, b) for a, b in segs) for p in q) > 1.5:
+        return None
+    try:
+        from shapely.geometry import Polygon
+        if not Polygon(new).is_valid:
+            return None
+    except Exception:
+        pass
+    return [[r6(v) for v in unproj(*xy)] for xy in _rot(new, ang)]
+
+
+def _snap_wall_ll(line, plan_grid, tol_deg=12.0, short_diag_m=1.5):
+    """Returns a list of polylines: the line snapped to the grid, split where short diagonal bits were cut out."""
+    pts = [proj(a, b) for a, b in line]
+    if len(pts) < 2:
+        return [line]
+    q = _rot(pts, -plan_grid)
+    cls = []
+    for i in range(len(q) - 1):
+        dx, dy = q[i + 1][0] - q[i][0], q[i + 1][1] - q[i][1]
+        ang = abs(math.degrees(math.atan2(dy, dx))) % 180
+        d = min(ang, 180 - ang, abs(ang - 90))
+        cls.append(None if d > tol_deg else ('H' if abs(dx) >= abs(dy) else 'V'))
+    q = [list(p) for p in q]
+    i = 0
+    while i < len(cls):
+        k = cls[i]
+        if k is None:
+            i += 1
+            continue
+        j = i
+        while j + 1 < len(cls) and cls[j + 1] == k:
+            j += 1
+        idx = list(range(i, j + 2))
+        c = 0 if k == 'V' else 1
+        w = [math.hypot(q[t + 1][0] - q[t][0], q[t + 1][1] - q[t][1]) for t in range(i, j + 1)]
+        vals = [(q[t][c] + q[t + 1][c]) / 2 for t in range(i, j + 1)]
+        pos = sum(v * ww for v, ww in zip(vals, w)) / max(sum(w), 1e-9)
+        for t in idx:
+            q[t][c] = pos
+        i = j + 1
+    # short diagonal bits are door swings and furniture off the raster, not walls: cut them out
+    pieces, cur = [], [q[0]]
+    for i in range(len(q) - 1):
+        L = math.hypot(q[i + 1][0] - q[i][0], q[i + 1][1] - q[i][1])
+        if cls[i] is None and L < short_diag_m:
+            if len(cur) >= 2:
+                pieces.append(cur)
+            cur = [q[i + 1]]
+        else:
+            cur.append(q[i + 1])
+    if len(cur) >= 2:
+        pieces.append(cur)
+    return [[[r6(v) for v in unproj(*xy)] for xy in _rot([tuple(p) for p in piece], plan_grid)] for piece in pieces]
+
+
+def regularize_record(rec):
+    """Snap the record's room polygons and wall lines to the plan grid, in place. Returns (rooms changed, rooms kept)."""
+    rooms = [r for r in rec.get('rooms', []) if r.get('poly')]
+    segs = []
+    for r in rooms:
+        segs += _ring_segs([proj(a, b) for a, b in r['poly']])
+    for w in rec.get('walls', []):
+        p = [proj(a, b) for a, b in w]
+        segs += list(zip(p, p[1:]))
+    if not segs:
+        return 0, 0
+    grid = _grid_angle(segs)
+    changed = kept = 0
+    for r in rooms:
+        if r.get('kind') in ('pod', 'xbox'):
+            kept += 1
+            continue
+        new = _snap_ring_ll(r['poly'], grid, grid)
+        if new is None:
+            kept += 1
+            continue
+        r['poly'] = new
+        if r.get('holes'):
+            r['holes'] = [(_snap_ring_ll(h, grid, grid) or h) for h in r['holes']]
+        changed += 1
+    rec['walls'] = [piece for w in rec.get('walls', []) for piece in _snap_wall_ll(w, grid)]
+    rec.setdefault('trace', {})['regularized'] = {'grid_deg': round(math.degrees(grid), 2), 'rooms_snapped': changed, 'rooms_as_traced': kept}
+    return changed, kept
+
+
+def regularize_all():
+    pdir = os.path.join(HERE, 'plans')
+    for fn in sorted(os.listdir(pdir)):
+        if not fn.endswith('.json') or fn.endswith('.control.json') or fn.endswith('.labels.json'):
+            continue
+        path = os.path.join(pdir, fn)
+        with open(path, encoding='utf-8') as fh:
+            rec = json.load(fh)
+        if rec.get('format') is None or 'rooms' not in rec:
+            continue
+        ch, kp = regularize_record(rec)
+        with open(path, 'w', encoding='utf-8') as fh:
+            json.dump(rec, fh, ensure_ascii=False, separators=(',', ':'))
+        say(f'  {fn}: {ch} rooms snapped to the grid, {kp} kept as traced')
+
+
 def write_record(rec, name=None):
     pdir = os.path.join(HERE, 'plans')
+    regularize_record(rec)
     os.makedirs(pdir, exist_ok=True)
     fn = name or f'{FP.slug(rec["building"])}-{rec["floor"]}.json'
     with open(os.path.join(pdir, fn), 'w', encoding='utf-8') as fh:
@@ -2215,6 +2438,7 @@ def main():
     ap.add_argument('--dpi', type=float, default=150)
     ap.add_argument('--out', help='output PNG for --render')
     ap.add_argument('--merge-all', action='store_true', help='re-merge every floor record into maps/<CODE>.json')
+    ap.add_argument('--regularize-all', action='store_true', help='snap every floor record\'s rooms and walls to its plan grid, then merge')
     a = ap.parse_args()
     if a.render:
         render_grid(a.render, a.page, a.dpi, a.out or 'grid.png')
@@ -2234,7 +2458,9 @@ def main():
         if not a.dry_run:
             write_record(rec, ctl.get('out'))
             touched.add(rec['building'])
-    if (touched or a.merge_all) and not a.dry_run:
+    if a.regularize_all:
+        regularize_all()
+    if (touched or a.merge_all or a.regularize_all) and not a.dry_run:
         merge_all(touched)
 
 

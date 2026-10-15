@@ -568,6 +568,9 @@
         // rooms
         const order = {corridor:0, other:1, mech:2, room:3, restroom:4, exit:4, stair:5, elevator:5, xbox:5, pod:6};
         const drawn = rooms.filter(r => r.pts).sort((a, b) => (order[a.kind] ?? 3) - (order[b.kind] ?? 3));
+        // the plan's own exterior as the thick wall: every traced space stroked thick underneath, then the
+        // fills cover the strokes along shared walls, so the thick line only survives where nothing adjoins
+        if(drawn.length) s += `<path d="${drawn.map(r => ringD(r.pts) + r.holesPts.map(ringD).join('')).join('')}" class="pp-ext" fill-rule="evenodd"/>`;
         let labels = '';
         for(const r of drawn){
             const isSel = r === sel;
@@ -605,7 +608,8 @@
         }
         // walls: plan walls thin, the outline thick (fire plan style)
         if(hasWalls) s += `<path d="${walls.map(w => 'M' + w.map(q => f2(q[0]) + ' ' + f2(q[1])).join('L')).join('')}" class="pp-wall"/>`;
-        s += `<path d="${outlineD}" class="pp-outer" fill-rule="evenodd"/>`;
+        // with a traced plan the footprint from the map sources is a reference line, not the wall
+        s += `<path d="${outlineD}" class="pp-outer${drawn.length ? ' pp-footprint' : ''}" fill-rule="evenodd"/>`;
 
         // doors, stairs, elevators, restrooms from the map sources
         const list = [];
