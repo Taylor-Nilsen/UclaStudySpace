@@ -434,7 +434,7 @@ def seasnet_labs(session, dates, failed, classrooms_file='classrooms.json'):
                            'or anyone enrolled in an engineering course). Closed on university holidays.'
                            + (' Classes are held here at times.' if ('BOELTER', room) in LAB_REGISTRAR_ROOMS else ''),
             'capacity': seats, 'type': 'Computer lab', 'characteristics': [],
-            'url': SEASNET_URL, 'area': 'campus', 'days': days,
+            'url': SEASNET_URL, 'area': 'library', 'days': days,
         })
     return rooms
 
