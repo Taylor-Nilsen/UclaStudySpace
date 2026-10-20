@@ -409,7 +409,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 105,
+     "enrolled": 104,
      "capacity": 105
     },
     {
@@ -493,7 +493,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 105,
+     "enrolled": 104,
      "capacity": 105
     },
     {
@@ -657,7 +657,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 131,
+     "enrolled": 130,
      "capacity": 135
     },
     {
@@ -749,7 +749,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 131,
+     "enrolled": 130,
      "capacity": 135
     },
     {
@@ -864,6 +864,14 @@
     "org": "Computer Science",
     "url": "https://www.cs.ucla.edu/upcoming-events/cs-201-haithem-turki-nvidia/",
     "date": "2026-10-22",
+    "start_time": "12:00 PM",
+    "end_time": "01:45 PM"
+   },
+   {
+    "title": "CS 201 | Sara Achour, Stanford University",
+    "org": "Computer Science",
+    "url": "https://www.cs.ucla.edu/upcoming-events/cs-201-sara-achour-stanford-university/",
+    "date": "2026-10-27",
     "start_time": "12:00 PM",
     "end_time": "01:45 PM"
    },
@@ -1267,7 +1275,7 @@
      "type": "LAB 1B",
      "start_time": "10:00 AM",
      "end_time": "01:50 PM",
-     "enrolled": 60,
+     "enrolled": 59,
      "capacity": 60
     }
    ],
@@ -1494,7 +1502,7 @@
      "type": "DIS 1C",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 28,
+     "enrolled": 26,
      "capacity": 30
     },
     {
@@ -1588,7 +1596,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 16,
+     "enrolled": 15,
      "capacity": 25
     },
     {
@@ -1646,7 +1654,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 56,
+     "enrolled": 55,
      "capacity": 60
     },
     {
@@ -1688,7 +1696,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 16,
+     "enrolled": 15,
      "capacity": 25
     },
     {
@@ -1746,7 +1754,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 56,
+     "enrolled": 55,
      "capacity": 60
     },
     {
@@ -2149,7 +2157,7 @@
      "type": "DIS 1A",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 41,
+     "enrolled": 40,
      "capacity": 40
     },
     {
@@ -2157,7 +2165,7 @@
      "type": "LEC 1",
      "start_time": "12:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 8,
+     "enrolled": 7,
      "capacity": 60
     },
     {
@@ -2265,7 +2273,7 @@
      "type": "DIS 1A",
      "start_time": "10:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 32,
+     "enrolled": 31,
      "capacity": 40
     },
     {
@@ -2273,7 +2281,7 @@
      "type": "LEC 1",
      "start_time": "12:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 8,
+     "enrolled": 7,
      "capacity": 60
     },
     {
@@ -2429,7 +2437,7 @@
      "type": "DIS 1A",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 27,
+     "enrolled": 26,
      "capacity": 35
     },
     {
@@ -3163,7 +3171,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 43,
+     "enrolled": 42,
      "capacity": 44
     }
    ],
@@ -3255,7 +3263,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 43,
+     "enrolled": 42,
      "capacity": 44
     }
    ],
@@ -3815,7 +3823,7 @@
      "type": "DIS 1B",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 39,
+     "enrolled": 38,
      "capacity": 40
     },
     {
@@ -3928,7 +3936,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 31,
+     "enrolled": 30,
      "capacity": 35
     },
     {
@@ -4020,7 +4028,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 31,
+     "enrolled": 30,
      "capacity": 35
     },
     {
@@ -4864,7 +4872,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 43,
+     "enrolled": 42,
      "capacity": 45
     },
     {
@@ -4872,7 +4880,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 19,
+     "enrolled": 17,
      "capacity": 45
     }
    ],
@@ -4948,7 +4956,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 43,
+     "enrolled": 42,
      "capacity": 45
     },
     {
@@ -4956,7 +4964,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 19,
+     "enrolled": 17,
      "capacity": 45
     }
    ],
@@ -4982,7 +4990,7 @@
      "type": "REC 1C",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 25,
+     "enrolled": 24,
      "capacity": 35
     },
     {
@@ -5219,8 +5227,8 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 60,
-     "capacity": 60
+     "enrolled": 59,
+     "capacity": 58
     },
     {
      "course": "HIST 149A",
@@ -5235,7 +5243,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 60,
+     "enrolled": 59,
      "capacity": 60
     },
     {
@@ -5243,7 +5251,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 79,
+     "enrolled": 76,
      "capacity": 80
     }
    ],
@@ -5277,7 +5285,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 55,
+     "enrolled": 54,
      "capacity": 65
     },
     {
@@ -5285,7 +5293,7 @@
      "type": "LEC 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 62,
+     "enrolled": 61,
      "capacity": 75
     }
    ],
@@ -5311,8 +5319,8 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 60,
-     "capacity": 60
+     "enrolled": 59,
+     "capacity": 58
     },
     {
      "course": "HIST 149A",
@@ -5327,7 +5335,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 60,
+     "enrolled": 59,
      "capacity": 60
     },
     {
@@ -5335,7 +5343,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 79,
+     "enrolled": 76,
      "capacity": 80
     }
    ],
@@ -5369,7 +5377,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 55,
+     "enrolled": 54,
      "capacity": 65
     },
     {
@@ -5377,7 +5385,7 @@
      "type": "LEC 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 62,
+     "enrolled": 61,
      "capacity": 75
     },
     {
@@ -5385,7 +5393,7 @@
      "type": "DIS 1A",
      "start_time": "06:00 PM",
      "end_time": "06:50 PM",
-     "enrolled": 62,
+     "enrolled": 61,
      "capacity": 75
     }
    ],
@@ -5419,7 +5427,7 @@
      "type": "DIS 1B",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 42,
+     "enrolled": 41,
      "capacity": 60
     }
    ],
@@ -5513,7 +5521,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 238,
+     "enrolled": 237,
      "capacity": 276
     },
     {
@@ -5563,7 +5571,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 358,
+     "enrolled": 359,
      "capacity": 360
     },
     {
@@ -5613,7 +5621,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 238,
+     "enrolled": 237,
      "capacity": 276
     },
     {
@@ -5663,7 +5671,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 358,
+     "enrolled": 359,
      "capacity": 360
     },
     {
@@ -5899,7 +5907,7 @@
      "type": "LEC 3",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 207,
+     "enrolled": 206,
      "capacity": 210
     },
     {
@@ -5965,7 +5973,7 @@
      "type": "LEC 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 225,
+     "enrolled": 224,
      "capacity": 225
     },
     {
@@ -5973,7 +5981,7 @@
      "type": "LEC 2",
      "start_time": "05:00 PM",
      "end_time": "06:15 PM",
-     "enrolled": 124,
+     "enrolled": 123,
      "capacity": 0
     }
    ],
@@ -6023,7 +6031,7 @@
      "type": "LEC 3",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 207,
+     "enrolled": 206,
      "capacity": 210
     },
     {
@@ -6089,7 +6097,7 @@
      "type": "LEC 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 225,
+     "enrolled": 224,
      "capacity": 225
     },
     {
@@ -6097,7 +6105,7 @@
      "type": "LEC 2",
      "start_time": "05:00 PM",
      "end_time": "06:15 PM",
-     "enrolled": 124,
+     "enrolled": 123,
      "capacity": 0
     }
    ],
@@ -6147,7 +6155,7 @@
      "type": "LEC 3",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 207,
+     "enrolled": 206,
      "capacity": 210
     },
     {
@@ -6254,7 +6262,7 @@
      "type": "DIS 1D",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 24,
+     "enrolled": 23,
      "capacity": 25
     },
     {
@@ -6846,7 +6854,7 @@
      "start_time": "05:00 PM",
      "end_time": "05:50 PM",
      "enrolled": 18,
-     "capacity": 20
+     "capacity": 18
     },
     {
      "course": "POL SCI 147A",
@@ -6854,7 +6862,7 @@
      "start_time": "06:00 PM",
      "end_time": "06:50 PM",
      "enrolled": 6,
-     "capacity": 20
+     "capacity": 6
     },
     {
      "course": "POL SCI 147A",
@@ -6862,7 +6870,7 @@
      "start_time": "07:00 PM",
      "end_time": "07:50 PM",
      "enrolled": 7,
-     "capacity": 20
+     "capacity": 7
     }
    ],
    "Thursday": [
@@ -7280,7 +7288,7 @@
      "type": "SEM 2",
      "start_time": "04:00 PM",
      "end_time": "04:50 PM",
-     "enrolled": 10,
+     "enrolled": 11,
      "capacity": 20
     }
    ],
@@ -7331,7 +7339,7 @@
      "start_time": "05:00 PM",
      "end_time": "05:50 PM",
      "enrolled": 12,
-     "capacity": 20
+     "capacity": 12
     },
     {
      "course": "POL SCI 147A",
@@ -7339,7 +7347,7 @@
      "start_time": "06:00 PM",
      "end_time": "06:50 PM",
      "enrolled": 1,
-     "capacity": 20
+     "capacity": 1
     },
     {
      "course": "POL SCI 147A",
@@ -7347,7 +7355,7 @@
      "start_time": "07:00 PM",
      "end_time": "07:50 PM",
      "enrolled": 0,
-     "capacity": 20
+     "capacity": 0
     }
    ],
    "Thursday": [
@@ -7414,7 +7422,7 @@
      "type": "DIS 1L",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 23,
+     "enrolled": 22,
      "capacity": 11
     }
    ],
@@ -7572,7 +7580,7 @@
      "type": "LEC 1",
      "start_time": "12:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 10,
+     "enrolled": 9,
      "capacity": 40
     }
    ],
@@ -7600,7 +7608,7 @@
      "type": "LEC 1",
      "start_time": "12:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 10,
+     "enrolled": 9,
      "capacity": 40
     }
    ],
@@ -7695,7 +7703,7 @@
      "type": "DIS 1D",
      "start_time": "08:00 AM",
      "end_time": "08:50 AM",
-     "enrolled": 15,
+     "enrolled": 14,
      "capacity": 0
     },
     {
@@ -7786,7 +7794,7 @@
      "start_time": "06:00 PM",
      "end_time": "06:50 PM",
      "enrolled": 19,
-     "capacity": 20
+     "capacity": 19
     },
     {
      "course": "POL SCI 151A",
@@ -7804,7 +7812,7 @@
      "start_time": "08:00 AM",
      "end_time": "08:50 AM",
      "enrolled": 17,
-     "capacity": 20
+     "capacity": 16
     },
     {
      "course": "POL SCI 6",
@@ -7812,7 +7820,7 @@
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
      "enrolled": 17,
-     "capacity": 20
+     "capacity": 16
     },
     {
      "course": "POL SCI 6",
@@ -7820,7 +7828,7 @@
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
      "enrolled": 19,
-     "capacity": 20
+     "capacity": 18
     },
     {
      "course": "MATH 61",
@@ -8174,7 +8182,7 @@
      "type": "LEC 1",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 227,
+     "enrolled": 226,
      "capacity": 210
     },
     {
@@ -8206,7 +8214,7 @@
      "type": "LEC 1",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 190,
+     "enrolled": 189,
      "capacity": 210
     },
     {
@@ -8298,7 +8306,7 @@
      "type": "LEC 1",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 227,
+     "enrolled": 226,
      "capacity": 210
     },
     {
@@ -8330,7 +8338,7 @@
      "type": "LEC 1",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 190,
+     "enrolled": 189,
      "capacity": 210
     },
     {
@@ -8422,7 +8430,7 @@
      "type": "LEC 1",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 227,
+     "enrolled": 226,
      "capacity": 210
     },
     {
@@ -8454,7 +8462,7 @@
      "type": "LEC 1",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 190,
+     "enrolled": 189,
      "capacity": 210
     },
     {
@@ -8600,7 +8608,7 @@
      "start_time": "06:00 PM",
      "end_time": "06:50 PM",
      "enrolled": 19,
-     "capacity": 20
+     "capacity": 19
     },
     {
      "course": "POL SCI 151A",
@@ -8608,7 +8616,7 @@
      "start_time": "07:00 PM",
      "end_time": "07:50 PM",
      "enrolled": 19,
-     "capacity": 20
+     "capacity": 19
     }
    ],
    "Thursday": [
@@ -9182,7 +9190,7 @@
      "start_time": "06:00 PM",
      "end_time": "06:50 PM",
      "enrolled": 19,
-     "capacity": 20
+     "capacity": 19
     },
     {
      "course": "POL SCI 153A",
@@ -9190,7 +9198,7 @@
      "start_time": "07:00 PM",
      "end_time": "07:50 PM",
      "enrolled": 19,
-     "capacity": 20
+     "capacity": 19
     }
    ],
    "Thursday": [
@@ -9344,7 +9352,7 @@
      "type": "LEC 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 35,
+     "enrolled": 34,
      "capacity": 36
     },
     {
@@ -9370,7 +9378,7 @@
      "type": "DIS 1A",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 26,
+     "enrolled": 25,
      "capacity": 30
     },
     {
@@ -9396,7 +9404,7 @@
      "type": "DIS 1D",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 20,
+     "enrolled": 19,
      "capacity": 25
     },
     {
@@ -9420,7 +9428,7 @@
      "type": "LEC 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 35,
+     "enrolled": 34,
      "capacity": 36
     },
     {
@@ -9436,8 +9444,8 @@
      "type": "DIS 1E",
      "start_time": "06:00 PM",
      "end_time": "06:50 PM",
-     "enrolled": 19,
-     "capacity": 20
+     "enrolled": 18,
+     "capacity": 18
     },
     {
      "course": "POL SCI 153A",
@@ -9445,7 +9453,7 @@
      "start_time": "07:00 PM",
      "end_time": "07:50 PM",
      "enrolled": 18,
-     "capacity": 20
+     "capacity": 18
     }
    ],
    "Thursday": [
@@ -9521,7 +9529,7 @@
      "start_time": "08:00 AM",
      "end_time": "08:50 AM",
      "enrolled": 9,
-     "capacity": 20
+     "capacity": 9
     },
     {
      "course": "FRNCH 41",
@@ -9537,7 +9545,7 @@
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
      "enrolled": 17,
-     "capacity": 20
+     "capacity": 17
     },
     {
      "course": "PHILOS 173",
@@ -9552,7 +9560,7 @@
      "type": "DIS 1B",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 32,
+     "enrolled": 31,
      "capacity": 30
     },
     {
@@ -9666,7 +9674,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 30,
+     "enrolled": 29,
      "capacity": 40
     },
     {
@@ -9742,7 +9750,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 30,
+     "enrolled": 29,
      "capacity": 40
     },
     {
@@ -9785,7 +9793,7 @@
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
      "enrolled": 17,
-     "capacity": 20
+     "capacity": 17
     },
     {
      "course": "CHEM 153A",
@@ -9808,7 +9816,7 @@
      "type": "DIS 1A",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 37,
+     "enrolled": 35,
      "capacity": 40
     },
     {
@@ -9816,7 +9824,7 @@
      "type": "DIS 1B",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 40,
+     "enrolled": 39,
      "capacity": 40
     }
    ],
@@ -10268,7 +10276,7 @@
      "type": "DIS 1F",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 32,
+     "enrolled": 31,
      "capacity": 35
     },
     {
@@ -10771,7 +10779,7 @@
      "type": "DIS 1F",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 24,
+     "enrolled": 23,
      "capacity": 25
     },
     {
@@ -11782,7 +11790,7 @@
      "type": "DIS 1E",
      "start_time": "10:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 23,
+     "enrolled": 22,
      "capacity": 23
     },
     {
@@ -12303,7 +12311,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 326,
+     "enrolled": 325,
      "capacity": 326
     },
     {
@@ -12387,7 +12395,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 326,
+     "enrolled": 325,
      "capacity": 326
     },
     {
@@ -12798,7 +12806,7 @@
      "type": "LEC 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 134,
+     "enrolled": 133,
      "capacity": 150
     },
     {
@@ -12816,7 +12824,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:15 AM",
-     "enrolled": 138,
+     "enrolled": 137,
      "capacity": 150
     },
     {
@@ -12864,7 +12872,7 @@
      "type": "LEC 1",
      "start_time": "05:00 PM",
      "end_time": "06:15 PM",
-     "enrolled": 143,
+     "enrolled": 142,
      "capacity": 150
     }
    ],
@@ -12906,7 +12914,7 @@
      "type": "LEC 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 134,
+     "enrolled": 133,
      "capacity": 150
     },
     {
@@ -12924,7 +12932,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:15 AM",
-     "enrolled": 138,
+     "enrolled": 137,
      "capacity": 150
     },
     {
@@ -12972,7 +12980,7 @@
      "type": "LEC 1",
      "start_time": "05:00 PM",
      "end_time": "06:15 PM",
-     "enrolled": 143,
+     "enrolled": 142,
      "capacity": 150
     }
    ],
@@ -13349,7 +13357,7 @@
      "type": "LEC 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 93,
+     "enrolled": 92,
      "capacity": 168
     },
     {
@@ -13457,7 +13465,7 @@
      "type": "LEC 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 93,
+     "enrolled": 92,
      "capacity": 168
     },
     {
@@ -13833,7 +13841,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 100,
+     "enrolled": 99,
      "capacity": 0
     },
     {
@@ -13849,7 +13857,7 @@
      "type": "SEM 1",
      "start_time": "06:00 PM",
      "end_time": "07:50 PM",
-     "enrolled": 82,
+     "enrolled": 81,
      "capacity": 90
     }
    ],
@@ -13925,7 +13933,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 100,
+     "enrolled": 99,
      "capacity": 0
     },
     {
@@ -13941,7 +13949,7 @@
      "type": "SEM 1",
      "start_time": "06:00 PM",
      "end_time": "07:50 PM",
-     "enrolled": 82,
+     "enrolled": 81,
      "capacity": 90
     }
    ],
@@ -13967,7 +13975,7 @@
      "type": "DIS 1A",
      "start_time": "12:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 63,
+     "enrolled": 62,
      "capacity": 67
     },
     {
@@ -14327,7 +14335,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 63,
+     "enrolled": 62,
      "capacity": 0
     },
     {
@@ -14419,7 +14427,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 63,
+     "enrolled": 62,
      "capacity": 0
     },
     {
@@ -14558,7 +14566,7 @@
      "type": "LEC 3",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 49,
+     "enrolled": 48,
      "capacity": 60
     },
     {
@@ -14567,7 +14575,7 @@
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
      "enrolled": 60,
-     "capacity": 60
+     "capacity": 58
     },
     {
      "course": "POL SCI 186",
@@ -14575,7 +14583,7 @@
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
      "enrolled": 60,
-     "capacity": 60
+     "capacity": 58
     },
     {
      "course": "EE BIOL 15",
@@ -14642,7 +14650,7 @@
      "type": "LEC 3",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 49,
+     "enrolled": 48,
      "capacity": 60
     },
     {
@@ -14651,7 +14659,7 @@
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
      "enrolled": 60,
-     "capacity": 60
+     "capacity": 58
     },
     {
      "course": "POL SCI 186",
@@ -14659,7 +14667,7 @@
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
      "enrolled": 60,
-     "capacity": 60
+     "capacity": 58
     },
     {
      "course": "EE BIOL 15",
@@ -14684,7 +14692,7 @@
      "type": "DIS 1A",
      "start_time": "08:00 AM",
      "end_time": "08:50 AM",
-     "enrolled": 53,
+     "enrolled": 52,
      "capacity": 53
     },
     {
@@ -14841,7 +14849,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 74,
+     "enrolled": 73,
      "capacity": 96
     },
     {
@@ -14941,7 +14949,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 74,
+     "enrolled": 73,
      "capacity": 96
     },
     {
@@ -15335,7 +15343,7 @@
      "type": "DIS 1X",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 19,
+     "enrolled": 20,
      "capacity": 19
     }
    ],
@@ -15914,7 +15922,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 148,
+     "enrolled": 147,
      "capacity": 200
     },
     {
@@ -16014,7 +16022,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 148,
+     "enrolled": 147,
      "capacity": 200
     },
     {
@@ -16048,7 +16056,7 @@
      "type": "DIS 1A",
      "start_time": "12:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 58,
+     "enrolled": 54,
      "capacity": 60
     },
     {
@@ -16527,7 +16535,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 193,
+     "enrolled": 191,
      "capacity": 225
     },
     {
@@ -16535,7 +16543,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 164,
+     "enrolled": 162,
      "capacity": 180
     },
     {
@@ -16611,7 +16619,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 193,
+     "enrolled": 191,
      "capacity": 225
     },
     {
@@ -16619,7 +16627,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 164,
+     "enrolled": 162,
      "capacity": 180
     },
     {
@@ -17023,7 +17031,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 66,
+     "enrolled": 65,
      "capacity": 70
     },
     {
@@ -17131,7 +17139,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 66,
+     "enrolled": 65,
      "capacity": 70
     },
     {
@@ -17231,7 +17239,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 66,
+     "enrolled": 65,
      "capacity": 70
     },
     {
@@ -18197,7 +18205,7 @@
      "type": "DIS 1A",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 51,
+     "enrolled": 50,
      "capacity": 54
     },
     {
@@ -18535,7 +18543,7 @@
      "type": "DIS 1C",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 39,
+     "enrolled": 38,
      "capacity": 40
     },
     {
@@ -18676,7 +18684,7 @@
      "type": "LEC 1",
      "start_time": "05:00 PM",
      "end_time": "06:50 PM",
-     "enrolled": 58,
+     "enrolled": 57,
      "capacity": 60
     }
    ],
@@ -18768,7 +18776,7 @@
      "type": "LEC 1",
      "start_time": "05:00 PM",
      "end_time": "06:50 PM",
-     "enrolled": 58,
+     "enrolled": 57,
      "capacity": 60
     }
    ],
@@ -18904,7 +18912,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 36,
+     "enrolled": 35,
      "capacity": 40
     },
     {
@@ -18946,7 +18954,7 @@
      "type": "DIS 1A",
      "start_time": "08:00 AM",
      "end_time": "08:50 AM",
-     "enrolled": 41,
+     "enrolled": 40,
      "capacity": 40
     },
     {
@@ -18970,7 +18978,7 @@
      "type": "DIS 1A",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 40,
+     "enrolled": 38,
      "capacity": 40
     },
     {
@@ -19028,7 +19036,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 36,
+     "enrolled": 35,
      "capacity": 40
     },
     {
@@ -19102,7 +19110,7 @@
      "type": "DIS 1B",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 40,
+     "enrolled": 38,
      "capacity": 40
     },
     {
@@ -19176,7 +19184,7 @@
      "type": "DIS 3A",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 43,
+     "enrolled": 42,
      "capacity": 0
     },
     {
@@ -19184,7 +19192,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 36,
+     "enrolled": 35,
      "capacity": 40
     },
     {
@@ -19463,7 +19471,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 417,
+     "enrolled": 415,
      "capacity": 420
     },
     {
@@ -19479,7 +19487,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 334,
+     "enrolled": 333,
      "capacity": 0
     },
     {
@@ -19579,7 +19587,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 417,
+     "enrolled": 415,
      "capacity": 420
     },
     {
@@ -19595,7 +19603,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 334,
+     "enrolled": 333,
      "capacity": 0
     },
     {
@@ -19637,7 +19645,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 90,
+     "enrolled": 89,
      "capacity": 168
     }
    ],
@@ -19699,7 +19707,7 @@
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
      "enrolled": 17,
-     "capacity": 20
+     "capacity": 15
     },
     {
      "course": "SOCIOL 110",
@@ -19791,7 +19799,7 @@
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
      "enrolled": 17,
-     "capacity": 20
+     "capacity": 15
     }
    ],
    "Thursday": [
@@ -19884,7 +19892,7 @@
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
      "enrolled": 105,
-     "capacity": 120
+     "capacity": 100
     },
     {
      "course": "CCAS M155B",
@@ -19892,7 +19900,7 @@
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
      "enrolled": 120,
-     "capacity": 120
+     "capacity": 118
     },
     {
      "course": "POL SCI 147A",
@@ -19900,7 +19908,7 @@
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
      "enrolled": 44,
-     "capacity": 120
+     "capacity": 40
     },
     {
      "course": "KOREA M60",
@@ -19925,8 +19933,8 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:15 AM",
-     "enrolled": 112,
-     "capacity": 120
+     "enrolled": 111,
+     "capacity": 100
     },
     {
      "course": "GENDER M186B",
@@ -19965,7 +19973,7 @@
      "type": "LEC 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 118,
+     "enrolled": 117,
      "capacity": 120
     },
     {
@@ -19984,7 +19992,7 @@
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
      "enrolled": 105,
-     "capacity": 120
+     "capacity": 100
     },
     {
      "course": "CCAS M155B",
@@ -19992,7 +20000,7 @@
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
      "enrolled": 120,
-     "capacity": 120
+     "capacity": 118
     },
     {
      "course": "POL SCI 147A",
@@ -20000,7 +20008,7 @@
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
      "enrolled": 44,
-     "capacity": 120
+     "capacity": 40
     },
     {
      "course": "KOREA M60",
@@ -20025,8 +20033,8 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:15 AM",
-     "enrolled": 112,
-     "capacity": 120
+     "enrolled": 111,
+     "capacity": 100
     },
     {
      "course": "GENDER M186B",
@@ -20065,7 +20073,7 @@
      "type": "LEC 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 118,
+     "enrolled": 117,
      "capacity": 120
     },
     {
@@ -20272,7 +20280,7 @@
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
      "enrolled": 17,
-     "capacity": 20
+     "capacity": 16
     },
     {
      "course": "POL SCI 6",
@@ -20280,7 +20288,7 @@
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
      "enrolled": 20,
-     "capacity": 20
+     "capacity": 19
     },
     {
      "course": "KOREA 100A",
@@ -20321,7 +20329,7 @@
      "type": "DIS 1G",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 18,
+     "enrolled": 17,
      "capacity": 18
     },
     {
@@ -20400,7 +20408,7 @@
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
      "enrolled": 63,
-     "capacity": 120
+     "capacity": 60
     },
     {
      "course": "BIOL CH M140",
@@ -20415,8 +20423,8 @@
      "type": "LEC 3",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 116,
-     "capacity": 120
+     "enrolled": 114,
+     "capacity": 100
     },
     {
      "course": "FRNCH 41",
@@ -20466,7 +20474,7 @@
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
      "enrolled": 81,
-     "capacity": 118
+     "capacity": 98
     },
     {
      "course": "HIST 180A",
@@ -20482,7 +20490,7 @@
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
      "enrolled": 110,
-     "capacity": 120
+     "capacity": 110
     }
    ],
    "Wednesday": [
@@ -20492,7 +20500,7 @@
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
      "enrolled": 63,
-     "capacity": 120
+     "capacity": 60
     },
     {
      "course": "BIOL CH M140",
@@ -20507,8 +20515,8 @@
      "type": "LEC 3",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 116,
-     "capacity": 120
+     "enrolled": 114,
+     "capacity": 100
     },
     {
      "course": "FRNCH 41",
@@ -20558,7 +20566,7 @@
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
      "enrolled": 81,
-     "capacity": 118
+     "capacity": 98
     },
     {
      "course": "HIST 180A",
@@ -20574,7 +20582,7 @@
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
      "enrolled": 110,
-     "capacity": 120
+     "capacity": 110
     }
    ],
    "Friday": [
@@ -20691,8 +20699,8 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:50 PM",
-     "enrolled": 119,
-     "capacity": 120
+     "enrolled": 120,
+     "capacity": 115
     },
     {
      "course": "POL SCI 139",
@@ -20733,7 +20741,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 122,
+     "enrolled": 121,
      "capacity": 120
     },
     {
@@ -20783,8 +20791,8 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:50 PM",
-     "enrolled": 119,
-     "capacity": 120
+     "enrolled": 120,
+     "capacity": 115
     },
     {
      "course": "POL SCI 139",
@@ -20825,7 +20833,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 122,
+     "enrolled": 121,
      "capacity": 120
     },
     {
@@ -20867,7 +20875,7 @@
      "type": "DIS 2A",
      "start_time": "10:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 48,
+     "enrolled": 47,
      "capacity": 0
     },
     {
@@ -20989,7 +20997,7 @@
      "type": "DIS 1F",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 20,
+     "enrolled": 19,
      "capacity": 20
     },
     {
@@ -21014,7 +21022,7 @@
      "start_time": "05:00 PM",
      "end_time": "05:50 PM",
      "enrolled": 16,
-     "capacity": 20
+     "capacity": 16
     },
     {
      "course": "POL SCI 169",
@@ -21022,7 +21030,7 @@
      "start_time": "06:00 PM",
      "end_time": "06:50 PM",
      "enrolled": 6,
-     "capacity": 20
+     "capacity": 5
     },
     {
      "course": "POL SCI 169",
@@ -21030,7 +21038,7 @@
      "start_time": "07:00 PM",
      "end_time": "07:50 PM",
      "enrolled": 2,
-     "capacity": 20
+     "capacity": 2
     }
    ],
    "Thursday": [
@@ -21202,7 +21210,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 89,
+     "enrolled": 88,
      "capacity": 105
     },
     {
@@ -21294,7 +21302,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 89,
+     "enrolled": 88,
      "capacity": 105
     },
     {
@@ -21524,7 +21532,7 @@
      "start_time": "04:00 PM",
      "end_time": "04:50 PM",
      "enrolled": 18,
-     "capacity": 20
+     "capacity": 18
     }
    ],
    "Friday": [
@@ -21743,7 +21751,7 @@
      "start_time": "05:00 PM",
      "end_time": "05:50 PM",
      "enrolled": 18,
-     "capacity": 20
+     "capacity": 18
     },
     {
      "course": "POL SCI 169",
@@ -21751,7 +21759,7 @@
      "start_time": "06:00 PM",
      "end_time": "06:50 PM",
      "enrolled": 10,
-     "capacity": 20
+     "capacity": 10
     },
     {
      "course": "POL SCI 169",
@@ -21759,7 +21767,7 @@
      "start_time": "07:00 PM",
      "end_time": "07:50 PM",
      "enrolled": 11,
-     "capacity": 20
+     "capacity": 11
     }
    ],
    "Thursday": [
@@ -21894,7 +21902,7 @@
      "type": "LEC 1",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 27,
+     "enrolled": 26,
      "capacity": 35
     },
     {
@@ -21994,7 +22002,7 @@
      "type": "LEC 1",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 27,
+     "enrolled": 26,
      "capacity": 35
     },
     {
@@ -22110,7 +22118,7 @@
      "type": "LEC 1",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 27,
+     "enrolled": 26,
      "capacity": 35
     },
     {
@@ -22126,7 +22134,7 @@
      "type": "DIS 1A",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 30,
+     "enrolled": 29,
      "capacity": 30
     },
     {
@@ -22158,7 +22166,7 @@
      "type": "DIS 1E",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 42,
+     "enrolled": 41,
      "capacity": 60
     }
    ],
@@ -22321,7 +22329,7 @@
      "start_time": "08:00 AM",
      "end_time": "08:50 AM",
      "enrolled": 15,
-     "capacity": 20
+     "capacity": 14
     },
     {
      "course": "JAPAN 1",
@@ -22361,7 +22369,7 @@
      "start_time": "05:00 PM",
      "end_time": "05:50 PM",
      "enrolled": 19,
-     "capacity": 20
+     "capacity": 19
     },
     {
      "course": "POL SCI 140B",
@@ -22369,7 +22377,7 @@
      "start_time": "06:00 PM",
      "end_time": "06:50 PM",
      "enrolled": 18,
-     "capacity": 20
+     "capacity": 18
     }
    ],
    "Friday": [
@@ -22494,7 +22502,7 @@
      "type": "SEM 4",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 11,
+     "enrolled": 10,
      "capacity": 15
     },
     {
@@ -22578,7 +22586,7 @@
      "type": "SEM 4",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 11,
+     "enrolled": 10,
      "capacity": 15
     },
     {
@@ -22638,7 +22646,7 @@
      "type": "DIS 1B",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 11,
+     "enrolled": 10,
      "capacity": 16
     },
     {
@@ -22913,8 +22921,8 @@
      "type": "DIS 1D",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 18,
-     "capacity": 20
+     "enrolled": 17,
+     "capacity": 18
     },
     {
      "course": "POL SCI 118",
@@ -22922,7 +22930,7 @@
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
      "enrolled": 17,
-     "capacity": 20
+     "capacity": 17
     },
     {
      "course": "POL SCI 118",
@@ -22930,7 +22938,7 @@
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
      "enrolled": 17,
-     "capacity": 20
+     "capacity": 17
     }
    ],
    "Saturday": [],
@@ -24043,7 +24051,7 @@
      "type": "LEC 2",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 117,
+     "enrolled": 116,
      "capacity": 115
     },
     {
@@ -24135,7 +24143,7 @@
      "type": "LEC 2",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 117,
+     "enrolled": 116,
      "capacity": 115
     },
     {
@@ -24270,7 +24278,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 121,
+     "enrolled": 120,
      "capacity": 115
     },
     {
@@ -24312,7 +24320,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 129,
+     "enrolled": 128,
      "capacity": 131
     },
     {
@@ -24354,7 +24362,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 121,
+     "enrolled": 120,
      "capacity": 115
     },
     {
@@ -24396,7 +24404,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 129,
+     "enrolled": 128,
      "capacity": 131
     },
     {
@@ -24430,7 +24438,7 @@
      "type": "DIS 1B",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 38,
+     "enrolled": 37,
      "capacity": 60
     }
    ],
@@ -24733,7 +24741,7 @@
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
      "enrolled": 8,
-     "capacity": 19
+     "capacity": 18
     },
     {
      "course": "CLASSIC M121",
@@ -24741,7 +24749,7 @@
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
      "enrolled": 16,
-     "capacity": 20
+     "capacity": 17
     },
     {
      "course": "CLASSIC M121",
@@ -24749,7 +24757,7 @@
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
      "enrolled": 18,
-     "capacity": 18
+     "capacity": 17
     },
     {
      "course": "FRNCH 41",
@@ -25208,7 +25216,7 @@
      "type": "DIS 3B",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 20,
+     "enrolled": 19,
      "capacity": 20
     },
     {
@@ -25332,7 +25340,7 @@
      "type": "LEC 6",
      "start_time": "06:30 PM",
      "end_time": "07:45 PM",
-     "enrolled": 17,
+     "enrolled": 16,
      "capacity": 17
     }
    ],
@@ -25424,7 +25432,7 @@
      "type": "LEC 6",
      "start_time": "06:30 PM",
      "end_time": "07:45 PM",
-     "enrolled": 17,
+     "enrolled": 16,
      "capacity": 17
     }
    ],
@@ -25550,7 +25558,7 @@
      "type": "SEM 1",
      "start_time": "02:00 PM",
      "end_time": "04:50 PM",
-     "enrolled": 22,
+     "enrolled": 21,
      "capacity": 0
     },
     {
@@ -25626,7 +25634,7 @@
      "type": "SEM 6",
      "start_time": "03:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 9,
+     "enrolled": 8,
      "capacity": 20
     }
    ],
@@ -25729,7 +25737,7 @@
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
      "enrolled": 108,
-     "capacity": 120
+     "capacity": 100
     },
     {
      "course": "ECON 111",
@@ -25770,7 +25778,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:15 AM",
-     "enrolled": 303,
+     "enrolled": 302,
      "capacity": 302
     },
     {
@@ -25794,7 +25802,7 @@
      "type": "LEC 5",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 288,
+     "enrolled": 287,
      "capacity": 0
     },
     {
@@ -25837,7 +25845,7 @@
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
      "enrolled": 108,
-     "capacity": 120
+     "capacity": 100
     },
     {
      "course": "ECON 111",
@@ -25878,7 +25886,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:15 AM",
-     "enrolled": 303,
+     "enrolled": 302,
      "capacity": 302
     },
     {
@@ -25902,7 +25910,7 @@
      "type": "LEC 5",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 288,
+     "enrolled": 287,
      "capacity": 0
     },
     {
@@ -25944,7 +25952,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 41,
+     "enrolled": 40,
      "capacity": 70
     }
    ],
@@ -26096,7 +26104,7 @@
      "type": "DIS 1F",
      "start_time": "05:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 18,
+     "enrolled": 17,
      "capacity": 20
     }
    ],
@@ -26267,7 +26275,7 @@
      "start_time": "08:00 AM",
      "end_time": "08:50 AM",
      "enrolled": 17,
-     "capacity": 20
+     "capacity": 16
     },
     {
      "course": "POL SCI 50",
@@ -26275,7 +26283,7 @@
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
      "enrolled": 14,
-     "capacity": 20
+     "capacity": 14
     },
     {
      "course": "POL SCI 50",
@@ -26283,7 +26291,7 @@
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
      "enrolled": 20,
-     "capacity": 20
+     "capacity": 19
     },
     {
      "course": "HIST 9A",
@@ -26432,7 +26440,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 24,
+     "enrolled": 23,
      "capacity": 110
     },
     {
@@ -26548,7 +26556,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 24,
+     "enrolled": 23,
      "capacity": 110
     },
     {
@@ -26924,7 +26932,7 @@
      "type": "LEC 2",
      "start_time": "12:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 16,
+     "enrolled": 15,
      "capacity": 16
     },
     {
@@ -27000,7 +27008,7 @@
      "type": "LEC 2",
      "start_time": "12:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 16,
+     "enrolled": 15,
      "capacity": 16
     },
     {
@@ -27026,7 +27034,7 @@
      "type": "DIS 1D",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 16,
+     "enrolled": 15,
      "capacity": 20
     },
     {
@@ -27094,7 +27102,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 41,
+     "enrolled": 40,
      "capacity": 45
     },
     {
@@ -27162,7 +27170,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 41,
+     "enrolled": 40,
      "capacity": 45
     },
     {
@@ -27803,7 +27811,7 @@
      "type": "SEM 1",
      "start_time": "03:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 27,
+     "enrolled": 26,
      "capacity": 100
     },
     {
@@ -28073,7 +28081,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 116,
+     "enrolled": 115,
      "capacity": 140
     }
    ],
@@ -28083,7 +28091,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 73,
+     "enrolled": 70,
      "capacity": 90
     },
     {
@@ -28091,7 +28099,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 132,
+     "enrolled": 131,
      "capacity": 180
     },
     {
@@ -28157,7 +28165,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 116,
+     "enrolled": 115,
      "capacity": 140
     },
     {
@@ -28173,7 +28181,7 @@
      "type": "LEC 1",
      "start_time": "05:00 PM",
      "end_time": "06:50 PM",
-     "enrolled": 122,
+     "enrolled": 121,
      "capacity": 170
     }
    ],
@@ -28183,7 +28191,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 73,
+     "enrolled": 70,
      "capacity": 90
     },
     {
@@ -28191,7 +28199,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 132,
+     "enrolled": 131,
      "capacity": 180
     },
     {
@@ -28241,7 +28249,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 126,
+     "enrolled": 125,
      "capacity": 124
     },
     {
@@ -28273,7 +28281,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 116,
+     "enrolled": 115,
      "capacity": 140
     }
    ],
@@ -28334,7 +28342,7 @@
      "type": "LEC 1",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 87,
+     "enrolled": 86,
      "capacity": 90
     },
     {
@@ -28352,7 +28360,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 119,
+     "enrolled": 118,
      "capacity": 120
     },
     {
@@ -28426,7 +28434,7 @@
      "type": "LEC 1",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 87,
+     "enrolled": 86,
      "capacity": 90
     },
     {
@@ -28452,7 +28460,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 119,
+     "enrolled": 118,
      "capacity": 120
     },
     {
@@ -28534,7 +28542,7 @@
      "type": "LEC 1",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 87,
+     "enrolled": 86,
      "capacity": 90
     },
     {
@@ -29394,7 +29402,7 @@
      "type": "SEM 1",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 225,
+     "enrolled": 224,
      "capacity": 300
     },
     {
@@ -29513,7 +29521,7 @@
      "type": "DIS 1A",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 39,
+     "enrolled": 38,
      "capacity": 40
     },
     {
@@ -30617,7 +30625,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 323,
+     "enrolled": 324,
      "capacity": 325
     },
     {
@@ -30667,7 +30675,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 299,
+     "enrolled": 298,
      "capacity": 300
     },
     {
@@ -30717,7 +30725,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 323,
+     "enrolled": 324,
      "capacity": 325
     },
     {
@@ -30767,7 +30775,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 299,
+     "enrolled": 298,
      "capacity": 300
     },
     {
@@ -32358,7 +32366,7 @@
      "type": "LEC 3",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 227,
+     "enrolled": 226,
      "capacity": 210
     },
     {
@@ -32506,7 +32514,7 @@
      "type": "LEC 3",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 227,
+     "enrolled": 226,
      "capacity": 210
     },
     {
@@ -32646,7 +32654,7 @@
      "type": "LEC 3",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 227,
+     "enrolled": 226,
      "capacity": 210
     },
     {
@@ -32782,7 +32790,7 @@
      "type": "DIS 3A",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 38,
+     "enrolled": 37,
      "capacity": 35
     },
     {
@@ -33592,7 +33600,7 @@
      "type": "DIS 3F",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 34,
+     "enrolled": 33,
      "capacity": 35
     },
     {
@@ -34072,7 +34080,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 35,
+     "enrolled": 34,
      "capacity": 40
     },
     {
@@ -34088,7 +34096,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 12,
+     "enrolled": 11,
      "capacity": 30
     },
     {
@@ -34180,7 +34188,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 35,
+     "enrolled": 34,
      "capacity": 40
     },
     {
@@ -34196,7 +34204,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 12,
+     "enrolled": 11,
      "capacity": 30
     },
     {
@@ -34288,7 +34296,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 35,
+     "enrolled": 34,
      "capacity": 40
     },
     {
@@ -34312,7 +34320,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 12,
+     "enrolled": 11,
      "capacity": 30
     },
     {
@@ -34367,7 +34375,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 41,
+     "enrolled": 40,
      "capacity": 40
     },
     {
@@ -34467,7 +34475,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 41,
+     "enrolled": 40,
      "capacity": 40
     },
     {
@@ -34591,7 +34599,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 41,
+     "enrolled": 40,
      "capacity": 40
     },
     {
@@ -34711,7 +34719,7 @@
      "type": "DIS 1B",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 33,
+     "enrolled": 32,
      "capacity": 35
     },
     {
@@ -34835,7 +34843,7 @@
      "type": "DIS 1B",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 33,
+     "enrolled": 32,
      "capacity": 35
     },
     {
@@ -35086,7 +35094,7 @@
      "type": "DIS 1E",
      "start_time": "05:00 PM",
      "end_time": "06:15 PM",
-     "enrolled": 19,
+     "enrolled": 18,
      "capacity": 0
     }
    ],
@@ -35383,7 +35391,7 @@
      "type": "LEC 3",
      "start_time": "05:00 PM",
      "end_time": "06:15 PM",
-     "enrolled": 85,
+     "enrolled": 84,
      "capacity": 0
     }
    ],
@@ -35523,7 +35531,7 @@
      "type": "LEC 3",
      "start_time": "05:00 PM",
      "end_time": "06:15 PM",
-     "enrolled": 85,
+     "enrolled": 84,
      "capacity": 0
     }
    ],
@@ -35939,7 +35947,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 23,
+     "enrolled": 22,
      "capacity": 25
     },
     {
@@ -36039,7 +36047,7 @@
      "type": "DIS 1I",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 18,
+     "enrolled": 17,
      "capacity": 0
     },
     {
@@ -36047,7 +36055,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 23,
+     "enrolled": 22,
      "capacity": 25
     },
     {
@@ -36458,7 +36466,7 @@
      "type": "LAB 5F",
      "start_time": "08:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 24,
+     "enrolled": 23,
      "capacity": 0
     },
     {
@@ -36626,7 +36634,7 @@
      "type": "DIS 1A",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 12,
+     "enrolled": 11,
      "capacity": 30
     },
     {
@@ -36821,7 +36829,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 39,
+     "enrolled": 38,
      "capacity": 40
     },
     {
@@ -36837,7 +36845,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 34,
+     "enrolled": 33,
      "capacity": 0
     },
     {
@@ -36895,7 +36903,7 @@
      "type": "DIS 1B",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 26,
+     "enrolled": 25,
      "capacity": 35
     },
     {
@@ -36945,7 +36953,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 39,
+     "enrolled": 38,
      "capacity": 40
     },
     {
@@ -36961,7 +36969,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 34,
+     "enrolled": 33,
      "capacity": 0
     },
     {
@@ -37027,7 +37035,7 @@
      "type": "DIS 1B",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 26,
+     "enrolled": 25,
      "capacity": 35
     },
     {
@@ -37077,7 +37085,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 39,
+     "enrolled": 38,
      "capacity": 40
     },
     {
@@ -37712,7 +37720,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 98,
+     "enrolled": 95,
      "capacity": 120
     },
     {
@@ -37770,7 +37778,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 180,
+     "enrolled": 179,
      "capacity": 188
     },
     {
@@ -37786,7 +37794,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 163,
+     "enrolled": 162,
      "capacity": 0
     },
     {
@@ -37820,7 +37828,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 98,
+     "enrolled": 95,
      "capacity": 120
     },
     {
@@ -37894,7 +37902,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 180,
+     "enrolled": 179,
      "capacity": 188
     },
     {
@@ -37910,7 +37918,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 163,
+     "enrolled": 162,
      "capacity": 0
     },
     {
@@ -37944,7 +37952,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 98,
+     "enrolled": 95,
      "capacity": 120
     },
     {
@@ -38087,7 +38095,7 @@
      "type": "DIS 1B",
      "start_time": "03:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 76,
+     "enrolled": 75,
      "capacity": 76
     },
     {
@@ -38794,7 +38802,7 @@
      "type": "DIS 1A",
      "start_time": "08:00 AM",
      "end_time": "08:50 AM",
-     "enrolled": 47,
+     "enrolled": 46,
      "capacity": 47
     },
     {
@@ -38842,7 +38850,7 @@
      "type": "LEC 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 45,
+     "enrolled": 44,
      "capacity": 46
     },
     {
@@ -38902,7 +38910,7 @@
      "type": "DIS 1A",
      "start_time": "08:00 AM",
      "end_time": "08:50 AM",
-     "enrolled": 45,
+     "enrolled": 44,
      "capacity": 46
     },
     {
@@ -38950,7 +38958,7 @@
      "type": "LEC 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 45,
+     "enrolled": 44,
      "capacity": 46
     },
     {
@@ -39193,7 +39201,7 @@
      "type": "DIS 1D",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 39,
+     "enrolled": 38,
      "capacity": 43
     },
     {
@@ -39357,7 +39365,7 @@
      "type": "DIS 1B",
      "start_time": "03:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 30,
+     "enrolled": 29,
      "capacity": 30
     },
     {
@@ -39450,7 +39458,7 @@
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
      "enrolled": 120,
-     "capacity": 120
+     "capacity": 119
     },
     {
      "course": "HIST 1A",
@@ -39465,7 +39473,7 @@
      "type": "LEC 1",
      "start_time": "12:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 120,
+     "enrolled": 119,
      "capacity": 120
     },
     {
@@ -39481,7 +39489,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 98,
+     "enrolled": 97,
      "capacity": 155
     }
    ],
@@ -39542,7 +39550,7 @@
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
      "enrolled": 120,
-     "capacity": 120
+     "capacity": 119
     },
     {
      "course": "HIST 1A",
@@ -39557,7 +39565,7 @@
      "type": "LEC 1",
      "start_time": "12:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 120,
+     "enrolled": 119,
      "capacity": 120
     },
     {
@@ -39573,7 +39581,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 98,
+     "enrolled": 97,
      "capacity": 155
     }
    ],
@@ -40116,7 +40124,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 80,
+     "enrolled": 76,
      "capacity": 80
     },
     {
@@ -40132,7 +40140,7 @@
      "type": "LEC 1",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 78,
+     "enrolled": 77,
      "capacity": 80
     },
     {
@@ -40224,7 +40232,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 80,
+     "enrolled": 76,
      "capacity": 80
     },
     {
@@ -40240,7 +40248,7 @@
      "type": "LEC 1",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 78,
+     "enrolled": 77,
      "capacity": 80
     },
     {
@@ -40332,7 +40340,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 80,
+     "enrolled": 76,
      "capacity": 80
     },
     {
@@ -40348,7 +40356,7 @@
      "type": "LEC 1",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 78,
+     "enrolled": 77,
      "capacity": 80
     },
     {
@@ -40418,7 +40426,7 @@
      "type": "LEC 2",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 73,
+     "enrolled": 72,
      "capacity": 0
     },
     {
@@ -40426,7 +40434,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 81,
+     "enrolled": 80,
      "capacity": 90
     }
    ],
@@ -40437,7 +40445,7 @@
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
      "enrolled": 75,
-     "capacity": 75
+     "capacity": 70
     },
     {
      "course": "PUB PLC 203",
@@ -40510,7 +40518,7 @@
      "type": "LEC 2",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 73,
+     "enrolled": 72,
      "capacity": 0
     },
     {
@@ -40518,7 +40526,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 81,
+     "enrolled": 80,
      "capacity": 90
     }
    ],
@@ -40529,7 +40537,7 @@
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
      "enrolled": 75,
-     "capacity": 75
+     "capacity": 70
     },
     {
      "course": "PUB PLC 203",
@@ -40602,7 +40610,7 @@
      "type": "DIS 1A",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 16,
+     "enrolled": 15,
      "capacity": 25
     },
     {
@@ -40656,7 +40664,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 48,
+     "enrolled": 47,
      "capacity": 45
     },
     {
@@ -40706,7 +40714,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 60,
+     "enrolled": 59,
      "capacity": 60
     },
     {
@@ -40732,7 +40740,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 48,
+     "enrolled": 47,
      "capacity": 45
     },
     {
@@ -40782,7 +40790,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 60,
+     "enrolled": 59,
      "capacity": 60
     },
     {
@@ -41372,7 +41380,7 @@
      "type": "DIS 1P",
      "start_time": "03:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 20,
+     "enrolled": 18,
      "capacity": 20
     },
     {
@@ -41415,7 +41423,7 @@
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
      "enrolled": 14,
-     "capacity": 20
+     "capacity": 18
     },
     {
      "course": "MCD BIO M175A",
@@ -41675,7 +41683,7 @@
      "type": "DIS 1O",
      "start_time": "04:00 PM",
      "end_time": "04:50 PM",
-     "enrolled": 19,
+     "enrolled": 18,
      "capacity": 19
     },
     {
@@ -41937,7 +41945,7 @@
      "type": "DIS 1B",
      "start_time": "04:00 PM",
      "end_time": "04:50 PM",
-     "enrolled": 17,
+     "enrolled": 18,
      "capacity": 20
     },
     {
@@ -42050,7 +42058,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 28,
+     "enrolled": 27,
      "capacity": 28
     }
    ],
@@ -42126,7 +42134,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 28,
+     "enrolled": 27,
      "capacity": 28
     },
     {
@@ -42235,7 +42243,7 @@
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
      "enrolled": 13,
-     "capacity": 20
+     "capacity": 18
     },
     {
      "course": "EE BIOL 120",
@@ -42258,7 +42266,7 @@
      "type": "DIS 1C",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 19,
+     "enrolled": 18,
      "capacity": 20
     }
    ],
@@ -42688,7 +42696,7 @@
      "type": "DIS 1B",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 30,
+     "enrolled": 29,
      "capacity": 30
     },
     {
@@ -42925,7 +42933,7 @@
      "type": "SEM 2",
      "start_time": "01:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 2,
+     "enrolled": 4,
      "capacity": 10
     },
     {
@@ -43893,7 +43901,7 @@
      "type": "SEM 1",
      "start_time": "02:00 PM",
      "end_time": "04:50 PM",
-     "enrolled": 16,
+     "enrolled": 15,
      "capacity": 0
     }
    ],
@@ -44191,7 +44199,7 @@
      "type": "LAB 1B",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 38,
+     "enrolled": 37,
      "capacity": 42
     },
     {
@@ -44589,7 +44597,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 59,
+     "enrolled": 58,
      "capacity": 60
     }
    ],
@@ -44640,7 +44648,7 @@
      "start_time": "05:00 PM",
      "end_time": "06:15 PM",
      "enrolled": 60,
-     "capacity": 60
+     "capacity": 58
     }
    ],
    "Wednesday": [
@@ -44681,7 +44689,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 59,
+     "enrolled": 58,
      "capacity": 60
     }
    ],
@@ -44732,7 +44740,7 @@
      "start_time": "05:00 PM",
      "end_time": "06:15 PM",
      "enrolled": 60,
-     "capacity": 60
+     "capacity": 58
     }
    ],
    "Friday": [
@@ -45151,7 +45159,7 @@
      "start_time": "08:00 AM",
      "end_time": "08:50 AM",
      "enrolled": 19,
-     "capacity": 20
+     "capacity": 19
     },
     {
      "course": "CLASSIC M121",
@@ -45159,7 +45167,7 @@
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
      "enrolled": 12,
-     "capacity": 20
+     "capacity": 16
     },
     {
      "course": "ARCH&UD 30",
@@ -45239,7 +45247,7 @@
      "type": "SEM 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 10,
+     "enrolled": 9,
      "capacity": 15
     }
    ],
@@ -45403,7 +45411,7 @@
      "type": "LAB 1B",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 9,
+     "enrolled": 10,
      "capacity": 0
     },
     {
@@ -45704,7 +45712,7 @@
      "start_time": "08:00 AM",
      "end_time": "08:50 AM",
      "enrolled": 18,
-     "capacity": 20
+     "capacity": 18
     },
     {
      "course": "POL SCI 113B",
@@ -45712,7 +45720,7 @@
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
      "enrolled": 19,
-     "capacity": 20
+     "capacity": 19
     },
     {
      "course": "CHIN 1",
@@ -45950,8 +45958,8 @@
      "type": "DIS 1B",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 19,
-     "capacity": 20
+     "enrolled": 18,
+     "capacity": 19
     },
     {
      "course": "POL SCI 113B",
@@ -45959,14 +45967,14 @@
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
      "enrolled": 20,
-     "capacity": 20
+     "capacity": 19
     },
     {
      "course": "HIST 12B",
      "type": "DIS 1N",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 18,
+     "enrolled": 19,
      "capacity": 20
     },
     {
@@ -46134,7 +46142,7 @@
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
      "enrolled": 20,
-     "capacity": 20
+     "capacity": 19
     },
     {
      "course": "SOCIOL 1",
@@ -46526,7 +46534,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 168,
+     "enrolled": 167,
      "capacity": 180
     },
     {
@@ -46550,7 +46558,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 149,
+     "enrolled": 148,
      "capacity": 180
     },
     {
@@ -46558,7 +46566,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 230,
+     "enrolled": 226,
      "capacity": 240
     }
    ],
@@ -46600,7 +46608,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 169,
+     "enrolled": 168,
      "capacity": 180
     },
     {
@@ -46626,7 +46634,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 168,
+     "enrolled": 167,
      "capacity": 180
     },
     {
@@ -46650,7 +46658,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 149,
+     "enrolled": 148,
      "capacity": 180
     },
     {
@@ -46658,7 +46666,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 230,
+     "enrolled": 226,
      "capacity": 240
     }
    ],
@@ -46700,7 +46708,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 169,
+     "enrolled": 168,
      "capacity": 180
     },
     {
@@ -47372,7 +47380,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 35,
+     "enrolled": 34,
      "capacity": 35
     }
    ],
@@ -47424,7 +47432,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 35,
+     "enrolled": 34,
      "capacity": 35
     }
    ],
@@ -47467,7 +47475,7 @@
      "start_time": "06:00 PM",
      "end_time": "06:50 PM",
      "enrolled": 20,
-     "capacity": 20
+     "capacity": 19
     }
    ],
    "Friday": [
@@ -47651,7 +47659,7 @@
      "type": "DIS 1C",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 37,
+     "enrolled": 36,
      "capacity": 35
     },
     {
@@ -47776,7 +47784,7 @@
      "start_time": "04:00 PM",
      "end_time": "04:50 PM",
      "enrolled": 20,
-     "capacity": 20
+     "capacity": 19
     },
     {
      "course": "POL SCI 10",
@@ -47784,7 +47792,7 @@
      "start_time": "05:00 PM",
      "end_time": "05:50 PM",
      "enrolled": 20,
-     "capacity": 20
+     "capacity": 19
     }
    ],
    "Friday": [
@@ -47793,7 +47801,7 @@
      "type": "DIS 1H",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 28,
+     "enrolled": 27,
      "capacity": 30
     },
     {
@@ -47984,7 +47992,7 @@
      "start_time": "04:00 PM",
      "end_time": "04:50 PM",
      "enrolled": 20,
-     "capacity": 20
+     "capacity": 19
     },
     {
      "course": "POL SCI 10",
@@ -47992,7 +48000,7 @@
      "start_time": "05:00 PM",
      "end_time": "05:50 PM",
      "enrolled": 20,
-     "capacity": 20
+     "capacity": 19
     },
     {
      "course": "POL SCI 20",
@@ -48248,7 +48256,7 @@
      "start_time": "06:00 PM",
      "end_time": "06:50 PM",
      "enrolled": 20,
-     "capacity": 20
+     "capacity": 19
     }
    ],
    "Friday": [
@@ -48265,7 +48273,7 @@
      "type": "DIS 1F",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 27,
+     "enrolled": 26,
      "capacity": 30
     },
     {
@@ -48473,7 +48481,7 @@
      "type": "DIS 2E",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 26,
+     "enrolled": 25,
      "capacity": 0
     },
     {
@@ -48579,7 +48587,7 @@
      "type": "LEC 7",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 27,
+     "enrolled": 26,
      "capacity": 0
     },
     {
@@ -48663,7 +48671,7 @@
      "type": "LEC 7",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 27,
+     "enrolled": 26,
      "capacity": 0
     },
     {
@@ -49139,7 +49147,7 @@
      "start_time": "07:00 PM",
      "end_time": "07:50 PM",
      "enrolled": 19,
-     "capacity": 20
+     "capacity": 19
     }
    ],
    "Friday": [
@@ -49557,7 +49565,7 @@
      "type": "DIS 1A",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 35,
+     "enrolled": 34,
      "capacity": 40
     },
     {
@@ -49963,7 +49971,7 @@
      "start_time": "06:00 PM",
      "end_time": "06:50 PM",
      "enrolled": 8,
-     "capacity": 10
+     "capacity": 8
     },
     {
      "course": "POL SCI 171B",
@@ -50138,7 +50146,7 @@
      "start_time": "05:00 PM",
      "end_time": "05:50 PM",
      "enrolled": 18,
-     "capacity": 20
+     "capacity": 18
     },
     {
      "course": "POL SCI 139",
@@ -50146,7 +50154,7 @@
      "start_time": "06:00 PM",
      "end_time": "06:50 PM",
      "enrolled": 19,
-     "capacity": 20
+     "capacity": 19
     }
    ],
    "Thursday": [
@@ -50418,14 +50426,14 @@
      "start_time": "04:00 PM",
      "end_time": "04:50 PM",
      "enrolled": 19,
-     "capacity": 20
+     "capacity": 19
     },
     {
      "course": "POL SCI 139",
      "type": "DIS 3E",
      "start_time": "05:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 20,
+     "enrolled": 19,
      "capacity": 20
     },
     {
@@ -50433,8 +50441,8 @@
      "type": "DIS 3F",
      "start_time": "06:00 PM",
      "end_time": "06:50 PM",
-     "enrolled": 20,
-     "capacity": 20
+     "enrolled": 19,
+     "capacity": 19
     }
    ],
    "Thursday": [
@@ -50443,7 +50451,7 @@
      "type": "DIS 1B",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 30,
+     "enrolled": 28,
      "capacity": 30
     },
     {
@@ -50591,7 +50599,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 8,
+     "enrolled": 7,
      "capacity": 30
     },
     {
@@ -50607,7 +50615,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 38,
+     "enrolled": 37,
      "capacity": 40
     },
     {
@@ -50659,7 +50667,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 8,
+     "enrolled": 7,
      "capacity": 30
     },
     {
@@ -50675,7 +50683,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 38,
+     "enrolled": 37,
      "capacity": 40
     },
     {
@@ -50891,7 +50899,7 @@
      "start_time": "08:00 AM",
      "end_time": "08:50 AM",
      "enrolled": 18,
-     "capacity": 20
+     "capacity": 17
     },
     {
      "course": "POL SCI 50",
@@ -50899,7 +50907,7 @@
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
      "enrolled": 19,
-     "capacity": 20
+     "capacity": 18
     },
     {
      "course": "POL SCI 50",
@@ -50907,7 +50915,7 @@
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
      "enrolled": 20,
-     "capacity": 20
+     "capacity": 19
     },
     {
      "course": "EE BIOL 121",
@@ -50972,7 +50980,7 @@
      "type": "DIS 1L",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 18,
+     "enrolled": 17,
      "capacity": 20
     }
    ],
@@ -51014,15 +51022,15 @@
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
      "enrolled": 117,
-     "capacity": 120
+     "capacity": 115
     },
     {
      "course": "POL SCI 153A",
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 115,
-     "capacity": 120
+     "enrolled": 114,
+     "capacity": 100
     },
     {
      "course": "POL SCI 137A",
@@ -51030,7 +51038,7 @@
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
      "enrolled": 120,
-     "capacity": 120
+     "capacity": 119
     },
     {
      "course": "COM SCI 131",
@@ -51072,7 +51080,7 @@
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
      "enrolled": 98,
-     "capacity": 120
+     "capacity": 90
     },
     {
      "course": "POL SCI 171B",
@@ -51080,7 +51088,7 @@
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
      "enrolled": 78,
-     "capacity": 80
+     "capacity": 70
     },
     {
      "course": "POL SCI 139",
@@ -51088,7 +51096,7 @@
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
      "enrolled": 120,
-     "capacity": 120
+     "capacity": 119
     },
     {
      "course": "POL SCI 119",
@@ -51096,7 +51104,7 @@
      "start_time": "05:00 PM",
      "end_time": "06:15 PM",
      "enrolled": 116,
-     "capacity": 120
+     "capacity": 100
     }
    ],
    "Wednesday": [
@@ -51106,15 +51114,15 @@
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
      "enrolled": 117,
-     "capacity": 120
+     "capacity": 115
     },
     {
      "course": "POL SCI 153A",
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 115,
-     "capacity": 120
+     "enrolled": 114,
+     "capacity": 100
     },
     {
      "course": "POL SCI 137A",
@@ -51122,7 +51130,7 @@
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
      "enrolled": 120,
-     "capacity": 120
+     "capacity": 119
     },
     {
      "course": "COM SCI 131",
@@ -51164,7 +51172,7 @@
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
      "enrolled": 98,
-     "capacity": 120
+     "capacity": 90
     },
     {
      "course": "POL SCI 171B",
@@ -51172,7 +51180,7 @@
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
      "enrolled": 78,
-     "capacity": 80
+     "capacity": 70
     },
     {
      "course": "POL SCI 139",
@@ -51180,7 +51188,7 @@
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
      "enrolled": 120,
-     "capacity": 120
+     "capacity": 119
     },
     {
      "course": "POL SCI 119",
@@ -51188,7 +51196,7 @@
      "start_time": "05:00 PM",
      "end_time": "06:15 PM",
      "enrolled": 116,
-     "capacity": 120
+     "capacity": 100
     }
    ],
    "Friday": [
@@ -51205,7 +51213,7 @@
      "type": "LAB 1B",
      "start_time": "12:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 65,
+     "enrolled": 64,
      "capacity": 65
     },
     {
@@ -51335,14 +51343,14 @@
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
      "enrolled": 86,
-     "capacity": 120
+     "capacity": 80
     },
     {
      "course": "HLT POL 100",
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 119,
+     "enrolled": 118,
      "capacity": 120
     },
     {
@@ -51351,7 +51359,7 @@
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
      "enrolled": 120,
-     "capacity": 120
+     "capacity": 119
     },
     {
      "course": "ECON 185",
@@ -51385,7 +51393,7 @@
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
      "enrolled": 96,
-     "capacity": 120
+     "capacity": 90
     },
     {
      "course": "HIST 125B",
@@ -51401,7 +51409,7 @@
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
      "enrolled": 119,
-     "capacity": 120
+     "capacity": 115
     },
     {
      "course": "SPAN 44",
@@ -51427,14 +51435,14 @@
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
      "enrolled": 86,
-     "capacity": 120
+     "capacity": 80
     },
     {
      "course": "HLT POL 100",
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 119,
+     "enrolled": 118,
      "capacity": 120
     },
     {
@@ -51443,7 +51451,7 @@
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
      "enrolled": 120,
-     "capacity": 120
+     "capacity": 119
     },
     {
      "course": "ECON 185",
@@ -51477,7 +51485,7 @@
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
      "enrolled": 96,
-     "capacity": 120
+     "capacity": 90
     },
     {
      "course": "HIST 125B",
@@ -51493,7 +51501,7 @@
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
      "enrolled": 119,
-     "capacity": 120
+     "capacity": 115
     },
     {
      "course": "SPAN 44",
@@ -52221,7 +52229,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 32,
+     "enrolled": 31,
      "capacity": 40
     }
    ],
@@ -52321,7 +52329,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 32,
+     "enrolled": 31,
      "capacity": 40
     }
    ],
@@ -52381,7 +52389,7 @@
      "type": "DIS 1A",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 22,
+     "enrolled": 21,
      "capacity": 30
     },
     {
@@ -53127,7 +53135,7 @@
      "type": "DIS 2C",
      "start_time": "03:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 58,
+     "enrolled": 57,
      "capacity": 58
     },
     {
@@ -53219,7 +53227,7 @@
      "type": "DIS 1D",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 58,
+     "enrolled": 57,
      "capacity": 58
     },
     {
@@ -53227,7 +53235,7 @@
      "type": "DIS 2F",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 57,
+     "enrolled": 56,
      "capacity": 57
     },
     {
@@ -53470,8 +53478,8 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 115,
-     "capacity": 120
+     "enrolled": 114,
+     "capacity": 100
     },
     {
      "course": "CHEM 171",
@@ -53486,7 +53494,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 146,
+     "enrolled": 145,
      "capacity": 180
     }
    ],
@@ -53586,8 +53594,8 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 115,
-     "capacity": 120
+     "enrolled": 114,
+     "capacity": 100
     },
     {
      "course": "CHEM 171",
@@ -53602,7 +53610,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 146,
+     "enrolled": 145,
      "capacity": 180
     }
    ],
@@ -53710,8 +53718,8 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 115,
-     "capacity": 120
+     "enrolled": 114,
+     "capacity": 100
     },
     {
      "course": "CHEM 171",
@@ -53798,7 +53806,7 @@
      "type": "LEC 1",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 347,
+     "enrolled": 346,
      "capacity": 348
     },
     {
@@ -53806,7 +53814,7 @@
      "type": "LEC 2",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 339,
+     "enrolled": 338,
      "capacity": 340
     },
     {
@@ -53822,7 +53830,7 @@
      "type": "LEC 2",
      "start_time": "03:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 354,
+     "enrolled": 353,
      "capacity": 351
     },
     {
@@ -53922,7 +53930,7 @@
      "type": "LEC 1",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 347,
+     "enrolled": 346,
      "capacity": 348
     },
     {
@@ -53930,7 +53938,7 @@
      "type": "LEC 2",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 339,
+     "enrolled": 338,
      "capacity": 340
     },
     {
@@ -53946,7 +53954,7 @@
      "type": "LEC 2",
      "start_time": "03:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 354,
+     "enrolled": 353,
      "capacity": 351
     },
     {
@@ -54054,7 +54062,7 @@
      "type": "LEC 1",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 347,
+     "enrolled": 346,
      "capacity": 348
     },
     {
@@ -54062,7 +54070,7 @@
      "type": "LEC 2",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 339,
+     "enrolled": 338,
      "capacity": 340
     },
     {
@@ -54078,7 +54086,7 @@
      "type": "LEC 2",
      "start_time": "03:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 354,
+     "enrolled": 353,
      "capacity": 351
     },
     {
@@ -54166,7 +54174,7 @@
      "type": "SEM 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 83,
+     "enrolled": 82,
      "capacity": 100
     }
    ],
@@ -54216,7 +54224,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 218,
+     "enrolled": 213,
      "capacity": 240
     }
    ],
@@ -54266,7 +54274,7 @@
      "type": "SEM 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 41,
+     "enrolled": 42,
      "capacity": 100
     }
    ],
@@ -54316,7 +54324,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 218,
+     "enrolled": 213,
      "capacity": 240
     }
    ],
@@ -54449,7 +54457,7 @@
      "type": "SEM 1",
      "start_time": "06:00 PM",
      "end_time": "07:50 PM",
-     "enrolled": 39,
+     "enrolled": 38,
      "capacity": 60
     }
    ],
