@@ -111,7 +111,7 @@
             <div class="area-switch" role="group" aria-label="Where to look">
                 <button type="button" data-area="campus" aria-pressed="false">🏛️ Campus</button>
                 <button type="button" data-area="hill" aria-pressed="false">🏠 The Hill</button>
-                <button type="button" data-area="library" aria-pressed="false">📚 Libraries</button>
+                <button type="button" data-area="library" aria-pressed="false">📚 Libraries &amp; Labs</button>
                 <button type="button" data-area="" aria-pressed="true" class="active">All</button>
             </div>
             <div class="selectors-grid">
@@ -173,7 +173,7 @@
             <div class="controls-actions">
                 <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
                     <button class="btn" type="button" id="clearAll">Clear All Filters</button>
-                    <button class="btn toggle" type="button" id="nearMe" aria-pressed="false" title="Sort by distance. Uses your location only when you turn this on">📍 Nearest to me</button>
+                    <button class="btn toggle" type="button" id="nearMe" aria-pressed="false" title="Rooms that fit your times first, then closest. Uses your location only when you turn this on">📍 Nearest to me</button>
                     <span id="nearMsg" class="near-msg" aria-live="polite"></span>
                 </div>
                 <div><strong id="totalRooms">0</strong> rooms found • <strong id="availableRooms">0</strong> free right now</div>
@@ -236,7 +236,7 @@
         apartments: {group:'hill', badge:'University Apartments'},
         library:    {group:'library'},
     };
-    const GROUP_NAMES = {campus:'Campus', hill:'The Hill', library:'Libraries'};
+    const GROUP_NAMES = {campus:'Campus', hill:'The Hill', library:'Libraries & Labs'};
     const areaOf = code => (state.bmeta[code] || {}).area;
     // "DE NEVE MEETING ROOMS" -> "DE NEVE": match a feed's building name to a known code.
     function buildingCode(b){
@@ -316,8 +316,9 @@
             const a = toMin(e.start_time), b = toMin(e.end_time);
             return a == null ? null : {date:e.date, s:a, e:b ?? a + 60, label:e.title, sub:e.org, url:e.url, org:true};
         }).filter(Boolean);
-        // Library feed rooms carry their own area; everything else goes by building.
-        r._area = r.area || areaOf(r.building) || (r._src === 'hill' ? 'hill' : 'campus');
+        // Computer labs go with the libraries so Campus is just classrooms. Library
+        // feed rooms carry their own area; everything else goes by building.
+        r._area = r.type === 'Computer lab' ? 'library' : r.area || areaOf(r.building) || (r._src === 'hill' ? 'hill' : 'campus');
         r._group = (AREAS[r._area] || AREAS.campus).group;
         r._key = `${r._src || 'classes'}|${r.text}`;
         if(r.reservable) r._ev = r._ev.concat(reservationBlocks(r.days || {}));
@@ -485,7 +486,7 @@
         $('buildingDisplay').textContent = n === 0 ? 'All Buildings' : n === 1 ? [...state.buildings][0] : `${n} selected`;
     }
 
-    // Campus / The Hill / Libraries / All
+    // Campus / The Hill / Libraries & Labs / All
     function setArea(area){
         state.area = area;
         document.querySelectorAll('.area-switch [data-area]').forEach(b => {
@@ -552,8 +553,17 @@
         if(how === 'capacity_asc') return list.sort((a, b) => (a.capacity||0) - (b.capacity||0) || byName(a, b));
         if(how === 'building') return list.sort(byName);
         if(state.nearOn && state.here){
-            // Closest building first; inside a building, free rooms first.
-            return list.sort((a, b) => (distTo(a) ?? 1e9) - (distTo(b) ?? 1e9) || (b._now.free - a._now.free) || byName(a, b));
+            // Rooms free for your whole time window first, then free for part of
+            // it (no window: free now first). Then closest. Picked
+            // characteristics are already a filter, so every room here has them.
+            const ws = $('startTime').value === '' ? null : +$('startTime').value;
+            const we = $('endTime').value === '' ? null : +$('endTime').value;
+            const day = state.day || now.day, fit = new Map();
+            list.forEach(r => {
+                const w = ws != null && we > ws ? freeWindow(r, day, ws, we) : null;
+                fit.set(r, ws != null && we > ws ? (!w ? 0 : w.s <= ws && w.e >= we ? 2 : 1) : +r._now.free);
+            });
+            return list.sort((a, b) => fit.get(b) - fit.get(a) || (distTo(a) ?? 1e9) - (distTo(b) ?? 1e9) || (b._now.free - a._now.free) || byName(a, b));
         }
         if(how === 'free_pct'){ const d = state.day || now.day; return list.sort((a, b) => freePct(b, d) - freePct(a, d) || byName(a, b)); }
         // available: free now first, longest remaining free window first; busy rooms by soonest free

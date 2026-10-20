@@ -30,7 +30,7 @@ It keeps events whose location names one of our rooms ("3400 Boelter Hall", "Mat
 
 **Time window.** "Show rooms free between" keeps a room if it has at least an hour free inside the window (or the whole window, when the window is shorter than an hour). A room that is only partly free says which part on its card. Before, a single half hour booking anywhere in the window hid the room, which made bookable library rooms disappear in the evening.
 
-**The Hill.** A Campus / The Hill / Libraries / All switch at the top picks where to look. Two kinds of Hill rooms show up under The Hill:
+**The Hill.** A Campus / The Hill / Libraries & Labs / All switch at the top picks where to look. Two kinds of Hill rooms show up under The Hill:
 
 - Registrar rooms in Hill buildings that have classes this term (Covel 210/218/225/319A, De Neve P350). `scrape.py` scrapes these along with the general assignment rooms. `--all` scrapes every registrar room.
 - Residential study rooms (Hedrick, The Study at Hedrick, Rieber, Sproul, Olympic, Southwest Apartments, Gayley Heights) from [Residential Life reservations](https://reserve.reslife.ucla.edu/reserve). That site publicly lists every open hourly slot for the next two weeks, so `scrape_hill.py` writes `hill.json` with each room's open hours and free slots. Anything inside open hours that isn't listed is reserved. Only residents can book these rooms. Covel and Carnesale study spaces are not on that site.
@@ -51,7 +51,7 @@ Render settings: runtime Python, build `pip install -r requirements.txt`, start 
 
 Covel was always tagged as Hill in the code. What made it look like campus was the Building filter: it listed every building in one list no matter which area was picked, so Covel, De Neve and the Hill dorms showed up as options under Campus. The filter now only lists buildings in the picked area, and under All it groups them by area.
 
-**Libraries and labs.** The Libraries button shows:
+**Libraries and labs.** The Libraries & Labs button shows everything that isn't a classroom or a Hill room, so Campus is just classrooms:
 
 - Whole libraries with their hours from [UCLA Library](https://calendar.library.ucla.edu/hours): Powell, Night Powell, YRL, East Asian, Biomedical, Biomedical Study Commons, SEL Boelter, SEL Geology, Arts, Music, Rosenfeld and Law. The Law Library is limited access for non-law students (same day reservation).
 - Library study rooms from [LibCal spaces](https://calendar.library.ucla.edu/spaces): Powell group rooms, CLICC loop booths, YRL pods and group rooms, Music seminar room, Biomedical rooms, SEL rooms and the Powell Media Lab rooms. LibCal's availability grid lists every bookable 30 minute slot in the booking window (3 days for CLICC rooms, 7 for others); a booked slot shows as reserved. Past the window nobody can book yet, so the room counts as free during library hours. CLICC rooms are drop-in when nobody has them.
@@ -62,7 +62,7 @@ SEASnet computer labs (Boelter 2664, 3760, 4404, 4405, 4442) show under Campus w
 
 `scrape_library.py` makes about 17 requests per run, one at a time. The Pages workflow runs it before every deploy, and the relay caches it for 5 minutes.
 
-**Nearest to me.** The "📍 Nearest to me" button is a toggle: gray when off, blue when on. Turning it on asks the browser for your location (the first time only; a fix from the last 5 minutes is reused), loads `buildings.json` and sorts rooms by straight-line distance to their building, with a rough walking time. Turning it off, or picking another sort, goes back to the normal sort. Nothing is requested before you press it, and your location is never sent or stored anywhere. `buildings.json` holds building centroids from OpenStreetMap (see "Where buildings are").
+**Nearest to me.** The "📍 Nearest to me" button is a toggle: gray when off, blue when on. Turning it on asks the browser for your location (the first time only; a fix from the last 5 minutes is reused), loads `buildings.json` and sorts rooms by how well they fit your times, then by straight-line distance to their building, with a rough walking time. Rooms free for your whole time window come first, then rooms free for part of it (with no time window, rooms free now come first). Your picked characteristics are already a filter, so every room shown has them. Turning it off, or picking another sort, goes back to the normal sort. Nothing is requested before you press it, and your location is never sent or stored anywhere. `buildings.json` holds building centroids from OpenStreetMap (see "Where buildings are").
 
 If it can't get your location, the message next to the button says why and where to fix it. Safari notes:
 
