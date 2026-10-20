@@ -62,7 +62,7 @@ SEASnet computer labs (Boelter 2664, 3760, 4404, 4405, 4442) show under Campus w
 
 `scrape_library.py` makes about 17 requests per run, one at a time. The Pages workflow runs it before every deploy, and the relay caches it for 5 minutes.
 
-**Nearest to me.** The "📍 Nearest to me" button is a toggle: gray when off, blue when on. Turning it on asks the browser for your location (the first time only; a fix from the last 5 minutes is reused), loads `buildings.json` and sorts rooms by straight-line distance to their building, with a rough walking time. Turning it off, or picking another sort, goes back to the normal sort. Nothing is requested before you press it, and your location is never sent or stored anywhere. `buildings.json` holds building centroids from OpenStreetMap (see "Where buildings are").
+**Nearest to me.** The "📍 Nearest to me" button is a toggle: gray when off, blue when on. Turning it on asks the browser for your location (the first time only; a fix from the last 5 minutes is reused), loads `buildings.json` and sorts rooms by how well they fit your times, then by straight-line distance to their building, with a rough walking time. Rooms free for your whole time window come first, then rooms free for part of it (with no time window, rooms free now come first). Your picked characteristics are already a filter, so every room shown has them. Turning it off, or picking another sort, goes back to the normal sort. Nothing is requested before you press it, and your location is never sent or stored anywhere. `buildings.json` holds building centroids from OpenStreetMap (see "Where buildings are").
 
 If it can't get your location, the message next to the button says why and where to fix it. Safari notes:
 
