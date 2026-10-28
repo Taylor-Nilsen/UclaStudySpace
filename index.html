@@ -137,7 +137,7 @@
                 <div class="filter-group">
                     <label for="sortBy">Sort</label>
                     <select id="sortBy">
-                        <option value="available">Available Now</option>
+                        <option value="available">Longest Free</option>
                         <option value="free_pct">Most Free Time</option>
                         <option value="capacity_desc">High Capacity</option>
                         <option value="capacity_asc">Low Capacity</option>
@@ -382,19 +382,15 @@
     function isFree(r, day, s, e){
         return !busy(r, day).some(b => b.s < e && s < b.e);
     }
-    // Longest free stretch inside [s, e) as {s, e}, or null. The time filter
-    // accepts a room when that stretch is at least an hour (or the whole
-    // window, if the window is shorter): a library room booked 6:00 to 6:30
-    // is still worth showing for 6:30 to 8:00.
+    // Free stretch starting at `s` as {s, e}, or null if the room is busy at `s`
+    // or gets busy before `e`. With no end (e = null) it needs MIN_GAP free,
+    // same as gaps between bookings. The time filter only keeps rooms free
+    // for the whole window.
     function freeWindow(r, day, s, e){
-        let best = null, cur = s;
-        const take = (a, b) => { if(b > a && (!best || b - a > best.e - best.s)) best = {s:a, e:b}; };
-        for(const b of busy(r, day).filter(b => b.s < e && s < b.e).sort((a, b) => a.s - b.s)){
-            take(cur, Math.min(b.s, e));
-            cur = Math.max(cur, b.e);
-        }
-        take(cur, e);
-        return best && best.e - best.s >= Math.min(MIN_GAP, e - s) ? best : null;
+        const st = statusAt(r, day, s);
+        if(!st.free) return null;
+        const until = st.until ?? 24*60;
+        return until < (e ?? s + MIN_GAP) ? null : {s, e:until};
     }
     // Status at a moment: {free, until}. `until` is when that state ends (null = rest of day).
     function statusAt(r, day, min){
@@ -504,9 +500,8 @@
 
     function setDefaults(){
         const now = campusNow();
-        const h = Math.min(Math.max(Math.floor(now.min / 60), 8), 20);
-        $('startTime').value = h*60;
-        $('endTime').value = Math.min(h + 2, 22)*60;
+        $('startTime').value = Math.min(Math.max(Math.floor(now.min / 60), 7), 22)*60;
+        $('endTime').value = '';
         selectDay(now.day);
         $('sortBy').value = 'available';
     }
@@ -529,7 +524,7 @@
         const terms = searchTerms($('roomSearch').value);
         const s = $('startTime').value === '' ? null : +$('startTime').value;
         const e = $('endTime').value === '' ? null : +$('endTime').value;
-        const timeOk = s != null && e != null && e > s;
+        const timeOk = s != null && (e == null || e > s);
         const area = state.area || '';
         return state.rooms.filter(r => {
             if(area && r._group !== area) return false;
@@ -539,8 +534,9 @@
             if(terms.length && !matchesAll(r, terms)) return false;
             if(state.chars.size){ const rc = r.characteristics || []; for(const c of state.chars) if(!rc.includes(c)) return false; }
             if(timeOk){
-                if(state.day){ if(!(r._win = freeWindow(r, state.day, s, e))) return false; }
-                else if(!DAYS.some(d => freeWindow(r, d, s, e))) return false;
+                // No day picked: any day works, keep the longest stretch.
+                r._win = (state.day ? [state.day] : DAYS).map(d => freeWindow(r, d, s, e)).filter(Boolean).sort((a, b) => b.e - a.e)[0];
+                if(!r._win) return false;
             }else r._win = null;
             return true;
         });
@@ -553,20 +549,16 @@
         if(how === 'capacity_asc') return list.sort((a, b) => (a.capacity||0) - (b.capacity||0) || byName(a, b));
         if(how === 'building') return list.sort(byName);
         if(state.nearOn && state.here){
-            // Rooms free for your whole time window first, then free for part of
-            // it (no window: free now first). Then closest. Picked
-            // characteristics are already a filter, so every room here has them.
-            const ws = $('startTime').value === '' ? null : +$('startTime').value;
-            const we = $('endTime').value === '' ? null : +$('endTime').value;
-            const day = state.day || now.day, fit = new Map();
-            list.forEach(r => {
-                const w = ws != null && we > ws ? freeWindow(r, day, ws, we) : null;
-                fit.set(r, ws != null && we > ws ? (!w ? 0 : w.s <= ws && w.e >= we ? 2 : 1) : +r._now.free);
-            });
-            return list.sort((a, b) => fit.get(b) - fit.get(a) || (distTo(a) ?? 1e9) - (distTo(b) ?? 1e9) || (b._now.free - a._now.free) || byName(a, b));
+            // With a time window every room left is free for it, so just closest.
+            // Without one, free now first. Picked characteristics are already a
+            // filter, so every room here has them.
+            const fit = r => r._win ? 1 : +r._now.free;
+            return list.sort((a, b) => fit(b) - fit(a) || (distTo(a) ?? 1e9) - (distTo(b) ?? 1e9) || (b._now.free - a._now.free) || byName(a, b));
         }
         if(how === 'free_pct'){ const d = state.day || now.day; return list.sort((a, b) => freePct(b, d) - freePct(a, d) || byName(a, b)); }
-        // available: free now first, longest remaining free window first; busy rooms by soonest free
+        // available: with a time window, longest free stretch from its start.
+        // Without one: free now first, longest remaining free window first; busy rooms by soonest free.
+        if(list.length && list[0]._win) return list.sort((a, b) => b._win.e - a._win.e || byName(a, b));
         return list.sort((a, b) => {
             const sa = a._now, sb = b._now;
             if(sa.free !== sb.free) return sa.free ? -1 : 1;
@@ -593,9 +585,7 @@
     function winHtml(r){
         const w = r._win;
         if(!w) return '';
-        const s = +$('startTime').value, e = +$('endTime').value;
-        if(w.s <= s && w.e >= e) return '';
-        return `<div class="status" style="font-weight:400;color:var(--muted)">${OPEN_TYPES.has(r.type) ? 'Open' : 'Free'} ${fmtMin(w.s)} to ${fmtMin(w.e)} of your ${fmtMin(s)} to ${fmtMin(e)} window</div>`;
+        return `<div class="status" style="font-weight:400;color:var(--muted)">${OPEN_TYPES.has(r.type) ? 'Open' : 'Free'} from ${fmtMin(w.s)} ${w.e >= OPEN_END ? 'for the rest of the day' : `until ${fmtMin(w.e)}`}${state.day ? '' : ' (best day)'}</div>`;
     }
     const OPEN_TYPES = new Set(['Library', 'Computer lab', 'Hill study space']);
     function freeWord(r){
