@@ -1886,7 +1886,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 16,
+     "enrolled": 17,
      "capacity": 30
     },
     {
@@ -1986,7 +1986,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 16,
+     "enrolled": 17,
      "capacity": 30
     },
     {
@@ -10919,7 +10919,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 14,
+     "enrolled": 13,
      "capacity": 40
     },
     {
@@ -11019,7 +11019,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 14,
+     "enrolled": 13,
      "capacity": 40
     },
     {
@@ -11103,7 +11103,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 14,
+     "enrolled": 13,
      "capacity": 40
     },
     {
@@ -13343,7 +13343,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 241,
+     "enrolled": 240,
      "capacity": 0
     },
     {
@@ -13451,7 +13451,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 241,
+     "enrolled": 240,
      "capacity": 0
     },
     {
@@ -23995,7 +23995,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 92,
+     "enrolled": 91,
      "capacity": 0
     },
     {
@@ -24087,7 +24087,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 92,
+     "enrolled": 91,
      "capacity": 0
     },
     {
@@ -29252,7 +29252,7 @@
      "type": "LEC 1",
      "start_time": "05:00 PM",
      "end_time": "06:15 PM",
-     "enrolled": 142,
+     "enrolled": 141,
      "capacity": 0
     }
    ],
@@ -29360,7 +29360,7 @@
      "type": "LEC 1",
      "start_time": "05:00 PM",
      "end_time": "06:15 PM",
-     "enrolled": 142,
+     "enrolled": 141,
      "capacity": 0
     }
    ],
@@ -44213,7 +44213,7 @@
      "type": "DIS 1C",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 46,
+     "enrolled": 45,
      "capacity": 0
     },
     {
