@@ -699,7 +699,7 @@
      "type": "SEM 1",
      "start_time": "12:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 200,
+     "enrolled": 199,
      "capacity": 201
     },
     {
@@ -791,7 +791,7 @@
      "type": "SEM 1",
      "start_time": "12:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 200,
+     "enrolled": 199,
      "capacity": 201
     },
     {
@@ -2149,7 +2149,7 @@
      "type": "DIS 4E",
      "start_time": "03:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 29,
+     "enrolled": 28,
      "capacity": 35
     },
     {
@@ -2721,7 +2721,7 @@
      "type": "DIS 1B",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 31,
+     "enrolled": 30,
      "capacity": 35
     },
     {
@@ -3139,7 +3139,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 40,
+     "enrolled": 39,
      "capacity": 44
     }
    ],
@@ -3231,7 +3231,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 40,
+     "enrolled": 39,
      "capacity": 44
     }
    ],
@@ -3347,7 +3347,7 @@
      "type": "DIS 1B",
      "start_time": "04:00 PM",
      "end_time": "04:50 PM",
-     "enrolled": 29,
+     "enrolled": 28,
      "capacity": 40
     },
     {
@@ -3675,7 +3675,7 @@
      "type": "DIS 3A",
      "start_time": "08:00 AM",
      "end_time": "08:50 AM",
-     "enrolled": 29,
+     "enrolled": 28,
      "capacity": 0
     },
     {
@@ -3707,7 +3707,7 @@
      "type": "DIS 1A",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 36,
+     "enrolled": 35,
      "capacity": 40
     },
     {
@@ -5489,7 +5489,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 221,
+     "enrolled": 219,
      "capacity": 276
     },
     {
@@ -5497,7 +5497,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 322,
+     "enrolled": 321,
      "capacity": 355
     },
     {
@@ -5589,7 +5589,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 221,
+     "enrolled": 219,
      "capacity": 276
     },
     {
@@ -5597,7 +5597,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 322,
+     "enrolled": 321,
      "capacity": 355
     },
     {
@@ -5835,7 +5835,7 @@
      "type": "LEC 1",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 179,
+     "enrolled": 177,
      "capacity": 210
     },
     {
@@ -5875,7 +5875,7 @@
      "type": "LEC 3",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 201,
+     "enrolled": 200,
      "capacity": 210
     },
     {
@@ -5883,7 +5883,7 @@
      "type": "LEC 4",
      "start_time": "03:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 199,
+     "enrolled": 198,
      "capacity": 210
     },
     {
@@ -5901,7 +5901,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:15 AM",
-     "enrolled": 145,
+     "enrolled": 144,
      "capacity": 145
     },
     {
@@ -5949,7 +5949,7 @@
      "type": "LEC 2",
      "start_time": "05:00 PM",
      "end_time": "06:15 PM",
-     "enrolled": 117,
+     "enrolled": 116,
      "capacity": 0
     }
    ],
@@ -5959,7 +5959,7 @@
      "type": "LEC 1",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 179,
+     "enrolled": 177,
      "capacity": 210
     },
     {
@@ -5999,7 +5999,7 @@
      "type": "LEC 3",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 201,
+     "enrolled": 200,
      "capacity": 210
     },
     {
@@ -6007,7 +6007,7 @@
      "type": "LEC 4",
      "start_time": "03:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 199,
+     "enrolled": 198,
      "capacity": 210
     },
     {
@@ -6025,7 +6025,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:15 AM",
-     "enrolled": 145,
+     "enrolled": 144,
      "capacity": 145
     },
     {
@@ -6073,7 +6073,7 @@
      "type": "LEC 2",
      "start_time": "05:00 PM",
      "end_time": "06:15 PM",
-     "enrolled": 117,
+     "enrolled": 116,
      "capacity": 0
     }
    ],
@@ -6083,7 +6083,7 @@
      "type": "LEC 1",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 179,
+     "enrolled": 177,
      "capacity": 210
     },
     {
@@ -6123,7 +6123,7 @@
      "type": "LEC 3",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 201,
+     "enrolled": 200,
      "capacity": 210
     },
     {
@@ -6131,7 +6131,7 @@
      "type": "LEC 4",
      "start_time": "03:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 199,
+     "enrolled": 198,
      "capacity": 210
     }
    ],
@@ -8150,7 +8150,7 @@
      "type": "LEC 1",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 224,
+     "enrolled": 223,
      "capacity": 210
     },
     {
@@ -8158,7 +8158,7 @@
      "type": "LEC 2",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 214,
+     "enrolled": 213,
      "capacity": 210
     },
     {
@@ -8166,7 +8166,7 @@
      "type": "LEC 2",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 213,
+     "enrolled": 212,
      "capacity": 210
     },
     {
@@ -8190,7 +8190,7 @@
      "type": "LEC 2",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 213,
+     "enrolled": 211,
      "capacity": 210
     },
     {
@@ -8274,7 +8274,7 @@
      "type": "LEC 1",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 224,
+     "enrolled": 223,
      "capacity": 210
     },
     {
@@ -8282,7 +8282,7 @@
      "type": "LEC 2",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 214,
+     "enrolled": 213,
      "capacity": 210
     },
     {
@@ -8290,7 +8290,7 @@
      "type": "LEC 2",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 213,
+     "enrolled": 212,
      "capacity": 210
     },
     {
@@ -8314,7 +8314,7 @@
      "type": "LEC 2",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 213,
+     "enrolled": 211,
      "capacity": 210
     },
     {
@@ -8398,7 +8398,7 @@
      "type": "LEC 1",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 224,
+     "enrolled": 223,
      "capacity": 210
     },
     {
@@ -8406,7 +8406,7 @@
      "type": "LEC 2",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 214,
+     "enrolled": 213,
      "capacity": 210
     },
     {
@@ -8414,7 +8414,7 @@
      "type": "LEC 2",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 213,
+     "enrolled": 212,
      "capacity": 210
     },
     {
@@ -8438,7 +8438,7 @@
      "type": "LEC 2",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 213,
+     "enrolled": 211,
      "capacity": 210
     }
    ],
@@ -8509,7 +8509,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 15,
+     "enrolled": 14,
      "capacity": 25
     },
     {
@@ -8593,7 +8593,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 15,
+     "enrolled": 14,
      "capacity": 25
     },
     {
@@ -9099,7 +9099,7 @@
      "type": "DIS 2E",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 33,
+     "enrolled": 32,
      "capacity": 35
     },
     {
@@ -10078,7 +10078,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 9,
+     "enrolled": 10,
      "capacity": 40
     },
     {
@@ -10104,7 +10104,7 @@
      "type": "DIS 1E",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 27,
+     "enrolled": 26,
      "capacity": 35
     },
     {
@@ -10186,7 +10186,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 9,
+     "enrolled": 10,
      "capacity": 40
     },
     {
@@ -10723,7 +10723,7 @@
      "type": "DIS 1F",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 25,
+     "enrolled": 24,
      "capacity": 25
     },
     {
@@ -10969,7 +10969,7 @@
      "type": "DIS 1B",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 35,
+     "enrolled": 34,
      "capacity": 40
     },
     {
@@ -11315,7 +11315,7 @@
      "type": "LEC 014",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 22,
+     "enrolled": 21,
      "capacity": 23
     },
     {
@@ -11367,7 +11367,7 @@
      "type": "LEC 014",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 22,
+     "enrolled": 21,
      "capacity": 23
     },
     {
@@ -12491,7 +12491,7 @@
      "type": "DIS 1A",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 26,
+     "enrolled": 25,
      "capacity": 33
     },
     {
@@ -13277,7 +13277,7 @@
      "type": "LEC 1",
      "start_time": "09:01 AM",
      "end_time": "09:50 AM",
-     "enrolled": 99,
+     "enrolled": 96,
      "capacity": 130
     },
     {
@@ -13385,7 +13385,7 @@
      "type": "LEC 1",
      "start_time": "09:01 AM",
      "end_time": "09:50 AM",
-     "enrolled": 99,
+     "enrolled": 96,
      "capacity": 130
     },
     {
@@ -13485,7 +13485,7 @@
      "type": "LEC 1",
      "start_time": "09:01 AM",
      "end_time": "09:50 AM",
-     "enrolled": 99,
+     "enrolled": 96,
      "capacity": 130
     },
     {
@@ -13650,7 +13650,7 @@
      "type": "DIS 1I",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 18,
+     "enrolled": 17,
      "capacity": 0
     },
     {
@@ -13727,7 +13727,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 100,
+     "enrolled": 99,
      "capacity": 100
     },
     {
@@ -13827,7 +13827,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 100,
+     "enrolled": 99,
      "capacity": 100
     },
     {
@@ -14303,7 +14303,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 54,
+     "enrolled": 53,
      "capacity": 0
     },
     {
@@ -14395,7 +14395,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 54,
+     "enrolled": 53,
      "capacity": 0
     },
     {
@@ -14743,7 +14743,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "08:50 AM",
-     "enrolled": 79,
+     "enrolled": 78,
      "capacity": 80
     },
     {
@@ -14791,7 +14791,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 15,
+     "enrolled": 16,
      "capacity": 65
     }
    ],
@@ -14843,7 +14843,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "08:50 AM",
-     "enrolled": 79,
+     "enrolled": 78,
      "capacity": 80
     },
     {
@@ -14891,7 +14891,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 15,
+     "enrolled": 16,
      "capacity": 65
     }
    ],
@@ -14943,7 +14943,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "08:50 AM",
-     "enrolled": 79,
+     "enrolled": 78,
      "capacity": 80
     },
     {
@@ -15808,7 +15808,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 302,
+     "enrolled": 301,
      "capacity": 0
     },
     {
@@ -15858,7 +15858,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 307,
+     "enrolled": 306,
      "capacity": 306
     },
     {
@@ -15874,7 +15874,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 136,
+     "enrolled": 135,
      "capacity": 200
     },
     {
@@ -15916,7 +15916,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 302,
+     "enrolled": 301,
      "capacity": 0
     },
     {
@@ -15958,7 +15958,7 @@
      "type": "LEC 1",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 307,
+     "enrolled": 306,
      "capacity": 306
     },
     {
@@ -15974,7 +15974,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 136,
+     "enrolled": 135,
      "capacity": 200
     },
     {
@@ -16000,7 +16000,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 302,
+     "enrolled": 301,
      "capacity": 0
     },
     {
@@ -16122,7 +16122,7 @@
      "type": "LEC 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 63,
+     "enrolled": 64,
      "capacity": 60
     },
     {
@@ -16140,7 +16140,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:15 AM",
-     "enrolled": 48,
+     "enrolled": 47,
      "capacity": 60
     },
     {
@@ -16238,7 +16238,7 @@
      "type": "LEC 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 63,
+     "enrolled": 64,
      "capacity": 60
     },
     {
@@ -16256,7 +16256,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:15 AM",
-     "enrolled": 48,
+     "enrolled": 47,
      "capacity": 60
     },
     {
@@ -16503,7 +16503,7 @@
      "type": "LEC 2",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 232,
+     "enrolled": 231,
      "capacity": 0
     },
     {
@@ -16587,7 +16587,7 @@
      "type": "LEC 2",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 232,
+     "enrolled": 231,
      "capacity": 0
     },
     {
@@ -16699,7 +16699,7 @@
      "type": "LEC 2",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 158,
+     "enrolled": 157,
      "capacity": 150
     }
    ],
@@ -16717,7 +16717,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 108,
+     "enrolled": 107,
      "capacity": 0
     },
     {
@@ -16783,7 +16783,7 @@
      "type": "LEC 2",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 158,
+     "enrolled": 157,
      "capacity": 150
     }
    ],
@@ -16801,7 +16801,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 108,
+     "enrolled": 107,
      "capacity": 0
     },
     {
@@ -16991,7 +16991,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 42,
+     "enrolled": 41,
      "capacity": 40
     },
     {
@@ -17099,7 +17099,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 42,
+     "enrolled": 41,
      "capacity": 40
     },
     {
@@ -17281,7 +17281,7 @@
      "type": "DIS 1B",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 13,
+     "enrolled": 12,
      "capacity": 25
     },
     {
@@ -18712,7 +18712,7 @@
      "type": "SEM 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 58,
+     "enrolled": 57,
      "capacity": 70
     },
     {
@@ -18954,7 +18954,7 @@
      "type": "DIS 2A",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 37,
+     "enrolled": 36,
      "capacity": 35
     },
     {
@@ -19038,7 +19038,7 @@
      "type": "DIS 1B",
      "start_time": "08:00 AM",
      "end_time": "08:50 AM",
-     "enrolled": 40,
+     "enrolled": 39,
      "capacity": 40
     },
     {
@@ -19078,7 +19078,7 @@
      "type": "DIS 1D",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 39,
+     "enrolled": 38,
      "capacity": 40
     },
     {
@@ -19423,7 +19423,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 414,
+     "enrolled": 415,
      "capacity": 420
     },
     {
@@ -19439,7 +19439,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 327,
+     "enrolled": 326,
      "capacity": 0
     },
     {
@@ -19539,7 +19539,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 414,
+     "enrolled": 415,
      "capacity": 420
     },
     {
@@ -19555,7 +19555,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 327,
+     "enrolled": 326,
      "capacity": 0
     },
     {
@@ -20367,7 +20367,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 96,
+     "enrolled": 95,
      "capacity": 0
     },
     {
@@ -20399,7 +20399,7 @@
      "type": "LEC 1",
      "start_time": "06:00 PM",
      "end_time": "07:50 PM",
-     "enrolled": 64,
+     "enrolled": 63,
      "capacity": 120
     }
    ],
@@ -20441,7 +20441,7 @@
      "type": "LEC 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 109,
+     "enrolled": 108,
      "capacity": 110
     }
    ],
@@ -20459,7 +20459,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 96,
+     "enrolled": 95,
      "capacity": 0
     },
     {
@@ -20491,7 +20491,7 @@
      "type": "LEC 1",
      "start_time": "06:00 PM",
      "end_time": "07:50 PM",
-     "enrolled": 64,
+     "enrolled": 63,
      "capacity": 120
     }
    ],
@@ -20533,7 +20533,7 @@
      "type": "LEC 1",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 109,
+     "enrolled": 108,
      "capacity": 110
     }
    ],
@@ -21272,7 +21272,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "12:50 PM",
-     "enrolled": 91,
+     "enrolled": 90,
      "capacity": 140
     },
     {
@@ -21554,7 +21554,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 22,
+     "enrolled": 21,
      "capacity": 25
     },
     {
@@ -21662,7 +21662,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 22,
+     "enrolled": 21,
      "capacity": 25
     },
     {
@@ -21794,7 +21794,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 22,
+     "enrolled": 21,
      "capacity": 25
     },
     {
@@ -24264,7 +24264,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 79,
+     "enrolled": 78,
      "capacity": 150
     },
     {
@@ -24348,7 +24348,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 79,
+     "enrolled": 78,
      "capacity": 150
     },
     {
@@ -25704,7 +25704,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 107,
+     "enrolled": 106,
      "capacity": 100
     },
     {
@@ -25762,7 +25762,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 194,
+     "enrolled": 193,
      "capacity": 0
     },
     {
@@ -25812,7 +25812,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 107,
+     "enrolled": 106,
      "capacity": 100
     },
     {
@@ -25870,7 +25870,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 194,
+     "enrolled": 193,
      "capacity": 0
     },
     {
@@ -26408,7 +26408,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 21,
+     "enrolled": 20,
      "capacity": 110
     },
     {
@@ -26524,7 +26524,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 21,
+     "enrolled": 20,
      "capacity": 110
     },
     {
@@ -27821,7 +27821,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 114,
+     "enrolled": 113,
      "capacity": 0
     },
     {
@@ -27937,7 +27937,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 114,
+     "enrolled": 113,
      "capacity": 0
     },
     {
@@ -27971,7 +27971,7 @@
      "type": "DIS 1A",
      "start_time": "12:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 59,
+     "enrolled": 57,
      "capacity": 60
     },
     {
@@ -28889,7 +28889,7 @@
      "type": "DIS 1F",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 18,
+     "enrolled": 17,
      "capacity": 0
     },
     {
@@ -29077,7 +29077,7 @@
      "type": "DIS 1E",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 19,
+     "enrolled": 18,
      "capacity": 0
     },
     {
@@ -29439,7 +29439,7 @@
      "type": "LEC 2",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 31,
+     "enrolled": 30,
      "capacity": 40
     },
     {
@@ -29531,7 +29531,7 @@
      "type": "LEC 2",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 31,
+     "enrolled": 30,
      "capacity": 40
     },
     {
@@ -29631,7 +29631,7 @@
      "type": "LEC 2",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 31,
+     "enrolled": 30,
      "capacity": 40
     },
     {
@@ -29663,7 +29663,7 @@
      "type": "DIS 3C",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 19,
+     "enrolled": 18,
      "capacity": 0
     },
     {
@@ -30585,7 +30585,7 @@
      "type": "LEC 2",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 424,
+     "enrolled": 422,
      "capacity": 435
     },
     {
@@ -30685,7 +30685,7 @@
      "type": "LEC 2",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 424,
+     "enrolled": 422,
      "capacity": 435
     },
     {
@@ -30785,7 +30785,7 @@
      "type": "LEC 2",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 424,
+     "enrolled": 422,
      "capacity": 435
     }
    ],
@@ -32155,7 +32155,7 @@
      "type": "DIS 2C",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 23,
+     "enrolled": 22,
      "capacity": 0
     },
     {
@@ -32350,7 +32350,7 @@
      "type": "LEC 2",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 184,
+     "enrolled": 183,
      "capacity": 210
     },
     {
@@ -32366,7 +32366,7 @@
      "type": "LEC 4",
      "start_time": "04:00 PM",
      "end_time": "04:50 PM",
-     "enrolled": 126,
+     "enrolled": 125,
      "capacity": 140
     },
     {
@@ -32416,7 +32416,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 161,
+     "enrolled": 160,
      "capacity": 0
     },
     {
@@ -32432,7 +32432,7 @@
      "type": "LEC 5",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 99,
+     "enrolled": 98,
      "capacity": 0
     },
     {
@@ -32498,7 +32498,7 @@
      "type": "LEC 2",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 184,
+     "enrolled": 183,
      "capacity": 210
     },
     {
@@ -32514,7 +32514,7 @@
      "type": "LEC 4",
      "start_time": "04:00 PM",
      "end_time": "04:50 PM",
-     "enrolled": 126,
+     "enrolled": 125,
      "capacity": 140
     },
     {
@@ -32564,7 +32564,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 161,
+     "enrolled": 160,
      "capacity": 0
     },
     {
@@ -32580,7 +32580,7 @@
      "type": "LEC 5",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 99,
+     "enrolled": 98,
      "capacity": 0
     }
    ],
@@ -32638,7 +32638,7 @@
      "type": "LEC 2",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 184,
+     "enrolled": 183,
      "capacity": 210
     },
     {
@@ -32654,7 +32654,7 @@
      "type": "LEC 4",
      "start_time": "04:00 PM",
      "end_time": "04:50 PM",
-     "enrolled": 126,
+     "enrolled": 125,
      "capacity": 140
     }
    ],
@@ -32906,7 +32906,7 @@
      "type": "DIS 4B",
      "start_time": "04:00 PM",
      "end_time": "04:50 PM",
-     "enrolled": 29,
+     "enrolled": 28,
      "capacity": 35
     }
    ],
@@ -33560,7 +33560,7 @@
      "type": "DIS 3F",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 31,
+     "enrolled": 30,
      "capacity": 35
     },
     {
@@ -33713,7 +33713,7 @@
      "type": "DIS 5A",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 24,
+     "enrolled": 23,
      "capacity": 0
     },
     {
@@ -33845,7 +33845,7 @@
      "type": "DIS 5A",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 24,
+     "enrolled": 23,
      "capacity": 0
     },
     {
@@ -33985,7 +33985,7 @@
      "type": "DIS 1C",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 33,
+     "enrolled": 32,
      "capacity": 0
     },
     {
@@ -34090,7 +34090,7 @@
      "type": "DIS 2A",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 37,
+     "enrolled": 36,
      "capacity": 35
     },
     {
@@ -34369,7 +34369,7 @@
      "type": "DIS 2A",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 31,
+     "enrolled": 30,
      "capacity": 40
     },
     {
@@ -34401,7 +34401,7 @@
      "type": "DIS 2A",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 34,
+     "enrolled": 33,
      "capacity": 35
     },
     {
@@ -34485,7 +34485,7 @@
      "type": "DIS 2A",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 31,
+     "enrolled": 30,
      "capacity": 40
     },
     {
@@ -34727,7 +34727,7 @@
      "type": "DIS 4B",
      "start_time": "04:00 PM",
      "end_time": "04:50 PM",
-     "enrolled": 32,
+     "enrolled": 31,
      "capacity": 35
     }
    ],
@@ -34851,7 +34851,7 @@
      "type": "DIS 4B",
      "start_time": "04:00 PM",
      "end_time": "04:50 PM",
-     "enrolled": 32,
+     "enrolled": 31,
      "capacity": 35
     }
    ],
@@ -35054,7 +35054,7 @@
      "type": "DIS 1E",
      "start_time": "05:00 PM",
      "end_time": "06:15 PM",
-     "enrolled": 18,
+     "enrolled": 17,
      "capacity": 0
     }
    ],
@@ -35277,7 +35277,7 @@
      "type": "LEC 4",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 65,
+     "enrolled": 64,
      "capacity": 70
     },
     {
@@ -35311,7 +35311,7 @@
      "type": "LEC 3",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 78,
+     "enrolled": 77,
      "capacity": 0
     },
     {
@@ -35409,7 +35409,7 @@
      "type": "LEC 4",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 65,
+     "enrolled": 64,
      "capacity": 70
     },
     {
@@ -35451,7 +35451,7 @@
      "type": "LEC 3",
      "start_time": "09:30 AM",
      "end_time": "10:45 AM",
-     "enrolled": 78,
+     "enrolled": 77,
      "capacity": 0
     },
     {
@@ -35549,7 +35549,7 @@
      "type": "LEC 4",
      "start_time": "02:00 PM",
      "end_time": "02:50 PM",
-     "enrolled": 65,
+     "enrolled": 64,
      "capacity": 70
     },
     {
@@ -36548,14 +36548,6 @@
      "capacity": 27
     },
     {
-     "course": "CH ENGR 194",
-     "type": "SEM 1",
-     "start_time": "02:00 PM",
-     "end_time": "03:50 PM",
-     "enrolled": 4,
-     "capacity": 20
-    },
-    {
      "course": "MATH 296J",
      "type": "SEM 1",
      "start_time": "04:00 PM",
@@ -36638,14 +36630,6 @@
      "end_time": "01:50 PM",
      "enrolled": 27,
      "capacity": 27
-    },
-    {
-     "course": "CH ENGR 194",
-     "type": "SEM 1",
-     "start_time": "02:00 PM",
-     "end_time": "03:50 PM",
-     "enrolled": 4,
-     "capacity": 20
     },
     {
      "course": "MCD BIO 144",
@@ -37696,7 +37680,7 @@
      "type": "LEC 1",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 165,
+     "enrolled": 164,
      "capacity": 160
     },
     {
@@ -37804,7 +37788,7 @@
      "type": "LEC 1",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 165,
+     "enrolled": 164,
      "capacity": 160
     },
     {
@@ -37928,7 +37912,7 @@
      "type": "LEC 1",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 165,
+     "enrolled": 164,
      "capacity": 160
     },
     {
@@ -38039,7 +38023,7 @@
      "type": "LEC 1",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 56,
+     "enrolled": 55,
      "capacity": 80
     },
     {
@@ -38195,7 +38179,7 @@
      "type": "LEC 1",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 56,
+     "enrolled": 55,
      "capacity": 80
     },
     {
@@ -38311,7 +38295,7 @@
      "type": "LEC 1",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 56,
+     "enrolled": 55,
      "capacity": 80
     },
     {
@@ -38327,7 +38311,7 @@
      "type": "DIS 1A",
      "start_time": "03:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 56,
+     "enrolled": 55,
      "capacity": 80
     },
     {
@@ -38343,7 +38327,7 @@
      "type": "DIS 1A",
      "start_time": "05:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 65,
+     "enrolled": 64,
      "capacity": 75
     }
    ],
@@ -38658,7 +38642,7 @@
      "type": "DIS 2B",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 28,
+     "enrolled": 27,
      "capacity": 0
     },
     {
@@ -39449,7 +39433,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 87,
+     "enrolled": 86,
      "capacity": 155
     }
    ],
@@ -39475,7 +39459,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 88,
+     "enrolled": 87,
      "capacity": 0
     },
     {
@@ -39541,7 +39525,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 87,
+     "enrolled": 86,
      "capacity": 155
     }
    ],
@@ -39567,7 +39551,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 88,
+     "enrolled": 87,
      "capacity": 0
     },
     {
@@ -39609,7 +39593,7 @@
      "type": "LAB 2A",
      "start_time": "12:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 60,
+     "enrolled": 59,
      "capacity": 60
     },
     {
@@ -40100,7 +40084,7 @@
      "type": "LEC 1",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 71,
+     "enrolled": 70,
      "capacity": 80
     },
     {
@@ -40150,7 +40134,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 70,
+     "enrolled": 69,
      "capacity": 80
     },
     {
@@ -40208,7 +40192,7 @@
      "type": "LEC 1",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 71,
+     "enrolled": 70,
      "capacity": 80
     },
     {
@@ -40258,7 +40242,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 70,
+     "enrolled": 69,
      "capacity": 80
     },
     {
@@ -40316,7 +40300,7 @@
      "type": "LEC 1",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 71,
+     "enrolled": 70,
      "capacity": 80
     },
     {
@@ -40632,7 +40616,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 73,
+     "enrolled": 72,
      "capacity": 80
     },
     {
@@ -40700,7 +40684,7 @@
      "type": "LEC 1",
      "start_time": "12:30 PM",
      "end_time": "01:45 PM",
-     "enrolled": 73,
+     "enrolled": 72,
      "capacity": 80
     },
     {
@@ -40792,7 +40776,7 @@
      "type": "DIS 2B",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 64,
+     "enrolled": 63,
      "capacity": 60
     },
     {
@@ -42606,7 +42590,7 @@
      "type": "DIS 1C",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 25,
+     "enrolled": 24,
      "capacity": 0
     },
     {
@@ -42819,7 +42803,7 @@
      "type": "DIS 1O",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 36,
+     "enrolled": 35,
      "capacity": 35
     },
     {
@@ -43286,7 +43270,7 @@
      "type": "LEC 3",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 61,
+     "enrolled": 60,
      "capacity": 0
     },
     {
@@ -43320,7 +43304,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 47,
+     "enrolled": 46,
      "capacity": 60
     },
     {
@@ -43370,7 +43354,7 @@
      "type": "LEC 3",
      "start_time": "03:30 PM",
      "end_time": "04:45 PM",
-     "enrolled": 61,
+     "enrolled": 60,
      "capacity": 0
     },
     {
@@ -43412,7 +43396,7 @@
      "type": "LEC 1",
      "start_time": "02:00 PM",
      "end_time": "03:15 PM",
-     "enrolled": 47,
+     "enrolled": 46,
      "capacity": 60
     },
     {
@@ -43664,7 +43648,7 @@
      "type": "DIS 1C",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 20,
+     "enrolled": 19,
      "capacity": 0
     },
     {
@@ -46782,7 +46766,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 25,
+     "enrolled": 24,
      "capacity": 30
     },
     {
@@ -46850,7 +46834,7 @@
      "type": "LEC 1",
      "start_time": "10:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 25,
+     "enrolled": 24,
      "capacity": 30
     },
     {
@@ -46934,7 +46918,7 @@
      "type": "DIS 1B",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 30,
+     "enrolled": 29,
      "capacity": 30
     },
     {
@@ -47687,7 +47671,7 @@
      "type": "DIS 1D",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 37,
+     "enrolled": 36,
      "capacity": 35
     },
     {
@@ -47853,7 +47837,7 @@
      "type": "DIS 1B",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 36,
+     "enrolled": 35,
      "capacity": 40
     },
     {
@@ -48507,7 +48491,7 @@
      "type": "DIS 1C",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 27,
+     "enrolled": 26,
      "capacity": 35
     },
     {
@@ -48591,7 +48575,7 @@
      "type": "DIS 1D",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 23,
+     "enrolled": 21,
      "capacity": 35
     },
     {
@@ -49543,7 +49527,7 @@
      "type": "DIS 1J",
      "start_time": "08:00 AM",
      "end_time": "08:50 AM",
-     "enrolled": 21,
+     "enrolled": 20,
      "capacity": 23
     },
     {
@@ -49559,7 +49543,7 @@
      "type": "DIS 1L",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 19,
+     "enrolled": 18,
      "capacity": 23
     },
     {
@@ -50031,7 +50015,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 23,
+     "enrolled": 24,
      "capacity": 40
     },
     {
@@ -50107,7 +50091,7 @@
      "type": "LEC 1",
      "start_time": "11:00 AM",
      "end_time": "12:15 PM",
-     "enrolled": 23,
+     "enrolled": 24,
      "capacity": 40
     },
     {
@@ -50543,7 +50527,7 @@
      "type": "DIS 2E",
      "start_time": "10:00 AM",
      "end_time": "10:50 AM",
-     "enrolled": 33,
+     "enrolled": 32,
      "capacity": 35
     },
     {
@@ -50685,7 +50669,7 @@
      "type": "DIS 1A",
      "start_time": "12:00 PM",
      "end_time": "12:50 PM",
-     "enrolled": 27,
+     "enrolled": 26,
      "capacity": 30
     },
     {
@@ -50842,7 +50826,7 @@
      "type": "DIS 1B",
      "start_time": "09:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 19,
+     "enrolled": 18,
      "capacity": 18
     },
     {
@@ -50892,7 +50876,7 @@
      "type": "DIS 1R",
      "start_time": "11:00 AM",
      "end_time": "11:50 AM",
-     "enrolled": 18,
+     "enrolled": 19,
      "capacity": 20
     },
     {
@@ -50981,7 +50965,7 @@
      "type": "LEC 2",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 118,
+     "enrolled": 117,
      "capacity": 120
     },
     {
@@ -50989,7 +50973,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 114,
+     "enrolled": 112,
      "capacity": 120
     }
    ],
@@ -51073,7 +51057,7 @@
      "type": "LEC 2",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 118,
+     "enrolled": 117,
      "capacity": 120
     },
     {
@@ -51081,7 +51065,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 114,
+     "enrolled": 112,
      "capacity": 120
     }
    ],
@@ -51352,7 +51336,7 @@
      "type": "LEC 1",
      "start_time": "05:00 PM",
      "end_time": "06:50 PM",
-     "enrolled": 119,
+     "enrolled": 118,
      "capacity": 120
     }
    ],
@@ -51444,7 +51428,7 @@
      "type": "LEC 1",
      "start_time": "05:00 PM",
      "end_time": "06:50 PM",
-     "enrolled": 119,
+     "enrolled": 118,
      "capacity": 120
     }
    ],
@@ -51470,7 +51454,7 @@
      "type": "DIS 1A",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 44,
+     "enrolled": 43,
      "capacity": 60
     }
    ],
@@ -52698,7 +52682,7 @@
      "type": "DIS 2C",
      "start_time": "01:00 PM",
      "end_time": "01:50 PM",
-     "enrolled": 52,
+     "enrolled": 51,
      "capacity": 56
     },
     {
@@ -53440,7 +53424,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:15 AM",
-     "enrolled": 64,
+     "enrolled": 63,
      "capacity": 0
     },
     {
@@ -53480,7 +53464,7 @@
      "type": "LEC 2",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 173,
+     "enrolled": 172,
      "capacity": 180
     },
     {
@@ -53556,7 +53540,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:15 AM",
-     "enrolled": 64,
+     "enrolled": 63,
      "capacity": 0
     },
     {
@@ -53604,7 +53588,7 @@
      "type": "LEC 2",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 173,
+     "enrolled": 172,
      "capacity": 180
     },
     {
@@ -54070,7 +54054,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 145,
+     "enrolled": 144,
      "capacity": 160
     },
     {
@@ -54170,7 +54154,7 @@
      "type": "LEC 1",
      "start_time": "08:00 AM",
      "end_time": "09:50 AM",
-     "enrolled": 145,
+     "enrolled": 144,
      "capacity": 160
     },
     {
