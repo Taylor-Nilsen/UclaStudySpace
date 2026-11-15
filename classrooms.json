@@ -39441,7 +39441,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 86,
+     "enrolled": 85,
      "capacity": 155
     }
    ],
@@ -39533,7 +39533,7 @@
      "type": "LEC 1",
      "start_time": "04:00 PM",
      "end_time": "05:50 PM",
-     "enrolled": 86,
+     "enrolled": 85,
      "capacity": 155
     }
    ],
@@ -51462,7 +51462,7 @@
      "type": "DIS 1A",
      "start_time": "02:00 PM",
      "end_time": "03:50 PM",
-     "enrolled": 43,
+     "enrolled": 42,
      "capacity": 60
     }
    ],
